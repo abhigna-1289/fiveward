@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/timer-card.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <!-- =====================================================
+       NAVBAR — logged-in state
+       Logo · nav links · timer pill · user avatar + dropdown
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+
+      <a href="dashboard.html" class="navbar__logo">
+        <img src="assets/images/logo-icon.png" width="34" height="34" alt="" aria-hidden="true" />
+        <img src="assets/images/logo-wordmark.png" height="20" alt="fiveward" />
+      </a>
+
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link active">Home</a></li>
+        <li><a href="explore.html"   class="nav-link">Explore</a></li>
+        <li><a href="progress.html"  class="nav-link">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link">Settings</a></li>
+      </ul>
+
+      <!-- Timer + user avatar live together in the right column -->
+      <div class="navbar__actions">
+
+        <!-- Study timer pill — hidden until timer.js makes it visible -->
+        <div class="navbar__timer" id="navbarTimer">
+          <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="8" r="5"/>
+            <path d="M7 5.5V8l1.5 1.5"/>
+            <path d="M5 1h4"/>
+          </svg>
+          <span id="navbarTimerDisplay">00:00</span>
+        </div>
+
+        <!-- Avatar + chevron (dropdown trigger) -->
+        <div class="navbar__user" id="userMenuTrigger" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+          <svg class="navbar__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+
+        <!-- Dropdown menu -->
+        <div class="navbar__dropdown" id="userDropdown" hidden role="menu">
+          <div class="navbar__dropdown-user">
+            <span class="navbar__dropdown-name" id="dropdownName">Account</span>
+            <span class="navbar__dropdown-email" id="dropdownEmail"></span>
+          </div>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="settings.html" class="navbar__dropdown-item" role="menuitem">Settings</a>
+          <button class="navbar__dropdown-item navbar__dropdown-item--danger" id="signOutBtn" type="button" role="menuitem">
+            Sign Out
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =====================================================
+       HOME DASHBOARD
+       Welcome back message + subject card grid
+       ===================================================== -->
+  <main class="dashboard-page">
+    <div class="container">
+      <div class="dashboard-layout">
+
+        <!-- ── Main column ───────────────────────────────────── -->
+        <div>
+
+          <!-- Welcome header — first name filled in by dashboard.js -->
+          <header class="dashboard-header">
+            <h1 class="dashboard-welcome" id="welcomeHeading">Welcome back!</h1>
+            <p class="dashboard-subtitle">Pick up where you left off.</p>
+          </header>
+
+          <!-- Quick stats row -->
+          <div class="dashboard-stats" aria-label="Study stats">
+
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="dashboard-stat__info">
+                <span class="dashboard-stat__value">0h 0m</span>
+                <span class="dashboard-stat__label">Total Study Time</span>
+              </div>
+            </div>
+
+            <div class="dashboard-stat__divider" aria-hidden="true"></div>
+
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="dashboard-stat__info">
+                <span class="dashboard-stat__value">0 days</span>
+                <span class="dashboard-stat__label">Current Streak</span>
+              </div>
+            </div>
+
+            <div class="dashboard-stat__divider" aria-hidden="true"></div>
+
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 20V10M12 20V4M6 20v-6"/>
+                </svg>
+              </div>
+              <div class="dashboard-stat__info">
+                <span class="dashboard-stat__value">—</span>
+                <span class="dashboard-stat__label">Average Score</span>
+              </div>
+            </div>
+
+          </div><!-- /dashboard-stats -->
+
+          <!-- Subject grid — populated dynamically by dashboard.js -->
+          <section class="dashboard-subjects" aria-labelledby="subjectsHeading">
+            <h2 class="dashboard-section-title" id="subjectsHeading">Your Subjects</h2>
+
+            <!-- Filled by dashboard.js based on fw_enrolled -->
+            <div class="subject-grid" id="subjectGrid"></div>
+
+            <!-- Shown when no subjects are enrolled -->
+            <div class="dashboard-empty-state" id="subjectEmptyState" hidden>
+              <div class="dashboard-empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                </svg>
+              </div>
+              <p class="dashboard-empty-state__msg">You haven't enrolled in any subjects yet.</p>
+              <a href="explore.html" class="btn btn--primary">Explore Subjects</a>
+            </div>
+
+          </section>
+
+        </div><!-- /main column -->
+
+        <!-- ── Right sidebar — Study Timer ───────────────────── -->
+        <aside>
+
+          <div class="study-timer-card">
+            <div class="study-timer-card__header">
+              <h3 class="study-timer-card__title">Study Timer</h3>
+            </div>
+
+            <div class="gtimer-display" id="gtimerDisplay" role="button" tabindex="0" aria-label="Click to set timer duration">
+              <span class="gtimer-num" id="gdisH">00</span>
+              <span class="gtimer-colon" id="gdisHsep" aria-hidden="true">:</span>
+              <span class="gtimer-num" id="gdisM">25</span>
+              <span class="gtimer-colon" aria-hidden="true">:</span>
+              <span class="gtimer-num" id="gdisS">00</span>
+            </div>
+
+            <div class="gtimer-edit" id="gtimerEdit" style="display:none">
+              <input class="gtimer-input" id="ginH" type="number" min="0" max="24" placeholder="00" aria-label="Hours" />
+              <span class="gtimer-colon" aria-hidden="true">:</span>
+              <input class="gtimer-input" id="ginM" type="number" min="0" max="59" placeholder="25" aria-label="Minutes" />
+              <span class="gtimer-colon" aria-hidden="true">:</span>
+              <input class="gtimer-input" id="ginS" type="number" min="0" max="59" placeholder="00" aria-label="Seconds" />
+            </div>
+
+            <p class="gtimer-hint" id="gtimerHint">Click time to edit</p>
+
+            <div class="gtimer-actions">
+              <button class="gtimer-start-btn" id="gtimerStartBtn" type="button">Start</button>
+              <div class="gtimer-running-btns" id="gtimerRunningBtns" style="display:none">
+                <button class="gtimer-pauseresume-btn" id="gtimerPauseResumeBtn" type="button">
+                  <svg class="pr-icon pr-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+                  <svg class="pr-icon pr-play"  width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span class="pr-label">Pause</span>
+                </button>
+                <button class="gtimer-restart-btn" id="gtimerRestartBtn" type="button" aria-label="Restart timer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div><!-- /study-timer-card -->
+
+        </aside>
+
+      </div><!-- /dashboard-layout -->
+    </div>
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/logo-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <img src="assets/images/logo-wordmark.png" height="18" alt="fiveward" />
+        </a>
+        <p class="footer__tagline">Free AP prep for every student.</p>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html#about">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Supabase JS must load before supabase-client.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/timer-card.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

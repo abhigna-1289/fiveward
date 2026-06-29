@@ -1,0 +1,41 @@
+{
+  "id": "ap-csp",
+  "name": "AP Computer Science Principles",
+  "shortName": "AP CSP",
+  "description": "ADD YOUR SUBJECT DESCRIPTION HERE",
+  "examDate": "ADD EXAM DATE HERE (e.g. 2026-05-11)",
+  "totalUnits": 5,
+
+  "units": [
+    {
+      "number": 1,
+      "title": "ADD UNIT 1 TITLE HERE",
+      "topicCount": 0,
+      "file": "units/unit-1.json"
+    },
+    {
+      "number": 2,
+      "title": "ADD UNIT 2 TITLE HERE",
+      "topicCount": 0,
+      "file": "units/unit-2.json"
+    },
+    {
+      "number": 3,
+      "title": "ADD UNIT 3 TITLE HERE",
+      "topicCount": 0,
+      "file": "units/unit-3.json"
+    },
+    {
+      "number": 4,
+      "title": "ADD UNIT 4 TITLE HERE",
+      "topicCount": 0,
+      "file": "units/unit-4.json"
+    },
+    {
+      "number": 5,
+      "title": "ADD UNIT 5 TITLE HERE",
+      "topicCount": 0,
+      "file": "units/unit-5.json"
+    }
+  ]
+}

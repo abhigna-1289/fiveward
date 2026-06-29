@@ -1,0 +1,404 @@
+/* =============================================================
+   FIVEWARD — Auth Page Styles
+   Covers: page background, logo, card, toggle, input fields,
+   submit button, Google button, terms line, switch link,
+   and the Terms of Service modal.
+   ============================================================= */
+
+/* === Page Layout ============================================ */
+
+.auth-body {
+  background-color: var(--color-bg-secondary);
+  min-height: 100vh;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  gap: var(--space-6);
+}
+
+/* === Logo (stacked above the card) ========================= */
+
+.auth-logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  margin-bottom: var(--space-2);
+}
+
+.auth-logo-link img {
+  display: block;
+}
+
+/* === Card ================================================== */
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-8) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* === Pill Toggle =========================================== */
+
+.auth-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.auth-toggle__btn {
+  padding: 0.7rem 1rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  border-bottom: 2.5px solid transparent;
+}
+
+/* Thin vertical divider between the two tabs */
+.auth-toggle__btn + .auth-toggle__btn {
+  border-left: 1.5px solid var(--color-border);
+}
+
+/* Active tab: green tint background, green text, green underline */
+.auth-toggle__btn.active {
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  border-bottom-color: var(--color-primary);
+}
+
+/* === Form Panel ============================================ */
+
+.auth-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* hidden class toggled by JS */
+.auth-panel[hidden] {
+  display: none;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* === Input Fields ========================================== */
+
+/* Each field is a bordered row containing: icon | input | (optional eye button) */
+.auth-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-4);
+  background: var(--color-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.auth-field:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 122, 79, 0.12);
+}
+
+/* Left icon */
+.auth-field__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-gray-400);
+  width: 18px;
+  height: 18px;
+}
+.auth-field__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* The actual <input> — no individual border, the container handles it */
+.auth-field__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: transparent;
+  padding: 0.8rem 0;
+}
+.auth-field__input::placeholder {
+  color: var(--color-gray-300);
+}
+
+/* Eye toggle button (password fields only) */
+.auth-field__eye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray-400);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+.auth-field__eye:hover {
+  color: var(--color-primary);
+}
+.auth-field__eye svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* === Inline Error / Success Message ======================== */
+
+.auth-message {
+  font-size: var(--text-sm);
+  min-height: 1.25rem; /* reserves space so layout doesn't jump */
+  margin-top: calc(-1 * var(--space-2)); /* tuck it closer to the fields */
+}
+.auth-message:empty {
+  display: none;
+}
+.auth-message--error   { color: var(--color-error); }
+.auth-message--success { color: var(--color-success); }
+
+/* === Submit Button ========================================= */
+
+.auth-submit {
+  width: 100%;
+  margin-top: var(--space-1);
+  padding: 0.875rem;
+  font-size: var(--text-base);
+}
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* === Divider ("or") ======================================== */
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+.auth-divider span {
+  flex-shrink: 0;
+}
+
+/* === Google Sign In Button ================================= */
+
+.auth-google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0.8rem var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.auth-google-btn:hover {
+  border-color: var(--color-gray-400);
+  background: var(--color-gray-50);
+}
+.auth-google-btn svg {
+  flex-shrink: 0;
+}
+
+/* === Terms Line ============================================ */
+
+.auth-terms {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: var(--leading-relaxed);
+}
+
+.auth-terms-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: inherit;
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+.auth-terms-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* === Below-Card Switch Link ================================ */
+
+.auth-switch {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.auth-switch-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.auth-switch-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   TERMS OF SERVICE MODAL
+   ============================================================ */
+
+.terms-modal {
+  display: none; /* shown by adding class 'open' via JS */
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+.terms-modal.open {
+  display: flex;
+}
+
+/* Dark semi-transparent backdrop */
+.terms-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+/* The white scrollable box */
+.terms-modal__box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sticky header inside the modal */
+.terms-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.terms-modal__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.terms-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.terms-modal__close:hover {
+  color: var(--color-text);
+  background: var(--color-gray-100);
+}
+
+/* Scrollable body */
+.terms-modal__body {
+  overflow-y: auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.terms-modal__last-updated {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.terms-modal__body h3 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-top: var(--space-2);
+}
+
+.terms-modal__body p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}

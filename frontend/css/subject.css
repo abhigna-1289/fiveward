@@ -1,0 +1,416 @@
+/* =============================================================
+   FIVEWARD — Subject Page Styles
+   Subject dashboard: header card, tabs, unit list.
+   ============================================================= */
+
+/* === Page Background ======================================== */
+
+.subject-body {
+  background-color: var(--color-bg-secondary);
+}
+
+/* === Main Layout ============================================ */
+
+.subject-page {
+  min-height: calc(100vh - var(--navbar-height));
+  padding: var(--space-8) 0 var(--space-24);
+}
+
+.subject-layout {
+  display: grid;
+  grid-template-columns: 1fr 272px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* === Breadcrumb home icon ==================================== */
+
+.breadcrumb__home {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.breadcrumb__home:hover { color: var(--color-primary); }
+
+/* === Subject Header Card ==================================== */
+
+.subject-header-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+/* Left column: icon + name + description + progress */
+.subject-header-card__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.subject-header-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+/* Code icon circle */
+.subject-header-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.subject-header-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.subject-header-card__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.subject-header-card__subtitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.subject-header-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-top: var(--space-1);
+  max-width: 480px;
+}
+
+/* Overall progress bar */
+.subject-header-card__progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.subject-header-card__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subject-header-card__progress-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.subject-header-card__progress-pct {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.subject-header-card__progress-bar {
+  height: 8px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.subject-header-card__progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 600ms ease;
+}
+
+/* Vertical divider between left and right */
+.subject-header-card__divider {
+  width: 1px;
+  background: var(--color-border);
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Right column: stat boxes */
+.subject-header-card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subject-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-primary-bg);
+  border: 1px solid rgba(45, 122, 79, 0.15);
+  border-radius: var(--radius-lg);
+  min-width: 110px;
+  text-align: center;
+}
+
+.subject-stat-box__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subject-stat-box__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.subject-stat-box__value {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-dark);
+  line-height: 1;
+}
+
+.subject-stat-box__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+/* === Tab Strip ============================================== */
+
+.subject-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-5);
+}
+
+.subject-tab {
+  padding: 0.625rem var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.subject-tab:hover {
+  color: var(--color-text);
+}
+
+.subject-tab.active {
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+  border-bottom-color: var(--color-primary);
+}
+
+/* === Tab Panel ============================================== */
+
+.subject-panel[hidden] { display: none; }
+
+.subject-panel-placeholder {
+  padding: var(--space-12);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* === Unit List ============================================== */
+
+.unit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* === Unit Card ============================================== */
+
+.unit-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.unit-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-gray-300);
+}
+
+/* Unit 1 — featured / recommended */
+.unit-card--featured {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.unit-card--featured:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-hover);
+}
+
+/* Unit number badge */
+.unit-card__number {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.unit-card--featured .unit-card__number {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Unit info: name + topic count */
+.unit-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.unit-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+}
+
+.unit-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+.unit-card__meta svg {
+  flex-shrink: 0;
+  color: var(--color-gray-400);
+}
+
+/* Progress section */
+.unit-card__progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.unit-card__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.unit-card__progress-pct {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+}
+
+.unit-card__progress-bar {
+  height: 5px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.unit-card--featured .unit-card__progress-bar {
+  background: rgba(45, 122, 79, 0.15);
+}
+
+.unit-card__progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 600ms ease;
+}
+
+/* Study button */
+.unit-card__btn {
+  flex-shrink: 0;
+}
+
+/* === Responsive ============================================= */
+
+@media (max-width: 1024px) {
+  .subject-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .subject-header-card {
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-5);
+  }
+  .subject-header-card__divider {
+    width: auto;
+    height: 1px;
+    align-self: auto;
+  }
+  .subject-header-card__stats {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .unit-card {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .unit-card__progress {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .unit-card__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

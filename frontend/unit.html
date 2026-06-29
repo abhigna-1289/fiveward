@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 1: Creative Development — AP CSP — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/timer-card.css" />
+  <link rel="stylesheet" href="css/unit.css" />
+</head>
+<body class="unit-body">
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="dashboard.html" class="navbar__logo">
+        <img src="assets/images/logo-icon.png" width="34" height="34" alt="" aria-hidden="true" />
+        <img src="assets/images/logo-wordmark.png" height="20" alt="fiveward" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link">Home</a></li>
+        <li><a href="explore.html"   class="nav-link">Explore</a></li>
+        <li><a href="progress.html"  class="nav-link">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link">Settings</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="navbar__timer" id="navbarTimer">
+          <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="8" r="5"/><path d="M7 5.5V8l1.5 1.5"/><path d="M5 1h4"/>
+          </svg>
+          <span id="navbarTimerDisplay">00:00</span>
+        </div>
+        <div class="navbar__user" id="userMenuTrigger" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+          <svg class="navbar__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="navbar__dropdown" id="userDropdown" hidden role="menu">
+          <div class="navbar__dropdown-user">
+            <span class="navbar__dropdown-name" id="dropdownName">Account</span>
+            <span class="navbar__dropdown-email" id="dropdownEmail"></span>
+          </div>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="settings.html" class="navbar__dropdown-item" role="menuitem">Settings</a>
+          <button class="navbar__dropdown-item navbar__dropdown-item--danger" id="signOutBtn" type="button" role="menuitem">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =====================================================
+       BREADCRUMB
+       ===================================================== -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="dashboard.html" class="breadcrumb__home" aria-label="Home">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="subject.html?subject=ap-csp" class="breadcrumb__link">AP CSP</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span class="breadcrumb__current" id="breadcrumbUnit">Unit 1</span>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       UNIT PAGE — Three-panel layout
+       ===================================================== -->
+  <div class="unit-page">
+    <div class="container unit-layout">
+
+
+      <!-- ══ LEFT PANEL — Topics ══════════════════════════════ -->
+      <aside class="unit-topics-panel" aria-label="Unit topics">
+
+        <div class="unit-topics-header">
+          <h2 class="unit-topics-title" id="unitPanelTitle">Unit 1</h2>
+          <p class="unit-topics-subtitle" id="unitPanelSubtitle">Creative Development</p>
+          <div class="unit-topics-progress">
+            <span class="unit-topics-progress-label" id="unitProgressLabel">0% Complete</span>
+            <div class="unit-topics-progress-bar">
+              <div class="unit-topics-progress-fill" id="unitProgressFill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="unit-topic-list" id="unitTopicList" role="listbox" aria-label="Select a topic"></ul>
+
+        <div class="unit-topics-footer">
+          <button class="unit-summary-btn" id="unitReviewBtn" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            Unit Review
+          </button>
+        </div>
+
+      </aside>
+
+
+      <!-- ══ MIDDLE PANEL — Study content ═════════════════════ -->
+      <section class="unit-content-panel" aria-label="Study content">
+
+        <div class="unit-content-header">
+          <span class="unit-content-topicnum" id="currentTopicNum">1.1</span>
+          <span class="unit-content-topicname" id="currentTopicName">Collaboration</span>
+        </div>
+
+        <div class="unit-content-tabs" role="tablist" aria-label="Study mode">
+          <button class="unit-content-tab active" id="ctabGuide"      role="tab" aria-selected="true"  aria-controls="cpanelGuide"      type="button">Study Guide</button>
+          <button class="unit-content-tab"        id="ctabFlashcards" role="tab" aria-selected="false" aria-controls="cpanelFlashcards" type="button">Flashcards</button>
+          <button class="unit-content-tab"        id="ctabPractice"   role="tab" aria-selected="false" aria-controls="cpanelPractice"   type="button">Practice Questions</button>
+        </div>
+
+        <!-- Study Guide -->
+        <div class="unit-content-pane" id="cpanelGuide" role="tabpanel" aria-labelledby="ctabGuide">
+          <div class="study-guide-placeholder">
+            <div class="ph-heading"></div>
+            <div class="ph-text"></div>
+            <div class="ph-text ph-text--short"></div>
+            <div class="ph-block"></div>
+            <div class="ph-bullets">
+              <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text"></div></div>
+              <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text ph-text--medium"></div></div>
+              <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text ph-text--short"></div></div>
+            </div>
+            <div class="ph-block ph-block--short"></div>
+          </div>
+          <p class="content-placeholder-note">Study guide content for this topic will appear here once added.</p>
+        </div>
+
+        <!-- Flashcards — loads inside middle panel -->
+        <div class="unit-content-pane unit-content-pane--fc" id="cpanelFlashcards" role="tabpanel" aria-labelledby="ctabFlashcards" hidden>
+
+          <!-- No content yet -->
+          <div class="fc-empty" id="fcEmpty" hidden>
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <p>Flashcards for this topic will appear here once added.</p>
+          </div>
+
+          <!-- Toolbar: Filter pills + Switch Sides — always visible when cards are loaded -->
+          <div class="fc-toolbar" id="fcToolbar" hidden>
+            <div class="fc-filters" id="fcFilters" role="group" aria-label="Card filter">
+              <button class="fc-filter-btn fc-filter-btn--active" data-filter="all" type="button">All Cards</button>
+              <button class="fc-filter-btn" data-filter="still-learning" type="button">Still Learning</button>
+              <button class="fc-filter-btn" data-filter="starred" type="button">Starred</button>
+            </div>
+            <button class="fc-sides-btn" id="fcSwitchSides" type="button" aria-label="Switch card sides">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3L4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
+              <span class="fc-sides-label">Term → Definition</span>
+            </button>
+          </div>
+
+          <!-- Empty filter state -->
+          <div class="fc-filter-empty" id="fcFilterEmpty" hidden>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <p id="fcFilterEmptyMsg"></p>
+            <button class="btn btn--primary" id="fcStudyAllCards" type="button">Study All Cards</button>
+          </div>
+
+          <!-- Active UI -->
+          <div class="fc-ui" id="fcUI" hidden>
+
+            <!-- Arrow · Card · Arrow -->
+            <div class="fc-nav-row">
+              <button class="fc-nav-btn" id="fcPrev" type="button" aria-label="Previous card">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+
+              <div class="fc-card-wrap">
+                <div class="fc-card" id="fcCard" role="button" tabindex="0" aria-label="Flashcard — click to flip">
+                  <div class="fc-card-inner">
+
+                    <div class="fc-card-face fc-card-front">
+                      <div class="fc-card-icons">
+                        <button class="fc-icon-btn fc-star-btn" id="fcStar" type="button" aria-label="Star this card" tabindex="-1">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </button>
+                        <button class="fc-icon-btn fc-zoom-btn" id="fcZoom" type="button" aria-label="Zoom card" tabindex="-1">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                      </div>
+                      <div class="fc-status-badge" id="fcBadgeFront"></div>
+                      <span class="fc-face-label" id="fcFrontLabel">TERM</span>
+                      <p class="fc-face-text" id="fcFrontText"></p>
+                      <span class="fc-flip-cue">Click to flip</span>
+                    </div>
+
+                    <div class="fc-card-face fc-card-back">
+                      <div class="fc-card-icons">
+                        <button class="fc-icon-btn fc-star-btn" id="fcStarBack" type="button" aria-label="Star this card" tabindex="-1">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </button>
+                        <button class="fc-icon-btn fc-zoom-btn" id="fcZoomBack" type="button" aria-label="Zoom card" tabindex="-1">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                      </div>
+                      <div class="fc-status-badge" id="fcBadgeBack"></div>
+                      <span class="fc-face-label" id="fcBackLabel">DEFINITION</span>
+                      <p class="fc-face-text" id="fcBackText"></p>
+                      <span class="fc-flip-cue">Click to flip back</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!-- /fc-card-wrap -->
+
+              <button class="fc-nav-btn" id="fcNext" type="button" aria-label="Next card">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div><!-- /fc-nav-row -->
+
+            <!-- Counter -->
+            <div class="fc-meta">
+              <span class="fc-counter" id="fcCounter">1 of 1</span>
+            </div>
+
+            <!-- Got it / Still Learning -->
+            <div class="fc-actions">
+              <div class="fc-action-wrap">
+                <button class="fc-got-btn" id="fcGotIt" type="button">Got it</button>
+                <span class="fc-key-hint"><kbd>G</kbd></span>
+              </div>
+              <div class="fc-action-wrap">
+                <button class="fc-still-btn" id="fcStillLearning" type="button">Still Learning</button>
+                <span class="fc-key-hint"><kbd>S</kbd></span>
+              </div>
+            </div>
+
+            <!-- Shuffle · Restart · keyboard hint -->
+            <div class="fc-bottom">
+              <button class="fc-bottom-btn" id="fcShuffle" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+                Shuffle
+              </button>
+              <button class="fc-bottom-btn" id="fcRestart" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Restart
+              </button>
+              <span class="fc-kb-hint"><kbd>Space</kbd> flip &nbsp;<kbd>←</kbd> <kbd>→</kbd> navigate &nbsp;<kbd>G</kbd> got it &nbsp;<kbd>S</kbd> still learning</span>
+            </div>
+
+          </div><!-- /fc-ui -->
+
+          <!-- Completion screen -->
+          <div class="fc-complete" id="fcComplete" hidden>
+            <div class="fc-complete-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="fc-complete-title">Session Complete!</h3>
+            <div class="fc-complete-stats">
+              <div class="fc-stat">
+                <span class="fc-stat-value fc-stat-value--green" id="fcStatGotIt">—</span>
+                <span class="fc-stat-label">Got it</span>
+              </div>
+              <div class="fc-stat-divider"></div>
+              <div class="fc-stat">
+                <span class="fc-stat-value fc-stat-value--amber" id="fcStatStill">—</span>
+                <span class="fc-stat-label">Still Learning</span>
+              </div>
+              <div class="fc-stat-divider"></div>
+              <div class="fc-stat">
+                <span class="fc-stat-value fc-stat-value--amber" id="fcStatStarred">—</span>
+                <span class="fc-stat-label">Starred</span>
+              </div>
+              <div class="fc-stat-divider"></div>
+              <div class="fc-stat">
+                <span class="fc-stat-value" id="fcStatNotReviewed">—</span>
+                <span class="fc-stat-label">Not Reviewed</span>
+              </div>
+            </div>
+            <div id="fcPointsEarned" class="session-points-earned" hidden></div>
+            <div class="fc-complete-btns">
+              <button class="btn btn--primary" id="fcRestartAll" type="button">Restart All</button>
+              <button class="btn btn--outline" id="fcStudyStillLearning" type="button">Study Still Learning</button>
+              <button class="btn btn--outline" id="fcStudyStarred" type="button">Study Starred</button>
+            </div>
+          </div><!-- /fc-complete -->
+
+        </div><!-- /cpanelFlashcards -->
+
+        <!-- Practice Questions — loads inside middle panel -->
+        <div class="unit-content-pane unit-content-pane--pq" id="cpanelPractice" role="tabpanel" aria-labelledby="ctabPractice" hidden>
+
+          <!-- 1. Empty state -->
+          <div class="pq-empty" id="pqEmpty" hidden>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <p id="pqEmptyMsg">Practice questions for this topic will appear here once added.</p>
+          </div>
+
+          <!-- 2. Type picker -->
+          <div class="pq-picker" id="pqPicker" hidden>
+            <p class="pq-picker-hint">Choose a question type to begin your practice session.</p>
+            <div class="pq-type-grid">
+              <button class="pq-type-card pq-type-card--active" data-type="mcq" type="button">
+                <div class="pq-type-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                </div>
+                <span class="pq-type-label">Multiple Choice</span>
+                <span class="pq-type-sub">Auto-graded</span>
+                <span class="pq-type-radio" aria-hidden="true"></span>
+                <span class="pq-type-inprogress" hidden>In Progress</span>
+              </button>
+              <button class="pq-type-card" data-type="frq" type="button">
+                <div class="pq-type-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <span class="pq-type-label">Free Response</span>
+                <span class="pq-type-sub">Self-graded</span>
+                <span class="pq-type-radio" aria-hidden="true"></span>
+                <span class="pq-type-inprogress" hidden>In Progress</span>
+              </button>
+              <button class="pq-type-card" data-type="mixed" type="button">
+                <div class="pq-type-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+                </div>
+                <span class="pq-type-label">Mixed</span>
+                <span class="pq-type-sub">All types</span>
+                <span class="pq-type-radio" aria-hidden="true"></span>
+                <span class="pq-type-inprogress" hidden>In Progress</span>
+              </button>
+            </div>
+            <div class="pq-count-row" id="pqCountRow">
+              <label class="pq-count-label" for="pqCountInput">How many questions?</label>
+              <div class="pq-count-field">
+                <input class="pq-count-input" id="pqCountInput" type="number" min="1" value="1" />
+                <span class="pq-count-avail" id="pqCountAvail">of — available</span>
+              </div>
+              <p class="pq-count-msg" id="pqCountMsg"></p>
+            </div>
+            <button class="btn btn--primary pq-start-btn" id="pqStartBtn" type="button">Start Practice</button>
+          </div>
+
+          <!-- 3. Active session -->
+          <div class="pq-session" id="pqSession" hidden>
+            <button class="pq-change-type-btn" id="pqChangeType" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              Change Type
+            </button>
+            <div class="pq-session-header">
+              <div class="pq-prog-bar"><div class="pq-prog-fill" id="pqProgFill" style="width:0%"></div></div>
+              <span class="pq-counter" id="pqCounter">1 of 1</span>
+            </div>
+            <div class="pq-question-area" id="pqQuestionArea"></div>
+            <div class="pq-nav-row">
+              <button class="pq-nav-btn" id="pqPrev" type="button" disabled>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                Previous
+              </button>
+              <span class="pq-kb-hint"><kbd>A</kbd>–<kbd>D</kbd> select &nbsp;<kbd>Enter</kbd> submit &nbsp;<kbd>→</kbd> next</span>
+              <button class="pq-nav-btn pq-nav-btn--primary" id="pqNext" type="button" disabled>
+                Next
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Session complete -->
+          <div class="pq-complete" id="pqComplete" hidden>
+            <button class="pq-change-type-btn" id="pqChangeTypeComplete" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              Change Type
+            </button>
+            <div class="pq-complete-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="pq-complete-title">Session Complete!</h3>
+            <div class="pq-score-block">
+              <span class="pq-score-pct" id="pqScorePct">—</span>
+              <span class="pq-score-label">Score</span>
+            </div>
+            <div class="pq-complete-stats">
+              <div class="pq-cstat"><span class="pq-cstat-val pq-cstat-val--green" id="pqStatCorrect">—</span><span class="pq-cstat-label">Correct</span></div>
+              <div class="pq-cstat-div"></div>
+              <div class="pq-cstat"><span class="pq-cstat-val pq-cstat-val--amber" id="pqStatPartial">—</span><span class="pq-cstat-label">Partial</span></div>
+              <div class="pq-cstat-div"></div>
+              <div class="pq-cstat"><span class="pq-cstat-val pq-cstat-val--red" id="pqStatWrong">—</span><span class="pq-cstat-label">Incorrect</span></div>
+              <div class="pq-cstat-div"></div>
+              <div class="pq-cstat"><span class="pq-cstat-val" id="pqStatTotal">—</span><span class="pq-cstat-label">Total</span></div>
+            </div>
+            <div id="pqPointsEarned" class="session-points-earned" hidden></div>
+            <div class="pq-complete-btns">
+              <button class="btn btn--primary" id="pqRestart" type="button">Restart</button>
+              <button class="btn btn--outline" id="pqReviewWrong" type="button">Review Wrong Answers</button>
+            </div>
+          </div>
+
+        </div><!-- /cpanelPractice -->
+
+      </section>
+
+
+      <!-- ══ RIGHT PANEL ══════════════════════════════════════ -->
+      <aside class="unit-right-panel" aria-label="Study tools">
+
+
+        <!-- ── Study Timer card ─────────────────────────────── -->
+        <div class="unit-right-card timer-card">
+          <div class="unit-right-card__header">
+            <h3 class="unit-right-card__title">Study Timer</h3>
+          </div>
+
+          <!-- Large time display — click to edit when stopped -->
+          <div class="gtimer-display" id="gtimerDisplay" role="button" tabindex="0" aria-label="Click to set timer duration">
+            <span class="gtimer-num" id="gdisH">00</span>
+            <span class="gtimer-colon" id="gdisHsep" aria-hidden="true">:</span>
+            <span class="gtimer-num" id="gdisM">25</span>
+            <span class="gtimer-colon" aria-hidden="true">:</span>
+            <span class="gtimer-num" id="gdisS">00</span>
+          </div>
+
+          <!-- Edit inputs — shown when user clicks the display -->
+          <div class="gtimer-edit" id="gtimerEdit" style="display:none">
+            <input class="gtimer-input" id="ginH" type="number" min="0" max="24" placeholder="00" aria-label="Hours" />
+            <span class="gtimer-colon" aria-hidden="true">:</span>
+            <input class="gtimer-input" id="ginM" type="number" min="0" max="59" placeholder="25" aria-label="Minutes" />
+            <span class="gtimer-colon" aria-hidden="true">:</span>
+            <input class="gtimer-input" id="ginS" type="number" min="0" max="59" placeholder="00" aria-label="Seconds" />
+          </div>
+
+          <p class="gtimer-hint" id="gtimerHint">Click time to edit</p>
+
+          <div class="gtimer-actions">
+            <button class="gtimer-start-btn" id="gtimerStartBtn" type="button">Start</button>
+            <div class="gtimer-running-btns" id="gtimerRunningBtns" style="display:none">
+              <button class="gtimer-pauseresume-btn" id="gtimerPauseResumeBtn" type="button">
+                <svg class="pr-icon pr-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+                <svg class="pr-icon pr-play"  width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span class="pr-label">Pause</span>
+              </button>
+              <button class="gtimer-restart-btn" id="gtimerRestartBtn" type="button" aria-label="Restart timer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /timer-card -->
+
+
+        <!-- ── Quick Actions card ────────────────────────────── -->
+        <div class="unit-right-card">
+          <div class="unit-right-card__header">
+            <h3 class="unit-right-card__title">Quick Actions</h3>
+          </div>
+          <ul class="quick-actions-list">
+            <li>
+              <button class="quick-action-item" id="qaGuide" type="button">
+                <span class="quick-action-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                </span>
+                <span class="quick-action-label">Study Guide</span>
+                <svg class="quick-action-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="quick-action-item" id="qaFlashcards" type="button">
+                <span class="quick-action-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                </span>
+                <span class="quick-action-label">Flashcards</span>
+                <svg class="quick-action-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="quick-action-item" id="qaPractice" type="button">
+                <span class="quick-action-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </span>
+                <span class="quick-action-label">Practice Questions</span>
+                <svg class="quick-action-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- ── Study Mode card ───────────────────────────────── -->
+        <div class="unit-right-card">
+          <div class="unit-right-card__header">
+            <h3 class="unit-right-card__title">Study Mode</h3>
+          </div>
+          <div class="study-mode-options">
+
+            <button class="study-mode-option active" data-mode="unit" type="button">
+              <svg class="study-mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              Unit Exam
+            </button>
+
+            <button class="study-mode-option" data-mode="review" type="button">
+              <svg class="study-mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              Final Exam
+            </button>
+
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div><!-- /unit-page -->
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/logo-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <img src="assets/images/logo-wordmark.png" height="18" alt="fiveward" />
+        </a>
+        <p class="footer__tagline">Free AP prep for every student.</p>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html#about">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/timer-card.js"></script>
+  <script src="js/unit.js"></script>
+</body>
+</html>

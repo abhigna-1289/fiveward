@@ -1,0 +1,41 @@
+{
+  "unitNumber": 1,
+  "title": "ADD UNIT 1 TITLE HERE",
+  "description": "ADD UNIT 1 DESCRIPTION HERE",
+
+  "topics": [
+    {
+      "id": "1.1",
+      "title": "ADD TOPIC 1.1 TITLE HERE",
+      "studyGuide": {
+        "overview": "ADD OVERVIEW PARAGRAPH HERE",
+        "keyTerms": [
+          {
+            "term": "ADD TERM HERE",
+            "definition": "ADD DEFINITION HERE"
+          }
+        ],
+        "keyPoints": [
+          "ADD KEY POINT 1 HERE",
+          "ADD KEY POINT 2 HERE"
+        ],
+        "examples": [
+          {
+            "title": "ADD EXAMPLE TITLE HERE",
+            "description": "ADD EXAMPLE DESCRIPTION HERE"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1.2",
+      "title": "ADD TOPIC 1.2 TITLE HERE",
+      "studyGuide": {
+        "overview": "ADD OVERVIEW PARAGRAPH HERE",
+        "keyTerms": [],
+        "keyPoints": [],
+        "examples": []
+      }
+    }
+  ]
+}

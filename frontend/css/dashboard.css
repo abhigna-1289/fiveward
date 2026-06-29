@@ -1,0 +1,359 @@
+/* =============================================================
+   FIVEWARD — Dashboard Page Styles
+   Home screen after login: welcome header + stats + subject grid.
+   ============================================================= */
+
+/* === Page Background ======================================== */
+
+.dashboard-body {
+  background-color: var(--color-bg-secondary);
+}
+
+/* === Main Layout ============================================ */
+
+.dashboard-page {
+  min-height: calc(100vh - var(--navbar-height));
+  padding: var(--space-10) 0 var(--space-24);
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 272px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* === Welcome Header ========================================= */
+
+.dashboard-header {
+  margin-bottom: var(--space-6);
+}
+
+.dashboard-welcome {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
+}
+
+.dashboard-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+/* === Stats Row ============================================== */
+
+.dashboard-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--color-primary-bg);
+  border: 1px solid rgba(45, 122, 79, 0.15);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.dashboard-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.dashboard-stat__icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(45, 122, 79, 0.12);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.dashboard-stat__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard-stat__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dashboard-stat__value {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+}
+
+.dashboard-stat__label {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  opacity: 0.8;
+}
+
+.dashboard-stat__divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(45, 122, 79, 0.2);
+  flex-shrink: 0;
+  margin: 0 var(--space-5);
+}
+
+/* === Section Title — pill/badge style ======================= */
+
+.dashboard-subjects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-section-title {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: var(--space-4);
+}
+
+/* === Subject Grid =========================================== */
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* === Subject Card — Base ==================================== */
+
+.subject-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* === Subject Card — Active (AP CSP) ========================= */
+
+.subject-card--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.subject-card--active:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* === Subject Card — Locked (Coming Soon) ==================== */
+
+.subject-card--locked {
+  border-color: var(--color-border);
+  opacity: 0.5;
+}
+
+/* === Card Icon ============================================== */
+
+.subject-card__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subject-card__icon--active {
+  background: rgba(45, 122, 79, 0.15);
+  color: var(--color-primary);
+}
+
+.subject-card__icon--locked {
+  background: var(--color-gray-100);
+  color: var(--color-gray-400);
+}
+
+.subject-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* === Card Body ============================================== */
+
+.subject-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.subject-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+}
+
+.subject-card--locked .subject-card__name {
+  color: var(--color-text-muted);
+}
+
+.subject-card__full-name {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-medium);
+}
+
+.subject-card__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  margin-top: 1px;
+}
+
+/* === Progress Bar =========================================== */
+
+.subject-card__progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.subject-card__progress-bar {
+  height: 5px;
+  background: rgba(45, 122, 79, 0.15);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.subject-card__progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 600ms ease;
+}
+
+.subject-card__progress-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-medium);
+}
+
+/* === Study Now Button ======================================= */
+
+.subject-card__btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* === Coming Soon Badge ====================================== */
+
+.subject-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* === Empty State ============================================ */
+
+.dashboard-empty-state[hidden] { display: none; }
+
+.dashboard-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  width: 100%;
+}
+
+.dashboard-empty-state__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.dashboard-empty-state__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.dashboard-empty-state__msg {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 280px;
+}
+
+/* === Responsive ============================================= */
+
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .dashboard-stats {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  .dashboard-stat__divider {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-welcome {
+    font-size: var(--text-2xl);
+  }
+  .dashboard-page {
+    padding: var(--space-8) 0 var(--space-16);
+  }
+  .dashboard-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+}

@@ -1,0 +1,22 @@
+/* =============================================================
+   FIVEWARD — Flashcards Page Styles
+   Large centered card with 3D flip animation.
+   ============================================================= */
+
+/* TODO: Write styles in the next session when flashcards.html is built */
+
+/* Planned layout:
+   .flashcards-page         — full-screen centered flex container
+   .flashcard-scene         — perspective wrapper (needed for 3D flip)
+   .flashcard               — the card element, transitions on .is-flipped
+   .flashcard__front        — front face (question)
+   .flashcard__back         — back face (answer)
+   .flashcard-counter       — "3 / 24" text label
+   .flashcard-dots          — dot progress indicator row
+   .flashcard-dot           — individual dot
+   .flashcard-dot.seen      — seen card dot (filled)
+   .flashcard-dot.current   — current card dot (green, slightly larger)
+   .flashcard-nav           — ← and → arrow buttons on the card sides
+   .flashcard-actions       — "Got it" and "Still Learning" buttons
+   .flashcard-bottom        — Shuffle and Restart buttons
+*/

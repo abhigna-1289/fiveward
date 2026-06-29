@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Subjects — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/explore.css" />
+</head>
+<body class="explore-body">
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+
+      <a href="dashboard.html" class="navbar__logo">
+        <img src="assets/images/logo-icon.png" width="34" height="34" alt="" aria-hidden="true" />
+        <img src="assets/images/logo-wordmark.png" height="20" alt="fiveward" />
+      </a>
+
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link">Home</a></li>
+        <li><a href="explore.html"   class="nav-link active">Explore</a></li>
+        <li><a href="progress.html"  class="nav-link">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link">Settings</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+
+        <!-- Study timer pill -->
+        <div class="navbar__timer" id="navbarTimer">
+          <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="8" r="5"/>
+            <path d="M7 5.5V8l1.5 1.5"/>
+            <path d="M5 1h4"/>
+          </svg>
+          <span id="navbarTimerDisplay">00:00</span>
+        </div>
+
+        <!-- Avatar + chevron -->
+        <div class="navbar__user" id="userMenuTrigger" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+          <svg class="navbar__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+
+        <!-- Dropdown menu -->
+        <div class="navbar__dropdown" id="userDropdown" hidden role="menu">
+          <div class="navbar__dropdown-user">
+            <span class="navbar__dropdown-name" id="dropdownName">Account</span>
+            <span class="navbar__dropdown-email" id="dropdownEmail"></span>
+          </div>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="settings.html" class="navbar__dropdown-item" role="menuitem">Settings</a>
+          <button class="navbar__dropdown-item navbar__dropdown-item--danger" id="signOutBtn" type="button" role="menuitem">
+            Sign Out
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =====================================================
+       BREADCRUMB
+       ===================================================== -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">Explore</span>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <main class="explore-page">
+    <div class="container">
+
+      <header class="explore-header">
+        <h1 class="explore-title">Explore Subjects</h1>
+        <p class="explore-subtitle">Find and enroll in AP courses to start studying.</p>
+      </header>
+
+      <div class="explore-grid">
+
+        <!-- ── AP CSP ─────────────────────────────────────── -->
+        <div class="explore-card" id="exploreCardApCsp">
+          <div class="explore-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="explore-card__body">
+            <h2 class="explore-card__name">AP CSP</h2>
+            <p class="explore-card__full-name">AP Computer Science Principles</p>
+            <p class="explore-card__desc">An introduction to computer science concepts, algorithms, data, and the impact of computing on society.</p>
+            <p class="explore-card__meta">5 units · 35 topics</p>
+          </div>
+          <div class="explore-card__btn-row" id="apCspBtnRow">
+            <button class="explore-card__enroll-btn btn btn--primary" id="enrollApCsp" type="button">Enroll</button>
+          </div>
+        </div>
+
+        <!-- ── AP Human Geography — Coming Soon ───────────── -->
+        <div class="explore-card explore-card--locked" aria-label="AP Human Geography — coming soon">
+          <div class="explore-card__icon explore-card__icon--locked" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <div class="explore-card__body">
+            <h2 class="explore-card__name">AP Human Geography</h2>
+            <p class="explore-card__full-name">AP Human Geography</p>
+            <p class="explore-card__desc">People, places, cultures, and the geographic patterns that shape our world.</p>
+            <p class="explore-card__meta">Coming soon</p>
+          </div>
+          <span class="explore-card__badge">Coming Soon</span>
+        </div>
+
+      </div><!-- /explore-grid -->
+
+    </div>
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/logo-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <img src="assets/images/logo-wordmark.png" height="18" alt="fiveward" />
+        </a>
+        <p class="footer__tagline">Free AP prep for every student.</p>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html#about">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

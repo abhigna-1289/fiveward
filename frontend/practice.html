@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Questions — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/practice.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="dashboard.html" class="navbar__logo">
+        <span class="logo-icon">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="34" height="34" rx="8" fill="#2D7A4F"/>
+            <path d="M11 10H21.5V15H13.5L12.5 19H18C21 19 23 21 23 24C23 27 21 29 17.5 29H11L12 25H17.5C18.9 25 19.5 24.4 19.5 23.5C19.5 22.6 18.9 22 17.5 22H11.5L11 10Z" fill="white"/>
+            <path d="M21 7L27 7L27 13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="21.5" y1="12.5" x2="26.5" y2="7.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo-text"><span class="logo-five">five</span><span class="logo-ward">ward</span></span>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link">Home</a></li>
+        <li><a href="explore.html"   class="nav-link">Explore</a></li>
+        <li><a href="subject.html"   class="nav-link active">AP CSP</a></li>
+        <li><a href="progress.html"  class="nav-link">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link">Settings</a></li>
+      </ul>
+      <div class="navbar__timer" id="navbarTimer">
+        <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="7" cy="8" r="5"/><path d="M7 5.5V8l1.5 1.5"/><path d="M5 1h4"/>
+        </svg>
+        <span id="navbarTimerDisplay">00:00</span>
+      </div>
+      <div class="navbar__actions">
+        <div class="navbar__user">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="subject.html">AP CSP</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="unit.html" id="breadcrumbUnit">Unit 1</a>
+        <span class="breadcrumb__sep">›</span>
+        <span class="breadcrumb__current">Practice Questions</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PRACTICE QUESTIONS SCREEN
+       Step 1 — Mode picker (shown first):
+         Three cards: Multiple Choice Only | Free Response Only | Mixed
+       Step 2 — Questions (after mode is chosen):
+         Multiple Choice: A/B/C/D buttons, Submit, green = correct, red = wrong, explanation shown
+         Free Response: textarea input, Submit, then sample answer + rubric revealed,
+           self-grade buttons: Full Credit (green), Partial Credit (yellow), No Credit (red)
+       ===================================================== -->
+
+  <!-- TODO: Build this screen in the next session -->
+
+  <main class="practice-page">
+    <p style="text-align:center; color: var(--color-text-muted); padding: 4rem 1rem;">
+      Practice questions screen — coming next session.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <svg width="28" height="28" viewBox="0 0 34 34" fill="none"><rect width="34" height="34" rx="8" fill="#2D7A4F"/><path d="M11 10H21.5V15H13.5L12.5 19H18C21 19 23 21 23 24C23 27 21 29 17.5 29H11L12 25H17.5C18.9 25 19.5 24.4 19.5 23.5C19.5 22.6 18.9 22 17.5 22H11.5L11 10Z" fill="white"/></svg>
+          <span class="logo-text"><span class="logo-five">five</span><span class="logo-ward">ward</span></span>
+        </a>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links">
+        <a href="#">About</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Contact</a>
+      </nav>
+      <div class="footer__social"></div>
+    </div>
+  </footer>
+
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/practice.js"></script>
+</body>
+</html>

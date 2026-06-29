@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\(\"C:\\\\Users\\\\siri2\\\\OneDrive\\\\Desktop\\\\fiveward\\\\\", \"\"\\) } | Sort-Object)"
+    ]
+  }
+}

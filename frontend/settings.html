@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/settings.css" />
+</head>
+<body class="settings-body">
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="dashboard.html" class="navbar__logo">
+        <img src="assets/images/logo-icon.png" width="34" height="34" alt="" aria-hidden="true" />
+        <img src="assets/images/logo-wordmark.png" height="20" alt="fiveward" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link">Home</a></li>
+        <li><a href="explore.html"   class="nav-link">Explore</a></li>
+        <li><a href="progress.html"  class="nav-link">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link active">Settings</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="navbar__timer" id="navbarTimer">
+          <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="8" r="5"/><path d="M7 5.5V8l1.5 1.5"/><path d="M5 1h4"/>
+          </svg>
+          <span id="navbarTimerDisplay">00:00</span>
+        </div>
+        <div class="navbar__user" id="userMenuTrigger" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+          <svg class="navbar__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="navbar__dropdown" id="userDropdown" hidden role="menu">
+          <div class="navbar__dropdown-user">
+            <span class="navbar__dropdown-name" id="dropdownName">Account</span>
+            <span class="navbar__dropdown-email" id="dropdownEmail"></span>
+          </div>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="settings.html" class="navbar__dropdown-item" role="menuitem">Settings</a>
+          <button class="navbar__dropdown-item navbar__dropdown-item--danger" id="signOutBtn" type="button" role="menuitem">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       BREADCRUMB
+       ===================================================== -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="dashboard.html" class="breadcrumb__home" aria-label="Home">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="dashboard.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span class="breadcrumb__current">Settings</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+  <main class="settings-page">
+    <div class="container">
+      <div class="settings-layout">
+
+        <!-- ── Sidebar nav ──────────────────────────── -->
+        <nav class="settings-sidebar" aria-label="Settings sections">
+          <button class="settings-nav-item active" data-section="account" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Account
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="settings-nav-item" data-section="appearance" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Appearance
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="settings-nav-item" data-section="notifications" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            Notifications
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="settings-nav-item" data-section="privacy" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Privacy
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="settings-nav-item" data-section="leaderboard" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+            Leaderboard
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="settings-nav-item settings-nav-item--danger" data-section="danger" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Danger Zone
+            <svg class="settings-nav-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </nav>
+
+        <!-- ── Content panel ────────────────────────── -->
+        <div class="settings-content">
+
+          <!-- Account -->
+          <section class="settings-section" id="sectionAccount">
+            <h2 class="settings-section__title">Account Settings</h2>
+
+            <!-- Profile card -->
+            <div class="settings-card">
+              <div class="settings-card-heading">Profile</div>
+              <div class="settings-row">
+                <div class="st-profile-row">
+                  <div class="st-avatar" id="stAvatarEl">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="st-profile-info">
+                    <span class="st-profile-name" id="settingsName">—</span>
+                    <span class="st-profile-email" id="settingsEmail">—</span>
+                  </div>
+                </div>
+                <button class="btn btn--outline st-icon-btn" type="button" id="stEditProfileBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                  Edit Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Password card -->
+            <div class="settings-card">
+              <div class="settings-card-heading">Password</div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Password</span>
+                  <span class="settings-row__desc">Update your account password to keep your account secure.</span>
+                </div>
+                <button class="btn btn--outline st-icon-btn" type="button" id="stChangePasswordBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  Change Password
+                </button>
+              </div>
+            </div>
+
+            <!-- Connected Accounts card -->
+            <div class="settings-card" id="stConnectedAccountsCard" hidden>
+              <div class="settings-card-heading">Connected Accounts</div>
+              <div class="settings-row">
+                <div class="st-connected-account">
+                  <svg class="st-google-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                  </svg>
+                  <div class="st-connected-info">
+                    <span class="settings-row__name">Google</span>
+                    <span class="settings-row__desc" id="settingsGoogleEmail">Connected via Google</span>
+                  </div>
+                </div>
+                <div class="st-connected-actions">
+                  <span class="st-connected-badge">✓ Connected</span>
+                  <button class="btn btn--outline" type="button" id="stUnlinkGoogleBtn">Unlink</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sign out card -->
+            <div class="settings-card settings-card--outline">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Sign Out</span>
+                  <span class="settings-row__desc">Sign out of your fiveward account on this device.</span>
+                </div>
+                <button class="btn btn--outline" id="settingsSignOut" type="button">Sign Out</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Appearance -->
+          <section class="settings-section" id="sectionAppearance" hidden>
+            <h2 class="settings-section__title">Appearance</h2>
+            <p class="settings-section__desc">Customize how fiveward looks and feels.</p>
+
+            <div class="settings-card">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Dark Mode</span>
+                  <span class="settings-row__desc">Switch fiveward to a dark color scheme. Applies to all pages.</span>
+                </div>
+                <label class="st-toggle" aria-label="Dark mode">
+                  <input type="checkbox" id="stDarkMode" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Font Size</span>
+                  <span class="settings-row__desc">Adjust the text size across fiveward.</span>
+                </div>
+                <div class="st-font-picker" role="group" aria-label="Font size">
+                  <label class="st-font-pill">
+                    <input type="radio" name="fontSize" value="small" />
+                    <span>Small</span>
+                  </label>
+                  <label class="st-font-pill">
+                    <input type="radio" name="fontSize" value="medium" />
+                    <span>Medium</span>
+                  </label>
+                  <label class="st-font-pill">
+                    <input type="radio" name="fontSize" value="large" />
+                    <span>Large</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Notifications -->
+          <section class="settings-section" id="sectionNotifications" hidden>
+            <h2 class="settings-section__title">Notifications</h2>
+            <p class="settings-section__desc">Control how fiveward sends you notifications.</p>
+
+            <div class="settings-card">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Email Notifications</span>
+                  <span class="settings-row__desc">Receive study tips, progress reports, and platform updates via email.</span>
+                </div>
+                <label class="st-toggle" aria-label="Email notifications">
+                  <input type="checkbox" id="stEmailNotif" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Daily Study Reminder</span>
+                  <span class="settings-row__desc">Get a daily reminder to study at the time you choose.</span>
+                </div>
+                <div class="st-reminder-row">
+                  <label class="st-toggle" aria-label="Daily study reminder">
+                    <input type="checkbox" id="stStudyReminder" />
+                    <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                  </label>
+                  <input type="time" class="st-time-input" id="stReminderTime" value="18:00" aria-label="Reminder time" />
+                </div>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Browser Notifications</span>
+                  <span class="settings-row__desc">Show desktop push notifications while studying or when you earn points.</span>
+                </div>
+                <label class="st-toggle" aria-label="Browser notifications">
+                  <input type="checkbox" id="stBrowserNotif" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Privacy -->
+          <section class="settings-section" id="sectionPrivacy" hidden>
+            <h2 class="settings-section__title">Privacy</h2>
+            <p class="settings-section__desc">Manage your data and visibility settings.</p>
+
+            <div class="settings-card">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Analytics &amp; Data Collection</span>
+                  <span class="settings-row__desc">Allow fiveward to collect anonymous usage data to improve the platform for all students.</span>
+                </div>
+                <label class="st-toggle" aria-label="Analytics and data collection">
+                  <input type="checkbox" id="stDataCollection" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Account Visibility</span>
+                  <span class="settings-row__desc">When on, your profile can appear in public directories. Turn off to make your account private.</span>
+                </div>
+                <label class="st-toggle" aria-label="Account visibility">
+                  <input type="checkbox" id="stAccountVisibility" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Leaderboard -->
+          <section class="settings-section" id="sectionLeaderboard" hidden>
+            <h2 class="settings-section__title">Leaderboard Settings</h2>
+            <p class="settings-section__desc">Control how you interact with the fiveward leaderboard.</p>
+
+            <div class="settings-card">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Show leaderboard on my progress page</span>
+                  <span class="settings-row__desc">When on, the Leaderboard card appears on your Progress page. Turn off to hide it completely.</span>
+                </div>
+                <label class="st-toggle" aria-label="Show leaderboard on progress page">
+                  <input type="checkbox" id="stLbShowOnPage" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Show me on the leaderboard</span>
+                  <span class="settings-row__desc">When on, your username and score are visible to other users. Turn off to become anonymous — you can still see the leaderboard yourself.</span>
+                </div>
+                <label class="st-toggle" aria-label="Show me on the leaderboard">
+                  <input type="checkbox" id="stLbShowMe" />
+                  <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+                </label>
+              </div>
+              <div class="settings-row-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Username Display</span>
+                  <span class="settings-row__desc">Choose how your name appears on the leaderboard.</span>
+                </div>
+                <select class="st-select" id="stUsernameDisplay" aria-label="Username display preference">
+                  <option value="full">Full Name</option>
+                  <option value="first">First Name Only</option>
+                  <option value="anon">Anonymous</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Danger Zone -->
+          <section class="settings-section" id="sectionDanger" hidden>
+            <h2 class="settings-section__title">Danger Zone</h2>
+            <p class="settings-section__desc">These actions are permanent and cannot be undone.</p>
+
+            <div class="settings-card settings-card--danger">
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Clear All Progress</span>
+                  <span class="settings-row__desc">Clears all topic checkboxes, flashcard data, practice scores, points, and streaks. Your account is kept.</span>
+                </div>
+                <button class="btn btn--danger" id="settingsClearProgress" type="button">Clear Progress</button>
+              </div>
+              <div class="settings-row-divider st-danger-divider"></div>
+              <div class="settings-row">
+                <div class="settings-row__label">
+                  <span class="settings-row__name">Delete Account</span>
+                  <span class="settings-row__desc">Permanently deletes your fiveward account and all associated data. This action cannot be undone.</span>
+                </div>
+                <button class="btn btn--danger" id="settingsDeleteAccount" type="button">Delete Account</button>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /settings-content -->
+      </div><!-- /settings-layout -->
+    </div><!-- /container -->
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/logo-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <img src="assets/images/logo-wordmark.png" height="18" alt="fiveward" />
+        </a>
+        <p class="footer__tagline">Free AP prep for every student.</p>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confirm dialog -->
+  <div id="stConfirmDialog" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stConfirmTitle">
+    <div class="st-dialog-box">
+      <h3 class="st-dialog-title" id="stConfirmTitle">Are you sure?</h3>
+      <p class="st-dialog-msg" id="stConfirmMsg"></p>
+      <div class="st-dialog-btns">
+        <button class="btn btn--danger"  id="stConfirmOk"     type="button">Confirm</button>
+        <button class="btn btn--outline" id="stConfirmCancel" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

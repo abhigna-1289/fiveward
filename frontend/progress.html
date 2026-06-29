@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress — fiveward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/progress.css" />
+</head>
+<body class="progress-body">
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="dashboard.html" class="navbar__logo">
+        <img src="assets/images/logo-icon.png" width="34" height="34" alt="" aria-hidden="true" />
+        <img src="assets/images/logo-wordmark.png" height="20" alt="fiveward" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="nav-link">Home</a></li>
+        <li><a href="explore.html"   class="nav-link">Explore</a></li>
+        <li><a href="progress.html"  class="nav-link active">Progress</a></li>
+        <li><a href="settings.html"  class="nav-link">Settings</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="navbar__timer" id="navbarTimer">
+          <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="8" r="5"/><path d="M7 5.5V8l1.5 1.5"/><path d="M5 1h4"/>
+          </svg>
+          <span id="navbarTimerDisplay">00:00</span>
+        </div>
+        <div class="navbar__user" id="userMenuTrigger" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar__avatar" id="userAvatar">?</div>
+          <svg class="navbar__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="navbar__dropdown" id="userDropdown" hidden role="menu">
+          <div class="navbar__dropdown-user">
+            <span class="navbar__dropdown-name" id="dropdownName">Account</span>
+            <span class="navbar__dropdown-email" id="dropdownEmail"></span>
+          </div>
+          <div class="navbar__dropdown-divider"></div>
+          <a href="settings.html" class="navbar__dropdown-item" role="menuitem">Settings</a>
+          <button class="navbar__dropdown-item navbar__dropdown-item--danger" id="signOutBtn" type="button" role="menuitem">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       BREADCRUMB
+       ===================================================== -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="dashboard.html" class="breadcrumb__home" aria-label="Home">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span class="breadcrumb__current">Progress</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+  <main class="progress-page">
+    <div class="container">
+
+      <!-- Subject header -->
+      <div class="pg-subject-header">
+        <h1 class="pg-subject-name">AP Computer Science Principles</h1>
+        <span class="pg-coming-soon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          More subjects coming soon
+        </span>
+      </div>
+
+      <!-- Not enrolled empty state -->
+      <div id="pgNotEnrolled" hidden>
+        <div class="pg-not-enrolled">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          <h2 class="pg-not-enrolled__title">No subjects enrolled</h2>
+          <p class="pg-not-enrolled__msg">You haven't enrolled in any subjects yet. Head to Explore to get started.</p>
+          <a href="explore.html" class="btn btn--primary">Browse Subjects</a>
+        </div>
+      </div>
+
+      <!-- ── Stat cards ──────────────────────────────────── -->
+      <div class="pg-stats-grid" id="pgStatsGrid">
+
+        <!-- Overall Completion -->
+        <div class="pg-stat-card">
+          <span class="pg-stat-label">Overall Completion</span>
+          <div class="pg-ring-wrap">
+            <svg class="pg-ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="pg-ring__track" cx="60" cy="60" r="52"/>
+              <circle class="pg-ring__fill"  cx="60" cy="60" r="52" id="pgRingFill"/>
+            </svg>
+            <span class="pg-ring__pct" id="pgCompletionPct">0%</span>
+          </div>
+          <div class="pg-stat-bar"><div class="pg-stat-bar__fill" id="pgCompletionBar" style="width:0%"></div></div>
+        </div>
+
+        <!-- Total Study Time -->
+        <div class="pg-stat-card">
+          <span class="pg-stat-label">Total Study Time</span>
+          <div class="pg-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <p class="pg-stat-value">
+            <span class="pg-stat-num" id="pgStudyH">0</span><span class="pg-stat-unit">h</span>&thinsp;<span class="pg-stat-num" id="pgStudyM">0</span><span class="pg-stat-unit">m</span>
+          </p>
+          <div class="pg-stat-bar"><div class="pg-stat-bar__fill" id="pgStudyBar" style="width:0%"></div></div>
+        </div>
+
+        <!-- Current Streak -->
+        <div class="pg-stat-card">
+          <span class="pg-stat-label">Current Streak</span>
+          <div class="pg-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z"/></svg>
+          </div>
+          <p class="pg-stat-value">
+            <span class="pg-stat-num" id="pgStreakDays">0</span><span class="pg-stat-unit">days</span>
+          </p>
+          <div class="pg-stat-bar"><div class="pg-stat-bar__fill" id="pgStreakBar" style="width:0%"></div></div>
+        </div>
+
+        <!-- Average Score -->
+        <div class="pg-stat-card">
+          <span class="pg-stat-label">Average Score</span>
+          <div class="pg-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <p class="pg-stat-value">
+            <span class="pg-stat-num" id="pgAvgScore">—</span><span class="pg-stat-unit" id="pgAvgUnit"></span>
+          </p>
+          <div class="pg-stat-bar"><div class="pg-stat-bar__fill" id="pgAvgBar" style="width:0%"></div></div>
+        </div>
+
+        <!-- Total Points -->
+        <div class="pg-stat-card">
+          <span class="pg-stat-label">Total Points</span>
+          <div class="pg-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="pg-stat-value">
+            <span class="pg-stat-num" id="pgTotalPoints">0</span><span class="pg-stat-unit">pts</span>
+          </p>
+          <div class="pg-stat-bar"><div class="pg-stat-bar__fill" id="pgPointsBar" style="width:0%"></div></div>
+        </div>
+
+      </div><!-- /pg-stats-grid -->
+
+      <!-- ── Two-column layout ───────────────────────────── -->
+      <div class="pg-layout" id="pgLayout">
+
+        <!-- LEFT: Units Progress -->
+        <section class="pg-units-panel">
+          <h2 class="pg-panel-title">Units Progress</h2>
+          <div id="pgUnitsList" class="pg-units-list">
+            <!-- rendered by progress.js -->
+          </div>
+          <div class="pg-legend">
+            <span class="pg-legend-item"><span class="pg-legend-dot pg-legend-dot--complete"></span>Completed</span>
+            <span class="pg-legend-item"><span class="pg-legend-dot pg-legend-dot--inprogress"></span>In Progress</span>
+            <span class="pg-legend-item"><span class="pg-legend-dot pg-legend-dot--notstarted"></span>Not Started</span>
+          </div>
+        </section>
+
+        <!-- RIGHT: three stacked cards -->
+        <aside class="pg-right-col">
+
+          <!-- Weak Areas -->
+          <div class="pg-card">
+            <div class="pg-card__hd">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <h3 class="pg-card__title">Weak Areas</h3>
+            </div>
+            <div id="pgWeakList" class="pg-weak-list"></div>
+            <button class="pg-card__footer-link" type="button">
+              View All Weak Areas
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="pg-card">
+            <div class="pg-card__hd">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <h3 class="pg-card__title">Recent Activity</h3>
+            </div>
+            <div id="pgActivityList" class="pg-activity-list"></div>
+            <button class="pg-card__footer-link" type="button">
+              View All Activity
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <!-- Leaderboard (hidden if disabled in Settings) -->
+          <div class="pg-card" id="pgLeaderboardCard">
+            <div class="pg-card__hd">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+              <h3 class="pg-card__title">Leaderboard</h3>
+            </div>
+            <div id="pgLeaderboard"></div>
+            <button class="pg-card__footer-link" id="pgLbFooter" type="button">
+              View Full Leaderboard
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <p class="pg-lb-settings-note">Manage your leaderboard privacy in <a href="settings.html#leaderboard">Settings</a></p>
+          </div>
+
+        </aside>
+      </div><!-- /pg-layout -->
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/logo-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <img src="assets/images/logo-wordmark.png" height="18" alt="fiveward" />
+        </a>
+        <p class="footer__tagline">Free AP prep for every student.</p>
+        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>

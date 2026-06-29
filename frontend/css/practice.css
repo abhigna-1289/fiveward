@@ -1,0 +1,27 @@
+/* =============================================================
+   FIVEWARD — Practice Questions Page Styles
+   Mode picker screen + question screen.
+   ============================================================= */
+
+/* TODO: Write styles in the next session when practice.html is built */
+
+/* Planned layout:
+   .practice-page           — main container
+
+   MODE PICKER:
+   .mode-picker             — three-card grid shown before questions start
+   .mode-card               — individual mode card (MC / FRQ / Mixed)
+   .mode-card.selected      — highlighted selected state
+
+   QUESTION SCREEN:
+   .question-header         — question number + progress bar
+   .question-body           — question stem text
+   .mc-options              — A/B/C/D button grid
+   .mc-option               — individual option button
+   .mc-option.correct       — green highlight when correct
+   .mc-option.wrong         — red highlight when wrong
+   .mc-explanation          — explanation block shown after answer
+   .frq-textarea            — free response text input
+   .frq-sample-answer       — sample answer + rubric revealed after submit
+   .frq-grade-btns          — Full Credit / Partial Credit / No Credit buttons
+*/
