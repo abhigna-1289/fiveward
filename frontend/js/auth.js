@@ -223,6 +223,13 @@ if (_isAuthPage) {
         signUpData = await signUp(email, password, name);
       } catch (err) {
         console.error('[fiveward] signUp failed | status:', err.status, '| code:', err.code, '| message:', err.message, '| full:', err);
+        if (err.message && err.message.toLowerCase().includes('already registered')) {
+          setMessage(signupMsg, 'Looks like you already have an account! Redirecting you to login...', 'success');
+          signupSubmit.textContent = 'Create Account';
+          signupSubmit.disabled = false;
+          setTimeout(showLogin, 2000);
+          return;
+        }
         const raw = err.message;
         const msg = raw && raw !== '{}' ? raw : 'Could not create account — please try again or contact support.';
         setMessage(signupMsg, msg, 'error');
