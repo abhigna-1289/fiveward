@@ -35,7 +35,7 @@ async function signUp(email, password, fullName) {
     password,
     options: {
       data: { full_name: fullName },
-      emailRedirectTo: 'http://localhost:8000/frontend/auth.html',
+      emailRedirectTo: window.location.origin + '/frontend/auth.html',
     }
   });
 
@@ -61,7 +61,7 @@ async function logIn(email, password) {
 async function signInWithGoogle() {
   const { data, error } = await window.sb.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: 'http://localhost:8000/frontend/dashboard.html' }
+    options: { redirectTo: window.location.origin + '/frontend/dashboard.html' }
   });
   if (error) throw error;
   return data;
@@ -235,7 +235,7 @@ if (_isAuthPage) {
       const userId = signUpData?.user?.id;
       if (userId) {
         try {
-          const res = await fetch('http://localhost:5000/api/auth/confirm-email', {
+          const res = await fetch('https://fiveward.onrender.com/api/auth/confirm-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_id: userId }),
