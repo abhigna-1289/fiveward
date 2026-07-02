@@ -162,6 +162,9 @@ if (_isAuthPage) {
     signupTab.addEventListener('click', showSignup);
     loginTab.addEventListener('click', showLogin);
 
+    // Show login tab if URL hash is #login
+    if (window.location.hash === '#login') showLogin();
+
     // Below-card link mirrors the tab toggle
     authSwitchBtn.addEventListener('click', () => {
       if (loginPanel.hasAttribute('hidden')) showLogin();
