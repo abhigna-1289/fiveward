@@ -228,4 +228,11 @@
     gUpdateHint();
   });
 
+  // Apply a new default duration instantly (fired by subject.js settings tab)
+  document.addEventListener('fw:durationChange', (e) => {
+    if (gCardState !== 'stopped') return;
+    gSetSeconds = (parseInt(e.detail.minutes) || 30) * 60;
+    gUpdateDisplay(gSetSeconds);
+  });
+
 })();

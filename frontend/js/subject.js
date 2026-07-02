@@ -262,6 +262,12 @@
         group.querySelectorAll('.sp-pill').forEach(p => p.classList.remove('sp-pill--active'));
         pill.classList.add('sp-pill--active');
         localStorage.setItem(storageKey, pill.dataset.value);
+        window.fwShowToast?.('Saved!');
+        if (storageKey === 'fw_default_duration') {
+          document.dispatchEvent(new CustomEvent('fw:durationChange', {
+            detail: { minutes: parseInt(pill.dataset.value) }
+          }));
+        }
       });
     });
   }
@@ -275,6 +281,7 @@
       autoToggle.checked = localStorage.getItem('fw_auto_advance') === 'true';
       autoToggle.addEventListener('change', () => {
         localStorage.setItem('fw_auto_advance', autoToggle.checked);
+        window.fwShowToast?.('Saved!');
       });
     }
 
