@@ -35,7 +35,7 @@ async function signUp(email, password, fullName) {
     password,
     options: {
       data: { full_name: fullName },
-      emailRedirectTo: window.location.origin + '/frontend/auth.html',
+      emailRedirectTo: window.location.origin + '/auth.html',
     }
   });
 
@@ -61,7 +61,7 @@ async function logIn(email, password) {
 async function signInWithGoogle() {
   const { data, error } = await window.sb.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: window.location.origin + '/frontend/dashboard.html' }
+    options: { redirectTo: 'https://fiveward.vercel.app/dashboard.html' }
   });
   if (error) throw error;
   return data;
