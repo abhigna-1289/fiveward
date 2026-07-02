@@ -278,17 +278,127 @@
         </ul>
       </div><!-- /panelUnits -->
 
-      <!-- Progress Panel (placeholder) -->
-      <div class="subject-panel subject-panel--hidden" id="panelProgress" role="tabpanel" aria-labelledby="tabProgress" hidden>
-        <div class="subject-panel-placeholder">
-          <p>Progress tracking coming soon.</p>
-        </div>
-      </div>
+      <!-- Progress Panel -->
+      <div class="subject-panel" id="panelProgress" role="tabpanel" aria-labelledby="tabProgress" hidden>
 
-      <!-- Settings Panel (placeholder) -->
-      <div class="subject-panel subject-panel--hidden" id="panelSettings" role="tabpanel" aria-labelledby="tabSettings" hidden>
-        <div class="subject-panel-placeholder">
-          <p>Subject settings coming soon.</p>
+        <!-- Three stat cards -->
+        <div class="sp-stats">
+          <!-- Completion ring -->
+          <div class="sp-stat-card sp-anim" style="--sp-delay:0ms">
+            <div class="sp-ring-wrap">
+              <svg class="sp-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="sp-ring__track" cx="60" cy="60" r="52"/>
+                <circle class="sp-ring__fill"  cx="60" cy="60" r="52" id="spRingFill"/>
+              </svg>
+              <span class="sp-ring__pct" id="spCompletionPct">0%</span>
+            </div>
+            <span class="sp-stat-label">AP CSP Completion</span>
+          </div>
+
+          <!-- Streak -->
+          <div class="sp-stat-card sp-anim" style="--sp-delay:100ms">
+            <svg class="sp-stat-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z"/>
+            </svg>
+            <span class="sp-stat-num" id="spStreakNum">0</span>
+            <span class="sp-stat-label">Day Streak</span>
+          </div>
+
+          <!-- Avg Score -->
+          <div class="sp-stat-card sp-anim" style="--sp-delay:200ms">
+            <span class="sp-stat-num sp-stat-num--green" id="spAvgScore">—</span>
+            <span class="sp-stat-label">Avg Score</span>
+          </div>
+        </div>
+
+        <!-- Expandable unit list (rendered by subject.js) -->
+        <div class="sp-units-list" id="spUnitsList"></div>
+
+        <!-- Footer link -->
+        <div class="sp-progress-footer">
+          <a href="progress.html" class="btn btn--outline">View Full Progress →</a>
+        </div>
+
+      </div><!-- /panelProgress -->
+
+      <!-- Settings Panel -->
+      <div class="subject-panel" id="panelSettings" role="tabpanel" aria-labelledby="tabSettings" hidden>
+
+        <!-- Study Preferences card -->
+        <div class="sp-settings-card">
+          <h3 class="sp-settings-card__title">Study Preferences</h3>
+
+          <div class="sp-pref-row">
+            <div class="sp-pref-label">
+              <span class="sp-pref-name">Default Study Mode</span>
+              <span class="sp-pref-desc">Choose which mode opens by default when you start studying a topic.</span>
+            </div>
+            <div class="sp-pill-group" id="spStudyMode" role="group" aria-label="Default study mode">
+              <button class="sp-pill" data-value="guide"      type="button">Study Guide</button>
+              <button class="sp-pill" data-value="flashcards" type="button">Flashcards</button>
+              <button class="sp-pill" data-value="practice"   type="button">Practice Questions</button>
+            </div>
+          </div>
+
+          <div class="sp-pref-divider"></div>
+
+          <div class="sp-pref-row">
+            <div class="sp-pref-label">
+              <span class="sp-pref-name">Default Session Duration</span>
+              <span class="sp-pref-desc">Sets the initial time on the study timer when you begin a session.</span>
+            </div>
+            <div class="sp-pill-group" id="spDuration" role="group" aria-label="Default session duration">
+              <button class="sp-pill" data-value="15" type="button">15 min</button>
+              <button class="sp-pill" data-value="30" type="button">30 min</button>
+              <button class="sp-pill" data-value="60" type="button">60 min</button>
+            </div>
+          </div>
+
+          <div class="sp-pref-divider"></div>
+
+          <div class="sp-pref-row">
+            <div class="sp-pref-label">
+              <span class="sp-pref-name">Auto-advance Flashcards</span>
+              <span class="sp-pref-desc">Automatically move to the next card after flipping.</span>
+            </div>
+            <label class="st-toggle" aria-label="Auto-advance flashcards">
+              <input type="checkbox" id="spAutoAdvance" />
+              <span class="st-toggle__track"><span class="st-toggle__thumb"></span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Danger Zone card -->
+        <div class="sp-settings-card sp-settings-card--danger">
+          <h3 class="sp-settings-card__title sp-settings-card__title--danger">Danger Zone</h3>
+          <button class="sp-reset-btn" id="spResetBtn" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Reset AP CSP Progress
+          </button>
+        </div>
+
+        <p class="sp-settings-footer-link"><a href="settings.html">View All Settings</a></p>
+
+      </div><!-- /panelSettings -->
+
+      <!-- Reset confirmation modal -->
+      <div class="sp-modal-overlay" id="spResetModal" hidden role="dialog" aria-modal="true" aria-labelledby="spModalTitle">
+        <div class="sp-modal-box">
+          <div class="sp-modal-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="sp-modal-title" id="spModalTitle">Reset AP CSP Progress?</h3>
+          <p class="sp-modal-desc">This will permanently delete all your progress, scores, and activity for AP CSP. This cannot be undone.</p>
+          <div class="sp-modal-btns">
+            <button class="btn btn--outline" id="spModalCancel" type="button">Cancel</button>
+            <button class="sp-modal-confirm-btn" id="spModalConfirm" type="button">Reset Everything</button>
+          </div>
         </div>
       </div>
 
