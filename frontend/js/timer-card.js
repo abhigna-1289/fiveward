@@ -27,7 +27,8 @@
   const prPlayIcon  = gPRBtn?.querySelector('.pr-play');
   const prLabel     = gPRBtn?.querySelector('.pr-label');
 
-  let gSetSeconds      = 25 * 60;
+  const _savedMins = parseInt(localStorage.getItem('fw_default_duration')) || 30;
+  let gSetSeconds  = _savedMins * 60;
   let gCardState       = 'stopped'; // 'stopped' | 'running' | 'paused'
   let gIsEditing       = false;
   let gStateBeforeEdit = 'stopped';
