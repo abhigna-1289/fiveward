@@ -164,6 +164,13 @@
     const avg    = getAvgScore();
     if (avgEl) avgEl.textContent = avg !== null ? avg + '%' : '—';
 
+    // Total points
+    const pointsEl = document.getElementById('spTotalPoints');
+    if (pointsEl) {
+      try { pointsEl.textContent = parseInt(localStorage.getItem('fw_points')) || 0; }
+      catch { pointsEl.textContent = '0'; }
+    }
+
     // Unit expand list
     renderUnitsList();
 
