@@ -362,37 +362,28 @@
 
   <!-- =====================================================
        ABOUT SECTION
-       Image placeholder left, story text right.
        ===================================================== -->
   <section class="about" id="about" aria-labelledby="about-heading">
-    <div class="container about__inner">
+    <div class="container">
+      <div class="about__story">
 
-      <!-- Image placeholder (replace with real photo/screenshot) -->
-      <div class="about__image-wrap" aria-hidden="true">
-        <!-- mountain / image placeholder icon -->
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="40" height="40" rx="6"/>
-          <circle cx="16" cy="16" r="4"/>
-          <path d="M44 30L34 18 24 28l-6-6L4 34"/>
-        </svg>
-        <span>Photo or screenshot coming soon</span>
+        <h2 id="about-heading" class="about__story-title lu-fade">Why I Built fiveward</h2>
+
+        <div class="about__story-body lu-fade" style="--lu-delay:120ms">
+          <p>I know what it's like to study hard for an AP exam with the wrong tools.</p>
+          <p>When I was preparing for AP Computer Science Principles, I spent hours jumping between websites, hunting for free resources, and finding workarounds for paywalls. Study guides that didn't match the College Board curriculum. Flashcard apps locked behind subscriptions. Hours wasted that could have been spent actually learning. And on top of all that, managing my time across everything I had going on made it even harder.</p>
+          <p>I did end up scoring well — but I kept thinking: none of that struggle was necessary. If the right tool had existed, I could have focused on learning instead of searching.</p>
+          <p class="about__callout">So I built it.</p>
+          <p>fiveward is everything I wished I had — completely free, fully aligned to the College Board curriculum, with study guides, flashcards, practice questions, and a built&#8209;in study timer to help you manage your time — all in one place. No paywalls. No missing content. No compromises.</p>
+          <p>Every student deserves access to great study resources regardless of what they can afford. That's not just why I built fiveward — it's why I'll keep building it.</p>
+          <p class="about__sig">— Abhigna</p>
+        </div>
+
+        <div class="lu-fade" style="--lu-delay:240ms">
+          <a href="auth.html" class="btn btn--primary btn--lg">Start Studying for Free →</a>
+        </div>
+
       </div>
-
-      <!-- Text content -->
-      <div class="about__content">
-        <h2 id="about-heading">Built by a Student,<br>For Students.</h2>
-        <p>
-          Traditional AP prep costs hundreds of dollars and isn't designed around how students
-          actually study. Most tools are bloated, expensive, or just flashcard sites with a
-          paywall in front of the good stuff.
-        </p>
-        <p>
-          fiveward is different — it's completely free, structured exactly like the AP curriculum,
-          and built the way real students learn. No subscriptions, no locked content, no nonsense.
-        </p>
-        <a href="auth.html" class="btn btn--primary btn--lg">Start Studying for Free →</a>
-      </div>
-
     </div>
   </section>
 
@@ -552,12 +543,19 @@
   </footer>
 
 
-  <!-- =====================================================
-       SCRIPTS
-       Landing page has no JS dependencies — auth.js is
-       loaded on auth.html only. Add page-specific scripts
-       in each HTML file.
-       ===================================================== -->
+  <script>
+    (function () {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('lu-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.lu-fade').forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
 
 </body>
 </html>
