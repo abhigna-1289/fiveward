@@ -479,15 +479,9 @@
   line-height: 1.8;
 }
 
-.about__callout {
-  font-weight: var(--font-bold) !important;
-  color: var(--color-primary) !important;
-  font-size: var(--text-lg) !important;
-}
-
 .about__sig {
   font-style: italic;
-  color: var(--color-text-muted) !important;
+  color: var(--color-primary) !important;
 }
 
 /* Scroll fade-up */
