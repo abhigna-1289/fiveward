@@ -1,1 +1,227 @@
-{ "unitNumber": 2, "cards": [] }
+{
+  "unitNumber": 2,
+  "cards": [
+    {
+      "id": "u2-1-1",
+      "front": "Bit",
+      "back": "Short for binary digit. The lowest-level component of any value in a computing device. A bit is either 0 or 1.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-2",
+      "front": "Byte",
+      "back": "A group of 8 bits.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-3",
+      "front": "How do computing devices represent data?",
+      "back": "Digitally — meaning the lowest-level components of any value are bits. Data values can be stored in variables, lists, or standalone constants and passed as input to or output from procedures.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-4",
+      "front": "Abstraction",
+      "back": "The process of reducing complexity by focusing on the main idea. By hiding irrelevant details and bringing together related useful details, abstraction allows one to focus on the idea at hand.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-5",
+      "front": "What abstractions do bits represent?",
+      "back": "Bits are grouped to represent abstractions including numbers, characters, and color. The same sequence of bits may represent different types of data in different contexts.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-6",
+      "front": "Analog Data",
+      "back": "Data with values that change smoothly rather than in discrete intervals over time. Examples: pitch and volume of music, colors of a painting, position of a sprinter during a race.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-7",
+      "front": "Sampling",
+      "back": "A technique used to approximate analog data digitally by measuring values of the analog signal at regular intervals called samples. The samples are measured to determine the exact bits required to store each sample.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-8",
+      "front": "Compare: Analog vs Digital Data",
+      "back": "Analog data changes smoothly and continuously over time (e.g. a vinyl record).\nDigital data represents values in discrete bits. Using digital data to approximate analog data is an example of abstraction.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-9",
+      "front": "Overflow Error",
+      "back": "An error that occurs when a computer attempts to handle a number outside the defined range of values. Caused by the fixed number of bits used to represent integers in many programming languages.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-10",
+      "front": "Round-off Error",
+      "back": "An error caused by the fixed number of bits used to represent real numbers, which limits precision. Some real numbers can only be stored as approximations in computer memory.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-11",
+      "front": "Binary Number System",
+      "back": "A base-2 number system that uses only the digits 0 and 1. Place values are powers of 2 starting at 2^0 (=1) on the rightmost position, increasing by one power to the left: 1, 2, 4, 8, 16, 32, 64, 128...",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-12",
+      "front": "How do you convert binary to decimal?",
+      "back": "Multiply each bit by its place value (power of 2) and add the results.\nExample: 1101 = (1×8) + (1×4) + (0×2) + (1×1) = 8 + 4 + 0 + 1 = 13",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-13",
+      "front": "How do you convert decimal to binary?",
+      "back": "Repeatedly divide by 2 and record the remainders from bottom to top.\nExample: 13 ÷ 2 = 6 R1, 6 ÷ 2 = 3 R0, 3 ÷ 2 = 1 R1, 1 ÷ 2 = 0 R1 → read remainders upward: 1101",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-14",
+      "front": "Compare: Binary (Base 2) vs Decimal (Base 10)",
+      "back": "Decimal uses digits 0-9. Place values are powers of 10 (1, 10, 100...).\nBinary uses only 0 and 1. Place values are powers of 2 (1, 2, 4, 8, 16...).\nBoth systems determine a digit's value by multiplying the digit by its place value.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-1-15",
+      "front": "What limits integer representation in programming languages?",
+      "back": "Most programming languages represent integers using a fixed number of bits, which limits the range of values that can be stored. This can result in overflow errors. Some languages allow integers limited only by the computer's memory size.",
+      "topic": "2.1"
+    },
+    {
+      "id": "u2-2-1",
+      "front": "Data Compression",
+      "back": "The process of reducing the size (number of bits) of transmitted or stored data. Fewer bits does not necessarily mean less information.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-2",
+      "front": "What determines how much a file can be compressed?",
+      "back": "The amount of size reduction depends on both the amount of redundancy in the original data and the compression algorithm applied.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-3",
+      "front": "Lossless Compression",
+      "back": "A compression algorithm that reduces the number of bits while guaranteeing complete reconstruction of the original data. Used when quality and exact reconstruction are most important. Examples: ZIP files, PNG images, text files.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-4",
+      "front": "Lossy Compression",
+      "back": "A compression algorithm that significantly reduces the number of bits but only allows reconstruction of an approximation of the original data. Can reduce file size more than lossless. Used when minimizing data size or transmission time is most important. Examples: MP3 audio, JPEG images, streaming video.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-5",
+      "front": "Compare: Lossless vs Lossy Compression",
+      "back": "Lossless: exact reconstruction guaranteed, smaller size reduction. Best for text, medical images, legal documents.\nLossy: only approximate reconstruction, much greater size reduction. Best for music, photos, and video where some quality loss is acceptable.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-6",
+      "front": "When should you choose lossless compression?",
+      "back": "When quality or the ability to reconstruct the original data exactly is maximally important. Examples: legal documents, medical scans, program code.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-2-7",
+      "front": "When should you choose lossy compression?",
+      "back": "When minimizing data size or transmission time is maximally important and some quality loss is acceptable. Examples: streaming music, video calls, social media photos.",
+      "topic": "2.2"
+    },
+    {
+      "id": "u2-3-1",
+      "front": "Information",
+      "back": "The collection of facts and patterns extracted from data. Data provide opportunities for identifying trends, making connections, and addressing problems.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-2",
+      "front": "Correlation",
+      "back": "A relationship between two variables shown in data where changes in one variable are associated with changes in another. Correlation does not necessarily indicate causation — additional research is needed to determine the exact nature of the relationship.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-3",
+      "front": "Compare: Correlation vs Causation",
+      "back": "Correlation: two variables appear related in data (e.g. ice cream sales and drowning rates both rise in summer).\nCausation: one variable directly causes the other.\nCorrelation found in data does NOT automatically mean causation — additional research is always needed.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-4",
+      "front": "Metadata",
+      "back": "Data about data. Example: a photo is the data; its metadata includes the date taken, file size, and location. Metadata are used for finding, organizing, and managing information. Changes to metadata do not change the primary data.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-5",
+      "front": "What can metadata tell you?",
+      "back": "Metadata can increase the effective use of data by providing additional context. It allows data to be structured and organized. Examples: email metadata includes sender, recipient, timestamp; photo metadata includes location, camera model, date.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-6",
+      "front": "Challenges of Processing Data Sets",
+      "back": "Challenges include: the need to clean data, incomplete data, invalid data, and the need to combine data sources. These challenges exist regardless of the size of the data set.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-7",
+      "front": "Data Cleaning",
+      "back": "The process of making data uniform without changing their meaning. Example: replacing all equivalent abbreviations, spellings, and capitalizations with the same word. Needed because data collected from open fields may not be uniform.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-8",
+      "front": "Bias in Data",
+      "back": "Problems of bias are often created by the type or source of data being collected. Bias is not eliminated by simply collecting more data — the source and collection method must be examined.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-9",
+      "front": "Challenges of Large Data Sets",
+      "back": "Large data sets are difficult to process using a single computer and may require parallel systems. The size of a data set affects the amount of information that can be extracted. Scalability of systems is an important consideration.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-3-10",
+      "front": "Why might a single data source be insufficient?",
+      "back": "A single source may not contain all the data needed to draw a conclusion. It may be necessary to combine data from a variety of sources to formulate a conclusion.",
+      "topic": "2.3"
+    },
+    {
+      "id": "u2-4-1",
+      "front": "How can programs be used with data?",
+      "back": "Programs can process data to acquire information. They can search, filter, transform, combine, compare, and visualize data sets to discover information and create new knowledge.",
+      "topic": "2.4"
+    },
+    {
+      "id": "u2-4-2",
+      "front": "Four Ways to Extract or Modify Data Using a Program",
+      "back": "1. Transforming — applying an operation to every element (e.g. doubling every number in a list)\n2. Filtering — keeping only elements that meet a condition (e.g. keeping only positive numbers)\n3. Combining or comparing — such as adding up a list or finding the highest value\n4. Visualizing — representing a data set through a chart, graph, or other visual",
+      "topic": "2.4"
+    },
+    {
+      "id": "u2-4-3",
+      "front": "How do programs help gain insight from data?",
+      "back": "Programs are used in an iterative and interactive way when processing data. Programmers can filter and clean data, combine data sources, cluster data, classify data, and transform data to gain insight and knowledge. Patterns can emerge when data are transformed.",
+      "topic": "2.4"
+    },
+    {
+      "id": "u2-4-4",
+      "front": "Tools for Working with Data",
+      "back": "Search tools efficiently find information. Data filtering systems find information and recognize patterns. Spreadsheets help organize and find trends. Tables, diagrams, and visual tools communicate insight and knowledge gained from data.",
+      "topic": "2.4"
+    },
+    {
+      "id": "u2-4-5",
+      "front": "What does it mean to process data iteratively?",
+      "back": "Programs are used in an iterative and interactive way — meaning the programmer runs the program, examines the output, refines the approach, and runs it again. This cycle allows users to gradually gain deeper insight and knowledge from the data.",
+      "topic": "2.4"
+    }
+  ]
+}

@@ -1,1 +1,281 @@
-{ "unitNumber": 5, "cards": [] }
+{
+  "unitNumber": 5,
+  "cards": [
+    {
+      "id": "u5-1-1",
+      "front": "Can a computing innovation's effects be both beneficial and harmful?",
+      "back": "Yes. A single effect can be viewed as both beneficial and harmful by different people, or even by the same person. Not every effect of a computing innovation is anticipated in advance.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-2",
+      "front": "Unintended Consequences of Computing Innovations",
+      "back": "Computing innovations can be used in ways their creators never originally intended. Responsible programmers try to consider unintended uses and their potential effects, but it is not possible to anticipate all ways an innovation can be used.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-3",
+      "front": "What is the programmer's responsibility regarding unintended effects?",
+      "back": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects of those new uses. However, it is not possible for a programmer to consider all the ways a computing innovation can be used.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-4",
+      "front": "How can rapid sharing amplify a computing innovation's impact?",
+      "back": "Rapid sharing of a program or running a program with a large number of users can result in significant impacts beyond the intended purpose or control of the programmer.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-5",
+      "front": "How have advances in computing affected other fields?",
+      "back": "Advances in computing have generated and increased creativity in other fields such as medicine, engineering, communications, and the arts. Computing innovations have often had unintended beneficial effects by leading to advances in other fields.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-6",
+      "front": "Examples of computing innovations used beyond their intended purpose",
+      "back": "Targeted advertising helps businesses but can be misused at individual and aggregate levels. Machine learning and data mining have enabled innovation in medicine and science but have also been used to discriminate against groups of individuals.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-1-7",
+      "front": "How does computing innovation change how people complete tasks?",
+      "back": "The way people complete tasks often changes to incorporate new computing innovations. People create computing innovations, and those innovations reshape behavior, workflows, and social patterns — sometimes in unintended ways.",
+      "topic": "5.1"
+    },
+    {
+      "id": "u5-2-1",
+      "front": "Digital Divide",
+      "back": "The differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics. Internet access varies between countries as well as within them. The digital divide can affect both groups and individuals.",
+      "topic": "5.2"
+    },
+    {
+      "id": "u5-2-2",
+      "front": "Issues raised by the digital divide",
+      "back": "The digital divide raises issues of equity, access, and influence both globally and locally. It also raises ethical concerns. The digital divide is affected by the actions of individuals, organizations, and governments.",
+      "topic": "5.2"
+    },
+    {
+      "id": "u5-2-3",
+      "front": "What factors contribute to the digital divide?",
+      "back": "Socioeconomic status, geographic location, and demographic characteristics all affect access to computing devices and the Internet. These factors vary both between countries and within them.",
+      "topic": "5.2"
+    },
+    {
+      "id": "u5-3-1",
+      "front": "Computing Bias",
+      "back": "Computing innovations can reflect existing human biases because of biases written into the algorithms or biases in the data used by the innovation. Biases can be embedded at all levels of software development.",
+      "topic": "5.3"
+    },
+    {
+      "id": "u5-3-2",
+      "front": "Where does computing bias come from?",
+      "back": "Computing bias can come from biases written directly into the algorithms, or from biases present in the data used to train or run the innovation. Biases can be embedded at all levels of software development — not just in the final product.",
+      "topic": "5.3"
+    },
+    {
+      "id": "u5-3-3",
+      "front": "How should programmers address computing bias?",
+      "back": "Programmers should take action to reduce bias in algorithms used for computing innovations as a way of combating existing human biases. This requires vigilance at all levels of development since biases can be embedded anywhere in the process.",
+      "topic": "5.3"
+    },
+    {
+      "id": "u5-4-1",
+      "front": "Crowdsourcing",
+      "back": "The practice of obtaining input or information from a large number of people via the Internet. Offers new models for collaboration such as connecting businesses or social causes with funding. Human capabilities can be enhanced by collaboration via computing.",
+      "topic": "5.4"
+    },
+    {
+      "id": "u5-4-2",
+      "front": "Citizen Science",
+      "back": "Scientific research conducted in whole or in part by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices. Science has been affected by using distributed and citizen science to solve scientific problems.",
+      "topic": "5.4"
+    },
+    {
+      "id": "u5-4-3",
+      "front": "How does widespread access to data enable problem solving?",
+      "back": "Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results. This enables crowdsourcing and citizen science at a large scale.",
+      "topic": "5.4"
+    },
+    {
+      "id": "u5-4-4",
+      "front": "Compare: Crowdsourcing vs Citizen Science",
+      "back": "Crowdsourcing: obtaining input or information from a large number of people via the Internet — broader than just science, includes funding, ideas, and data.\nCitizen Science: specifically scientific research conducted by distributed non-scientists who contribute data using their own devices. Citizen science is a form of crowdsourcing applied to scientific research.",
+      "topic": "5.4"
+    },
+    {
+      "id": "u5-5-1",
+      "front": "Intellectual Property",
+      "back": "Material created on a computer is the intellectual property of the creator or an organization. The ease of access and distribution of digitized information raises concerns regarding ownership, value, and use. Measures should be taken to safeguard intellectual property.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-2",
+      "front": "Plagiarism",
+      "back": "The use of material created by someone else without permission and presented as one's own. Plagiarism may have legal consequences. The use of material created by someone other than you should always be cited.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-3",
+      "front": "Creative Commons",
+      "back": "A public copyright license that enables the free distribution of an otherwise copyrighted work. Used when the content creator wants to give others the right to share, use, and build upon the work they have created.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-4",
+      "front": "Open Source",
+      "back": "Programs that are made freely available and may be redistributed and modified.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-5",
+      "front": "Open Access",
+      "back": "Online research output that is free of any and all restrictions on access and free of many restrictions on use, such as copyright or license restrictions.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-6",
+      "front": "Compare: Creative Commons vs Open Source vs Open Access",
+      "back": "Creative Commons: a license allowing others to share, use, and build on copyrighted creative work.\nOpen Source: programs freely available to redistribute and modify.\nOpen Access: research output freely available with no access or use restrictions.\nAll three have enabled broad access to digital information.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-7",
+      "front": "Legal and Ethical Concerns in Computing",
+      "back": "Computing can raise legal and ethical concerns including: software that allows access to digital media downloads and streaming, algorithms that include bias, computing used to harm individuals or groups, and the digital divide. Computing can also play a role in social and political issues.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-5-8",
+      "front": "Why does digitization raise intellectual property concerns?",
+      "back": "Ease of access and distribution of digitized information raises concerns regarding ownership, value, and use. Digital content can be copied and shared almost instantly and for free, making it harder to protect the rights of creators.",
+      "topic": "5.5"
+    },
+    {
+      "id": "u5-6-1",
+      "front": "Personally Identifiable Information (PII)",
+      "back": "Information about an individual that identifies, links, relates, or describes them. Examples: Social Security number, phone number, medical information, biometric data, financial information. PII can be used to stalk or steal the identity of a person or aid in planning criminal acts.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-2",
+      "front": "How is PII collected online?",
+      "back": "Search engines record search history. Websites record browsing history. Devices, websites, and networks collect location data. Programs can record where you have been, how you got there, and how long you were there.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-3",
+      "front": "Data Aggregation",
+      "back": "Disparate personal data such as geolocation, cookies, and browsing history can be combined to create detailed knowledge about an individual. Combining information posted on social media with other sources can be used to deduce private information.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-4",
+      "front": "Risks of sharing PII online",
+      "back": "Information placed online can be used in unintended and harmful ways. Once information is placed online it is difficult to delete. PII can be used for identity theft, stalking, or other criminal acts.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-5",
+      "front": "Benefits of sharing PII online",
+      "back": "PII and other information placed online can enhance a user's online experience. PII stored online can simplify making online purchases. Search engines can use search history to suggest relevant websites. Technology enables collection and use of information for individuals, groups, and institutions.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-6",
+      "front": "What can commercial and governmental entities do with collected data?",
+      "back": "Commercial and governmental curation of information may be exploited if privacy and other protections are ignored. Search engines can use search history for targeted marketing. Technology enables the exploitation of information about individuals.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-7",
+      "front": "Authentication",
+      "back": "Measures that protect devices and information from unauthorized access. Examples include strong passwords and multifactor authentication. A strong password is easy for the user to remember but difficult for someone else to guess.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-8",
+      "front": "Multifactor Authentication",
+      "back": "A method of access control where a user must present evidence from at least two of three categories: knowledge (something they know), possession (something they have), and inherence (something they are). Each step adds a new layer of security that must be broken to gain unauthorized access.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-9",
+      "front": "Encryption",
+      "back": "The process of encoding data to prevent unauthorized access. Decryption is the process of decoding the data. Two common approaches: symmetric key encryption (one key for both encryption and decryption) and public key encryption (public key to encrypt, private key to decrypt).",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-10",
+      "front": "Compare: Symmetric Key vs Public Key Encryption",
+      "back": "Symmetric key: uses one key for both encryption and decryption. Both sender and receiver must have the same key.\nPublic key: uses a public key to encrypt and a private key to decrypt. The sender does not need the receiver's private key to encrypt — only the receiver's private key can decrypt the message.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-11",
+      "front": "Certificate Authority",
+      "back": "Issues digital certificates that validate the ownership of encryption keys used in secure communications. Based on a trust model.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-12",
+      "front": "Computer Virus",
+      "back": "A malicious program that can copy itself and gain access to a computer in an unauthorized way. Viruses often attach themselves to legitimate programs and start running independently.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-13",
+      "front": "Malware",
+      "back": "Software intended to damage a computing system or to take partial control over its operation. Untrustworthy downloads from freeware or shareware sites can contain malware. Computer virus and malware scanning software can help protect against infection.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-14",
+      "front": "Compare: Virus vs Malware",
+      "back": "A computer virus is a specific type of malware that can copy itself and attach to legitimate programs to spread.\nMalware is the broader category — any software intended to damage a system or take partial control over it. All viruses are malware, but not all malware are viruses.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-15",
+      "front": "Phishing",
+      "back": "A technique that attempts to trick a user into providing personal information. That information can then be used to access sensitive online resources such as bank accounts and emails. Can come through malicious links in emails or web pages.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-16",
+      "front": "Keylogging",
+      "back": "The use of a program to record every keystroke made by a computer user in order to gain fraudulent access to passwords and other confidential information.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-17",
+      "front": "Rogue Access Point",
+      "back": "A wireless access point that gives unauthorized access to secure networks. Data sent over public networks can be intercepted, analyzed, and modified through a rogue access point.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-18",
+      "front": "How can emails be used to compromise security?",
+      "back": "Unsolicited emails, attachments, links, and forms can be used to compromise the security of a computing system. These can come from unknown senders or from known senders whose security has been compromised. A malicious link can be disguised on a web page or in an email.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-19",
+      "front": "How to protect against security threats",
+      "back": "Use strong passwords and multifactor authentication. Keep software updated regularly. Use virus and malware scanning software. Review permission settings of programs to protect privacy. Be cautious of unsolicited emails, attachments, links, and free downloads.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-20",
+      "front": "Why are software updates important for security?",
+      "back": "All real-world systems have errors or design flaws that can be exploited to compromise them. Regular software updates help fix these errors before they can be used by attackers.",
+      "topic": "5.6"
+    },
+    {
+      "id": "u5-6-21",
+      "front": "User permissions and privacy",
+      "back": "Users can control the permissions programs have for collecting user information. Users should review the permission settings of programs to protect their privacy.",
+      "topic": "5.6"
+    }
+  ]
+}

@@ -1,1 +1,443 @@
-{ "unitNumber": 3, "cards": [] }
+{
+  "unitNumber": 3,
+  "cards": [
+    {
+      "id": "u3-1-1",
+      "front": "Variable",
+      "back": "An abstraction inside a program that can hold a value. Each variable has associated data storage that represents one value at a time, but that value can be a list or other collection containing multiple values.",
+      "topic": "3.1"
+    },
+    {
+      "id": "u3-1-2",
+      "front": "Why should variable names be meaningful?",
+      "back": "Using meaningful variable names helps with the readability of program code and understanding of what values are represented by the variables.",
+      "topic": "3.1"
+    },
+    {
+      "id": "u3-1-3",
+      "front": "Common Data Types in Programming",
+      "back": "Numbers, Booleans, lists, and strings. Some values are better suited to representation using one type of datum rather than another.",
+      "topic": "3.1"
+    },
+    {
+      "id": "u3-1-4",
+      "front": "Assignment Operator",
+      "back": "An operator that allows a program to change the value represented by a variable. It evaluates the expression on the right and assigns a copy of the result to the variable on the left. The value stored in a variable will always be the most recent value assigned.",
+      "topic": "3.1"
+    },
+    {
+      "id": "u3-1-5",
+      "front": "What happens when a variable is assigned a new value?",
+      "back": "The value stored in a variable will always be the most recent value assigned. Example: if a = 1, then b = a, then a = 2, displaying b still shows 1 because b was assigned a copy of a's value at that time.",
+      "topic": "3.1"
+    },
+    {
+      "id": "u3-2-1",
+      "front": "List",
+      "back": "An ordered sequence of elements. Each element is assigned a unique index starting at 1. Lists are referred to by different names such as array depending on the programming language.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-2",
+      "front": "Element",
+      "back": "An individual value in a list that is assigned a unique index.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-3",
+      "front": "Index",
+      "back": "A common method for referencing elements in a list or string using natural numbers. In the AP CSP reference sheet, index values start at 1 and go up to the length of the list. Accessing an index less than 1 or greater than the length produces an error.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-4",
+      "front": "String",
+      "back": "An ordered sequence of characters.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-5",
+      "front": "Data Abstraction",
+      "back": "Provides a separation between the abstract properties of a data type and the concrete details of its representation. Managing complexity by giving a collection of data a name without referencing the specific details of its representation.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-6",
+      "front": "How does data abstraction manage complexity?",
+      "back": "Data abstractions give a collection of data a name without referencing specific implementation details. Using lists allows multiple related items to be treated as a single value, making programs easier to develop and maintain. Data abstractions often contain different types of elements.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-7",
+      "front": "What happens when you access an invalid list index?",
+      "back": "If a list index is less than 1 or greater than the length of the list, an error message is produced and the program will terminate.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-2-8",
+      "front": "How does assigning one list to another work?",
+      "back": "Assigning one list to another (aList = bList) assigns a copy of the list. If bList contains [20, 40, 60], then aList will also contain [20, 40, 60] after the assignment.",
+      "topic": "3.2"
+    },
+    {
+      "id": "u3-3-1",
+      "front": "Algorithm",
+      "back": "A finite set of instructions that accomplishes a specific task. Every algorithm can be constructed using combinations of sequencing, selection, and iteration.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-2",
+      "front": "Ways to Express an Algorithm",
+      "back": "Algorithms can be expressed in natural language, diagrams, pseudocode, and visual or textual programming languages. Algorithms executed by programs are implemented using programming languages.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-3",
+      "front": "Sequencing",
+      "back": "The application of each step of an algorithm in the order in which the code statements are given. Sequential statements execute in the order they appear in the code segment.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-4",
+      "front": "Expression",
+      "back": "Can consist of a value, a variable, an operator, or a procedure call that returns a value. Expressions are evaluated to produce a single value following a set order of operations defined by the programming language.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-5",
+      "front": "Arithmetic Operators",
+      "back": "Include addition (+), subtraction (-), multiplication (*), division (/), and modulus (MOD). The MOD operator returns the remainder when a is divided by b. Example: 17 MOD 5 = 2. MOD has the same precedence as * and /.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-6",
+      "front": "Three Building Blocks of Every Algorithm",
+      "back": "Every algorithm can be constructed using combinations of:\n1. Sequencing — executing steps in order\n2. Selection — choosing which steps to execute based on a condition\n3. Iteration — repeating steps",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-3-7",
+      "front": "Code Statement",
+      "back": "A part of program code that expresses an action to be carried out. Clarity and readability are important considerations when expressing an algorithm in a programming language.",
+      "topic": "3.3"
+    },
+    {
+      "id": "u3-4-1",
+      "front": "String Concatenation",
+      "back": "Joins together two or more strings end-to-end to make a new string.",
+      "topic": "3.4"
+    },
+    {
+      "id": "u3-4-2",
+      "front": "Substring",
+      "back": "A part of an existing string.",
+      "topic": "3.4"
+    },
+    {
+      "id": "u3-5-1",
+      "front": "Boolean Value",
+      "back": "A value that is either true or false.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-2",
+      "front": "Relational Operators",
+      "back": "Used to test the relationship between two variables, expressions, or values. A comparison using a relational operator evaluates to a Boolean value. Operators: = (equal), ≠ (not equal), > (greater than), < (less than), ≥ (greater than or equal), ≤ (less than or equal).",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-3",
+      "front": "Logical Operators",
+      "back": "NOT, AND, and OR — each evaluates to a Boolean value.\nNOT condition: true if condition is false.\ncondition1 AND condition2: true only if both are true.\ncondition1 OR condition2: true if at least one is true.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-4",
+      "front": "Compare: AND vs OR",
+      "back": "AND: both conditions must be true for the result to be true. If either is false, result is false.\nOR: at least one condition must be true for the result to be true. Only false when both conditions are false.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-5",
+      "front": "NOT operator truth table",
+      "back": "NOT true = false\nNOT false = true\nNOT simply flips the Boolean value.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-6",
+      "front": "AND operator truth table",
+      "back": "true AND true = true\ntrue AND false = false\nfalse AND true = false\nfalse AND false = false\nAND is only true when BOTH conditions are true.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-5-7",
+      "front": "OR operator truth table",
+      "back": "true OR true = true\ntrue OR false = true\nfalse OR true = true\nfalse OR false = false\nOR is only false when BOTH conditions are false.",
+      "topic": "3.5"
+    },
+    {
+      "id": "u3-6-1",
+      "front": "Selection",
+      "back": "Determines which parts of an algorithm are executed based on a condition being true or false.",
+      "topic": "3.6"
+    },
+    {
+      "id": "u3-6-2",
+      "front": "Conditional Statement (IF statement)",
+      "back": "Affects the sequential flow of control by executing different statements based on the value of a Boolean expression. IF(condition): executes the block only if condition is true. IF/ELSE: executes the first block if true, the second block if false.",
+      "topic": "3.6"
+    },
+    {
+      "id": "u3-7-1",
+      "front": "Nested Conditional Statements",
+      "back": "Conditional statements within conditional statements. Allow programs to check multiple conditions in sequence, where inner conditions are only evaluated if outer conditions are met.",
+      "topic": "3.7"
+    },
+    {
+      "id": "u3-8-1",
+      "front": "Iteration",
+      "back": "A repeating portion of an algorithm. Iteration repeats a specified number of times or until a given condition is met.",
+      "topic": "3.8"
+    },
+    {
+      "id": "u3-8-2",
+      "front": "REPEAT n TIMES",
+      "back": "An iteration statement that executes the block of statements exactly n times.",
+      "topic": "3.8"
+    },
+    {
+      "id": "u3-8-3",
+      "front": "REPEAT UNTIL(condition)",
+      "back": "An iteration statement that repeats the block of statements until the Boolean condition evaluates to true. If the condition is true initially, the loop body is not executed at all. If the condition never becomes true, an infinite loop occurs.",
+      "topic": "3.8"
+    },
+    {
+      "id": "u3-8-4",
+      "front": "Infinite Loop",
+      "back": "Occurs in REPEAT UNTIL iteration when the ending condition will never evaluate to true, causing the loop to repeat forever.",
+      "topic": "3.8"
+    },
+    {
+      "id": "u3-8-5",
+      "front": "Compare: REPEAT n TIMES vs REPEAT UNTIL",
+      "back": "REPEAT n TIMES: repeats a fixed number of times, always executes the block at least once if n > 0.\nREPEAT UNTIL: repeats until a condition becomes true, may not execute at all if the condition is already true.",
+      "topic": "3.8"
+    },
+    {
+      "id": "u3-9-1",
+      "front": "Can different algorithms solve the same problem?",
+      "back": "Yes. Algorithms can be written in different ways and still accomplish the same task. However, algorithms that appear similar can yield different side effects or results. Different algorithms can also have different efficiencies.",
+      "topic": "3.9"
+    },
+    {
+      "id": "u3-9-2",
+      "front": "How can new algorithms be created?",
+      "back": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms. Using existing correct algorithms as building blocks reduces development time, reduces testing, and simplifies error identification.",
+      "topic": "3.9"
+    },
+    {
+      "id": "u3-9-3",
+      "front": "Common Existing Algorithms",
+      "back": "Determining the maximum or minimum value of two or more numbers, computing the sum or average of numbers, identifying if an integer is evenly divisible by another integer, determining a robot's path through a maze.",
+      "topic": "3.9"
+    },
+    {
+      "id": "u3-9-4",
+      "front": "Can conditional statements and Boolean expressions be equivalent?",
+      "back": "Yes. Some conditional statements can be written as equivalent Boolean expressions, and some Boolean expressions can be written as equivalent conditional statements.",
+      "topic": "3.9"
+    },
+    {
+      "id": "u3-9-5",
+      "front": "Can algorithms that look similar produce different results?",
+      "back": "Yes. Algorithms that appear similar can yield different side effects or results. The order and structure of statements matters — even small differences can change the outcome.",
+      "topic": "3.9"
+    },
+    {
+      "id": "u3-10-1",
+      "front": "List Operations (AP Reference Sheet)",
+      "back": "ACCESS: aList[i] — gets element at index i.\nASSIGN: aList[i] = x — sets element at index i to x.\nINSERT(aList, i, value) — inserts value at index i, shifting elements right.\nAPPEND(aList, value) — adds value to end of list.\nREMOVE(aList, i) — removes element at index i, shifting elements left.\nLENGTH(aList) — returns number of elements.",
+      "topic": "3.10"
+    },
+    {
+      "id": "u3-10-2",
+      "front": "List Traversal",
+      "back": "Accessing elements of a list one by one. Can be complete (all elements accessed) or partial (only some elements accessed). FOR EACH item IN aList assigns each element to item sequentially from first to last and executes the block once per element.",
+      "topic": "3.10"
+    },
+    {
+      "id": "u3-10-3",
+      "front": "Linear (Sequential) Search",
+      "back": "An algorithm that checks each element of a list in order until the desired value is found or all elements have been checked.",
+      "topic": "3.10"
+    },
+    {
+      "id": "u3-10-4",
+      "front": "FOR EACH loop",
+      "back": "Traverses a list by assigning each element to a variable sequentially from first to last. The block of statements executes once for each element. Note: parallel traversals (using the same index for two lists simultaneously) are outside the scope of AP CSP.",
+      "topic": "3.10"
+    },
+    {
+      "id": "u3-10-5",
+      "front": "Common List Algorithms",
+      "back": "Finding the minimum or maximum value in a list, computing the sum or average of a list of numbers. These existing algorithms can be used as building blocks when constructing new algorithms.",
+      "topic": "3.10"
+    },
+    {
+      "id": "u3-11-1",
+      "front": "Binary Search",
+      "back": "An algorithm that starts at the middle of a sorted data set and eliminates half of the remaining data with each step. Repeats until the desired value is found or all elements have been eliminated. Data must be in sorted order to use binary search.",
+      "topic": "3.11"
+    },
+    {
+      "id": "u3-11-2",
+      "front": "Compare: Linear Search vs Binary Search",
+      "back": "Linear search: checks each element one by one, works on unsorted data, less efficient for large data sets.\nBinary search: eliminates half the data each step, requires sorted data, often more efficient than linear search on sorted data.",
+      "topic": "3.11"
+    },
+    {
+      "id": "u3-12-1",
+      "front": "Procedure",
+      "back": "A named group of programming instructions that may have parameters and return values. Also referred to as a method or function depending on the programming language.",
+      "topic": "3.12"
+    },
+    {
+      "id": "u3-12-2",
+      "front": "Parameters vs Arguments",
+      "back": "Parameters are the input variables of a procedure as defined in its declaration.\nArguments are the actual values passed to the procedure when it is called. Each argument is assigned to its corresponding parameter.",
+      "topic": "3.12"
+    },
+    {
+      "id": "u3-12-3",
+      "front": "What happens when a procedure is called?",
+      "back": "A procedure call interrupts sequential execution and causes the program to execute the statements within the procedure. Once the last statement or a RETURN statement executes, flow of control returns to the point immediately following where the procedure was called.",
+      "topic": "3.12"
+    },
+    {
+      "id": "u3-12-4",
+      "front": "RETURN statement",
+      "back": "Returns the flow of control to the point where the procedure was called and returns the value of an expression. May appear at any point inside the procedure and causes an immediate return.",
+      "topic": "3.12"
+    },
+    {
+      "id": "u3-12-5",
+      "front": "DISPLAY and INPUT procedures",
+      "back": "DISPLAY(expression): displays the value of expression followed by a space.\nINPUT(): accepts a value from the user and returns the input value.",
+      "topic": "3.12"
+    },
+    {
+      "id": "u3-13-1",
+      "front": "Procedural Abstraction",
+      "back": "Provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it. Allows a solution to a large problem to be based on solutions to smaller subproblems.",
+      "topic": "3.13"
+    },
+    {
+      "id": "u3-13-2",
+      "front": "Modularity",
+      "back": "The subdivision of a computer program into separate subprograms. Helps manage complexity by breaking a large problem into smaller, manageable pieces.",
+      "topic": "3.13"
+    },
+    {
+      "id": "u3-13-3",
+      "front": "Benefits of Procedural Abstraction",
+      "back": "Allows code reuse by extracting shared features instead of duplicating code. Improves readability. Using parameters allows procedures to be generalized and reused with different inputs. Allows programmers to change internals of a procedure without notifying users as long as the behavior is preserved.",
+      "topic": "3.13"
+    },
+    {
+      "id": "u3-13-4",
+      "front": "Why can procedural abstraction be changed without affecting users?",
+      "back": "Programmers can change the internals of a procedure (make it faster, more efficient, use less storage) without notifying users of the change, as long as what the procedure does is preserved.",
+      "topic": "3.13"
+    },
+    {
+      "id": "u3-14-1",
+      "front": "Software Library",
+      "back": "A collection of procedures that may be used in creating new programs. Simplifies the task of creating complex programs by providing pre-written, tested code.",
+      "topic": "3.14"
+    },
+    {
+      "id": "u3-14-2",
+      "front": "API (Application Program Interface)",
+      "back": "A specification for how the procedures in a library behave and can be used. Documentation for an API is necessary to understand the behaviors provided and how to use them.",
+      "topic": "3.14"
+    },
+    {
+      "id": "u3-15-1",
+      "front": "RANDOM(a, b)",
+      "back": "Generates and returns a random integer from a to b, inclusive. Each result is equally likely to occur. Example: RANDOM(1, 3) could return 1, 2, or 3. Using random number generation means each execution may produce a different result.",
+      "topic": "3.15"
+    },
+    {
+      "id": "u3-16-1",
+      "front": "Simulation",
+      "back": "An abstraction of a more complex object or phenomenon for a specific purpose. Uses varying sets of values to reflect the changing state of a phenomenon. Often mimics real-world events to draw inferences without the constraints of the real world.",
+      "topic": "3.16"
+    },
+    {
+      "id": "u3-16-2",
+      "front": "When are simulations most useful?",
+      "back": "When real-world events are impractical for experiments — too big, too small, too fast, too slow, too expensive, or too dangerous. Simulations facilitate the formulation and refinement of hypotheses.",
+      "topic": "3.16"
+    },
+    {
+      "id": "u3-16-3",
+      "front": "Limitations of Simulations",
+      "back": "Developing a simulation involves removing specific details or simplifying functionality. Simulations can contain bias derived from the choices of real-world elements that were included or excluded.",
+      "topic": "3.16"
+    },
+    {
+      "id": "u3-16-4",
+      "front": "How do simulations use random values?",
+      "back": "Random number generators can be used in simulations to simulate the variability that exists in the real world, making the simulation more realistic.",
+      "topic": "3.16"
+    },
+    {
+      "id": "u3-17-1",
+      "front": "Algorithmic Efficiency",
+      "back": "An estimation of the amount of computational resources used by an algorithm. Typically expressed as a function of the size of the input. Can be informally measured by counting how many times a statement or group of statements executes.",
+      "topic": "3.17"
+    },
+    {
+      "id": "u3-17-2",
+      "front": "Reasonable vs Unreasonable Running Time",
+      "back": "Reasonable: polynomial efficiency or slower — constant, linear, square, cube, etc.\nUnreasonable: exponential or factorial efficiency — these algorithms take too long to be practical for large inputs.",
+      "topic": "3.17"
+    },
+    {
+      "id": "u3-17-3",
+      "front": "Heuristic",
+      "back": "An approach to a problem that produces a solution that is not guaranteed to be optimal but may be used when techniques guaranteed to find an optimal solution are impractical. Used when a problem cannot be solved in reasonable time.",
+      "topic": "3.17"
+    },
+    {
+      "id": "u3-17-4",
+      "front": "Compare: Decision Problem vs Optimization Problem",
+      "back": "Decision problem: has a yes/no answer (e.g. Is there a path from A to B?).\nOptimization problem: goal is to find the best solution among many (e.g. What is the shortest path from A to B?).",
+      "topic": "3.17"
+    },
+    {
+      "id": "u3-17-5",
+      "front": "Problem vs Instance of a Problem",
+      "back": "A problem is a general description of a task (e.g. sorting). An instance of a problem includes specific input (e.g. sorting the list [2, 3, 1, 7]). Some problems cannot be solved in a reasonable amount of time — in these cases approximate solutions are sought.",
+      "topic": "3.17"
+    },
+    {
+      "id": "u3-18-1",
+      "front": "Decidable Problem",
+      "back": "A decision problem for which an algorithm can be written to produce a correct output for all inputs. Example: Is the number even?",
+      "topic": "3.18"
+    },
+    {
+      "id": "u3-18-2",
+      "front": "Undecidable Problem",
+      "back": "A problem for which no algorithm can be constructed that is always capable of providing a correct yes-or-no answer. An undecidable problem may have some instances with an algorithmic solution, but no single algorithm can solve all instances.",
+      "topic": "3.18"
+    },
+    {
+      "id": "u3-18-3",
+      "front": "Compare: Decidable vs Undecidable Problems",
+      "back": "Decidable: an algorithm exists that always produces a correct yes/no answer for all inputs.\nUndecidable: no algorithm can always produce a correct yes/no answer for all inputs. Some instances may be solvable but not all.",
+      "topic": "3.18"
+    }
+  ]
+}
