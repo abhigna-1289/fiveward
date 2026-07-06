@@ -976,16 +976,35 @@
     const opts    = letters.map(l => (raw.options || {})[l]).filter(v => v !== undefined);
     const correct = letters.indexOf(raw.correctAnswer);
     return {
-      id:           raw.id,
-      topic:        raw.topic,
-      type:         raw.type === 'mc' ? 'mcq' : raw.type === 'frq' ? 'frq' : raw.type,
-      question:     raw.question,
-      options:      opts,
-      correct:      correct >= 0 ? correct : 0,
-      explanation:  raw.explanation  || '',
-      sampleAnswer: raw.sampleAnswer || '',
-      rubric:       raw.rubric       || [],
+      id:            raw.id,
+      topic:         raw.topic,
+      type:          raw.type === 'mc' ? 'mcq' : raw.type === 'frq' ? 'frq' : raw.type,
+      question:      raw.question,
+      options:       opts,
+      correct:       correct >= 0 ? correct : 0,
+      explanation:   raw.explanation   || '',
+      sampleAnswer:  raw.sampleAnswer  || '',
+      rubric:        raw.rubric        || [],
+      stimulus:      raw.stimulus      || null,
+      stimulusType:  raw.stimulusType  || 'text',
     };
+  }
+
+  function pqStimulusHtml(q) {
+    if (!q.stimulus) return '';
+    const type = q.stimulusType || 'text';
+    let inner;
+    if (type === 'image') {
+      inner = `<img class="pq-stimulus__img" src="${q.stimulus}" alt="Question stimulus" />`;
+    } else if (type === 'code') {
+      const esc = q.stimulus.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      inner = `<pre class="pq-stimulus__code"><code>${esc}</code></pre>`;
+    } else if (type === 'table') {
+      inner = `<div class="pq-stimulus__table">${q.stimulus}</div>`;
+    } else {
+      inner = `<p class="pq-stimulus__text">${q.stimulus}</p>`;
+    }
+    return `<div class="pq-stimulus pq-stimulus--${type}">${inner}</div>`;
   }
 
   async function pqLoad() {
@@ -1215,7 +1234,7 @@
       </div>`;
     }
 
-    return `<div class="pq-question-card"><p class="pq-question-text">${q.question}</p></div>
+    return `${pqStimulusHtml(q)}<div class="pq-question-card"><p class="pq-question-text">${q.question}</p></div>
       <div class="pq-options" id="pqOptions">${opts}</div>
       ${submitBtn}${feedback}`;
   }
@@ -1271,7 +1290,7 @@
         </div>`;
     }
 
-    return `<div class="pq-question-card">
+    return `${pqStimulusHtml(q)}<div class="pq-question-card">
       <span class="pq-frq-badge">Free Response</span>
       <p class="pq-question-text">${e(q.question)}</p>
     </div>
