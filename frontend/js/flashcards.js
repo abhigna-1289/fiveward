@@ -176,7 +176,14 @@
     if (!card) return;
 
     const cardEl = document.getElementById('fcCard');
-    if (cardEl) { cardEl.classList.remove('fc-flipped'); fcState.isFlipped = false; }
+    if (cardEl) {
+      const inner = cardEl.querySelector('.fc-card-inner');
+      if (inner) inner.style.transition = 'none';
+      cardEl.classList.remove('fc-flipped');
+      fcState.isFlipped = false;
+      void cardEl.offsetWidth;
+      if (inner) inner.style.transition = '';
+    }
 
     const ft = document.getElementById('fcFrontText');
     const bt = document.getElementById('fcBackText');
@@ -200,7 +207,14 @@
 
     if (!document.getElementById('fcZoomModal')?.hidden) {
       fcZoomIsFlipped = false;
-      document.getElementById('fcZoomCard')?.classList.remove('fc-flipped');
+      const zoomCardEl = document.getElementById('fcZoomCard');
+      if (zoomCardEl) {
+        const inner = zoomCardEl.querySelector('.fc-zoom-card-inner');
+        if (inner) inner.style.transition = 'none';
+        zoomCardEl.classList.remove('fc-flipped');
+        void zoomCardEl.offsetWidth;
+        if (inner) inner.style.transition = '';
+      }
       zoomSyncCard();
     }
   }
