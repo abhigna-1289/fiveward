@@ -368,10 +368,12 @@
 
   // --- Card data (fetched from JSON, indexed by topic number) -
 
-  let fcCardsData = {}; // { '1.1': [{id, front, back, topic}], ... }
+  let fcCardsData   = {}; // { '1.1': [{id, front, back, topic}], ... }
+  let fcReviewCards = []; // cards from unit-N-review.json
 
   async function fcLoad() {
-    fcCardsData = {};
+    fcCardsData   = {};
+    fcReviewCards = [];
     try {
       const r    = await fetch(`/data/subjects/ap-csp/flashcards/unit-${unitNum}.json?v=${Date.now()}`);
       const data = await r.json();
@@ -379,11 +381,15 @@
         if (!fcCardsData[card.topic]) fcCardsData[card.topic] = [];
         fcCardsData[card.topic].push(card);
       });
-      unit.topics.forEach(t => {
-        console.log(`[fiveward] Flashcards loaded — Topic ${t.num}: ${(fcCardsData[t.num] || []).length} cards`);
-      });
     } catch(err) {
       console.error('[fiveward] Failed to load flashcards:', err);
+    }
+    try {
+      const rr   = await fetch(`/data/subjects/ap-csp/flashcards/unit-${unitNum}-review.json?v=${Date.now()}`);
+      const data = await rr.json();
+      fcReviewCards = (data.cards || []).map(c => ({ ...c, _topicId: null }));
+    } catch {
+      // review file not yet created for this unit — silently ignored
     }
   }
 
@@ -433,9 +439,7 @@
 
   function fcGetAllCards() {
     if (viewMode === 'review') {
-      const cards = [];
-      unit.topics.forEach(t => (fcCardsData[t.num] || []).forEach(c => cards.push({ ...c, _topicId: t.id })));
-      return cards;
+      return fcReviewCards.slice();
     }
     const topic = unit.topics.find(t => t.id === currentTopicId);
     return (fcCardsData[topic?.num] || []).map(c => ({ ...c, _topicId: currentTopicId }));

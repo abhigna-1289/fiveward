@@ -1,0 +1,106 @@
+{
+  "unitNumber": 1,
+  "type": "review",
+  "cards": [
+    {
+      "id": "u1-r-1",
+      "front": "What are the three types of computing innovations?",
+      "back": "Physical (e.g., self-driving car), nonphysical software (e.g., photo editing app), and nonphysical concept (e.g., e-commerce). All three have a program as an integral part of their function."
+    },
+    {
+      "id": "u1-r-2",
+      "front": "Why is diverse collaboration important in computing?",
+      "back": "Multiple perspectives reduce bias, improve design, and reflect diverse talents. A homogeneous team may miss problems that affect users outside their experience. Effective collaboration requires equal participation and voice — not just group work."
+    },
+    {
+      "id": "u1-r-3",
+      "front": "What is the difference between a program and a code segment?",
+      "back": "A program is a complete collection of statements that performs a specific task when run. A code segment is a smaller collection of statements that is part of a larger program."
+    },
+    {
+      "id": "u1-r-4",
+      "front": "What are the four interpersonal skills needed for effective collaboration?",
+      "back": "Communication, consensus building, conflict resolution, and negotiation. These ensure equal participation and a shared direction for the team."
+    },
+    {
+      "id": "u1-r-5",
+      "front": "What are the four phases of program development?",
+      "back": "1. Investigating and reflecting\n2. Designing\n3. Prototyping\n4. Testing\nThe process can be ordered and intentional, or exploratory in nature."
+    },
+    {
+      "id": "u1-r-6",
+      "front": "How do iterative and incremental development differ?",
+      "back": "Iterative: the whole project is continuously refined based on feedback — earlier phases may be revisited at any time.\nIncremental: built piece by piece — each piece is completed and verified before the next is added."
+    },
+    {
+      "id": "u1-r-7",
+      "front": "What is the difference between a logic error and a syntax error?",
+      "back": "Logic error: program runs but produces wrong results.\nSyntax error: program cannot run because the rules of the language were not followed."
+    },
+    {
+      "id": "u1-r-8",
+      "front": "What is a run-time error and how does it differ from the other two error types?",
+      "back": "A run-time error occurs during execution — the program starts running but crashes or fails mid-way. Unlike syntax errors (caught before running) and logic errors (wrong output but runs), run-time errors stop execution in progress."
+    },
+    {
+      "id": "u1-r-9",
+      "front": "What is program documentation and why does it matter?",
+      "back": "A written description of the function of a code segment, event, procedure, or program and how it was developed. It should be written throughout development and helps maintain correct programs individually and collaboratively."
+    },
+    {
+      "id": "u1-r-10",
+      "front": "What is an event in programming and how does it affect execution?",
+      "back": "An action associated with input data that supplies information to a program (e.g., key press, mouse click, program start). In event-driven programming, statements execute when triggered by an event rather than through sequential flow."
+    },
+    {
+      "id": "u1-r-11",
+      "front": "What is an overflow error?",
+      "back": "An error that occurs when a computer attempts to handle a number that is outside the defined range of values the system can represent."
+    },
+    {
+      "id": "u1-r-12",
+      "front": "What methods can be used to find and correct errors in a program?",
+      "back": "Test cases, hand tracing, visualizations, debuggers, and adding extra output statements. Results from testing are used to revise the algorithm or program."
+    },
+    {
+      "id": "u1-r-13",
+      "front": "What inputs should you use when testing a program?",
+      "back": "Inputs that demonstrate different expected outcomes, including values at or just beyond the extremes (minimum and maximum) of the input data."
+    },
+    {
+      "id": "u1-r-14",
+      "front": "What is bias in computing innovations and how is it introduced?",
+      "back": "A preference or prejudice embedded in an innovation that disadvantages certain users. It often occurs unintentionally when the development team lacks diverse perspectives. Including diverse collaborators during development helps identify and avoid it."
+    },
+    {
+      "id": "u1-r-15",
+      "front": "What does the design phase of program development include?",
+      "back": "Brainstorming, planning and storyboarding, organizing into modules and functional components, creating UI layout diagrams, and developing a testing strategy."
+    },
+    {
+      "id": "u1-r-16",
+      "front": "What is a program specification and how does it relate to the design phase?",
+      "back": "A program specification is a document that defines the requirements for a program. The design phase outlines how to accomplish what the specification describes."
+    },
+    {
+      "id": "u1-r-17",
+      "front": "What is user consultation and why does it matter?",
+      "back": "Communicating with potential users during development to understand the program's purpose from diverse perspectives. It helps develop a program that fully incorporates those perspectives and reduces unintended bias."
+    },
+    {
+      "id": "u1-r-18",
+      "front": "What is pair programming?",
+      "back": "A collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss."
+    },
+    {
+      "id": "u1-r-19",
+      "front": "When does program input affect output?",
+      "back": "Usually — inputs affect the output produced. Input can come from a user or from other programs and can be tactile, audio, visual, or text. A program needs to work for a variety of inputs and situations."
+    },
+    {
+      "id": "u1-r-20",
+      "front": "What must be acknowledged in program documentation regarding borrowed code?",
+      "back": "Any code developed collaboratively or borrowed from another source must be acknowledged in the program documentation. The acknowledgement must include the origin or original author's name."
+    }
+  ]
+}
