@@ -73,6 +73,20 @@
     return getCompletedSet(unitNum).size;
   }
 
+  function getActivityCount(unitNum) {
+    let n = 0;
+    try {
+      for (const p of ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u'])
+        n += JSON.parse(localStorage.getItem(`${p}${unitNum}`) || '[]').length;
+    } catch {}
+    return n;
+  }
+
+  function getActivitySet(unitNum, prefix) {
+    try { return new Set(JSON.parse(localStorage.getItem(`${prefix}${unitNum}`) || '[]')); }
+    catch { return new Set(); }
+  }
+
   function getStreak() {
     try {
       const raw = JSON.parse(localStorage.getItem('fw_streak_dates') || '[]');
@@ -108,15 +122,15 @@
 
   (function loadHeaderProgress() {
     const unitCards = document.querySelectorAll('.unit-list .unit-card');
-    let totalCompleted = 0;
+    let totalActivityDone = 0;
 
     unitCards.forEach((card, index) => {
-      const unitNum    = index + 1;
-      const unit       = UNITS[unitNum];
+      const unitNum = index + 1;
+      const unit    = UNITS[unitNum];
       if (!unit) return;
-      const completed  = getCompletedCount(unitNum);
-      totalCompleted  += completed;
-      const pct        = Math.round((completed / unit.topics.length) * 100);
+      const actDone = getActivityCount(unitNum);
+      totalActivityDone += actDone;
+      const pct = Math.round((actDone / (unit.topics.length * 3)) * 100);
 
       const pctEl = card.querySelector('.unit-card__progress-pct');
       const fill  = card.querySelector('.unit-card__progress-fill');
@@ -126,7 +140,7 @@
       if (bar)   bar.setAttribute('aria-valuenow', pct);
     });
 
-    const overallPct   = Math.round((totalCompleted / TOTAL_TOPICS) * 100);
+    const overallPct   = Math.round((totalActivityDone / (TOTAL_TOPICS * 3)) * 100);
     const overallPctEl = document.getElementById('overallProgressPct');
     const overallFill  = document.getElementById('overallProgressFill');
     const overallBar   = document.querySelector('.subject-header-card__progress-bar');
@@ -142,10 +156,10 @@
   function renderProgressTab() {
     const CIRCUMFERENCE = 2 * Math.PI * 52;
 
-    // Overall completion ring
-    let totalCompleted = 0;
-    for (let u = 1; u <= 5; u++) totalCompleted += getCompletedCount(u);
-    const pct = Math.round((totalCompleted / TOTAL_TOPICS) * 100);
+    // Overall completion ring — activity-based
+    let totalActivityDone = 0;
+    for (let u = 1; u <= 5; u++) totalActivityDone += getActivityCount(u);
+    const pct = Math.round((totalActivityDone / (TOTAL_TOPICS * 3)) * 100);
 
     const ringFill = document.getElementById('spRingFill');
     if (ringFill) {
@@ -188,19 +202,28 @@
     Object.entries(UNITS).forEach(([unitNum, unit]) => {
       const n         = parseInt(unitNum);
       const completed = getCompletedSet(n);
+      const fcDone    = getActivitySet(n, 'fw_fc_done_u');
+      const pqDone    = getActivitySet(n, 'fw_pq_done_u');
+      const sgDone    = getActivitySet(n, 'fw_sg_done_u');
       const total     = unit.topics.length;
-      const done      = unit.topics.filter(t => completed.has(t.id)).length;
-      const pct       = total > 0 ? Math.round((done / total) * 100) : 0;
-      const status    = done === 0 ? 'not-started' : done === total ? 'completed' : 'in-progress';
+      const actDone   = fcDone.size + pqDone.size + sgDone.size;
+      const pct       = total > 0 ? Math.round((actDone / (total * 3)) * 100) : 0;
+      const anyStarted = actDone > 0;
+      const allDone    = pct === 100;
+      const status     = !anyStarted ? 'not-started' : allDone ? 'completed' : 'in-progress';
 
       const topicsHTML = unit.topics.map(topic => {
         const isDone = completed.has(topic.id);
+        const anyActivity = fcDone.has(topic.id) || pqDone.has(topic.id) || sgDone.has(topic.id);
+        const isPartial = anyActivity && !isDone;
         const checkIcon = isDone
           ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`
           : '';
         const badge = isDone
           ? `<span class="sp-badge sp-badge--done">Done</span>`
-          : `<span class="sp-badge sp-badge--not-started">Not Started</span>`;
+          : isPartial
+            ? `<span class="sp-badge sp-badge--in-progress">In Progress</span>`
+            : `<span class="sp-badge sp-badge--not-started">Not Started</span>`;
         return `
           <div class="sp-topic-row">
             <span class="sp-topic-check ${isDone ? 'sp-topic-check--done' : ''}">${checkIcon}</span>
@@ -306,6 +329,9 @@
 
     confirmBtn?.addEventListener('click', () => {
       ['fw_progress_u1','fw_progress_u2','fw_progress_u3','fw_progress_u4','fw_progress_u5',
+       'fw_fc_done_u1','fw_fc_done_u2','fw_fc_done_u3','fw_fc_done_u4','fw_fc_done_u5',
+       'fw_pq_done_u1','fw_pq_done_u2','fw_pq_done_u3','fw_pq_done_u4','fw_pq_done_u5',
+       'fw_sg_done_u1','fw_sg_done_u2','fw_sg_done_u3','fw_sg_done_u4','fw_sg_done_u5',
        'fw_pq_results','fw_activity_log','fw_study_log','fw_streak_dates','fw_points']
         .forEach(k => localStorage.removeItem(k));
       modal.hidden = true;
@@ -320,14 +346,14 @@
   // Expose loadHeaderProgress so confirmBtn can call it after reset
   function loadHeaderProgress() {
     const unitCards = document.querySelectorAll('.unit-list .unit-card');
-    let totalCompleted = 0;
+    let totalActivityDone = 0;
     unitCards.forEach((card, index) => {
-      const unitNum   = index + 1;
-      const unit      = UNITS[unitNum];
+      const unitNum = index + 1;
+      const unit    = UNITS[unitNum];
       if (!unit) return;
-      const completed = getCompletedCount(unitNum);
-      totalCompleted += completed;
-      const pct       = Math.round((completed / unit.topics.length) * 100);
+      const actDone = getActivityCount(unitNum);
+      totalActivityDone += actDone;
+      const pct = Math.round((actDone / (unit.topics.length * 3)) * 100);
       const pctEl = card.querySelector('.unit-card__progress-pct');
       const fill  = card.querySelector('.unit-card__progress-fill');
       const bar   = card.querySelector('.unit-card__progress-bar');
@@ -335,7 +361,7 @@
       if (fill)  fill.style.width  = `${pct}%`;
       if (bar)   bar.setAttribute('aria-valuenow', pct);
     });
-    const overallPct   = Math.round((totalCompleted / TOTAL_TOPICS) * 100);
+    const overallPct   = Math.round((totalActivityDone / (TOTAL_TOPICS * 3)) * 100);
     const overallPctEl = document.getElementById('overallProgressPct');
     const overallFill  = document.getElementById('overallProgressFill');
     const overallBar   = document.querySelector('.subject-header-card__progress-bar');

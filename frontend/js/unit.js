@@ -105,13 +105,54 @@
   }
 
   function updateProgressBar() {
-    const pct = unit.topics.length > 0
-      ? Math.round((completedTopics.size / unit.topics.length) * 100)
-      : 0;
-    const label = document.getElementById('unitProgressLabel');
-    const fill  = document.getElementById('unitProgressFill');
-    if (label) label.textContent = `${pct}% Complete`;
-    if (fill)  fill.style.width  = `${pct}%`;
+    try {
+      const read  = key => new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+      const done  = read(`fw_fc_done_u${unitNum}`).size
+                  + read(`fw_pq_done_u${unitNum}`).size
+                  + read(`fw_sg_done_u${unitNum}`).size;
+      const total = unit.topics.length * 3;
+      const pct   = total > 0 ? Math.round((done / total) * 100) : 0;
+      const label = document.getElementById('unitProgressLabel');
+      const fill  = document.getElementById('unitProgressFill');
+      if (label) label.textContent = `${pct}% Complete`;
+      if (fill)  fill.style.width  = `${pct}%`;
+    } catch {}
+  }
+
+  // Write one activity completion; return true if newly added.
+  function _markActivityDone(key, topicId) {
+    try {
+      const s = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+      if (s.has(topicId)) return false;
+      s.add(topicId);
+      localStorage.setItem(key, JSON.stringify([...s]));
+      return true;
+    } catch { return false; }
+  }
+
+  // After any activity write, check if all 3 are done → tick the checkbox.
+  function _checkAndMarkFullyComplete(topicId) {
+    try {
+      const read  = key => new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+      const fcD   = read(`fw_fc_done_u${unitNum}`);
+      const pqD   = read(`fw_pq_done_u${unitNum}`);
+      const sgD   = read(`fw_sg_done_u${unitNum}`);
+      if (!fcD.has(topicId) || !pqD.has(topicId) || !sgD.has(topicId)) return;
+      if (!completedTopics.has(topicId)) {
+        completedTopics.add(topicId);
+        saveProgress();
+        const item = document.querySelector(`.unit-topic-item[data-topic-id="${topicId}"]`);
+        if (item) refreshCheckUI(item, true);
+        if (completedTopics.size === unit.topics.length) {
+          const bonusKey = `fw_unit_bonus_u${unitNum}`;
+          if (!localStorage.getItem(bonusKey)) {
+            localStorage.setItem(bonusKey, '1');
+            _awardPoints(50, `Unit ${unitNum} Complete Bonus`);
+          }
+        }
+      }
+    } catch {}
+    updateProgressBar();
   }
 
   loadProgress();
@@ -179,6 +220,11 @@
         refreshCheckUI(item, completedTopics.has(id));
         updateProgressBar();
         if (completedTopics.has(id)) {
+          // Manual check counts as all 3 activities done
+          _markActivityDone(`fw_fc_done_u${unitNum}`, id);
+          _markActivityDone(`fw_pq_done_u${unitNum}`, id);
+          _markActivityDone(`fw_sg_done_u${unitNum}`, id);
+          updateProgressBar();
           _logStudyDate();
           // 50pt bonus when all topics in the unit are checked — awarded only once
           if (completedTopics.size === unit.topics.length) {
@@ -275,6 +321,10 @@
     });
     if (targetId === 'cpanelFlashcards') fcLoad().then(() => fcInit());
     if (targetId === 'cpanelPractice')   pqLoad().then(() => pqInit());
+    if (targetId === 'cpanelGuide' && viewMode !== 'review') {
+      _markActivityDone(`fw_sg_done_u${unitNum}`, currentTopicId);
+      _checkAndMarkFullyComplete(currentTopicId);
+    }
   }
 
   contentTabs.forEach(tab => {
@@ -653,22 +703,9 @@
       _awardPoints(3, `Flashcards: ${t?.num || 'topic'}`);
       _logStudyDate();
 
-      // Mark topic as complete if not already, and update the progress bar + checkbox UI
-      if (!completedTopics.has(currentTopicId)) {
-        completedTopics.add(currentTopicId);
-        saveProgress();
-        updateProgressBar();
-        const item = document.querySelector(`.unit-topic-item[data-topic-id="${currentTopicId}"]`);
-        if (item) refreshCheckUI(item, true);
-        // 50pt bonus when all topics in the unit are completed — awarded only once
-        if (completedTopics.size === unit.topics.length) {
-          const bonusKey = `fw_unit_bonus_u${unitNum}`;
-          if (!localStorage.getItem(bonusKey)) {
-            localStorage.setItem(bonusKey, '1');
-            _awardPoints(50, `Unit ${unitNum} Complete Bonus`);
-          }
-        }
-      }
+      // Mark flashcard activity done; tick checkbox only when all 3 activities complete
+      _markActivityDone(`fw_fc_done_u${unitNum}`, currentTopicId);
+      _checkAndMarkFullyComplete(currentTopicId);
 
       if (ptsEarnedEl) {
         ptsEarnedEl.textContent = 'You earned 3 points for completing all flashcards in this topic!';
@@ -1319,6 +1356,12 @@
 
     pqShowView('pqComplete');
     _logPqResult(pct, correct, total);
+
+    // Mark PQ activity done for single-topic mode
+    if (viewMode !== 'review') {
+      _markActivityDone(`fw_pq_done_u${unitNum}`, currentTopicId);
+      _checkAndMarkFullyComplete(currentTopicId);
+    }
   }
 
   // --- Listeners ------------------------------------------

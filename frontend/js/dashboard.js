@@ -16,15 +16,15 @@ const SUBJECT_DEFS = {
                  <polyline points="8 6 2 12 8 18"/>
                </svg>`,
     getProgress() {
-      // Reads same localStorage keys as subject.js
-      const counts = { 1: 4, 2: 4, 3: 18, 4: 3, 5: 6 };
-      const total  = 35;
+      const total = 35 * 3; // 35 topics × 3 activities each
       let done = 0;
       for (let u = 1; u <= 5; u++) {
         try {
-          const raw = localStorage.getItem(`fw_progress_u${u}`);
-          done += raw ? JSON.parse(raw).length : 0;
-        } catch { /* ignore */ }
+          for (const prefix of ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']) {
+            const raw = localStorage.getItem(`${prefix}${u}`);
+            done += raw ? JSON.parse(raw).length : 0;
+          }
+        } catch {}
       }
       return { done, total, pct: Math.round((done / total) * 100) };
     },

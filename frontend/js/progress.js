@@ -108,19 +108,26 @@
     return new Set(ls(`fw_progress_u${n}`, []));
   }
 
+  function activityDoneSet(unitNum, prefix) {
+    return new Set(ls(`${prefix}${unitNum}`, []));
+  }
+
   function topicInProgress(unitNum, topicId) {
-    try {
-      const gotit = ls(`fw_fc_gotit_u${unitNum}_t${topicId}`, []);
-      const still = ls(`fw_fc_stilllearn_u${unitNum}_t${topicId}`, []);
-      return gotit.length > 0 || still.length > 0;
-    } catch { return false; }
+    const fcD = activityDoneSet(unitNum, 'fw_fc_done_u');
+    const pqD = activityDoneSet(unitNum, 'fw_pq_done_u');
+    const sgD = activityDoneSet(unitNum, 'fw_sg_done_u');
+    const allDone = fcD.has(topicId) && pqD.has(topicId) && sgD.has(topicId);
+    const anyDone = fcD.has(topicId) || pqD.has(topicId) || sgD.has(topicId);
+    return anyDone && !allDone;
   }
 
   function calcOverallCompletion() {
-    let total = 0, done = 0;
+    let done = 0;
+    const total = Object.values(UNITS).reduce((s, u) => s + u.topics.length, 0) * 3;
     for (let n = 1; n <= 5; n++) {
-      total += UNITS[n].topics.length;
-      done  += completedTopicsForUnit(n).size;
+      for (const prefix of ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']) {
+        done += ls(`${prefix}${n}`, []).length;
+      }
     }
     return total > 0 ? Math.round((done / total) * 100) : 0;
   }
@@ -238,7 +245,9 @@
       const unit      = UNITS[n];
       const completed = completedTopicsForUnit(n);
       const total     = unit.topics.length;
-      const pct       = total > 0 ? Math.round((completed.size / total) * 100) : 0;
+      const actDone   = ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']
+        .reduce((s, p) => s + ls(`${p}${n}`, []).length, 0);
+      const pct       = total > 0 ? Math.round((actDone / (total * 3)) * 100) : 0;
       const barCls    = pct === 100 ? '' : pct > 0 ? 'pg-unit-row__bar-fill--partial' : '';
 
       const row = document.createElement('div');

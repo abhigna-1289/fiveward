@@ -431,26 +431,35 @@
       awardPoints(3);
       logStudyDate();
 
-      // Mark the topic as complete in the progress tracker
+      // Mark flashcard activity done; tick full-complete only when all 3 activities done
       let markedNew = false;
       if (topicNum) {
         const topicIdx = unit.topics.findIndex(t => t.num === topicNum);
         if (topicIdx !== -1) {
-          const topicId = topicIdx + 1; // IDs are 1-based, matching unit.js
+          const topicId = topicIdx + 1; // 1-based, matching unit.js
           try {
-            const key      = `fw_progress_u${unitNum}`;
-            const existing = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
-            if (!existing.has(topicId)) {
-              existing.add(topicId);
-              localStorage.setItem(key, JSON.stringify([...existing]));
+            const fcKey = `fw_fc_done_u${unitNum}`;
+            const fcSet = new Set(JSON.parse(localStorage.getItem(fcKey) || '[]'));
+            if (!fcSet.has(topicId)) {
+              fcSet.add(topicId);
+              localStorage.setItem(fcKey, JSON.stringify([...fcSet]));
               markedNew = true;
-
-              // 50pt bonus if this completes the entire unit — awarded only once
-              if (existing.size === unit.topics.length) {
-                const bonusKey = `fw_unit_bonus_u${unitNum}`;
-                if (!localStorage.getItem(bonusKey)) {
-                  localStorage.setItem(bonusKey, '1');
-                  awardPoints(50);
+            }
+            // Promote to fully complete only when PQ and SG are also done
+            const pqSet = new Set(JSON.parse(localStorage.getItem(`fw_pq_done_u${unitNum}`) || '[]'));
+            const sgSet = new Set(JSON.parse(localStorage.getItem(`fw_sg_done_u${unitNum}`) || '[]'));
+            if (fcSet.has(topicId) && pqSet.has(topicId) && sgSet.has(topicId)) {
+              const progressKey = `fw_progress_u${unitNum}`;
+              const progress    = new Set(JSON.parse(localStorage.getItem(progressKey) || '[]'));
+              if (!progress.has(topicId)) {
+                progress.add(topicId);
+                localStorage.setItem(progressKey, JSON.stringify([...progress]));
+                if (progress.size === unit.topics.length) {
+                  const bonusKey = `fw_unit_bonus_u${unitNum}`;
+                  if (!localStorage.getItem(bonusKey)) {
+                    localStorage.setItem(bonusKey, '1');
+                    awardPoints(50);
+                  }
                 }
               }
             }
@@ -460,7 +469,7 @@
 
       if (ptsEl) {
         ptsEl.textContent = markedNew
-          ? `Topic ${topicNum} marked complete! You earned 3 points.`
+          ? `Flashcards done for Topic ${topicNum}! You earned 3 points.`
           : 'You earned 3 points for completing all flashcards!';
         ptsEl.hidden = false;
       }
