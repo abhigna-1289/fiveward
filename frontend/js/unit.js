@@ -146,17 +146,18 @@
       const fcD   = read(`fw_fc_done_u${unitNum}`);
       const pqD   = read(`fw_pq_done_u${unitNum}`);
       const sgD   = read(`fw_sg_done_u${unitNum}`);
-      if (!fcD.has(topicId) || !pqD.has(topicId) || !sgD.has(topicId)) return;
-      if (!completedTopics.has(topicId)) {
-        completedTopics.add(topicId);
-        saveProgress();
-        const item = document.querySelector(`.unit-topic-item[data-topic-id="${topicId}"]`);
-        if (item) refreshCheckUI(item, true);
-        if (completedTopics.size === unit.topics.length) {
-          const bonusKey = `fw_unit_bonus_u${unitNum}`;
-          if (!localStorage.getItem(bonusKey)) {
-            localStorage.setItem(bonusKey, '1');
-            _awardPoints(50, `Unit ${unitNum} Complete Bonus`);
+      if (fcD.has(topicId) && pqD.has(topicId) && sgD.has(topicId)) {
+        if (!completedTopics.has(topicId)) {
+          completedTopics.add(topicId);
+          saveProgress();
+          const item = document.querySelector(`.unit-topic-item[data-topic-id="${topicId}"]`);
+          if (item) refreshCheckUI(item, true);
+          if (completedTopics.size === unit.topics.length) {
+            const bonusKey = `fw_unit_bonus_u${unitNum}`;
+            if (!localStorage.getItem(bonusKey)) {
+              localStorage.setItem(bonusKey, '1');
+              _awardPoints(50, `Unit ${unitNum} Complete Bonus`);
+            }
           }
         }
       }
