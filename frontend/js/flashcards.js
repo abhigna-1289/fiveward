@@ -425,12 +425,45 @@
     if (btnStill)   btnStill.disabled   = still === 0;
     if (btnStarred) btnStarred.disabled = starred === 0;
 
-    // Award points for completing all cards
+    // Award points and update progress when all cards in a topic are completed
     const ptsEl = document.getElementById('fcPointsEarned');
     if (fcFilter === 'all' && allCards.length > 0) {
       awardPoints(3);
       logStudyDate();
-      if (ptsEl) { ptsEl.textContent = 'You earned 3 points for completing all flashcards!'; ptsEl.hidden = false; }
+
+      // Mark the topic as complete in the progress tracker
+      let markedNew = false;
+      if (topicNum) {
+        const topicIdx = unit.topics.findIndex(t => t.num === topicNum);
+        if (topicIdx !== -1) {
+          const topicId = topicIdx + 1; // IDs are 1-based, matching unit.js
+          try {
+            const key      = `fw_progress_u${unitNum}`;
+            const existing = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+            if (!existing.has(topicId)) {
+              existing.add(topicId);
+              localStorage.setItem(key, JSON.stringify([...existing]));
+              markedNew = true;
+
+              // 50pt bonus if this completes the entire unit — awarded only once
+              if (existing.size === unit.topics.length) {
+                const bonusKey = `fw_unit_bonus_u${unitNum}`;
+                if (!localStorage.getItem(bonusKey)) {
+                  localStorage.setItem(bonusKey, '1');
+                  awardPoints(50);
+                }
+              }
+            }
+          } catch {}
+        }
+      }
+
+      if (ptsEl) {
+        ptsEl.textContent = markedNew
+          ? `Topic ${topicNum} marked complete! You earned 3 points.`
+          : 'You earned 3 points for completing all flashcards!';
+        ptsEl.hidden = false;
+      }
     } else {
       if (ptsEl) ptsEl.hidden = true;
     }

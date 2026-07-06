@@ -646,12 +646,30 @@
     if (btnStill)   btnStill.disabled   = still === 0;
     if (btnStarred) btnStarred.disabled = starred === 0;
 
-    // Award 3pts for completing a full pass through all cards in a topic
+    // Award 3pts and update progress for completing all cards in a topic
     const ptsEarnedEl = document.getElementById('fcPointsEarned');
     if (viewMode !== 'review' && fcFilter === 'all' && fcState.allCards.length > 0) {
       const t = unit.topics.find(t => t.id === currentTopicId);
       _awardPoints(3, `Flashcards: ${t?.num || 'topic'}`);
       _logStudyDate();
+
+      // Mark topic as complete if not already, and update the progress bar + checkbox UI
+      if (!completedTopics.has(currentTopicId)) {
+        completedTopics.add(currentTopicId);
+        saveProgress();
+        updateProgressBar();
+        const item = document.querySelector(`.unit-topic-item[data-topic-id="${currentTopicId}"]`);
+        if (item) refreshCheckUI(item, true);
+        // 50pt bonus when all topics in the unit are completed — awarded only once
+        if (completedTopics.size === unit.topics.length) {
+          const bonusKey = `fw_unit_bonus_u${unitNum}`;
+          if (!localStorage.getItem(bonusKey)) {
+            localStorage.setItem(bonusKey, '1');
+            _awardPoints(50, `Unit ${unitNum} Complete Bonus`);
+          }
+        }
+      }
+
       if (ptsEarnedEl) {
         ptsEarnedEl.textContent = 'You earned 3 points for completing all flashcards in this topic!';
         ptsEarnedEl.hidden = false;
