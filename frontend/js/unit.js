@@ -130,6 +130,15 @@
     } catch { return false; }
   }
 
+  function _removeActivityDone(key, topicId) {
+    try {
+      const s = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+      if (!s.has(topicId)) return;
+      s.delete(topicId);
+      localStorage.setItem(key, JSON.stringify([...s]));
+    } catch {}
+  }
+
   // After any activity write, check if all 3 are done → tick the checkbox.
   function _checkAndMarkFullyComplete(topicId) {
     try {
@@ -213,18 +222,22 @@
       });
       item.querySelector('.unit-topic-item__check')?.addEventListener('click', (e) => {
         e.stopPropagation();
-        const id = parseInt(item.dataset.topicId);
-        if (completedTopics.has(id)) completedTopics.delete(id);
-        else completedTopics.add(id);
+        const id      = parseInt(item.dataset.topicId);
+        const wasDown = completedTopics.has(id);
+        if (wasDown) completedTopics.delete(id);
+        else         completedTopics.add(id);
         saveProgress();
         refreshCheckUI(item, completedTopics.has(id));
-        updateProgressBar();
-        if (completedTopics.has(id)) {
+        if (wasDown) {
+          // Uncheck: remove from all 3 activity keys so % recalculates correctly
+          _removeActivityDone(`fw_fc_done_u${unitNum}`, id);
+          _removeActivityDone(`fw_pq_done_u${unitNum}`, id);
+          _removeActivityDone(`fw_sg_done_u${unitNum}`, id);
+        } else {
           // Manual check counts as all 3 activities done
           _markActivityDone(`fw_fc_done_u${unitNum}`, id);
           _markActivityDone(`fw_pq_done_u${unitNum}`, id);
           _markActivityDone(`fw_sg_done_u${unitNum}`, id);
-          updateProgressBar();
           _logStudyDate();
           // 50pt bonus when all topics in the unit are checked — awarded only once
           if (completedTopics.size === unit.topics.length) {
@@ -235,6 +248,7 @@
             }
           }
         }
+        updateProgressBar();
       });
     });
   }
