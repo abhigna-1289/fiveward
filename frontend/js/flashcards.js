@@ -14,9 +14,22 @@ const deckState = {
   isFlipped:    false,
 };
 
-// TODO: loadFlashcards(subjectId, unitNumber)
-//       Fetches data/subjects/[id]/flashcards/unit-[n].json
-//       Populates deckState.cards and deckState.shuffled.
+// Fetches data/subjects/[id]/flashcards/unit-[n].json and populates deckState.
+async function loadFlashcards(subjectId, unitNumber) {
+  const path = `data/subjects/${subjectId}/flashcards/unit-${unitNumber}.json`;
+  try {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${path}`);
+    const json = await res.json();
+    deckState.cards   = json.cards || [];
+    deckState.shuffled = deckState.cards.map((_, i) => i);
+    console.log(`[fiveward] Loaded ${deckState.cards.length} flashcards from ${path}`);
+    return deckState.cards;
+  } catch (err) {
+    console.error('[fiveward] loadFlashcards failed:', err);
+    return [];
+  }
+}
 
 // TODO: renderCard(index)
 //       Shows the front/back of deckState.shuffled[index].
