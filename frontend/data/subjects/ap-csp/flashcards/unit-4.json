@@ -1,1 +1,191 @@
-{ "unitNumber": 4, "cards": [] }
+{
+  "unitNumber": 4,
+  "cards": [
+    {
+      "id": "u4-1-1",
+      "front": "Computing Device",
+      "back": "A physical artifact that can run a program. Examples include computers, tablets, servers, routers, and smart sensors.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-2",
+      "front": "Computing System",
+      "back": "A group of computing devices and programs working together for a common purpose. A computer network is a type of computing system.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-3",
+      "front": "Computer Network",
+      "back": "A group of interconnected computing devices capable of sending or receiving data. A path between two devices is a sequence of directly connected devices that begins at the sender and ends at the receiver.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-4",
+      "front": "Routing",
+      "back": "The process of finding a path from sender to receiver on a network. Routing on the Internet is usually dynamic — it is not specified in advance.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-5",
+      "front": "Bandwidth",
+      "back": "The maximum amount of data that can be sent through a computer network in a fixed amount of time. Usually measured in bits per second.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-6",
+      "front": "The Internet",
+      "back": "A computer network consisting of interconnected networks that use standardized, open (nonproprietary) communication protocols. Designed to be scalable. Access depends on the ability to connect a computing device to an Internet-connected device.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-7",
+      "front": "Protocol",
+      "back": "An agreed-upon set of rules that specify the behavior of a system. The protocols used in the Internet are open, which allows users to easily connect additional computing devices.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-8",
+      "front": "Why are open protocols important?",
+      "back": "Because the protocols used in the Internet are open (nonproprietary), users can easily connect additional computing devices. This is what makes the Internet scalable and accessible to anyone.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-9",
+      "front": "Scalability",
+      "back": "The capacity for a system to change in size and scale to meet new demands. The Internet was designed to be scalable — it can grow to accommodate more devices and users.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-10",
+      "front": "Packet",
+      "back": "A chunk of data with metadata used for routing between origin and destination on the Internet, as well as for data reassembly. Packets may arrive at the destination in order, out of order, or not at all.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-11",
+      "front": "What does packet metadata contain?",
+      "back": "Metadata in a packet is used for two purposes: routing the packet from origin to destination across the Internet, and reassembling the data at the destination once all packets arrive.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-12",
+      "front": "What happens if packets arrive out of order or not at all?",
+      "back": "Packets may arrive at the destination in order, out of order, or not at all. The metadata in each packet is used to reassemble the original data in the correct order regardless of arrival order.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-13",
+      "front": "Common Internet Protocols",
+      "back": "IP (Internet Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol) are common protocols used on the Internet. HTTP is a protocol used specifically by the World Wide Web.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-14",
+      "front": "World Wide Web",
+      "back": "A system of linked pages, programs, and files that uses the Internet. HTTP is the protocol used by the World Wide Web. The Web is not the same as the Internet — it is one service that runs on top of the Internet.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-15",
+      "front": "Compare: The Internet vs The World Wide Web",
+      "back": "The Internet is the global network of interconnected computers that transmit data.\nThe World Wide Web is a system of linked pages, programs, and files that runs on top of the Internet using HTTP.\nThe Web uses the Internet but is not the same thing as the Internet.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-1-16",
+      "front": "How is data sent through the Internet?",
+      "back": "Information is passed as a data stream. Data streams contain chunks of data encapsulated in packets. Each packet contains a chunk of data and metadata for routing and reassembly. Packets may arrive in order, out of order, or not at all.",
+      "topic": "4.1"
+    },
+    {
+      "id": "u4-2-1",
+      "front": "Fault Tolerance",
+      "back": "The ability of a system to support failures and still continue to function. The Internet has been engineered to be fault-tolerant. Important because elements of complex systems fail at unexpected times, often in groups.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-2-2",
+      "front": "Redundancy",
+      "back": "The inclusion of extra components that can be used to mitigate failure of a system if other components fail. One way to accomplish network redundancy is by having more than one path between any two connected devices.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-2-3",
+      "front": "How does redundancy make the Internet fault-tolerant?",
+      "back": "If a particular device or connection on the Internet fails, subsequent data will be sent via a different route if one is available. The redundancy of routing options increases reliability and helps the Internet scale to more devices and people.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-2-4",
+      "front": "What is the tradeoff of redundancy?",
+      "back": "Redundancy within a system often requires additional resources (more connections, more routers, more cost) but provides the benefit of fault tolerance. It is a deliberate tradeoff between cost and reliability.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-2-5",
+      "front": "What makes a system NOT fault-tolerant?",
+      "back": "A system is vulnerable to failure when there is only one path between two devices — if that single path fails, data cannot be rerouted. Adding redundant connections removes this single point of failure.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-2-6",
+      "front": "How do you determine if a network is fault-tolerant?",
+      "back": "A network is fault-tolerant if every device has more than one path to every other device. If removing any single connection or device still leaves at least one path between all devices, the network is fault-tolerant. If any single failure can disconnect two devices, it is not fully fault-tolerant.",
+      "topic": "4.2"
+    },
+    {
+      "id": "u4-3-1",
+      "front": "Sequential Computing",
+      "back": "A computational model in which operations are performed in order one at a time. A sequential solution takes as long as the sum of all of its steps.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-2",
+      "front": "Parallel Computing",
+      "back": "A computational model where the program is broken into multiple smaller sequential computing operations, some of which are performed simultaneously. A parallel computing solution takes as long as its sequential tasks plus the longest of its parallel tasks.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-3",
+      "front": "Distributed Computing",
+      "back": "A computational model in which multiple devices are used to run a program. Allows problems to be solved that could not be solved on a single computer because of processing time or storage needs. Allows much larger problems to be solved more quickly.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-4",
+      "front": "How to calculate the time for a parallel computing solution",
+      "back": "Time = sequential tasks + longest parallel task.\nExample: if sequential tasks take 5 seconds and parallel tasks take 3, 4, and 6 seconds simultaneously, total time = 5 + 6 = 11 seconds.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-5",
+      "front": "Speedup of Parallel Computing",
+      "back": "Speedup = sequential time / parallel time.\nExample: if a task takes 20 seconds sequentially but 5 seconds in parallel, the speedup is 20 / 5 = 4. This means the parallel solution is 4 times faster.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-6",
+      "front": "Limitation of Parallel Computing",
+      "back": "Every parallel computing solution still has a sequential portion. The efficiency of the overall solution is limited by that sequential portion — at some point, adding more parallel processes will no longer meaningfully increase efficiency.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-7",
+      "front": "Compare: Sequential vs Parallel vs Distributed Computing",
+      "back": "Sequential: one operation at a time, takes the sum of all steps.\nParallel: some operations run simultaneously on one system, takes sequential time plus longest parallel task.\nDistributed: multiple devices run the program, solves problems too large or slow for one computer.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-8",
+      "front": "Benefits of Parallel and Distributed Computing",
+      "back": "Parallel computing solutions can scale more effectively than sequential solutions. Distributed computing allows problems to be solved that could not be solved on a single computer due to processing time or storage needs, and allows much larger problems to be solved more quickly.",
+      "topic": "4.3"
+    },
+    {
+      "id": "u4-3-9",
+      "front": "When does adding more parallel processes stop helping?",
+      "back": "When increasing parallel computing in a solution, efficiency is still limited by the sequential portion. At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant.",
+      "topic": "4.3"
+    }
+  ]
+}
