@@ -1,106 +1,125 @@
 {
   "unitNumber": 1,
-  "type": "review",
   "cards": [
     {
-      "id": "u1-r-1",
-      "front": "What are the three types of computing innovations?",
-      "back": "Physical (e.g., self-driving car), nonphysical software (e.g., photo editing app), and nonphysical concept (e.g., e-commerce). All three have a program as an integral part of their function."
+      "id": "u1r-1",
+      "front": "Computing Innovation",
+      "back": "Any innovation that includes a program as an integral part of its function. Can be physical (e.g. self-driving car), nonphysical software (e.g. photo editing app), or nonphysical concept (e.g. e-commerce).",
+      "topic": "review"
     },
     {
-      "id": "u1-r-2",
-      "front": "Why is diverse collaboration important in computing?",
-      "back": "Multiple perspectives reduce bias, improve design, and reflect diverse talents. A homogeneous team may miss problems that affect users outside their experience. Effective collaboration requires equal participation and voice — not just group work."
+      "id": "u1r-2",
+      "front": "How does collaboration improve computing innovations?",
+      "back": "Effective collaboration produces an innovation that reflects the diversity of talents and perspectives of those who designed it. Diverse perspectives help avoid bias. Consultation with users helps develop a program that fully incorporates their perspectives.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-3",
-      "front": "What is the difference between a program and a code segment?",
-      "back": "A program is a complete collection of statements that performs a specific task when run. A code segment is a smaller collection of statements that is part of a larger program."
+      "id": "u1r-3",
+      "front": "Pair Programming",
+      "back": "A collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-4",
-      "front": "What are the four interpersonal skills needed for effective collaboration?",
-      "back": "Communication, consensus building, conflict resolution, and negotiation. These ensure equal participation and a shared direction for the team."
+      "id": "u1r-4",
+      "front": "Four Interpersonal Skills for Effective Collaboration",
+      "back": "Communication, consensus building, conflict resolution, and negotiation.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-5",
-      "front": "What are the four phases of program development?",
-      "back": "1. Investigating and reflecting\n2. Designing\n3. Prototyping\n4. Testing\nThe process can be ordered and intentional, or exploratory in nature."
+      "id": "u1r-5",
+      "front": "Purpose of Computing Innovations",
+      "back": "To solve problems or to pursue interests through creative expression. Understanding the purpose gives developers an improved ability to build the innovation.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-6",
-      "front": "How do iterative and incremental development differ?",
-      "back": "Iterative: the whole project is continuously refined based on feedback — earlier phases may be revisited at any time.\nIncremental: built piece by piece — each piece is completed and verified before the next is added."
+      "id": "u1r-6",
+      "front": "Program",
+      "back": "A collection of program statements that performs a specific task when run by a computer. Needs to work for a variety of inputs and situations.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-7",
-      "front": "What is the difference between a logic error and a syntax error?",
-      "back": "Logic error: program runs but produces wrong results.\nSyntax error: program cannot run because the rules of the language were not followed."
+      "id": "u1r-7",
+      "front": "Event-Driven Programming",
+      "back": "A programming style where program statements execute when triggered by an event rather than through sequential flow of control. An event is an action that supplies input data to a program.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-8",
-      "front": "What is a run-time error and how does it differ from the other two error types?",
-      "back": "A run-time error occurs during execution — the program starts running but crashes or fails mid-way. Unlike syntax errors (caught before running) and logic errors (wrong output but runs), run-time errors stop execution in progress."
+      "id": "u1r-8",
+      "front": "Iterative vs Incremental Development",
+      "back": "Iterative: continuously refines the whole project based on feedback — earlier phases may be revisited.\nIncremental: builds and verifies one piece at a time before adding the next.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-9",
-      "front": "What is program documentation and why does it matter?",
-      "back": "A written description of the function of a code segment, event, procedure, or program and how it was developed. It should be written throughout development and helps maintain correct programs individually and collaboratively."
+      "id": "u1r-9",
+      "front": "Four Phases of Program Development",
+      "back": "Investigating and reflecting, designing, prototyping, and testing. The process can be ordered and intentional, or exploratory in nature.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-10",
-      "front": "What is an event in programming and how does it affect execution?",
-      "back": "An action associated with input data that supplies information to a program (e.g., key press, mouse click, program start). In event-driven programming, statements execute when triggered by an event rather than through sequential flow."
+      "id": "u1r-10",
+      "front": "Program Specification",
+      "back": "A document that defines the requirements for a program. The design phase outlines how to accomplish the specification.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-11",
-      "front": "What is an overflow error?",
-      "back": "An error that occurs when a computer attempts to handle a number that is outside the defined range of values the system can represent."
+      "id": "u1r-11",
+      "front": "Program Documentation",
+      "back": "A written description of the function of a code segment, event, procedure, or program and how it was developed. Should be written throughout development, not just at the end.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-12",
-      "front": "What methods can be used to find and correct errors in a program?",
-      "back": "Test cases, hand tracing, visualizations, debuggers, and adding extra output statements. Results from testing are used to revise the algorithm or program."
+      "id": "u1r-12",
+      "front": "Comments",
+      "back": "A form of program documentation written into the program to be read by people. Do not affect how the program runs. Not all programming environments support comments.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-13",
-      "front": "What inputs should you use when testing a program?",
-      "back": "Inputs that demonstrate different expected outcomes, including values at or just beyond the extremes (minimum and maximum) of the input data."
+      "id": "u1r-13",
+      "front": "Four Types of Errors",
+      "back": "Logic error: program runs but produces wrong results.\nSyntax error: language rules are broken, program cannot run.\nRun-time error: occurs during execution.\nOverflow error: number is outside the defined range of values.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-14",
-      "front": "What is bias in computing innovations and how is it introduced?",
-      "back": "A preference or prejudice embedded in an innovation that disadvantages certain users. It often occurs unintentionally when the development team lacks diverse perspectives. Including diverse collaborators during development helps identify and avoid it."
+      "id": "u1r-14",
+      "front": "Five Ways to Find and Correct Errors",
+      "back": "Test cases, hand tracing, visualizations, debuggers, and adding extra output statements.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-15",
-      "front": "What does the design phase of program development include?",
-      "back": "Brainstorming, planning and storyboarding, organizing into modules and functional components, creating UI layout diagrams, and developing a testing strategy."
+      "id": "u1r-15",
+      "front": "Program Testing",
+      "back": "Using defined inputs to ensure an algorithm or program produces expected outcomes. Test inputs should demonstrate different expected outcomes at or just beyond the extremes of input data.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-16",
-      "front": "What is a program specification and how does it relate to the design phase?",
-      "back": "A program specification is a document that defines the requirements for a program. The design phase outlines how to accomplish what the specification describes."
+      "id": "u1r-16",
+      "front": "Acknowledging Code from Other Sources",
+      "back": "Any code developed collaboratively or borrowed from another source must be acknowledged in the program documentation, including the origin or original author's name.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-17",
-      "front": "What is user consultation and why does it matter?",
-      "back": "Communicating with potential users during development to understand the program's purpose from diverse perspectives. It helps develop a program that fully incorporates those perspectives and reduces unintended bias."
+      "id": "u1r-17",
+      "front": "What does the design phase of a program include?",
+      "back": "Brainstorming, planning and storyboarding, organizing into modules and functional components, creating UI layout diagrams, and developing a testing strategy.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-18",
-      "front": "What is pair programming?",
-      "back": "A collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss."
+      "id": "u1r-18",
+      "front": "Ways to investigate user needs during development",
+      "back": "Collecting data through surveys, user testing, interviews, and direct observations.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-19",
-      "front": "When does program input affect output?",
-      "back": "Usually — inputs affect the output produced. Input can come from a user or from other programs and can be tactile, audio, visual, or text. A program needs to work for a variety of inputs and situations."
+      "id": "u1r-19",
+      "front": "Program Input vs Program Output",
+      "back": "Input: data sent to a computer for processing. Can be tactile, audio, visual, or text. Can come from a user or other programs.\nOutput: any data sent from a program to a device. Usually based on the program's input or prior state.",
+      "topic": "review"
     },
     {
-      "id": "u1-r-20",
-      "front": "What must be acknowledged in program documentation regarding borrowed code?",
-      "back": "Any code developed collaboratively or borrowed from another source must be acknowledged in the program documentation. The acknowledgement must include the origin or original author's name."
+      "id": "u1r-20",
+      "front": "Why is bias a concern in computing innovations?",
+      "back": "Computing innovations can embed bias when the development team lacks diverse perspectives. Bias can disadvantage certain users. Including diverse collaborators and consulting users helps identify and avoid bias.",
+      "topic": "review"
     }
   ]
 }

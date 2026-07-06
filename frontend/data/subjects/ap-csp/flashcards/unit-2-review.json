@@ -1,1 +1,137 @@
-{ "unitNumber": 2, "cards": [] }
+{
+  "unitNumber": 2,
+  "cards": [
+    {
+      "id": "u2r-1",
+      "front": "Bit",
+      "back": "Short for binary digit. The lowest-level component of any value in a computing device. A bit is either 0 or 1. A byte is 8 bits.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-2",
+      "front": "Abstraction",
+      "back": "The process of reducing complexity by focusing on the main idea. Bits are grouped to represent abstractions including numbers, characters, and color. The same sequence of bits may represent different types of data in different contexts.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-3",
+      "front": "Analog vs Digital Data",
+      "back": "Analog data changes smoothly and continuously over time. Digital data represents values in discrete bits. Using digital data to approximate analog data is an example of abstraction. Sampling is used to digitally approximate analog data.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-4",
+      "front": "Sampling",
+      "back": "Measuring values of an analog signal at regular intervals to approximate it digitally. The samples are measured to determine the exact bits required to store each sample.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-5",
+      "front": "Binary Number System",
+      "back": "A base-2 number system using only 0 and 1. Place values are powers of 2 starting at 1 on the right: 1, 2, 4, 8, 16... A digit's value equals the bit multiplied by its place value.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-6",
+      "front": "Binary to Decimal Conversion",
+      "back": "Multiply each bit by its place value (power of 2) and add the results. Example: 1101 = (1×8) + (1×4) + (0×2) + (1×1) = 13.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-7",
+      "front": "Overflow Error",
+      "back": "Occurs when a computer attempts to handle a number outside the defined range of values. Caused by the fixed number of bits used to represent integers in many programming languages.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-8",
+      "front": "Round-off Error",
+      "back": "Occurs because the fixed number of bits used to represent real numbers limits precision. Some real numbers can only be stored as approximations.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-9",
+      "front": "Data Compression",
+      "back": "Reducing the size (number of bits) of transmitted or stored data. Fewer bits does not necessarily mean less information. The amount of reduction depends on the redundancy in the original data and the algorithm applied.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-10",
+      "front": "Lossless vs Lossy Compression",
+      "back": "Lossless: guarantees complete reconstruction of original data. Best when quality matters (text, medical images).\nLossy: reconstructs only an approximation, greater size reduction. Best when minimizing file size matters (music, video, photos).",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-11",
+      "front": "Information",
+      "back": "The collection of facts and patterns extracted from data. Data provide opportunities for identifying trends, making connections, and addressing problems.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-12",
+      "front": "Correlation vs Causation",
+      "back": "Correlation: two variables appear related in data. Causation: one variable directly causes the other. A correlation found in data does NOT automatically mean causation — additional research is needed.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-13",
+      "front": "Metadata",
+      "back": "Data about data. Example: a photo is the data; its metadata includes date taken and file size. Used for finding, organizing, and managing information. Changes to metadata do not change the primary data.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-14",
+      "front": "Challenges of Processing Data Sets",
+      "back": "The need to clean data, incomplete data, invalid data, and the need to combine data sources. These challenges exist regardless of size. Large data sets may require parallel systems. Bias is not eliminated by collecting more data.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-15",
+      "front": "Data Cleaning",
+      "back": "Making data uniform without changing its meaning. Example: replacing all equivalent abbreviations, spellings, and capitalizations with the same word.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-16",
+      "front": "Four Ways to Extract or Modify Data Using a Program",
+      "back": "1. Transforming — applying an operation to every element\n2. Filtering — keeping only elements that meet a condition\n3. Combining or comparing — such as finding the highest value\n4. Visualizing — representing data through a chart or graph",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-17",
+      "front": "How do programs gain insight from data?",
+      "back": "Programs are used in an iterative and interactive way. Programmers can filter, clean, combine, cluster, classify, and transform data. Patterns can emerge when data are transformed using programs.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-18",
+      "front": "Why might a single data source be insufficient?",
+      "back": "A single source may not contain all the data needed to draw a conclusion. It may be necessary to combine data from a variety of sources to formulate a conclusion.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-19",
+      "front": "Bias in Data",
+      "back": "Problems of bias are often created by the type or source of data being collected. Bias is not eliminated by simply collecting more data — the source and collection method must be examined.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-20",
+      "front": "Tools for Working with Data",
+      "back": "Search tools efficiently find information. Data filtering systems find patterns. Spreadsheets organize and find trends. Tables, diagrams, and visual tools communicate insights gained from data.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-21",
+      "front": "Scalability of Data Systems",
+      "back": "Large data sets are difficult to process on a single computer and may require parallel systems. Scalability is an important consideration — the computational capacity of a system affects how data sets can be processed and stored.",
+      "topic": "review"
+    },
+    {
+      "id": "u2r-22",
+      "front": "How does the binary place value system work?",
+      "back": "The place value of each position is the base (2) raised to the power of the position. Positions are numbered starting at 0 on the rightmost digit and increasing left. So positions are worth 1, 2, 4, 8, 16, 32... from right to left.",
+      "topic": "review"
+    }
+  ]
+}

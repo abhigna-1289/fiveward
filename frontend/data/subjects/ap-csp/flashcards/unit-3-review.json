@@ -1,1 +1,245 @@
-{ "unitNumber": 3, "cards": [] }
+{
+  "unitNumber": 3,
+  "cards": [
+    {
+      "id": "u3r-1",
+      "front": "Variable",
+      "back": "An abstraction inside a program that can hold a value. The value stored will always be the most recent value assigned. Variables can hold numbers, Booleans, lists, and strings.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-2",
+      "front": "Algorithm",
+      "back": "A finite set of instructions that accomplishes a specific task. Every algorithm can be constructed using combinations of sequencing, selection, and iteration. Can be expressed in natural language, diagrams, pseudocode, or programming languages.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-3",
+      "front": "Three Building Blocks of Every Algorithm",
+      "back": "Sequencing: executing steps in order.\nSelection: choosing which steps to execute based on a condition.\nIteration: repeating steps.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-4",
+      "front": "List",
+      "back": "An ordered sequence of elements. Each element is assigned a unique index starting at 1. Allows multiple related items to be treated as a single value. Also called an array in some languages.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-5",
+      "front": "Data Abstraction",
+      "back": "Giving a collection of data a name without referencing the specific details of its representation. Using lists allows multiple related items to be treated as a single value, making programs easier to develop and maintain.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-6",
+      "front": "Arithmetic Operators",
+      "back": "Addition (+), subtraction (-), multiplication (*), division (/), and MOD. MOD returns the remainder when a is divided by b. Example: 17 MOD 5 = 2. MOD has the same precedence as * and /.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-7",
+      "front": "Boolean Value",
+      "back": "A value that is either true or false. Produced by relational operators (=, ≠, >, <, ≥, ≤) and logical operators (NOT, AND, OR).",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-8",
+      "front": "AND vs OR vs NOT",
+      "back": "AND: true only when BOTH conditions are true.\nOR: true when at least ONE condition is true. False only when both are false.\nNOT: flips the Boolean value.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-9",
+      "front": "Selection",
+      "back": "Determines which parts of an algorithm are executed based on a condition being true or false. Implemented using IF and IF/ELSE statements.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-10",
+      "front": "Iteration",
+      "back": "A repeating portion of an algorithm. REPEAT n TIMES executes a block n times. REPEAT UNTIL(condition) repeats until the condition is true — if already true, the block never executes. An infinite loop occurs if the condition never becomes true.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-11",
+      "front": "List Operations",
+      "back": "ACCESS: aList[i]\nINSERT(aList, i, value): inserts at index i, shifts right\nAPPEND(aList, value): adds to end\nREMOVE(aList, i): removes at index i, shifts left\nLENGTH(aList): number of elements\nAccessing an invalid index produces an error and terminates the program.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-12",
+      "front": "FOR EACH loop",
+      "back": "Traverses a list by assigning each element to a variable sequentially from first to last. The block executes once per element. Can be complete (all elements) or partial (some elements).",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-13",
+      "front": "Linear Search vs Binary Search",
+      "back": "Linear: checks each element one by one, works on unsorted data.\nBinary: starts at the middle and eliminates half the data each step, requires sorted data, often more efficient than linear search on sorted data.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-14",
+      "front": "Procedure",
+      "back": "A named group of programming instructions that may have parameters and return values. Also called a method or function. A procedure call interrupts sequential execution — flow returns to the calling point after the procedure finishes.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-15",
+      "front": "Parameters vs Arguments",
+      "back": "Parameters: input variables defined in the procedure declaration.\nArguments: actual values passed when the procedure is called. Each argument is assigned to its corresponding parameter.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-16",
+      "front": "Procedural Abstraction",
+      "back": "Provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it. Enables code reuse, improves readability, and allows internals to be changed without affecting users as long as behavior is preserved.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-17",
+      "front": "Modularity",
+      "back": "The subdivision of a computer program into separate subprograms. Using parameters allows procedures to be generalized and reused with different inputs.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-18",
+      "front": "Software Library",
+      "back": "A collection of procedures that may be used in creating new programs. Simplifies creating complex programs. An API specifies how the procedures in a library behave and can be used.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-19",
+      "front": "RANDOM(a, b)",
+      "back": "Generates and returns a random integer from a to b, inclusive. Each result is equally likely. Using random number generation means each execution may produce a different result.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-20",
+      "front": "Simulation",
+      "back": "An abstraction of a more complex object or phenomenon for a specific purpose. Most useful when real-world events are impractical (too big, small, fast, slow, expensive, or dangerous). Can contain bias from elements included or excluded. Random number generators simulate real-world variability.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-21",
+      "front": "Algorithmic Efficiency",
+      "back": "An estimation of computational resources used by an algorithm, typically expressed as a function of input size. Reasonable: polynomial efficiency or slower (constant, linear, square, cube). Unreasonable: exponential or factorial efficiency.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-22",
+      "front": "Heuristic",
+      "back": "An approach to a problem that produces a solution that is not guaranteed to be optimal but may be used when techniques guaranteed to find an optimal solution are impractical.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-23",
+      "front": "Decision Problem vs Optimization Problem",
+      "back": "Decision problem: has a yes/no answer (e.g. Is there a path from A to B?).\nOptimization problem: goal is to find the best solution among many (e.g. What is the shortest path from A to B?).",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-24",
+      "front": "Decidable vs Undecidable Problems",
+      "back": "Decidable: an algorithm exists that always produces a correct yes/no answer for all inputs.\nUndecidable: no algorithm can always produce a correct yes/no answer for all inputs. Some instances may be solvable but not all.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-25",
+      "front": "Developing Algorithms",
+      "back": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms. Different algorithms can solve the same problem but may have different efficiencies. Algorithms that look similar can produce different results.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-26",
+      "front": "String",
+      "back": "An ordered sequence of characters. String concatenation joins two or more strings end-to-end to make a new string. A substring is part of an existing string.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-27",
+      "front": "Nested Conditionals",
+      "back": "Conditional statements within conditional statements. Inner conditions are only evaluated if outer conditions are met.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-28",
+      "front": "What are common list algorithms?",
+      "back": "Finding the minimum or maximum value in a list, computing the sum or average of a list of numbers. These existing algorithms can be used as building blocks when constructing new algorithms.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-29",
+      "front": "DISPLAY and INPUT",
+      "back": "DISPLAY(expression): displays the value of expression followed by a space.\nINPUT(): accepts a value from the user and returns the input value.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-30",
+      "front": "RETURN statement",
+      "back": "Returns the flow of control to the point where the procedure was called and returns the value of an expression. May appear at any point inside a procedure and causes an immediate return.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-31",
+      "front": "What are the benefits of using existing algorithms as building blocks?",
+      "back": "Reduces development time, reduces testing, and simplifies the identification of errors.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-32",
+      "front": "Index",
+      "back": "A common method for referencing elements in a list or string using natural numbers. In AP CSP, indices start at 1. Accessing an index less than 1 or greater than the list length produces an error and terminates the program.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-33",
+      "front": "Problem vs Instance of a Problem",
+      "back": "A problem is a general description of a task (e.g. sorting). An instance includes specific input (e.g. sorting the list [2, 3, 1, 7]). Some problems cannot be solved in a reasonable amount of time — in these cases approximate solutions are sought.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-34",
+      "front": "Sequencing",
+      "back": "The application of each step of an algorithm in the order in which the code statements are given. Sequential statements execute in the order they appear in the code segment.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-35",
+      "front": "How does procedural abstraction allow internal changes?",
+      "back": "Programmers can change the internals of a procedure (make it faster, more efficient, use less storage) without notifying users of the change, as long as what the procedure does is preserved.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-36",
+      "front": "What happens when REPEAT UNTIL condition is already true?",
+      "back": "The loop body is not executed at all, because the condition is checked before the loop begins.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-37",
+      "front": "Infinite Loop",
+      "back": "Occurs in REPEAT UNTIL iteration when the ending condition will never evaluate to true, causing the loop to repeat forever.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-38",
+      "front": "API",
+      "back": "Application Program Interface — a specification for how the procedures in a library behave and can be used. Documentation for an API is necessary to understand the behaviors provided and how to use them.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-39",
+      "front": "How is algorithmic efficiency informally measured?",
+      "back": "By determining the number of times a statement or group of statements executes. Different correct algorithms for the same problem can have different efficiencies.",
+      "topic": "review"
+    },
+    {
+      "id": "u3r-40",
+      "front": "What makes binary search more efficient than linear search?",
+      "back": "Binary search eliminates half the remaining data with each step, while linear search checks one element at a time. Binary search is often more efficient on sorted data, but requires the data to be sorted first.",
+      "topic": "review"
+    }
+  ]
+}

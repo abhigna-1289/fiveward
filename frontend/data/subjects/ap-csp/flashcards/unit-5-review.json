@@ -1,1 +1,185 @@
-{ "unitNumber": 5, "cards": [] }
+{
+  "unitNumber": 5,
+  "cards": [
+    {
+      "id": "u5r-1",
+      "front": "Can a computing innovation's effects be both beneficial and harmful?",
+      "back": "Yes. A single effect can be viewed as both beneficial and harmful by different people or even the same person. Not every effect is anticipated in advance.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-2",
+      "front": "Unintended Consequences",
+      "back": "Computing innovations can be used in ways their creators never intended. Responsible programmers try to consider unintended uses but it is not possible to anticipate all of them. Rapid sharing with large numbers of users can result in impacts beyond the programmer's control.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-3",
+      "front": "How have computing advances affected other fields?",
+      "back": "Advances in computing have generated and increased creativity in medicine, engineering, communications, and the arts. Computing innovations have often had unintended beneficial effects by leading to advances in other fields.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-4",
+      "front": "Examples of innovations used beyond intended purpose",
+      "back": "Targeted advertising helps businesses but can be misused. Machine learning and data mining have enabled medical advances but have also been used to discriminate against groups of individuals.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-5",
+      "front": "Digital Divide",
+      "back": "The differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics. Raises issues of equity, access, and influence both globally and locally. Affected by actions of individuals, organizations, and governments.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-6",
+      "front": "Computing Bias",
+      "back": "Computing innovations can reflect existing human biases through biases written into algorithms or biases in the data used. Biases can be embedded at all levels of software development. Programmers should take action to reduce bias.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-7",
+      "front": "Crowdsourcing",
+      "back": "Obtaining input or information from a large number of people via the Internet. Offers new models for collaboration such as connecting businesses or social causes with funding. Human capabilities can be enhanced by collaboration via computing.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-8",
+      "front": "Citizen Science",
+      "back": "Scientific research conducted by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices. A form of crowdsourcing applied to scientific research.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-9",
+      "front": "Intellectual Property",
+      "back": "Material created on a computer is the intellectual property of the creator or an organization. Ease of access and distribution of digitized information raises concerns about ownership, value, and use.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-10",
+      "front": "Plagiarism",
+      "back": "Using material created by someone else without permission and presenting it as your own. May have legal consequences. Material created by someone other than you should always be cited.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-11",
+      "front": "Creative Commons vs Open Source vs Open Access",
+      "back": "Creative Commons: license allowing others to share, use, and build on copyrighted work.\nOpen Source: programs freely available to redistribute and modify.\nOpen Access: research output freely available with no access or use restrictions.\nAll three have enabled broad access to digital information.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-12",
+      "front": "Personally Identifiable Information (PII)",
+      "back": "Information that identifies, links, relates, or describes an individual. Examples: Social Security number, phone number, medical information, biometric data. Can be used for identity theft, stalking, or other criminal acts. Once placed online it is difficult to delete.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-13",
+      "front": "How is PII collected online?",
+      "back": "Search engines record search history. Websites record browsing history. Devices collect location data. Disparate data like geolocation, cookies, and browsing history can be aggregated to create detailed knowledge about an individual.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-14",
+      "front": "Authentication",
+      "back": "Measures that protect devices and information from unauthorized access. Examples: strong passwords and multifactor authentication. A strong password is easy for the user to remember but difficult for someone else to guess.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-15",
+      "front": "Multifactor Authentication",
+      "back": "Requires evidence from at least two of three categories: knowledge (something you know), possession (something you have), and inherence (something you are). Each step adds a new layer of security.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-16",
+      "front": "Symmetric Key vs Public Key Encryption",
+      "back": "Symmetric key: one key for both encryption and decryption.\nPublic key: public key encrypts, private key decrypts. The sender does not need the receiver's private key to encrypt — only the receiver's private key can decrypt.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-17",
+      "front": "Encryption",
+      "back": "The process of encoding data to prevent unauthorized access. Decryption is decoding the data. Certificate authorities issue digital certificates that validate ownership of encryption keys used in secure communications.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-18",
+      "front": "Malware vs Computer Virus",
+      "back": "Malware: any software intended to damage a system or take partial control over it.\nComputer virus: a specific type of malware that copies itself and attaches to legitimate programs. All viruses are malware but not all malware are viruses.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-19",
+      "front": "Phishing",
+      "back": "A technique that attempts to trick a user into providing personal information through disguised links or fake forms. That information can then be used to access sensitive resources like bank accounts.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-20",
+      "front": "Keylogging",
+      "back": "Using a program to record every keystroke made by a computer user in order to gain fraudulent access to passwords and other confidential information.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-21",
+      "front": "Rogue Access Point",
+      "back": "A wireless access point that gives unauthorized access to secure networks. Data sent over public networks can be intercepted, analyzed, and modified through a rogue access point.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-22",
+      "front": "How to protect against security threats",
+      "back": "Use strong passwords and multifactor authentication. Keep software updated regularly. Use virus and malware scanning software. Review app permission settings. Be cautious of unsolicited emails, attachments, links, and free downloads.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-23",
+      "front": "Why are software updates important?",
+      "back": "All real-world systems have errors or design flaws that can be exploited. Regular software updates help fix these errors before attackers can use them.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-24",
+      "front": "Legal and Ethical Concerns in Computing",
+      "back": "Computing raises legal and ethical concerns including: software enabling digital media piracy, algorithms containing bias, computing used to harm individuals, and the digital divide. Computing can also play a role in social and political issues.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-25",
+      "front": "Data Aggregation Risk",
+      "back": "Disparate personal data such as geolocation, cookies, and browsing history can be combined to create detailed knowledge about an individual. Combining social media posts with other sources can reveal private information that was not intended to be public.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-26",
+      "front": "User Permissions and Privacy",
+      "back": "Users can control the permissions programs have for collecting user information. Users should review permission settings of programs to protect their privacy.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-27",
+      "front": "How widespread access to data enables problem solving at scale",
+      "back": "Widespread access to information and public data facilitates identification of problems, development of solutions, and dissemination of results — enabling crowdsourcing and citizen science.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-28",
+      "front": "What are the benefits and risks of PII being online?",
+      "back": "Benefits: enhances online experience, simplifies purchases, enables personalized suggestions.\nRisks: can be used for identity theft, stalking, or criminal acts. Once online it is difficult to delete. Can be used in unintended and harmful ways.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-29",
+      "front": "How can emails compromise security?",
+      "back": "Unsolicited emails, attachments, links, and forms can compromise a system. Can come from unknown senders or from known senders whose security has been compromised. Malicious links can be disguised in emails or on web pages.",
+      "topic": "review"
+    },
+    {
+      "id": "u5r-30",
+      "front": "Certificate Authority",
+      "back": "Issues digital certificates that validate the ownership of encryption keys used in secure communications. Based on a trust model.",
+      "topic": "review"
+    }
+  ]
+}

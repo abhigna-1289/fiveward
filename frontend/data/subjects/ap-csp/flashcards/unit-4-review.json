@@ -1,1 +1,125 @@
-{ "unitNumber": 4, "cards": [] }
+{
+  "unitNumber": 4,
+  "cards": [
+    {
+      "id": "u4r-1",
+      "front": "Computing Device",
+      "back": "A physical artifact that can run a program. Examples: computers, tablets, servers, routers, smart sensors. A computing system is a group of computing devices and programs working together for a common purpose.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-2",
+      "front": "Computer Network",
+      "back": "A group of interconnected computing devices capable of sending or receiving data. A computer network is a type of computing system. A path between two devices is a sequence of directly connected devices from sender to receiver.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-3",
+      "front": "Routing",
+      "back": "The process of finding a path from sender to receiver. Routing on the Internet is usually dynamic — not specified in advance.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-4",
+      "front": "Bandwidth",
+      "back": "The maximum amount of data that can be sent through a computer network in a fixed amount of time. Usually measured in bits per second.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-5",
+      "front": "The Internet",
+      "back": "A computer network consisting of interconnected networks that use standardized, open (nonproprietary) communication protocols. Designed to be scalable. Access depends on the ability to connect a computing device to an Internet-connected device.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-6",
+      "front": "Protocol",
+      "back": "An agreed-upon set of rules that specify the behavior of a system. Internet protocols are open, allowing anyone to connect additional devices. Common protocols: IP, TCP, UDP (Internet), HTTP (World Wide Web).",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-7",
+      "front": "Packet",
+      "back": "A chunk of data with metadata used for routing between origin and destination and for data reassembly. Packets may arrive in order, out of order, or not at all.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-8",
+      "front": "Internet vs World Wide Web",
+      "back": "The Internet is the global network of interconnected computers that transmit data.\nThe World Wide Web is a system of linked pages, programs, and files that uses the Internet. HTTP is the protocol used by the Web. The Web uses the Internet but is not the same as the Internet.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-9",
+      "front": "Scalability",
+      "back": "The capacity for a system to change in size and scale to meet new demands. The Internet was designed to be scalable. Open protocols allow users to easily connect additional devices.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-10",
+      "front": "Fault Tolerance",
+      "back": "The ability of a system to support failures and still continue to function. The Internet is fault-tolerant through redundancy — if a connection fails, data is sent via a different route if possible.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-11",
+      "front": "Redundancy",
+      "back": "The inclusion of extra components to mitigate failure. Accomplished in networks by having more than one path between any two devices. Requires additional resources but provides fault tolerance and increases reliability.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-12",
+      "front": "How to determine if a network is fault-tolerant",
+      "back": "A network is fault-tolerant if every device has more than one path to every other device. If removing any single connection still leaves at least one path between all devices, the network is fault-tolerant. A single point of failure means it is NOT fully fault-tolerant.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-13",
+      "front": "Sequential Computing",
+      "back": "Operations performed in order one at a time. A sequential solution takes as long as the sum of all of its steps.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-14",
+      "front": "Parallel Computing",
+      "back": "The program is broken into multiple smaller operations, some of which run simultaneously. Takes as long as its sequential tasks plus the longest of its parallel tasks. Consists of both a parallel portion and a sequential portion.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-15",
+      "front": "Distributed Computing",
+      "back": "Multiple devices are used to run a program. Allows problems to be solved that could not be solved on a single computer due to processing time or storage needs. Allows much larger problems to be solved more quickly.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-16",
+      "front": "Speedup of Parallel Computing",
+      "back": "Speedup = sequential time / parallel time. Example: if a task takes 20 seconds sequentially but 5 seconds in parallel, the speedup is 4.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-17",
+      "front": "How to calculate parallel computing time",
+      "back": "Time = sequential tasks + longest parallel task. Example: sequential tasks take 5 seconds, parallel tasks take 3, 4, and 6 seconds simultaneously — total = 5 + 6 = 11 seconds.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-18",
+      "front": "Limitation of Parallel Computing",
+      "back": "Every parallel solution still has a sequential portion. At some point adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-19",
+      "front": "Sequential vs Parallel vs Distributed",
+      "back": "Sequential: one operation at a time, time = sum of all steps.\nParallel: some operations simultaneous, time = sequential time + longest parallel task.\nDistributed: multiple devices, solves problems too large for one computer.",
+      "topic": "review"
+    },
+    {
+      "id": "u4r-20",
+      "front": "Why are open protocols important for the Internet?",
+      "back": "Because Internet protocols are open and nonproprietary, users can easily connect additional computing devices. This is what makes the Internet scalable and accessible to anyone worldwide.",
+      "topic": "review"
+    }
+  ]
+}
