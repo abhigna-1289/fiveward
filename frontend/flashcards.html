@@ -32,16 +32,10 @@
       <ul class="navbar__links">
         <li><a href="dashboard.html" class="nav-link">Home</a></li>
         <li><a href="explore.html"   class="nav-link">Explore</a></li>
-        <li><a href="subject.html"   class="nav-link active">AP CSP</a></li>
+        <li><a href="subject.html"   class="nav-link">AP CSP</a></li>
         <li><a href="progress.html"  class="nav-link">Progress</a></li>
         <li><a href="settings.html"  class="nav-link">Settings</a></li>
       </ul>
-      <div class="navbar__timer" id="navbarTimer">
-        <svg class="navbar__timer-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="7" cy="8" r="5"/><path d="M7 5.5V8l1.5 1.5"/><path d="M5 1h4"/>
-        </svg>
-        <span id="navbarTimerDisplay">00:00</span>
-      </div>
       <div class="navbar__actions">
         <div class="navbar__user">
           <div class="navbar__avatar" id="userAvatar">?</div>
@@ -60,26 +54,170 @@
         <span class="breadcrumb__sep">›</span>
         <a href="unit.html" id="breadcrumbUnit">Unit 1</a>
         <span class="breadcrumb__sep">›</span>
-        <span class="breadcrumb__current">Flashcards</span>
+        <span class="breadcrumb__current" id="breadcrumbCurrent">Flashcards</span>
       </nav>
     </div>
   </div>
 
-  <!-- =====================================================
-       FLASHCARD SCREEN
-       - Large centered card with click-to-flip 3D animation
-       - ← previous / → next arrow buttons on card sides
-       - Card counter (e.g., "3 / 24") + dot progress indicators
-       - "Got it ✓" button (green) and "Still Learning ↩" button (grey)
-       - Bottom bar: Shuffle button, Restart button
-       ===================================================== -->
+  <!-- Page header -->
+  <div class="fc-page-header">
+    <div class="fc-page-header__inner">
+      <div class="fc-page-header__unit" id="pageHeaderUnit">AP CSP · Unit 1</div>
+      <h1 class="fc-page-header__title" id="pageHeaderTitle">Flashcards</h1>
+      <div class="fc-page-header__meta" id="pageHeaderMeta">Loading…</div>
+    </div>
+  </div>
 
-  <!-- TODO: Build this screen in the next session -->
-
+  <!-- Flashcard UI -->
   <main class="flashcards-page">
-    <p style="text-align:center; color: var(--color-text-muted); padding: 4rem 1rem;">
-      Flashcards screen — coming next session.
-    </p>
+    <div class="fc-page-body">
+
+      <!-- No cards available -->
+      <div class="fc-empty" id="fcEmpty" hidden>
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        <p>No flashcards found for this selection.</p>
+      </div>
+
+      <!-- Toolbar: filter pills + switch sides -->
+      <div class="fc-toolbar" id="fcToolbar" hidden>
+        <div class="fc-filters" id="fcFilters" role="group" aria-label="Card filter">
+          <button class="fc-filter-btn fc-filter-btn--active" data-filter="all"            type="button">All Cards</button>
+          <button class="fc-filter-btn"                       data-filter="still-learning" type="button">Still Learning</button>
+          <button class="fc-filter-btn"                       data-filter="starred"        type="button">Starred</button>
+        </div>
+        <button class="fc-sides-btn" id="fcSwitchSides" type="button" aria-label="Switch card sides">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3L4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
+          <span class="fc-sides-label">Term → Definition</span>
+        </button>
+      </div>
+
+      <!-- Empty filter state -->
+      <div class="fc-filter-empty" id="fcFilterEmpty" hidden>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p id="fcFilterEmptyMsg"></p>
+        <button class="btn btn--primary" id="fcStudyAllCards" type="button">Study All Cards</button>
+      </div>
+
+      <!-- Active card UI -->
+      <div class="fc-ui" id="fcUI" hidden>
+
+        <!-- Prev | Card | Next -->
+        <div class="fc-nav-row">
+          <button class="fc-nav-btn" id="fcPrev" type="button" aria-label="Previous card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="fc-card-wrap">
+            <div class="fc-card" id="fcCard" role="button" tabindex="0" aria-label="Flashcard — click to flip">
+              <div class="fc-card-inner">
+
+                <div class="fc-card-face fc-card-front">
+                  <div class="fc-card-icons">
+                    <button class="fc-icon-btn fc-star-btn" id="fcStar" type="button" aria-label="Star this card" tabindex="-1">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </button>
+                    <button class="fc-icon-btn fc-zoom-btn" id="fcZoom" type="button" aria-label="Zoom card" tabindex="-1">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                    </button>
+                  </div>
+                  <div class="fc-status-badge" id="fcBadgeFront"></div>
+                  <span class="fc-face-label" id="fcFrontLabel">TERM</span>
+                  <p class="fc-face-text" id="fcFrontText"></p>
+                  <span class="fc-flip-cue">Click to flip</span>
+                </div>
+
+                <div class="fc-card-face fc-card-back">
+                  <div class="fc-card-icons">
+                    <button class="fc-icon-btn fc-star-btn" id="fcStarBack" type="button" aria-label="Star this card" tabindex="-1">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </button>
+                    <button class="fc-icon-btn fc-zoom-btn" id="fcZoomBack" type="button" aria-label="Zoom card" tabindex="-1">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                    </button>
+                  </div>
+                  <div class="fc-status-badge" id="fcBadgeBack"></div>
+                  <span class="fc-face-label" id="fcBackLabel">DEFINITION</span>
+                  <p class="fc-face-text" id="fcBackText"></p>
+                  <span class="fc-flip-cue">Click to flip back</span>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- /fc-card-wrap -->
+
+          <button class="fc-nav-btn" id="fcNext" type="button" aria-label="Next card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div><!-- /fc-nav-row -->
+
+        <!-- Counter -->
+        <div class="fc-meta">
+          <span class="fc-counter" id="fcCounter">1 of 1</span>
+        </div>
+
+        <!-- Got it / Still Learning -->
+        <div class="fc-actions">
+          <div class="fc-action-wrap">
+            <button class="fc-got-btn" id="fcGotIt" type="button">Got it</button>
+            <span class="fc-key-hint"><kbd>G</kbd></span>
+          </div>
+          <div class="fc-action-wrap">
+            <button class="fc-still-btn" id="fcStillLearning" type="button">Still Learning</button>
+            <span class="fc-key-hint"><kbd>S</kbd></span>
+          </div>
+        </div>
+
+        <!-- Shuffle · Restart · keyboard hint -->
+        <div class="fc-bottom">
+          <button class="fc-bottom-btn" id="fcShuffle" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+            Shuffle
+          </button>
+          <button class="fc-bottom-btn" id="fcRestart" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Restart
+          </button>
+          <span class="fc-kb-hint"><kbd>Space</kbd> flip &nbsp;<kbd>←</kbd> <kbd>→</kbd> navigate &nbsp;<kbd>G</kbd> got it &nbsp;<kbd>S</kbd> still learning</span>
+        </div>
+
+      </div><!-- /fc-ui -->
+
+      <!-- Completion screen -->
+      <div class="fc-complete" id="fcComplete" hidden>
+        <div class="fc-complete-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="fc-complete-title">Session Complete!</h3>
+        <div class="fc-complete-stats">
+          <div class="fc-stat">
+            <span class="fc-stat-value fc-stat-value--green" id="fcStatGotIt">—</span>
+            <span class="fc-stat-label">Got it</span>
+          </div>
+          <div class="fc-stat-divider"></div>
+          <div class="fc-stat">
+            <span class="fc-stat-value fc-stat-value--amber" id="fcStatStill">—</span>
+            <span class="fc-stat-label">Still Learning</span>
+          </div>
+          <div class="fc-stat-divider"></div>
+          <div class="fc-stat">
+            <span class="fc-stat-value fc-stat-value--amber" id="fcStatStarred">—</span>
+            <span class="fc-stat-label">Starred</span>
+          </div>
+          <div class="fc-stat-divider"></div>
+          <div class="fc-stat">
+            <span class="fc-stat-value" id="fcStatNotReviewed">—</span>
+            <span class="fc-stat-label">Not Reviewed</span>
+          </div>
+        </div>
+        <div id="fcPointsEarned" class="session-points-earned" hidden></div>
+        <div class="fc-complete-btns">
+          <button class="btn btn--primary" id="fcRestartAll"        type="button">Restart All</button>
+          <button class="btn btn--outline" id="fcStudyStillLearning" type="button">Study Still Learning</button>
+          <button class="btn btn--outline" id="fcStudyStarred"       type="button">Study Starred</button>
+        </div>
+      </div><!-- /fc-complete -->
+
+    </div><!-- /fc-page-body -->
   </main>
 
   <footer class="footer">
@@ -87,20 +225,19 @@
       <div class="footer__brand">
         <a href="index.html" class="footer__logo">
           <svg width="28" height="28" viewBox="0 0 34 34" fill="none"><rect width="34" height="34" rx="8" fill="#2D7A4F"/><path d="M11 10H21.5V15H13.5L12.5 19H18C21 19 23 21 23 24C23 27 21 29 17.5 29H11L12 25H17.5C18.9 25 19.5 24.4 19.5 23.5C19.5 22.6 18.9 22 17.5 22H11.5L11 10Z" fill="white"/></svg>
-          <span class="logo-text"><span class="logo-five">five</span><span class="logo-ward">ward</span></span>
         </a>
-        <p class="footer__copyright">© 2025 fiveward. All rights reserved.</p>
+        <span class="footer__name"><span class="logo-five">five</span><span class="logo-ward">ward</span></span>
       </div>
-      <nav class="footer__links">
-        <a href="#">About</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Contact</a>
-      </nav>
-      <div class="footer__social"></div>
+      <p class="footer__tagline">Free AP study tools — built by a student, for students.</p>
+      <p class="footer__copy">&copy; 2025 fiveward. Not affiliated with College Board.</p>
     </div>
   </footer>
 
+  <!-- Auth guard + navbar init -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-client.js"></script>
-  <script src="js/auth.js"></script>
   <script src="js/timer.js"></script>
   <script src="js/flashcards.js"></script>
+
 </body>
 </html>

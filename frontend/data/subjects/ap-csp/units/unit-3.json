@@ -1,0 +1,17 @@
+{
+  "unitNumber": 3,
+  "title": "ADD UNIT 3 TITLE HERE",
+  "description": "ADD UNIT 3 DESCRIPTION HERE",
+  "topics": [
+    {
+      "id": "3.1",
+      "title": "ADD TOPIC 3.1 TITLE HERE",
+      "studyGuide": {
+        "overview": "ADD OVERVIEW PARAGRAPH HERE",
+        "keyTerms": [],
+        "keyPoints": [],
+        "examples": []
+      }
+    }
+  ]
+}
