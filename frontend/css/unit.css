@@ -1809,6 +1809,39 @@
 .pq-option--neutral  { opacity: 0.55; cursor: default; }
 .pq-option:disabled  { cursor: default; }
 
+.pq-mc2-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #c4b5fd;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.pq-option-checkbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid var(--color-gray-300);
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.pq-option--selected .pq-option-checkbox,
+.pq-option-checkbox--checked {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 5px var(--color-primary);
+}
+.pq-option--correct .pq-option-checkbox { border-color: #16a34a; background: #16a34a; box-shadow: inset 0 0 0 2px #dcfce7, inset 0 0 0 5px #16a34a; }
+.pq-option--wrong   .pq-option-checkbox { border-color: #dc2626; background: #dc2626; box-shadow: inset 0 0 0 2px #fee2e2, inset 0 0 0 5px #dc2626; }
+
 .pq-option-radio {
   width: 16px;
   height: 16px;

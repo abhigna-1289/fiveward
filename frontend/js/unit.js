@@ -974,14 +974,25 @@
   function pqNormalizeQuestion(raw) {
     const letters = ['A', 'B', 'C', 'D'];
     const opts    = letters.map(l => (raw.options || {})[l]).filter(v => v !== undefined);
-    const correct = letters.indexOf(raw.correctAnswer);
+    const type    = raw.type === 'mc2' ? 'mc2'
+                  : raw.type === 'mc'  ? 'mcq'
+                  : raw.type === 'frq' ? 'frq'
+                  : raw.type;
+    // mc2: correctAnswer is an array of letters e.g. ["A","C"]
+    const corrects = type === 'mc2'
+      ? (Array.isArray(raw.correctAnswer) ? raw.correctAnswer : [])
+          .map(l => letters.indexOf(l)).filter(i => i >= 0)
+      : null;
+    const correct = type === 'mc2' ? -1
+      : (letters.indexOf(raw.correctAnswer) >= 0 ? letters.indexOf(raw.correctAnswer) : 0);
     return {
       id:            raw.id,
       topic:         raw.topic,
-      type:          raw.type === 'mc' ? 'mcq' : raw.type === 'frq' ? 'frq' : raw.type,
+      type,
       question:      raw.question,
       options:       opts,
-      correct:       correct >= 0 ? correct : 0,
+      correct,
+      corrects,
       explanation:   raw.explanation   || '',
       sampleAnswer:  raw.sampleAnswer  || '',
       rubric:        raw.rubric        || [],
@@ -1087,7 +1098,7 @@
     pqIdx     = 0;
     pqAnswers = {};
     pqDeck.forEach(q => {
-      pqAnswers[q.id] = { submitted: false, selected: null, userText: '', grade: null, isCorrect: null };
+      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
@@ -1100,7 +1111,7 @@
     pqIdx     = Math.min(session.idx || 0, pqDeck.length - 1);
     pqAnswers = session.answers || {};
     pqDeck.forEach(q => {
-      if (!pqAnswers[q.id]) pqAnswers[q.id] = { submitted: false, selected: null, userText: '', grade: null, isCorrect: null };
+      if (!pqAnswers[q.id]) pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
@@ -1196,9 +1207,12 @@
 
     const area = document.getElementById('pqQuestionArea');
     if (!area) return;
-    area.innerHTML = q.type === 'mcq' ? pqMCQHtml(q, a) : pqFRQHtml(q, a);
-    if (q.type === 'mcq') pqWireMCQ(q, a);
-    else                  pqWireFRQ(q, a);
+    area.innerHTML = q.type === 'mcq' ? pqMCQHtml(q, a)
+                   : q.type === 'mc2' ? pqMC2Html(q, a)
+                   : pqFRQHtml(q, a);
+    if      (q.type === 'mcq') pqWireMCQ(q, a);
+    else if (q.type === 'mc2') pqWireMC2(q, a);
+    else                       pqWireFRQ(q, a);
   }
 
   function pqMCQHtml(q, a) {
@@ -1253,6 +1267,78 @@
       if (ans.selected === null || ans.submitted) return;
       ans.submitted = true;
       ans.isCorrect = ans.selected === q.correct;
+      pqRender();
+    });
+  }
+
+  function pqMC2Html(q, a) {
+    const L        = ['A', 'B', 'C', 'D'];
+    const correctS = new Set(q.corrects || []);
+    const sel      = new Set(a.selectedArr || []);
+
+    const opts = (q.options || []).map((opt, i) => {
+      let cls = 'pq-option pq-option--check';
+      if (a.submitted) {
+        cls += correctS.has(i) ? ' pq-option--correct'
+             : sel.has(i)      ? ' pq-option--wrong'
+             : ' pq-option--neutral';
+      } else if (sel.has(i)) {
+        cls += ' pq-option--selected';
+      }
+      const checked = sel.has(i) ? ' pq-option-checkbox--checked' : '';
+      return `<button class="${cls}" data-idx="${i}" type="button"${a.submitted ? ' disabled' : ''}>
+        <span class="pq-option-checkbox${checked}"></span>
+        <span class="pq-option-letter">${L[i]}</span>
+        <span class="pq-option-text">${opt}</span>
+      </button>`;
+    }).join('');
+
+    const canSubmit = sel.size === 2;
+    const submitBtn = a.submitted ? ''
+      : `<button class="pq-submit-btn" id="pqSubmit" type="button"${canSubmit ? '' : ' disabled'}>Submit Answer</button>`;
+
+    let feedback = '';
+    if (a.submitted && q.explanation) {
+      const ok   = a.isCorrect;
+      const icon = ok
+        ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>`
+        : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+      feedback = `<div class="pq-feedback pq-feedback--${ok ? 'correct' : 'wrong'}">
+        <span class="pq-feedback-icon">${icon}</span>
+        <p class="pq-feedback-text">${q.explanation}</p>
+      </div>`;
+    }
+
+    return `${pqStimulusHtml(q)}<div class="pq-question-card">
+        <span class="pq-mc2-badge">Select 2 Answers</span>
+        <p class="pq-question-text">${q.question}</p>
+      </div>
+      <div class="pq-options" id="pqOptions">${opts}</div>
+      ${submitBtn}${feedback}`;
+  }
+
+  function pqWireMC2(q, a) {
+    document.querySelectorAll('#pqOptions .pq-option').forEach(btn => {
+      if (a.submitted) return;
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.idx);
+        const arr = pqAnswers[q.id].selectedArr;
+        const pos = arr.indexOf(idx);
+        if (pos === -1) {
+          if (arr.length < 2) arr.push(idx);
+        } else {
+          arr.splice(pos, 1);
+        }
+        pqRender();
+      });
+    });
+    document.getElementById('pqSubmit')?.addEventListener('click', () => {
+      const ans = pqAnswers[q.id];
+      if (ans.selectedArr.length !== 2 || ans.submitted) return;
+      ans.submitted = true;
+      const correctS = new Set(q.corrects || []);
+      const selS     = new Set(ans.selectedArr);
+      ans.isCorrect  = correctS.size === selS.size && [...correctS].every(i => selS.has(i));
       pqRender();
     });
   }
@@ -1371,7 +1457,7 @@
     let earnedPts = 0, correctMcq = 0, fullFrq = 0, partialFrq = 0;
     pqDeck.forEach(q => {
       const a = pqAnswers[q.id];
-      if (q.type === 'mcq' && a.isCorrect === true)  { earnedPts += 2; correctMcq++; }
+      if ((q.type === 'mcq' || q.type === 'mc2') && a.isCorrect === true) { earnedPts += 2; correctMcq++; }
       if (q.type === 'frq' && a.grade === 'full')    { earnedPts += 5; fullFrq++; }
       if (q.type === 'frq' && a.grade === 'partial') { earnedPts += 2; partialFrq++; }
     });
@@ -1450,7 +1536,7 @@
     pqIdx     = 0;
     pqAnswers = {};
     wrongDeck.forEach(q => {
-      pqAnswers[q.id] = { submitted: false, selected: null, userText: '', grade: null, isCorrect: null };
+      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
@@ -1503,6 +1589,12 @@
       if (!a.submitted && q.type === 'mcq' && a.selected !== null) {
         a.submitted = true;
         a.isCorrect = a.selected === q.correct;
+        pqRender();
+      } else if (!a.submitted && q.type === 'mc2' && a.selectedArr.length === 2) {
+        a.submitted = true;
+        const correctS = new Set(q.corrects || []);
+        const selS     = new Set(a.selectedArr);
+        a.isCorrect    = correctS.size === selS.size && [...correctS].every(i => selS.has(i));
         pqRender();
       } else if (a.submitted && !(q.type === 'frq' && a.grade === null)) {
         pqNav(1);
