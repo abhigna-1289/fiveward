@@ -152,6 +152,7 @@
   function awardPoints(pts) {
     const current = parseInt(localStorage.getItem('fw_points') || '0') + pts;
     localStorage.setItem('fw_points', String(current));
+    window.fwShowToast?.(`+${pts} points`);
   }
 
   function logStudyDate() {

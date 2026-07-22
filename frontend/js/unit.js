@@ -1267,6 +1267,7 @@
       if (ans.selected === null || ans.submitted) return;
       ans.submitted = true;
       ans.isCorrect = ans.selected === q.correct;
+      if (ans.isCorrect) window.fwShowToast?.('+2 points');
       pqRender();
     });
   }
@@ -1339,6 +1340,7 @@
       const correctS = new Set(q.corrects || []);
       const selS     = new Set(ans.selectedArr);
       ans.isCorrect  = correctS.size === selS.size && [...correctS].every(i => selS.has(i));
+      if (ans.isCorrect) window.fwShowToast?.('+2 points');
       pqRender();
     });
   }
@@ -1403,9 +1405,14 @@
     if (a.submitted) {
       document.querySelectorAll('.pq-sg-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const ans   = pqAnswers[q.id];
-          ans.grade     = btn.dataset.grade;
-          ans.isCorrect = ans.grade !== 'none';
+          const ans      = pqAnswers[q.id];
+          const prevGrade = ans.grade;
+          ans.grade      = btn.dataset.grade;
+          ans.isCorrect  = ans.grade !== 'none';
+          if (ans.grade !== prevGrade) {
+            if (ans.grade === 'full')    window.fwShowToast?.('+5 points');
+            else if (ans.grade === 'partial') window.fwShowToast?.('+2 points');
+          }
           document.querySelectorAll('.pq-sg-btn').forEach(b => {
             b.classList.toggle('pq-sg-btn--active', b.dataset.grade === ans.grade);
           });
@@ -1461,7 +1468,7 @@
       if (q.type === 'frq' && a.grade === 'full')    { earnedPts += 5; fullFrq++; }
       if (q.type === 'frq' && a.grade === 'partial') { earnedPts += 2; partialFrq++; }
     });
-    if (earnedPts > 0) _awardPoints(earnedPts, `Practice: ${pqType.toUpperCase()}`);
+    if (earnedPts > 0) _awardPoints(earnedPts, `Practice: ${pqType.toUpperCase()}`, true);
 
     // Show points breakdown on complete screen
     const pqPtsEl = document.getElementById('pqPointsEarned');
@@ -1589,12 +1596,14 @@
       if (!a.submitted && q.type === 'mcq' && a.selected !== null) {
         a.submitted = true;
         a.isCorrect = a.selected === q.correct;
+        if (a.isCorrect) window.fwShowToast?.('+2 points');
         pqRender();
       } else if (!a.submitted && q.type === 'mc2' && a.selectedArr.length === 2) {
         a.submitted = true;
         const correctS = new Set(q.corrects || []);
         const selS     = new Set(a.selectedArr);
         a.isCorrect    = correctS.size === selS.size && [...correctS].every(i => selS.has(i));
+        if (a.isCorrect) window.fwShowToast?.('+2 points');
         pqRender();
       } else if (a.submitted && !(q.type === 'frq' && a.grade === null)) {
         pqNav(1);
@@ -1622,7 +1631,7 @@
     } catch {}
   }
 
-  function _awardPoints(points, action) {
+  function _awardPoints(points, action, silent = false) {
     try {
       const current = parseInt(localStorage.getItem('fw_points') || '0') || 0;
       localStorage.setItem('fw_points', String(current + points));
@@ -1630,7 +1639,7 @@
       log.push({ date: new Date().toISOString(), action, points });
       if (log.length > 1000) log.splice(0, log.length - 1000);
       localStorage.setItem('fw_points_log', JSON.stringify(log));
-      if (typeof window.fwShowToast === 'function') window.fwShowToast(`+${points} points`);
+      if (!silent && typeof window.fwShowToast === 'function') window.fwShowToast(`+${points} points`);
     } catch {}
   }
 
