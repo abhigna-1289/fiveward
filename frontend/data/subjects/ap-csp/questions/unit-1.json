@@ -5,351 +5,463 @@
       "id": "u1-1-q1",
       "type": "mc",
       "topic": "1.1",
-      "question": "A student is determining whether the following items are computing innovations: (1) a smart thermostat that learns user preferences, (2) a traditional paper calendar, (3) an autonomous vehicle. Which of the following correctly identifies which items are computing innovations?",
+      "stimulus": "A company develops a voice recognition system for customer service calls. The development team consists entirely of native English speakers from the same region of the United States.",
+      "stimulusType": "text",
+      "question": "Which of the following is the most likely consequence of the team's composition?",
       "options": {
-        "A": "1 and 2 only",
-        "B": "2 and 3 only",
-        "C": "1 and 3 only",
-        "D": "1, 2, and 3"
+        "A": "The system will not be able to process audio input because the team lacked audio engineers",
+        "B": "The system may perform poorly for users with different accents or dialects because those perspectives were not represented during development",
+        "C": "The system will work correctly for all users because voice recognition technology is accent-neutral",
+        "D": "The system will contain more syntax errors because a homogeneous team communicates less effectively"
       },
-      "correctAnswer": "C",
-      "explanation": "A computing innovation must include a program as an integral part of its function. A smart thermostat and autonomous vehicle both require programs to function. A traditional paper calendar does not include a program and therefore is not a computing innovation."
+      "correctAnswer": "B",
+      "explanation": "Collaboration that includes diverse perspectives helps avoid bias. A team of native English speakers from one region is unlikely to anticipate the needs of users with different accents or dialects, resulting in a biased system."
     },
     {
       "id": "u1-1-q2",
       "type": "mc",
       "topic": "1.1",
-      "question": "A student is classifying computing innovations for a project. They encounter the following: a GPS navigation device, a ride-sharing service, and a photo filter app. Which of the following correctly classifies all three?",
+      "stimulus": "A company develops a voice recognition system for customer service calls. The development team consists entirely of native English speakers from the same region of the United States.",
+      "stimulusType": "text",
+      "question": "Which of the following actions would MOST directly address the limitation described?",
       "options": {
-        "A": "GPS device — physical, ride-sharing service — nonphysical software, photo filter app — nonphysical concept",
-        "B": "GPS device — physical, ride-sharing service — nonphysical concept, photo filter app — nonphysical software",
-        "C": "GPS device — nonphysical concept, ride-sharing service — physical, photo filter app — nonphysical software",
-        "D": "GPS device — nonphysical software, ride-sharing service — nonphysical concept, photo filter app — physical"
+        "A": "Expanding the team to include more native English speakers from other regions",
+        "B": "Consulting with potential users who speak different languages and dialects during development",
+        "C": "Using pair programming to have two developers review all code simultaneously",
+        "D": "Using online collaboration tools so team members can share feedback more efficiently"
       },
       "correctAnswer": "B",
-      "explanation": "A GPS device is physical hardware with an embedded program. A ride-sharing service like Uber is a nonphysical computing concept — it is a business model enabled by computing. A photo filter app is nonphysical computing software."
+      "explanation": "Information gathered from potential users can be used to understand the purpose of a program from diverse perspectives. Consulting users who speak different languages and dialects would directly address the bias in the system."
     },
     {
       "id": "u1-1-q3",
       "type": "mc",
       "topic": "1.1",
-      "question": "A developer argues that e-commerce and social media platforms should be classified differently because one involves financial transactions and the other involves communication. A computer science teacher disagrees. Which of the following best supports the teacher's position?",
+      "question": "A student is classifying the following items as computing innovations or not: a smart insulin pump, a printed cookbook, and a ride-sharing service. Which of the following correctly classifies all three?",
       "options": {
-        "A": "Both involve financial transactions so they are the same type of innovation",
-        "B": "Both are nonphysical computing concepts because they represent systems or models enabled by computing rather than physical devices or standalone software applications",
-        "C": "Both are nonphysical computing software because they require apps to function",
-        "D": "They cannot be classified under the same category because their purposes are different"
+        "A": "All three are computing innovations because they all help people accomplish tasks",
+        "B": "Only the smart insulin pump is a computing innovation because it is the only physical device with embedded technology",
+        "C": "The smart insulin pump and ride-sharing service are computing innovations; the printed cookbook is not",
+        "D": "The ride-sharing service is not a computing innovation because it involves human drivers rather than automated systems"
       },
-      "correctAnswer": "B",
-      "explanation": "Both e-commerce and social media platforms are nonphysical computing concepts — they represent systems and models that exist because of computing rather than being physical devices or standalone software applications. Their different purposes do not change their classification."
+      "correctAnswer": "C",
+      "explanation": "A computing innovation must include a program as an integral part of its function. A smart insulin pump and ride-sharing service both require programs to function. A printed cookbook does not include a program."
     },
     {
       "id": "u1-1-q4",
       "type": "mc",
       "topic": "1.1",
-      "question": "Two software companies are developing competing navigation apps. Company A has a team of 20 programmers who all have similar educational and professional backgrounds. Company B has a team of 10 people including programmers, urban planners, accessibility specialists, and people from various geographic regions. Which of the following best predicts the likely outcome?",
+      "question": "Which of the following is an example of a nonphysical computing concept?",
       "options": {
-        "A": "Company A will produce a better app because their larger team can write more code",
-        "B": "Company B will likely produce a better app because their diverse perspectives will result in an innovation that reflects a wider range of user needs and talents",
-        "C": "Company A will produce a better app because consistency of background leads to more efficient communication",
-        "D": "Both companies will produce equally good apps since team size and diversity do not affect software quality"
+        "A": "A fitness tracking app installed on a smartphone",
+        "B": "A smart thermostat that learns user temperature preferences",
+        "C": "A social media platform that connects users across the world",
+        "D": "A photo editing program that applies filters to images"
       },
-      "correctAnswer": "B",
-      "explanation": "Effective collaboration produces a computing innovation that reflects the diversity of talents and perspectives of those who designed it. Company B's diverse team is more likely to anticipate a wider range of user needs and produce a more complete solution."
+      "correctAnswer": "C",
+      "explanation": "A nonphysical computing concept is a system or model enabled by computing. A social media platform is a system enabled by computing. A fitness app and photo editing program are nonphysical software. A smart thermostat is a physical innovation."
     },
     {
       "id": "u1-1-q5",
       "type": "mc",
       "topic": "1.1",
-      "question": "A team of researchers develops a medical diagnosis algorithm. After deployment they discover the algorithm consistently gives less accurate diagnoses for certain demographic groups. An investigation reveals the development team had no members from those demographic groups and did not consult users from those groups during development. Which of the following best explains this outcome?",
+      "stimulus": "Two programmers are working together on a complex module. Programmer A writes code while Programmer B watches, asks questions, and points out potential issues in real time. After completing the module, they switch roles for the next task.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the collaboration model being used?",
       "options": {
-        "A": "Medical algorithms are inherently inaccurate for some demographic groups regardless of the development process",
-        "B": "The lack of diverse perspectives during development resulted in bias in the algorithm that was not identified or corrected before deployment",
-        "C": "The problem is a technical error unrelated to the composition of the development team",
-        "D": "The algorithm needs more data to improve accuracy and diversity of the team is irrelevant"
+        "A": "Iterative development, because the programmers repeatedly refine the same code",
+        "B": "Pair programming, because one programmer writes while the other observes and provides feedback",
+        "C": "Distributed computing, because the two programmers divide the work between two machines",
+        "D": "Modular design, because the programmers break the program into separate modules"
       },
       "correctAnswer": "B",
-      "explanation": "Collaboration that includes diverse perspectives helps avoid bias in computing innovations. The absence of diverse perspectives during development meant the team could not identify or correct bias that would affect underrepresented groups."
+      "explanation": "Pair programming is a recognized collaboration model where one programmer writes code while another observes and provides real-time feedback. The switching of roles is consistent with this model."
     },
     {
       "id": "u1-1-q6",
       "type": "mc",
       "topic": "1.1",
-      "question": "A student claims that bias in computing innovations only occurs when developers intentionally discriminate. Which of the following best refutes this claim?",
+      "stimulus": "Two programmers are working together on a complex module. Programmer A writes code while Programmer B watches, asks questions, and points out potential issues in real time. After completing the module, they switch roles for the next task.",
+      "stimulusType": "text",
+      "question": "Programmer A argues that Programmer B is not contributing because Programmer B is not writing any code. Which of the following best refutes this claim?",
       "options": {
-        "A": "Bias in computing is always intentional and results from deliberate choices by developers",
-        "B": "Bias can occur unintentionally when a development team lacks diverse perspectives — developers may not realize their assumptions and decisions disadvantage certain groups of users",
-        "C": "Bias in computing innovations only affects the visual design of the interface not the underlying functionality",
-        "D": "Bias is unavoidable in all computing innovations and cannot be reduced through collaboration"
+        "A": "Programmer B contributes by documenting the code after it is written",
+        "B": "Programmer B contributes by testing the code after the module is complete",
+        "C": "Programmer B actively contributes by catching errors and providing feedback that improves the code in real time",
+        "D": "Programmer B contributes by managing the project timeline while Programmer A focuses on coding"
       },
-      "correctAnswer": "B",
-      "explanation": "Collaboration that includes diverse perspectives helps avoid bias — bias often occurs unintentionally when a homogeneous team makes assumptions based on their own limited experiences without realizing those assumptions exclude or disadvantage other users."
+      "correctAnswer": "C",
+      "explanation": "In pair programming both roles actively contribute. The observer's real-time feedback is a core contribution of the model — catching errors the writer might miss is distinct from testing or documentation which happen after writing."
     },
     {
       "id": "u1-1-q7",
       "type": "mc",
       "topic": "1.1",
-      "question": "A development team has finished the design phase of a new productivity app and is about to begin coding. A team member suggests scheduling meetings with potential users before coding begins. Another team member argues this is unnecessary since the design is already complete. Which of the following best supports the first team member's suggestion?",
+      "stimulus": "A development team building a navigation app for cyclists uses an online platform where members post code updates, leave comments on each other's work, and suggest improvements asynchronously across different time zones.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes how the team's approach supports collaboration?",
       "options": {
-        "A": "Consulting users after the design phase is too late to make any meaningful changes",
-        "B": "Consultation and communication with users are important aspects of the development of computing innovations — user feedback at this stage can reveal design flaws before costly coding begins",
-        "C": "Potential users are not qualified to evaluate technical designs and their feedback would not be useful",
-        "D": "Meeting with users is only necessary after the product is launched to gather improvement suggestions"
+        "A": "The online platform eliminates the need for the team to practice interpersonal skills because communication is automated",
+        "B": "The online platform allows the team to share code and provide feedback regardless of location or time zone",
+        "C": "The online platform ensures all team members write the same amount of code",
+        "D": "The online platform replaces the need for pair programming by allowing two people to edit the same file"
       },
       "correctAnswer": "B",
-      "explanation": "Consultation and communication with users are important aspects of the development process — gathering user feedback before coding begins is especially valuable because it is less costly to change a design than to rewrite completed code."
+      "explanation": "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents. The key benefit described is asynchronous collaboration across locations and time zones."
     },
     {
       "id": "u1-1-q8",
       "type": "mc",
       "topic": "1.1",
-      "question": "A team is building a language learning app. They gather feedback exclusively from fluent speakers of the target language. After launch users who are complete beginners report the app is too difficult to use. Which of the following best explains this outcome?",
+      "question": "Which of the following lists contains ONLY the interpersonal skills identified as essential for effective collaborative teams?",
       "options": {
-        "A": "Fluent speakers are always the best source of feedback for language learning apps",
-        "B": "The team failed to gather information from the full range of potential users — feedback from beginners would have provided perspectives that helped the team understand the program's purpose from diverse viewpoints",
-        "C": "The app's difficulty is a technical problem unrelated to the user feedback process",
-        "D": "Beginners should not be consulted during development because they lack the expertise to evaluate the app"
+        "A": "Communication, pair programming, conflict resolution, and negotiation",
+        "B": "Communication, consensus building, conflict resolution, and negotiation",
+        "C": "Brainstorming, consensus building, conflict resolution, and user consultation",
+        "D": "Communication, consensus building, iterative development, and negotiation"
       },
       "correctAnswer": "B",
-      "explanation": "Information gathered from potential users helps developers understand the purpose of the program from diverse perspectives. By only consulting fluent speakers the team missed the perspective of their most important user group — beginners."
+      "explanation": "Communication, consensus building, conflict resolution, and negotiation are the four interpersonal skills identified for effective collaborative teams. The other options each include a process or model that is not an interpersonal skill."
     },
     {
       "id": "u1-1-q9",
       "type": "mc",
       "topic": "1.1",
-      "question": "During the development of a fitness tracking app, the team conducts focus groups with diverse users including elderly users, users with disabilities, and users from different socioeconomic backgrounds. A manager questions whether this extensive user research is necessary. Which of the following best justifies the team's approach?",
+      "stimulus": "A team is developing a translation app. Before finalizing the design, they survey speakers of 12 different languages, interview immigrants and international students, and conduct usability sessions with non-native speakers of varying fluency levels.",
+      "stimulusType": "text",
+      "question": "Which of the following best explains the purpose of the team's user research approach?",
       "options": {
-        "A": "Extensive user research is only necessary for apps targeting specific medical conditions",
-        "B": "Information from diverse potential users helps the team understand the program's purpose from multiple perspectives, enabling them to develop an app that fully incorporates those perspectives and serves all users effectively",
-        "C": "The research is unnecessary because programmers can anticipate all user needs through technical expertise alone",
-        "D": "User research only matters for the marketing phase not the development phase"
+        "A": "To identify syntax errors in the app before the coding phase begins",
+        "B": "To ensure the app meets legal requirements for serving international users",
+        "C": "To gather information from potential users so the app can be developed to fully incorporate diverse perspectives",
+        "D": "To replace pair programming with a more efficient feedback method"
       },
-      "correctAnswer": "B",
-      "explanation": "Information gathered from potential users from diverse backgrounds helps developers understand the program's purpose from diverse perspectives and develop an innovation that fully incorporates those perspectives — this is especially important for an app intended to serve a wide range of users."
+      "correctAnswer": "C",
+      "explanation": "Information gathered from potential users can be used to understand the purpose of a program from diverse perspectives and to develop a program that fully incorporates those perspectives."
     },
     {
       "id": "u1-1-q10",
-      "type": "mc",
+      "type": "mc2",
       "topic": "1.1",
-      "question": "A distributed development team has members working from four different countries across different time zones. Which of the following best describes how online collaboration tools most directly address the challenges this team faces?",
+      "question": "A team develops an automated resume screening tool trained on hiring data from the past 15 years. After deployment, the tool consistently ranks candidates from certain universities significantly higher than equally qualified candidates from other schools. Which TWO of the following best explain this outcome?",
       "options": {
-        "A": "Online tools automatically translate code between different programming languages used by team members in different countries",
-        "B": "Online tools allow team members to share code and documentation and provide asynchronous feedback regardless of time zone or location differences",
-        "C": "Online tools eliminate the need for any real-time communication between team members",
-        "D": "Online tools ensure that all team members work at the same pace regardless of their location"
+        "A": "The tool contains a syntax error that causes it to misread university names",
+        "B": "The historical data used to train the tool reflected past hiring preferences, embedding that bias into the tool",
+        "C": "The development team did not include diverse perspectives that might have identified the bias before deployment",
+        "D": "The tool was not tested with enough candidates, causing it to default to random rankings"
       },
-      "correctAnswer": "B",
-      "explanation": "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents — this asynchronous capability is especially valuable for distributed teams working across different time zones."
+      "correctAnswer": ["B", "C"],
+      "explanation": "The bias comes from two sources: the historical data that reflected past biased hiring practices (B), and the lack of diverse perspectives on the development team that would have identified and questioned that bias before deployment (C)."
     },
     {
-      "id": "u1-1-q11",
+      "id": "u1-2-q1",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A student argues that online collaboration tools make in-person collaboration obsolete. Which of the following best evaluates this claim?",
+      "topic": "1.2",
+      "question": "A student creates a program that displays a different greeting depending on the time of day. Which of the following best describes the purpose of this program?",
       "options": {
-        "A": "The claim is correct because online tools provide all the functionality needed for effective collaboration",
-        "B": "The claim is partially correct — online tools significantly expand collaboration possibilities by enabling remote sharing and feedback, but they are tools that support collaboration rather than replace the need for human communication and interpersonal skills",
-        "C": "The claim is incorrect because online tools cannot support any meaningful form of collaboration",
-        "D": "The claim is correct because in-person collaboration is always less efficient than online collaboration"
+        "A": "To store data about the user's preferences in a database",
+        "B": "To solve a problem or pursue an interest through creative expression",
+        "C": "To test whether the computer's clock is functioning correctly",
+        "D": "To demonstrate the use of variables in a programming language"
       },
       "correctAnswer": "B",
-      "explanation": "Online tools support collaboration by allowing programmers to share and provide feedback — they expand what is possible but they are tools that enable collaboration, not a replacement for the interpersonal skills and communication that effective collaboration requires."
+      "explanation": "The purpose of computing innovations is to solve problems or pursue interests through creative expression. A personalized greeting program pursues the interest of providing a customized user experience."
     },
     {
-      "id": "u1-1-q12",
+      "id": "u1-2-q2",
       "type": "mc",
-      "topic": "1.1",
-      "question": "Two students are using pair programming to complete an assignment. Student A is writing the code while Student B is reviewing each line and suggesting improvements in real time. Student A argues that Student B is not contributing because they are not typing. Which of the following best refutes Student A's claim?",
+      "topic": "1.2",
+      "stimulus": "A weather app accepts a city name as input and displays the current temperature, humidity, and forecast for that city.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes an event in this program?",
       "options": {
-        "A": "Student B should take turns typing to ensure both students contribute equally",
-        "B": "In pair programming both roles — the one writing and the one reviewing — actively contribute to the solution. The reviewer's real-time feedback improves code quality and catches errors that the writer might miss",
-        "C": "Student A is correct and pair programming is only effective when both students type simultaneously",
-        "D": "Student B's role is less important and they should focus on testing the finished code instead"
+        "A": "The temperature value stored in the program's memory",
+        "B": "The forecast data retrieved from a weather database",
+        "C": "The user tapping the Search button after typing a city name",
+        "D": "The list of cities the program can retrieve weather data for"
+      },
+      "correctAnswer": "C",
+      "explanation": "An event is associated with an action and supplies input data to a program. The user tapping the Search button is the action that triggers the program to process the city name input."
+    },
+    {
+      "id": "u1-2-q3",
+      "type": "mc",
+      "topic": "1.2",
+      "stimulus": "A weather app accepts a city name as input and displays the current temperature, humidity, and forecast for that city.",
+      "stimulusType": "text",
+      "question": "Which of the following is NOT an example of program output produced by this app?",
+      "options": {
+        "A": "The current temperature displayed on screen",
+        "B": "The city name typed by the user",
+        "C": "The humidity percentage shown to the user",
+        "D": "The forecast text displayed after the search"
       },
       "correctAnswer": "B",
-      "explanation": "Pair programming is a recognized collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles are active contributions — the reviewer's perspective is essential to the model's effectiveness."
+      "explanation": "Program outputs are data sent from a program to a device. The city name typed by the user is program input. The temperature, humidity, and forecast are all outputs sent from the program to the user's screen."
     },
     {
-      "id": "u1-1-q13",
+      "id": "u1-2-q4",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A software company is evaluating different collaboration models for their new project. They note that pair programming requires two developers to work on the same code simultaneously. A manager argues this is wasteful. Which of the following best counters this argument?",
+      "topic": "1.2",
+      "question": "A programmer is designing a calculator app. The app must correctly handle all possible numeric inputs including very large numbers, decimals, and negative numbers. Which of the following best explains why this requirement exists?",
       "options": {
-        "A": "Pair programming doubles productivity because two people always produce twice as much as one",
-        "B": "Pair programming is a recognized collaboration model that produces higher quality code by combining two perspectives simultaneously — the investment in time is offset by reduced debugging and error correction later",
-        "C": "The manager is correct and pair programming should only be used for very simple tasks",
-        "D": "Pair programming is only useful when one programmer is significantly more experienced than the other"
+        "A": "A program must be written in a language that supports all numeric types",
+        "B": "A program needs to work for a variety of inputs and situations",
+        "C": "A program's output must always be a number when the input is a number",
+        "D": "A program must store all previous inputs in memory for future reference"
       },
       "correctAnswer": "B",
-      "explanation": "Pair programming is a recognized model that facilitates collaboration — while it requires two people to work simultaneously the quality improvement from having two perspectives reduces errors and debugging time, making it an effective and recognized approach."
+      "explanation": "A program needs to work for a variety of inputs and situations. A calculator that only works for some numeric inputs would be incomplete."
     },
     {
-      "id": "u1-1-q14",
+      "id": "u1-2-q5",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A development team is deciding between two database solutions. Team members have strong opposing opinions and the meeting has become tense. Which sequence of interpersonal skills would MOST effectively resolve this situation while producing the best technical outcome?",
+      "topic": "1.2",
+      "question": "Which of the following best describes the difference between a program and a code segment?",
       "options": {
-        "A": "The team leader should end the debate by choosing one option based on seniority",
-        "B": "The team should use communication to ensure all perspectives are fully understood, then apply conflict resolution techniques to reduce tension, and finally use negotiation and consensus building to evaluate both options and reach an agreement that incorporates the strongest elements of each",
-        "C": "The team should vote immediately so the majority opinion wins",
-        "D": "The team members with opposing views should work separately and submit competing implementations"
+        "A": "A program is written by one person while a code segment is written collaboratively",
+        "B": "A program performs a complete task when run while a code segment is a collection of statements that is part of a larger program",
+        "C": "A program runs on a computer while a code segment runs on a mobile device",
+        "D": "A program uses variables while a code segment uses only constants"
       },
       "correctAnswer": "B",
-      "explanation": "Effective collaborative teams practice all four interpersonal skills together — communication, conflict resolution, negotiation, and consensus building. Using them in sequence addresses both the interpersonal tension and the technical decision simultaneously."
+      "explanation": "A program is a collection of program statements that performs a specific task when run. A code segment is a collection of statements that is part of a larger program."
     },
     {
-      "id": "u1-1-q15",
+      "id": "u1-2-q6",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A student is preparing for the AP CSP Create performance task and will be collaborating with a partner. The student memorizes a list of interpersonal skills to practice. Which of the following lists contains ONLY the interpersonal skills identified in the CED as essential for effective collaborative teams?",
+      "topic": "1.2",
+      "question": "A music app plays a song when a user taps a play button and pauses it when the user taps again. Which of the following best describes the programming style used?",
       "options": {
-        "A": "Leadership, delegation, time management, and multitasking",
-        "B": "Communication, consensus building, conflict resolution, and negotiation",
-        "C": "Brainstorming, prototyping, testing, and iterating",
-        "D": "Planning, organizing, executing, and evaluating"
+        "A": "Sequential programming, because the app executes statements in order from top to bottom",
+        "B": "Iterative programming, because the app repeats the same action each time the button is tapped",
+        "C": "Event-driven programming, because program statements execute when triggered by a user action rather than through sequential flow",
+        "D": "Modular programming, because the play and pause functions are separated into different modules"
+      },
+      "correctAnswer": "C",
+      "explanation": "In event-driven programming, program statements are executed when triggered rather than through sequential flow of control. The user tapping the play button is the event that triggers execution."
+    },
+    {
+      "id": "u1-2-q7",
+      "type": "mc2",
+      "topic": "1.2",
+      "question": "A navigation app takes a starting location and destination as input and displays a route on a map. Which TWO of the following are examples of program input for this app?",
+      "options": {
+        "A": "The map displayed on the user's screen",
+        "B": "The estimated travel time shown after the route is calculated",
+        "C": "The destination address typed by the user",
+        "D": "The user's current GPS location detected by the device"
+      },
+      "correctAnswer": ["C", "D"],
+      "explanation": "Program inputs are data sent to a computer for processing. The destination address (C) and GPS location (D) are both inputs. The map display and travel time are outputs sent from the program to the user's screen."
+    },
+    {
+      "id": "u1-3-q1",
+      "type": "mc",
+      "topic": "1.3",
+      "stimulus": "A team is developing a fitness tracking app. They release a basic version, gather user feedback, redesign the step-counting feature based on complaints, release an updated version, gather more feedback, and repeat the process several times over six months.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the development process being used?",
+      "options": {
+        "A": "Incremental development, because the team adds new features with each release",
+        "B": "Iterative development, because the team refines and revises the program based on feedback throughout the process",
+        "C": "Sequential development, because the team follows the same steps in the same order each time",
+        "D": "Pair programming, because two developers review each update before it is released"
       },
       "correctAnswer": "B",
-      "explanation": "The CED specifically identifies communication, consensus building, conflict resolution, and negotiation as the interpersonal skills that effective collaborative teams should practice. The other options describe general project management or development processes, not interpersonal collaboration skills."
+      "explanation": "A development process that is iterative requires refinement and revision based on feedback throughout the process. The team repeatedly revises based on user feedback."
     },
     {
-      "id": "u1-1-q16",
+      "id": "u1-3-q2",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A team member has identified a significant flaw in the project's design but stays silent during meetings because they feel their opinion will not be valued. Which of the following best explains the consequence of this behavior from the perspective of effective collaboration?",
+      "topic": "1.3",
+      "stimulus": "A team is building a social media app. They complete and fully test the login system before beginning work on the profile page. Once the profile page works correctly they begin building the feed. They do not start a new feature until the previous one is verified to work.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the development process being used?",
       "options": {
-        "A": "The team will be more efficient because fewer conflicting opinions slow down decision-making",
-        "B": "The team loses a potentially valuable perspective that could have improved the innovation — effective collaboration requires that all members practice communication and contribute their viewpoints",
-        "C": "The team member is showing appropriate professional behavior by deferring to more experienced colleagues",
-        "D": "The outcome will be the same because one person's opinion rarely affects the final product"
+        "A": "Iterative development, because the team revisits each feature multiple times",
+        "B": "Exploratory development, because the team does not plan ahead before building each feature",
+        "C": "Incremental development, because the team builds and verifies one piece at a time before adding the next",
+        "D": "Modular development, because the team separates the app into independent modules"
+      },
+      "correctAnswer": "C",
+      "explanation": "A development process that is incremental breaks the problem into smaller pieces and makes sure each piece works before adding it to the whole."
+    },
+    {
+      "id": "u1-3-q3",
+      "type": "mc",
+      "topic": "1.3",
+      "question": "A team is in the investigation phase of developing a new ride-sharing app. Which of the following activities is LEAST consistent with this phase?",
+      "options": {
+        "A": "Conducting interviews with frequent ride-sharing users",
+        "B": "Observing how people currently use competing apps",
+        "C": "Writing the code for the payment processing module",
+        "D": "Surveying potential users about their biggest frustrations with existing services"
+      },
+      "correctAnswer": "C",
+      "explanation": "Investigation methods include surveys, interviews, and direct observations. Writing code belongs to the prototyping phase, not the investigation phase."
+    },
+    {
+      "id": "u1-3-q4",
+      "type": "mc",
+      "topic": "1.3",
+      "question": "A programmer adds the following note directly into their code: '# This function calculates the total price including tax'. Which of the following best describes this note?",
+      "options": {
+        "A": "A variable that stores the function's return value",
+        "B": "A comment that documents the function's purpose and does not affect how the program runs",
+        "C": "A test case used to verify the function produces the correct output",
+        "D": "A specification that defines the requirements for the program"
       },
       "correctAnswer": "B",
-      "explanation": "Effective collaborative teams practice communication as a core interpersonal skill — all team members must contribute their perspectives. Withholding a significant concern deprives the team of a viewpoint that could improve the innovation and reflects poor collaborative practice."
+      "explanation": "Comments are a form of program documentation written into the program to be read by people and do not affect how a program runs."
     },
     {
-      "id": "u1-1-q17",
+      "id": "u1-3-q5",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A team develops a speech-to-text application and only tests it with native English speakers from one geographic region. After release users from other regions and non-native speakers report significantly lower accuracy. Which of the following best explains both why this happened and how it could have been prevented?",
+      "topic": "1.3",
+      "stimulus": "A programmer finds a sorting algorithm online and uses it in their program. They add the following line to their documentation: 'Sorting function adapted from quicksort implementation by J. Smith, available at codeexamples.com'.",
+      "stimulusType": "text",
+      "question": "Which of the following best explains why the programmer added this line?",
       "options": {
-        "A": "The lower accuracy is a technical limitation of speech recognition technology that cannot be addressed through collaboration",
-        "B": "Testing with a limited user group introduced bias — including diverse users in development would have reflected a wider range of speech patterns and perspectives, helping the team identify and correct accuracy issues before release",
-        "C": "Non-native speakers should use a different version of the app designed specifically for them",
-        "D": "The team should have hired more programmers rather than involving diverse users in testing"
+        "A": "To explain how the sorting algorithm works so other programmers can understand the code",
+        "B": "To acknowledge code that was written by another source, as required when using code developed by others",
+        "C": "To document a test case that verifies the sorting function works correctly",
+        "D": "To describe the program specification that required a sorting feature"
       },
       "correctAnswer": "B",
-      "explanation": "This question combines CRD-1.A.3 and CRD-1.A.4. Testing only with a homogeneous user group introduced bias that could have been avoided by including diverse users whose perspectives would have revealed the accuracy issues before release."
+      "explanation": "It is important to acknowledge any code segments developed by another source. The acknowledgement should be in the program documentation and include the origin or original author's name."
     },
     {
-      "id": "u1-1-q18",
+      "id": "u1-3-q6",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A student creates the following list and claims all items are computing innovations: (1) a smartwatch that monitors heart rate, (2) a streaming music service, (3) a mechanical wristwatch, (4) a cloud storage system. Which of the following correctly evaluates the student's claim?",
+      "topic": "1.3",
+      "question": "Which of the following activities belongs in the DESIGN phase of program development?",
       "options": {
-        "A": "The claim is correct — all four items are computing innovations",
-        "B": "The claim is incorrect — only items 1, 2, and 4 are computing innovations because they include programs as integral parts of their function. A mechanical wristwatch does not include a program and therefore is not a computing innovation",
-        "C": "The claim is incorrect — only item 1 is a computing innovation because it is the only physical device",
-        "D": "The claim is incorrect — only items 2 and 4 are computing innovations because computing innovations must be nonphysical"
+        "A": "Conducting user interviews to understand the program's requirements",
+        "B": "Running the program with test inputs to check for errors",
+        "C": "Creating diagrams that represent the layout of the user interface",
+        "D": "Releasing a working version of the program to gather user feedback"
+      },
+      "correctAnswer": "C",
+      "explanation": "The design phase may include brainstorming, planning, organizing into modules, creation of UI layout diagrams, and development of a testing strategy. User interviews are investigation, running tests is testing, and releasing to users is prototyping."
+    },
+    {
+      "id": "u1-3-q7",
+      "type": "mc2",
+      "topic": "1.3",
+      "question": "Which TWO of the following are effective methods of investigation during the development of a new program?",
+      "options": {
+        "A": "Writing comments that explain what each code segment does",
+        "B": "Conducting surveys to collect data from potential users",
+        "C": "Organizing the program into separate modules and functional components",
+        "D": "Directly observing how people currently perform the task the program will automate"
+      },
+      "correctAnswer": ["B", "D"],
+      "explanation": "Investigation methods include collecting data through surveys and direct observations. Writing comments is documentation and organizing into modules belongs to the design phase."
+    },
+    {
+      "id": "u1-4-q1",
+      "type": "mc",
+      "topic": "1.4",
+      "stimulus": "A programmer writes a program that is intended to calculate the average of a list of numbers. When run with the input [10, 20, 30], the program displays 25 instead of 20.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the type of error in this program?",
+      "options": {
+        "A": "Syntax error, because the program does not follow the rules of the programming language",
+        "B": "Run-time error, because the program crashes when given this input",
+        "C": "Overflow error, because the numbers exceed the defined range of values",
+        "D": "Logic error, because the program runs but produces an incorrect result"
+      },
+      "correctAnswer": "D",
+      "explanation": "A logic error is a mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly. The program runs without crashing but produces the wrong answer."
+    },
+    {
+      "id": "u1-4-q2",
+      "type": "mc",
+      "topic": "1.4",
+      "stimulus": "result ← 10 + 5\nDISPLAY rezult",
+      "stimulusType": "code",
+      "question": "Which of the following best describes the error in this code segment?",
+      "options": {
+        "A": "Logic error, because the calculation produces the wrong result",
+        "B": "Run-time error, because the program will crash when it reaches the DISPLAY statement",
+        "C": "Syntax error, because the variable name rezult does not match the variable result that was defined",
+        "D": "Overflow error, because the result of 10 + 5 exceeds the defined range of values"
+      },
+      "correctAnswer": "C",
+      "explanation": "A syntax error is a mistake where the rules of the programming language are not followed. Using rezult instead of result violates the rule that variable names must be consistent."
+    },
+    {
+      "id": "u1-4-q3",
+      "type": "mc",
+      "topic": "1.4",
+      "question": "A program that divides two numbers crashes when the user enters 0 as the denominator. Which of the following best describes this type of error?",
+      "options": {
+        "A": "Logic error, because dividing by zero produces an incorrect mathematical result",
+        "B": "Syntax error, because division by zero violates the rules of the programming language",
+        "C": "Run-time error, because the error occurs during the execution of the program",
+        "D": "Overflow error, because zero is outside the defined range of values for a denominator"
+      },
+      "correctAnswer": "C",
+      "explanation": "A run-time error is a mistake that occurs during execution. Division by zero does not prevent the program from starting but causes it to crash when that line executes."
+    },
+    {
+      "id": "u1-4-q4",
+      "type": "mc",
+      "topic": "1.4",
+      "stimulus": "A programmer is trying to find an error in a procedure that calculates shipping costs. She manually traces through each line of the code using a specific test input, tracking the value of each variable at each step.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the error-finding technique being used?",
+      "options": {
+        "A": "Adding extra output statements to print variable values during execution",
+        "B": "Using a debugger to pause execution at specific lines",
+        "C": "Hand tracing, by manually tracking variable values through each step of the code",
+        "D": "Using a test case to compare expected and actual output"
+      },
+      "correctAnswer": "C",
+      "explanation": "Hand tracing involves manually stepping through the code and tracking variable values at each step. The programmer is hand tracing, not using a debugger or test case."
+    },
+    {
+      "id": "u1-4-q5",
+      "type": "mc",
+      "topic": "1.4",
+      "question": "A programmer is testing a program that accepts a user's age as input and must work correctly for all valid ages. Which of the following sets of test inputs would be MOST effective for verifying the program works correctly?",
+      "options": {
+        "A": "25, 30, 35",
+        "B": "0, 1, 99, 100",
+        "C": "18, 21, 65",
+        "D": "10, 50, 90"
       },
       "correctAnswer": "B",
-      "explanation": "A computing innovation must include a program as an integral part of its function. A smartwatch, streaming service, and cloud storage all require programs to function. A mechanical wristwatch operates entirely through physical mechanisms with no program involved."
+      "explanation": "Defined inputs used to test a program should demonstrate expected outcomes at or just beyond the extremes of input data. Testing with boundary values (0, 1 for minimum and 99, 100 for maximum) is most effective for catching edge case errors."
     },
     {
-      "id": "u1-1-q19",
+      "id": "u1-4-q6",
       "type": "mc",
-      "topic": "1.1",
-      "question": "A development team argues about whether to consult potential users during the design phase. Developer A says user feedback is unnecessary because the team are experts who understand what users need. Developer B disagrees. Which of the following best supports Developer B's position?",
+      "topic": "1.4",
+      "question": "A program that tracks a company's annual revenue stores the value as an integer. At the end of a record-breaking year, the program suddenly displays a negative revenue figure even though all individual transactions were positive. Which of the following best explains this behavior?",
       "options": {
-        "A": "Developer A is correct — technical expertise is sufficient to design effective computing innovations without user input",
-        "B": "Developer B is correct — consultation and communication with users are important aspects of development because users provide diverse perspectives that help define the program's purpose in ways that technical expertise alone cannot",
-        "C": "Both developers are correct — user feedback and technical expertise are equally important and neither is necessary on its own",
-        "D": "Developer A is correct for simple applications but Developer B is correct for complex ones"
+        "A": "A logic error caused the program to subtract transactions instead of adding them",
+        "B": "A syntax error caused the program to misread the transaction data",
+        "C": "An overflow error occurred because the revenue value exceeded the defined range of values for the integer type",
+        "D": "A run-time error caused the program to crash and reset the revenue to a negative default value"
       },
-      "correctAnswer": "B",
-      "explanation": "Consultation and communication with users are important aspects of development (CRD-1.A.5), and information from potential users helps understand the program's purpose from diverse perspectives (CRD-1.A.6). Technical expertise does not replace the insights that come from actual users."
+      "correctAnswer": "C",
+      "explanation": "An overflow error occurs when a computer attempts to handle a number outside the defined range of values. When an integer exceeds its maximum value it wraps around to a negative number, which explains the unexpected negative result."
     },
     {
-      "id": "u1-1-q20",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "A development team wants to implement effective collaboration practices. They are deciding between: (1) using a version control system with shared repositories, (2) implementing pair programming for complex modules, (3) working in complete isolation with no communication. Which of the following best evaluates these options?",
+      "id": "u1-4-q7",
+      "type": "mc2",
+      "topic": "1.4",
+      "question": "Which TWO of the following are effective ways to find and correct errors in a program?",
       "options": {
-        "A": "Option 3 is best because isolation eliminates distractions and maximizes individual productivity",
-        "B": "Options 1 and 2 are both effective — option 1 uses an online tool that allows sharing and feedback while option 2 uses a recognized collaboration model. Option 3 contradicts all principles of effective collaboration",
-        "C": "Option 1 is effective but option 2 is inefficient because pair programming wastes resources",
-        "D": "All three options are equally valid depending on the preferences of the development team"
+        "A": "Adding extra output statements to display variable values at key points during execution",
+        "B": "Rewriting the program in a different programming language",
+        "C": "Using a debugger to pause execution and inspect variable values",
+        "D": "Increasing the number of programmers working on the program"
       },
-      "correctAnswer": "B",
-      "explanation": "Online tools like version control support collaboration by enabling sharing and feedback (CRD-1.B.1), and pair programming is a recognized collaboration model (CRD-1.B.2). Option 3 contradicts both principles by eliminating all collaboration."
-    },
-    {
-      "id": "u1-1-q21",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "Two teams are developing accessibility features for a mobile operating system. Team X consists entirely of developers without disabilities. Team Y includes developers with various disabilities alongside developers without disabilities. Which of the following best predicts the difference in outcome and explains why?",
-      "options": {
-        "A": "Team X will produce better features because professional developers understand accessibility standards better than users with disabilities",
-        "B": "Team Y will likely produce more effective accessibility features because their innovation will reflect the diversity of talents and perspectives of those who designed it — including firsthand experience with the needs the features are designed to address",
-        "C": "Both teams will produce equally effective features because accessibility standards are objective and well-documented",
-        "D": "Team Y will take longer and produce lower quality features due to the complexity of coordinating a more diverse team"
-      },
-      "correctAnswer": "B",
-      "explanation": "Effective collaboration produces a computing innovation that reflects the diversity of talents and perspectives of those who designed it. Team Y's inclusion of developers with disabilities brings firsthand perspectives that directly improve the quality and relevance of accessibility features."
-    },
-    {
-      "id": "u1-1-q22",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "A development team has been debating the same design decision for three weeks without resolution. Two factions have formed and communication has broken down. Which of the following approaches best demonstrates all four interpersonal skills identified in the CED?",
-      "options": {
-        "A": "The project manager cancels the feature entirely to resolve the conflict",
-        "B": "The team holds a structured meeting where each side communicates their concerns fully, a mediator facilitates conflict resolution to reduce tension, both sides negotiate by identifying their core requirements, and the group works toward consensus by finding a solution that satisfies the essential needs of both factions",
-        "C": "The team votes and the losing faction must implement the winning faction's design without further discussion",
-        "D": "Both factions independently prototype their solutions and the better performing one is selected"
-      },
-      "correctAnswer": "B",
-      "explanation": "This answer demonstrates all four CED interpersonal skills — communication (each side shares concerns), conflict resolution (mediator reduces tension), negotiation (identifying core requirements), and consensus building (finding a solution satisfying both sides)."
-    },
-    {
-      "id": "u1-1-q23",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "A company develops an automated hiring algorithm trained on historical hiring data from the past 20 years. After deployment the algorithm consistently rates candidates from certain demographic groups lower than equally qualified candidates from other groups. An analyst traces the problem to the training data which reflected historical hiring biases. Which of the following best explains how collaboration principles could have helped prevent this outcome?",
-      "options": {
-        "A": "The problem is purely technical and could only have been fixed by using a different algorithm",
-        "B": "Including diverse perspectives during development — both in the team composition and through consultation with diverse potential users and affected communities — would have helped identify that the training data reflected historical biases before the algorithm was deployed",
-        "C": "The company should have used a larger dataset to eliminate the bias",
-        "D": "Automated systems cannot exhibit bias because they make decisions based on data rather than human judgment"
-      },
-      "correctAnswer": "B",
-      "explanation": "This combines CRD-1.A.4 (diverse perspectives help avoid bias) and CRD-1.A.6 (information from diverse users helps understand purpose). A diverse development team and consultation with affected communities would have identified the biased training data before deployment."
-    },
-    {
-      "id": "u1-1-q24",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "A student is creating a museum exhibit about computing innovations and wants to include one example of each type: physical, nonphysical software, and nonphysical concept. Which of the following selections correctly includes one example of each type?",
-      "options": {
-        "A": "A laptop computer, a word processing application, and online banking",
-        "B": "A smartphone, the internet, and a video game",
-        "C": "A fitness tracker, social media, and a weather app",
-        "D": "A smart speaker, e-commerce, and a navigation app"
-      },
-      "correctAnswer": "A",
-      "explanation": "A laptop is a physical computing innovation, a word processing application is nonphysical computing software, and online banking is a nonphysical computing concept. Options B, C, and D do not correctly represent all three categories."
-    },
-    {
-      "id": "u1-1-q25",
-      "type": "mc",
-      "topic": "1.1",
-      "question": "A technology company is developing a new AI-powered translation service. They assemble a linguistically and culturally diverse team, conduct user research with speakers of all target languages including minority dialect speakers, use shared version control and collaborative coding platforms, implement pair programming for the core translation engine, and hold weekly retrospectives focused on open communication and resolving disagreements constructively. Six months after launch the service is praised for its accuracy across diverse languages and dialects. A competitor's service developed by a homogeneous team without user research receives criticism for poor performance on minority dialects and cultural insensitivity. Which of the following best explains the difference in outcomes?",
-      "options": {
-        "A": "The first company's service is better because they spent more time and money on development",
-        "B": "The first company applied comprehensive collaboration principles — diverse team perspectives avoided bias and produced an innovation reflecting diverse talents, user research from diverse speakers informed the program's purpose, online tools and pair programming enabled effective development, and strong interpersonal practices maintained productive teamwork — all of which directly improved the quality of their innovation compared to the competitor's approach",
-        "C": "The difference in outcomes is due to the first company having more experienced programmers not their collaboration practices",
-        "D": "The first company was lucky — collaboration practices do not reliably predict the quality of computing innovations"
-      },
-      "correctAnswer": "B",
-      "explanation": "This comprehensive question tests all learning objectives together. The first company's success directly results from applying every CED principle — diverse team avoids bias (CRD-1.A.3/1.A.4), user consultation informs purpose (CRD-1.A.5/1.A.6), online tools and pair programming support development (CRD-1.B.1/1.B.2), and interpersonal skills maintain teamwork (CRD-1.C.1). The competitor's failure directly results from ignoring these principles."
+      "correctAnswer": ["A", "C"],
+      "explanation": "Adding extra output statements and using debuggers are both identified as effective ways to find and correct errors. Rewriting in a different language does not fix logic errors, and adding more programmers does not directly help identify existing errors."
     }
   ]
 }
