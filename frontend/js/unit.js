@@ -1144,7 +1144,7 @@
       const topic = unit.topics.find(t => t.id === currentTopicId);
       questions = pqQuestionsData[topic?.num] || [];
     }
-    if (type === 'mcq') return questions.filter(q => q.type === 'mcq');
+    if (type === 'mcq') return questions.filter(q => q.type === 'mcq' || q.type === 'mc2');
     if (type === 'frq') return questions.filter(q => q.type === 'frq');
     return [...questions];
   }
@@ -1165,7 +1165,7 @@
     pqDeck    = [];
     pqIdx     = 0;
     pqAnswers = {};
-    const available = pqGetDeck('mcq').length + pqGetDeck('frq').length;
+    const available = pqGetDeck('mcq').length + pqGetDeck('frq').length; // mc2 included in 'mcq' bucket
     if (!available) { pqShowView('pqEmpty'); return; }
     document.querySelectorAll('.pq-type-card').forEach(c => {
       const type = c.dataset.type;
