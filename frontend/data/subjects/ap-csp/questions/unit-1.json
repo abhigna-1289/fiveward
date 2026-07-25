@@ -914,7 +914,7 @@
       },
       "correctAnswer": "C",
       "explanation": "A debugger is an effective way to find and correct errors — it allows programmers to pause execution at specific points and inspect variable values. This is distinct from extra output statements which print values without pausing execution."
-    }
+    },
     {
       "id": "u1-frq-1",
       "type": "frq",
