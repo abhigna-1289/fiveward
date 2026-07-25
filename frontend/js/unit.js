@@ -1101,7 +1101,7 @@
     pqIdx     = 0;
     pqAnswers = {};
     pqDeck.forEach(q => {
-      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
+      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
@@ -1114,7 +1114,7 @@
     pqIdx     = Math.min(session.idx || 0, pqDeck.length - 1);
     pqAnswers = session.answers || {};
     pqDeck.forEach(q => {
-      if (!pqAnswers[q.id]) pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
+      if (!pqAnswers[q.id]) pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
@@ -1371,19 +1371,20 @@
               <ul class="pq-rubric-list">${rubric}</ul>
             </div>
           </div>
-          ${a.grade === null
+          ${a.grade !== null
             ? `<div class="pq-self-grade">
-                <span class="pq-sg-label">Self Grade:</span>
-                <button class="pq-sg-btn pq-sg-btn--full"    data-grade="full"    type="button">Full Credit</button>
-                <button class="pq-sg-btn pq-sg-btn--partial" data-grade="partial" type="button">Partial Credit</button>
-                <button class="pq-sg-btn pq-sg-btn--none"    data-grade="none"    type="button">No Credit</button>
-              </div>`
-            : `<div class="pq-self-grade">
                 <span class="pq-sg-label">Graded:</span>
-                <button class="pq-sg-btn pq-sg-btn--${ a.grade } pq-sg-btn--active" disabled type="button">${
+                <button class="pq-sg-btn pq-sg-btn--${a.grade} pq-sg-btn--active" disabled type="button">${
                   { full: 'Full Credit', partial: 'Partial Credit', none: 'No Credit' }[a.grade]
                 }</button>
               </div>`
+            : `<div class="pq-self-grade">
+                <span class="pq-sg-label">Self Grade:</span>
+                <button class="pq-sg-btn pq-sg-btn--full${    a.pendingGrade === 'full'    ? ' pq-sg-btn--active' : ''}" data-grade="full"    type="button">Full Credit</button>
+                <button class="pq-sg-btn pq-sg-btn--partial${ a.pendingGrade === 'partial' ? ' pq-sg-btn--active' : ''}" data-grade="partial" type="button">Partial Credit</button>
+                <button class="pq-sg-btn pq-sg-btn--none${    a.pendingGrade === 'none'    ? ' pq-sg-btn--active' : ''}" data-grade="none"    type="button">No Credit</button>
+              </div>
+              <button class="pq-submit-btn" id="pqConfirmGrade" type="button"${a.pendingGrade ? '' : ' disabled'}>Confirm Grade</button>`
           }
         </div>`;
     }
@@ -1415,13 +1416,18 @@
     if (a.submitted && a.grade === null) {
       document.querySelectorAll('.pq-sg-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const ans = pqAnswers[q.id];
-          ans.grade     = btn.dataset.grade;
-          ans.isCorrect = ans.grade !== 'none';
-          if (ans.grade === 'full')         _awardPoints(5, `FRQ: ${q.id}`);
-          else if (ans.grade === 'partial') _awardPoints(2, `FRQ: ${q.id}`);
+          pqAnswers[q.id].pendingGrade = btn.dataset.grade;
           pqRender();
         });
+      });
+      document.getElementById('pqConfirmGrade')?.addEventListener('click', () => {
+        const ans = pqAnswers[q.id];
+        if (!ans.pendingGrade) return;
+        ans.grade     = ans.pendingGrade;
+        ans.isCorrect = ans.grade !== 'none';
+        if (ans.grade === 'full')         _awardPoints(5, `FRQ: ${q.id}`);
+        else if (ans.grade === 'partial') _awardPoints(2, `FRQ: ${q.id}`);
+        pqRender();
       });
     }
   }
@@ -1541,7 +1547,7 @@
     pqIdx     = 0;
     pqAnswers = {};
     wrongDeck.forEach(q => {
-      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, isCorrect: null };
+      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
     });
     pqShowView('pqSession');
     pqRender();
