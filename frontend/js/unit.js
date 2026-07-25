@@ -1543,11 +1543,18 @@
       return a.isCorrect === false || a.grade === 'none' || a.grade === 'partial';
     });
     if (!wrongDeck.length) return;
+    const prevAnswers = pqAnswers;
     pqDeck    = wrongDeck;
     pqIdx     = 0;
     pqAnswers = {};
     wrongDeck.forEach(q => {
-      pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
+      const prev = prevAnswers[q.id];
+      if (q.type === 'frq' && prev?.submitted) {
+        // Preserve submitted FRQ answers so they render read-only with rubric + grade
+        pqAnswers[q.id] = { ...prev };
+      } else {
+        pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
+      }
     });
     pqShowView('pqSession');
     pqRender();
