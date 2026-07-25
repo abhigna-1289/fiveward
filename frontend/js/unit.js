@@ -995,7 +995,10 @@
       corrects,
       explanation:   raw.explanation   || '',
       sampleAnswer:  raw.sampleAnswer  || '',
-      rubric:        raw.rubric        || [],
+      rubric:        Array.isArray(raw.rubric) ? raw.rubric
+                   : typeof raw.rubric === 'string' && raw.rubric
+                     ? raw.rubric.split('\n').filter(l => l.trim())
+                     : [],
       stimulus:      raw.stimulus      || null,
       stimulusType:  raw.stimulusType  || 'text',
     };
