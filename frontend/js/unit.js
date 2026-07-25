@@ -1359,7 +1359,6 @@
     let revealPart = '';
     if (a.submitted) {
       const rubric = (q.rubric || []).map(r => `<li class="pq-rubric-item">${e(r)}</li>`).join('');
-      const g = grade => a.grade === grade ? ' pq-sg-btn--active' : '';
       revealPart = `
         <div class="pq-frq-reveal">
           <div class="pq-reveal-grid">
@@ -1372,12 +1371,20 @@
               <ul class="pq-rubric-list">${rubric}</ul>
             </div>
           </div>
-          <div class="pq-self-grade">
-            <span class="pq-sg-label">Self Grade:</span>
-            <button class="pq-sg-btn pq-sg-btn--full${g('full')}"       data-grade="full"    type="button">Full Credit</button>
-            <button class="pq-sg-btn pq-sg-btn--partial${g('partial')}" data-grade="partial" type="button">Partial Credit</button>
-            <button class="pq-sg-btn pq-sg-btn--none${g('none')}"       data-grade="none"    type="button">No Credit</button>
-          </div>
+          ${a.grade === null
+            ? `<div class="pq-self-grade">
+                <span class="pq-sg-label">Self Grade:</span>
+                <button class="pq-sg-btn pq-sg-btn--full"    data-grade="full"    type="button">Full Credit</button>
+                <button class="pq-sg-btn pq-sg-btn--partial" data-grade="partial" type="button">Partial Credit</button>
+                <button class="pq-sg-btn pq-sg-btn--none"    data-grade="none"    type="button">No Credit</button>
+              </div>`
+            : `<div class="pq-self-grade">
+                <span class="pq-sg-label">Graded:</span>
+                <button class="pq-sg-btn pq-sg-btn--${ a.grade } pq-sg-btn--active" disabled type="button">${
+                  { full: 'Full Credit', partial: 'Partial Credit', none: 'No Credit' }[a.grade]
+                }</button>
+              </div>`
+          }
         </div>`;
     }
 
@@ -1405,25 +1412,15 @@
         pqRender();
       });
     }
-    if (a.submitted) {
+    if (a.submitted && a.grade === null) {
       document.querySelectorAll('.pq-sg-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const ans      = pqAnswers[q.id];
-          const prevGrade = ans.grade;
-          ans.grade      = btn.dataset.grade;
-          ans.isCorrect  = ans.grade !== 'none';
-          if (ans.grade !== prevGrade) {
-            if (ans.grade === 'full')         _awardPoints(5, `FRQ: ${q.id}`);
-            else if (ans.grade === 'partial') _awardPoints(2, `FRQ: ${q.id}`);
-          }
-          document.querySelectorAll('.pq-sg-btn').forEach(b => {
-            b.classList.toggle('pq-sg-btn--active', b.dataset.grade === ans.grade);
-          });
-          const nextBtn = document.getElementById('pqNext');
-          if (nextBtn) {
-            nextBtn.disabled = false;
-            if (pqIdx === pqDeck.length - 1) nextBtn.textContent = 'See Results';
-          }
+          const ans = pqAnswers[q.id];
+          ans.grade     = btn.dataset.grade;
+          ans.isCorrect = ans.grade !== 'none';
+          if (ans.grade === 'full')         _awardPoints(5, `FRQ: ${q.id}`);
+          else if (ans.grade === 'partial') _awardPoints(2, `FRQ: ${q.id}`);
+          pqRender();
         });
       });
     }
