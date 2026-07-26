@@ -968,8 +968,9 @@
   // =========================================================
 
   // Question data fetched from JSON, indexed by topic number
-  let pqQuestionsData = {}; // { '1.1': [normalized questions], ... }
-  let pqAllQuestions  = []; // flat array for id lookups
+  let pqQuestionsData   = {}; // { '1.1': [normalized questions], ... }
+  let pqAllQuestions    = []; // flat array for id lookups
+  let pqReviewQuestions = []; // questions from unit-N-review.json
 
   function pqNormalizeQuestion(raw) {
     const letters = ['A', 'B', 'C', 'D'];
@@ -1022,8 +1023,9 @@
   }
 
   async function pqLoad() {
-    pqQuestionsData = {};
-    pqAllQuestions  = [];
+    pqQuestionsData   = {};
+    pqAllQuestions    = [];
+    pqReviewQuestions = [];
     try {
       const r    = await fetch(`/data/subjects/ap-csp/questions/unit-${unitNum}.json?v=${Date.now()}`);
       const data = await r.json();
@@ -1038,6 +1040,13 @@
       });
     } catch(err) {
       console.error('[fiveward] Failed to load practice questions:', err);
+    }
+    try {
+      const rr   = await fetch(`/data/subjects/ap-csp/questions/unit-${unitNum}-review.json?v=${Date.now()}`);
+      const data = await rr.json();
+      pqReviewQuestions = (data.questions || []).map(pqNormalizeQuestion);
+    } catch {
+      // review file not yet created for this unit — silently ignored
     }
   }
 
@@ -1142,7 +1151,7 @@
   function pqGetDeck(type) {
     let questions;
     if (viewMode === 'review') {
-      questions = pqAllQuestions;
+      questions = pqReviewQuestions;
     } else {
       const topic = unit.topics.find(t => t.id === currentTopicId);
       questions = pqQuestionsData[topic?.num] || [];

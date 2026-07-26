@@ -1,1 +1,929 @@
-{ "unitNumber": 2, "questions": [] }
+{
+  "unitNumber": 2,
+  "questions": [
+    {
+      "id": "u2-1-q1",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "Each student that enrolls at a school is assigned a unique ID number stored as a binary number. The ID numbers increase sequentially by 1 with each newly enrolled student. If the ID number assigned to the last student who enrolled was the binary number 1001 0011, what binary number will be assigned to the next student who enrolls?",
+      "options": {
+        "A": "1001 0100",
+        "B": "1001 0111",
+        "C": "1101 0100",
+        "D": "1101 0111"
+      },
+      "correctAnswer": "A",
+      "explanation": "1001 0011 in decimal is 147. Adding 1 gives 148, which is 1001 0100 in binary."
+    },
+    {
+      "id": "u2-1-q2",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "What is the decimal value of the binary number 1101?",
+      "options": {
+        "A": "11",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correctAnswer": "B",
+      "explanation": "1101 = (1×8) + (1×4) + (0×2) + (1×1) = 8 + 4 + 0 + 1 = 13."
+    },
+    {
+      "id": "u2-1-q3",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "What is the binary representation of the decimal number 22?",
+      "options": {
+        "A": "10101",
+        "B": "10110",
+        "C": "11010",
+        "D": "11100"
+      },
+      "correctAnswer": "B",
+      "explanation": "22 = 16 + 4 + 2 = 10110 in binary."
+    },
+    {
+      "id": "u2-1-q4",
+      "type": "mc",
+      "topic": "2.1",
+      "stimulus": "A programmer stores the value 200 as an integer using a fixed number of bits that can only represent values from 0 to 255. The programmer then adds 100 to this value.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes what will happen?",
+      "options": {
+        "A": "The program will display 300 because addition always produces the mathematically correct result",
+        "B": "The program will display 255 because that is the maximum value the variable can store",
+        "C": "An overflow error will occur because the result of 300 exceeds the defined range of values",
+        "D": "A round-off error will occur because 300 cannot be stored precisely in binary"
+      },
+      "correctAnswer": "C",
+      "explanation": "An overflow error occurs when a computer attempts to handle a number outside the defined range of values. Since 300 exceeds the maximum of 255, an overflow error occurs."
+    },
+    {
+      "id": "u2-1-q5",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "A music streaming service stores songs digitally. The original audio recordings were analog. Which of the following best describes how analog audio is converted to digital data?",
+      "options": {
+        "A": "The analog audio is compressed using a lossless algorithm to reduce the number of bits needed",
+        "B": "The analog audio is sampled at regular intervals and each sample is stored as a sequence of bits",
+        "C": "The analog audio is converted to text and then encoded in binary using ASCII values",
+        "D": "The analog audio is stored as a continuous wave function represented by a single binary value"
+      },
+      "correctAnswer": "B",
+      "explanation": "Analog data can be approximated digitally using a sampling technique — measuring values of the analog signal at regular intervals. The samples are measured to determine the exact bits required to store each sample."
+    },
+    {
+      "id": "u2-1-q6",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "A programmer stores the result of dividing 1 by 3 in a variable. The program shows 0.3333333 instead of the mathematically exact value. Which of the following best explains this?",
+      "options": {
+        "A": "An overflow error occurred because the result is too large to store",
+        "B": "A round-off error occurred because the fixed number of bits used to represent real numbers limits precision",
+        "C": "A logic error occurred because the programmer used the wrong operator",
+        "D": "A syntax error occurred because division produces a decimal value that cannot be stored"
+      },
+      "correctAnswer": "B",
+      "explanation": "A round-off error occurs because the fixed number of bits used to represent real numbers limits precision. Some real numbers like 1/3 are stored as approximations."
+    },
+    {
+      "id": "u2-1-q7",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "The same sequence of bits 01000001 is interpreted differently by two programs — one displays 65 and another displays the letter 'A'. Which of the following best explains this?",
+      "options": {
+        "A": "One of the programs contains a logic error that causes it to misread the bits",
+        "B": "The same sequence of bits may represent different types of data in different contexts",
+        "C": "Binary numbers can only represent integers so the letter A must be stored differently",
+        "D": "The two programs are using different number bases to interpret the same value"
+      },
+      "correctAnswer": "B",
+      "explanation": "The same sequence of bits may represent different types of data in different contexts. 01000001 represents 65 as an integer and 'A' as a character depending on how the program interprets it."
+    },
+    {
+      "id": "u2-1-q8",
+      "type": "mc2",
+      "topic": "2.1",
+      "question": "Which TWO of the following are examples of analog data?",
+      "options": {
+        "A": "The binary representation of a student's ID number",
+        "B": "The pitch of a violin note as it gradually increases",
+        "C": "The number of students enrolled in a class",
+        "D": "The temperature of a room as it slowly rises throughout the day"
+      },
+      "correctAnswer": ["B", "D"],
+      "explanation": "Analog data have values that change smoothly rather than in discrete intervals. Pitch gradually increasing and temperature slowly rising are both analog. A binary ID number and student count are discrete values."
+    },
+    {
+      "id": "u2-1-q9",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "How many bits are in 3 bytes?",
+      "options": {
+        "A": "3",
+        "B": "16",
+        "C": "24",
+        "D": "32"
+      },
+      "correctAnswer": "C",
+      "explanation": "A byte is 8 bits. 3 bytes × 8 bits = 24 bits."
+    },
+    {
+      "id": "u2-1-q10",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "Which of the following binary numbers has the greatest decimal value?",
+      "options": {
+        "A": "1010",
+        "B": "1001",
+        "C": "0111",
+        "D": "1100"
+      },
+      "correctAnswer": "D",
+      "explanation": "1100 = 8+4 = 12. 1010 = 8+2 = 10. 1001 = 8+1 = 9. 0111 = 4+2+1 = 7. So 1100 has the greatest decimal value."
+    },
+    {
+      "id": "u2-1-q11",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "A student claims that digital data is a perfect representation of real-world analog data. Which of the following best evaluates this claim?",
+      "options": {
+        "A": "The claim is correct because sampling captures every detail of the analog signal",
+        "B": "The claim is correct because bits can represent any value with perfect precision",
+        "C": "The claim is incorrect because digital data approximates analog data and the fixed number of bits limits precision",
+        "D": "The claim is incorrect because computers cannot store analog data in any form"
+      },
+      "correctAnswer": "C",
+      "explanation": "Digital data approximates analog data through sampling — it is not a perfect representation. The fixed number of bits used limits precision, which is why round-off errors occur. Using digital data to approximate analog data is itself an example of abstraction."
+    },
+    {
+      "id": "u2-1-q12",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "What is the decimal value of the binary number 10101?",
+      "options": {
+        "A": "15",
+        "B": "19",
+        "C": "21",
+        "D": "25"
+      },
+      "correctAnswer": "C",
+      "explanation": "10101 = (1×16) + (0×8) + (1×4) + (0×2) + (1×1) = 16 + 0 + 4 + 0 + 1 = 21."
+    },
+    {
+      "id": "u2-1-q13",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "What is the binary representation of the decimal number 11?",
+      "options": {
+        "A": "1010",
+        "B": "1011",
+        "C": "1100",
+        "D": "1110"
+      },
+      "correctAnswer": "B",
+      "explanation": "11 = 8 + 2 + 1 = 1011 in binary. Place values: 8(1) + 4(0) + 2(1) + 1(1) = 1011."
+    },
+    {
+      "id": "u2-1-q14",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "A programmer is designing a program that needs to store the exact position of a runner at every moment during a 100-meter race. Which of the following best describes the challenge?",
+      "options": {
+        "A": "The position data is analog and changes continuously, so it can only be approximated digitally using sampling",
+        "B": "The position data is already digital because it is measured by electronic sensors",
+        "C": "The position data can be stored perfectly because binary can represent any decimal number exactly",
+        "D": "The position data does not need to be stored digitally because it can be calculated from the runner's speed"
+      },
+      "correctAnswer": "A",
+      "explanation": "The position of a sprinter during a race is an example of analog data — it changes smoothly and continuously. Analog data can only be approximated digitally using sampling, which means some precision is lost."
+    },
+    {
+      "id": "u2-1-q15",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "Which of the following best describes abstraction in the context of how computers represent data?",
+      "options": {
+        "A": "The process of converting decimal numbers to binary for storage",
+        "B": "The process of reducing complexity by focusing on the main idea, such as grouping bits to represent numbers, characters, or color rather than working with individual bits",
+        "C": "The process of compressing data to reduce the number of bits needed for storage",
+        "D": "The process of sampling analog data at regular intervals to create a digital approximation"
+      },
+      "correctAnswer": "B",
+      "explanation": "Abstraction is the process of reducing complexity by focusing on the main idea. Grouping bits to represent higher-level concepts like numbers, characters, and color is abstraction — it hides the irrelevant details of individual bits and allows programmers to work with more meaningful representations."
+    },
+    {
+      "id": "u2-1-q16",
+      "type": "mc",
+      "topic": "2.1",
+      "question": "A program uses a fixed number of bits to represent integers and is performing calculations on very large numbers. Which of the following errors is MOST likely to occur?",
+      "options": {
+        "A": "Round-off error, because large numbers cannot be stored precisely in binary",
+        "B": "Overflow error, because the result may exceed the defined range of values for the fixed bit representation",
+        "C": "Syntax error, because the program was not written to handle large numbers",
+        "D": "Logic error, because the programmer made a mistake in the calculation algorithm"
+      },
+      "correctAnswer": "B",
+      "explanation": "In many programming languages integers are represented by a fixed number of bits which limits the range of values. When calculations produce results beyond this range an overflow error occurs. Round-off errors apply to real numbers, not integers."
+    },
+    {
+      "id": "u2-1-q17",
+      "type": "mc2",
+      "topic": "2.1",
+      "question": "Which TWO of the following statements about binary numbers are true?",
+      "options": {
+        "A": "Binary uses only the digits 0 and 1",
+        "B": "The place value of the rightmost position in binary is 2",
+        "C": "The place value of each position is determined by 2 raised to the power of that position",
+        "D": "Binary numbers can only represent positive integers"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Binary uses only the digits 0 and 1 (A). The place value of each position is determined by the base (2) raised to the power of the position, starting at 0 on the right (C). The rightmost position has place value 2^0 = 1, not 2 (B is false). Binary can represent many types of data beyond positive integers (D is false)."
+    },
+    {
+      "id": "u2-2-q1",
+      "type": "mc",
+      "topic": "2.2",
+      "stimulus": "A photographer needs to send high-resolution images to a client for large-format printing. The images must be delivered at full quality. However, the file sizes are too large to send by email.",
+      "stimulusType": "text",
+      "question": "Which of the following compression approaches would be MOST appropriate?",
+      "options": {
+        "A": "Lossy compression, because it reduces file size more than lossless compression",
+        "B": "Lossy compression, because the client can restore the original quality after receiving the files",
+        "C": "Lossless compression, because it guarantees complete reconstruction of the original data",
+        "D": "Lossless compression, because it always produces smaller files than lossy compression"
+      },
+      "correctAnswer": "C",
+      "explanation": "In situations where quality or the ability to reconstruct the original is maximally important, lossless compression is typically chosen. Lossless guarantees complete reconstruction, which is essential for print-quality images."
+    },
+    {
+      "id": "u2-2-q2",
+      "type": "mc",
+      "topic": "2.2",
+      "stimulus": "A video streaming service needs to transmit live sports to millions of users simultaneously. Slight reductions in video quality are acceptable as long as the video streams smoothly.",
+      "stimulusType": "text",
+      "question": "Which of the following compression approaches would be MOST appropriate?",
+      "options": {
+        "A": "Lossless compression, because it preserves all original data for the highest quality stream",
+        "B": "Lossless compression, because it transmits data faster than lossy compression",
+        "C": "Lossy compression, because it can reduce file size more and minimize transmission time",
+        "D": "Lossy compression, because it guarantees complete reconstruction of the original video"
+      },
+      "correctAnswer": "C",
+      "explanation": "In situations where minimizing data size or transmission time is maximally important, lossy compression is typically chosen. Lossy compression can reduce bits more than lossless, ideal for live streaming where speed matters more than perfect quality."
+    },
+    {
+      "id": "u2-2-q3",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A text file is compressed from 400 KB to 250 KB using a lossless algorithm. Which of the following is true?",
+      "options": {
+        "A": "The compressed file contains less information than the original because it has fewer bits",
+        "B": "The compressed file can be fully restored to the original 400 KB file",
+        "C": "The compressed file will lose some formatting when decompressed",
+        "D": "The compressed file uses lossy compression because the file size decreased significantly"
+      },
+      "correctAnswer": "B",
+      "explanation": "Lossless compression guarantees complete reconstruction of the original data. Fewer bits does not necessarily mean less information — the original 400 KB file can be fully restored."
+    },
+    {
+      "id": "u2-2-q4",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "Which of the following best explains why lossy compression can usually reduce file sizes more than lossless compression?",
+      "options": {
+        "A": "Lossy compression uses a more powerful computer to perform the compression",
+        "B": "Lossy compression only stores every other bit of the original data",
+        "C": "Lossy compression permanently removes some data, allowing greater size reduction at the cost of only reconstructing an approximation",
+        "D": "Lossy compression converts data to a more efficient binary format that lossless compression cannot use"
+      },
+      "correctAnswer": "C",
+      "explanation": "Lossy compression permanently discards some data, achieving greater size reduction than lossless compression which must preserve all original data to guarantee complete reconstruction."
+    },
+    {
+      "id": "u2-2-q5",
+      "type": "mc2",
+      "topic": "2.2",
+      "question": "Which TWO of the following situations would most likely call for lossless compression?",
+      "options": {
+        "A": "Compressing music files for a streaming service where users listen on phone speakers",
+        "B": "Compressing a patient's medical scan images that doctors will use to diagnose a condition",
+        "C": "Compressing a legal contract document that must be archived and retrieved exactly as written",
+        "D": "Compressing video files for social media where slight quality reduction is acceptable"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Lossless compression is chosen when quality or exact reconstruction is maximally important. Medical scans must be preserved exactly for accurate diagnosis, and legal documents must be retrievable exactly as written."
+    },
+    {
+      "id": "u2-2-q6",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A student compresses an image file using lossy compression and sends it to a friend. The friend wants to restore the image to its original quality. Which of the following best describes what will happen?",
+      "options": {
+        "A": "The friend can fully restore the original image because compression is always reversible",
+        "B": "The friend can partially restore the image by applying lossless decompression",
+        "C": "The friend cannot fully restore the original image because lossy compression only allows reconstruction of an approximation",
+        "D": "The friend cannot restore the image at all because lossy compression permanently destroys the file"
+      },
+      "correctAnswer": "C",
+      "explanation": "Lossy compression only allows reconstruction of an approximation of the original data. Once data is discarded through lossy compression, the original cannot be fully recovered."
+    },
+    {
+      "id": "u2-2-q7",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "Which of the following best describes the relationship between data compression and information?",
+      "options": {
+        "A": "Fewer bits always means less information because each bit stores one unit of information",
+        "B": "Fewer bits does not necessarily mean less information because compression removes redundancy not meaning",
+        "C": "More bits always means more information because larger files contain more data",
+        "D": "Fewer bits always means more information because compression makes data more efficient"
+      },
+      "correctAnswer": "B",
+      "explanation": "Fewer bits does not necessarily mean less information. Compression reduces redundancy in the data representation — lossless compression can produce a smaller file that still contains all the original information."
+    },
+    {
+      "id": "u2-2-q8",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A programmer compresses the same image file twice — once with a lossless algorithm and once with a lossy algorithm. Which of the following best predicts the results?",
+      "options": {
+        "A": "Both algorithms will produce the same file size because they start with the same original file",
+        "B": "The lossless file will be smaller because it preserves more information",
+        "C": "The lossy file will be smaller because it achieves greater size reduction by permanently removing some data",
+        "D": "The lossy file will be larger because it stores additional data needed for reconstruction"
+      },
+      "correctAnswer": "C",
+      "explanation": "Lossy compression algorithms can usually reduce the number of bits stored more than lossless compression algorithms. By permanently discarding some data, lossy compression achieves greater size reduction."
+    },
+    {
+      "id": "u2-2-q9",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "Which of the following factors determines how much a file can be compressed?",
+      "options": {
+        "A": "The size of the computer's memory and the speed of the processor",
+        "B": "The amount of redundancy in the original data and the compression algorithm applied",
+        "C": "The file type and the operating system used to compress the file",
+        "D": "The number of bits in the original file and the desired output file size"
+      },
+      "correctAnswer": "B",
+      "explanation": "The amount of size reduction from compression depends on both the amount of redundancy in the original data representation and the compression algorithm applied."
+    },
+    {
+      "id": "u2-2-q10",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A developer is building a music app and needs to store thousands of songs on a server with limited storage space. Users will listen on standard phone speakers. Which of the following best justifies using lossy compression for the audio files?",
+      "options": {
+        "A": "Lossy compression guarantees the songs can be restored to original quality if needed",
+        "B": "Minimizing storage space is maximally important and slight quality reduction on phone speakers is acceptable",
+        "C": "Lossless compression cannot be used for audio files",
+        "D": "Lossy compression is always faster to decompress than lossless compression"
+      },
+      "correctAnswer": "B",
+      "explanation": "In situations where minimizing data size is maximally important, lossy compression is typically chosen. Since users listen on phone speakers where minor quality loss is imperceptible, the storage savings outweigh the quality tradeoff."
+    },
+    {
+      "id": "u2-2-q11",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A software company needs to transmit source code files over a network. The files must be received exactly as sent so the code compiles correctly. Which of the following best justifies using lossless compression?",
+      "options": {
+        "A": "Lossless compression reduces file size more than lossy compression for text files",
+        "B": "Quality and exact reconstruction are maximally important — any change to the source code could cause compilation errors",
+        "C": "Lossy compression cannot be applied to text files",
+        "D": "Lossless compression is faster to apply than lossy compression for code files"
+      },
+      "correctAnswer": "B",
+      "explanation": "In situations where quality or the ability to reconstruct the original is maximally important, lossless compression is typically chosen. Even a single changed bit in source code could cause compilation errors, making exact reconstruction essential."
+    },
+    {
+      "id": "u2-2-q12",
+      "type": "mc2",
+      "topic": "2.2",
+      "question": "Which TWO of the following statements about data compression are true?",
+      "options": {
+        "A": "Lossless compression guarantees complete reconstruction of the original data",
+        "B": "Lossy compression always produces better quality output than lossless compression",
+        "C": "Lossy compression can usually reduce file sizes more than lossless compression",
+        "D": "Lossless compression permanently removes redundant data to achieve size reduction"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Lossless compression guarantees complete reconstruction of the original data (A). Lossy compression can usually reduce the number of bits more than lossless (C). Lossy does not produce better quality — it produces lower quality (B is false). Lossless does not permanently remove data — it preserves all original data (D is false)."
+    },
+    {
+      "id": "u2-2-q13",
+      "type": "mc",
+      "topic": "2.2",
+      "question": "A researcher needs to archive 10 years of satellite images for future scientific study. Storage space is limited but the images must be available at full quality for analysis. Which of the following best describes the tradeoff the researcher faces?",
+      "options": {
+        "A": "Using lossy compression saves more space but sacrifices the ability to fully reconstruct the original images for accurate analysis",
+        "B": "Using lossless compression saves more space and guarantees full reconstruction",
+        "C": "Using lossy compression saves more space and still guarantees full reconstruction",
+        "D": "Using lossless compression sacrifices quality but saves more space than lossy compression"
+      },
+      "correctAnswer": "A",
+      "explanation": "Lossy compression achieves greater size reduction but only allows reconstruction of an approximation. For scientific analysis where exact data is needed, this tradeoff may be unacceptable — the researcher must choose between saving space and preserving full quality."
+    },
+    {
+      "id": "u2-3-q1",
+      "type": "mc",
+      "topic": "2.3",
+      "stimulus": "Biologists attach tracking collars to wild animals. For each animal, the following data are collected at frequent intervals:\n- The time\n- The date\n- The location of the animal",
+      "stimulusType": "text",
+      "question": "Which of the following questions about a particular animal could NOT be answered using only the data collected from the tracking collars?",
+      "options": {
+        "A": "Approximately how many miles did the animal travel in one week?",
+        "B": "Does the animal travel in groups with other tracked animals?",
+        "C": "Do the movement patterns of the animal vary according to the weather?",
+        "D": "In what geographic locations does the animal typically travel?"
+      },
+      "correctAnswer": "C",
+      "explanation": "The tracking collars only collect time, date, and location. Weather data is not collected, so questions about how movement patterns relate to weather cannot be answered using only this data."
+    },
+    {
+      "id": "u2-3-q2",
+      "type": "mc",
+      "topic": "2.3",
+      "stimulus": "A researcher analyzes data from 10,000 students and finds that students who eat breakfast score higher on standardized tests than students who skip breakfast.",
+      "stimulusType": "text",
+      "question": "Which of the following conclusions is best supported by this finding?",
+      "options": {
+        "A": "Eating breakfast causes students to score higher on standardized tests",
+        "B": "Students who want to improve their test scores should start eating breakfast",
+        "C": "There is a correlation between eating breakfast and higher test scores, but this does not necessarily indicate causation",
+        "D": "The data proves that breakfast is the most important factor in academic performance"
+      },
+      "correctAnswer": "C",
+      "explanation": "A correlation found in data does not necessarily indicate a causal relationship. Additional research is needed to understand the exact nature of the relationship."
+    },
+    {
+      "id": "u2-3-q3",
+      "type": "mc",
+      "topic": "2.3",
+      "stimulus": "A photo taken on a smartphone has the following associated information:\n- File name: vacation.jpg\n- File size: 4.2 MB\n- Date taken: July 4, 2024\n- Location: 40.7128° N, 74.0060° W\n- Camera model: Smartphone X Pro",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the file size, date taken, location, and camera model?",
+      "options": {
+        "A": "Primary data, because they describe important properties of the photo",
+        "B": "Metadata, because they are data about the photo rather than the photo itself",
+        "C": "Compressed data, because they represent the photo in a smaller form",
+        "D": "Filtered data, because they were selected from a larger set of information"
+      },
+      "correctAnswer": "B",
+      "explanation": "Metadata are data about data. The photo is the primary data, while the file size, date, location, and camera model are metadata — they describe properties of the photo without being the photo itself."
+    },
+    {
+      "id": "u2-3-q4",
+      "type": "mc",
+      "topic": "2.3",
+      "stimulus": "A photo taken on a smartphone has the following associated information:\n- File name: vacation.jpg\n- File size: 4.2 MB\n- Date taken: July 4, 2024\n- Location: 40.7128° N, 74.0060° W\n- Camera model: Smartphone X Pro",
+      "stimulusType": "text",
+      "question": "A user changes the file name from vacation.jpg to beach_trip.jpg. Which of the following best describes the effect?",
+      "options": {
+        "A": "The photo itself is changed because the file name is part of the image data",
+        "B": "The metadata is changed but the primary data remains unchanged",
+        "C": "Both the metadata and the photo are changed because they are stored together",
+        "D": "The photo is compressed because renaming a file reduces its size"
+      },
+      "correctAnswer": "B",
+      "explanation": "Changes and deletions made to metadata do not change the primary data. The file name is metadata — changing it updates data about the photo but does not alter the photo itself."
+    },
+    {
+      "id": "u2-3-q5",
+      "type": "mc",
+      "topic": "2.3",
+      "stimulus": "A researcher collects survey responses about favorite colors from 500 students. The data contains entries like: 'blue', 'Blue', 'BLUE', 'blu', and 'light blue' — all intended to mean the same color.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the process needed to fix this before analyzing the data?",
+      "options": {
+        "A": "Data compression, to reduce the number of bits needed to store the responses",
+        "B": "Data filtering, to remove responses that do not match the expected format",
+        "C": "Data cleaning, to make the data uniform without changing its meaning",
+        "D": "Data sampling, to select a representative subset of the responses"
+      },
+      "correctAnswer": "C",
+      "explanation": "Data cleaning is the process of making data uniform without changing its meaning — replacing all equivalent abbreviations, spellings, and capitalizations with the same word."
+    },
+    {
+      "id": "u2-3-q6",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A hospital collects health data only from patients who visit its clinics in wealthy urban neighborhoods. A researcher uses this data to draw conclusions about the health of the general population. Which of the following best identifies the problem?",
+      "options": {
+        "A": "The data set is too large to process accurately on a single computer",
+        "B": "The data needs to be cleaned before it can be analyzed",
+        "C": "The data contains bias because the source only represents a specific subset of the population",
+        "D": "The researcher should collect more data from the same source to eliminate the bias"
+      },
+      "correctAnswer": "C",
+      "explanation": "Problems of bias are often created by the type or source of data being collected. Collecting data only from wealthy urban patients introduces bias. Bias is not eliminated by simply collecting more data from the same biased source."
+    },
+    {
+      "id": "u2-3-q7",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A research team is analyzing 10 billion social media posts on a single computer and finds it takes weeks to process. Which of the following best explains this challenge?",
+      "options": {
+        "A": "The data set contains bias that slows down processing speed",
+        "B": "Large data sets are difficult to process using a single computer and may require parallel systems",
+        "C": "The data needs to be cleaned before it can be processed efficiently",
+        "D": "Social media data cannot be analyzed using standard computing tools"
+      },
+      "correctAnswer": "B",
+      "explanation": "Large data sets are difficult to process using a single computer and may require parallel systems. Scalability is an important consideration when working with large data sets."
+    },
+    {
+      "id": "u2-3-q8",
+      "type": "mc2",
+      "topic": "2.3",
+      "question": "A researcher wants to determine which neighborhoods have the highest rates of childhood asthma. Which TWO data sources would MOST likely need to be combined?",
+      "options": {
+        "A": "Hospital records of childhood asthma diagnoses with patient addresses",
+        "B": "A list of all elementary schools in the city",
+        "C": "Air quality measurements by neighborhood",
+        "D": "A survey of parents about their children's favorite outdoor activities"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Often a single source does not contain all the data needed. Hospital records identify where asthma cases occur and air quality data helps explain why — combining these allows the researcher to identify both highest-rate neighborhoods and potential causes."
+    },
+    {
+      "id": "u2-3-q9",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A social media platform collects data about users' posts, likes, comments, and browsing history. A researcher notices that users who post frequently also tend to have more followers. Which of the following best describes this finding?",
+      "options": {
+        "A": "Posting frequently causes users to gain more followers",
+        "B": "Having more followers causes users to post more frequently",
+        "C": "There is a correlation between posting frequency and follower count, but this does not necessarily indicate causation",
+        "D": "The data proves that posting more is always the best strategy for gaining followers"
+      },
+      "correctAnswer": "C",
+      "explanation": "A correlation found in data does not necessarily indicate causation. Additional research is needed to understand the exact nature of the relationship — other factors like content quality or account age could explain both."
+    },
+    {
+      "id": "u2-3-q10",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "Which of the following best describes how metadata increases the effective use of data?",
+      "options": {
+        "A": "Metadata compresses the primary data to make it easier to store and transmit",
+        "B": "Metadata provides additional context that allows data to be structured, organized, and found more easily",
+        "C": "Metadata replaces the primary data when the original file is too large to store",
+        "D": "Metadata filters out invalid or duplicate entries from a data set"
+      },
+      "correctAnswer": "B",
+      "explanation": "Metadata can increase the effective use of data by providing additional information. Metadata allow data to be structured and organized and are used for finding, organizing, and managing information."
+    },
+    {
+      "id": "u2-3-q11",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A company surveys customers about their product satisfaction using an open text field where customers type their own responses. The responses include 'Great', 'great', 'GREAT', 'gr8', and 'Good'. Which of the following challenges does this data present?",
+      "options": {
+        "A": "The data set is too large to process on a single computer",
+        "B": "The data contains bias because only satisfied customers responded",
+        "C": "The data is not uniform because users chose different ways to express similar sentiments",
+        "D": "The data cannot be analyzed because it contains text rather than numbers"
+      },
+      "correctAnswer": "C",
+      "explanation": "When users enter data into an open field, the way they abbreviate, spell, or capitalize may vary from user to user. This non-uniform data requires cleaning to make it uniform without changing its meaning before analysis."
+    },
+    {
+      "id": "u2-3-q12",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A researcher is studying the effect of a new teaching method on student test scores. She only studies students at one school for one semester. Which of the following MOST limits the conclusions she can draw?",
+      "options": {
+        "A": "The data set is too small to clean effectively",
+        "B": "A single data source from one school may not contain enough data to draw conclusions about all students",
+        "C": "Test scores cannot be used to measure the effectiveness of teaching methods",
+        "D": "One semester is too long a period to study a new teaching method"
+      },
+      "correctAnswer": "B",
+      "explanation": "Often a single source does not contain all the data needed to draw a conclusion. One school for one semester may not be representative of all students in different environments, demographics, or circumstances."
+    },
+    {
+      "id": "u2-3-q13",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A news organization wants to predict election results using data from online polls. A data scientist warns that the predictions may not be accurate. Which of the following best supports the data scientist's concern?",
+      "options": {
+        "A": "Online polls collect too much data to analyze accurately",
+        "B": "Online polls may introduce bias because they only capture the opinions of people who choose to participate online, which may not represent all voters",
+        "C": "Online data cannot be cleaned because responses are anonymous",
+        "D": "The data is too large to process on a single computer before the election"
+      },
+      "correctAnswer": "B",
+      "explanation": "Problems of bias are often created by the type or source of data being collected. Online polls only reach people with internet access who choose to participate, which may not represent all voters. Bias is not eliminated by collecting more data from the same biased source."
+    },
+    {
+      "id": "u2-3-q14",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "Which of the following best explains why scalability is an important consideration when designing systems to process data?",
+      "options": {
+        "A": "Scalable systems can clean data automatically without programmer intervention",
+        "B": "Scalable systems can compress data more efficiently than non-scalable systems",
+        "C": "The computational capacity of a system affects how data sets can be processed and stored as their size grows",
+        "D": "Scalable systems eliminate bias by processing all data sources equally"
+      },
+      "correctAnswer": "C",
+      "explanation": "Scalability of systems is an important consideration when working with data sets because the computational capacity of a system affects how data sets can be processed and stored. As data sets grow larger, systems must scale to handle them."
+    },
+    {
+      "id": "u2-3-q15",
+      "type": "mc2",
+      "topic": "2.3",
+      "question": "Which TWO of the following are challenges associated with processing data sets regardless of their size?",
+      "options": {
+        "A": "The need to use parallel computing systems",
+        "B": "The need to clean data to make it uniform",
+        "C": "The possibility of incomplete or invalid data",
+        "D": "The need to compress data before analysis"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Data sets pose challenges regardless of size including the need to clean data and the presence of incomplete or invalid data. The need for parallel systems is specific to large data sets, not all data sets. Data compression is not a required step before analysis."
+    },
+    {
+      "id": "u2-3-q16",
+      "type": "mc",
+      "topic": "2.3",
+      "question": "A city government wants to study traffic patterns to reduce congestion. They have data from traffic cameras but find it is not enough to identify the root causes of congestion. Which of the following would MOST help improve their analysis?",
+      "options": {
+        "A": "Cleaning the existing traffic camera data to remove duplicate entries",
+        "B": "Combining the traffic camera data with public transit ridership data and weather records",
+        "C": "Compressing the traffic camera data to reduce storage requirements",
+        "D": "Collecting more traffic camera data from the same locations"
+      },
+      "correctAnswer": "B",
+      "explanation": "Often a single source does not contain all the data needed to draw a conclusion. Combining traffic camera data with transit ridership and weather records provides additional context that may reveal patterns and causes that the camera data alone cannot show."
+    },
+    {
+      "id": "u2-4-q1",
+      "type": "mc",
+      "topic": "2.4",
+      "stimulus": "A teacher has a spreadsheet with names, grades, and attendance for 150 students. The teacher wants to identify only students who have both a grade below 70 and more than 5 absences.",
+      "stimulusType": "text",
+      "question": "Which of the following processes best describes what the teacher needs to do?",
+      "options": {
+        "A": "Transform the data by adding a letter grade column",
+        "B": "Filter the data to keep only students who meet both conditions",
+        "C": "Visualize the data by creating a chart showing grade distribution",
+        "D": "Combine the data with another source to add more student information"
+      },
+      "correctAnswer": "B",
+      "explanation": "Filtering a data set means keeping only the elements that meet a given condition. The teacher needs to filter for students with grade below 70 AND more than 5 absences."
+    },
+    {
+      "id": "u2-4-q2",
+      "type": "mc",
+      "topic": "2.4",
+      "stimulus": "A school administrator has a list of all student GPAs. She wants to find the student with the highest GPA, calculate the class average GPA, and create a bar chart showing GPA distribution by grade level.",
+      "stimulusType": "text",
+      "question": "Which of the following correctly identifies the three processes being used?",
+      "options": {
+        "A": "Filtering, transforming, and visualizing",
+        "B": "Combining, filtering, and transforming",
+        "C": "Combining or comparing, combining or comparing, and visualizing",
+        "D": "Combining or comparing, transforming, and visualizing"
+      },
+      "correctAnswer": "C",
+      "explanation": "Finding the highest GPA is combining or comparing. Calculating the average is also combining or comparing. Creating a bar chart is visualizing."
+    },
+    {
+      "id": "u2-4-q3",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A programmer writes a program to analyze sales data. After running it the first time results suggest weekends have higher sales. The programmer refines the program to compare weekend sales by season and discovers summer weekends are highest. Which of the following best describes this process?",
+      "options": {
+        "A": "The programmer is using lossless compression to reduce the size of the sales data",
+        "B": "The programmer is using programs in an iterative and interactive way to gain deeper insight from the data",
+        "C": "The programmer is cleaning the data to remove invalid weekend sales records",
+        "D": "The programmer is filtering the data to remove weekday sales"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programs are used in an iterative and interactive way when processing information to allow users to gain insight and knowledge about data. The programmer refines and reruns the program to reveal deeper patterns."
+    },
+    {
+      "id": "u2-4-q4",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A data analyst doubles every value in a list of monthly revenue figures to project doubled sales. Which of the following best describes this process?",
+      "options": {
+        "A": "Filtering, because the analyst is selecting specific values",
+        "B": "Combining, because the analyst is merging two lists",
+        "C": "Transforming, because the analyst is applying an operation to every element",
+        "D": "Visualizing, because the analyst is creating a projection"
+      },
+      "correctAnswer": "C",
+      "explanation": "Transforming a data set means applying an operation to every element, such as doubling every number in a list."
+    },
+    {
+      "id": "u2-4-q5",
+      "type": "mc2",
+      "topic": "2.4",
+      "question": "Which TWO of the following are examples of using programs to gain insight and knowledge from data?",
+      "options": {
+        "A": "Using a spreadsheet to sort a list of customer names alphabetically",
+        "B": "Using a program to cluster customer purchase data and identify groups with similar buying habits",
+        "C": "Using a word processor to write a report about customer behavior",
+        "D": "Using a program to combine sales data from three regional offices and identify which products sell best nationwide"
+      },
+      "correctAnswer": ["B", "D"],
+      "explanation": "Clustering customers by buying habits (B) and combining regional sales data to find nationwide trends (D) both gain insight from data. Sorting alphabetically is organizing, not gaining insight. Writing a report is not data processing."
+    },
+    {
+      "id": "u2-4-q6",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A scientist has a list of temperature readings from weather stations across a country. She wants to keep only the readings above 30°C to study heat patterns. Which of the following best describes this process?",
+      "options": {
+        "A": "Transforming, because the scientist is modifying the temperature values",
+        "B": "Filtering, because the scientist is keeping only values that meet a specific condition",
+        "C": "Combining, because the scientist is merging readings from multiple stations",
+        "D": "Visualizing, because the scientist is selecting data for a chart"
+      },
+      "correctAnswer": "B",
+      "explanation": "Filtering a data set means keeping only the elements that meet a given condition — in this case keeping only temperature readings above 30°C."
+    },
+    {
+      "id": "u2-4-q7",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A researcher has student records from three different schools and wants to find patterns in academic performance across all schools combined. Which of the following processes would she use first?",
+      "options": {
+        "A": "Filtering, to remove students with incomplete records",
+        "B": "Visualizing, to create a chart of all student grades",
+        "C": "Combining, to merge the records from all three schools into one data set",
+        "D": "Transforming, to convert all grades to a percentage scale"
+      },
+      "correctAnswer": "C",
+      "explanation": "Before analyzing patterns across all schools, the researcher must combine the data from the three separate sources into one data set. Combining data sources is a fundamental step in using programs to gain insight from data."
+    },
+    {
+      "id": "u2-4-q8",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A program analyzes a large data set of customer reviews and identifies that reviews mentioning 'fast shipping' tend to have higher ratings. Which of the following best describes how this pattern was found?",
+      "options": {
+        "A": "The program used lossless compression to reduce the size of the reviews before analysis",
+        "B": "The program cleaned the reviews to remove duplicate entries before analysis",
+        "C": "Patterns emerged when data were transformed and analyzed using a program",
+        "D": "The program sampled the reviews at regular intervals to approximate the full data set"
+      },
+      "correctAnswer": "C",
+      "explanation": "Patterns can emerge when data are transformed using programs. The program processed and analyzed the review text data to identify the pattern between specific phrases and rating scores."
+    },
+    {
+      "id": "u2-4-q9",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "Which of the following tools would be MOST useful for efficiently organizing a data set of 500 student records and finding which students have the highest and lowest grades?",
+      "options": {
+        "A": "A word processor, because it can display the records in a readable format",
+        "B": "A web browser, because it can search for student records online",
+        "C": "A spreadsheet program, because it helps efficiently organize and find trends in data",
+        "D": "A compression tool, because it reduces the file size for faster processing"
+      },
+      "correctAnswer": "C",
+      "explanation": "Programs such as spreadsheets help efficiently organize and find trends in information. A spreadsheet allows sorting, filtering, and comparing the 500 records to identify highest and lowest grades."
+    },
+    {
+      "id": "u2-4-q10",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A programmer has a list of all employees at a company including their names, salaries, and departments. She wants to calculate the average salary for each department. Which of the following best describes the processes needed?",
+      "options": {
+        "A": "Filter by department, then combine or compare to calculate the average for each group",
+        "B": "Transform all salaries by doubling them, then visualize the results in a chart",
+        "C": "Combine all salary data from multiple companies, then filter by department",
+        "D": "Visualize the data first, then filter to keep only the highest-paid employees"
+      },
+      "correctAnswer": "A",
+      "explanation": "The programmer needs to first filter or group the data by department, then calculate the average salary for each group — which is a combining or comparing operation. This two-step process extracts meaningful information from the data."
+    },
+    {
+      "id": "u2-4-q11",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A program analyzes social media data to identify emerging topics. After the first run it identifies 50 trending topics. The programmer refines the program to filter out topics with fewer than 1,000 mentions and reruns it. Then she refines it again to cluster related topics together. Which of the following best describes this overall approach?",
+      "options": {
+        "A": "The programmer is using a sequential approach where each step is completed once before moving to the next",
+        "B": "The programmer is using programs in an iterative and interactive way to progressively gain more insight from the data",
+        "C": "The programmer is cleaning the data by removing invalid topic entries",
+        "D": "The programmer is using lossless compression to reduce the number of topics"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programs are used in an iterative and interactive way when processing information. The programmer runs the program, examines results, refines the approach, and runs it again — each iteration gaining deeper insight from the data."
+    },
+    {
+      "id": "u2-4-q12",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A data analyst creates a bar chart showing monthly sales figures for the past year. Which of the following best describes the purpose of this chart?",
+      "options": {
+        "A": "To filter the sales data by keeping only the highest-performing months",
+        "B": "To transform the sales data by converting it to a different format",
+        "C": "To communicate insight and knowledge gained from the data through a visual representation",
+        "D": "To combine the monthly sales data with data from other sources"
+      },
+      "correctAnswer": "C",
+      "explanation": "Tables, diagrams, text, and other visual tools can be used to communicate insight and knowledge gained from data. A bar chart visualizes the monthly sales data to make trends and patterns easier to understand."
+    },
+    {
+      "id": "u2-4-q13",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A student wants to find all news articles published in the last week that mention climate change. Which of the following tools would be MOST directly useful?",
+      "options": {
+        "A": "A spreadsheet, to organize the articles by publication date",
+        "B": "A search tool, to efficiently find articles matching specific criteria",
+        "C": "A compression algorithm, to reduce the size of the articles for faster loading",
+        "D": "A data cleaning process, to remove duplicate articles from the results"
+      },
+      "correctAnswer": "B",
+      "explanation": "Search tools are useful for efficiently finding information. A search tool allows the student to specify criteria (last week, climate change) and quickly find matching articles from a large collection."
+    },
+    {
+      "id": "u2-4-q14",
+      "type": "mc2",
+      "topic": "2.4",
+      "question": "Which TWO of the following correctly describe processes that can be used to extract or modify information from data?",
+      "options": {
+        "A": "Filtering a list of students to keep only those who passed an exam",
+        "B": "Writing a summary report about the results of a data analysis",
+        "C": "Transforming a list of temperatures in Celsius by converting each value to Fahrenheit",
+        "D": "Saving a backup copy of a data file to a different storage location"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Filtering (keeping only elements that meet a condition) and transforming (applying an operation to every element) are both processes used to extract or modify information from data. Writing a report is communicating results, and saving a backup is file management — neither is a data processing operation."
+    },
+    {
+      "id": "u2-4-q15",
+      "type": "mc",
+      "topic": "2.4",
+      "question": "A programmer is building a program to help a school identify at-risk students. The program combines attendance records, grade data, and counselor notes. After the first version is built, the programmer tests it, discovers it misses some students, adds a new data source, and tests again. Which of the following best describes this development approach?",
+      "options": {
+        "A": "The programmer is cleaning the data by removing invalid student records",
+        "B": "The programmer is compressing the data to make the program run faster",
+        "C": "The programmer is using programs in an iterative and interactive way to improve insight from the data",
+        "D": "The programmer is filtering the data to keep only at-risk students"
+      },
+      "correctAnswer": "C",
+      "explanation": "Programs are used in an iterative and interactive way when processing information. The programmer builds, tests, refines, and retests — each cycle improving the program's ability to gain insight from the data."
+    },
+    {
+      "id": "u2-frq-1",
+      "type": "frq",
+      "topic": "2.1",
+      "stimulus": "A program stores a student's test score as an integer using a fixed number of bits. The program is intended to calculate the average of two test scores.",
+      "stimulusType": "text",
+      "question": "Identify one unexpected or invalid input a user could provide to this program. Describe the behavior of the program after it receives this input.",
+      "rubric": "Award 1 point for identifying an unexpected or invalid input. Accept any of: a non-numeric value, a negative number, a number greater than 100, a decimal value when integers are expected, or an extremely large number.\nAward 1 point for describing plausible behavior. Examples: the program crashes, displays an incorrect average, or produces an overflow error.\nExample: A user could enter 500 as a test score. If the program uses a fixed number of bits that cannot represent 500, an overflow error may occur. Alternatively the program may calculate an incorrect average because 500 is not a valid test score.",
+      "points": 2
+    },
+    {
+      "id": "u2-frq-2",
+      "type": "frq",
+      "topic": "2.1",
+      "stimulus": "A programmer is designing a system to store color values in a digital image. Each pixel has a red, green, and blue component, each stored as an 8-bit integer ranging from 0 to 255.",
+      "stimulusType": "text",
+      "question": "Explain how bits are used to represent the color of a single pixel. Explain why the same sequence of bits might represent different information in a different context.",
+      "rubric": "Award 1 point for correctly explaining how bits represent color: each color component (red, green, blue) is stored as an 8-bit integer. The three components together use 24 bits per pixel. Bits are grouped to represent the abstraction of color.\nAward 1 point for explaining why the same bits represent different data in different contexts: the same sequence of bits may represent different types of data depending on how the program interprets them.\nExample: Each pixel's color is stored using three 8-bit integers — one each for red, green, and blue — totaling 24 bits per pixel. The same 8 bits that represent the red value 65 could represent the number 65 or the letter 'A' in another program, depending on how the bits are interpreted.",
+      "points": 2
+    },
+    {
+      "id": "u2-frq-3",
+      "type": "frq",
+      "topic": "2.2",
+      "stimulus": "A hospital is building a system to store and transmit two types of files: (1) patient X-ray images used by doctors for diagnosis, and (2) short video messages patients send to their doctors describing symptoms.",
+      "stimulusType": "text",
+      "question": "For each file type, identify which compression algorithm — lossless or lossy — would be most appropriate. Explain your reasoning for each choice.",
+      "rubric": "Award 1 point for correctly identifying lossless for X-ray images AND explaining why: X-ray images are used for medical diagnosis where quality and exact reconstruction are maximally important. Any loss could affect diagnosis accuracy.\nAward 1 point for correctly identifying lossy for patient video messages AND explaining why: slight quality reduction is acceptable for symptom videos. Minimizing transmission time is more important than perfect quality.\nExample: X-ray images should use lossless compression because doctors use them for diagnosis and any quality loss could lead to missed diagnoses. Patient video messages should use lossy compression because slight quality reduction is acceptable — communicating symptoms matters more than preserving every visual detail.",
+      "points": 2
+    },
+    {
+      "id": "u2-frq-4",
+      "type": "frq",
+      "topic": "2.3",
+      "stimulus": "A researcher studies the relationship between hours of sleep and academic performance in high school students. After analyzing data from 2,000 students, the researcher finds that students who sleep more than 8 hours per night have higher GPAs on average than students who sleep less than 6 hours.",
+      "stimulusType": "text",
+      "question": "Part A: Identify what type of relationship the researcher has found between sleep and GPA. Explain whether this finding alone is sufficient to conclude that sleeping more causes higher GPA.\n\nPart B: The researcher collected data only from students at private schools in one city. Describe one way this could affect the validity of the researcher's conclusions about all high school students.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying the relationship as a correlation.\nAward 1 point for explaining that correlation does not prove causation. Additional research is needed — other factors could explain both higher sleep and higher GPA.\n\nPART B (2 points):\nAward 1 point for identifying a specific limitation of the sample. Accept any of: private school students may have more resources; students from one city may not represent all students; private school students are not representative of all high school students.\nAward 1 point for connecting this to bias — the data source only represents a specific subset of the population so conclusions may not generalize.\nExample: Part A — The researcher found a correlation between sleep and GPA. This alone is not sufficient to conclude causation. Additional research is needed. Part B — Collecting data only from private school students introduces bias. Private school students may have more academic resources or parental support than public school students, so the conclusions may not apply to all high school students.",
+      "points": 4
+    },
+    {
+      "id": "u2-frq-5",
+      "type": "frq",
+      "topic": "2.4",
+      "stimulus": "A city government has collected the following data about residents:\n- Name and address\n- Annual income\n- Type of housing (rented or owned)\n- Distance from nearest public transit stop\n\nA data analyst wants to identify which neighborhoods have the highest concentration of low-income residents who live far from public transit.",
+      "stimulusType": "text",
+      "question": "Describe in detail an algorithm a program could use to identify these neighborhoods. Your description must be detailed enough for someone else to write the program code.",
+      "rubric": "Award 1 point for describing a filtering step: filter residents whose income is below a threshold AND whose distance from transit exceeds a threshold.\nAward 1 point for describing a grouping step: group the filtered residents by neighborhood.\nAward 1 point for describing a counting or comparing step: count qualifying residents in each neighborhood or calculate the percentage.\nAward 1 point for describing an output step: identify or rank neighborhoods with the highest counts.\nExample: Step 1 — Filter residents whose annual income is below a set threshold and whose distance from transit is greater than a set distance. Step 2 — Group filtered residents by neighborhood. Step 3 — Count qualifying residents in each neighborhood. Step 4 — Sort neighborhoods by count from highest to lowest. Step 5 — Output the top neighborhoods as the areas with the highest concentration.",
+      "points": 4
+    }
+  ]
+}
