@@ -287,6 +287,7 @@
     });
     if (topicNumEl)  topicNumEl.textContent  = topic.num;
     if (topicNameEl) topicNameEl.textContent = topic.name;
+    if (sgIsActive()) sgLoad();
     if (fcIsActive()) fcInit();
     if (pqIsActive()) pqInit();
   }
@@ -336,9 +337,12 @@
     });
     if (targetId === 'cpanelFlashcards') fcLoad().then(() => fcInit());
     if (targetId === 'cpanelPractice')   pqLoad().then(() => pqInit());
-    if (targetId === 'cpanelGuide' && viewMode !== 'review') {
-      _markActivityDone(`fw_sg_done_u${unitNum}`, currentTopicId);
-      _checkAndMarkFullyComplete(currentTopicId);
+    if (targetId === 'cpanelGuide') {
+      sgLoad();
+      if (viewMode !== 'review') {
+        _markActivityDone(`fw_sg_done_u${unitNum}`, currentTopicId);
+        _checkAndMarkFullyComplete(currentTopicId);
+      }
     }
   }
 
@@ -349,6 +353,89 @@
   document.getElementById('qaGuide')?.addEventListener('click',      () => selectContentTab('cpanelGuide'));
   document.getElementById('qaFlashcards')?.addEventListener('click', () => selectContentTab('cpanelFlashcards'));
   document.getElementById('qaPractice')?.addEventListener('click',   () => selectContentTab('cpanelPractice'));
+
+  // =========================================================
+  // STUDY GUIDE ENGINE
+  // =========================================================
+
+  function sgIsActive() {
+    return !document.getElementById('cpanelGuide')?.hasAttribute('hidden');
+  }
+
+  async function sgLoad() {
+    const topic = unit.topics.find(t => t.id === currentTopicId);
+    if (!topic) return;
+    const topicPart = topic.num.split('.')[1];
+    const panel     = document.getElementById('cpanelGuide');
+    if (!panel) return;
+    try {
+      const r    = await fetch(`/data/subjects/ap-csp/studyguides/unit-${unitNum}-topic-${topicPart}.json?v=${Date.now()}`);
+      const data = await r.json();
+      sgRender(data, panel);
+    } catch {
+      sgRenderEmpty(panel);
+    }
+  }
+
+  function sgRenderEmpty(panel) {
+    panel.innerHTML = `
+      <div class="study-guide-placeholder">
+        <div class="ph-heading"></div>
+        <div class="ph-text"></div>
+        <div class="ph-text ph-text--short"></div>
+        <div class="ph-block"></div>
+        <div class="ph-bullets">
+          <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text"></div></div>
+          <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text ph-text--medium"></div></div>
+          <div class="ph-bullet"><span class="ph-dot"></span><div class="ph-text ph-text--short"></div></div>
+        </div>
+        <div class="ph-block ph-block--short"></div>
+      </div>
+      <p class="content-placeholder-note">Study guide content for this topic will appear here once added.</p>`;
+  }
+
+  function sgRender(data, panel) {
+    const blocks = data.content || [];
+    if (!blocks.length) { sgRenderEmpty(panel); return; }
+    panel.innerHTML = `<div class="sg-content">${blocks.map(sgRenderBlock).join('')}</div>`;
+  }
+
+  function sgRenderBlock(block) {
+    const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    switch (block.type) {
+      case 'heading':
+        return `<h3 class="sg-heading">${esc(block.text)}</h3>`;
+      case 'paragraph':
+        return `<p class="sg-paragraph">${esc(block.text)}</p>`;
+      case 'keyterm':
+        return `<div class="sg-keyterm">
+          <span class="sg-keyterm__term">${esc(block.term)}</span>
+          <span class="sg-keyterm__def">${esc(block.definition)}</span>
+        </div>`;
+      case 'bulletlist':
+        return `<ul class="sg-bulletlist">${(block.items || []).map(i => `<li>${esc(i)}</li>`).join('')}</ul>`;
+      case 'numberedlist':
+        return `<ol class="sg-numberedlist">${(block.items || []).map(i => `<li>${esc(i)}</li>`).join('')}</ol>`;
+      case 'compareTable': {
+        const rows = (block.rows || []).map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
+        return `<div class="sg-compare-table-wrap">
+          <table class="sg-compare-table">
+            <thead><tr><th>${esc((block.headers || [])[0])}</th><th>${esc((block.headers || [])[1])}</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+      }
+      case 'callout':
+        return `<div class="sg-callout sg-callout--${esc(block.variant || 'tip')}">
+          ${block.label ? `<span class="sg-callout__label">${esc(block.label)}</span>` : ''}
+          <p class="sg-callout__text">${esc(block.text)}</p>
+        </div>`;
+      case 'codeblock':
+        return `<pre class="sg-codeblock"><code>${esc(block.code)}</code></pre>`;
+      default:
+        return '';
+    }
+  }
 
   // =========================================================
   // STUDY MODE CARD
