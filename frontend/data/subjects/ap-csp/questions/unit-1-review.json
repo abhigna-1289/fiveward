@@ -1,4 +1,737 @@
 {
   "unitNumber": 1,
-  "questions": []
+  "questions": [
+    {
+      "id": "u1r-q1",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A team of engineers is developing a voice-activated assistant for elderly users. The development team consists entirely of engineers in their 20s and 30s with no members over 50 and no users consulted during design.",
+      "stimulusType": "text",
+      "question": "Which of the following BEST describes a likely consequence of the team's development approach?",
+      "options": {
+        "A": "The assistant will have more syntax errors because the team lacks experience",
+        "B": "The assistant may not meet the needs of elderly users because their perspectives were not represented during development",
+        "C": "The assistant will work correctly because professional engineers always design for diverse users",
+        "D": "The assistant will be released faster because a smaller team communicates more efficiently"
+      },
+      "correctAnswer": "B",
+      "explanation": "Collaboration that includes diverse perspectives helps avoid bias. A team without representation from elderly users is unlikely to fully anticipate their needs, resulting in a product that may not serve its intended audience well."
+    },
+    {
+      "id": "u1r-q2",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A team of engineers is developing a voice-activated assistant for elderly users. The development team consists entirely of engineers in their 20s and 30s with no members over 50 and no users consulted during design.",
+      "stimulusType": "text",
+      "question": "Which of the following changes would MOST directly address this limitation?",
+      "options": {
+        "A": "Hiring more engineers from the same background to increase team size",
+        "B": "Using pair programming to have two developers review all code",
+        "C": "Consulting with elderly users through surveys, interviews, and user testing during development",
+        "D": "Using online collaboration tools to allow the team to share feedback more efficiently"
+      },
+      "correctAnswer": "C",
+      "explanation": "Information gathered from potential users can be used to understand the purpose of a program from diverse perspectives and to develop a program that fully incorporates those perspectives."
+    },
+    {
+      "id": "u1r-q3",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student is classifying the following: a smart insulin pump, a printed instruction manual, and a ride-sharing platform. Which correctly classifies all three?",
+      "options": {
+        "A": "All three are computing innovations",
+        "B": "The smart insulin pump and ride-sharing platform are computing innovations; the printed instruction manual is not",
+        "C": "Only the smart insulin pump is a computing innovation",
+        "D": "The ride-sharing platform is not a computing innovation because it uses human drivers"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computing innovation must include a program as an integral part of its function. A smart insulin pump and ride-sharing platform both require programs. A printed instruction manual does not."
+    },
+    {
+      "id": "u1r-q4",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes the purpose of computing innovations?",
+      "options": {
+        "A": "To replace human workers with automated systems",
+        "B": "To solve problems or to pursue interests through creative expression",
+        "C": "To generate profit for technology companies",
+        "D": "To collect and store data about users"
+      },
+      "correctAnswer": "B",
+      "explanation": "The purpose of computing innovations is to solve problems or to pursue interests through creative expression. Understanding this purpose gives developers an improved ability to build the innovation."
+    },
+    {
+      "id": "u1r-q5",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "Two programmers are collaborating on a project. Programmer A writes code while Programmer B watches and points out potential issues in real time. They switch roles after completing each module.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes this collaboration model and its primary benefit?",
+      "options": {
+        "A": "Iterative development — the team refines code through repeated feedback cycles",
+        "B": "Pair programming — the observer catches errors the writer might miss, actively contributing to the final product",
+        "C": "Modular design — the team divides the program into separate modules for efficiency",
+        "D": "Distributed computing — the two programmers share processing load between two machines"
+      },
+      "correctAnswer": "B",
+      "explanation": "Pair programming is a recognized collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss."
+    },
+    {
+      "id": "u1r-q6",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following lists contains ONLY the interpersonal skills identified as essential for effective collaborative teams?",
+      "options": {
+        "A": "Communication, pair programming, conflict resolution, and negotiation",
+        "B": "Communication, consensus building, conflict resolution, and negotiation",
+        "C": "Brainstorming, consensus building, user consultation, and conflict resolution",
+        "D": "Communication, consensus building, iterative development, and negotiation"
+      },
+      "correctAnswer": "B",
+      "explanation": "Effective collaborative teams practice communication, consensus building, conflict resolution, and negotiation. The other options each include a process or development model that is not an interpersonal skill."
+    },
+    {
+      "id": "u1r-q7",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A fitness tracking app accepts the number of steps walked as input and displays whether the user met their daily goal of 10,000 steps.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes an event in this program?",
+      "options": {
+        "A": "The step count value stored in the program's memory",
+        "B": "The daily goal of 10,000 steps defined in the program",
+        "C": "The user tapping the Submit button after entering their step count",
+        "D": "The list of previous step counts saved by the program"
+      },
+      "correctAnswer": "C",
+      "explanation": "An event is associated with an action and supplies input data to a program. The user tapping Submit is the action that triggers the program to process the step count input."
+    },
+    {
+      "id": "u1r-q8",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A fitness tracking app accepts the number of steps walked as input and displays whether the user met their daily goal of 10,000 steps.",
+      "stimulusType": "text",
+      "question": "Which of the following is NOT an example of program output produced by this app?",
+      "options": {
+        "A": "A message saying 'Goal met! Great work today!'",
+        "B": "The number of steps entered by the user",
+        "C": "A percentage showing how close the user came to their goal",
+        "D": "A message saying 'You need 2,000 more steps to meet your goal'"
+      },
+      "correctAnswer": "B",
+      "explanation": "Program outputs are any data sent from a program to a device. The step count entered by the user is program input — data sent to the computer for processing. All the messages are outputs sent from the program to the user's screen."
+    },
+    {
+      "id": "u1r-q9",
+      "type": "mc",
+      "topic": "review",
+      "question": "A music app plays a song when a user taps a play button and pauses when tapped again. Which of the following best describes the programming style used?",
+      "options": {
+        "A": "Sequential programming, because statements execute in order from top to bottom",
+        "B": "Iterative programming, because the app repeats the same action each time the button is tapped",
+        "C": "Event-driven programming, because program statements execute when triggered by a user action rather than through sequential flow",
+        "D": "Modular programming, because play and pause are separate modules"
+      },
+      "correctAnswer": "C",
+      "explanation": "In event-driven programming, program statements are executed when triggered rather than through sequential flow of control. The user tapping the play button is the event that triggers execution."
+    },
+    {
+      "id": "u1r-q10",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A team is developing a hospital scheduling app. They release a basic version, collect feedback from nurses and doctors, redesign the scheduling interface based on complaints, release an updated version, collect more feedback, and repeat this process over several months.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the development process being used?",
+      "options": {
+        "A": "Incremental development, because the team adds new features with each release",
+        "B": "Iterative development, because the team refines and revises the program based on feedback throughout the process",
+        "C": "Sequential development, because the team follows the same steps in the same order each time",
+        "D": "Pair programming, because two developers review each update before release"
+      },
+      "correctAnswer": "B",
+      "explanation": "A development process that is iterative requires refinement and revision based on feedback, testing, or reflection throughout the process. The team repeatedly revises based on user feedback — this is iterative development."
+    },
+    {
+      "id": "u1r-q11",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A team is building a social media app. They complete and fully test the login system before beginning work on the profile page. Once the profile page works correctly they begin building the feed. They do not start a new feature until the previous one is verified to work.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the development process being used?",
+      "options": {
+        "A": "Iterative development, because the team revisits each feature multiple times",
+        "B": "Exploratory development, because the team does not plan ahead before building",
+        "C": "Incremental development, because the team builds and verifies one piece at a time before adding the next",
+        "D": "Modular development, because the team separates the app into independent modules"
+      },
+      "correctAnswer": "C",
+      "explanation": "A development process that is incremental breaks the problem into smaller pieces and makes sure each piece works before adding it to the whole."
+    },
+    {
+      "id": "u1r-q12",
+      "type": "mc",
+      "topic": "review",
+      "question": "A team is in the investigation phase of developing a new ride-sharing app. Which of the following activities is LEAST consistent with this phase?",
+      "options": {
+        "A": "Conducting interviews with frequent ride-sharing users",
+        "B": "Observing how people currently use competing apps",
+        "C": "Writing the code for the payment processing module",
+        "D": "Surveying potential users about their biggest frustrations with existing services"
+      },
+      "correctAnswer": "C",
+      "explanation": "Investigation methods include surveys, interviews, and direct observations. Writing code belongs to the prototyping phase, not the investigation phase."
+    },
+    {
+      "id": "u1r-q13",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer adds the following line directly into their code: '# This function calculates the total price including tax'. Which of the following best describes this?",
+      "options": {
+        "A": "A variable that stores the function's return value",
+        "B": "A comment that documents the function's purpose and does not affect how the program runs",
+        "C": "A test case used to verify the function produces the correct output",
+        "D": "A program specification that defines the requirements"
+      },
+      "correctAnswer": "B",
+      "explanation": "Comments are a form of program documentation written into the program to be read by people. They do not affect how a program runs. Not all programming environments support comments."
+    },
+    {
+      "id": "u1r-q14",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A programmer finds a sorting algorithm online and uses it in their program. They add this line to their documentation: 'Sorting function adapted from quicksort implementation by J. Smith, available at codeexamples.com'",
+      "stimulusType": "text",
+      "question": "Which of the following best explains why the programmer added this line?",
+      "options": {
+        "A": "To explain how the sorting algorithm works so other programmers understand it",
+        "B": "To acknowledge code written by another source, as required when using code developed by others",
+        "C": "To document a test case that verifies the sorting function works correctly",
+        "D": "To describe the program specification that required a sorting feature"
+      },
+      "correctAnswer": "B",
+      "explanation": "It is important to acknowledge any code segments developed collaboratively or by another source. The acknowledgement should be in the program documentation and include the origin or original author's name."
+    },
+    {
+      "id": "u1r-q15",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A programmer writes a program intended to calculate the average of three test scores. When run with inputs [80, 90, 70], the program displays 120 instead of 80.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the type of error in this program?",
+      "options": {
+        "A": "Syntax error, because the program does not follow the rules of the language",
+        "B": "Run-time error, because the program crashes when given these inputs",
+        "C": "Overflow error, because the numbers exceed the defined range of values",
+        "D": "Logic error, because the program runs but produces an incorrect result"
+      },
+      "correctAnswer": "D",
+      "explanation": "A logic error is a mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly. The program runs without crashing but produces the wrong answer."
+    },
+    {
+      "id": "u1r-q16",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 10\ny ← 0\nz ← x / y\nDISPLAY z",
+      "stimulusType": "code",
+      "question": "Which of the following best describes what happens when this code runs?",
+      "options": {
+        "A": "A syntax error occurs because dividing by a variable is not allowed",
+        "B": "A logic error occurs because the result is mathematically undefined",
+        "C": "A run-time error occurs because the program attempts to divide by zero during execution",
+        "D": "An overflow error occurs because zero is outside the defined range"
+      },
+      "correctAnswer": "C",
+      "explanation": "A run-time error occurs during the execution of a program. Division by zero does not prevent the program from starting but causes it to fail when that line executes — this is a run-time error."
+    },
+    {
+      "id": "u1r-q17",
+      "type": "mc",
+      "topic": "review",
+      "question": "A program that tracks sales revenue stores values as integers. At the end of a record year, the program displays a negative revenue figure even though all transactions were positive. Which of the following best explains this?",
+      "options": {
+        "A": "A logic error caused the program to subtract instead of add",
+        "B": "A syntax error caused the program to misread the transaction data",
+        "C": "An overflow error occurred because the revenue exceeded the defined range for the integer type",
+        "D": "A run-time error caused the program to reset revenue to a negative default"
+      },
+      "correctAnswer": "C",
+      "explanation": "An overflow error occurs when a computer attempts to handle a number outside the defined range of values. When an integer exceeds its maximum value it wraps around to a negative number."
+    },
+    {
+      "id": "u1r-q18",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer is testing a program that accepts a user's age as input. Which of the following sets of test inputs would be MOST effective for verifying the program works correctly for all valid ages?",
+      "options": {
+        "A": "25, 30, 35",
+        "B": "0, 1, 99, 100",
+        "C": "18, 21, 65",
+        "D": "10, 50, 90"
+      },
+      "correctAnswer": "B",
+      "explanation": "Test inputs should demonstrate different expected outcomes at or just beyond the extremes of input data. Testing boundary values (0 and 1 for minimum, 99 and 100 for maximum) is most effective for catching edge case errors."
+    },
+    {
+      "id": "u1r-q19",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following activities belongs in the DESIGN phase of program development?",
+      "options": {
+        "A": "Conducting user interviews to understand requirements",
+        "B": "Running the program with test inputs to check for errors",
+        "C": "Creating diagrams that represent the layout of the user interface",
+        "D": "Releasing a working version to gather user feedback"
+      },
+      "correctAnswer": "C",
+      "explanation": "The design phase includes brainstorming, planning and storyboarding, organizing into modules, creation of UI layout diagrams, and development of a testing strategy. User interviews are investigation, running tests is testing, and releasing to users is prototyping."
+    },
+    {
+      "id": "u1r-q20",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best explains why program documentation should be written throughout development rather than only at the end?",
+      "options": {
+        "A": "Documentation written at the end is automatically more accurate because the program is complete",
+        "B": "Documentation written throughout development is more likely to accurately describe each code segment's purpose and helps maintain correct programs individually and collaboratively",
+        "C": "Documentation is only required for collaborative projects, not individual ones",
+        "D": "Writing documentation during development slows down coding and increases the chance of errors"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programmers should document a program throughout its development. Program documentation helps in developing and maintaining correct programs when working individually or in collaborative environments."
+    },
+    {
+      "id": "u1r-q21",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "<table><tr><th>Activity</th><th>Description</th></tr><tr><td>Activity 1</td><td>Team members use a shared repository to upload code and comment on each other's contributions</td></tr><tr><td>Activity 2</td><td>One programmer types code while another reads along and suggests changes in real time</td></tr><tr><td>Activity 3</td><td>The team holds a meeting to reach agreement on a disputed design decision</td></tr><tr><td>Activity 4</td><td>The team surveys 500 potential users before finalizing the app's features</td></tr></table>",
+      "stimulusType": "table",
+      "question": "Which activity best demonstrates the interpersonal skill of consensus building?",
+      "options": {
+        "A": "Activity 1",
+        "B": "Activity 2",
+        "C": "Activity 3",
+        "D": "Activity 4"
+      },
+      "correctAnswer": "C",
+      "explanation": "Consensus building is one of the interpersonal skills practiced by effective collaborative teams. Holding a meeting to reach agreement on a disputed decision directly demonstrates consensus building."
+    },
+    {
+      "id": "u1r-q22",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "<table><tr><th>Activity</th><th>Description</th></tr><tr><td>Activity 1</td><td>Team members use a shared repository to upload code and comment on each other's contributions</td></tr><tr><td>Activity 2</td><td>One programmer types code while another reads along and suggests changes in real time</td></tr><tr><td>Activity 3</td><td>The team holds a meeting to reach agreement on a disputed design decision</td></tr><tr><td>Activity 4</td><td>The team surveys 500 potential users before finalizing the app's features</td></tr></table>",
+      "stimulusType": "table",
+      "question": "Which activity is an example of using online tools to support collaboration?",
+      "options": {
+        "A": "Activity 1",
+        "B": "Activity 2",
+        "C": "Activity 3",
+        "D": "Activity 4"
+      },
+      "correctAnswer": "A",
+      "explanation": "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents. A shared repository where team members upload code and comment is an online collaboration tool."
+    },
+    {
+      "id": "u1r-q23",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programming environment does not support comments. Which of the following best describes how documentation should be handled?",
+      "options": {
+        "A": "No documentation is needed since comments are unavailable",
+        "B": "The programmer should switch to a different programming environment that supports comments",
+        "C": "Other methods of documentation may be required since not all programming environments support comments",
+        "D": "Documentation should be added after the program is exported to a different format"
+      },
+      "correctAnswer": "C",
+      "explanation": "Not all programming environments support comments, so other methods of documentation may be required. The need for documentation does not go away just because comments are unavailable."
+    },
+    {
+      "id": "u1r-q24",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are effective ways to find and correct errors in a program?",
+      "options": {
+        "A": "Adding extra output statements to display variable values at key points during execution",
+        "B": "Rewriting the program in a different programming language",
+        "C": "Using a debugger to pause execution and inspect variable values",
+        "D": "Increasing the number of programmers working on the program"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Adding extra output statements and using debuggers are both identified as effective ways to find and correct errors. Rewriting in a different language does not fix logic errors, and adding more programmers does not directly help identify existing errors."
+    },
+    {
+      "id": "u1r-q25",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are examples of program input?",
+      "options": {
+        "A": "A message displayed to the user after they submit a form",
+        "B": "A user pressing a key on the keyboard to trigger an action",
+        "C": "A weather app receiving current temperature data from an online weather service",
+        "D": "A chart generated by the program showing sales data"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Program inputs are data sent to a computer for processing. A key press by a user (B) and data received from another program (C) are both inputs. The message displayed (A) and the chart generated (D) are both outputs sent from the program."
+    },
+    {
+      "id": "u1r-q26",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a nonphysical computing concept?",
+      "options": {
+        "A": "A fitness tracking wristband that monitors heart rate",
+        "B": "A photo editing application installed on a laptop",
+        "C": "An e-commerce platform that enables online buying and selling",
+        "D": "A smart thermostat that learns temperature preferences"
+      },
+      "correctAnswer": "C",
+      "explanation": "A nonphysical computing concept is a system or model enabled by computing. An e-commerce platform is a business model enabled by computing. A fitness wristband and thermostat are physical innovations. A photo editing app is nonphysical computing software."
+    },
+    {
+      "id": "u1r-q27",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer uses a tool that allows them to pause the program at any line, inspect the values of all variables at that moment, and step through the code one line at a time. Which of the following best describes this tool?",
+      "options": {
+        "A": "A test case, because the programmer is using specific inputs to check the program",
+        "B": "A visualization, because the tool displays the program's state graphically",
+        "C": "A debugger, because the tool pauses execution and allows inspection of variable values",
+        "D": "An extra output statement, because the tool displays variable values during execution"
+      },
+      "correctAnswer": "C",
+      "explanation": "A debugger is an effective way to find and correct errors — it allows programmers to pause execution at specific points and inspect variable values. This is distinct from extra output statements which print values without pausing execution."
+    },
+    {
+      "id": "u1r-q28",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the difference between a program and a code segment?",
+      "options": {
+        "A": "A program is written by one person while a code segment is written collaboratively",
+        "B": "A program performs a complete task when run while a code segment is a collection of statements that is part of a larger program",
+        "C": "A program runs on a computer while a code segment runs on a mobile device",
+        "D": "A program uses variables while a code segment uses only constants"
+      },
+      "correctAnswer": "B",
+      "explanation": "A program is a collection of program statements that performs a specific task when run. A code segment is a collection of statements that is part of a larger program — the key distinction is that a code segment is a portion of a larger program."
+    },
+    {
+      "id": "u1r-q29",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "PROCEDURE calculateDiscount(price, discountRate)\n{\n   discountAmount ← price * discountRate\n   finalPrice ← price + discountAmount\n   RETURN finalPrice\n}",
+      "stimulusType": "code",
+      "question": "The procedure is intended to return the price after applying a discount. Which of the following best describes the error?",
+      "options": {
+        "A": "Syntax error, because the procedure is missing a required operator",
+        "B": "Logic error, because the procedure adds the discount amount instead of subtracting it",
+        "C": "Run-time error, because the procedure will crash when discountRate is 0",
+        "D": "Overflow error, because multiplying price and discountRate may produce a very large number"
+      },
+      "correctAnswer": "B",
+      "explanation": "A logic error is a mistake in the algorithm that causes it to behave incorrectly. The procedure adds the discount amount to the price instead of subtracting it — the program runs but produces incorrect results."
+    },
+    {
+      "id": "u1r-q30",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes how collaboration that includes diverse perspectives helps computing innovations?",
+      "options": {
+        "A": "Diverse teams always produce innovations faster than homogeneous teams",
+        "B": "Diverse perspectives help avoid bias and produce innovations that better reflect the needs of all potential users",
+        "C": "Diverse teams produce more lines of code, resulting in more powerful programs",
+        "D": "Diverse perspectives are only important for programs used by international audiences"
+      },
+      "correctAnswer": "B",
+      "explanation": "Collaboration that includes diverse perspectives helps avoid bias in the development of computing innovations. Effective collaboration produces a computing innovation that reflects the diversity of talents and perspectives of those who designed it."
+    },
+    {
+      "id": "u1r-q31",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A student writes the following code:\n\nresult ← 10 + 5\nDISPLAY rezult",
+      "stimulusType": "code",
+      "question": "Which of the following best describes the error in this code segment?",
+      "options": {
+        "A": "Logic error, because the calculation produces the wrong result",
+        "B": "Run-time error, because the program will crash at the DISPLAY statement",
+        "C": "Syntax error, because the variable name rezult does not match the variable result that was defined",
+        "D": "Overflow error, because the result of 10 + 5 exceeds the defined range"
+      },
+      "correctAnswer": "C",
+      "explanation": "A syntax error is a mistake where the rules of the programming language are not followed. Using rezult instead of result is a naming inconsistency that violates the language rule that variable names must be consistent — the program cannot run until this is corrected."
+    },
+    {
+      "id": "u1r-q32",
+      "type": "mc",
+      "topic": "review",
+      "question": "A developer better understands that their note-taking app's purpose is to help students organize ideas quickly during lectures. Which of the following best explains how this understanding helps?",
+      "options": {
+        "A": "It allows the developer to write more efficient code with fewer lines",
+        "B": "It provides the developer with an improved ability to develop the app by knowing what features and behaviors to prioritize",
+        "C": "It eliminates the need to consult with users because the purpose is already clear",
+        "D": "It allows the developer to skip the testing phase because the purpose is well defined"
+      },
+      "correctAnswer": "B",
+      "explanation": "An understanding of the purpose of a computing innovation provides developers with an improved ability to develop that innovation. Knowing users need to organize ideas quickly during lectures tells the developer to prioritize speed and simplicity."
+    },
+    {
+      "id": "u1r-q33",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer adds DISPLAY count to their code at several points to track how a variable changes as the program runs. Which of the following best describes this technique?",
+      "options": {
+        "A": "Hand tracing, because the programmer is manually stepping through the code",
+        "B": "Adding extra output statements to track variable values during execution",
+        "C": "Using a debugger to pause execution and inspect the variable",
+        "D": "Using a test case to check whether count matches the expected value"
+      },
+      "correctAnswer": "B",
+      "explanation": "Adding extra output statements is an effective way to find and correct errors. Inserting DISPLAY commands to track how a variable changes during execution is exactly this technique."
+    },
+    {
+      "id": "u1r-q34",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes why program requirements are important for testing?",
+      "options": {
+        "A": "Requirements specify which programming language determines what inputs are valid",
+        "B": "Requirements describe how the program functions and what interactions it must support, defining what inputs and expected outputs should be tested",
+        "C": "Requirements list all possible inputs that users might enter so testers know which to try",
+        "D": "Requirements are written by users who already know which inputs cause errors"
+      },
+      "correctAnswer": "B",
+      "explanation": "Program requirements describe how the program functions and the user interactions it must support — this tells developers what behavior to verify and what inputs to test. Requirements are needed to identify appropriate defined inputs for testing."
+    },
+    {
+      "id": "u1r-q35",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A team finishes building a program and realizes they used a sorting algorithm from a textbook without citing it.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes what the team should do?",
+      "options": {
+        "A": "Nothing, because algorithms cannot be copyrighted",
+        "B": "Add an acknowledgement in the program documentation that includes the textbook as the source",
+        "C": "Rewrite the algorithm from scratch so they do not need to acknowledge the source",
+        "D": "Add the citation only if the textbook's author requests credit"
+      },
+      "correctAnswer": "B",
+      "explanation": "It is important to acknowledge any code segments written by someone else. The acknowledgement should be in the program documentation and include the origin or original author's name."
+    },
+    {
+      "id": "u1r-q36",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following correctly describes the four types of errors in programming?",
+      "options": {
+        "A": "Syntax errors prevent the program from running; logic errors cause incorrect results; run-time errors occur during execution; overflow errors occur when a number exceeds the defined range",
+        "B": "Syntax errors cause incorrect results; logic errors prevent the program from running; run-time errors cause crashes; overflow errors are always caused by division",
+        "C": "All four error types prevent the program from running and must be fixed before execution",
+        "D": "Syntax and overflow errors are the same; logic and run-time errors are the same"
+      },
+      "correctAnswer": "A",
+      "explanation": "Syntax errors prevent the program from running because language rules are violated. Logic errors cause incorrect results while the program runs normally. Run-time errors occur during execution. Overflow errors occur when a number is outside the defined range of values."
+    },
+    {
+      "id": "u1r-q37",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes input that comes from another program rather than a user?",
+      "options": {
+        "A": "A user typing a search query into a search engine",
+        "B": "A user tapping a button to submit a form",
+        "C": "A weather app receiving current temperature data from an online weather service",
+        "D": "A user speaking a voice command to a virtual assistant"
+      },
+      "correctAnswer": "C",
+      "explanation": "Input can come from a user or other programs. A weather app receiving data from an online weather service is an example of input coming from another program rather than direct user interaction."
+    },
+    {
+      "id": "u1r-q38",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student argues that if a programmer did not intend for their innovation to be biased, they bear no responsibility for bias in the final product. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The argument is correct — only intentional bias creates ethical responsibility",
+        "B": "The argument is incorrect — programmers should take action to reduce bias in algorithms because biases can be embedded at all levels of development whether intentional or not",
+        "C": "The argument is correct — programmers cannot be expected to address problems they did not foresee",
+        "D": "The argument is incorrect — all bias in computing innovations is always intentional"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programmers should take action to reduce bias in algorithms as a way of combating existing human biases. Biases can be embedded at all levels of software development, often unintentionally, and the ethical responsibility to address them exists regardless of intent."
+    },
+    {
+      "id": "u1r-q39",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes when hand tracing is most useful as an error-finding technique?",
+      "options": {
+        "A": "When the program is too large to test with individual test cases",
+        "B": "When the programmer wants to manually track how variable values change step by step through the code to find where incorrect behavior begins",
+        "C": "When the program has syntax errors that prevent it from running",
+        "D": "When automated testing tools are too expensive to use"
+      },
+      "correctAnswer": "B",
+      "explanation": "Hand tracing is an effective way to find and correct errors. It involves manually stepping through the code and tracking the value of each variable at each step, which helps identify exactly where incorrect behavior begins."
+    },
+    {
+      "id": "u1r-q40",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A startup is building a language learning app for non-native English speakers. After six months of development, a team member suggests holding user testing sessions with non-native speakers before launch. Other team members argue this will delay the release.",
+      "stimulusType": "text",
+      "question": "Which of the following best supports holding the user testing sessions?",
+      "options": {
+        "A": "User testing will ensure the app has no syntax errors before launch",
+        "B": "Non-native speakers are the target users and their feedback will help the app fully incorporate their perspectives",
+        "C": "User testing will allow the team to practice pair programming before launch",
+        "D": "Non-native speakers can help the team write better documentation for the app"
+      },
+      "correctAnswer": "B",
+      "explanation": "Information gathered from potential users helps develop a program that fully incorporates their perspectives. Since non-native speakers are the target audience, their feedback directly improves the app's ability to serve its users."
+    },
+    {
+      "id": "u1r-q41",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the design phase of program development?",
+      "options": {
+        "A": "Collecting data through surveys and interviews to understand user needs",
+        "B": "Writing and running test cases to verify the program works correctly",
+        "C": "Brainstorming, planning, creating UI layout diagrams, organizing into modules, and developing a testing strategy",
+        "D": "Releasing an early version of the program to gather user feedback"
+      },
+      "correctAnswer": "C",
+      "explanation": "The design phase includes brainstorming, planning and storyboarding, organizing into modules and functional components, creation of UI layout diagrams, and development of a testing strategy. Surveys are investigation, test cases are testing, and early releases are prototyping."
+    },
+    {
+      "id": "u1r-q42",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer is testing a program that calculates shipping costs for packages weighing 0.1 kg to 50 kg. Which of the following sets of test inputs would be MOST effective?",
+      "options": {
+        "A": "5, 10, 15, 20, 25",
+        "B": "0.1, 0.2, 49.9, 50",
+        "C": "1, 5, 10, 25, 50",
+        "D": "0, 0.1, 25, 50, 51"
+      },
+      "correctAnswer": "D",
+      "explanation": "Test inputs should demonstrate expected outcomes at or just beyond the extremes of input data. Testing 0 and 51 (just beyond the valid range) alongside 0.1 and 50 (the exact boundaries) and a middle value is the most effective strategy for catching edge case errors."
+    },
+    {
+      "id": "u1r-q43",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST explains why effective collaboration produces better computing innovations than working individually?",
+      "options": {
+        "A": "More programmers always produce more lines of code",
+        "B": "Collaboration that includes diverse perspectives helps avoid bias and produces innovations that reflect a wider range of talents and user needs",
+        "C": "Individual programmers make more errors than teams",
+        "D": "Collaboration is required by law for all commercial software development"
+      },
+      "correctAnswer": "B",
+      "explanation": "Effective collaboration produces a computing innovation that reflects the diversity of talents and perspectives of those who designed it. Diverse perspectives help avoid bias and lead to better innovations."
+    },
+    {
+      "id": "u1r-q44",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the difference between iterative and incremental development?",
+      "options": {
+        "A": "Iterative development only applies to large programs; incremental only applies to small ones",
+        "B": "Iterative development refines and revises the whole program based on feedback throughout the process; incremental development builds and verifies one piece at a time before adding the next",
+        "C": "They are the same process described by different names",
+        "D": "Incremental development requires user feedback while iterative development does not"
+      },
+      "correctAnswer": "B",
+      "explanation": "Iterative development requires refinement and revision based on feedback throughout the process. Incremental development breaks the problem into smaller pieces and verifies each piece works before adding it to the whole. They are distinct approaches."
+    },
+    {
+      "id": "u1r-q45",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following describe characteristics of a syntax error?",
+      "options": {
+        "A": "The program runs but produces an incorrect result",
+        "B": "The program cannot run until the error is corrected",
+        "C": "The error occurs because the rules of the programming language were not followed",
+        "D": "The error only appears when the program is given certain inputs"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "A syntax error is a mistake where the rules of the programming language are not followed, and the program cannot run until the error is corrected. A program that runs but produces wrong results has a logic error. An error that appears only for certain inputs is a run-time or logic error."
+    },
+    {
+      "id": "u1r-frq1",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A team is developing a mental health support app for teenagers. The development team consists entirely of adult mental health professionals with no teenagers involved in design or testing.",
+      "stimulusType": "text",
+      "question": "Part A: Identify the expected group of users of this program. Explain how the team's approach may affect the program's ability to address the needs of those users.\n\nPart B: Describe two specific investigation methods the team could use to better understand the needs of teenage users before finalizing the design.\n\nPart C: The team later releases a basic version of the app. After receiving feedback that the interface feels 'too clinical' for teenagers, they redesign the visual style and release an updated version. What development approach does this represent? Explain why.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying teenagers experiencing mental health challenges as the expected users.\nAward 1 point for explaining that without teenage input the app may not reflect the actual concerns, preferences, or communication styles of teenagers — diverse perspectives help avoid bias and produce innovations that fully incorporate user perspectives.\n\nPART B (2 points — 1 point per method):\nAward 1 point per valid investigation method. Accept: surveys of teenagers about mental health app preferences; interviews with teenage users and mental health counselors who work with teens; user testing sessions with teenagers using early prototypes; direct observations of how teenagers currently seek mental health support.\n\nPART C (2 points):\nAward 1 point for identifying this as iterative development.\nAward 1 point for explaining why: the team released a version, gathered feedback, revised based on that feedback, and released an updated version — this refinement and revision based on feedback throughout the process is the defining characteristic of iterative development.",
+      "points": 6
+    },
+    {
+      "id": "u1r-frq2",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Consider the following code segment, which is intended to calculate the letter grade for a student:\n\nPROCEDURE getGrade(score)\n{\n   IF(score >= 90)\n   {\n      RETURN(\"A\")\n   }\n   IF(score >= 80)\n   {\n      RETURN(\"B\")\n   }\n   IF(score >= 70)\n   {\n      RETURN(\"C\")\n   }\n   RETURN(\"F\")\n}",
+      "stimulusType": "code",
+      "question": "Part A: Identify an example output of this program and explain how it shows an aspect of the program's functionality.\n\nPart B: Identify one unexpected or invalid input a user could provide to this program and describe the program's behavior after receiving it.\n\nPart C: A programmer modifies the first IF condition from score >= 90 to score > 90. Identify the type of error this creates and explain how the behavior of the procedure changes.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying a valid output: 'A', 'B', 'C', or 'F'.\nAward 1 point for explaining how it shows functionality. Example: An output of 'B' shows that the procedure correctly identified a score in the 80-89 range and returned the appropriate letter grade.\n\nPART B (2 points):\nAward 1 point for identifying an invalid input: a negative number, a number above 100, a text string, or a decimal score outside expected range.\nAward 1 point for describing behavior: the procedure may return 'F' for any number below 70 including negative numbers; a text string may cause a run-time error depending on the language.\n\nPART C (2 points):\nAward 1 point for identifying a logic error — the program runs but produces incorrect results.\nAward 1 point for explaining the behavior change: a score of exactly 90 would no longer return 'A' — it would fall through to the next condition and return 'B', which is incorrect.",
+      "points": 6
+    },
+    {
+      "id": "u1r-frq3",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Describe one piece of documentation that would be appropriate to include with or in a program. Explain how this documentation can be used by another programmer to better understand a particular code segment in the program.",
+      "stimulusType": "text",
+      "question": "Describe one piece of documentation that would be appropriate to include with or in a program. Explain how this documentation can be used by another programmer to better understand a particular code segment in the program.",
+      "rubric": "Award 1 point for describing a valid piece of documentation. Accept any of: a comment above a procedure describing what it does, what parameters it takes, and what it returns; external documentation describing the overall program structure; acknowledgement of code from another source with the origin noted.\nAward 1 point for explaining how it helps another programmer. The explanation must connect the documentation to improved understanding of a specific code segment.\nExample: A comment placed above a procedure that describes what the procedure does, what parameters it takes, and what value it returns would be appropriate. Another programmer could read this comment to understand how to call the procedure and what to expect as output without needing to read through all the code inside it, making collaborative development easier.",
+      "points": 2
+    },
+    {
+      "id": "u1r-frq4",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A programmer is building a temperature conversion app. The app converts temperatures from Celsius to Fahrenheit. After testing, a user reports that when they entered the letter 'A' instead of a number, the app crashed. When they entered -500, the app showed a result without any error message even though -500°C is below absolute zero and physically impossible.",
+      "stimulusType": "text",
+      "question": "Part A: Identify the type of error that caused the app to crash when the user entered 'A'. Explain why this is that type of error.\n\nPart B: The app displaying a result for -500°C without an error represents a different kind of problem. Identify what this problem is and explain what the programmer should do to address it.\n\nPart C: Describe the most effective set of test inputs the programmer should use to verify the app handles edge cases correctly.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying a run-time error (or possibly logic error depending on implementation).\nAward 1 point for explaining: entering a non-numeric value like 'A' causes the program to fail during execution when it attempts to perform arithmetic on the input — the program starts but crashes when it tries to process the invalid input.\n\nPART B (2 points):\nAward 1 point for identifying this as a logic/design problem — the program should validate that inputs are within a physically valid range but currently accepts any number.\nAward 1 point for what the programmer should do: add input validation that checks whether the temperature is below absolute zero (-273.15°C) and displays an appropriate error message rather than computing a result.\n\nPART C (2 points):\nAward 1 point for including boundary values: temperatures near absolute zero (-273, -274), very high temperatures, and 0°C.\nAward 1 point for including invalid inputs: non-numeric values (letters, symbols), empty input, and physically impossible temperatures below -273.15°C.\nExample: The programmer should test with 0°C (a boundary value), 100°C (boiling point), -273°C (near absolute zero), -274°C (below absolute zero), a letter like 'A', and an empty field.",
+      "points": 6
+    },
+    {
+      "id": "u1r-frq5",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A company is building a navigation app for cyclists. Before any coding begins, the development team creates wireframe sketches of every screen, maps out how users will navigate between pages, and divides the app into separate modules: a route planning module, a safety alerts module, and a progress tracking module.",
+      "stimulusType": "text",
+      "question": "Part A: Identify which phase of the development process the team is currently in. Explain why the activities described belong to this phase rather than the investigation phase.\n\nPart B: The team plans to survey cyclists about their navigation needs before finalizing the designs. Explain how this information would be used in the development process.\n\nPart C: After the app is released, the team discovers that the route planning module has a bug where it fails to calculate routes when the user's starting location and destination are in the same city block. Identify the most likely type of error and explain how the team could have caught this during testing.",
+      "rubric": "PART A (2 points):\nAward 1 point for correctly identifying the design phase.\nAward 1 point for explaining the distinction: investigation involves gathering information about user needs through surveys, interviews, and observations — the activities described (wireframes, navigation maps, module organization, and UI diagrams) are design activities that plan how to build the program, not activities to understand user needs.\n\nPART B (2 points):\nAward 1 point for explaining that information gathered from potential users helps understand the purpose of the program from diverse perspectives.\nAward 1 point for how it is used: the survey results inform the program requirements and specification — they tell the team what features cyclists actually need, which shapes the design decisions.\n\nPART C (2 points):\nAward 1 point for identifying a logic error — the program runs but produces incorrect results (fails to calculate routes) for specific inputs.\nAward 1 point for explaining how testing could have caught it: using test inputs that include edge cases — specifically testing routes where start and destination are in the same city block or very close together — would have revealed the failure before release.",
+      "points": 6
+    },
+    {
+      "id": "u1r-frq6",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A startup develops an AI-powered resume screening tool to help companies process large volumes of job applications. The tool is trained on historical hiring data. After six months of use, an analysis reveals the tool ranks candidates from certain universities consistently higher than equally qualified candidates from other schools, and rates candidates with traditionally female names lower for engineering roles.",
+      "stimulusType": "text",
+      "question": "Part A: Identify the type of problem revealed by the analysis. Explain where this problem likely originated in the development process.\n\nPart B: Describe two specific actions the development team could take to address the identified problems.\n\nPart C: Explain why responsible programmers should try to identify and address these kinds of problems even though it is not possible to anticipate all the ways a computing innovation can be used or all the potential effects it may have.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying computing/algorithmic bias.\nAward 1 point for explaining the origin: the bias likely originated in the training data — historical hiring data that reflected past preferences for certain universities or discriminatory patterns regarding gender. Bias in the data used by a computing innovation causes the innovation to reflect those biases.\n\nPART B (2 points — 1 point per action):\nAward 1 point per valid action with explanation. Accept: audit the training data to identify and correct underrepresentation; test the algorithm across different demographic groups before deployment to identify disparate outcomes; include diverse perspectives on the development team who are more likely to notice potential bias; remove or adjust variables that encode bias without being relevant to job performance.\n\nPART C (2 points):\nAward 1 point for explaining the responsibility: responsible programmers try to consider the unintended ways their computing innovations can be used and the potential harmful effects — computing innovations can cause real harm to individuals and groups.\nAward 1 point for acknowledging the limitation while maintaining responsibility: even though it is not possible to anticipate all effects, proactively identifying potential harms reduces their likelihood and severity. The inability to anticipate everything does not eliminate the ethical responsibility to try.",
+      "points": 6
+    },
+    {
+      "id": "u1r-frq7",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Identify an example output of a program you use regularly. Explain how this output shows an aspect of the program's functionality.",
+      "stimulusType": "text",
+      "question": "Identify an example output of a program you use regularly. Explain how this output shows an aspect of the program's functionality.",
+      "rubric": "Award 1 point for identifying a specific, valid output of a real program. Accept any concrete example: a weather app displaying the current temperature and forecast; a navigation app showing a route on a map; a music app displaying the currently playing song title and artist; a social media feed displaying posts.\nAward 1 point for explaining how this output shows functionality. The explanation must connect the specific output to what the program does.\nExample: A weather app displays '72°F, Sunny, 10% chance of rain' as output. This shows that the program takes location data as input, retrieves weather information from a data source, processes that information, and outputs a human-readable summary of current and forecasted conditions — demonstrating the program's core functionality of providing weather information based on location.",
+      "points": 2
+    }
+  ]
 }

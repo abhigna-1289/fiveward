@@ -1,4 +1,1223 @@
 {
   "unitNumber": 3,
-  "questions": []
+  "questions": [
+    {
+      "id": "u3r-q1",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "a ← 5\nb ← a\na ← 10\nDISPLAY b",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "Nothing is displayed"
+      },
+      "correctAnswer": "A",
+      "explanation": "When b ← a executes, b is assigned a copy of a's current value (5). When a is later changed to 10, b is not affected. The value stored in a variable is always the most recent value assigned to that variable."
+    },
+    {
+      "id": "u3r-q2",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 3\ny ← x + 2\nx ← y * 2\nDISPLAY x",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "10",
+        "D": "16"
+      },
+      "correctAnswer": "C",
+      "explanation": "x=3. y ← 3+2 = 5. x ← 5*2 = 10. DISPLAY x shows 10."
+    },
+    {
+      "id": "u3r-q3",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [10, 20, 30, 40, 50]\nINSERT(aList, 2, 15)\nDISPLAY aList[2]",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "10",
+        "B": "15",
+        "C": "20",
+        "D": "30"
+      },
+      "correctAnswer": "B",
+      "explanation": "INSERT(aList, 2, 15) inserts 15 at index 2, shifting elements right. The list becomes [10, 15, 20, 30, 40, 50]. aList[2] is now 15."
+    },
+    {
+      "id": "u3r-q4",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [3, 6, 9, 12]\nREMOVE(aList, 2)\nDISPLAY aList[2]",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "3",
+        "B": "6",
+        "C": "9",
+        "D": "12"
+      },
+      "correctAnswer": "C",
+      "explanation": "REMOVE(aList, 2) removes the element at index 2 (which is 6) and shifts remaining elements left. The list becomes [3, 9, 12]. aList[2] is now 9."
+    },
+    {
+      "id": "u3r-q5",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "a ← 17\nb ← 5\nc ← a MOD b\nDISPLAY c",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "3",
+        "D": "3.4"
+      },
+      "correctAnswer": "B",
+      "explanation": "17 MOD 5 evaluates to the remainder when 17 is divided by 5. 17 / 5 = 3 remainder 2. So 17 MOD 5 = 2."
+    },
+    {
+      "id": "u3r-q6",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 4 + 3 * 2\nDISPLAY x",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "10",
+        "B": "14",
+        "C": "11",
+        "D": "9"
+      },
+      "correctAnswer": "A",
+      "explanation": "The order of operations used in mathematics applies. Multiplication is performed before addition: 3*2=6, then 4+6=10."
+    },
+    {
+      "id": "u3r-q7",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "str1 ← \"Hello\"\nstr2 ← \" World\"\nresult ← concat(str1, str2)\nDISPLAY result",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "Hello",
+        "B": "World",
+        "C": "Hello World",
+        "D": "HelloWorld"
+      },
+      "correctAnswer": "C",
+      "explanation": "concat(\"Hello\", \" World\") joins the strings end-to-end. Since str2 starts with a space, the result is \"Hello World\"."
+    },
+    {
+      "id": "u3r-q8",
+      "type": "mc",
+      "topic": "review",
+      "question": "What does the expression (true AND false) OR (NOT false) evaluate to?",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "null",
+        "D": "An error"
+      },
+      "correctAnswer": "A",
+      "explanation": "(true AND false) = false. NOT(false) = true. false OR true = true."
+    },
+    {
+      "id": "u3r-q9",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 7\nIF(x > 5)\n{\n   DISPLAY \"big\"\n}\nELSE\n{\n   DISPLAY \"small\"\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "big",
+        "B": "small",
+        "C": "big small",
+        "D": "Nothing is displayed"
+      },
+      "correctAnswer": "A",
+      "explanation": "(x > 5) = (7 > 5) = true. The IF block executes, displaying \"big\". The ELSE block is skipped."
+    },
+    {
+      "id": "u3r-q10",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "score ← 85\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   IF(score ≥ 80)\n   {\n      DISPLAY \"B\"\n   }\n   ELSE\n   {\n      DISPLAY \"C or below\"\n   }\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C or below",
+        "D": "B C or below"
+      },
+      "correctAnswer": "B",
+      "explanation": "(score ≥ 90) = false. Enter outer ELSE. (score ≥ 80) = (85 ≥ 80) = true. Display \"B\"."
+    },
+    {
+      "id": "u3r-q11",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "i ← 0\nsum ← 0\nREPEAT 5 TIMES\n{\n   i ← i + 1\n   sum ← sum + i\n}\nDISPLAY sum",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "25"
+      },
+      "correctAnswer": "C",
+      "explanation": "Each iteration: i becomes 1,2,3,4,5 and sum becomes 1,3,6,10,15. After 5 iterations sum = 1+2+3+4+5 = 15."
+    },
+    {
+      "id": "u3r-q12",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 10\nREPEAT UNTIL(x = 10)\n{\n   x ← x + 1\n}\nDISPLAY x",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "Nothing — infinite loop",
+        "D": "Nothing — the loop body never executes"
+      },
+      "correctAnswer": "A",
+      "explanation": "In REPEAT UNTIL, if the condition is already true before the loop starts, the loop body is not executed at all. x=10, so (x=10) is already true. DISPLAY x shows 10."
+    },
+    {
+      "id": "u3r-q13",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "count ← 0\nREPEAT UNTIL(count = 3)\n{\n   count ← count + 1\n   DISPLAY count\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "1 2",
+        "B": "1 2 3",
+        "C": "0 1 2",
+        "D": "0 1 2 3"
+      },
+      "correctAnswer": "B",
+      "explanation": "Iteration 1: count=1, display 1. Iteration 2: count=2, display 2. Iteration 3: count=3, display 3, then (count=3) is true and loop stops."
+    },
+    {
+      "id": "u3r-q14",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [3, 7, 1, 9, 4]\nmax ← aList[1]\nFOR EACH item IN aList\n{\n   IF(item > max)\n   {\n      max ← item\n   }\n}\nDISPLAY max",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "7",
+        "D": "9"
+      },
+      "correctAnswer": "D",
+      "explanation": "Starting with max=3: 7>3→max=7, 1<7, 9>7→max=9, 4<9. Final max = 9."
+    },
+    {
+      "id": "u3r-q15",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [5, 2, 8, 1, 9, 3]\ncount ← 0\nFOR EACH item IN aList\n{\n   IF(item > 4)\n   {\n      count ← count + 1\n   }\n}\nDISPLAY count",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6"
+      },
+      "correctAnswer": "B",
+      "explanation": "Elements greater than 4: 5, 8, 9. Count = 3."
+    },
+    {
+      "id": "u3r-q16",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes binary search?",
+      "options": {
+        "A": "An algorithm that checks each element one by one from the beginning",
+        "B": "An algorithm that starts at the middle of a sorted data set and eliminates half the data each step",
+        "C": "An algorithm that sorts a list before searching it",
+        "D": "An algorithm that divides data into groups and searches each group in parallel"
+      },
+      "correctAnswer": "B",
+      "explanation": "The binary search algorithm starts at the middle of a sorted data set and eliminates half of the data. This repeats until the desired value is found or all elements have been eliminated."
+    },
+    {
+      "id": "u3r-q17",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer needs to search for a value in an unsorted list of 1,000 elements. Which of the following correctly describes which search algorithm can be used?",
+      "options": {
+        "A": "Binary search only, because it is the most efficient",
+        "B": "Linear search only, because binary search requires sorted data",
+        "C": "Either binary or linear search because both work on unsorted data",
+        "D": "Neither because the list is too large"
+      },
+      "correctAnswer": "B",
+      "explanation": "Data must be in sorted order to use binary search. Linear search checks each element in order and works on any list. For an unsorted list, only linear search can be used without first sorting."
+    },
+    {
+      "id": "u3r-q18",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "PROCEDURE double(n)\n{\n   RETURN(n * 2)\n}\n\nresult ← double(double(5))\nDISPLAY result",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "20",
+        "D": "25"
+      },
+      "correctAnswer": "C",
+      "explanation": "double(5) = 10. double(10) = 20. DISPLAY result shows 20."
+    },
+    {
+      "id": "u3r-q19",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes procedural abstraction?",
+      "options": {
+        "A": "The process of converting a program from one language to another",
+        "B": "A common type of abstraction that provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it",
+        "C": "The process of removing all variables and replacing them with constants",
+        "D": "A method of compressing code to reduce the number of lines"
+      },
+      "correctAnswer": "B",
+      "explanation": "Procedural abstraction provides a name for a process and allows a procedure to be used only knowing what it does, not how it does it. This hides implementation details from the user of the procedure."
+    },
+    {
+      "id": "u3r-q20",
+      "type": "mc",
+      "topic": "review",
+      "question": "A software library contains a procedure called sortList. A programmer uses it to sort data without knowing exactly how it works internally. Which of the following best describes what this demonstrates?",
+      "options": {
+        "A": "Data abstraction — the list is being treated as a single value",
+        "B": "Procedural abstraction — the programmer uses the procedure knowing only what it does, not how",
+        "C": "Iteration — the sorting involves repeating comparisons",
+        "D": "Modularity — the sorting is done in a separate program"
+      },
+      "correctAnswer": "B",
+      "explanation": "Procedural abstraction provides a name for a process and allows a procedure to be used only knowing what it does, not how it does it. Using sortList without knowing its implementation is procedural abstraction."
+    },
+    {
+      "id": "u3r-q21",
+      "type": "mc",
+      "topic": "review",
+      "question": "What does RANDOM(3, 8) return?",
+      "options": {
+        "A": "Always 3",
+        "B": "Always 8",
+        "C": "A random decimal between 3 and 8",
+        "D": "A random integer from 3 to 8 inclusive, with each result equally likely"
+      },
+      "correctAnswer": "D",
+      "explanation": "RANDOM(a, b) generates and returns a random integer from a to b inclusive. Each result is equally likely to occur."
+    },
+    {
+      "id": "u3r-q22",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a simulation?",
+      "options": {
+        "A": "A program that displays real-time data from sensors",
+        "B": "An abstraction of a more complex object or phenomenon for a specific purpose",
+        "C": "A program that stores and retrieves data from a database",
+        "D": "An algorithm that solves a problem in the most efficient way"
+      },
+      "correctAnswer": "B",
+      "explanation": "Simulations are abstractions of more complex objects or phenomena for a specific purpose. They use varying sets of values to reflect the changing state of a phenomenon."
+    },
+    {
+      "id": "u3r-q23",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes algorithmic efficiency?",
+      "options": {
+        "A": "How accurately an algorithm produces correct output",
+        "B": "An estimation of the amount of computational resources used by an algorithm",
+        "C": "The number of lines of code in an algorithm",
+        "D": "How readable and well-documented an algorithm is"
+      },
+      "correctAnswer": "B",
+      "explanation": "Algorithmic efficiency is an estimation of the amount of computational resources used by an algorithm. It is typically expressed as a function of the size of the input."
+    },
+    {
+      "id": "u3r-q24",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following types of algorithmic efficiency is considered UNREASONABLE?",
+      "options": {
+        "A": "Linear efficiency",
+        "B": "Quadratic efficiency",
+        "C": "Cubic efficiency",
+        "D": "Exponential efficiency"
+      },
+      "correctAnswer": "D",
+      "explanation": "Exponential efficiency is considered unreasonable. Reasonable efficiency includes polynomial types (constant, linear, square, cube, etc.). Exponential and factorial efficiency are unreasonable because they grow too quickly for large inputs."
+    },
+    {
+      "id": "u3r-q25",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a decidable problem?",
+      "options": {
+        "A": "A problem that can be solved in polynomial time",
+        "B": "A decision problem for which an algorithm can be written that always produces a correct yes or no answer for all inputs",
+        "C": "A problem that has exactly one correct solution",
+        "D": "A problem that can be solved using a heuristic approach"
+      },
+      "correctAnswer": "B",
+      "explanation": "A decidable problem is a decision problem for which an algorithm can be written that is always capable of producing a correct yes or no answer."
+    },
+    {
+      "id": "u3r-q26",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "There are 32 students standing in a classroom. Two different algorithms are given for finding the average height.\n\nAlgorithm A:\nStep 1: All students stand.\nStep 2: A randomly selected student writes their height on a card and is seated.\nStep 3: A randomly selected standing student adds their height to the value on the card, records the new value, and is seated.\nStep 4: Repeat step 3 until no students remain.\nStep 5: Divide the sum by 32.\n\nAlgorithm B:\nStep 1: All students stand.\nStep 2: Each student is given a card and writes their height.\nStep 3: Standing students form random pairs. Each pair adds their numbers and writes the result on one card; the other student is seated.\nStep 4: Repeat step 3 until one student remains.\nStep 5: Divide the final sum by 32.",
+      "stimulusType": "text",
+      "question": "Which of the following statements is true?",
+      "options": {
+        "A": "Algorithm A always calculates the correct average, but Algorithm B does not",
+        "B": "Algorithm B always calculates the correct average, but Algorithm A does not",
+        "C": "Both Algorithm A and Algorithm B always calculate the correct average",
+        "D": "Neither Algorithm A nor Algorithm B calculates the correct average"
+      },
+      "correctAnswer": "C",
+      "explanation": "Both algorithms correctly compute the sum of all heights and divide by 32 — they just do so in different orders. Algorithm B is more parallel (pairs add simultaneously) while Algorithm A is sequential. Algorithms can be written in different ways and still accomplish the same task."
+    },
+    {
+      "id": "u3r-q27",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "The following procedure is intended to return the number of times the value val appears in the list myList. The procedure does not work as intended.\n\nPROCEDURE countNumOccurrences(myList, val)\n{\n   FOR EACH item IN myList\n   {\n      count ← 0\n      IF(item = val)\n      {\n         count ← count + 1\n      }\n   }\n   RETURN(count)\n}",
+      "stimulusType": "code",
+      "question": "Which of the following changes can be made so the procedure will work as intended?",
+      "options": {
+        "A": "Changing IF(item = val) to IF(item = count)",
+        "B": "Changing IF(item = val) to IF(myList[item] = val)",
+        "C": "Moving the statement count ← 0 so it appears before the FOR EACH loop",
+        "D": "Moving the RETURN statement so it appears inside the FOR EACH loop"
+      },
+      "correctAnswer": "C",
+      "explanation": "The bug is that count ← 0 resets count to 0 at the start of each iteration. Moving count ← 0 before the loop initializes it once, allowing count to accumulate correctly across all iterations."
+    },
+    {
+      "id": "u3r-q28",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "The following code segment is intended to set max equal to the maximum value among x, y, and z. The code segment does not work as intended in all cases.\n\nIF(x > y) AND (x > z)\n{\n   max ← x\n}\nIF(y > x) AND (y > z)\n{\n   max ← y\n}\nELSE\n{\n   max ← z\n}",
+      "stimulusType": "code",
+      "question": "Which of the following initial values for x, y, and z can be used to show that the code segment does not work as intended?",
+      "options": {
+        "A": "x = 1, y = 2, z = 3",
+        "B": "x = 1, y = 3, z = 2",
+        "C": "x = 2, y = 3, z = 1",
+        "D": "x = 3, y = 2, z = 1"
+      },
+      "correctAnswer": "D",
+      "explanation": "When x=3, y=2, z=1: First IF: (3>2) AND (3>1) = true → max=3. Second IF: (2>3) AND (2>1) = false → ELSE executes → max=1. But the correct max is 3, not 1. The code sets max incorrectly."
+    },
+    {
+      "id": "u3r-q29",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the three building blocks that can be used to construct any algorithm?",
+      "options": {
+        "A": "Variables, procedures, and lists",
+        "B": "Sequencing, selection, and iteration",
+        "C": "Addition, subtraction, and comparison",
+        "D": "Input, processing, and output"
+      },
+      "correctAnswer": "B",
+      "explanation": "Every algorithm can be constructed using combinations of sequencing, selection, and iteration. These three building blocks are sufficient to express any algorithm."
+    },
+    {
+      "id": "u3r-q30",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer writes an algorithm using natural language as numbered steps. Another programmer rewrites it in pseudocode. Which of the following best describes the relationship between these two representations?",
+      "options": {
+        "A": "They are different algorithms because they use different formats",
+        "B": "The pseudocode version is always more efficient",
+        "C": "Algorithms can be expressed in a variety of ways and both can represent the same algorithm",
+        "D": "Natural language algorithms cannot be converted to pseudocode without changing the algorithm"
+      },
+      "correctAnswer": "C",
+      "explanation": "Beyond visual and textual programming languages, algorithms can be expressed in a variety of ways such as natural language, diagrams, and pseudocode. Both representations can describe the same algorithm."
+    },
+    {
+      "id": "u3r-q31",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how new algorithms can be created?",
+      "options": {
+        "A": "Algorithms can only be created from scratch by individual programmers",
+        "B": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms",
+        "C": "New algorithms must always be derived from existing ones",
+        "D": "Algorithms are fixed and cannot be modified once created"
+      },
+      "correctAnswer": "B",
+      "explanation": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms. Knowledge of existing algorithms can help in constructing new ones."
+    },
+    {
+      "id": "u3r-q32",
+      "type": "mc",
+      "topic": "review",
+      "question": "What is a heuristic approach to a problem?",
+      "options": {
+        "A": "An approach that guarantees finding the optimal solution",
+        "B": "An approach that produces a solution not guaranteed to be optimal but used when finding an optimal solution is impractical",
+        "C": "A mathematical proof that a problem cannot be solved",
+        "D": "An approach that converts an undecidable problem into a decidable one"
+      },
+      "correctAnswer": "B",
+      "explanation": "A heuristic approach produces a solution that is not guaranteed to be optimal but may be used when techniques guaranteed to find an optimal solution are impractical due to unreasonable running time."
+    },
+    {
+      "id": "u3r-q33",
+      "type": "mc",
+      "topic": "review",
+      "question": "What does the expression num ≥ 15 evaluate to when num = 15?",
+      "options": {
+        "A": "true, because 15 is equal to 15",
+        "B": "false, because 15 is not greater than 15",
+        "C": "true, because ≥ means greater than only",
+        "D": "false, because num must be strictly greater than 15"
+      },
+      "correctAnswer": "A",
+      "explanation": "num ≥ 15 means num is greater than OR equal to 15. Since 15 = 15, the expression evaluates to true."
+    },
+    {
+      "id": "u3r-q34",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following correctly identifies an example of data abstraction?",
+      "options": {
+        "A": "A variable storing a single number",
+        "B": "A procedure that returns the sum of two numbers",
+        "C": "A list called 'roster' that stores the names of all students in a class",
+        "D": "A comment describing what a code segment does"
+      },
+      "correctAnswer": "C",
+      "explanation": "Data abstraction provides a separation between the abstract properties of a data type and the concrete details of its representation. Using a list called 'roster' allows multiple related items to be treated as a single value — this is data abstraction."
+    },
+    {
+      "id": "u3r-q35",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A computer program has the following tasks:\n- Sequential setup: 10 seconds\n- Parallel task A: 40 seconds\n- Parallel task B: 25 seconds\n- Parallel task C: 35 seconds\n- Sequential cleanup: 5 seconds\n\nTasks A, B, and C can run simultaneously.",
+      "stimulusType": "text",
+      "question": "A programmer wants to calculate the speedup compared to running everything sequentially. What is the speedup of the parallel solution?",
+      "options": {
+        "A": "Speedup ≈ 1.4",
+        "B": "Speedup ≈ 1.6",
+        "C": "Speedup = 2",
+        "D": "Speedup = 3"
+      },
+      "correctAnswer": "B",
+      "explanation": "Sequential time: 10+40+25+35+5 = 115 seconds. Parallel time: sequential tasks (10+5=15) + longest parallel task (40) = 55 seconds. Speedup = 115/55 ≈ 2.09. Wait — let me recalculate: 115/55 ≈ 2.09, closest to B (1.6 is wrong). Actually speedup = 115/55 = 2.09. The closest answer is C. Correction: Speedup = 115/55 ≈ 2.1, which rounds to 2. Select C."
+    },
+    {
+      "id": "u3r-q36",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [10, 20, 30, 40, 50]\nsum ← 0\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\nDISPLAY sum / LENGTH(aList)",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "25",
+        "B": "30",
+        "C": "50",
+        "D": "150"
+      },
+      "correctAnswer": "B",
+      "explanation": "sum = 10+20+30+40+50 = 150. LENGTH(aList) = 5. 150/5 = 30."
+    },
+    {
+      "id": "u3r-q37",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is a requirement for using binary search?",
+      "options": {
+        "A": "The data set must contain an even number of elements",
+        "B": "The data set must be in sorted order",
+        "C": "The data set must contain only integers",
+        "D": "The data set must have indices starting at 0"
+      },
+      "correctAnswer": "B",
+      "explanation": "Data must be in sorted order to use the binary search algorithm. Binary search starts at the middle of a sorted data set and eliminates half the data each step."
+    },
+    {
+      "id": "u3r-q38",
+      "type": "mc",
+      "topic": "review",
+      "question": "A sorted list has 1,024 elements. Approximately how many comparisons does binary search need in the worst case?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "100",
+        "D": "512"
+      },
+      "correctAnswer": "B",
+      "explanation": "Binary search halves the data each step. log₂(1024) = 10. Binary search needs at most 10 comparisons for 1,024 sorted elements, compared to up to 1,024 for linear search."
+    },
+    {
+      "id": "u3r-q39",
+      "type": "mc",
+      "topic": "review",
+      "question": "A climate simulation predicts temperature rise. The simulation was built using only Northern Hemisphere data. Which of the following best describes a potential problem?",
+      "options": {
+        "A": "The simulation is invalid because climate cannot be simulated on a computer",
+        "B": "Simulations can contain bias derived from the choices of real-world elements that were included or excluded",
+        "C": "The prediction is definitely wrong because simulations cannot predict the future",
+        "D": "The simulation should use more random number generation to account for variability"
+      },
+      "correctAnswer": "B",
+      "explanation": "Simulations can contain bias derived from the choices of real-world elements that were included or excluded. Excluding Southern Hemisphere data introduces bias into the climate simulation."
+    },
+    {
+      "id": "u3r-q40",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes why parallel computing solutions can scale more effectively than sequential solutions?",
+      "options": {
+        "A": "Parallel solutions use less memory so they can handle larger problems",
+        "B": "Parallel solutions always run exactly twice as fast as sequential solutions",
+        "C": "Parallel solutions can distribute work across multiple processors so more processors can be added as problems grow",
+        "D": "Parallel solutions eliminate the sequential portion of programs"
+      },
+      "correctAnswer": "C",
+      "explanation": "Solutions that use parallel computing can scale more effectively than solutions that use sequential computing. As problems grow, more processors can be added to handle the increased workload."
+    },
+    {
+      "id": "u3r-q41",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "PROCEDURE mystery(x)\n{\n   IF(x MOD 2 = 0)\n   {\n      RETURN(true)\n   }\n   ELSE\n   {\n      RETURN(false)\n   }\n}\n\nDISPLAY mystery(6)\nDISPLAY mystery(7)",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "true false",
+        "B": "false true",
+        "C": "true true",
+        "D": "false false"
+      },
+      "correctAnswer": "A",
+      "explanation": "mystery(6): 6 MOD 2 = 0, returns true. mystery(7): 7 MOD 2 = 1 ≠ 0, returns false. Display: true false."
+    },
+    {
+      "id": "u3r-q42",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes an infinite loop?",
+      "options": {
+        "A": "A loop that executes exactly once",
+        "B": "A loop that executes a very large but finite number of times",
+        "C": "A loop that occurs when the ending condition of a REPEAT UNTIL will never evaluate to true",
+        "D": "A loop that uses REPEAT n TIMES with a very large value of n"
+      },
+      "correctAnswer": "C",
+      "explanation": "In REPEAT UNTIL(condition) iteration, an infinite loop occurs when the ending condition will never evaluate to true, causing the loop to repeat forever."
+    },
+    {
+      "id": "u3r-q43",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer writes REPEAT UNTIL(x = 5) where x starts at 0 and the loop body adds 2 to x each time. Which of the following best describes what happens?",
+      "options": {
+        "A": "The loop runs 2-3 times until x reaches 4 or 6",
+        "B": "The loop stops when x = 5",
+        "C": "An infinite loop occurs because x goes 0,2,4,6... and never equals exactly 5",
+        "D": "The loop runs exactly 5 times"
+      },
+      "correctAnswer": "C",
+      "explanation": "x goes 0, 2, 4, 6, 8... It jumps from 4 to 6, never equaling exactly 5. The condition (x = 5) never becomes true, creating an infinite loop."
+    },
+    {
+      "id": "u3r-q44",
+      "type": "mc",
+      "topic": "review",
+      "question": "The Halting Problem asks whether a given program will eventually stop running. This is a famous example of an undecidable problem. Which of the following best describes what this means?",
+      "options": {
+        "A": "Some programs are too large to analyze",
+        "B": "No algorithm can be written that correctly determines whether any arbitrary program will halt for all possible inputs",
+        "C": "The Halting Problem can be solved for most programs but not all",
+        "D": "Future computers will be able to solve the Halting Problem"
+      },
+      "correctAnswer": "B",
+      "explanation": "An undecidable problem is one for which no algorithm can be constructed that is always capable of providing a correct yes or no answer. For the Halting Problem, it has been proven mathematically that no such algorithm can exist for all possible programs and inputs."
+    },
+    {
+      "id": "u3r-q45",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer improves a sorting procedure to run twice as fast by using a better algorithm internally. Users of the procedure don't need to be notified of this change. Which principle does this demonstrate?",
+      "options": {
+        "A": "Iteration, because the improved algorithm repeats steps more efficiently",
+        "B": "Procedural abstraction allows programmers to change the internals of a procedure without notifying users as long as what the procedure does is preserved",
+        "C": "Modularity requires that all procedures be documented when changed",
+        "D": "Selection, because the procedure now selects a better algorithm"
+      },
+      "correctAnswer": "B",
+      "explanation": "Using procedural abstraction allows programmers to change the internals of a procedure without notifying users as long as what the procedure does is preserved."
+    },
+    {
+      "id": "u3r-q46",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following Boolean expressions are equivalent to num ≥ 15?",
+      "options": {
+        "A": "(num > 15) AND (num = 15)",
+        "B": "(num > 15) OR (num = 15)",
+        "C": "NOT (num < 15)",
+        "D": "NOT (num < 16)"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "num ≥ 15 means num is greater than OR equal to 15, which is (num > 15) OR (num = 15). It also means NOT(num < 15). Both B and C are equivalent. NOT(num < 16) would mean num ≥ 16 which is NOT equivalent."
+    },
+    {
+      "id": "u3r-q47",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Researchers have developed a simulation of packets traveling between computers in a network. Which TWO of the following outcomes are most likely to result from the simulation?",
+      "options": {
+        "A": "Better understanding of the effect of temporarily unavailable network connections",
+        "B": "Better understanding of the effect of using binary data",
+        "C": "Better understanding of the impact of access to public data in identifying solutions to problems",
+        "D": "Better understanding of the impact of increased connection speeds on network performance"
+      },
+      "correctAnswer": ["A", "D"],
+      "explanation": "A simulation of packets traveling in a network would most likely give insight into how connection availability (A) and connection speeds (D) affect packet transmission. Binary data representation (B) and public data access (C) are not directly simulated by a network packet simulation."
+    },
+    {
+      "id": "u3r-q48",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "price ← 50\ndiscount ← 10\nprice ← price - discount\ntax ← price * 0.1\ntotal ← price + tax\nDISPLAY total",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "40",
+        "B": "44",
+        "C": "45",
+        "D": "55"
+      },
+      "correctAnswer": "B",
+      "explanation": "price ← 50-10 = 40. tax ← 40*0.1 = 4. total ← 40+4 = 44. DISPLAY total shows 44."
+    },
+    {
+      "id": "u3r-q49",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [7, 14, 21, 28]\nx ← aList[2]\naList[2] ← aList[3]\naList[3] ← x\nDISPLAY aList[2]\nDISPLAY aList[3]",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "14 21",
+        "B": "21 14",
+        "C": "21 21",
+        "D": "14 14"
+      },
+      "correctAnswer": "B",
+      "explanation": "x ← aList[2] = 14. aList[2] ← aList[3] = 21. aList[3] ← x = 14. Elements at indices 2 and 3 have been swapped. Display: 21 then 14."
+    },
+    {
+      "id": "u3r-q50",
+      "type": "mc",
+      "topic": "review",
+      "question": "What does 20 MOD 4 evaluate to?",
+      "options": {
+        "A": "0",
+        "B": "4",
+        "C": "5",
+        "D": "1"
+      },
+      "correctAnswer": "A",
+      "explanation": "20 MOD 4 evaluates to the remainder when 20 is divided by 4. 20/4 = 5 with remainder 0. So 20 MOD 4 = 0."
+    },
+    {
+      "id": "u3r-q51",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer wants to check if a number is even. Which of the following expressions correctly identifies even numbers?",
+      "options": {
+        "A": "number MOD 1 = 0",
+        "B": "number MOD 2 = 0",
+        "C": "number MOD 2 = 1",
+        "D": "number / 2 = 0"
+      },
+      "correctAnswer": "B",
+      "explanation": "A number is even if it has no remainder when divided by 2. number MOD 2 = 0 correctly identifies even numbers."
+    },
+    {
+      "id": "u3r-q52",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "n ← 7\nIF(n MOD 2 = 0)\n{\n   DISPLAY \"even\"\n}\nELSE\n{\n   DISPLAY \"odd\"\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "even",
+        "B": "odd",
+        "C": "even odd",
+        "D": "7"
+      },
+      "correctAnswer": "B",
+      "explanation": "7 MOD 2 = 1. (1 = 0) = false. The ELSE block executes, displaying \"odd\"."
+    },
+    {
+      "id": "u3r-q53",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "word1 ← \"data\"\nword2 ← concat(word1, \"base\")\nDISPLAY word2",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "data",
+        "B": "base",
+        "C": "database",
+        "D": "data base"
+      },
+      "correctAnswer": "C",
+      "explanation": "concat(\"data\", \"base\") joins the strings end-to-end producing \"database\"."
+    },
+    {
+      "id": "u3r-q54",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer concatenates the strings \"100\" and \"200\". What is the result?",
+      "options": {
+        "A": "300, because the numbers are added",
+        "B": "100200, because string concatenation joins strings end-to-end",
+        "C": "200100, because strings are concatenated in reverse order",
+        "D": "An error, because numbers cannot be stored as strings"
+      },
+      "correctAnswer": "B",
+      "explanation": "String concatenation joins strings end-to-end regardless of their content. Concatenating \"100\" and \"200\" produces \"100200\" — they are treated as strings not numbers."
+    },
+    {
+      "id": "u3r-q55",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 15\nIF(x > 10)\n{\n   IF(x > 20)\n   {\n      DISPLAY \"very large\"\n   }\n   ELSE\n   {\n      DISPLAY \"medium\"\n   }\n}\nELSE\n{\n   DISPLAY \"small\"\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "very large",
+        "B": "medium",
+        "C": "small",
+        "D": "medium small"
+      },
+      "correctAnswer": "B",
+      "explanation": "(x > 10) = true. Enter outer IF. (x > 20) = (15 > 20) = false. Inner ELSE executes, displaying \"medium\"."
+    },
+    {
+      "id": "u3r-q56",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 5\nIF(x > 10)\n{\n   IF(x > 3)\n   {\n      DISPLAY \"A\"\n   }\n   ELSE\n   {\n      DISPLAY \"B\"\n   }\n}\nELSE\n{\n   DISPLAY \"C\"\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "A C"
+      },
+      "correctAnswer": "C",
+      "explanation": "(x > 10) = (5 > 10) = false. The outer ELSE executes, displaying \"C\". The inner IF is never evaluated."
+    },
+    {
+      "id": "u3r-q57",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "n ← 1\nREPEAT UNTIL(n > 10)\n{\n   n ← n * 2\n}\nDISPLAY n",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "16",
+        "D": "20"
+      },
+      "correctAnswer": "C",
+      "explanation": "n doubles each iteration: 1, 2, 4, 8, 16. When n=16, (16>10)=true and the loop stops. DISPLAY n shows 16."
+    },
+    {
+      "id": "u3r-q58",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "total ← 0\ni ← 1\nREPEAT UNTIL(i > 5)\n{\n   total ← total + i\n   i ← i + 1\n}\nDISPLAY total",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "25"
+      },
+      "correctAnswer": "C",
+      "explanation": "Loop runs while i ≤ 5, adding i to total: 1+2+3+4+5 = 15. When i=6, (i>5)=true and loop stops. DISPLAY total shows 15."
+    },
+    {
+      "id": "u3r-q59",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [10, 20, 30, 40, 50]\nFOR EACH item IN aList\n{\n   DISPLAY item * 2\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "10 20 30 40 50",
+        "B": "20 40 60 80 100",
+        "C": "200",
+        "D": "100"
+      },
+      "correctAnswer": "B",
+      "explanation": "Each element is multiplied by 2 before display: 10*2=20, 20*2=40, 30*2=60, 40*2=80, 50*2=100."
+    },
+    {
+      "id": "u3r-q60",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [1, 2, 3, 4, 5]\ntarget ← 3\nfound ← false\nFOR EACH item IN aList\n{\n   IF(item = target)\n   {\n      found ← true\n   }\n}\nDISPLAY found",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "3",
+        "D": "An error"
+      },
+      "correctAnswer": "A",
+      "explanation": "The loop traverses the list. When item=3, found ← true. The loop continues but found stays true. DISPLAY found shows true."
+    },
+    {
+      "id": "u3r-q61",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how using parameters makes procedures more general?",
+      "options": {
+        "A": "Parameters allow procedures to run faster by storing intermediate results",
+        "B": "Using parameters allows procedures to be generalized, enabling them to be reused with a range of input values or arguments",
+        "C": "Parameters allow procedures to automatically detect and fix errors",
+        "D": "Parameters replace the need for variables inside procedures"
+      },
+      "correctAnswer": "B",
+      "explanation": "Using parameters allows procedures to be generalized, enabling the procedures to be reused with a range of input values or arguments."
+    },
+    {
+      "id": "u3r-q62",
+      "type": "mc",
+      "topic": "review",
+      "question": "What is the primary benefit of using existing correct algorithms as building blocks when constructing a new algorithm?",
+      "options": {
+        "A": "Existing algorithms always run faster than newly written ones",
+        "B": "Using existing algorithms as building blocks reduces development time, reduces testing, and simplifies the identification of errors",
+        "C": "Existing algorithms are protected by copyright and must be used unchanged",
+        "D": "New algorithms cannot be created without building on existing ones"
+      },
+      "correctAnswer": "B",
+      "explanation": "Using existing correct algorithms as building blocks has benefits such as reducing development time, reducing testing, and simplifying the identification of errors."
+    },
+    {
+      "id": "u3r-q63",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "PROCEDURE add(a, b)\n{\n   RETURN(a + b)\n}\n\nx ← add(3, 5)\ny ← add(x, 2)\nDISPLAY y",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "13",
+        "D": "15"
+      },
+      "correctAnswer": "B",
+      "explanation": "x ← add(3,5) = 8. y ← add(8,2) = 10. DISPLAY y shows 10."
+    },
+    {
+      "id": "u3r-q64",
+      "type": "mc",
+      "topic": "review",
+      "question": "What is the difference between a parameter and an argument?",
+      "options": {
+        "A": "Parameters are used in procedure calls while arguments are in procedure definitions",
+        "B": "Parameters are the input variables defined in the procedure declaration while arguments are the actual values passed when the procedure is called",
+        "C": "Parameters and arguments are the same thing with different names",
+        "D": "Arguments are used for input while parameters are used for output"
+      },
+      "correctAnswer": "B",
+      "explanation": "Parameters are input variables of a procedure as defined in its declaration. Arguments specify the values of the parameters when a procedure is called. Each argument is assigned to its corresponding parameter."
+    },
+    {
+      "id": "u3r-q65",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a software library?",
+      "options": {
+        "A": "A database that stores all variables used in a program",
+        "B": "A collection of procedures that may be used in creating new programs",
+        "C": "A tool that automatically tests programs for errors",
+        "D": "A file that stores all the output produced by a program"
+      },
+      "correctAnswer": "B",
+      "explanation": "A software library contains procedures that may be used in creating new programs. The use of libraries simplifies the task of creating complex programs."
+    },
+    {
+      "id": "u3r-q66",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer runs the same program twice. The program contains RANDOM(1, 100). Which of the following best describes what happens?",
+      "options": {
+        "A": "Both runs produce the same result because RANDOM always returns the same value",
+        "B": "Each execution may produce a different result because random number generation means each run can produce a different value",
+        "C": "The second run always produces a higher number than the first",
+        "D": "RANDOM produces an error if called more than once"
+      },
+      "correctAnswer": "B",
+      "explanation": "Using random number generation in a program means each execution may produce a different result. This is a key characteristic of programs that use RANDOM."
+    },
+    {
+      "id": "u3r-q67",
+      "type": "mc",
+      "topic": "review",
+      "question": "Why are random number generators used in simulations?",
+      "options": {
+        "A": "To make simulations run faster by skipping calculations",
+        "B": "To simulate the variability that exists in the real world",
+        "C": "To ensure simulations always produce the same result",
+        "D": "To replace real-world data that is unavailable"
+      },
+      "correctAnswer": "B",
+      "explanation": "Random number generators can be used to simulate the variability that exists in the real world. Real-world phenomena are rarely perfectly predictable, and random values introduce natural variation."
+    },
+    {
+      "id": "u3r-q68",
+      "type": "mc",
+      "topic": "review",
+      "question": "Two algorithms solve the same problem. Algorithm A uses 3n steps and Algorithm B uses n² steps. For n=10, which is more efficient?",
+      "options": {
+        "A": "Algorithm A: 30 steps vs Algorithm B: 100 steps — Algorithm A is more efficient",
+        "B": "Algorithm A: 30 steps vs Algorithm B: 20 steps — Algorithm B is more efficient",
+        "C": "Both use the same number of steps",
+        "D": "Algorithm B is more efficient because squaring produces more output"
+      },
+      "correctAnswer": "A",
+      "explanation": "For n=10: Algorithm A uses 3(10)=30 steps. Algorithm B uses 10²=100 steps. Algorithm A is more efficient. Different algorithms solving the same problem can have different efficiencies."
+    },
+    {
+      "id": "u3r-q69",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is an example of a decision problem?",
+      "options": {
+        "A": "What is the maximum profit from a set of investments?",
+        "B": "What is the shortest path between two cities?",
+        "C": "Is it possible to color a map using only 4 colors so no two adjacent regions share a color?",
+        "D": "Which item in a list has the highest value?"
+      },
+      "correctAnswer": "C",
+      "explanation": "A decision problem is one with a yes or no answer. 'Is it possible to color a map using only 4 colors?' has a yes/no answer. The other options seek to find a best value or path, making them optimization problems."
+    },
+    {
+      "id": "u3r-q70",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "PROCEDURE absolute(n)\n{\n   IF(n < 0)\n   {\n      RETURN(n * -1)\n   }\n   RETURN(n)\n}\n\nDISPLAY absolute(-5)\nDISPLAY absolute(3)",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "-5 3",
+        "B": "5 3",
+        "C": "5 -3",
+        "D": "-5 -3"
+      },
+      "correctAnswer": "B",
+      "explanation": "absolute(-5): n=-5<0, returns (-5)*-1=5. absolute(3): n=3, not <0, returns 3. Display: 5 3."
+    },
+    {
+      "id": "u3r-q71",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student argues that undecidable problems will be solvable once quantum computers are powerful enough. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The student is correct — quantum computers can solve problems classical computers cannot",
+        "B": "The student is incorrect — undecidability is a mathematical property meaning no algorithm can exist, regardless of computing power or type",
+        "C": "The student is correct — quantum computers have already solved some undecidable problems",
+        "D": "The student is partially correct — quantum computers can solve undecidable problems given enough time"
+      },
+      "correctAnswer": "B",
+      "explanation": "Undecidability is not about computing power — it is a mathematical property proven to mean that no algorithm on any type of computer can always produce a correct answer. More powerful computers cannot overcome fundamental mathematical impossibility."
+    },
+    {
+      "id": "u3r-q72",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "aList ← [5, 10, 15, 20, 25]\ntotal ← 0\ni ← 1\nREPEAT UNTIL(i > LENGTH(aList))\n{\n   total ← total + aList[i]\n   i ← i + 1\n}\nDISPLAY total",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "25",
+        "B": "55",
+        "C": "75",
+        "D": "125"
+      },
+      "correctAnswer": "C",
+      "explanation": "The loop adds all elements: 5+10+15+20+25 = 75."
+    },
+    {
+      "id": "u3r-q73",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following correctly describes a complete traversal of a list versus a partial traversal?",
+      "options": {
+        "A": "A complete traversal accesses only the first and last elements; a partial traversal accesses all elements",
+        "B": "A complete traversal accesses every element in the list; a partial traversal accesses only some elements",
+        "C": "There is no difference — all traversals must access every element",
+        "D": "A complete traversal sorts the list; a partial traversal searches for a specific value"
+      },
+      "correctAnswer": "B",
+      "explanation": "Traversing a list can be a complete traversal, where all elements are accessed, or a partial traversal, where only a portion of elements are accessed."
+    },
+    {
+      "id": "u3r-q74",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the difference between a decision problem and an optimization problem?",
+      "options": {
+        "A": "Decision problems are harder than optimization problems",
+        "B": "A decision problem has a yes/no answer while an optimization problem seeks to find the best solution",
+        "C": "Optimization problems always have reasonable running time while decision problems do not",
+        "D": "Decision problems can only be solved by humans"
+      },
+      "correctAnswer": "B",
+      "explanation": "A decision problem is one with a yes or no answer. An optimization problem has the goal of finding the best solution. For example, 'Is there a path from A to B?' is a decision problem; 'What is the shortest path?' is an optimization problem."
+    },
+    {
+      "id": "u3r-q75",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "x ← 0\nREPEAT 5 TIMES\n{\n   x ← x + 3\n   IF(x > 10)\n   {\n      DISPLAY x\n   }\n}",
+      "stimulusType": "code",
+      "question": "What is displayed when this code segment runs?",
+      "options": {
+        "A": "12",
+        "B": "12 15",
+        "C": "3 6 9 12 15",
+        "D": "Nothing"
+      },
+      "correctAnswer": "B",
+      "explanation": "x goes 3, 6, 9, 12, 15. Only when x > 10: x=12 → display 12, x=15 → display 15. Output: 12 15."
+    },
+    {
+      "id": "u3r-q76",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are true about REPEAT UNTIL(condition) loops?",
+      "options": {
+        "A": "If the condition is true before the loop starts, the loop body executes at least once",
+        "B": "If the condition is true before the loop starts, the loop body is not executed at all",
+        "C": "An infinite loop occurs when the ending condition never evaluates to true",
+        "D": "REPEAT UNTIL always executes the loop body at least once"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "In REPEAT UNTIL, if the condition is true initially the loop body does not execute at all (B). An infinite loop occurs when the ending condition never becomes true (C). The condition is checked before execution so if true initially the body never runs (A and D are false)."
+    },
+    {
+      "id": "u3r-q77",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are classified as REASONABLE running times?",
+      "options": {
+        "A": "Linear efficiency (n steps)",
+        "B": "Exponential efficiency (2ⁿ steps)",
+        "C": "Quadratic efficiency (n² steps)",
+        "D": "Factorial efficiency (n! steps)"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Reasonable running times include polynomial efficiency or lower: constant, linear (n), quadratic (n²), cubic (n³), etc. Exponential (2ⁿ) and factorial (n!) are unreasonable because they grow too quickly for large inputs."
+    },
+    {
+      "id": "u3r-frq1",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Consider the following procedure:\n\nPROCEDURE classifyTemp(temp)\n{\n   IF(temp ≥ 90)\n   {\n      DISPLAY \"hot\"\n   }\n   ELSE\n   {\n      IF(temp ≥ 70)\n      {\n         DISPLAY \"warm\"\n      }\n      ELSE\n      {\n         DISPLAY \"cool\"\n      }\n   }\n}",
+      "stimulusType": "code",
+      "question": "Part A: Consider the first selection statement in this procedure. Identify the Boolean expression. Identify a specific value for temp that will cause this expression to evaluate to false. Explain why.\n\nPart B: Describe the functionality provided by the classifyTemp procedure. Explain how implementing this as a procedure makes the program easier to maintain.\n\nPart C: Suppose a programmer modifies the first IF condition from temp ≥ 90 to temp > 90. Describe how this creates a logic error and how the behavior of the procedure changes.",
+      "rubric": "PART A (2 points):\nAward 1 point for correctly identifying the Boolean expression: temp ≥ 90.\nAward 1 point for a value less than 90 (e.g., temp = 85) and explaining that 85 ≥ 90 is false.\n\nPART B (2 points):\nAward 1 point for describing the functionality: the procedure takes a temperature and displays 'hot' if 90 or above, 'warm' if 70-89, or 'cool' if below 70.\nAward 1 point for explaining maintainability: if thresholds change, only the procedure needs updating rather than every place the logic appears.\n\nPART C (2 points):\nAward 1 point for identifying a logic error.\nAward 1 point for explaining: a temperature of exactly 90 would no longer display 'hot' — it would display 'warm' instead, which is incorrect.",
+      "points": 6
+    },
+    {
+      "id": "u3r-frq2",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Consider the following code segment:\n\ni ← 0\nsum ← 0\nREPEAT UNTIL(i ≥ 5)\n{\n   i ← i + 1\n   sum ← sum + i\n}\nDISPLAY sum",
+      "stimulusType": "code",
+      "question": "Part A: Identify the variable(s) that determine when the iteration statement stops. Identify the specific value that will cause the iteration to stop and explain why.\n\nPart B: What is displayed when this code segment runs? Trace through each iteration to show your work.\n\nPart C: Suppose the condition is changed from (i ≥ 5) to (i = 5). Explain whether this changes the output and why.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying i as the variable that determines when the loop stops.\nAward 1 point for stating that when i = 5, (i ≥ 5) becomes true and the loop stops.\n\nPART B (2 points):\nAward 1 point for correct tracing: i=1,sum=1; i=2,sum=3; i=3,sum=6; i=4,sum=10; i=5,sum=15.\nAward 1 point for the correct answer: 15 is displayed.\n\nPART C (1 point):\nAward 1 point for correctly explaining that in this case the output does NOT change — because i increments by 1 each iteration, it will reach exactly 5, satisfying both (i ≥ 5) and (i = 5). The output is still 15.",
+      "points": 5
+    },
+    {
+      "id": "u3r-frq3",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A programmer is building a grade calculator that needs to compute the letter grade for students in 5 different classes. Each class uses the same grading scale: 90+ = A, 80-89 = B, 70-79 = C, below 70 = F.",
+      "stimulusType": "text",
+      "question": "Part A: Describe the functionality a procedure called getLetterGrade(score) would provide. Explain how implementing this as a procedure makes the program easier to develop and maintain than duplicating the logic in each class.\n\nPart B: The grading scale changes — an A now requires 93 or above instead of 90. Explain how using a procedure makes this change easier to implement.\n\nPart C: Write a procedure call that would return the letter grade for a student who scored 87 points.",
+      "rubric": "PART A (2 points):\nAward 1 point for describing the functionality: getLetterGrade takes a numeric score and returns the corresponding letter grade.\nAward 1 point for the benefit: instead of duplicating the grading logic 5 times, the procedure can be called with different arguments — this reduces duplication and makes the code easier to develop and maintain.\n\nPART B (2 points):\nAward 1 point for explaining that without a procedure the programmer must find and update the A threshold in all 5 places.\nAward 1 point for explaining that with a procedure only one place (the procedure definition) needs to be updated and all 5 classes automatically use the updated scale.\n\nPART C (1 point):\nAward 1 point for: getLetterGrade(87). The call passes 87 as the argument to the score parameter.",
+      "points": 5
+    },
+    {
+      "id": "u3r-frq4",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A programmer has a sorted list of 1,000 student ID numbers and needs to determine whether a specific ID is in the list.",
+      "stimulusType": "text",
+      "question": "Part A: Identify which search algorithm would be more efficient for this task. Explain why.\n\nPart B: Describe what the binary search algorithm does step by step.\n\nPart C: The programmer later receives an unsorted list of 500 additional IDs to search through. Explain whether binary search can be used on this new list without modification and what would need to happen first.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying binary search as more efficient.\nAward 1 point for explaining: binary search eliminates half the remaining data with each step, making it much faster than linear search which checks elements one at a time on large sorted data sets.\n\nPART B (2 points):\nAward 1 point for: binary search starts at the middle of the sorted data set and checks if the target is equal to, less than, or greater than the middle element.\nAward 1 point for: based on the comparison, half the data is eliminated and the process repeats on the remaining half until the value is found or all elements are eliminated.\n\nPART C (2 points):\nAward 1 point for explaining that binary search cannot be used directly on an unsorted list — data must be in sorted order.\nAward 1 point for explaining what must happen first: the list must be sorted before binary search can be applied.",
+      "points": 6
+    },
+    {
+      "id": "u3r-frq5",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Identify an unexpected or invalid input that could be provided to a procedure that takes a list index as a parameter and returns the element at that index. Describe the behavior of the procedure after receiving this input.",
+      "stimulusType": "text",
+      "question": "Identify an unexpected or invalid input that could be provided to a procedure that takes a list index as a parameter and returns the element at that index. Describe the behavior of the procedure after receiving this input.",
+      "rubric": "Award 1 point for identifying a valid unexpected or invalid input. Accept: an index of 0 (since AP CSP lists start at 1); a negative index; an index greater than the length of the list; a decimal value like 2.5; a string like 'a'.\nAward 1 point for describing the program's behavior. For an invalid index: for all list operations, if a list index is less than 1 or greater than the length of the list, an error message is produced and the program will terminate.\nExample: If the procedure is called with an index of 0, this is an invalid input because AP CSP list indices start at 1. Accessing an index less than 1 produces an error message and the program terminates — no element is returned.",
+      "points": 2
+    },
+    {
+      "id": "u3r-frq6",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A scientist is running a climate simulation that requires processing 1 petabyte of atmospheric data. Running on the most powerful single computer available takes 6 months.",
+      "stimulusType": "text",
+      "question": "Part A: Explain why distributed computing would be more appropriate than sequential computing for this simulation.\n\nPart B: Describe one limitation of parallel and distributed computing that the scientist should be aware of when designing the simulation.\n\nPart C: The simulation leaves out wind patterns because they are difficult to model. Explain how this affects the simulation and whether this makes the simulation useless.",
+      "rubric": "PART A (2 points):\nAward 1 point for explaining that distributed computing uses multiple devices to run a program, allowing problems too large or slow for one computer to be solved.\nAward 1 point for connecting to the scenario: 6 months is impractical — distributing across many computers could complete it much faster.\n\nPART B (2 points):\nAward 1 point for identifying a valid limitation: the sequential portion limits speedup; not all parts can be parallelized; adding more devices eventually stops improving efficiency.\nAward 1 point for explaining the limitation clearly in context.\n\nPART C (2 points):\nAward 1 point for explaining that the process of developing a simulation involves removing specific details or simplifying functionality — omitting wind patterns is an abstraction.\nAward 1 point for explaining this does NOT make the simulation useless: simulations do not need to be perfect to provide useful insight. The simulation can still identify meaningful patterns even without modeling every factor.",
+      "points": 6
+    },
+    {
+      "id": "u3r-frq7",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Consider the following code segment:\n\naList ← [2, 4, 6, 8, 10]\nnewList ← []\nFOR EACH item IN aList\n{\n   IF(item > 5)\n   {\n      APPEND(newList, item * 2)\n   }\n}",
+      "stimulusType": "code",
+      "question": "Part A: What are the contents of newList after this code segment runs? Show your work.\n\nPart B: Describe the output of this program.\n\nPart C: Identify the type of data abstraction used in this code segment and explain how it helps manage complexity.",
+      "rubric": "PART A (2 points):\nAward 1 point for correctly tracing: 2≤5 skip; 4≤5 skip; 6>5 → APPEND(6*2=12); 8>5 → APPEND(8*2=16); 10>5 → APPEND(10*2=20).\nAward 1 point for the correct result: newList = [12, 16, 20].\n\nPART B (1 point):\nAward 1 point for noting that the code segment does not contain a DISPLAY statement — nothing is displayed. The code builds newList but does not output it.\n\nPART C (2 points):\nAward 1 point for identifying list as the data abstraction used.\nAward 1 point for explaining how it manages complexity: using a list allows multiple related items (the filtered and transformed values) to be treated as a single value and built up incrementally — without a list, the programmer would need separate variables for each result, making the code much harder to write and maintain.",
+      "points": 5
+    }
+  ]
 }

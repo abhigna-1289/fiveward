@@ -1,4 +1,991 @@
 {
   "unitNumber": 5,
-  "questions": []
+  "questions": [
+    {
+      "id": "u5r-q1",
+      "type": "mc",
+      "topic": "review",
+      "question": "A social media platform was originally designed for college students to connect with classmates. It is now used by billions of people for news, business, and political campaigns. Which of the following best describes this situation?",
+      "options": {
+        "A": "The platform has a logic error because it is being used incorrectly",
+        "B": "Computing innovations can be used in ways that their creators had not originally intended",
+        "C": "The platform's creators deliberately planned for all these use cases",
+        "D": "The platform should be redesigned to prevent unintended uses"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can be used in ways that their creators had not originally intended. Rapid sharing with large numbers of users can result in significant impacts beyond the intended purpose or control of the programmer."
+    },
+    {
+      "id": "u5r-q2",
+      "type": "mc",
+      "topic": "review",
+      "question": "A single effect of a computing innovation can be viewed as both beneficial and harmful. Which of the following best illustrates this?",
+      "options": {
+        "A": "A word processor that helps some users write faster but not others",
+        "B": "GPS navigation that helps drivers find routes efficiently but also enables constant location tracking that raises privacy concerns",
+        "C": "A program with both a free version and a paid version",
+        "D": "A computing innovation that works on some devices but not others"
+      },
+      "correctAnswer": "B",
+      "explanation": "A single effect can be viewed as both beneficial and harmful by different people or even the same person. GPS location tracking helps navigation (beneficial) but also enables surveillance (harmful)."
+    },
+    {
+      "id": "u5r-q3",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the responsibility of programmers regarding unintended uses of their computing innovations?",
+      "options": {
+        "A": "Programmers are fully responsible for all unintended uses of their programs",
+        "B": "Programmers are not responsible for any unintended uses since they cannot predict them",
+        "C": "Responsible programmers try to consider unintended uses and potential harmful effects, though it is not possible to consider all possible uses",
+        "D": "Programmers must submit programs to government review before release to prevent misuse"
+      },
+      "correctAnswer": "C",
+      "explanation": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects. However, it is not possible for a programmer to consider all the ways a computing innovation can be used."
+    },
+    {
+      "id": "u5r-q4",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A company develops a targeted advertising algorithm to help businesses show relevant ads. After deployment, the algorithm is found to show higher-paying job ads primarily to men and to charge higher prices to users in lower-income zip codes.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes this situation?",
+      "options": {
+        "A": "The algorithm is working correctly because it is maximizing profit",
+        "B": "Computing innovations can be used in ways that have harmful impacts on society even when the original purpose was beneficial",
+        "C": "This is not a computing concern because advertising decisions are a business matter",
+        "D": "The algorithm has a syntax error that must be corrected"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can be used in ways their creators did not intend. Targeted advertising was designed to help businesses but can be misused at individual and aggregate levels causing harmful societal impact."
+    },
+    {
+      "id": "u5r-q5",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A company develops a targeted advertising algorithm to help businesses show relevant ads. After deployment, the algorithm is found to show higher-paying job ads primarily to men and to charge higher prices to users in lower-income zip codes.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes what responsible programmers should do to address situations like this?",
+      "options": {
+        "A": "Wait for users to report problems before taking any action",
+        "B": "Try to consider the unintended ways their computing innovations can be used and the potential harmful effects before and after deployment",
+        "C": "Remove all personalization features to prevent any potential misuse",
+        "D": "Transfer responsibility to the businesses using the algorithm"
+      },
+      "correctAnswer": "B",
+      "explanation": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects of these new uses."
+    },
+    {
+      "id": "u5r-q6",
+      "type": "mc",
+      "topic": "review",
+      "question": "A navigation app was designed to help drivers find the fastest route. Residents of quiet neighborhoods discovered the app was routing heavy traffic through their streets, increasing noise and danger. Which of the following best describes this?",
+      "options": {
+        "A": "The navigation app has a logic error",
+        "B": "The app is working exactly as intended for all users",
+        "C": "The app has an unintended harmful effect on neighborhood residents even though it achieves its intended purpose for drivers",
+        "D": "The residents should not complain because they benefit from the same app when driving"
+      },
+      "correctAnswer": "C",
+      "explanation": "Not every effect of a computing innovation is anticipated in advance. A single effect can be viewed as both beneficial (for drivers) and harmful (for residents) by different people."
+    },
+    {
+      "id": "u5r-q7",
+      "type": "mc",
+      "topic": "review",
+      "question": "Machine learning and data mining have been used to diagnose diseases more accurately. The same technology has also been used to discriminate against certain groups in loan approvals. Which of the following best describes this?",
+      "options": {
+        "A": "Machine learning should be banned because its harms outweigh its benefits",
+        "B": "A single computing innovation can have both beneficial and harmful effects depending on how it is used",
+        "C": "The beneficial and harmful applications are completely separate innovations",
+        "D": "The harmful use is intentional and the beneficial use is unintentional"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can be used in ways creators did not originally intend, including both beneficial (medical diagnosis) and harmful (discrimination) applications. The same technology can serve multiple purposes with varying impacts."
+    },
+    {
+      "id": "u5r-q8",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the digital divide?",
+      "options": {
+        "A": "The gap in technical skill between professional programmers and amateur coders",
+        "B": "The difference in processing speed between older and newer computing devices",
+        "C": "Differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics",
+        "D": "The separation between analog and digital technologies"
+      },
+      "correctAnswer": "C",
+      "explanation": "The digital divide refers to differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics."
+    },
+    {
+      "id": "u5r-q9",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following issues does the digital divide raise?",
+      "options": {
+        "A": "Technical issues about network bandwidth and latency",
+        "B": "Issues of equity, access, and influence both globally and locally",
+        "C": "Legal issues about software licensing",
+        "D": "Ethical issues about data encryption standards"
+      },
+      "correctAnswer": "B",
+      "explanation": "The digital divide raises issues of equity, access, and influence, both globally and locally. These are fundamental concerns about fairness and equal opportunity in a world increasingly dependent on computing."
+    },
+    {
+      "id": "u5r-q10",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student in a rural area cannot access high-speed Internet while students in a nearby city can stream videos and complete online coursework easily. Which concept does this illustrate?",
+      "options": {
+        "A": "Computing bias — the Internet was designed to favor urban users",
+        "B": "The digital divide — differing access based on geographic characteristics",
+        "C": "Intellectual property — rural users do not have rights to the same content",
+        "D": "Redundancy — the rural area lacks backup network connections"
+      },
+      "correctAnswer": "B",
+      "explanation": "This illustrates the digital divide — differing access to computing devices and the Internet based on geographic characteristics. Rural vs. urban access disparities are a common example of the geographic dimension of the digital divide."
+    },
+    {
+      "id": "u5r-q11",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following entities can affect the digital divide?",
+      "options": {
+        "A": "Only technology companies that manufacture devices",
+        "B": "Only government agencies responsible for infrastructure",
+        "C": "The digital divide is affected by the actions of individuals, organizations, and governments",
+        "D": "Only international organizations like the United Nations"
+      },
+      "correctAnswer": "C",
+      "explanation": "The digital divide is affected by the actions of individuals, organizations, and governments. All three levels of society can work to reduce or inadvertently widen the digital divide."
+    },
+    {
+      "id": "u5r-q12",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes computing bias?",
+      "options": {
+        "A": "A preference among programmers for certain programming languages",
+        "B": "Computing innovations can reflect existing human biases because of biases written into algorithms or biases in the data used",
+        "C": "The tendency of computers to favor certain types of calculations",
+        "D": "A design flaw that causes programs to run incorrectly on certain hardware"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases because of biases written into the algorithms or biases in the data used by the innovation."
+    },
+    {
+      "id": "u5r-q13",
+      "type": "mc",
+      "topic": "review",
+      "question": "At which levels of software development can bias be embedded?",
+      "options": {
+        "A": "Only in the user interface design phase",
+        "B": "Only in the data collection phase",
+        "C": "Only in the algorithm design phase",
+        "D": "At all levels of software development"
+      },
+      "correctAnswer": "D",
+      "explanation": "Biases can be embedded at all levels of software development — from how requirements are gathered, to what data is collected, to how algorithms are designed, to how outputs are presented."
+    },
+    {
+      "id": "u5r-q14",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A facial recognition system is trained on a dataset that contains mostly images of light-skinned faces. The system performs poorly on darker-skinned faces.",
+      "stimulusType": "text",
+      "question": "Which of the following best describes the cause of this problem?",
+      "options": {
+        "A": "The system has a syntax error that causes it to process some images incorrectly",
+        "B": "The system reflects bias in the data used — the training data did not adequately represent all skin tones",
+        "C": "Facial recognition technology is inherently unable to process darker skin tones",
+        "D": "The system has a logic error in its image processing algorithm"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases because of biases in the data used by the innovation. A training data set that underrepresents certain groups will produce a system that performs worse for those groups."
+    },
+    {
+      "id": "u5r-q15",
+      "type": "mc",
+      "topic": "review",
+      "question": "What action should programmers take regarding bias in computing innovations?",
+      "options": {
+        "A": "Accept that some bias is inevitable and cannot be reduced",
+        "B": "Programmers should take action to reduce bias in algorithms as a way of combating existing human biases",
+        "C": "Remove all personalization from algorithms to guarantee no bias",
+        "D": "Let users report bias after deployment and fix it then"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programmers should take action to reduce bias in algorithms used for computing innovations as a way of combating existing human biases. This is an ethical responsibility of computing professionals."
+    },
+    {
+      "id": "u5r-q16",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes crowdsourcing?",
+      "options": {
+        "A": "A company hiring a small team of experts to solve a problem",
+        "B": "The practice of obtaining input or information from a large number of people via the Internet",
+        "C": "A method of storing data across multiple servers for reliability",
+        "D": "A technique for automating data collection using software bots"
+      },
+      "correctAnswer": "B",
+      "explanation": "Crowdsourcing is the practice of obtaining input or information from a large number of people via the Internet. It enables new models for collaboration at scale."
+    },
+    {
+      "id": "u5r-q17",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes citizen science?",
+      "options": {
+        "A": "Scientific research conducted exclusively by professional scientists",
+        "B": "Scientific research conducted in whole or part by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices",
+        "C": "Government-funded research programs that provide computers to citizens",
+        "D": "Educational programs that teach science using computing devices"
+      },
+      "correctAnswer": "B",
+      "explanation": "Citizen science is scientific research conducted in whole or part by distributed individuals, many of whom may not be scientists, who contribute relevant data to research using their own computing devices."
+    },
+    {
+      "id": "u5r-q18",
+      "type": "mc",
+      "topic": "review",
+      "question": "A website allows thousands of amateur birdwatchers to log their bird sightings online. Researchers use this data to track migration patterns. Which of the following best describes this?",
+      "options": {
+        "A": "Crowdsourcing that benefits from distributed contributions of many individuals",
+        "B": "A computing bias issue because non-scientists may report inaccurate data",
+        "C": "An example of the digital divide because only people with devices can participate",
+        "D": "An intellectual property concern because the data belongs to the birdwatchers"
+      },
+      "correctAnswer": "A",
+      "explanation": "This is an example of citizen science — scientific research conducted by distributed individuals using their own computing devices. Science has been affected by using distributed and citizen science to solve scientific problems."
+    },
+    {
+      "id": "u5r-q19",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes intellectual property in the context of computing?",
+      "options": {
+        "A": "The physical hardware owned by a technology company",
+        "B": "Material created on a computer that is the intellectual property of the creator or an organization",
+        "C": "Data collected by a company about its users",
+        "D": "The source code of open source software"
+      },
+      "correctAnswer": "B",
+      "explanation": "Material created on a computer is the intellectual property of the creator or an organization. The ease of access and distribution of digitized information raises intellectual property concerns regarding ownership, value, and use."
+    },
+    {
+      "id": "u5r-q20",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes Creative Commons?",
+      "options": {
+        "A": "A type of software that is free to download but cannot be modified",
+        "B": "A public copyright license that enables the free distribution of an otherwise copyrighted work, used when creators want to give others the right to share, use, and build upon their work",
+        "C": "A government agency that enforces copyright law",
+        "D": "A website where users can create and share digital art"
+      },
+      "correctAnswer": "B",
+      "explanation": "Creative Commons is a public copyright license that enables the free distribution of an otherwise copyrighted work. It is used when content creators want to give others the right to share, use, and build upon the work they have created."
+    },
+    {
+      "id": "u5r-q21",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes open source software?",
+      "options": {
+        "A": "Software that can only be used by researchers at universities",
+        "B": "Software that is available for purchase but includes the source code",
+        "C": "Programs that are made freely available and may be redistributed and modified",
+        "D": "Software that requires a Creative Commons license to use"
+      },
+      "correctAnswer": "C",
+      "explanation": "Open source refers to programs that are made freely available and may be redistributed and modified."
+    },
+    {
+      "id": "u5r-q22",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes open access?",
+      "options": {
+        "A": "Software that is free to download but not to modify",
+        "B": "Online research output that is free of any and all restrictions on access and free of many restrictions on use such as copyright or license restrictions",
+        "C": "A type of Creative Commons license for commercial use",
+        "D": "Government websites that must be publicly accessible"
+      },
+      "correctAnswer": "B",
+      "explanation": "Open access refers to online research output that is free of any and all restrictions on access and free of many restrictions on use, such as copyright or license restrictions."
+    },
+    {
+      "id": "u5r-q23",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is an example of personally identifiable information (PII)?",
+      "options": {
+        "A": "The title of a publicly available research paper",
+        "B": "The population of a country according to a census",
+        "C": "A person's Social Security number and phone number",
+        "D": "The average temperature of a city in summer"
+      },
+      "correctAnswer": "C",
+      "explanation": "Personally identifiable information (PII) is information about an individual that identifies, links, relates, or describes them. Examples include Social Security numbers, phone numbers, medical information, and biometric data."
+    },
+    {
+      "id": "u5r-q24",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes multifactor authentication?",
+      "options": {
+        "A": "Using the same password across multiple accounts",
+        "B": "A method where a user must present evidence from at least two of three categories — knowledge, possession, and inherence — to gain access",
+        "C": "Having a backup password in case the primary is forgotten",
+        "D": "Using a very long password with special characters"
+      },
+      "correctAnswer": "B",
+      "explanation": "Multifactor authentication is a method of computer access control in which a user is only granted access after successfully presenting several separate pieces of evidence in at least two categories: knowledge (something they know), possession (something they have), and inherence (something they are)."
+    },
+    {
+      "id": "u5r-q25",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes phishing?",
+      "options": {
+        "A": "A technique that scans a computer for malware",
+        "B": "A technique that attempts to trick a user into providing personal information that can then be used to access sensitive online resources",
+        "C": "A type of malware that encrypts files and demands payment",
+        "D": "A method of intercepting data sent over public networks"
+      },
+      "correctAnswer": "B",
+      "explanation": "Phishing is a technique that attempts to trick a user into providing personal information. That personal information can then be used to access sensitive online resources such as bank accounts and emails."
+    },
+    {
+      "id": "u5r-q26",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes keylogging?",
+      "options": {
+        "A": "A security feature that records who unlocks a computer",
+        "B": "The use of a program to record every keystroke made by a user to gain fraudulent access to passwords and other confidential information",
+        "C": "A technique for encrypting keyboard input",
+        "D": "A method of testing keyboard hardware for defects"
+      },
+      "correctAnswer": "B",
+      "explanation": "Keylogging is the use of a program to record every keystroke made by a computer user in order to gain fraudulent access to passwords and other confidential information."
+    },
+    {
+      "id": "u5r-q27",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a rogue access point?",
+      "options": {
+        "A": "A legitimate Wi-Fi network with slow connection speeds",
+        "B": "A wireless access point that gives unauthorized access to secure networks, allowing data sent over it to be intercepted, analyzed, and modified",
+        "C": "A network router that is not configured correctly",
+        "D": "An access point that requires a password to connect"
+      },
+      "correctAnswer": "B",
+      "explanation": "A rogue access point is a wireless access point that gives unauthorized access to secure networks. Data sent over public networks can be intercepted, analyzed, and modified through a rogue access point."
+    },
+    {
+      "id": "u5r-q28",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes symmetric key encryption?",
+      "options": {
+        "A": "Encryption that uses one key for encryption and a different key for decryption",
+        "B": "Encryption that involves one key for both encryption and decryption",
+        "C": "Encryption that does not require any keys",
+        "D": "Encryption that uses the receiver's public key for both encryption and decryption"
+      },
+      "correctAnswer": "B",
+      "explanation": "Symmetric key encryption involves one key for both encryption and decryption. Both the sender and receiver must have the same key to communicate securely."
+    },
+    {
+      "id": "u5r-q29",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes public key encryption?",
+      "options": {
+        "A": "A system where the public key is used for both encryption and decryption",
+        "B": "A system that pairs a public key for encryption and a private key for decryption — the sender uses the receiver's public key to encrypt but the receiver's private key is required to decrypt",
+        "C": "A system where both sender and receiver use the same key",
+        "D": "A system where the private key is shared publicly for verification"
+      },
+      "correctAnswer": "B",
+      "explanation": "Public key encryption pairs a public key for encryption and a private key for decryption. The sender does not need the receiver's private key to encrypt, but the receiver's private key is required to decrypt."
+    },
+    {
+      "id": "u5r-q30",
+      "type": "mc",
+      "topic": "review",
+      "question": "A user receives an email from what appears to be their bank asking them to click a link and confirm their account details. The email is from an attacker. Which of the following best describes this attack?",
+      "options": {
+        "A": "Keylogging — the attacker is recording the user's keystrokes",
+        "B": "Phishing — the attacker is attempting to trick the user into providing personal information",
+        "C": "A rogue access point — the attacker is intercepting Internet traffic",
+        "D": "Malware — the email contains software that will damage the user's computer"
+      },
+      "correctAnswer": "B",
+      "explanation": "Phishing is a technique that attempts to trick a user into providing personal information. Emails disguised as legitimate bank communications to steal login credentials are a common form of phishing."
+    },
+    {
+      "id": "u5r-q31",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a computer virus?",
+      "options": {
+        "A": "A program that protects a computer from unauthorized access",
+        "B": "A malicious program that can copy itself and gain access to a computer in an unauthorized way, often attaching to legitimate programs",
+        "C": "Software that slows down a computer due to excessive resource usage",
+        "D": "A hardware defect that causes a computer to malfunction"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computer virus is a malicious program that can copy itself and gain access to a computer in an unauthorized way. Computer viruses often attach themselves to legitimate programs and start running independently."
+    },
+    {
+      "id": "u5r-q32",
+      "type": "mc",
+      "topic": "review",
+      "question": "Why are regular software updates important for security?",
+      "options": {
+        "A": "Updates add new features that make software more enjoyable",
+        "B": "All real-world systems have errors or design flaws that can be exploited — regular updates help fix these errors before they can be used to compromise the system",
+        "C": "Updates reset the software to its original settings removing any malware",
+        "D": "Updates are only important for commercial software not personal use"
+      },
+      "correctAnswer": "B",
+      "explanation": "All real-world systems have errors or design flaws that can be exploited to compromise them. Regular software updates help fix errors that could compromise a computing system."
+    },
+    {
+      "id": "u5r-q33",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how programs can collect location data?",
+      "options": {
+        "A": "Programs can only collect location data if the user manually enters their address",
+        "B": "Programs can collect location data and record where a user has been, how they got there, and how long they were at a given location",
+        "C": "Location data can only be collected by government agencies",
+        "D": "Location collection requires specialized hardware not found in standard devices"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programs can collect your location and record where you have been, how they got there, and how long you were at a given location. Devices, websites, and networks can all collect information about a user's location."
+    },
+    {
+      "id": "u5r-q34",
+      "type": "mc",
+      "topic": "review",
+      "question": "A user searches for flights to Paris then notices ads for Paris hotels appearing on unrelated websites. Which of the following best explains this?",
+      "options": {
+        "A": "This is a coincidence — advertisers cannot see search history",
+        "B": "Disparate personal data such as search history can be aggregated to create knowledge about an individual and used for targeted marketing",
+        "C": "The user's location data caused them to see travel ads",
+        "D": "The hotel websites hacked the user's computer to see their search history"
+      },
+      "correctAnswer": "B",
+      "explanation": "Disparate personal data such as geolocation, cookies, and browsing history can be aggregated to create knowledge about an individual. Search engines use search history for targeted marketing."
+    },
+    {
+      "id": "u5r-q35",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how a strong password should be constructed?",
+      "options": {
+        "A": "A strong password should be as short as possible to be easy to type",
+        "B": "A strong password is something easy for the user to remember but difficult for someone else to guess based on knowledge of that user",
+        "C": "A strong password should be the same across all accounts for consistency",
+        "D": "A strong password must be generated by a computer to be truly random"
+      },
+      "correctAnswer": "B",
+      "explanation": "A strong password is something that is easy for a user to remember but would be difficult for someone else to guess based on knowledge of that user."
+    },
+    {
+      "id": "u5r-q36",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student uses several paragraphs from an online article in their essay without citing the source and claims the writing as their own. Which of the following best describes this?",
+      "options": {
+        "A": "Fair use — using a small portion of a work is always acceptable",
+        "B": "Open access — online content is free to use however one wishes",
+        "C": "Plagiarism — using material created by someone else without permission and presenting it as one's own",
+        "D": "Creative Commons — the student is building upon someone else's work"
+      },
+      "correctAnswer": "C",
+      "explanation": "The use of material created by someone else without permission and presented as one's own is plagiarism and may have legal consequences."
+    },
+    {
+      "id": "u5r-q37",
+      "type": "mc",
+      "topic": "review",
+      "question": "A hiring algorithm is trained on historical hiring data from a company that has predominantly hired men for engineering roles. The algorithm now recommends male candidates more often. Which of the following best describes this?",
+      "options": {
+        "A": "The algorithm is working correctly because it is based on real historical data",
+        "B": "The algorithm reflects bias in the data — historical hiring decisions that favored men are now encoded into the algorithm's recommendations",
+        "C": "This is a logic error because the algorithm is incorrectly interpreting the data",
+        "D": "This is an intended effect because the company wants experienced candidates"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases because of biases in the data used. Historical data that reflects past discriminatory hiring practices will encode those biases into the algorithm."
+    },
+    {
+      "id": "u5r-q38",
+      "type": "mc",
+      "topic": "review",
+      "question": "A startup uses a website to ask the public to contribute small amounts of money to fund their new app idea. Which of the following best describes this?",
+      "options": {
+        "A": "Open source — making the app's code freely available",
+        "B": "Crowdsourcing — obtaining funding and support from a large number of people via the Internet",
+        "C": "Citizen science — using the public to gather data about user needs",
+        "D": "The digital divide — some people cannot afford to contribute"
+      },
+      "correctAnswer": "B",
+      "explanation": "Crowdsourcing offers new models for collaboration, such as connecting businesses or social causes with funding. Using the Internet to gather small contributions from many people is a form of crowdsourcing."
+    },
+    {
+      "id": "u5r-q39",
+      "type": "mc",
+      "topic": "review",
+      "question": "Once information is placed online, which of the following best describes a risk?",
+      "options": {
+        "A": "The information automatically expires after 30 days",
+        "B": "The information is automatically encrypted and cannot be misused",
+        "C": "The information is difficult to delete and can be used in ways that were not intended — including being combined with other data to deduce private information",
+        "D": "The information is only accessible to people the user has connected with"
+      },
+      "correctAnswer": "C",
+      "explanation": "Once information is placed online, it is difficult to delete. Information placed online can be used in ways that were not intended. Combining information from social media and other sources can be used to deduce private information about a person."
+    },
+    {
+      "id": "u5r-q40",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes what certificate authorities do?",
+      "options": {
+        "A": "They provide antivirus software to protect computers from malware",
+        "B": "They issue digital certificates that validate the ownership of encryption keys used in secure communications, based on a trust model",
+        "C": "They certify that software programs are free of bugs",
+        "D": "They issue licenses for open source software"
+      },
+      "correctAnswer": "B",
+      "explanation": "Certificate authorities issue digital certificates that validate the ownership of encryption keys used in secure communications and are based on a trust model."
+    },
+    {
+      "id": "u5r-q41",
+      "type": "mc",
+      "topic": "review",
+      "question": "A photographer posts their photos with a Creative Commons license that allows others to use and modify them as long as they credit the photographer. A blogger uses one of the photos in an article with credit. Which of the following best describes the blogger's action?",
+      "options": {
+        "A": "Plagiarism — the blogger is using someone else's work",
+        "B": "A legal use — the Creative Commons license grants permission to use and modify with attribution",
+        "C": "Copyright infringement — the blogger should have purchased the photo",
+        "D": "Open source use — the photo is freely available without any restrictions"
+      },
+      "correctAnswer": "B",
+      "explanation": "Creative Commons is used when creators want to give others the right to share, use, and build upon their work. Using a photo with a Creative Commons license and crediting the photographer is a legal way to use material created by someone else."
+    },
+    {
+      "id": "u5r-q42",
+      "type": "mc",
+      "topic": "review",
+      "question": "A user downloads a free game from an unofficial website. Shortly after, their computer begins running slowly and sending spam emails without their knowledge. Which of the following best describes what likely happened?",
+      "options": {
+        "A": "The game is too large and is using excessive system resources",
+        "B": "The download likely contained malware — untrustworthy downloads from freeware or shareware sites can contain malware",
+        "C": "The user's Internet connection is too slow for the game",
+        "D": "The game requires an update to run properly"
+      },
+      "correctAnswer": "B",
+      "explanation": "Untrustworthy (often free) downloads from freeware or shareware sites can contain malware. The game download likely contained malware that is now running on the user's computer."
+    },
+    {
+      "id": "u5r-q43",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best explains why the ease of digital distribution raises intellectual property concerns?",
+      "options": {
+        "A": "Digital files are lower quality than physical media so they are worth less",
+        "B": "The ease of access and distribution of digitized information raises concerns about ownership, value, and use — digital content can be copied and shared instantly and for free",
+        "C": "Digital distribution requires Internet access which not everyone has",
+        "D": "Digital files expire over time making them less valuable as intellectual property"
+      },
+      "correctAnswer": "B",
+      "explanation": "Ease of access and distribution of digitized information raises intellectual property concerns regarding ownership, value, and use. Unlike physical goods, digital content can be copied and distributed perfectly and at essentially zero cost."
+    },
+    {
+      "id": "u5r-q44",
+      "type": "mc",
+      "topic": "review",
+      "question": "A family cannot afford a computer or reliable Internet connection, preventing their children from completing online homework. Which aspect of the digital divide does this illustrate?",
+      "options": {
+        "A": "Geographic — the family lives too far from network infrastructure",
+        "B": "Demographic — the family belongs to a demographic without access",
+        "C": "Socioeconomic — the family lacks the financial resources to access technology",
+        "D": "Technical — the family lacks the skills to use computing devices"
+      },
+      "correctAnswer": "C",
+      "explanation": "This illustrates the socioeconomic dimension of the digital divide. The family's inability to afford devices and Internet access is directly related to their socioeconomic status."
+    },
+    {
+      "id": "u5r-q45",
+      "type": "mc",
+      "topic": "review",
+      "question": "An online encyclopedia allows anyone to contribute articles and edits, which are reviewed by the community. Which of the following best describes the model this represents?",
+      "options": {
+        "A": "Open source — the encyclopedia's code is freely available",
+        "B": "Crowdsourcing — obtaining information from a large number of people via the Internet",
+        "C": "Citizen science — distributed individuals conducting scientific research",
+        "D": "Creative Commons — a licensing system for copyrighted works"
+      },
+      "correctAnswer": "B",
+      "explanation": "Crowdsourcing is the practice of obtaining input or information from a large number of people via the Internet. A community-edited encyclopedia that gathers knowledge from many contributors is a form of crowdsourcing."
+    },
+    {
+      "id": "u5r-q46",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the relationship between human bias and computing bias?",
+      "options": {
+        "A": "Computing systems eliminate human bias by making objective, data-driven decisions",
+        "B": "Computing innovations can reflect and amplify existing human biases when those biases are encoded into algorithms or present in training data",
+        "C": "Human bias and computing bias are completely separate phenomena",
+        "D": "Computing bias is always greater than human bias because computers process more data"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases because of biases written into the algorithms or biases in the data. Rather than eliminating bias, computing systems can encode and scale up existing human biases."
+    },
+    {
+      "id": "u5r-q47",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how widespread access to information and public data enables problem-solving?",
+      "options": {
+        "A": "It allows only professional researchers to solve problems more quickly",
+        "B": "It facilitates the identification of problems, development of solutions, and dissemination of results by making data available to many people",
+        "C": "It replaces the need for scientific research by making all answers publicly available",
+        "D": "It creates privacy concerns that prevent effective problem-solving"
+      },
+      "correctAnswer": "B",
+      "explanation": "Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results. Open access to data enables collaborative problem-solving at scale."
+    },
+    {
+      "id": "u5r-q48",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best explains why addressing computing bias is important?",
+      "options": {
+        "A": "Computing bias makes programs run slower and less efficiently",
+        "B": "Reducing bias in algorithms helps combat existing human biases and prevents computing innovations from causing unfair harm to certain groups",
+        "C": "Computing bias is only a concern when the bias is intentional",
+        "D": "Computing bias can only be fully eliminated through better hardware"
+      },
+      "correctAnswer": "B",
+      "explanation": "Programmers should take action to reduce bias in algorithms as a way of combating existing human biases. Biased algorithms can cause real harm — denying opportunities, misidentifying people, or discriminating against certain groups."
+    },
+    {
+      "id": "u5r-q49",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is an example of an authentication measure that protects computing resources?",
+      "options": {
+        "A": "Installing antivirus software to scan for malware",
+        "B": "Entering a password and then confirming identity with a code sent to a mobile phone",
+        "C": "Keeping software updated to fix security vulnerabilities",
+        "D": "Reviewing permission settings of apps on a device"
+      },
+      "correctAnswer": "B",
+      "explanation": "Authentication measures protect devices and information from unauthorized access. Entering a password (something you know) combined with a code sent to your phone (something you have) is multifactor authentication — an authentication measure."
+    },
+    {
+      "id": "u5r-q50",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer releases a new social media app. Within weeks, millions of users have signed up and are using it in ways the programmer never imagined. Which of the following best explains why the impacts are so much larger than anticipated?",
+      "options": {
+        "A": "The programmer made an error in the program that caused unexpected behavior",
+        "B": "Rapid sharing of a program or running it with a large number of users can result in significant impacts beyond the intended purpose or control of the programmer",
+        "C": "Social media apps are inherently unpredictable",
+        "D": "The programmer should have tested the app with more users before release"
+      },
+      "correctAnswer": "B",
+      "explanation": "Rapid sharing of a program or running a program with a large number of users can result in significant impacts beyond the intended purpose or control of the programmer. Scale amplifies both intended and unintended effects."
+    },
+    {
+      "id": "u5r-q51",
+      "type": "mc",
+      "topic": "review",
+      "question": "A researcher notes that elderly populations in a country have significantly lower rates of Internet access than younger populations. Which dimension of the digital divide does this represent?",
+      "options": {
+        "A": "Geographic — elderly people tend to live in rural areas",
+        "B": "Socioeconomic — elderly people have lower incomes",
+        "C": "Demographic — age is a demographic characteristic affecting access",
+        "D": "Technical — elderly people lack programming skills"
+      },
+      "correctAnswer": "C",
+      "explanation": "Demographic characteristics contribute to the digital divide. Age is a demographic factor — differences in Internet access between age groups represent the demographic dimension of the digital divide."
+    },
+    {
+      "id": "u5r-q52",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student argues that computing bias is only a problem when programmers deliberately create biased algorithms. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The argument is correct — only intentional bias is a real problem",
+        "B": "The argument is incorrect — bias can be unintentionally embedded at all levels of software development through biased data, design choices, and assumptions",
+        "C": "The argument is correct — accidental bias is not harmful",
+        "D": "The argument is incorrect — bias can only come from the data not programmer decisions"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases because of biases written into the algorithms OR biases in the data. Biases can be embedded at all levels of software development, often unintentionally."
+    },
+    {
+      "id": "u5r-q53",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following correctly describes the difference between open source, Creative Commons, and open access?",
+      "options": {
+        "A": "They are all the same concept with different names",
+        "B": "Open source refers to freely redistributable programs; Creative Commons is a license for creative works; open access refers to research output with no access restrictions",
+        "C": "Open source is for research; Creative Commons is for software; open access is for creative works",
+        "D": "All three eliminate all intellectual property rights"
+      },
+      "correctAnswer": "B",
+      "explanation": "Open source refers to programs freely available to redistribute and modify. Creative Commons is a public copyright license for creative works. Open access is online research output free of access restrictions. All three have enabled broad access to digital information."
+    },
+    {
+      "id": "u5r-q54",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes why PII can be used to harm individuals even when shared innocuously?",
+      "options": {
+        "A": "PII is always confidential and should never be shared",
+        "B": "Disparate data such as geolocation, browsing history, and social media posts can be aggregated to create detailed knowledge about an individual that enables stalking, identity theft, or other criminal acts",
+        "C": "PII can only be misused by government agencies",
+        "D": "PII is only harmful when it includes financial information"
+      },
+      "correctAnswer": "B",
+      "explanation": "PII can be used to stalk or steal the identity of a person or aid in planning criminal acts. Disparate personal data can be aggregated to create knowledge about an individual — seemingly harmless pieces of information become dangerous in combination."
+    },
+    {
+      "id": "u5r-q55",
+      "type": "mc",
+      "topic": "review",
+      "question": "A content moderation algorithm flags posts for removal. An analysis shows it flags posts in African American Vernacular English at significantly higher rates than equivalent posts in standard American English. Which of the following best describes this?",
+      "options": {
+        "A": "The algorithm is correctly identifying violations",
+        "B": "The algorithm exhibits computing bias — it treats linguistically equivalent content differently based on dialect, likely due to biased training data or algorithm design",
+        "C": "This is an intended design choice to maintain community standards",
+        "D": "The algorithm has a syntax error causing it to misidentify certain text patterns"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing innovations can reflect existing human biases through biases in the data or algorithm design. Disparate treatment of linguistically equivalent content based on dialect is an example of computing bias that can cause real harm."
+    },
+    {
+      "id": "u5r-q56",
+      "type": "mc",
+      "topic": "review",
+      "question": "A tech company decides to provide free tablets and Internet access to students in low-income schools. Which of the following best describes this action?",
+      "options": {
+        "A": "An example of computing bias being introduced into the educational system",
+        "B": "An example of an organization taking action to help reduce the digital divide",
+        "C": "An example of intellectual property being shared without permission",
+        "D": "An example of crowdsourcing being used to collect student data"
+      },
+      "correctAnswer": "B",
+      "explanation": "The digital divide is affected by the actions of individuals, organizations, and governments. A tech company providing devices and Internet access to underserved students is an example of an organization working to reduce the digital divide."
+    },
+    {
+      "id": "u5r-q57",
+      "type": "mc",
+      "topic": "review",
+      "question": "Researchers studying air quality distribute an app that allows users to record pollution measurements in their neighborhood. Millions of users contribute data, creating a comprehensive nationwide pollution map. Which of the following best describes this?",
+      "options": {
+        "A": "Targeted advertising — using user location data for commercial purposes",
+        "B": "Computing bias — the app may not work equally for all users",
+        "C": "Citizen science — distributed individuals contributing data to research using their own devices",
+        "D": "The digital divide — only users with smartphones can participate"
+      },
+      "correctAnswer": "C",
+      "explanation": "Citizen science is scientific research conducted in whole or part by distributed individuals who contribute relevant data using their own computing devices. The millions of app users are acting as citizen scientists."
+    },
+    {
+      "id": "u5r-q58",
+      "type": "mc",
+      "topic": "review",
+      "question": "A developer includes open source code in their commercial app. The open source license requires that any product using the code must also be open source. The developer releases the app without making it open source. Which of the following best describes this?",
+      "options": {
+        "A": "This is acceptable because commercial products are exempt from open source requirements",
+        "B": "This violates the terms of the open source license and raises legal concerns about intellectual property",
+        "C": "This is acceptable because the developer modified the original code",
+        "D": "This is acceptable as long as the developer credits the original authors"
+      },
+      "correctAnswer": "B",
+      "explanation": "The use of material created by someone else should always be cited and the terms of licenses must be followed. Violating the terms of an open source license raises legal concerns about intellectual property."
+    },
+    {
+      "id": "u5r-q59",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how commercial and governmental entities can use collected personal data in ways that raise ethical concerns?",
+      "options": {
+        "A": "They can only use data for the specific purpose the user originally agreed to",
+        "B": "Commercial and governmental curation of information may be exploited if privacy and other protections are ignored — search history can be used for targeted marketing and technology enables exploitation of information about individuals",
+        "C": "They are legally prohibited from using personal data for any commercial purpose",
+        "D": "Personal data collected by governments must be destroyed after 30 days"
+      },
+      "correctAnswer": "B",
+      "explanation": "Commercial and governmental curation of information may be exploited if privacy and other protections are ignored. Search engines can use search history for targeted marketing and technology enables the exploitation of information about individuals."
+    },
+    {
+      "id": "u5r-q60",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST explains why both lossless and public key encryption are important for cybersecurity? Select the closest answer.",
+      "options": {
+        "A": "They both prevent malware from infecting computing systems",
+        "B": "Public key encryption enables secure communication between parties who have never met by allowing encryption with a public key and decryption with a private key that is never transmitted",
+        "C": "Both require the sender and receiver to share the same secret key",
+        "D": "They both permanently delete data that could be used by attackers"
+      },
+      "correctAnswer": "B",
+      "explanation": "Public key encryption pairs a public key for encryption and a private key for decryption. The sender uses the receiver's public key to encrypt — only the receiver's private key can decrypt. This enables secure communication without the need to share a secret key."
+    },
+    {
+      "id": "u5r-q61",
+      "type": "mc",
+      "topic": "review",
+      "question": "Computing can play a role in social and political issues. Which of the following is an example that raises legal and ethical concerns?",
+      "options": {
+        "A": "A company using a database to store employee records",
+        "B": "Social media algorithms that may amplify political misinformation or influence elections",
+        "C": "A government using a spreadsheet to manage tax records",
+        "D": "A school using educational software to teach mathematics"
+      },
+      "correctAnswer": "B",
+      "explanation": "Computing can play a role in social and political issues, which often raises legal and ethical concerns. Social media algorithms influencing political discourse and potentially amplifying misinformation raise significant legal and ethical questions."
+    },
+    {
+      "id": "u5r-q62",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student argues that if a programmer did not intend for their innovation to cause harm, they bear no responsibility. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The argument is correct — intent determines responsibility",
+        "B": "The argument is incorrect — responsible programmers should try to consider unintended uses and potential harmful effects, even though it is not possible to anticipate everything",
+        "C": "The argument is correct — only deliberate harm creates legal responsibility",
+        "D": "The argument is incorrect — programmers are fully responsible for all possible uses of their innovations"
+      },
+      "correctAnswer": "B",
+      "explanation": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects. Intent does not remove the responsibility to consider and mitigate potential harms."
+    },
+    {
+      "id": "u5r-q63",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following best describe characteristics of computing innovations and their effects?",
+      "options": {
+        "A": "Every effect of a computing innovation is anticipated by its creators before release",
+        "B": "A single effect of a computing innovation can be viewed as both beneficial and harmful by different people",
+        "C": "Computing innovations can be used in ways their creators did not originally intend",
+        "D": "Only deliberately designed effects count as effects of a computing innovation"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "A single effect can be viewed as both beneficial and harmful by different people (B). Computing innovations can be used in ways creators did not intend (C). Not every effect is anticipated in advance (A is false). Unintended effects are still real effects (D is false)."
+    },
+    {
+      "id": "u5r-q64",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are examples of crowdsourcing?",
+      "options": {
+        "A": "A company hiring a team of 10 expert consultants to review its product",
+        "B": "A platform where thousands of users rate and review local restaurants",
+        "C": "A website where the public votes to fund a new product idea with small contributions",
+        "D": "A single researcher collecting all data for a study independently"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Crowdsourcing is the practice of obtaining input or information from a large number of people via the Internet. Thousands of users rating restaurants (B) and the public funding a product idea online (C) both involve large numbers of people contributing via the Internet."
+    },
+    {
+      "id": "u5r-q65",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are true about computing bias?",
+      "options": {
+        "A": "Bias can only enter a computing system through the training data",
+        "B": "Computing innovations can reflect existing human biases",
+        "C": "Biases can be embedded at all levels of software development",
+        "D": "Computing bias is only a concern when programmers intentionally create biased systems"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Computing innovations can reflect existing human biases (B). Biases can be embedded at all levels of software development — not just in data (C). Bias can come from both data AND algorithm design (A is false). Bias can be unintentional (D is false)."
+    },
+    {
+      "id": "u5r-frq1",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A ride-sharing app was originally designed to connect drivers with passengers for on-demand transportation. It is now also used for package delivery, food delivery, and by some users to track the movements of family members.",
+      "stimulusType": "text",
+      "question": "Part A: Identify one use of the ride-sharing app that its creators likely did not originally intend. Explain whether this use is beneficial, harmful, or both, and why.\n\nPart B: Explain why responsible programmers should consider unintended uses of their computing innovations, even though it is not possible to anticipate all possible uses.\n\nPart C: Identify an example output of this app and explain how it shows an aspect of the app's functionality.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying a specific unintended use (package delivery, food delivery, tracking family members, etc.).\nAward 1 point for explaining whether beneficial, harmful, or both with justification. Example: Using the app to track family members could be both beneficial (parents monitoring young children's safety) and harmful (enabling surveillance of unwilling adults).\n\nPART B (2 points):\nAward 1 point for explaining the responsibility: responsible programmers try to consider unintended uses and potential harmful effects as part of ethical software development.\nAward 1 point for acknowledging the limitation: it is not possible to anticipate all uses — but trying to anticipate potential harms can reduce negative outcomes.\n\nPART C (2 points):\nAward 1 point for identifying a valid output: a map showing the driver's location and estimated arrival time; a confirmation that a ride has been booked; a receipt showing trip cost.\nAward 1 point for explaining how the output shows functionality: it demonstrates that the app processes the user's location and destination, matches them with a driver, and communicates real-time information back to the user.",
+      "points": 6
+    },
+    {
+      "id": "u5r-frq2",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A company develops an algorithm to screen job applications. The algorithm is trained on the company's past 10 years of hiring decisions. An analysis reveals that the algorithm recommends women for leadership positions at a significantly lower rate than equally qualified men.",
+      "stimulusType": "text",
+      "question": "Part A: Explain how bias was likely introduced into this algorithm. Identify the level of software development at which the bias was embedded.\n\nPart B: Describe two specific actions the development team could take to reduce the bias in this algorithm.\n\nPart C: A manager argues that since the algorithm is based on real data, its results cannot be biased. Evaluate this argument.",
+      "rubric": "PART A (2 points):\nAward 1 point for explaining how bias was introduced: the training data reflects 10 years of past hiring decisions that underrepresented women in leadership roles — this historical bias was encoded into the algorithm.\nAward 1 point for identifying the level: bias was embedded at the data level — the training data contains bias from past discriminatory or imbalanced hiring practices.\n\nPART B (2 points — 1 point per action):\nAward 1 point per valid action. Accept: audit training data to identify and correct historical imbalances; test the algorithm separately for each demographic group and set minimum performance thresholds; include diverse perspectives on the development team; remove or adjust variables that encode gender bias without predicting job performance.\n\nPART C (2 points):\nAward 1 point for identifying that the argument is incorrect.\nAward 1 point for explaining: computing innovations can reflect existing human biases because of biases in the data used. Real data from a biased historical process encodes those biases — the fact that the data is real does not mean it is unbiased.",
+      "points": 6
+    },
+    {
+      "id": "u5r-frq3",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A user receives the following email:\n\n'Dear Customer, We have detected suspicious activity on your account. Please click the link below and enter your username and password to verify your identity. Failure to verify within 24 hours will result in your account being suspended. Click here: www.secure-bank-verify.net'",
+      "stimulusType": "text",
+      "question": "Part A: Identify the type of cybersecurity attack represented by this email. Explain how this attack attempts to compromise the user's security.\n\nPart B: Describe two actions the user could take to protect themselves from this type of attack.\n\nPart C: The user has multifactor authentication enabled on their bank account. Explain how this provides an additional layer of protection even if the user's password is stolen.",
+      "rubric": "PART A (2 points):\nAward 1 point for correctly identifying this as phishing.\nAward 1 point for explaining how it works: phishing attempts to trick the user into providing personal information by disguising the attack as a legitimate bank communication. The link leads to a fake website that captures credentials.\n\nPART B (2 points — 1 point per action):\nAward 1 point per valid protective action. Accept: do not click links in unsolicited emails — go directly to the bank's official website; verify by calling the bank using the number on their official website; check the URL carefully; report the email as phishing; enable two-factor authentication.\n\nPART C (2 points):\nAward 1 point for explaining what multifactor authentication requires: at least two separate pieces of evidence — a password plus a second factor like a code sent to a phone.\nAward 1 point for explaining the protection: even if the attacker steals the password, they cannot access the account without also having the second factor (like the user's phone) — this second layer must also be broken independently.",
+      "points": 6
+    },
+    {
+      "id": "u5r-frq4",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A school district is designing a new online learning program. A teacher raises concerns that some students may not be able to participate equally because of differences in home Internet access and device availability.",
+      "stimulusType": "text",
+      "question": "Part A: Identify the issue the teacher is raising and explain how it relates to the digital divide.\n\nPart B: Describe two actions the school district could take to help address this issue.\n\nPart C: Explain why the digital divide raises ethical concerns beyond just being a technical problem.",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying the issue as the digital divide — differing access to computing devices and the Internet based on socioeconomic characteristics.\nAward 1 point for explaining the connection: students without reliable Internet or devices cannot participate equally in online learning — the digital divide affects both individuals and groups and creates equity concerns.\n\nPART B (2 points — 1 point per action):\nAward 1 point per valid action. Accept: provide loaner devices to students without computers; partner with Internet providers to offer subsidized or free home Internet; provide hotspots for students to borrow; create offline alternatives; open school facilities after hours.\n\nPART C (2 points):\nAward 1 point for explaining that the digital divide raises issues of equity, access, and influence — not just technical differences.\nAward 1 point for explaining the ethical dimension: in a world where computing and the Internet are essential for education, employment, and civic participation, unequal access creates unequal opportunity. Students who lack access through no fault of their own are disadvantaged in ways that affect their life outcomes — this is an ethical concern about fairness and justice.",
+      "points": 6
+    },
+    {
+      "id": "u5r-frq5",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A student is writing a report about climate change. They find a research paper published with an open access license and an infographic published with a Creative Commons Attribution license. They also want to use a paragraph from a copyrighted news article without permission.",
+      "stimulusType": "text",
+      "question": "Part A: Explain whether the student can legally use the open access research paper and the Creative Commons infographic. What obligation does the student have when using these materials?\n\nPart B: Explain the legal and ethical concerns with using the copyrighted news article paragraph without permission or citation.\n\nPart C: Describe the difference between open source and open access.",
+      "rubric": "PART A (2 points):\nAward 1 point for explaining that both can legally be used — open access is free of access restrictions; Creative Commons Attribution allows use with attribution.\nAward 1 point for the obligation: the use of material created by someone else should always be cited — the student must credit both creators.\n\nPART B (2 points):\nAward 1 point for the legal concern: using copyrighted material without permission may violate intellectual property law and may have legal consequences.\nAward 1 point for the ethical concern: presenting someone else's work without citation is plagiarism — an ethical violation regardless of legal status.\n\nPART C (1 point):\nAward 1 point for correctly distinguishing: open source refers to programs freely available to redistribute and modify; open access refers to online research output that is free of access and many use restrictions. Open source is about software; open access is about research publications.",
+      "points": 5
+    },
+    {
+      "id": "u5r-frq6",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A conservation organization wants to track the health of coral reefs around the world. Professional marine biologists cannot visit every reef frequently enough to collect sufficient data.",
+      "stimulusType": "text",
+      "question": "Part A: Describe how crowdsourcing or citizen science could help the organization collect data more effectively.\n\nPart B: Describe one potential limitation of using citizen science for this research and explain how it might affect the quality of the data.\n\nPart C: Explain how widespread access to public data facilitates the identification of this environmental problem and the development of solutions.",
+      "rubric": "PART A (2 points):\nAward 1 point for describing a valid approach: an app where scuba divers and snorkelers worldwide photograph and log coral health observations using their own devices.\nAward 1 point for explaining how it helps: distributed individuals contribute data from many locations simultaneously — far more reefs can be monitored more frequently than professionals could manage alone.\n\nPART B (2 points):\nAward 1 point for identifying a valid limitation: non-scientists may lack training to accurately identify coral species or health conditions; data may be inconsistent; observers may be concentrated in popular diving areas.\nAward 1 point for explaining the effect on data quality.\n\nPART C (2 points):\nAward 1 point for explaining that widespread access to public data — such as publicly available satellite images, ocean temperature records, or previously collected reef data — allows researchers and citizens to identify declining reef health patterns.\nAward 1 point for explaining how it facilitates solutions: making this data publicly accessible allows scientists, policymakers, and citizen scientists worldwide to analyze the information, formulate hypotheses, and develop conservation strategies — all enabled by the broad dissemination of findings.",
+      "points": 6
+    },
+    {
+      "id": "u5r-frq7",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Identify an example output of a computing innovation that raises a privacy, security, or ethical concern. Explain how this output shows the concern and what impact it might have.",
+      "stimulusType": "text",
+      "question": "Identify an example output of a computing innovation that raises a privacy, security, or ethical concern. Explain how this output shows the concern and what impact it might have.",
+      "rubric": "Award 1 point for identifying a specific output that raises a valid concern. Examples: a personalized ad that appears immediately after a private conversation near a phone (privacy); a facial recognition system that identifies a person at a protest (privacy/security); a loan denial from a biased algorithm (ethical); a social media recommendation for extremist content (ethical).\nAward 1 point for explaining the concern and impact. The explanation must connect the specific output to the type of concern and a real harm.\nExample: A loan rejection notification generated by a biased algorithm raises an ethical concern. The output — a denial — shows that the system made a consequential financial decision that may be influenced by factors like zip code or name that correlate with race rather than actual creditworthiness. The impact is that qualified applicants may be unfairly denied credit, perpetuating historical inequities and causing real financial harm to affected individuals.",
+      "points": 2
+    }
+  ]
 }

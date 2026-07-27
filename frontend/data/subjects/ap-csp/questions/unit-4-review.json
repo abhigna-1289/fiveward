@@ -1,4 +1,965 @@
 {
   "unitNumber": 4,
-  "questions": []
+  "questions": [
+    {
+      "id": "u4r-q1",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a computing device?",
+      "options": {
+        "A": "Any electronic device that displays information on a screen",
+        "B": "A physical artifact that can run a program, such as a computer, tablet, server, router, or smart sensor",
+        "C": "Any device that connects to the Internet",
+        "D": "A device that stores data but cannot process it"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computing device is a physical artifact that can run a program. Examples include computers, tablets, servers, routers, and smart sensors."
+    },
+    {
+      "id": "u4r-q2",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a computer network?",
+      "options": {
+        "A": "A single computer with multiple programs installed",
+        "B": "A group of interconnected computing devices capable of sending or receiving data",
+        "C": "A software application that connects users to the Internet",
+        "D": "A collection of files stored on a single server"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computer network is a group of interconnected computing devices capable of sending or receiving data. A computer network is a type of computing system."
+    },
+    {
+      "id": "u4r-q3",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes bandwidth?",
+      "options": {
+        "A": "The number of computing devices connected to a network",
+        "B": "The physical distance data can travel over a network connection",
+        "C": "The maximum amount of data that can be sent through a network in a fixed amount of time, usually measured in bits per second",
+        "D": "The time it takes for a packet to travel from sender to receiver"
+      },
+      "correctAnswer": "C",
+      "explanation": "The bandwidth of a computer network is the maximum amount of data that can be sent in a fixed amount of time. Bandwidth is usually measured in bits per second."
+    },
+    {
+      "id": "u4r-q4",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a protocol?",
+      "options": {
+        "A": "A physical cable that connects two computing devices",
+        "B": "An agreed-upon set of rules that specify the behavior of a system",
+        "C": "A program that monitors network traffic for security threats",
+        "D": "A type of computing device used to direct network traffic"
+      },
+      "correctAnswer": "B",
+      "explanation": "A protocol is an agreed-upon set of rules that specify the behavior of a system. The protocols used in the Internet are open, which allows users to easily connect additional computing devices."
+    },
+    {
+      "id": "u4r-q5",
+      "type": "mc",
+      "topic": "review",
+      "question": "Why are the protocols used in the Internet described as open?",
+      "options": {
+        "A": "Because they are available only to government agencies",
+        "B": "Because they are nonproprietary and allow anyone to connect additional computing devices to the Internet",
+        "C": "Because they were created by open-source software communities",
+        "D": "Because they allow all data on the network to be publicly visible"
+      },
+      "correctAnswer": "B",
+      "explanation": "The protocols used in the Internet are open (nonproprietary), which allows users to easily connect additional computing devices. This openness is what makes the Internet scalable and accessible."
+    },
+    {
+      "id": "u4r-q6",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes routing on the Internet?",
+      "options": {
+        "A": "A fixed path that all data must follow from sender to receiver",
+        "B": "The process of finding a path from sender to receiver, usually determined dynamically rather than specified in advance",
+        "C": "A protocol that encrypts data before it is sent across the network",
+        "D": "The process of compressing data to reduce bandwidth usage"
+      },
+      "correctAnswer": "B",
+      "explanation": "Routing is the process of finding a path from sender to receiver. Routing on the Internet is usually dynamic — it is not specified in advance."
+    },
+    {
+      "id": "u4r-q7",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes how information is sent across the Internet?",
+      "options": {
+        "A": "As a continuous stream of bits sent directly along a dedicated connection",
+        "B": "As data streams containing packets, where each packet contains a chunk of data and metadata for routing and reassembly",
+        "C": "As encrypted files decoded when they arrive at the destination",
+        "D": "As compressed archives decompressed at the destination"
+      },
+      "correctAnswer": "B",
+      "explanation": "Information is passed through the Internet as a data stream. Data streams contain chunks of data encapsulated in packets. Packets contain a chunk of data and metadata used for routing and data reassembly."
+    },
+    {
+      "id": "u4r-q8",
+      "type": "mc",
+      "topic": "review",
+      "question": "What information does the metadata in a packet contain?",
+      "options": {
+        "A": "The encryption key needed to decode the packet",
+        "B": "Information used for routing the packet between origin and destination and for data reassembly",
+        "C": "The username and password of the sender",
+        "D": "The entire original file compressed into a smaller format"
+      },
+      "correctAnswer": "B",
+      "explanation": "Packets contain a chunk of data and metadata used for routing the packet between the origin and destination on the Internet, as well as for data reassembly."
+    },
+    {
+      "id": "u4r-q9",
+      "type": "mc",
+      "topic": "review",
+      "question": "A user sends a large video file to a friend. The friend receives the video but some parts arrive before others. Which of the following best explains this?",
+      "options": {
+        "A": "The video was corrupted during transmission",
+        "B": "The friend's Internet connection is too slow to receive data in order",
+        "C": "Packets may arrive at the destination in order, out of order, or not at all",
+        "D": "The video file was too large to be sent as a single transmission"
+      },
+      "correctAnswer": "C",
+      "explanation": "Packets may arrive at the destination in order, out of order, or not at all. The metadata in each packet is used to reassemble the data in the correct order regardless of arrival sequence."
+    },
+    {
+      "id": "u4r-q10",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes the difference between the Internet and the World Wide Web?",
+      "options": {
+        "A": "The Internet is newer than the World Wide Web",
+        "B": "The World Wide Web is the global network of computers while the Internet is a system of linked web pages",
+        "C": "The Internet is a global computer network while the World Wide Web is a system of linked pages and files that uses the Internet",
+        "D": "They are the same thing referred to by different names"
+      },
+      "correctAnswer": "C",
+      "explanation": "The Internet is a computer network consisting of interconnected networks. The World Wide Web is a system of linked pages, programs, and files that uses the Internet. The Web is one service that runs on top of the Internet."
+    },
+    {
+      "id": "u4r-q11",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which protocol is specifically used by the World Wide Web?",
+      "options": {
+        "A": "TCP",
+        "B": "UDP",
+        "C": "IP",
+        "D": "HTTP"
+      },
+      "correctAnswer": "D",
+      "explanation": "HTTP is a protocol used by the World Wide Web. IP, TCP, and UDP are protocols used more broadly across the Internet."
+    },
+    {
+      "id": "u4r-q12",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes scalability in the context of the Internet?",
+      "options": {
+        "A": "The ability to encrypt data at different security levels",
+        "B": "The capacity for the system to change in size and scale to meet new demands",
+        "C": "The process of reducing bandwidth usage during peak traffic periods",
+        "D": "The ability to detect and repair broken connections automatically"
+      },
+      "correctAnswer": "B",
+      "explanation": "The scalability of a system is the capacity for the system to change in size and scale to meet new demands. The Internet was designed to be scalable."
+    },
+    {
+      "id": "u4r-q13",
+      "type": "mc",
+      "topic": "review",
+      "question": "A path between two computing devices on a network is best described as which of the following?",
+      "options": {
+        "A": "A wireless signal that travels through the air between devices",
+        "B": "A sequence of directly connected computing devices beginning at the sender and ending at the receiver",
+        "C": "A dedicated cable that connects exactly two devices",
+        "D": "A software connection established between the two devices"
+      },
+      "correctAnswer": "B",
+      "explanation": "A path between two computing devices on a computer network is a sequence of directly connected computing devices that begins at the sender and ends at the receiver."
+    },
+    {
+      "id": "u4r-q14",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes fault tolerance?",
+      "options": {
+        "A": "The ability of a system to detect and report errors to administrators",
+        "B": "When a system can support failures and still continue to function",
+        "C": "The use of encryption to protect data from unauthorized access",
+        "D": "The ability of a system to automatically update its software"
+      },
+      "correctAnswer": "B",
+      "explanation": "When a system can support failures and still continue to function, it is called fault-tolerant. This is important because elements of complex systems fail at unexpected times, often in groups."
+    },
+    {
+      "id": "u4r-q15",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes redundancy in a network?",
+      "options": {
+        "A": "Having duplicate copies of all data stored on multiple servers",
+        "B": "The inclusion of extra components that can be used to mitigate failure if other components fail",
+        "C": "Using extra bandwidth to speed up data transmission",
+        "D": "Having multiple users share the same network connection"
+      },
+      "correctAnswer": "B",
+      "explanation": "Redundancy is the inclusion of extra components that can be used to mitigate failure of a system if other components fail. One way to accomplish network redundancy is by having more than one path between any two connected devices."
+    },
+    {
+      "id": "u4r-q16",
+      "type": "mc",
+      "topic": "review",
+      "question": "What happens on the Internet when a particular connection or device fails?",
+      "options": {
+        "A": "All data transmission stops until the connection is repaired",
+        "B": "The data is lost permanently and must be resent",
+        "C": "Subsequent data will be sent via a different route if one is available",
+        "D": "The sender is notified and must manually choose an alternative route"
+      },
+      "correctAnswer": "C",
+      "explanation": "If a particular device or connection on the Internet fails, subsequent data will be sent via a different route, if possible. This is how the Internet's fault tolerance works in practice."
+    },
+    {
+      "id": "u4r-q17",
+      "type": "mc",
+      "topic": "review",
+      "question": "What is the tradeoff of adding redundancy to a network?",
+      "options": {
+        "A": "Redundancy reduces bandwidth but increases security",
+        "B": "Redundancy reduces speed because data must travel longer paths",
+        "C": "Redundancy requires additional resources but provides the benefit of fault tolerance",
+        "D": "Redundancy eliminates all possible points of failure"
+      },
+      "correctAnswer": "C",
+      "explanation": "Redundancy within a system often requires additional resources (more connections, more routers, more cost) but can provide the benefit of fault tolerance. It is a deliberate tradeoff between cost and reliability."
+    },
+    {
+      "id": "u4r-q18",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "<table><tr><th>Device</th><th>Connected To</th></tr><tr><td>A</td><td>B, C</td></tr><tr><td>B</td><td>A, D</td></tr><tr><td>C</td><td>A, D</td></tr><tr><td>D</td><td>B, C</td></tr></table>",
+      "stimulusType": "table",
+      "question": "Based on the network connections in the table, if the connection between A and B fails, can A still communicate with D?",
+      "options": {
+        "A": "No — A cannot reach D because the A-B connection is broken",
+        "B": "Yes — A can reach D through the path A → C → D",
+        "C": "No — D can only be reached through B",
+        "D": "Yes — but only if the connection between A and B is repaired first"
+      },
+      "correctAnswer": "B",
+      "explanation": "Even when the A-B connection fails, A can still reach D through the alternative path A → C → D. This redundancy makes the network fault-tolerant."
+    },
+    {
+      "id": "u4r-q19",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "<table><tr><th>Device</th><th>Connected To</th></tr><tr><td>A</td><td>B</td></tr><tr><td>B</td><td>A, C</td></tr><tr><td>C</td><td>B, D</td></tr><tr><td>D</td><td>C</td></tr></table>",
+      "stimulusType": "table",
+      "question": "Based on the network connections in the table, which of the following best describes a vulnerability in this network?",
+      "options": {
+        "A": "The network has too many connections making it difficult to manage",
+        "B": "If any single connection fails, some devices will be unable to communicate because there is no redundant path",
+        "C": "Device B is a single point of failure because it has the most connections",
+        "D": "The network is fault-tolerant because all devices are connected"
+      },
+      "correctAnswer": "B",
+      "explanation": "This network has a linear topology — each device has only one path to every other device. If any connection fails, devices on either side cannot communicate. There is no redundancy."
+    },
+    {
+      "id": "u4r-q20",
+      "type": "mc",
+      "topic": "review",
+      "question": "A student argues that since the Internet is fault-tolerant, no data is ever lost when a connection fails. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The argument is correct — fault tolerance guarantees no data loss",
+        "B": "The argument is incorrect — fault tolerance means the network can reroute data if an alternative path exists, but packets may still not arrive if no alternative path is available",
+        "C": "The argument is correct because all Internet data is backed up automatically",
+        "D": "The argument is incorrect because the Internet is not actually fault-tolerant"
+      },
+      "correctAnswer": "B",
+      "explanation": "Fault tolerance means subsequent data will be sent via a different route IF one is available. If a connection fails and no alternative path exists, data may not reach its destination. Packets may arrive out of order or not at all."
+    },
+    {
+      "id": "u4r-q21",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes sequential computing?",
+      "options": {
+        "A": "A model where multiple processors work on different parts simultaneously",
+        "B": "A computational model in which operations are performed in order one at a time",
+        "C": "A model where multiple devices collaborate over a network to run a program",
+        "D": "A model where programs are broken into parallel and sequential portions"
+      },
+      "correctAnswer": "B",
+      "explanation": "Sequential computing is a computational model in which operations are performed in order one at a time. A sequential solution takes as long as the sum of all of its steps."
+    },
+    {
+      "id": "u4r-q22",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes parallel computing?",
+      "options": {
+        "A": "A model where operations are performed strictly in order on a single processor",
+        "B": "A model where multiple devices on different continents collaborate to run a program",
+        "C": "A model where a program is broken into multiple smaller sequential operations, some of which are performed simultaneously",
+        "D": "A model where data is compressed and processed in parallel batches"
+      },
+      "correctAnswer": "C",
+      "explanation": "Parallel computing is a computational model where the program is broken into multiple smaller sequential computing operations, some of which are performed simultaneously."
+    },
+    {
+      "id": "u4r-q23",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes distributed computing?",
+      "options": {
+        "A": "A model where one processor executes operations one at a time",
+        "B": "A model where a single computer uses multiple cores",
+        "C": "A computational model in which multiple devices are used to run a program",
+        "D": "A model where a program is divided into parallel and sequential sections"
+      },
+      "correctAnswer": "C",
+      "explanation": "Distributed computing is a computational model in which multiple devices are used to run a program. It allows problems to be solved that could not be solved on a single computer due to processing time or storage needs."
+    },
+    {
+      "id": "u4r-q24",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A computer has 3 processes to complete.\n- Process X takes 30 seconds\n- Process Y takes 20 seconds\n- Process Z takes 10 seconds\n\nIf run sequentially, the total time is 60 seconds.",
+      "stimulusType": "text",
+      "question": "If processes X, Y, and Z can all run in parallel simultaneously, what is the minimum time to complete all three?",
+      "options": {
+        "A": "10 seconds",
+        "B": "20 seconds",
+        "C": "30 seconds",
+        "D": "60 seconds"
+      },
+      "correctAnswer": "C",
+      "explanation": "A parallel computing solution takes as long as the longest of its parallel tasks. If X, Y, and Z all run simultaneously, the total time is determined by the longest process — X at 30 seconds."
+    },
+    {
+      "id": "u4r-q25",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A program has the following tasks:\n- Sequential setup: 10 seconds\n- Parallel task A: 40 seconds\n- Parallel task B: 25 seconds\n- Parallel task C: 35 seconds\n- Sequential cleanup: 5 seconds\n\nTasks A, B, and C can run simultaneously.",
+      "stimulusType": "text",
+      "question": "What is the minimum time to complete the entire program?",
+      "options": {
+        "A": "40 seconds",
+        "B": "55 seconds",
+        "C": "75 seconds",
+        "D": "115 seconds"
+      },
+      "correctAnswer": "B",
+      "explanation": "Parallel time = sequential tasks + longest parallel task. Sequential tasks: 10+5=15 seconds. Longest parallel task: 40 seconds. Total: 15+40=55 seconds."
+    },
+    {
+      "id": "u4r-q26",
+      "type": "mc",
+      "topic": "review",
+      "question": "How is the speedup of a parallel solution calculated?",
+      "options": {
+        "A": "The parallel time divided by the sequential time",
+        "B": "The sequential time minus the parallel time",
+        "C": "The sequential time divided by the parallel time",
+        "D": "The number of parallel tasks divided by the total time"
+      },
+      "correctAnswer": "C",
+      "explanation": "The speedup of a parallel solution is the time it took to complete the task sequentially divided by the time it took to complete the task in parallel."
+    },
+    {
+      "id": "u4r-q27",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A task takes 120 seconds to complete sequentially. When run in parallel using 4 processors, it takes 30 seconds.",
+      "stimulusType": "text",
+      "question": "What is the speedup of the parallel solution?",
+      "options": {
+        "A": "4",
+        "B": "30",
+        "C": "90",
+        "D": "120"
+      },
+      "correctAnswer": "A",
+      "explanation": "Speedup = sequential time / parallel time = 120 / 30 = 4. The parallel solution is 4 times faster."
+    },
+    {
+      "id": "u4r-q28",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes a limitation of parallel computing?",
+      "options": {
+        "A": "Parallel computing cannot be used with distributed systems",
+        "B": "Every parallel computing solution still has a sequential portion, and adding more parallel processes will not meaningfully increase efficiency beyond a certain point",
+        "C": "Parallel computing only works when all processes take the same amount of time",
+        "D": "Parallel computing requires all processors to be in the same physical location"
+      },
+      "correctAnswer": "B",
+      "explanation": "Parallel computing consists of a parallel portion and a sequential portion. When increasing the use of parallel computing, efficiency is still limited by the sequential portion — at some point, adding more parallel processes will no longer meaningfully increase efficiency."
+    },
+    {
+      "id": "u4r-q29",
+      "type": "mc",
+      "topic": "review",
+      "question": "A researcher needs to analyze a dataset so large it exceeds the storage capacity of any single computer. Which computing model would be MOST appropriate?",
+      "options": {
+        "A": "Sequential computing on a very powerful single computer",
+        "B": "Parallel computing using multiple cores on one computer",
+        "C": "Distributed computing using multiple devices to handle storage and processing needs",
+        "D": "Sequential computing with data compression"
+      },
+      "correctAnswer": "C",
+      "explanation": "Distributed computing allows problems to be solved that could not be solved on a single computer because of either the processing time or storage needs. When a problem exceeds the storage of one computer, distributed computing is needed."
+    },
+    {
+      "id": "u4r-q30",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A task that takes 200 seconds sequentially is divided as follows:\n- Sequential setup: 10 seconds\n- 3 processes run in parallel: 60s, 80s, 50s\n- Sequential cleanup: 10 seconds",
+      "stimulusType": "text",
+      "question": "What is the speedup of the parallel solution?",
+      "options": {
+        "A": "Speedup = 200 / 100 = 2",
+        "B": "Speedup = 200 / 80 = 2.5",
+        "C": "Speedup = 200 / 160 = 1.25",
+        "D": "Speedup = 200 / 20 = 10"
+      },
+      "correctAnswer": "A",
+      "explanation": "Parallel time = sequential tasks (10+10=20) + longest parallel task (80) = 100 seconds. Speedup = 200/100 = 2."
+    },
+    {
+      "id": "u4r-q31",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer adds more parallel processes to a program to speed it up. After adding many parallel processes, further additions no longer improve performance. Which of the following best explains this?",
+      "options": {
+        "A": "The parallel processes are using too much memory",
+        "B": "The efficiency is limited by the sequential portion — once the parallel portion is fast enough, the sequential bottleneck dominates",
+        "C": "Too many parallel processes cause conflicts that cancel each other out",
+        "D": "The program has exceeded the maximum number of allowed parallel processes"
+      },
+      "correctAnswer": "B",
+      "explanation": "When increasing the use of parallel computing, efficiency is still limited by the sequential portion. At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential portion dominates."
+    },
+    {
+      "id": "u4r-q32",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST explains why the Internet was designed to be scalable?",
+      "options": {
+        "A": "So that data can be transmitted faster as more devices connect",
+        "B": "So the system can change in size and scale to accommodate new devices, users, and demands over time",
+        "C": "So security protocols can scale to block more threats as they emerge",
+        "D": "So bandwidth automatically increases when more users are online"
+      },
+      "correctAnswer": "B",
+      "explanation": "The Internet was designed to be scalable — the system has the capacity to change in size and scale to meet new demands. The open protocols allow new devices to connect easily."
+    },
+    {
+      "id": "u4r-q33",
+      "type": "mc",
+      "topic": "review",
+      "question": "Why is fault tolerance particularly important for the Internet?",
+      "options": {
+        "A": "Because the Internet transmits sensitive data that must be protected",
+        "B": "Because elements of complex systems fail at unexpected times, often in groups, and fault tolerance allows users to continue using the network",
+        "C": "Because the Internet must support millions of simultaneous connections",
+        "D": "Because Internet service providers require fault tolerance by law"
+      },
+      "correctAnswer": "B",
+      "explanation": "Fault tolerance is important because elements of complex systems fail at unexpected times, often in groups. Fault tolerance allows users to continue using the network even when components fail."
+    },
+    {
+      "id": "u4r-q34",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is the BEST example of redundancy in a real-world network?",
+      "options": {
+        "A": "A hospital stores patient records on a single highly secure server",
+        "B": "An Internet service provider has multiple fiber optic cables connecting cities so if one cable is cut, traffic is automatically rerouted",
+        "C": "A home network uses a single router to connect all devices",
+        "D": "A company encrypts all data transmitted over its network"
+      },
+      "correctAnswer": "B",
+      "explanation": "Having multiple fiber optic cables connecting cities is an example of network redundancy — if one cable is cut, there are alternative paths for the data. This provides fault tolerance."
+    },
+    {
+      "id": "u4r-q35",
+      "type": "mc",
+      "topic": "review",
+      "question": "How does distributed computing differ from parallel computing on a single machine?",
+      "options": {
+        "A": "Distributed computing is always faster than parallel computing",
+        "B": "Distributed computing uses multiple separate devices while parallel computing on a single machine uses multiple processors within one device",
+        "C": "Distributed computing can only be used for data storage not processing",
+        "D": "They are the same concept with different names"
+      },
+      "correctAnswer": "B",
+      "explanation": "Parallel computing breaks a program into operations performed simultaneously, often on one machine. Distributed computing uses multiple separate devices, allowing problems too large for one machine to be solved."
+    },
+    {
+      "id": "u4r-q36",
+      "type": "mc",
+      "topic": "review",
+      "question": "A computing system is best described as which of the following?",
+      "options": {
+        "A": "A single powerful computer running multiple programs simultaneously",
+        "B": "A group of computing devices and programs working together for a common purpose",
+        "C": "A network of computers all running the same operating system",
+        "D": "Any device that has access to the Internet"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computing system is a group of computing devices and programs working together for a common purpose. A computer network is a type of computing system."
+    },
+    {
+      "id": "u4r-q37",
+      "type": "mc",
+      "topic": "review",
+      "question": "A sequential solution takes 90 seconds. A parallel solution takes 30 seconds. What is the speedup?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "60",
+        "D": "90"
+      },
+      "correctAnswer": "B",
+      "explanation": "Speedup = sequential time / parallel time = 90/30 = 3. The parallel solution is 3 times faster."
+    },
+    {
+      "id": "u4r-q38",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following correctly identifies protocols commonly used on the Internet?",
+      "options": {
+        "A": "HTML, CSS, and JavaScript are the primary Internet protocols",
+        "B": "IP, TCP, and UDP are common protocols used on the Internet",
+        "C": "HTTP, FTP, and SMTP are the only protocols used on the Internet",
+        "D": "DNS and DHCP are the only protocols needed for Internet communication"
+      },
+      "correctAnswer": "B",
+      "explanation": "IP, TCP, and UDP are common protocols used on the Internet. HTTP is a protocol used specifically by the World Wide Web."
+    },
+    {
+      "id": "u4r-q39",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes why distributed computing allows larger problems to be solved more quickly?",
+      "options": {
+        "A": "Distributed computing uses faster processors than single-computer solutions",
+        "B": "Distributed computing compresses data so less processing is needed",
+        "C": "Distributed computing pools the processing power and storage of multiple devices so problems too large for one computer can be solved collaboratively",
+        "D": "Distributed computing automatically finds the most efficient algorithm"
+      },
+      "correctAnswer": "C",
+      "explanation": "Distributed computing allows problems to be solved that could not be solved on a single computer because of either the processing time or storage needs. By pooling multiple devices, much larger problems can be solved more quickly."
+    },
+    {
+      "id": "u4r-q40",
+      "type": "mc",
+      "topic": "review",
+      "question": "How does redundancy help the Internet scale to more devices and people?",
+      "options": {
+        "A": "Redundant connections increase the total bandwidth for all users",
+        "B": "Redundant routing options provide multiple paths so adding more devices does not create single points of failure",
+        "C": "Redundancy reduces the cost of adding new devices",
+        "D": "Redundant connections automatically load balance traffic"
+      },
+      "correctAnswer": "B",
+      "explanation": "The redundancy of routing options between two points increases the reliability of the Internet and helps it scale to more devices and more people."
+    },
+    {
+      "id": "u4r-q41",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A program has the following structure:\n- Sequential initialization: 20 seconds\n- Parallel section: Tasks P (15s), Q (45s), R (30s) run simultaneously\n- Sequential finalization: 10 seconds",
+      "stimulusType": "text",
+      "question": "What is the total time to run this program?",
+      "options": {
+        "A": "75 seconds",
+        "B": "90 seconds",
+        "C": "120 seconds",
+        "D": "45 seconds"
+      },
+      "correctAnswer": "A",
+      "explanation": "Parallel time = sequential tasks (20+10=30) + longest parallel task (45) = 75 seconds."
+    },
+    {
+      "id": "u4r-q42",
+      "type": "mc",
+      "topic": "review",
+      "question": "A network engineer is designing a system where every device has exactly one path to every other device. Which of the following best describes a weakness?",
+      "options": {
+        "A": "The network will be too slow because data can only travel one path",
+        "B": "If any single connection fails, some devices will no longer be able to communicate — the network is not fault-tolerant",
+        "C": "The network will use too much bandwidth because all data follows the same path",
+        "D": "The network cannot support more than 100 devices"
+      },
+      "correctAnswer": "B",
+      "explanation": "If every device has only one path to every other device, then any single connection failure creates a vulnerability — some devices will be unable to communicate. This lack of redundancy means the network is not fault-tolerant."
+    },
+    {
+      "id": "u4r-q43",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best explains why adding more connections to a network increases fault tolerance?",
+      "options": {
+        "A": "More connections increase the bandwidth of each individual link",
+        "B": "More connections reduce the number of packets needed",
+        "C": "More connections provide more alternative paths so data can be rerouted if any single connection fails",
+        "D": "More connections allow the network to compress data more efficiently"
+      },
+      "correctAnswer": "C",
+      "explanation": "One way to accomplish network redundancy is by having more than one path between any two connected devices. More connections mean more alternative paths."
+    },
+    {
+      "id": "u4r-q44",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST justifies using parallel computing over sequential computing for a large data processing task?",
+      "options": {
+        "A": "Parallel computing always produces more accurate results",
+        "B": "Parallel computing solutions can scale more effectively — work can be distributed across multiple processors, significantly reducing total time for large tasks",
+        "C": "Parallel computing eliminates the need for sequential steps entirely",
+        "D": "Parallel computing reduces the amount of data that needs to be processed"
+      },
+      "correctAnswer": "B",
+      "explanation": "Solutions that use parallel computing can scale more effectively than solutions that use sequential computing. Distributing work across multiple processors significantly reduces total time for large tasks."
+    },
+    {
+      "id": "u4r-q45",
+      "type": "mc",
+      "topic": "review",
+      "question": "A network has 5 devices where every device is directly connected to every other device. Which of the following best describes this network's fault tolerance?",
+      "options": {
+        "A": "The network is not fault-tolerant because too many connections create confusion",
+        "B": "The network is highly fault-tolerant because every device has multiple paths to every other device — many connections would have to fail simultaneously to disconnect any two devices",
+        "C": "The network is fault-tolerant only if all 5 devices are online",
+        "D": "The network is not fault-tolerant because full mesh networks do not support redundancy"
+      },
+      "correctAnswer": "B",
+      "explanation": "When every device has multiple paths to every other device, the network is highly fault-tolerant. Many connections would need to fail simultaneously to disconnect any two devices."
+    },
+    {
+      "id": "u4r-q46",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are true about packets on the Internet?",
+      "options": {
+        "A": "Packets always arrive at the destination in the order they were sent",
+        "B": "Packets contain metadata used for routing and data reassembly",
+        "C": "Packets may arrive out of order or not at all",
+        "D": "Each packet must travel the same path from sender to receiver"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Packets contain metadata used for routing and reassembly (B). Packets may arrive in order, out of order, or not at all (C). Routing is dynamic so packets may take different paths (D is false). Packets can arrive out of order (A is false)."
+    },
+    {
+      "id": "u4r-q47",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are benefits of distributed computing?",
+      "options": {
+        "A": "It allows problems to be solved that could not be solved on a single computer due to processing time or storage needs",
+        "B": "It eliminates the sequential portion of any program",
+        "C": "It allows much larger problems to be solved more quickly than with a single computer",
+        "D": "It guarantees perfect speedup — doubling the devices always doubles the speed"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Distributed computing allows problems that exceed single-computer capacity to be solved (A), and allows much larger problems to be solved more quickly (C). Parallel and distributed computing still have sequential portions (B is false). Speedup is limited by sequential portions (D is false)."
+    },
+    {
+      "id": "u4r-q48",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A program has the following tasks:\n- Sequential part: 30 seconds\n- Parallel task 1: 20 seconds\n- Parallel task 2: 30 seconds\n- Parallel task 3: 25 seconds",
+      "stimulusType": "text",
+      "question": "What is the minimum time to complete the program if the parallel tasks run simultaneously?",
+      "options": {
+        "A": "30 seconds",
+        "B": "55 seconds",
+        "C": "60 seconds",
+        "D": "105 seconds"
+      },
+      "correctAnswer": "C",
+      "explanation": "Parallel time = sequential tasks (30) + longest parallel task (30) = 60 seconds."
+    },
+    {
+      "id": "u4r-q49",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A sequential solution takes 240 seconds. A parallel solution takes 60 seconds.",
+      "stimulusType": "text",
+      "question": "What is the speedup of the parallel solution?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "180"
+      },
+      "correctAnswer": "C",
+      "explanation": "Speedup = sequential time / parallel time = 240 / 60 = 4. The parallel solution is 4 times faster."
+    },
+    {
+      "id": "u4r-q50",
+      "type": "mc",
+      "topic": "review",
+      "question": "A computing system is said to be fault-tolerant when which of the following is true?",
+      "options": {
+        "A": "It never experiences hardware failures",
+        "B": "It automatically repairs broken connections without human intervention",
+        "C": "It can support failures and still continue to function",
+        "D": "It stores backup copies of all data at all times"
+      },
+      "correctAnswer": "C",
+      "explanation": "When a system can support failures and still continue to function, it is called fault-tolerant. The Internet has been engineered to be fault-tolerant through redundancy."
+    },
+    {
+      "id": "u4r-q51",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "<table><tr><th>Device</th><th>Connected To</th></tr><tr><td>A</td><td>B, C, D</td></tr><tr><td>B</td><td>A, C</td></tr><tr><td>C</td><td>A, B, D</td></tr><tr><td>D</td><td>A, C</td></tr></table>",
+      "stimulusType": "table",
+      "question": "Based on the network connections in the table, if both the A-B connection AND the B-C connection fail simultaneously, can B still communicate with D?",
+      "options": {
+        "A": "No — B has no connections left so it cannot communicate with anyone",
+        "B": "No — D can only be reached through A or C which are both disconnected from B",
+        "C": "Yes — B can still reach D through no remaining path",
+        "D": "Yes — B cannot reach D directly but the network will automatically repair the connections"
+      },
+      "correctAnswer": "A",
+      "explanation": "B is connected to A and C only. If both A-B and B-C fail, B has no remaining connections and cannot communicate with any device including D."
+    },
+    {
+      "id": "u4r-q52",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following BEST describes the relationship between the Internet and computing systems?",
+      "options": {
+        "A": "The Internet is a computing device and computing systems are software",
+        "B": "A computer network is a type of computing system, and the Internet is a computer network",
+        "C": "Computing systems require the Internet to function",
+        "D": "The Internet and computing systems are unrelated concepts"
+      },
+      "correctAnswer": "B",
+      "explanation": "A computing system is a group of computing devices and programs working together for a common purpose. A computer network is a type of computing system. The Internet is a computer network consisting of interconnected networks."
+    },
+    {
+      "id": "u4r-q53",
+      "type": "mc",
+      "topic": "review",
+      "question": "A programmer is deciding between sequential and parallel computing for a new data analysis task. The task has a setup step that must run first, three analysis steps that can run simultaneously, and a reporting step that must run last. Which of the following BEST describes how to calculate the parallel solution's time?",
+      "options": {
+        "A": "Add up all step times just like the sequential solution",
+        "B": "Take only the longest parallel task time and ignore sequential steps",
+        "C": "Add the sequential steps' times to the longest parallel task time",
+        "D": "Divide the total sequential time by the number of parallel tasks"
+      },
+      "correctAnswer": "C",
+      "explanation": "A parallel computing solution takes as long as its sequential tasks plus the longest of its parallel tasks. The setup and reporting steps must run sequentially before and after the parallel analysis steps."
+    },
+    {
+      "id": "u4r-q54",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following scenarios BEST demonstrates distributed computing rather than parallel computing on a single machine?",
+      "options": {
+        "A": "A smartphone uses two processor cores to run an app faster",
+        "B": "A laptop divides a video rendering task between its CPU and GPU",
+        "C": "Thousands of volunteers' personal computers around the world each process a small portion of a protein folding calculation simultaneously",
+        "D": "A programmer uses multiple threads in a single program to speed up sorting"
+      },
+      "correctAnswer": "C",
+      "explanation": "Distributed computing uses multiple separate devices to run a program. Thousands of volunteers' personal computers each contributing to a protein folding calculation is distributed computing — the program runs across many separate devices. The other options all involve multiple processors within a single device."
+    },
+    {
+      "id": "u4r-q55",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best explains why the Internet uses dynamic routing rather than fixed paths?",
+      "options": {
+        "A": "Dynamic routing is required by law for all Internet traffic",
+        "B": "Dynamic routing allows data to be rerouted around failures or congestion, contributing to fault tolerance and efficiency",
+        "C": "Dynamic routing ensures that all packets from the same file always travel together",
+        "D": "Dynamic routing encrypts data automatically as it travels through the network"
+      },
+      "correctAnswer": "B",
+      "explanation": "Routing on the Internet is usually dynamic — not specified in advance. Dynamic routing allows data to be rerouted when connections fail or become congested, contributing to the Internet's fault tolerance and scalability."
+    },
+    {
+      "id": "u4r-q56",
+      "type": "mc",
+      "topic": "review",
+      "stimulus": "A program has the following structure:\n- Sequential setup: 5 seconds\n- Parallel task A: 60 seconds\n- Parallel task B: 45 seconds\n- Parallel task C: 55 seconds\n- Sequential finalization: 5 seconds",
+      "stimulusType": "text",
+      "question": "If the same program were run sequentially, how long would it take, and what is the speedup of the parallel version?",
+      "options": {
+        "A": "Sequential: 170 seconds, Speedup ≈ 2.4",
+        "B": "Sequential: 170 seconds, Speedup = 2",
+        "C": "Sequential: 120 seconds, Speedup ≈ 1.7",
+        "D": "Sequential: 160 seconds, Speedup ≈ 2.3"
+      },
+      "correctAnswer": "A",
+      "explanation": "Sequential time: 5+60+45+55+5 = 170 seconds. Parallel time: 5+60+5 = 70 seconds (sequential tasks + longest parallel task). Speedup = 170/70 ≈ 2.4."
+    },
+    {
+      "id": "u4r-q57",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes why open protocols are essential for the Internet's growth?",
+      "options": {
+        "A": "Open protocols allow any device to connect without needing proprietary permissions, enabling the Internet to scale to billions of devices",
+        "B": "Open protocols make Internet traffic faster by removing encryption overhead",
+        "C": "Open protocols ensure that all Internet data is publicly accessible",
+        "D": "Open protocols prevent unauthorized devices from connecting to the Internet"
+      },
+      "correctAnswer": "A",
+      "explanation": "The protocols used in the Internet are open (nonproprietary), which allows users to easily connect additional computing devices. This openness is what makes the Internet scalable — any device can connect without needing permission from a proprietary owner."
+    },
+    {
+      "id": "u4r-q58",
+      "type": "mc",
+      "topic": "review",
+      "question": "A scientist argues that adding 100 more computers to a distributed computing task will make it 100 times faster. Which of the following best evaluates this argument?",
+      "options": {
+        "A": "The argument is correct — doubling devices always doubles speed",
+        "B": "The argument is incorrect — every parallel solution has a sequential portion that limits speedup, so 100 computers will not produce a 100x speedup",
+        "C": "The argument is correct because distributed computing has no sequential portions",
+        "D": "The argument is incorrect because distributed computing cannot use more than 10 devices"
+      },
+      "correctAnswer": "B",
+      "explanation": "When increasing the use of parallel computing, efficiency is still limited by the sequential portion. At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant."
+    },
+    {
+      "id": "u4r-q59",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following best describes why elements of complex systems often fail in groups rather than individually?",
+      "options": {
+        "A": "Complex systems are always poorly designed which causes multiple simultaneous failures",
+        "B": "A single event such as a power outage, natural disaster, or cyberattack can affect multiple components simultaneously",
+        "C": "Complex systems use shared components that all fail at the same scheduled maintenance time",
+        "D": "Elements of complex systems communicate and trigger each other's failures"
+      },
+      "correctAnswer": "B",
+      "explanation": "Elements of complex systems fail at unexpected times, often in groups. A single event like a power outage, natural disaster, or network attack can affect multiple components simultaneously, which is why fault tolerance through redundancy is important."
+    },
+    {
+      "id": "u4r-q60",
+      "type": "mc",
+      "topic": "review",
+      "question": "Which of the following is NOT an example of a computing device?",
+      "options": {
+        "A": "A router that directs network traffic",
+        "B": "A smart sensor that monitors environmental conditions",
+        "C": "A printed circuit board diagram showing how components are connected",
+        "D": "A tablet that runs mobile applications"
+      },
+      "correctAnswer": "C",
+      "explanation": "A computing device is a physical artifact that can run a program. A printed circuit board diagram is a document — it describes a device but is not itself a device that can run a program. Routers, sensors, and tablets are all computing devices."
+    },
+    {
+      "id": "u4r-q61",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following are true about fault tolerance and redundancy?",
+      "options": {
+        "A": "Redundancy guarantees that no data is ever lost on a fault-tolerant network",
+        "B": "Redundancy requires additional resources but provides fault tolerance as a benefit",
+        "C": "A fault-tolerant system can support failures and still continue to function",
+        "D": "Redundancy is only necessary for networks with more than 1,000 devices"
+      },
+      "correctAnswer": ["B", "C"],
+      "explanation": "Redundancy requires additional resources but provides fault tolerance (B). A fault-tolerant system can support failures and still function (C). Redundancy does not guarantee no data loss — packets may still not arrive if no alternative path exists (A is false). Redundancy is important for networks of any size (D is false)."
+    },
+    {
+      "id": "u4r-q62",
+      "type": "mc2",
+      "topic": "review",
+      "question": "Which TWO of the following correctly describe sequential computing?",
+      "options": {
+        "A": "Operations are performed in order one at a time",
+        "B": "Some operations run simultaneously to reduce total time",
+        "C": "A sequential solution takes as long as the sum of all its steps",
+        "D": "Sequential computing always produces less accurate results than parallel computing"
+      },
+      "correctAnswer": ["A", "C"],
+      "explanation": "Sequential computing is a computational model in which operations are performed in order one at a time (A). A sequential solution takes as long as the sum of all its steps (C). Running operations simultaneously is parallel computing, not sequential (B is false). Sequential computing can be just as accurate as parallel (D is false)."
+    },
+    {
+      "id": "u4r-frq7",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Two computer scientists are comparing approaches to processing a large dataset:\n\nScientist A: Uses sequential computing on one computer — takes 500 seconds.\nScientist B: Uses distributed computing on 100 computers. Each computer processes 1/100 of the data in 8 seconds, plus 2 seconds to combine results.",
+      "stimulusType": "text",
+      "question": "Part A: Calculate the total time for Scientist B's approach.\n\nPart B: Calculate the speedup. Explain what this means.\n\nPart C: Scientist B argues that using 1,000 computers instead of 100 would make it 10 times faster than the 100-computer solution. Evaluate this argument.",
+      "rubric": "PART A (1 point):\nAward 1 point for: 8 + 2 = 10 seconds.\n\nPART B (2 points):\nAward 1 point for: speedup = 500/10 = 50.\nAward 1 point for explaining: the distributed approach completes the task 50 times faster than sequential computing.\n\nPART C (2 points):\nAward 1 point for identifying that the argument is not fully correct.\nAward 1 point for explaining: the 2-second combination step is sequential and cannot be parallelized. Even with 1,000 computers where processing takes nearly 0 seconds, the total time would be approximately 2 seconds — not 1 second (10/10). The sequential portion limits how much the speedup can improve.",
+      "points": 5
+    },
+    {
+      "id": "u4r-frq1",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A student sends a large photo to a friend using the Internet. The friend receives most of the photo but some parts appear missing or corrupted.",
+      "stimulusType": "text",
+      "question": "Part A: Explain how the Internet transmits the photo using packets.\n\nPart B: Describe two reasons why some parts of the photo might be missing or corrupted when received.\n\nPart C: Explain why the Internet's design helps prevent total failure when individual connections break down.",
+      "rubric": "PART A (2 points):\nAward 1 point for explaining that information is sent as a data stream containing packets, where each packet contains a chunk of the photo data and metadata for routing.\nAward 1 point for explaining that metadata is used for reassembly — when all packets arrive the metadata allows them to be put back together in the correct order.\n\nPART B (2 points — 1 point per reason):\nAward 1 point per valid reason. Accept: packets may not arrive at all if a connection fails and no alternative path exists; packets may arrive out of order and reassembly may fail for some portions; packet loss can occur due to network congestion.\n\nPART C (2 points):\nAward 1 point for explaining that the Internet uses redundancy — more than one path between devices.\nAward 1 point for explaining the mechanism: when a connection fails, subsequent data is sent via a different route if one is available, allowing the network to continue functioning.",
+      "points": 6
+    },
+    {
+      "id": "u4r-frq2",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A network engineer is designing two network configurations:\n\nConfiguration 1: Devices A, B, C, D are connected in a line: A-B-C-D\n\nConfiguration 2: Device A connects to B and C. Device B connects to A and D. Device C connects to A and D. Device D connects to B and C.",
+      "stimulusType": "text",
+      "question": "Part A: For Configuration 1, identify a vulnerability that makes it not fully fault-tolerant. Explain what happens if the connection between B and C fails.\n\nPart B: Explain why Configuration 2 is more fault-tolerant. Identify at least one path from A to D that exists in Configuration 2 but not in Configuration 1.\n\nPart C: What is the tradeoff of choosing Configuration 2 over Configuration 1?",
+      "rubric": "PART A (2 points):\nAward 1 point for identifying that each device has only one path to every other device — no redundancy.\nAward 1 point for explaining that if B-C fails, A and B are isolated from C and D — the network splits into two disconnected groups.\n\nPART B (2 points):\nAward 1 point for explaining that Configuration 2 has multiple paths between devices — if one connection fails, data can be rerouted.\nAward 1 point for identifying an alternative path: A → C → D (in addition to A → B → D).\n\nPART C (1 point):\nAward 1 point for identifying the tradeoff: redundancy within a system often requires additional resources — more connections, more hardware, and more cost — but provides the benefit of fault tolerance.",
+      "points": 5
+    },
+    {
+      "id": "u4r-frq3",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A programmer needs to process a large dataset. The program has the following tasks:\n- Load data: 15 seconds (sequential)\n- Process chunk A: 40 seconds\n- Process chunk B: 35 seconds\n- Process chunk C: 50 seconds\n- Save results: 10 seconds (sequential)\n\nChunks A, B, and C can be processed simultaneously.",
+      "stimulusType": "text",
+      "question": "Part A: Calculate the total time if all tasks are run sequentially.\n\nPart B: Calculate the total time if chunks A, B, and C are processed in parallel.\n\nPart C: Calculate the speedup of the parallel solution and explain what it means.\n\nPart D: Explain why adding more parallel processors eventually stops improving the total time.",
+      "rubric": "PART A (1 point):\nAward 1 point for: 15+40+35+50+10 = 150 seconds.\n\nPART B (2 points):\nAward 1 point for identifying that parallel time = sequential tasks + longest parallel task.\nAward 1 point for: 15+50+10 = 75 seconds.\n\nPART C (2 points):\nAward 1 point for: speedup = 150/75 = 2.\nAward 1 point for explaining: the parallel solution completes the task twice as fast as the sequential solution.\n\nPART D (2 points):\nAward 1 point for identifying that every parallel solution still has a sequential portion (loading and saving data).\nAward 1 point for explaining: once the parallel portion is reduced to near zero time, the sequential portion (15+10=25 seconds) becomes the bottleneck — no amount of additional parallel processing can reduce the time below 25 seconds.",
+      "points": 7
+    },
+    {
+      "id": "u4r-frq4",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Identify an example output of a computing innovation that uses the Internet. Explain how this output shows an aspect of the innovation's functionality.",
+      "stimulusType": "text",
+      "question": "Identify an example output of a computing innovation that uses the Internet. Explain how this output shows an aspect of the innovation's functionality.",
+      "rubric": "Award 1 point for identifying a valid output of an Internet-connected computing innovation. Examples: a confirmation that a message was sent in a messaging app; a web page loading after entering a URL; a live sports score updating on a phone; real-time navigation directions updating as a driver moves.\nAward 1 point for explaining how the output shows functionality — the explanation must connect the specific output to what the innovation does using the Internet.\nExample: A navigation app displays an updated route on a map after the driver makes a wrong turn. This output shows that the program uses the Internet to receive the driver's current GPS location, communicates with a server to recalculate the best route, and transmits the updated directions back to the device — demonstrating the app's core functionality of real-time navigation using Internet communication.",
+      "points": 2
+    },
+    {
+      "id": "u4r-frq5",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "A scientist is running a weather simulation that requires processing 500 terabytes of atmospheric data. Running on the most powerful single computer available takes 8 months.",
+      "stimulusType": "text",
+      "question": "Part A: Explain why distributed computing would be more appropriate than sequential computing for this simulation.\n\nPart B: The simulation leaves out ocean temperature data deeper than 100 meters because it is difficult to model. Explain how this affects the simulation and whether this makes the simulation useless.\n\nPart C: Describe one way that random number generation is used in weather simulations and explain why it is appropriate.",
+      "rubric": "PART A (2 points):\nAward 1 point for explaining that distributed computing uses multiple devices to run a program, allowing problems too large or slow for one computer to be solved.\nAward 1 point for connecting to the scenario: 8 months on one computer is impractical — distributing across many computers could complete it in days or weeks.\n\nPART B (2 points):\nAward 1 point for explaining that the process of developing a simulation involves removing specific details or simplifying functionality — omitting deep ocean data is an abstraction.\nAward 1 point for explaining this does NOT make the simulation useless: simulations do not need to be perfect to provide valuable insight. The simulation can still generate useful weather predictions even without this data.\n\nPART C (2 points):\nAward 1 point for describing a valid use: random number generators simulate the variability that exists in real weather — for example, randomly varying wind speeds or precipitation patterns within a modeled range.\nAward 1 point for explaining why it is appropriate: real weather is not perfectly predictable — random values introduce the natural variability found in real atmospheric conditions, making the simulation more realistic.",
+      "points": 6
+    },
+    {
+      "id": "u4r-frq6",
+      "type": "frq",
+      "topic": "review",
+      "stimulus": "Describe one piece of documentation that would be appropriate to include with a network design that uses both redundancy and parallel computing. Explain how this documentation can help another engineer better understand the system.",
+      "stimulusType": "text",
+      "question": "Describe one piece of documentation that would be appropriate to include with a network design that uses both redundancy and parallel computing. Explain how this documentation can help another engineer better understand the system.",
+      "rubric": "Award 1 point for identifying a valid piece of documentation. Accept any of: a network diagram showing all devices, connections, and redundant paths; documentation explaining which tasks are parallelized and which remain sequential; a timing diagram showing how parallel tasks run simultaneously; documentation of the sequential bottleneck and minimum achievable time.\nAward 1 point for explaining how it helps another engineer.\nExample: A network diagram showing all devices and their connections — including which connections provide redundancy — would be appropriate. Another engineer could use it to understand how data would be rerouted if specific connections failed, identify remaining single points of failure, and understand the overall fault tolerance design without needing to examine the physical hardware.",
+      "points": 2
+    }
+  ]
 }
