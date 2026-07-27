@@ -386,6 +386,10 @@
   flex-direction: column;
   gap: var(--space-1);
 }
+.sg-bulletlist   { list-style-type: disc; }
+.sg-numberedlist { list-style-type: decimal; }
+.sg-bulletlist li,
+.sg-numberedlist li { display: list-item; }
 
 /* Compare Table */
 .sg-compare-table-wrap {
