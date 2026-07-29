@@ -211,6 +211,22 @@
   gap: var(--space-2);
 }
 
+/* Appears between subject groups when multiple subjects are enrolled */
+.pg-subject-group-heading {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: var(--space-3) 0 var(--space-1);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-1);
+}
+
+.pg-subject-group-heading:first-child {
+  padding-top: 0;
+}
+
 /* Unit Row */
 .pg-unit-row {
   border: 1px solid var(--color-border);

@@ -403,6 +403,42 @@
     </div>
   </footer>
 
+  <!-- Edit Profile Modal -->
+  <div id="stEditProfileModal" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stEditProfileTitle">
+    <div class="st-dialog-box">
+      <h3 class="st-dialog-title" id="stEditProfileTitle">Edit Profile</h3>
+      <div class="st-modal-field">
+        <label class="st-modal-label" for="stEditNameInput">Display Name</label>
+        <input type="text" class="st-modal-input" id="stEditNameInput" placeholder="Your name" autocomplete="name" />
+      </div>
+      <p class="st-modal-error" id="stEditProfileError" hidden></p>
+      <div class="st-dialog-btns">
+        <button class="btn btn--primary" id="stEditProfileSave" type="button">Save Changes</button>
+        <button class="btn btn--outline" id="stEditProfileCancel" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div id="stChangePasswordModal" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stChangePwTitle">
+    <div class="st-dialog-box">
+      <h3 class="st-dialog-title" id="stChangePwTitle">Change Password</h3>
+      <div class="st-modal-field">
+        <label class="st-modal-label" for="stNewPasswordInput">New Password</label>
+        <input type="password" class="st-modal-input" id="stNewPasswordInput" placeholder="At least 6 characters" autocomplete="new-password" />
+      </div>
+      <div class="st-modal-field">
+        <label class="st-modal-label" for="stConfirmPasswordInput">Confirm Password</label>
+        <input type="password" class="st-modal-input" id="stConfirmPasswordInput" placeholder="Repeat new password" autocomplete="new-password" />
+      </div>
+      <p class="st-modal-error" id="stChangePwError" hidden></p>
+      <div class="st-dialog-btns">
+        <button class="btn btn--primary" id="stChangePwSave" type="button">Update Password</button>
+        <button class="btn btn--outline" id="stChangePwCancel" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Confirm dialog -->
   <div id="stConfirmDialog" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stConfirmTitle">
     <div class="st-dialog-box">

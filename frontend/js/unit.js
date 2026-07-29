@@ -340,7 +340,15 @@
     if (targetId === 'cpanelGuide') {
       sgLoad();
       if (viewMode !== 'review') {
-        _markActivityDone(`fw_sg_done_u${unitNum}`, currentTopicId);
+        if (_markActivityDone(`fw_sg_done_u${unitNum}`, currentTopicId)) {
+          try {
+            const sgTopic  = unit.topics.find(t => t.id === currentTopicId);
+            const sgActLog = JSON.parse(localStorage.getItem('fw_activity_log') || '[]');
+            sgActLog.unshift({ date: new Date().toISOString(), label: `Study Guide: ${sgTopic?.name || 'topic'}`, sub: `Unit ${unitNum} · ${sgTopic?.num || ''}` });
+            if (sgActLog.length > 100) sgActLog.splice(100);
+            localStorage.setItem('fw_activity_log', JSON.stringify(sgActLog));
+          } catch {}
+        }
         _checkAndMarkFullyComplete(currentTopicId);
       }
     }
@@ -810,7 +818,14 @@
       _logStudyDate();
 
       // Mark flashcard activity done; tick checkbox only when all 3 activities complete
-      _markActivityDone(`fw_fc_done_u${unitNum}`, currentTopicId);
+      if (_markActivityDone(`fw_fc_done_u${unitNum}`, currentTopicId)) {
+        try {
+          const fcActLog = JSON.parse(localStorage.getItem('fw_activity_log') || '[]');
+          fcActLog.unshift({ date: new Date().toISOString(), label: `Flashcards: ${t?.name || 'topic'}`, sub: `Unit ${unitNum} · ${t?.num || ''}` });
+          if (fcActLog.length > 100) fcActLog.splice(100);
+          localStorage.setItem('fw_activity_log', JSON.stringify(fcActLog));
+        } catch {}
+      }
       _checkAndMarkFullyComplete(currentTopicId);
 
       if (ptsEarnedEl) {

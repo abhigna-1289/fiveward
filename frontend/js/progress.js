@@ -1,25 +1,27 @@
 // =============================================================
 // FIVEWARD — Progress Tracker
 // Reads all study data from localStorage and renders the page.
+// Subject-agnostic: renders progress for every enrolled subject.
 //
 // localStorage keys consumed:
-//   fw_progress_u1..5     → [topicId, ...]        (written by unit.js)
-//   fw_study_log          → [{date,seconds}, ...]  (written by timer.js)
+//   fw_enrolled           → ['ap-csp', ...]        (list of enrolled subject IDs)
+//   fw_progress_u1..5     → [topicId, ...]          (written by unit.js)
+//   fw_study_log          → [{date,seconds}, ...]   (written by timer.js)
 //   fw_pq_results         → [{date,unitNum,topicNum,topicName,type,pct,...}]
 //   fw_activity_log       → [{date,label,sub}, ...]
 //   fw_streak_dates       → ['YYYY-MM-DD', ...]
 //   fw_points             → number (total points)
-//   fw_lb_show_on_page    → boolean (show leaderboard card at all)
-//   fw_lb_show_me         → boolean (show user on other leaderboards)
+//   fw_lb_show_on_page    → boolean
 // =============================================================
 
 (function initProgress() {
 
   // =========================================================
-  // UNIT DEFINITIONS  (mirrors unit.js)
+  // SUBJECT REGISTRY
+  // Add new subjects here as they become available.
   // =========================================================
 
-  const UNITS = {
+  const UNITS_AP_CSP = {
     1: { name: 'Creative Development', topics: [
       { id: 1, num: '1.1', name: 'Collaboration' },
       { id: 2, num: '1.2', name: 'Program Function and Purpose' },
@@ -67,6 +69,10 @@
     ]},
   };
 
+  const SUBJECTS = {
+    'ap-csp': { name: 'AP Computer Science Principles', units: UNITS_AP_CSP },
+  };
+
   // =========================================================
   // HELPERS
   // =========================================================
@@ -101,6 +107,19 @@
   }
 
   // =========================================================
+  // ENROLLMENT
+  // =========================================================
+
+  function getEnrolledSubjects() {
+    try {
+      const ids = JSON.parse(localStorage.getItem('fw_enrolled') || '[]');
+      return ids
+        .filter(id => SUBJECTS[id])
+        .map(id => ({ id, ...SUBJECTS[id] }));
+    } catch { return []; }
+  }
+
+  // =========================================================
   // DATA CALCULATIONS
   // =========================================================
 
@@ -113,20 +132,22 @@
   }
 
   function topicInProgress(unitNum, topicId) {
-    const fcD = activityDoneSet(unitNum, 'fw_fc_done_u');
-    const pqD = activityDoneSet(unitNum, 'fw_pq_done_u');
-    const sgD = activityDoneSet(unitNum, 'fw_sg_done_u');
+    const fcD    = activityDoneSet(unitNum, 'fw_fc_done_u');
+    const pqD    = activityDoneSet(unitNum, 'fw_pq_done_u');
+    const sgD    = activityDoneSet(unitNum, 'fw_sg_done_u');
     const allDone = fcD.has(topicId) && pqD.has(topicId) && sgD.has(topicId);
     const anyDone = fcD.has(topicId) || pqD.has(topicId) || sgD.has(topicId);
     return anyDone && !allDone;
   }
 
-  function calcOverallCompletion() {
-    let done = 0;
-    const total = Object.values(UNITS).reduce((s, u) => s + u.topics.length, 0) * 3;
-    for (let n = 1; n <= 5; n++) {
-      for (const prefix of ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']) {
-        done += ls(`${prefix}${n}`, []).length;
+  function calcOverallCompletion(subjects) {
+    let done = 0, total = 0;
+    for (const subj of subjects) {
+      for (const n of Object.keys(subj.units)) {
+        total += subj.units[n].topics.length * 3;
+        for (const prefix of ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']) {
+          done += ls(`${prefix}${n}`, []).length;
+        }
       }
     }
     return total > 0 ? Math.round((done / total) * 100) : 0;
@@ -158,9 +179,11 @@
     return Math.round(results.reduce((a, r) => a + (r.pct || 0), 0) / results.length);
   }
 
+  // Reads actual practice question history from localStorage and returns
+  // the topics with the lowest average scores — real analysis, not placeholder.
   function calcWeakAreas() {
-    const results  = ls('fw_pq_results', []);
-    const byTopic  = {};
+    const results = ls('fw_pq_results', []);
+    const byTopic = {};
     results.forEach(r => {
       const key = `${r.unitNum}-${r.topicNum}`;
       if (!byTopic[key]) byTopic[key] = { topicName: r.topicName || r.topicNum, pcts: [] };
@@ -172,6 +195,8 @@
       .slice(0, 5);
   }
 
+  // Returns the 5 most recent activity entries from localStorage.
+  // Written by unit.js on PQ completion, flashcard completion, and study guide views.
   function calcActivity() {
     return ls('fw_activity_log', []).slice(0, 5);
   }
@@ -202,8 +227,8 @@
   function el(id) { return document.getElementById(id) || { textContent: '', style: {} }; }
   function setBarWidth(id, pct) { const b = document.getElementById(id); if (b) b.style.width = pct + '%'; }
 
-  function renderStats() {
-    const pct = calcOverallCompletion();
+  function renderStats(subjects) {
+    const pct = calcOverallCompletion(subjects);
     setTimeout(() => setRing(pct), 80);
 
     const { h, m, totalSec } = calcStudyTime();
@@ -224,75 +249,88 @@
       el('pgAvgScore').textContent = '—';
     }
 
-    // Total points (5th card)
     const pts = getUserPoints();
     el('pgTotalPoints').textContent = pts.toLocaleString();
-    setBarWidth('pgPointsBar', Math.min(pts / 500 * 100, 100)); // 500pts = full bar
+    setBarWidth('pgPointsBar', Math.min(pts / 500 * 100, 100));
   }
 
   // =========================================================
-  // RENDER — UNITS PANEL  (topic rows are clickable <a> links)
+  // RENDER — UNITS PANEL
+  // Renders one collapsible row per unit for each enrolled subject.
+  // When multiple subjects are enrolled, a subject name heading
+  // separates each subject's units.
   // =========================================================
 
   const CHECK_SVG = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
 
-  function renderUnits() {
+  function renderUnits(subjects) {
     const list = document.getElementById('pgUnitsList');
     if (!list) return;
     list.innerHTML = '';
 
-    for (let n = 1; n <= 5; n++) {
-      const unit      = UNITS[n];
-      const completed = completedTopicsForUnit(n);
-      const total     = unit.topics.length;
-      const actDone   = ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']
-        .reduce((s, p) => s + ls(`${p}${n}`, []).length, 0);
-      const pct       = total > 0 ? Math.round((actDone / (total * 3)) * 100) : 0;
-      const barCls    = pct === 100 ? '' : pct > 0 ? 'pg-unit-row__bar-fill--partial' : '';
+    const multiSubject = subjects.length > 1;
 
-      const row = document.createElement('div');
-      row.className = 'pg-unit-row';
-      row.innerHTML = `
-        <button class="pg-unit-row__hd" type="button" aria-expanded="false">
-          <span class="pg-unit-row__chevron">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-          </span>
-          <span class="pg-unit-row__name">Unit ${n}</span>
-          <div class="pg-unit-row__bar-wrap">
-            <div class="pg-unit-row__bar-fill ${barCls}" style="width:${pct}%"></div>
-          </div>
-          <span class="pg-unit-row__pct">${pct}%</span>
-        </button>
-        <div class="pg-unit-row__topics" role="list">
-          ${unit.topics.map(t => {
-            const isDone   = completed.has(t.id);
-            const isIP     = !isDone && topicInProgress(n, t.id);
-            const status   = isDone ? 'complete' : isIP ? 'inprogress' : 'notstarted';
-            const dotHtml  = isDone
-              ? `<span class="pg-topic-dot pg-topic-dot--complete">${CHECK_SVG}</span>`
-              : `<span class="pg-topic-dot pg-topic-dot--${status}"></span>`;
-            return `<a class="pg-topic-row pg-topic-row--${status}"
-                       href="unit.html?unit=${n}&topic=${t.id}"
-                       role="listitem"
-                       aria-label="Go to ${t.num} ${t.name}">
-              ${dotHtml}
-              <span class="pg-topic-num">${t.num}</span>
-              <span class="pg-topic-name">${escHtml(t.name)}</span>
-            </a>`;
-          }).join('')}
-        </div>`;
+    for (const subj of subjects) {
+      if (multiSubject) {
+        const heading = document.createElement('div');
+        heading.className = 'pg-subject-group-heading';
+        heading.textContent = subj.name;
+        list.appendChild(heading);
+      }
 
-      row.querySelector('.pg-unit-row__hd').addEventListener('click', () => {
-        const expanded = row.classList.toggle('pg-unit-row--expanded');
-        row.querySelector('.pg-unit-row__hd').setAttribute('aria-expanded', String(expanded));
-      });
+      for (const [n, unit] of Object.entries(subj.units)) {
+        const completed = completedTopicsForUnit(Number(n));
+        const total     = unit.topics.length;
+        const actDone   = ['fw_fc_done_u', 'fw_pq_done_u', 'fw_sg_done_u']
+          .reduce((s, p) => s + ls(`${p}${n}`, []).length, 0);
+        const pct       = total > 0 ? Math.round((actDone / (total * 3)) * 100) : 0;
+        const barCls    = pct === 100 ? '' : pct > 0 ? 'pg-unit-row__bar-fill--partial' : '';
 
-      list.appendChild(row);
+        const row = document.createElement('div');
+        row.className = 'pg-unit-row';
+        row.innerHTML = `
+          <button class="pg-unit-row__hd" type="button" aria-expanded="false">
+            <span class="pg-unit-row__chevron">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </span>
+            <span class="pg-unit-row__name">Unit ${n}</span>
+            <div class="pg-unit-row__bar-wrap">
+              <div class="pg-unit-row__bar-fill ${barCls}" style="width:${pct}%"></div>
+            </div>
+            <span class="pg-unit-row__pct">${pct}%</span>
+          </button>
+          <div class="pg-unit-row__topics" role="list">
+            ${unit.topics.map(t => {
+              const isDone  = completed.has(t.id);
+              const isIP    = !isDone && topicInProgress(Number(n), t.id);
+              const status  = isDone ? 'complete' : isIP ? 'inprogress' : 'notstarted';
+              const dotHtml = isDone
+                ? `<span class="pg-topic-dot pg-topic-dot--complete">${CHECK_SVG}</span>`
+                : `<span class="pg-topic-dot pg-topic-dot--${status}"></span>`;
+              return `<a class="pg-topic-row pg-topic-row--${status}"
+                         href="unit.html?unit=${n}&topic=${t.id}"
+                         role="listitem"
+                         aria-label="Go to ${t.num} ${t.name}">
+                ${dotHtml}
+                <span class="pg-topic-num">${t.num}</span>
+                <span class="pg-topic-name">${escHtml(t.name)}</span>
+              </a>`;
+            }).join('')}
+          </div>`;
+
+        row.querySelector('.pg-unit-row__hd').addEventListener('click', () => {
+          const expanded = row.classList.toggle('pg-unit-row--expanded');
+          row.querySelector('.pg-unit-row__hd').setAttribute('aria-expanded', String(expanded));
+        });
+
+        list.appendChild(row);
+      }
     }
   }
 
   // =========================================================
   // RENDER — WEAK AREAS
+  // Analyzes fw_pq_results to surface topics with lowest average scores.
   // =========================================================
 
   const WARN_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
@@ -318,6 +356,8 @@
 
   // =========================================================
   // RENDER — RECENT ACTIVITY
+  // Reads fw_activity_log written by unit.js on PQ, flashcard,
+  // and study guide completions.
   // =========================================================
 
   function renderActivity() {
@@ -347,8 +387,6 @@
 
   // =========================================================
   // RENDER — LEADERBOARD
-  // Visibility is controlled by fw_lb_show_on_page (set in Settings).
-  // Shows user's real fw_points alongside placeholder data for other users.
   // =========================================================
 
   const LB_OTHERS = [
@@ -368,10 +406,7 @@
     if (!card) return;
 
     const showOnPage = ls('fw_lb_show_on_page', true);
-    if (!showOnPage) {
-      card.hidden = true;
-      return;
-    }
+    if (!showOnPage) { card.hidden = true; return; }
 
     card.hidden = false;
     const container = document.getElementById('pgLeaderboard');
@@ -379,20 +414,15 @@
     if (!container) return;
 
     const userPoints = getUserPoints();
-
-    // Merge user entry with placeholder data, sort descending
-    const entries = [
-      { name: 'You', score: userPoints, isYou: true },
-      ...LB_OTHERS,
-    ]
+    const entries = [{ name: 'You', score: userPoints, isYou: true }, ...LB_OTHERS]
       .sort((a, b) => b.score - a.score)
-      .slice(0, 6); // show top 6 to ensure user is visible even at bottom
+      .slice(0, 6);
 
     container.innerHTML = `<div class="pg-lb-list">
       ${entries.map((u, i) => {
-        const rank     = i + 1;
-        const rankCls  = RANK_CLASSES[rank] || '';
-        const rowCls   = u.isYou ? 'pg-lb-row pg-lb-row--you' : 'pg-lb-row';
+        const rank    = i + 1;
+        const rankCls = RANK_CLASSES[rank] || '';
+        const rowCls  = u.isYou ? 'pg-lb-row pg-lb-row--you' : 'pg-lb-row';
         const nameHtml = u.isYou
           ? `<span class="pg-lb-name">You <span class="pg-lb-you-badge">· your score</span></span>`
           : `<span class="pg-lb-name">${escHtml(u.name)}</span>`;
@@ -444,22 +474,17 @@
   }
 
   // =========================================================
-  // ENROLLMENT CHECK
+  // EMPTY STATE — not enrolled in any subjects
   // =========================================================
-
-  function isEnrolled() {
-    try {
-      return JSON.parse(localStorage.getItem('fw_enrolled') || '[]').includes('ap-csp');
-    } catch { return false; }
-  }
 
   function showNotEnrolledState() {
     document.getElementById('pgNotEnrolled')?.removeAttribute('hidden');
-    document.querySelector('.pg-subject-header')?.style.setProperty('display', 'none');
+    const header = document.getElementById('pgSubjectHeader');
+    if (header) header.hidden = true;
     const grid = document.getElementById('pgStatsGrid');
-    if (grid) grid.style.display = 'none';
+    if (grid) grid.hidden = true;
     const layout = document.getElementById('pgLayout');
-    if (layout) layout.style.display = 'none';
+    if (layout) layout.hidden = true;
   }
 
   // =========================================================
@@ -467,13 +492,22 @@
   // =========================================================
 
   function init() {
-    if (!isEnrolled()) {
+    const subjects = getEnrolledSubjects();
+
+    if (!subjects.length) {
       showNotEnrolledState();
       initDropdown();
       return;
     }
-    renderStats();
-    renderUnits();
+
+    // Set page heading: subject name if exactly one enrolled, else generic
+    const titleEl = document.getElementById('pgSubjectTitle');
+    if (titleEl) {
+      titleEl.textContent = subjects.length === 1 ? subjects[0].name : 'My Progress';
+    }
+
+    renderStats(subjects);
+    renderUnits(subjects);
     renderWeakAreas();
     renderActivity();
     initLeaderboard();

@@ -130,13 +130,97 @@
     }
   }
 
+  // --- Edit Profile Modal -----------------------------------
+
+  const _editModal    = document.getElementById('stEditProfileModal');
+  const _editNameIn   = document.getElementById('stEditNameInput');
+  const _editErrEl    = document.getElementById('stEditProfileError');
+
   document.getElementById('stEditProfileBtn')?.addEventListener('click', () => {
-    window.fwShowToast?.('Profile editing coming soon');
+    if (_editNameIn) _editNameIn.value = document.getElementById('settingsName')?.textContent?.trim() || '';
+    if (_editErrEl)  _editErrEl.hidden = true;
+    if (_editModal)  { _editModal.hidden = false; _editNameIn?.focus(); }
   });
 
-  document.getElementById('stChangePasswordBtn')?.addEventListener('click', () => {
-    window.fwShowToast?.('Password management coming soon');
+  document.getElementById('stEditProfileSave')?.addEventListener('click', async () => {
+    const name = _editNameIn?.value?.trim() || '';
+    if (_editErrEl) _editErrEl.hidden = true;
+    if (!name) {
+      if (_editErrEl) { _editErrEl.textContent = 'Name cannot be empty.'; _editErrEl.hidden = false; }
+      return;
+    }
+    if (window.sb) {
+      const { error } = await window.sb.auth.updateUser({ data: { full_name: name } });
+      if (error) {
+        if (_editErrEl) { _editErrEl.textContent = error.message; _editErrEl.hidden = false; }
+        return;
+      }
+    }
+    const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    const nameEl    = document.getElementById('settingsName');
+    const avatEl    = document.getElementById('stAvatarEl');
+    const navNameEl = document.getElementById('dropdownName');
+    const navAvatEl = document.getElementById('userAvatar');
+    if (nameEl)    nameEl.textContent    = name;
+    if (avatEl)    avatEl.textContent    = initials;
+    if (navNameEl) navNameEl.textContent = name;
+    if (navAvatEl) navAvatEl.textContent = initials;
+    if (_editModal) _editModal.hidden = true;
+    window.fwShowToast?.('Profile updated');
   });
+
+  document.getElementById('stEditProfileCancel')?.addEventListener('click', () => {
+    if (_editModal) _editModal.hidden = true;
+  });
+  _editModal?.addEventListener('keydown', e => { if (e.key === 'Escape') _editModal.hidden = true; });
+
+  // --- Change Password Modal --------------------------------
+
+  const _pwModal    = document.getElementById('stChangePasswordModal');
+  const _newPwIn    = document.getElementById('stNewPasswordInput');
+  const _confPwIn   = document.getElementById('stConfirmPasswordInput');
+  const _pwErrEl    = document.getElementById('stChangePwError');
+
+  document.getElementById('stChangePasswordBtn')?.addEventListener('click', () => {
+    if (_newPwIn)  _newPwIn.value  = '';
+    if (_confPwIn) _confPwIn.value = '';
+    if (_pwErrEl)  _pwErrEl.hidden = true;
+    if (_pwModal)  { _pwModal.hidden = false; _newPwIn?.focus(); }
+  });
+
+  document.getElementById('stChangePwSave')?.addEventListener('click', async () => {
+    const newPw  = _newPwIn?.value  || '';
+    const confPw = _confPwIn?.value || '';
+    if (_pwErrEl) _pwErrEl.hidden = true;
+    if (!newPw) {
+      if (_pwErrEl) { _pwErrEl.textContent = 'Please enter a new password.'; _pwErrEl.hidden = false; }
+      return;
+    }
+    if (newPw.length < 6) {
+      if (_pwErrEl) { _pwErrEl.textContent = 'Password must be at least 6 characters.'; _pwErrEl.hidden = false; }
+      return;
+    }
+    if (newPw !== confPw) {
+      if (_pwErrEl) { _pwErrEl.textContent = 'Passwords do not match.'; _pwErrEl.hidden = false; }
+      return;
+    }
+    if (!window.sb) {
+      if (_pwErrEl) { _pwErrEl.textContent = 'Not connected to authentication service.'; _pwErrEl.hidden = false; }
+      return;
+    }
+    const { error } = await window.sb.auth.updateUser({ password: newPw });
+    if (error) {
+      if (_pwErrEl) { _pwErrEl.textContent = error.message; _pwErrEl.hidden = false; }
+      return;
+    }
+    if (_pwModal) _pwModal.hidden = true;
+    window.fwShowToast?.('Password updated');
+  });
+
+  document.getElementById('stChangePwCancel')?.addEventListener('click', () => {
+    if (_pwModal) _pwModal.hidden = true;
+  });
+  _pwModal?.addEventListener('keydown', e => { if (e.key === 'Escape') _pwModal.hidden = true; });
 
   document.getElementById('stUnlinkGoogleBtn')?.addEventListener('click', () => {
     window.fwShowToast?.('Account unlinking coming soon');
@@ -184,7 +268,32 @@
   // NOTIFICATIONS SECTION
   // =========================================================
 
-  wireToggle('stEmailNotif',   'fw_notif_email',    true);
+  // Email Notifications — preference saved to Supabase user metadata
+  // and mirrored to localStorage as a fast-read cache.
+  (async function wireEmailNotif() {
+    const el = document.getElementById('stEmailNotif');
+    if (!el) return;
+    if (window.sb) {
+      try {
+        const { data: { user } } = await window.sb.auth.getUser();
+        if (user && user.user_metadata?.notif_email !== undefined) {
+          el.checked = user.user_metadata.notif_email;
+          lsSet('fw_notif_email', el.checked);
+        } else {
+          el.checked = ls('fw_notif_email', true);
+        }
+      } catch { el.checked = ls('fw_notif_email', true); }
+    } else {
+      el.checked = ls('fw_notif_email', true);
+    }
+    el.addEventListener('change', async () => {
+      lsSet('fw_notif_email', el.checked);
+      if (window.sb) {
+        try { await window.sb.auth.updateUser({ data: { notif_email: el.checked } }); }
+        catch {}
+      }
+    });
+  })();
   wireToggle('stStudyReminder','fw_notif_reminder',  false);
   if (localStorage.getItem('fw_notif_browser') === null) {
     localStorage.setItem('fw_notif_browser', 'true');
