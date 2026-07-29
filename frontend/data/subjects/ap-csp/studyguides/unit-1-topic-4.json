@@ -2,5 +2,194 @@
   "unit": 1,
   "topic": "1.4",
   "title": "Identifying and Correcting Errors",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "The Four Types of Errors"
+    },
+    {
+      "type": "paragraph",
+      "text": "Errors in programs are inevitable. Knowing how to identify what type of error occurred is the first step toward fixing it. There are four types of errors you need to know for the AP exam, each with distinct characteristics."
+    },
+    {
+      "type": "keyterm",
+      "term": "Logic Error",
+      "definition": "A mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly. The program runs without crashing, but produces wrong results. The code is syntactically valid and executes, but the algorithm itself is flawed."
+    },
+    {
+      "type": "keyterm",
+      "term": "Syntax Error",
+      "definition": "A mistake in the program where the rules of the programming language are not followed. The program cannot run until the syntax error is corrected. Examples include misspelled keywords, missing brackets, or incorrect punctuation."
+    },
+    {
+      "type": "keyterm",
+      "term": "Run-time Error",
+      "definition": "A mistake in the program that occurs during the execution of a program. The program starts running but crashes or fails at a specific point. Programming languages define their own run-time errors. Example: dividing by zero causes a run-time error."
+    },
+    {
+      "type": "keyterm",
+      "term": "Overflow Error",
+      "definition": "An error that occurs when a computer attempts to handle a number that is outside of the defined range of values. For example, if a variable can only store integers up to 255 and you try to store 300, an overflow error occurs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Error Type", "When It Occurs", "Program Runs?", "Example"],
+      "rows": [
+        ["Logic error", "The algorithm or program is incorrectly designed", "Yes — but produces wrong results", "A program intended to find the average divides by 2 instead of 3"],
+        ["Syntax error", "The rules of the programming language are not followed", "No — cannot run until fixed", "Using rezult instead of result (misspelled variable name)"],
+        ["Run-time error", "During execution of the program", "Starts, then crashes at the error", "Dividing by zero when the denominator is 0"],
+        ["Overflow error", "A number exceeds the defined range of values", "May run, then produce wrong result or crash", "Storing 300 in a variable that can only hold 0–255"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The key distinction: a logic error runs but gives wrong answers. A syntax error prevents the program from running at all. A run-time error starts running then crashes. An overflow error happens when a number is outside the defined range. These are heavily tested — know each one cold."
+    },
+    {
+      "type": "heading",
+      "text": "Logic Error: The Sneakiest Error"
+    },
+    {
+      "type": "paragraph",
+      "text": "Logic errors are the hardest to find because the program runs successfully — it just produces the wrong output. There is no error message to guide you. You have to trace through the logic yourself to discover where the algorithm went wrong."
+    },
+    {
+      "type": "codeblock",
+      "code": "score1 ← 85\nscore2 ← 90\nscore3 ← 78\ntotal ← score1 + score2 + score3\naverage ← total / 2   ← LOGIC ERROR: should divide by 3, not 2\nDISPLAY average       ← displays 126.5 instead of 84.33"
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The program above runs perfectly — no crashes, no error messages. But it divides by 2 instead of 3, so the average is wrong. This is a logic error. The syntax is valid, it executes, but the algorithm is incorrect."
+    },
+    {
+      "type": "heading",
+      "text": "Overflow Error: When Numbers Get Too Big"
+    },
+    {
+      "type": "paragraph",
+      "text": "In many programming languages, integers are stored using a fixed number of bits, which limits the range of values they can represent. When a calculation produces a result outside that range, an overflow error occurs. A classic symptom: a very large positive number suddenly becomes negative — the value has 'wrapped around' the range."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Situation", "What Happens"],
+      "rows": [
+        ["Variable stores integers 0–255, you assign 300", "Overflow error — 300 is outside the defined range"],
+        ["A company's revenue counter reaches its maximum integer value", "The value may wrap around to a negative number — a classic overflow symptom"],
+        ["A calculation produces a number larger than the defined maximum", "Overflow error — the result cannot be stored"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Five Ways to Find and Correct Errors"
+    },
+    {
+      "type": "paragraph",
+      "text": "The following are all effective ways to find and correct errors in programs. Each has its own strengths depending on the type of error and the situation."
+    },
+    {
+      "type": "keyterm",
+      "term": "Test Cases",
+      "definition": "Defined inputs used to check whether a program produces the expected output. Test cases help identify when a program behaves incorrectly for specific inputs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Hand Tracing",
+      "definition": "Manually stepping through the code line by line, tracking the value of each variable at each step. Helps identify exactly where a logic error occurs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Visualizations",
+      "definition": "Using diagrams, flowcharts, or other visual representations of the program's execution to understand how it behaves and identify errors."
+    },
+    {
+      "type": "keyterm",
+      "term": "Debugger",
+      "definition": "A tool that allows programmers to pause execution at specific points, inspect variable values, and step through the code one line at a time. More powerful than adding output statements."
+    },
+    {
+      "type": "keyterm",
+      "term": "Adding Extra Output Statements",
+      "definition": "Inserting temporary DISPLAY or print statements at key points in the code to show the values of variables during execution. Helps identify where values become incorrect."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Method", "What It Does", "Best For"],
+      "rows": [
+        ["Test cases", "Run the program with specific defined inputs and check outputs against expected results", "Finding errors that only appear for certain inputs"],
+        ["Hand tracing", "Manually track variable values through each line of code on paper", "Understanding logic errors in small code segments"],
+        ["Visualizations", "Use diagrams or flowcharts to represent program execution", "Understanding complex program flow and structure"],
+        ["Debugger", "Pause execution and inspect variable values at specific points", "Finding errors in larger programs where hand tracing is impractical"],
+        ["Adding extra output statements", "Insert temporary DISPLAY statements to show variable values during execution", "Quick identification of where values become incorrect"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "You must know all five error-finding methods: test cases, hand tracing, visualizations, debuggers, and adding extra output statements. The exam may describe one of these and ask you to identify it, or give a scenario and ask which method is being used."
+    },
+    {
+      "type": "heading",
+      "text": "Testing: Finding Errors Before They Reach Users"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the development process, testing uses defined inputs to ensure that an algorithm or program is producing the expected outcomes. Programmers use the results from testing to revise their algorithms or programs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Testing",
+      "definition": "Using defined inputs to ensure that an algorithm or program is producing the expected outcomes. Programmers use the results from testing to revise their algorithms or programs."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Defined inputs used to test a program should demonstrate the different expected outcomes that are at or just beyond the extremes (minimum and maximum) of input data",
+        "Testing at the boundaries catches the most common edge case errors",
+        "Program requirements are needed to identify appropriate defined inputs for testing — you need to know what the program is supposed to do before you can test whether it does it correctly"
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Testing Scenario", "Good Test Inputs", "Why"],
+      "rows": [
+        ["Program accepts ages 0–120", "0, 1, 119, 120, and one value just outside (e.g., -1 and 121)", "Tests the exact boundaries and just beyond them — catches off-by-one errors"],
+        ["Program accepts scores 0–100", "0, 1, 99, 100, and invalid values like -1 and 101", "Verifies the program handles minimum, maximum, and invalid inputs correctly"],
+        ["Program calculates average of a list", "A list with one element, a list with many elements, and an empty list", "Tests edge cases that might cause division by zero or other unexpected behavior"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students often test only 'normal' inputs like values in the middle of the valid range. The most important test inputs are at or just beyond the extremes — minimum, maximum, and values just outside the valid range. These are where programs most commonly fail."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "You need program requirements to write good test cases. If you don't know what the program is supposed to do (the requirements), you cannot know what the expected output should be for a given input, and therefore cannot verify whether the program is correct."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Logic error: program runs but produces incorrect results — the algorithm itself is wrong",
+        "Syntax error: rules of the programming language are not followed — program cannot run until fixed",
+        "Run-time error: occurs during execution of the program — program starts then crashes",
+        "Overflow error: a number is outside the defined range of values the computer can handle",
+        "Five ways to find and correct errors: test cases, hand tracing, visualizations, debuggers, adding extra output statements",
+        "Testing uses defined inputs to ensure a program produces expected outcomes — results are used to revise the program",
+        "Test inputs should demonstrate expected outcomes at or just beyond the extremes (minimum and maximum) of input data",
+        "Program requirements are needed to identify appropriate defined inputs for testing"
+      ]
+    }
+  ]
 }

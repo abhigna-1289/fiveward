@@ -2,5 +2,212 @@
   "unit": 4,
   "topic": "4.3",
   "title": "Parallel and Distributed Computing",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Three Ways to Compute"
+    },
+    {
+      "type": "paragraph",
+      "text": "As problems grow larger and more complex, single-computer sequential processing becomes impractical — either because it takes too long, or because the problem is too large to fit in one computer's memory. This topic covers three computational models and how to compare their efficiency: sequential computing, parallel computing, and distributed computing."
+    },
+    {
+      "type": "heading",
+      "text": "Sequential Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Sequential Computing",
+      "definition": "A computational model in which operations are performed in order one at a time. A sequential solution takes as long as the sum of all of its steps."
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequential computing is the simplest model — one operation happens, finishes, then the next begins. No operations overlap. The total time is simply the sum of every step's time. This is how most programs you have written in Unit 3 work: statement by statement, in order."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Sequential computing time calculation:\n-- Task A takes 10 seconds\n-- Task B takes 20 seconds\n-- Task C takes 15 seconds\n-- Run one at a time in order:\n\nTotal sequential time = 10 + 20 + 15 = 45 seconds\n\n-- A sequential solution takes as long as the SUM of all its steps"
+    },
+    {
+      "type": "heading",
+      "text": "Parallel Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Parallel Computing",
+      "definition": "A computational model where the program is broken into multiple smaller sequential computing operations, some of which are performed simultaneously. A parallel computing solution takes as long as its sequential tasks plus the longest of its parallel tasks."
+    },
+    {
+      "type": "paragraph",
+      "text": "Parallel computing breaks a program into parts and runs some of those parts simultaneously on multiple processors or cores. The key insight is that only INDEPENDENT tasks can run in parallel — tasks that depend on the result of another task must still wait. This means every parallel solution still has a sequential portion."
+    },
+    {
+      "type": "keyterm",
+      "term": "How to calculate the time for a parallel computing solution",
+      "definition": "Time = sequential tasks + longest parallel task.\nExample: if sequential tasks take 5 seconds and parallel tasks take 3, 4, and 6 seconds simultaneously, total time = 5 + 6 = 11 seconds."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Parallel computing time calculation:\n-- Sequential setup: 5 seconds (MUST run first)\n-- Parallel task A: 10 seconds  ┐\n-- Parallel task B: 25 seconds  ├── run simultaneously\n-- Parallel task C: 15 seconds  ┘\n-- Sequential cleanup: 3 seconds (MUST run after parallel tasks)\n\n-- Parallel time = sequential tasks + LONGEST parallel task\n-- Total = (5 + 3) + 25\n-- Total = 8 + 25 = 33 seconds\n\n-- Compare to sequential:\n-- Sequential total = 5 + 10 + 25 + 15 + 3 = 58 seconds\n-- Parallel saves: 58 - 33 = 25 seconds"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scenario", "Sequential Time", "Parallel Time", "Savings"],
+      "rows": [
+        ["Setup=5s, Tasks=10s+25s+15s, Cleanup=3s", "5+10+25+15+3 = 58s", "8+25 = 33s", "25 seconds saved"],
+        ["Setup=0s, Tasks=20s+30s+10s, Cleanup=0s", "0+20+30+10+0 = 60s", "0+30 = 30s", "30 seconds saved"],
+        ["Setup=10s, Tasks=5s+5s+5s, Cleanup=10s", "10+5+5+5+10 = 35s", "20+5 = 25s", "10 seconds saved"],
+        ["Setup=20s, Tasks=2s+3s+1s, Cleanup=20s", "20+2+3+1+20 = 46s", "40+3 = 43s", "Only 3 seconds saved — sequential dominates"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Parallel time = sequential portion + LONGEST parallel task. The other parallel tasks finish before the longest one — they do not add to the total time. ONLY the longest parallel task determines the parallel portion's contribution to total time."
+    },
+    {
+      "type": "heading",
+      "text": "Speedup of Parallel Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Speedup of Parallel Computing",
+      "definition": "Speedup = sequential time / parallel time.\nExample: if a task takes 20 seconds sequentially but 5 seconds in parallel, the speedup is 20 / 5 = 4. This means the parallel solution is 4 times faster."
+    },
+    {
+      "type": "paragraph",
+      "text": "Speedup measures how much faster the parallel solution is compared to the sequential one. A speedup of 2 means the parallel solution is twice as fast. A speedup of 10 means ten times as fast. The speedup is calculated by dividing the sequential time by the parallel time."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Speedup calculation examples:\n\n-- Example 1:\n-- Sequential time: 60 seconds\n-- Parallel time: 20 seconds\n-- Speedup = 60 / 20 = 3\n-- The parallel solution is 3 times faster\n\n-- Example 2:\n-- Sequential time: 100 seconds\n-- Parallel time: 25 seconds\n-- Speedup = 100 / 25 = 4\n-- The parallel solution is 4 times faster\n\n-- Example 3 (from time calculation above):\n-- Sequential time: 58 seconds\n-- Parallel time: 33 seconds\n-- Speedup = 58 / 33 ≈ 1.76\n-- The parallel solution is about 1.76 times faster"
+    },
+    {
+      "type": "heading",
+      "text": "The Limitation of Parallel Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Limitation of Parallel Computing",
+      "definition": "Every parallel computing solution still has a sequential portion. The efficiency of the overall solution is limited by that sequential portion — at some point, adding more parallel processes will no longer meaningfully increase efficiency."
+    },
+    {
+      "type": "keyterm",
+      "term": "When does adding more parallel processes stop helping?",
+      "definition": "When increasing parallel computing in a solution, efficiency is still limited by the sequential portion. At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is one of the most important and commonly tested concepts in topic 4.3. Every parallel solution has two parts: a parallel portion (which benefits from more processors) and a sequential portion (which cannot be parallelized and must always run serially). No matter how many processors you add, the sequential portion always takes the same amount of time. Eventually, the sequential portion becomes the bottleneck — adding more parallel processors stops making the overall solution meaningfully faster."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Demonstrating the sequential bottleneck:\n-- Sequential portion: 40 seconds (CANNOT be parallelized)\n-- Parallel portion: 60 seconds of work\n\n-- With 1 processor (sequential only):\n-- Total = 40 + 60 = 100 seconds\n\n-- With 2 processors (parallel work split in half):\n-- Total = 40 + 30 = 70 seconds  (speedup: 100/70 ≈ 1.43)\n\n-- With 4 processors:\n-- Total = 40 + 15 = 55 seconds  (speedup: 100/55 ≈ 1.82)\n\n-- With 10 processors:\n-- Total = 40 + 6 = 46 seconds   (speedup: 100/46 ≈ 2.17)\n\n-- With 100 processors:\n-- Total = 40 + 0.6 = 40.6 seconds (speedup: 100/40.6 ≈ 2.46)\n\n-- With INFINITE processors:\n-- Total = 40 + 0 = 40 seconds   (speedup: 100/40 = 2.5 MAX)\n\n-- No matter how many processors: speedup CANNOT exceed 100/40 = 2.5\n-- The 40-second sequential portion is the permanent bottleneck"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Number of Parallel Processors", "Parallel Portion Time", "Total Time", "Speedup"],
+      "rows": [
+        ["1 (sequential only)", "60 seconds", "100 seconds", "1× (baseline)"],
+        ["2 processors", "30 seconds", "70 seconds", "1.43×"],
+        ["4 processors", "15 seconds", "55 seconds", "1.82×"],
+        ["10 processors", "6 seconds", "46 seconds", "2.17×"],
+        ["100 processors", "0.6 seconds", "40.6 seconds", "2.46×"],
+        ["Infinite processors", "~0 seconds", "~40 seconds", "2.5× (maximum possible)"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Parallel computing consists of a parallel portion AND a sequential portion. The sequential portion sets a ceiling on how fast the solution can ever be, regardless of how many processors are added. This is why at some point, adding more parallel processes will no longer meaningfully increase efficiency — the sequential bottleneck dominates."
+    },
+    {
+      "type": "heading",
+      "text": "Distributed Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Distributed Computing",
+      "definition": "A computational model in which multiple devices are used to run a program. Allows problems to be solved that could not be solved on a single computer because of processing time or storage needs. Allows much larger problems to be solved more quickly."
+    },
+    {
+      "type": "paragraph",
+      "text": "Distributed computing goes beyond parallel computing on one machine — it uses multiple separate physical devices (computers) working together on a single problem. This is particularly important for two types of problems: problems that take too long for one computer to solve in a reasonable time, and problems whose data is too large to fit in one computer's storage."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Why Distributed Computing Is Needed", "Example", "Why One Computer Is Insufficient"],
+      "rows": [
+        ["Processing time too long for one computer", "Analyzing the entire human genome for disease markers across millions of patients", "Would take years on one computer — distributed across thousands completes in days"],
+        ["Storage needs exceed one computer's capacity", "Indexing every web page on the Internet (like Google does)", "One computer cannot store an index of the entire Web — must be distributed across many machines"],
+        ["Problem requires combining both", "Training a large AI model on a massive data set", "Data too large for one machine, computation too slow for one processor — needs distributed systems"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Comparing Sequential, Parallel, and Distributed"
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Sequential vs Parallel vs Distributed Computing",
+      "definition": "Sequential: one operation at a time, time = sum of all steps.\nParallel: some operations run simultaneously on one system, time = sequential time + longest parallel task.\nDistributed: multiple devices run the program, solves problems too large or slow for one computer."
+    },
+    {
+      "type": "keyterm",
+      "term": "Benefits of Parallel and Distributed Computing",
+      "definition": "Parallel computing solutions can scale more effectively than sequential solutions. Distributed computing allows problems to be solved that could not be solved on a single computer due to processing time or storage needs, and allows much larger problems to be solved more quickly."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Sequential", "Parallel", "Distributed"],
+      "rows": [
+        ["How it works", "One operation at a time", "Some operations run simultaneously on one system", "Multiple separate devices each run part of the program"],
+        ["Time formula", "Sum of ALL steps", "Sequential tasks + LONGEST parallel task", "Varies — depends on how work is divided"],
+        ["Can it run on one computer?", "Yes", "Yes — multiple cores or processors", "No — requires multiple separate devices"],
+        ["Best for", "Simple programs, small problems", "Medium problems that can be broken into independent parts", "Very large problems that exceed one computer's processing or storage capacity"],
+        ["Scalability", "Poor — adding hardware does not help", "Good — more processors reduce parallel portion time", "Excellent — add more machines as problems grow"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Worked Example: Full Calculation"
+    },
+    {
+      "type": "paragraph",
+      "text": "A programmer needs to process a data set. The program has the following structure: load data (8 seconds, must run first), process chunk A (30 seconds), process chunk B (45 seconds), process chunk C (20 seconds), combine results (5 seconds, must run last). Chunks A, B, and C can run simultaneously."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Sequential time:\n8 + 30 + 45 + 20 + 5 = 108 seconds\n\n-- Parallel time:\n-- Sequential portion: load (8s) + combine (5s) = 13s\n-- Parallel portion: max(30s, 45s, 20s) = 45s (chunk B is longest)\n-- Total parallel time = 13 + 45 = 58 seconds\n\n-- Speedup:\nSpeedup = sequential time / parallel time\nSpeedup = 108 / 58 ≈ 1.86\nThe parallel solution is about 1.86 times faster.\n\n-- What if we add more processors? Chunks A, B, C can be split further?\n-- Even with INFINITE processors for A, B, C:\n-- Minimum time = sequential portion = 13 seconds (cannot be improved)\n-- Maximum possible speedup = 108 / 13 ≈ 8.3×"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students often add ALL parallel task times together instead of taking only the LONGEST. In the example above, chunks A (30s), B (45s), and C (20s) run SIMULTANEOUSLY — so only 45 seconds pass (the longest), not 30+45+20=95 seconds. The shorter tasks finish while the longest is still running."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Sequential computing: operations performed in order one at a time; total time = sum of ALL steps",
+        "Parallel computing: some operations performed simultaneously; total time = sequential tasks + LONGEST parallel task",
+        "Distributed computing: multiple devices run a program; solves problems too large or slow for one computer",
+        "Comparing efficiency: compare the time each approach takes to perform the same task",
+        "Speedup = sequential time / parallel time",
+        "A speedup of 4 means the parallel solution is 4 times faster than the sequential solution",
+        "Every parallel solution has BOTH a parallel portion AND a sequential portion",
+        "Parallel computing solutions can scale more effectively than sequential solutions",
+        "At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential portion becomes the bottleneck",
+        "The sequential portion sets a ceiling on the maximum possible speedup regardless of how many processors are added",
+        "Distributed computing allows problems to be solved that could NOT be solved on a single computer due to processing time or storage needs",
+        "Distributed computing allows much larger problems to be solved more quickly than with a single computer"
+      ]
+    }
+  ]
 }

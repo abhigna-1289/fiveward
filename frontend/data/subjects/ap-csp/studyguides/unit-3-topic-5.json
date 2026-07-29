@@ -2,5 +2,228 @@
   "unit": 3,
   "topic": "3.5",
   "title": "Boolean Expressions",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a Boolean Value?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Boolean values are the foundation of every decision a program makes. Every IF statement, every loop condition, every test in a program ultimately depends on a Boolean value being true or false. Understanding how Boolean expressions are constructed and evaluated is one of the most important skills for the AP exam — Boolean logic appears in conditionals, loops, and complex expressions throughout Unit 3."
+    },
+    {
+      "type": "keyterm",
+      "term": "Boolean Value",
+      "definition": "A value that is either true or false. Produced by relational operators (=, ≠, >, <, ≥, ≤) and logical operators (NOT, AND, OR)."
+    },
+    {
+      "type": "paragraph",
+      "text": "A Boolean value has exactly two possible states: true or false. Nothing else. It cannot be 'maybe', 'sometimes', or a number. When you evaluate a comparison like x > 5, the result is either true (if x is greater than 5) or false (if x is not). That result can be stored in a Boolean variable, used directly in an IF statement, or combined with other Boolean values using logical operators."
+    },
+    {
+      "type": "heading",
+      "text": "Relational Operators"
+    },
+    {
+      "type": "keyterm",
+      "term": "Relational Operators",
+      "definition": "Used to test the relationship between two variables, expressions, or values. A comparison using a relational operator evaluates to a Boolean value. Operators: = (equal), ≠ (not equal), > (greater than), < (less than), ≥ (greater than or equal), ≤ (less than or equal)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Relational operators compare two values and produce a Boolean result. They can compare variables, literal values, or entire expressions. The AP exam reference sheet provides all six relational operators — you must know what each one means and be able to evaluate expressions using them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operator", "Meaning", "Example", "Result", "Why"],
+      "rows": [
+        ["=", "Equal to", "5 = 5", "true", "5 and 5 are the same value"],
+        ["=", "Equal to", "5 = 3", "false", "5 and 3 are different values"],
+        ["≠", "Not equal to", "5 ≠ 3", "true", "5 and 3 are different"],
+        ["≠", "Not equal to", "5 ≠ 5", "false", "5 and 5 are the same — so they are NOT not-equal"],
+        [">", "Greater than", "5 > 3", "true", "5 is greater than 3"],
+        [">", "Greater than", "3 > 5", "false", "3 is not greater than 5"],
+        ["<", "Less than", "3 < 5", "true", "3 is less than 5"],
+        ["≥", "Greater than or equal to", "5 ≥ 5", "true", "5 equals 5, so ≥ is satisfied"],
+        ["≥", "Greater than or equal to", "4 ≥ 5", "false", "4 is neither greater than nor equal to 5"],
+        ["≤", "Less than or equal to", "5 ≤ 5", "true", "5 equals 5, so ≤ is satisfied"],
+        ["≤", "Less than or equal to", "6 ≤ 5", "false", "6 is neither less than nor equal to 5"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The ≥ and ≤ operators are commonly tested with boundary values. (x ≥ 5) is TRUE when x = 5 — the equal part matters. (x > 5) is FALSE when x = 5. These look similar but produce different results at the boundary. Always check whether the boundary value satisfies the condition."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 5\n\nDISPLAY (x = 5)    -- true  (5 equals 5)\nDISPLAY (x ≠ 5)   -- false (5 is not not-equal to 5)\nDISPLAY (x > 5)   -- false (5 is not greater than 5)\nDISPLAY (x ≥ 5)   -- true  (5 is equal to 5, satisfying ≥)\nDISPLAY (x < 5)   -- false (5 is not less than 5)\nDISPLAY (x ≤ 5)   -- true  (5 is equal to 5, satisfying ≤)\nDISPLAY (x > 3)   -- true  (5 is greater than 3)\nDISPLAY (x < 10)  -- true  (5 is less than 10)"
+    },
+    {
+      "type": "heading",
+      "text": "Logical Operators: NOT, AND, OR"
+    },
+    {
+      "type": "paragraph",
+      "text": "Logical operators combine Boolean values to produce new Boolean values. The AP CSP reference sheet provides three logical operators: NOT, AND, and OR. The operand for each logical operator is either a Boolean expression or a single Boolean value."
+    },
+    {
+      "type": "keyterm",
+      "term": "Logical Operators",
+      "definition": "NOT, AND, and OR — each evaluates to a Boolean value.\nNOT condition: true if condition is false.\ncondition1 AND condition2: true only if both are true.\ncondition1 OR condition2: true if at least one is true."
+    },
+    {
+      "type": "heading",
+      "text": "The NOT Operator"
+    },
+    {
+      "type": "keyterm",
+      "term": "NOT operator truth table",
+      "definition": "NOT true = false\nNOT false = true\nNOT simply flips the Boolean value."
+    },
+    {
+      "type": "paragraph",
+      "text": "NOT is the simplest logical operator. It takes one Boolean value and flips it. True becomes false, false becomes true. Nothing else happens — NOT does not combine two values, it just inverts one."
+    },
+    {
+      "type": "codeblock",
+      "code": "NOT true    -- evaluates to false\nNOT false   -- evaluates to true\n\nx ← 7\nNOT(x > 5)  -- (x > 5) = true, NOT true = false\nNOT(x > 10) -- (x > 10) = false, NOT false = true\n\n-- NOT is useful for expressing 'the opposite of':\n-- Instead of x ≤ 5 you could write NOT(x > 5)\n-- Instead of x ≠ 5 you could write NOT(x = 5)"
+    },
+    {
+      "type": "heading",
+      "text": "The AND Operator"
+    },
+    {
+      "type": "keyterm",
+      "term": "AND operator truth table",
+      "definition": "true AND true = true\ntrue AND false = false\nfalse AND true = false\nfalse AND false = false\nAND is only true when BOTH conditions are true."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: AND vs OR",
+      "definition": "AND: both conditions must be true for the result to be true. If either is false, result is false.\nOR: at least one condition must be true for the result to be true. Only false when both conditions are false."
+    },
+    {
+      "type": "paragraph",
+      "text": "AND is a strict gate — BOTH conditions must be true for AND to produce true. If even one condition is false, the entire AND expression is false. Think of AND as 'all must pass' — every condition must be satisfied."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 7\n\n-- AND examples:\n(x > 5) AND (x < 10)    -- true AND true = true\n                         -- x=7 satisfies BOTH conditions\n\n(x > 5) AND (x > 10)    -- true AND false = false\n                         -- x=7 does NOT satisfy x>10\n\n(x > 10) AND (x < 20)   -- false AND true = false\n                         -- x=7 does NOT satisfy x>10\n\n(x > 10) AND (x > 20)   -- false AND false = false\n                         -- x=7 satisfies NEITHER condition"
+    },
+    {
+      "type": "heading",
+      "text": "The OR Operator"
+    },
+    {
+      "type": "keyterm",
+      "term": "OR operator truth table",
+      "definition": "true OR true = true\ntrue OR false = true\nfalse OR true = true\nfalse OR false = false\nOR is only false when BOTH conditions are false."
+    },
+    {
+      "type": "paragraph",
+      "text": "OR is a lenient gate — at least ONE condition must be true for OR to produce true. OR is only false when BOTH conditions are false. If even one condition is true, the entire OR expression is true. Think of OR as 'any must pass' — at least one condition must be satisfied."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 7\n\n-- OR examples:\n(x > 5) OR (x > 10)    -- true OR false = true\n                         -- x=7 satisfies x>5, so OR is true\n\n(x > 10) OR (x > 5)    -- false OR true = true\n                         -- x=7 satisfies x>5, so OR is true\n\n(x > 5) OR (x < 3)     -- true OR false = true\n                         -- x=7 satisfies x>5, so OR is true\n\n(x > 10) OR (x > 20)   -- false OR false = false\n                         -- x=7 satisfies NEITHER — only case OR is false"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["condition1", "condition2", "condition1 AND condition2", "condition1 OR condition2", "NOT condition1"],
+      "rows": [
+        ["true", "true", "true", "true", "false"],
+        ["true", "false", "false", "true", "false"],
+        ["false", "true", "false", "true", "true"],
+        ["false", "false", "false", "false", "true"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Memory tricks: AND is only TRUE when ALL conditions are true — one false ruins it. OR is only FALSE when ALL conditions are false — one true saves it. NOT simply flips: NOT true = false, NOT false = true. These three rules cover every possible Boolean expression on the exam."
+    },
+    {
+      "type": "heading",
+      "text": "Evaluating Complex Boolean Expressions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Complex Boolean expressions combine relational operators and logical operators. The strategy: evaluate each relational comparison first to get a true/false result, then apply the logical operators to those results. Work step by step — never try to evaluate a complex expression all at once."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 7\ny ← 3\n\n-- Expression 1:\n(x > 5) AND (y < 10)\n-- Step 1: (x > 5) = (7 > 5) = true\n-- Step 2: (y < 10) = (3 < 10) = true\n-- Step 3: true AND true = true\n\n-- Expression 2:\n(x > 10) OR (y < 5)\n-- Step 1: (x > 10) = (7 > 10) = false\n-- Step 2: (y < 5) = (3 < 5) = true\n-- Step 3: false OR true = true\n\n-- Expression 3:\nNOT(x = 7)\n-- Step 1: (x = 7) = (7 = 7) = true\n-- Step 2: NOT true = false\n\n-- Expression 4:\n(x > 5) AND NOT(y = 3)\n-- Step 1: (x > 5) = true\n-- Step 2: (y = 3) = (3 = 3) = true\n-- Step 3: NOT true = false\n-- Step 4: true AND false = false\n\n-- Expression 5:\n(x MOD 2 = 1) OR (y MOD 2 = 1)\n-- Step 1: (7 MOD 2 = 1) = (1 = 1) = true\n-- Step 2: OR short-circuits -- first is true, result is true\n-- (Even if we check: 3 MOD 2 = 1 → true)\n-- true OR true = true"
+    },
+    {
+      "type": "heading",
+      "text": "Equivalent Boolean Expressions"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP exam sometimes presents two different Boolean expressions and asks whether they are equivalent — meaning they produce the same true/false result for every possible input. Understanding equivalences helps simplify expressions and recognize when two conditions test the same thing."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Original Expression", "Equivalent Expression", "Why Equivalent"],
+      "rows": [
+        ["x ≥ 15", "(x > 15) OR (x = 15)", "≥ means greater than OR equal to — exactly what OR expresses"],
+        ["x ≥ 15", "NOT(x < 15)", "If x is not less than 15, then x must be ≥ 15"],
+        ["x ≤ 10", "(x < 10) OR (x = 10)", "≤ means less than OR equal to"],
+        ["x ≤ 10", "NOT(x > 10)", "If x is not greater than 10, then x must be ≤ 10"],
+        ["x ≠ 5", "NOT(x = 5)", "Not equal is the same as NOT equal"],
+        ["x ≠ 5", "(x < 5) OR (x > 5)", "x can only not equal 5 if it is either less than or greater than 5"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Common Boolean Expression Patterns"
+    },
+    {
+      "type": "paragraph",
+      "text": "Certain Boolean expression patterns appear repeatedly on the AP exam. Recognizing these patterns instantly will save significant time when tracing code."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["What You Want to Check", "Boolean Expression", "Example"],
+      "rows": [
+        ["x is between a and b inclusive", "(x ≥ a) AND (x ≤ b)", "(x ≥ 1) AND (x ≤ 100)"],
+        ["x is outside the range a to b", "(x < a) OR (x > b)", "(x < 1) OR (x > 100)"],
+        ["x is even", "x MOD 2 = 0", "8 MOD 2 = 0 → true"],
+        ["x is odd", "x MOD 2 = 1", "7 MOD 2 = 1 → true"],
+        ["x is divisible by n", "x MOD n = 0", "15 MOD 3 = 0 → true"],
+        ["x is NOT equal to y", "NOT(x = y) or x ≠ y", "NOT(5 = 3) = NOT false = true"],
+        ["Both of two conditions hold", "condition1 AND condition2", "(x > 0) AND (x < 100)"],
+        ["At least one condition holds", "condition1 OR condition2", "(x < 0) OR (x > 100)"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The operand for a logical operator is either a Boolean expression or a single Boolean value. This means you can chain logical operators: (x > 0) AND (x < 10) AND (x ≠ 5) is valid — each part is a Boolean expression and AND combines them. Always evaluate each part to true/false first, then combine."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A Boolean value is either true or false — exactly two possible states, nothing else",
+        "Relational operators compare two values and produce a Boolean: = ≠ > < ≥ ≤",
+        "x ≥ 5 is TRUE when x = 5 — the equal part of ≥ is satisfied at the boundary",
+        "NOT flips a Boolean value — NOT true = false, NOT false = true",
+        "AND is true ONLY when BOTH conditions are true — one false makes the whole AND false",
+        "OR is true when AT LEAST ONE condition is true — only false when BOTH are false",
+        "The operand for a logical operator is either a Boolean expression or a single Boolean value",
+        "To evaluate complex expressions: evaluate each relational comparison first, then apply logical operators",
+        "Equivalent expressions: x ≥ 15 = (x > 15) OR (x = 15) = NOT(x < 15)",
+        "Key patterns: MOD 2 = 0 checks even, MOD 2 = 1 checks odd, MOD n = 0 checks divisibility",
+        "Range check: (x ≥ a) AND (x ≤ b) checks if x is between a and b inclusive"
+      ]
+    }
+  ]
 }

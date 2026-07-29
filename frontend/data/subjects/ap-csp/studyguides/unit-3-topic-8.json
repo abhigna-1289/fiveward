@@ -2,5 +2,183 @@
   "unit": 3,
   "topic": "3.8",
   "title": "Iteration",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is Iteration?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequencing executes statements once in order. Selection chooses which statements to execute. But many real tasks require repeating a set of steps — counting through numbers, processing every item in a list, or repeating until some condition changes. Iteration is the third and final building block of every algorithm. It allows a block of statements to execute multiple times without writing those statements repeatedly."
+    },
+    {
+      "type": "keyterm",
+      "term": "Iteration",
+      "definition": "A repeating portion of an algorithm. Iteration repeats a specified number of times or until a given condition is met."
+    },
+    {
+      "type": "paragraph",
+      "text": "Iteration statements change the sequential flow of control by repeating a set of statements zero or more times, until a stopping condition is met. The word 'zero or more' is important — it is possible for a loop body to execute zero times if the stopping condition is met before the loop even begins."
+    },
+    {
+      "type": "heading",
+      "text": "REPEAT n TIMES"
+    },
+    {
+      "type": "keyterm",
+      "term": "REPEAT n TIMES",
+      "definition": "An iteration statement that executes the block of statements exactly n times."
+    },
+    {
+      "type": "paragraph",
+      "text": "REPEAT n TIMES is the simpler of the two iteration statements. Use it when you know exactly how many times you want the block to repeat before the loop begins. The block always executes exactly n times — no condition is checked, it simply counts."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Basic REPEAT n TIMES:\nREPEAT 4 TIMES\n{\n   DISPLAY \"hello\"\n}\n-- Executes exactly 4 times\n-- Output: hello hello hello hello\n\n-- Using REPEAT n TIMES to build a sum:\nsum ← 0\ni ← 1\nREPEAT 5 TIMES\n{\n   sum ← sum + i\n   i ← i + 1\n}\nDISPLAY sum\n\n-- Trace:\n-- Before loop: sum=0, i=1\n-- Iteration 1: sum=0+1=1, i=2\n-- Iteration 2: sum=1+2=3, i=3\n-- Iteration 3: sum=3+3=6, i=4\n-- Iteration 4: sum=6+4=10, i=5\n-- Iteration 5: sum=10+5=15, i=6\n-- Output: 15  (1+2+3+4+5)"
+    },
+    {
+      "type": "heading",
+      "text": "REPEAT UNTIL(condition)"
+    },
+    {
+      "type": "keyterm",
+      "term": "REPEAT UNTIL(condition)",
+      "definition": "An iteration statement that repeats the block of statements until the Boolean condition evaluates to true. If the condition is true initially, the loop body is not executed at all. If the condition never becomes true, an infinite loop occurs."
+    },
+    {
+      "type": "paragraph",
+      "text": "REPEAT UNTIL repeats the block of statements until the Boolean condition evaluates to true. The condition is checked BEFORE each execution of the loop body. This means: if the condition is already true when the loop is first encountered, the loop body executes ZERO times. If the condition never becomes true, the loop runs forever — an infinite loop."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Basic REPEAT UNTIL:\ni ← 1\nREPEAT UNTIL(i > 5)\n{\n   DISPLAY i\n   i ← i + 1\n}\n\n-- Condition checked BEFORE each iteration:\n-- Check: i=1, (1>5)=false → execute body: display 1, i becomes 2\n-- Check: i=2, (2>5)=false → execute body: display 2, i becomes 3\n-- Check: i=3, (3>5)=false → execute body: display 3, i becomes 4\n-- Check: i=4, (4>5)=false → execute body: display 4, i becomes 5\n-- Check: i=5, (5>5)=false → execute body: display 5, i becomes 6\n-- Check: i=6, (6>5)=true  → STOP, loop ends\n-- Output: 1 2 3 4 5"
+    },
+    {
+      "type": "heading",
+      "text": "Critical Rule: Condition Already True Before Loop Starts"
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when REPEAT UNTIL condition is already true?",
+      "definition": "The loop body is not executed at all, because the condition is checked before the loop begins."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the most commonly tested subtlety about REPEAT UNTIL. Because the condition is checked BEFORE the loop body executes, if the condition is already true when the loop is first reached, the body never executes — not even once. The program simply skips the entire loop and continues."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Condition already true BEFORE loop starts:\nx ← 10\nREPEAT UNTIL(x = 10)\n{\n   x ← x + 1     -- this NEVER executes\n   DISPLAY x      -- this NEVER executes\n}\nDISPLAY x         -- displays 10\n\n-- x=10, condition (x=10) is already true\n-- Condition is checked first → true → loop body skipped entirely\n-- x remains 10 throughout\n-- Output: 10\n\n-- ------\n\n-- Compare: condition starts false, becomes true after several iterations\ny ← 1\nREPEAT UNTIL(y > 5)\n{\n   y ← y + 1\n}\nDISPLAY y   -- displays 6\n-- Condition is false at start → body executes, eventually y=6, 6>5=true → stops"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "REPEAT UNTIL checks the condition BEFORE executing the loop body. If the condition is ALREADY TRUE when the loop starts, the body executes ZERO times — it is completely skipped. This surprises many students who expect 'until' to mean 'at least once.' In AP CSP pseudocode, REPEAT UNTIL does not guarantee even one execution."
+    },
+    {
+      "type": "heading",
+      "text": "Infinite Loops"
+    },
+    {
+      "type": "keyterm",
+      "term": "Infinite Loop",
+      "definition": "Occurs in REPEAT UNTIL iteration when the ending condition will never evaluate to true, causing the loop to repeat forever."
+    },
+    {
+      "type": "paragraph",
+      "text": "An infinite loop occurs when the ending condition in a REPEAT UNTIL loop never becomes true. This typically happens in two ways: the loop variable is never updated inside the body (so the condition can never change), or the update logic causes the variable to skip over the target value entirely."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Infinite loop example 1: variable jumps over the target value\nx ← 0\nREPEAT UNTIL(x = 5)\n{\n   x ← x + 2    -- x goes 0, 2, 4, 6, 8...\n}                -- x jumps FROM 4 TO 6, NEVER equals exactly 5\n                 -- condition never becomes true → INFINITE LOOP\n\n-- Infinite loop example 2: loop variable never updated\ncount ← 0\nREPEAT UNTIL(count = 5)\n{\n   DISPLAY count  -- count is always 0\n}                  -- count never changes → INFINITE LOOP\n\n-- Infinite loop example 3: condition can never be true\ny ← 10\nREPEAT UNTIL(y < 0)\n{\n   y ← y + 1    -- y only increases, can never go below 0\n}                -- INFINITE LOOP"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scenario", "Infinite Loop?", "Why"],
+      "rows": [
+        ["x starts at 0, adds 2 each time, condition x=5", "YES", "x goes 0,2,4,6... never equals exactly 5"],
+        ["x starts at 0, adds 1 each time, condition x=5", "No", "x reaches exactly 5 after 5 iterations"],
+        ["count never updated inside loop body, condition count=5", "YES", "count never changes so condition never becomes true"],
+        ["x starts at 10, condition x=10", "No (0 iterations)", "Condition is already true — body never executes"],
+        ["x starts at 1, adds 1, condition x > 100", "No", "x will eventually exceed 100"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Forgetting to update the loop variable inside a REPEAT UNTIL loop is the most common cause of infinite loops. If the variable that determines the condition never changes, the condition can never become true. Always check: is there something inside the loop body that will eventually make the condition true?"
+    },
+    {
+      "type": "heading",
+      "text": "Comparing REPEAT n TIMES vs REPEAT UNTIL"
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: REPEAT n TIMES vs REPEAT UNTIL",
+      "definition": "REPEAT n TIMES: repeats a fixed number of times, always executes the block at least once if n > 0.\nREPEAT UNTIL: repeats until a condition becomes true, may not execute at all if the condition is already true."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "REPEAT n TIMES", "REPEAT UNTIL(condition)"],
+      "rows": [
+        ["How many iterations?", "Exactly n — always", "Until condition is true — could be 0, 1, or many"],
+        ["Can body execute 0 times?", "Only if n = 0", "Yes — if condition is already true when loop starts"],
+        ["Can cause infinite loop?", "No — always terminates after exactly n", "Yes — if condition never becomes true"],
+        ["Condition checked when?", "No condition — just counts", "BEFORE each iteration"],
+        ["When to use", "When you know exactly how many times to repeat", "When you repeat until something happens — unknown number of repetitions"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Iteration Statements Change Sequential Flow"
+    },
+    {
+      "type": "paragraph",
+      "text": "Just like conditionals, iteration statements change the sequential flow of control. Without loops, statements execute exactly once in order. With loops, the same block of statements can execute many times before the program moves on. Understanding iteration as a flow-control mechanism — not just a counting tool — is essential for writing and reading programs correctly."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Combining iteration with selection:\ncount ← 0\ni ← 1\nREPEAT UNTIL(i > 10)\n{\n   IF(i MOD 2 = 0)\n   {\n      count ← count + 1\n   }\n   i ← i + 1\n}\nDISPLAY count\n\n-- Counts even numbers from 1 to 10:\n-- i=1: 1 MOD 2 = 1 ≠ 0, skip\n-- i=2: 2 MOD 2 = 0, count=1\n-- i=3: skip. i=4: count=2. i=5: skip. i=6: count=3\n-- i=7: skip. i=8: count=4. i=9: skip. i=10: count=5\n-- i=11: (11>10)=true → loop stops\n-- Output: 5"
+    },
+    {
+      "type": "heading",
+      "text": "Expressing Iteration in Natural Language"
+    },
+    {
+      "type": "paragraph",
+      "text": "Like selection, iteration can be expressed without using a programming language. Natural language descriptions of loops appear on the AP exam — you must be able to recognize iteration in plain English and translate it to pseudocode, or read pseudocode and describe it in natural language."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Natural Language Description", "AP CSP Pseudocode"],
+      "rows": [
+        ["Repeat the following 5 times: display 'hello'", "REPEAT 5 TIMES { DISPLAY \"hello\" }"],
+        ["Keep adding 1 to x until x is greater than 100", "REPEAT UNTIL(x > 100) { x ← x + 1 }"],
+        ["While the count is less than 10, increment the count and display it", "REPEAT UNTIL(count ≥ 10) { count ← count + 1; DISPLAY count }"],
+        ["For each student in the roster, display their name", "FOR EACH student IN roster { DISPLAY student }"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Iteration is a repeating portion of an algorithm — repeats a specified number of times or until a condition is met",
+        "Iteration statements change the sequential flow of control by repeating a set of statements zero or more times until a stopping condition is met",
+        "REPEAT n TIMES executes the block exactly n times — no condition checked, always terminates",
+        "REPEAT UNTIL(condition) repeats the block until the condition evaluates to true — the condition is checked BEFORE each iteration",
+        "If the condition in REPEAT UNTIL is already true when the loop starts, the body executes ZERO times",
+        "An infinite loop occurs in REPEAT UNTIL when the ending condition never evaluates to true",
+        "Common causes of infinite loops: loop variable never updated inside body, or update logic causes variable to skip over the target value",
+        "REPEAT n TIMES: use when you know exactly how many repetitions are needed",
+        "REPEAT UNTIL: use when you repeat until something changes — unknown number of repetitions",
+        "Iteration can be expressed in natural language, diagrams, and pseudocode — all describe the same repeating process"
+      ]
+    }
+  ]
 }

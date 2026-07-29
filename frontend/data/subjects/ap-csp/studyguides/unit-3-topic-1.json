@@ -2,5 +2,264 @@
   "unit": 3,
   "topic": "3.1",
   "title": "Variables and Assignments",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a Variable?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every useful program needs to store and work with data. Variables are the fundamental mechanism for doing this. A variable is a named storage location inside a program that holds a value — and that value can change as the program runs. Without variables, a program could not remember anything between one step and the next."
+    },
+    {
+      "type": "keyterm",
+      "term": "Variable",
+      "definition": "An abstraction inside a program that can hold a value. Each variable has associated data storage that represents one value at a time, but that value can be a list or other collection that in turn contains multiple values."
+    },
+    {
+      "type": "paragraph",
+      "text": "The key phrase is 'one value at a time.' A variable always holds exactly one value — but that value can be a complex thing like a list containing many items. Think of a variable as a labeled box: the label is the variable's name, and the contents of the box is its current value."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Variable Name", "Current Value", "What It Represents"],
+      "rows": [
+        ["score", "85", "A student's test score"],
+        ["name", "\"Alice\"", "A student's name as a string"],
+        ["isLoggedIn", "true", "Whether a user is currently logged in"],
+        ["scores", "[85, 92, 78, 90]", "A list of test scores — one variable holding many values"],
+        ["total", "0", "A running total being accumulated"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Data Types: Choosing the Right Type"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Data Types in Programming",
+      "definition": "Numbers, Booleans, lists, and strings. Some values are better suited to representation using one type of datum rather than another."
+    },
+    {
+      "type": "paragraph",
+      "text": "Programming languages provide different types to represent different kinds of data. Choosing the right type for a variable makes the program clearer, reduces errors, and ensures operations work as expected. Some values are better suited to one type than another — using the wrong type can cause subtle bugs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Data Type", "What It Stores", "When to Use It", "Example Values"],
+      "rows": [
+        ["Number", "Integers or decimal values", "Counts, scores, measurements, anything you calculate with", "0, 85, 3.14, -7, 100"],
+        ["Boolean", "Either true or false — nothing else", "Yes/no conditions, flags, test results, on/off states", "true, false"],
+        ["String", "An ordered sequence of characters", "Names, text, messages, labels, anything displayed as text", "\"Alice\", \"Hello!\", \"AP CSP\""],
+        ["List", "An ordered collection of values — can hold multiple items", "When you need to store several related values together", "[85, 92, 78], [\"Alice\", \"Bob\"]"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Value to Store", "Best Data Type", "Why"],
+      "rows": [
+        ["A student's name", "String", "Names are text — you display them, not calculate with them"],
+        ["Whether a student passed", "Boolean", "Passed or not passed is a yes/no value — true or false"],
+        ["A student's GPA", "Number", "GPA is a decimal value you might calculate with"],
+        ["The names of all 30 students in a class", "List of strings", "Multiple related values stored as a collection under one name"],
+        ["A student ID like '00412'", "String", "Leading zeros would be lost as a number; it is never used in arithmetic"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Some values are better suited to one type than another. A student ID that starts with zeros should be stored as a string, not a number — storing '00412' as a number gives 412. A yes/no question should be a Boolean, not a string 'yes'/'no' — Booleans work directly with IF statements. Always choose the type that best matches the value's purpose."
+    },
+    {
+      "type": "heading",
+      "text": "The Assignment Operator"
+    },
+    {
+      "type": "keyterm",
+      "term": "Assignment Operator",
+      "definition": "An operator that allows a program to change the value represented by a variable. It evaluates the expression on the right and assigns a copy of the result to the variable on the left. The value stored in a variable will always be the most recent value assigned."
+    },
+    {
+      "type": "paragraph",
+      "text": "In AP CSP pseudocode, the assignment operator is the arrow ←. The process always follows the same two steps: first, the expression on the RIGHT side is fully evaluated to produce a single value. Then, that value is stored (copied) into the variable on the LEFT side. The old value is completely overwritten and gone."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Step 1: evaluate right side\n-- Step 2: store result in left side variable\n\nx ← 5          -- right side: 5. x now holds 5.\nx ← x + 3     -- right side: 5+3=8. x now holds 8. (5 is gone)\nx ← 10        -- right side: 10. x now holds 10. (8 is gone)\nDISPLAY x     -- displays 10"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Line of Code", "Right Side Evaluates To", "Variable After Assignment", "Previous Value"],
+      "rows": [
+        ["x ← 5", "5", "x = 5", "None — first assignment"],
+        ["x ← x + 3", "5 + 3 = 8", "x = 8", "5 — permanently overwritten"],
+        ["x ← 10", "10", "x = 10", "8 — permanently overwritten"],
+        ["x ← x * 2", "10 * 2 = 20", "x = 20", "10 — permanently overwritten"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The right side is ALWAYS evaluated first using the CURRENT values of all variables. Only after the right side is fully calculated does the left side variable get updated. This means x ← x + 1 correctly increments x — first it reads x's current value, adds 1, then stores the result back in x."
+    },
+    {
+      "type": "heading",
+      "text": "The Most Critical Rule: Most Recent Value Wins"
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when a variable is assigned a new value?",
+      "definition": "The value stored in a variable will always be the most recent value assigned. Example: if a = 1, then b = a, then a = 2, displaying b still shows 1 because b was assigned a copy of a's value at that time."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the single most tested concept in topic 3.1 and one of the most tested in all of Unit 3. When you write b ← a, b receives a COPY of a's current value at that exact moment. Variables do not stay linked. If a changes later, b is completely unaffected — b holds whatever value it was assigned and keeps it until it is assigned something new."
+    },
+    {
+      "type": "codeblock",
+      "code": "a ← 5\nb ← a      -- b gets a COPY of a's current value (5)\na ← 10     -- a changes to 10, b is completely unaffected\nDISPLAY b  -- displays 5, NOT 10\nDISPLAY a  -- displays 10"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Step", "a", "b", "What Just Happened"],
+      "rows": [
+        ["a ← 5", "5", "—", "a is assigned 5"],
+        ["b ← a", "5", "5", "b gets a COPY of a's current value (5) — now both hold 5"],
+        ["a ← 10", "10", "5", "a is updated to 10. b is NOT affected — it holds its own independent copy of 5"],
+        ["DISPLAY b", "10", "5", "b displays 5 — the most recent value assigned TO b"],
+        ["DISPLAY a", "10", "5", "a displays 10 — the most recent value assigned TO a"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students often think that if b ← a and then a changes, b changes too — like b is 'watching' a. It does NOT work that way. b ← a gives b a copy of a's value at that moment. After that, b and a are completely independent. They are separate storage locations that happen to hold the same value right after the assignment, but changing one never changes the other."
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Multi-Step Code: The Key Skill"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP exam frequently gives multi-step code segments and asks what is displayed. The correct strategy is to trace each line in order, maintaining a table of the current value of each variable. Update the table after every assignment. Always evaluate the right side using the CURRENT values in the table."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 3\ny ← x + 2     -- right side: 3+2=5\nx ← y * 2     -- right side: 5*2=10\ny ← x - y     -- right side: 10-5=5\nDISPLAY x     -- ?\nDISPLAY y     -- ?"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Line", "x", "y", "Calculation on Right Side"],
+      "rows": [
+        ["x ← 3", "3", "—", "Literal value 3"],
+        ["y ← x + 2", "3", "5", "x is currently 3: 3+2 = 5"],
+        ["x ← y * 2", "10", "5", "y is currently 5: 5*2 = 10. x updates to 10."],
+        ["y ← x - y", "10", "5", "x=10, y=5 (BEFORE this line): 10-5 = 5. y updates to 5."],
+        ["DISPLAY x", "10", "5", "Displays 10"],
+        ["DISPLAY y", "10", "5", "Displays 5"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "On the line y ← x - y, both x AND y on the right side use their CURRENT values BEFORE the assignment executes. Right side: 10 - 5 = 5. Then y is updated to 5. Never 'apply' the new value mid-expression — fully evaluate the right side first, then update the left side."
+    },
+    {
+      "type": "heading",
+      "text": "A More Complex Trace"
+    },
+    {
+      "type": "codeblock",
+      "code": "a ← 10\nb ← 3\nc ← a + b     -- c = 10+3 = 13\na ← c * 2     -- a = 13*2 = 26\nb ← a - c     -- b = 26-13 = 13\nDISPLAY a     -- ?\nDISPLAY b     -- ?\nDISPLAY c     -- ?"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Line", "a", "b", "c", "Calculation"],
+      "rows": [
+        ["a ← 10", "10", "—", "—", "Literal 10"],
+        ["b ← 3", "10", "3", "—", "Literal 3"],
+        ["c ← a + b", "10", "3", "13", "10+3=13"],
+        ["a ← c * 2", "26", "3", "13", "c=13: 13*2=26. a updates to 26."],
+        ["b ← a - c", "26", "13", "13", "a=26, c=13: 26-13=13. b updates to 13."],
+        ["DISPLAY a", "26", "13", "13", "Displays 26"],
+        ["DISPLAY b", "26", "13", "13", "Displays 13"],
+        ["DISPLAY c", "26", "13", "13", "Displays 13"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Swapping Two Variables"
+    },
+    {
+      "type": "paragraph",
+      "text": "A classic problem that tests deep understanding of assignment: how do you swap the values of two variables? You cannot just do a ← b then b ← a — the first line overwrites a's original value before it can be saved. The correct approach uses a temporary variable."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- WRONG approach — loses a's original value:\na ← 10\nb ← 20\na ← b      -- a is now 20. Original value 10 is LOST.\nb ← a      -- b is now 20 (a is already 20). WRONG!\n-- Result: a=20, b=20 (should be a=20, b=10)\n\n-- CORRECT approach — uses a temporary variable:\na ← 10\nb ← 20\ntemp ← a   -- temp = 10 (saves a's original value)\na ← b      -- a = 20\nb ← temp   -- b = 10 (uses the saved value)\n-- Result: a=20, b=10 (correct swap!)"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Step", "a", "b", "temp", "What Happened"],
+      "rows": [
+        ["a ← 10", "10", "—", "—", "a initialized to 10"],
+        ["b ← 20", "10", "20", "—", "b initialized to 20"],
+        ["temp ← a", "10", "20", "10", "temp saves a's value before a is overwritten"],
+        ["a ← b", "20", "20", "10", "a gets b's value. temp still holds original a."],
+        ["b ← temp", "20", "10", "10", "b gets original a's value from temp. Swap complete!"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Why Meaningful Variable Names Matter"
+    },
+    {
+      "type": "keyterm",
+      "term": "Why should variable names be meaningful?",
+      "definition": "Using meaningful variable names helps with the readability of program code and understanding of what values are represented by the variables."
+    },
+    {
+      "type": "paragraph",
+      "text": "Both versions of the code below do exactly the same thing. But only one is immediately understandable. Meaningful variable names are not just a style preference — they are a fundamental aspect of writing programs that other programmers (and future you) can read, understand, debug, and maintain."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Poor Variable Names", "Meaningful Variable Names"],
+      "rows": [
+        ["p ← 50", "basePrice ← 50"],
+        ["d ← 10", "discountAmount ← 10"],
+        ["t ← p - d", "salePrice ← basePrice - discountAmount"],
+        ["x ← t * 0.08", "taxAmount ← salePrice * 0.08"],
+        ["f ← t + x", "finalTotal ← salePrice + taxAmount"],
+        ["DISPLAY f", "DISPLAY finalTotal"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Meaningful variable names make code self-documenting. When you read finalTotal ← salePrice + taxAmount, you immediately understand what the code does. When you read f ← t + x, you have to trace back through earlier lines to figure out what f, t, and x represent. Good variable names are one of the simplest ways to make a program dramatically more readable."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A variable is an abstraction inside a program that can hold a value — it represents one value at a time, but that value can be a list containing multiple values",
+        "The assignment operator evaluates the expression on the RIGHT side first, then assigns a COPY of the result to the variable on the LEFT side",
+        "The value stored in a variable will ALWAYS be the most recent value assigned to it",
+        "When b ← a executes, b gets a COPY of a's current value at that moment — later changes to a do NOT affect b",
+        "Always evaluate the entire right side before updating the left side variable — never update mid-expression",
+        "Using meaningful variable names improves the readability of code and helps others understand what values variables represent",
+        "Common data types: numbers (integers and decimals), Booleans (true/false only), strings (ordered sequence of characters), lists (ordered collections)",
+        "Some values are better suited to one type than another — choose the type that best fits the value's purpose and how it will be used"
+      ]
+    }
+  ]
 }

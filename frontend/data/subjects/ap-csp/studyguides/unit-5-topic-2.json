@@ -2,5 +2,133 @@
   "unit": 5,
   "topic": "5.2",
   "title": "Digital Divide",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is the Digital Divide?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing innovations have the potential to benefit everyone — but only if everyone can access them. In reality, access to computing devices and the Internet is not equal. The digital divide refers to this unequal access and the consequences it creates for individuals, communities, and entire countries. As the world becomes increasingly dependent on computing and Internet access for education, employment, healthcare, and civic participation, the digital divide becomes a matter of equity and opportunity."
+    },
+    {
+      "type": "keyterm",
+      "term": "Digital Divide",
+      "definition": "The differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics. Internet access varies between countries as well as within them. The digital divide can affect both groups and individuals."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED identifies three types of characteristics that create digital divide disparities. Socioeconomic characteristics — income and wealth — determine whether a person can afford devices and Internet service. Geographic characteristics — urban vs rural, developed vs developing country — determine whether infrastructure even exists. Demographic characteristics — age, education level, disability status — affect whether people have the skills and support to use technology effectively."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type of Characteristic", "How It Creates the Digital Divide", "Example"],
+      "rows": [
+        ["Socioeconomic", "People with lower income may not be able to afford computing devices or monthly Internet service fees", "A family cannot afford a laptop or home Internet — children must do homework at the library or not at all"],
+        ["Geographic", "Rural and remote areas often lack the physical infrastructure (cables, cell towers) needed for high-speed Internet", "A student in a rural area has no access to broadband Internet — limited to slow or no connectivity"],
+        ["Demographic", "Older adults, people with disabilities, or those with lower education levels may face barriers to using technology effectively", "An elderly person who never learned to use computers is excluded from online healthcare, banking, and government services"],
+        ["Between countries", "Developed countries have far more Internet infrastructure and device ownership than developing countries", "A student in a developed country has reliable broadband while a student in a developing country has no Internet access at all"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The Digital Divide Affects Both Groups and Individuals"
+    },
+    {
+      "type": "keyterm",
+      "term": "Issues raised by the digital divide",
+      "definition": "The digital divide raises issues of equity, access, and influence both globally and locally. It also raises ethical concerns. The digital divide is affected by the actions of individuals, organizations, and governments."
+    },
+    {
+      "type": "paragraph",
+      "text": "The digital divide does not only affect individual people — it affects entire groups and communities. When a demographic group systematically lacks access to computing, that group is excluded from the economic, educational, and social opportunities that computing enables. This perpetuates existing inequalities and creates new ones."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scale", "How the Digital Divide Has Impact", "Consequences"],
+      "rows": [
+        ["Individual", "A person without Internet access cannot apply for jobs online, access online education, or use digital government services", "Economic disadvantage, social exclusion, reduced access to services"],
+        ["Group or community", "A rural community without broadband cannot participate in the digital economy — businesses cannot reach customers, schools cannot use online learning tools", "Economic stagnation, educational gaps, reduced community development"],
+        ["National", "Countries with limited Internet infrastructure fall behind in the global digital economy", "Reduced economic competitiveness, limited access to global information and markets"],
+        ["Global", "Developing nations have far fewer connected users than wealthy nations, limiting their participation in global knowledge-sharing", "Unequal distribution of the benefits of computing innovations worldwide"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Issues the Digital Divide Raises"
+    },
+    {
+      "type": "paragraph",
+      "text": "The digital divide raises issues of equity, access, and influence both globally and locally. These are not just technical issues — they are fundamentally ethical and political questions about fairness and equal opportunity."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Issue Raised", "What It Means", "Why It Matters"],
+      "rows": [
+        ["Equity", "Different groups do not have equal opportunity to benefit from computing", "Computing is increasingly necessary for education, employment, healthcare, and civic participation — unequal access creates unequal life outcomes"],
+        ["Access", "Some people and communities simply cannot connect to computing devices or the Internet regardless of desire or effort", "Access is a prerequisite for participation — without it, people are excluded from the digital world"],
+        ["Influence", "Those with computing access have more ability to participate in political discourse, access information, and shape public opinion", "The digital divide creates information and influence gaps between connected and unconnected populations"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The digital divide is not just about convenience — it is about equity and opportunity in a world where computing is increasingly essential. A student without reliable Internet access cannot compete equally with classmates who have it. A job applicant without computer skills is excluded from most modern employment. The digital divide directly affects life outcomes."
+    },
+    {
+      "type": "heading",
+      "text": "What Affects the Digital Divide"
+    },
+    {
+      "type": "keyterm",
+      "term": "What factors contribute to the digital divide?",
+      "definition": "Socioeconomic status, geographic location, and demographic characteristics all affect access to computing devices and the Internet. These factors vary both between countries and within them."
+    },
+    {
+      "type": "paragraph",
+      "text": "The digital divide is affected by the actions of individuals, organizations, and governments. This means it is not a fixed, natural phenomenon — it can be improved or worsened by deliberate choices and policies. Governments can fund rural broadband infrastructure. Organizations can provide subsidized devices or free training. Individuals can advocate for digital equity in their communities. All three levels of action matter."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Who Can Affect the Digital Divide", "How They Can Reduce It", "How They Can Worsen It"],
+      "rows": [
+        ["Governments", "Fund rural broadband infrastructure, subsidize devices for low-income families, provide free digital literacy training", "Fail to invest in infrastructure, implement policies that raise costs of devices or Internet service, restrict Internet access"],
+        ["Organizations", "Donate devices to underserved communities, offer free digital literacy programs, provide subsidized Internet service", "Prioritize profitable markets and ignore underserved areas, price devices and service beyond reach of low-income users"],
+        ["Individuals", "Advocate for digital equity policies, volunteer to teach digital skills, donate old devices to those in need", "Fail to support policies that expand access, not recognize the privilege of their own access and the disadvantage of others"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The Digital Divide in Education"
+    },
+    {
+      "type": "paragraph",
+      "text": "The digital divide has profound effects on education. Schools increasingly rely on online learning platforms, digital homework submissions, and Internet research. Students without home Internet access or reliable devices are at a significant disadvantage. During the COVID-19 pandemic, when schools shifted to online learning, the digital divide became acute — students without access to devices or Internet fell dramatically behind their connected peers. This is a concrete example of how the digital divide translates directly into real-world inequality."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes think the digital divide only exists in developing countries. In reality, significant digital divides exist WITHIN wealthy countries — between urban and rural areas, between high-income and low-income families, and between different demographic groups. The CED explicitly states Internet access varies both between countries AND within them."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "The digital divide refers to differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics",
+        "Internet access varies between countries as well as WITHIN countries",
+        "The digital divide can affect both groups AND individuals",
+        "Socioeconomic factors: income level affects ability to afford devices and Internet service",
+        "Geographic factors: rural and remote areas often lack the physical infrastructure for Internet access",
+        "Demographic factors: age, education level, and disability status affect ability to access and use technology",
+        "The digital divide raises issues of equity, access, and influence both globally and locally",
+        "The digital divide is affected by the actions of INDIVIDUALS, ORGANIZATIONS, and GOVERNMENTS — all three can reduce or worsen it",
+        "The digital divide creates real consequences — educational disadvantage, economic exclusion, and reduced ability to participate in civic life"
+      ]
+    }
+  ]
 }

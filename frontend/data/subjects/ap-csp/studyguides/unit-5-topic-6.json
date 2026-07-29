@@ -2,5 +2,329 @@
   "unit": 5,
   "topic": "5.6",
   "title": "Safe Computing",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "The Risks of Computing to Personal Safety and Identity"
+    },
+    {
+      "type": "paragraph",
+      "text": "Topic 5.6 is the largest topic in Unit 5 and one of the most practically important. Computing innovations have created enormous benefits — but they have also created new risks to personal safety, privacy, and identity. This topic covers three areas: the privacy risks of personal data collection, how to protect computing resources through authentication and encryption, and how unauthorized access is gained through attacks like phishing, malware, and rogue access points."
+    },
+    {
+      "type": "heading",
+      "text": "Personally Identifiable Information (PII)"
+    },
+    {
+      "type": "keyterm",
+      "term": "Personally Identifiable Information (PII)",
+      "definition": "Information about an individual that identifies, links, relates, or describes them. Examples: Social Security number, phone number, medical information, biometric data. Can be used for identity theft, stalking, or other criminal acts. Once placed online it is difficult to delete."
+    },
+    {
+      "type": "paragraph",
+      "text": "PII is any information that can be used to identify a specific individual. The key word is 'links' — PII does not have to directly name someone. A combination of data points that together identify a person is also PII. Social Security numbers, phone numbers, medical information, biometric data (fingerprints, facial recognition), and financial information are all examples of PII."
+    },
+    {
+      "type": "heading",
+      "text": "How PII Is Collected Online"
+    },
+    {
+      "type": "keyterm",
+      "term": "How is PII collected online?",
+      "definition": "Search engines record search history. Websites record browsing history. Devices collect location data. Programs can record where you have been, how you got there, and how long you were there."
+    },
+    {
+      "type": "paragraph",
+      "text": "PII and other personal data are collected constantly during normal use of computing devices and the Internet. Most of this collection happens automatically and invisibly — users often do not know what is being collected, by whom, or for what purpose."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Who Collects", "What They Collect", "How"],
+      "rows": [
+        ["Search engines", "Every search query you type, when you typed it, and what results you clicked", "Automatically logged with each search — linked to your account or device"],
+        ["Websites", "Which pages you visit, how long you stay, what you click on", "Tracking cookies stored on your device follow you across websites"],
+        ["Devices", "Your physical location — where you are, where you have been, how you got there, how long you stayed", "GPS, cell tower triangulation, Wi-Fi location services"],
+        ["Apps", "Contacts, camera, microphone, location, and other device data — depending on permissions granted", "Accessed through permissions you grant when installing the app"],
+        ["Social media platforms", "Who you interact with, what content you view, what you post, how long you spend on each item", "Tracked through the platform's own systems"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Data Aggregation: When Pieces Combine"
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Aggregation",
+      "definition": "Disparate personal data such as geolocation, cookies, and browsing history can be combined to create detailed knowledge about an individual. Combining information posted on social media with other sources can be used to deduce private information."
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most important privacy concepts in 5.6 is data aggregation. Individual pieces of data may seem harmless in isolation — your general location, your age range, your browsing interests. But when disparate data points are combined, they can create an extremely detailed profile of an individual that reveals information the person never intended to share."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Individual Data Point (Seems Harmless)", "Combined With", "Reveals"],
+      "rows": [
+        ["You searched for 'symptoms of depression'", "+ your name and address from another source", "Your private mental health struggles — shared with employers or insurers"],
+        ["You visited a fertility clinic's website", "+ your location data showing you were in the clinic", "+ your insurance ID from a data breach → insurance company knows you are trying to conceive"],
+        ["You posted photos from a vacation", "+ your home city from your profile + timestamps of posts", "You were away from home for 10 days — potential burglars know your house was empty"],
+        ["Your browsing history includes political news sites", "+ your social media follows + your ZIP code", "Your political leanings — used for targeted political advertising or voter profiling"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes think that sharing individual pieces of information that seem harmless is safe. Data aggregation shows this is NOT true. Combining seemingly harmless pieces of data — geolocation, browsing history, social media posts, cookies — can reveal private information you never intended to share. The whole is much more revealing than the sum of its parts."
+    },
+    {
+      "type": "heading",
+      "text": "Benefits and Risks of PII Online"
+    },
+    {
+      "type": "keyterm",
+      "term": "What are the benefits and risks of PII being online?",
+      "definition": "Benefits: enhances online experience, simplifies purchases, enables personalized suggestions.\nRisks: can be used for identity theft, stalking, or criminal acts. Once online it is difficult to delete. Can be used in unintended and harmful ways."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Benefits of PII Online", "Risks of PII Online"],
+      "rows": [
+        ["Personalized recommendations — streaming services suggest content you will like", "Identity theft — SSN and financial info used to open fraudulent accounts"],
+        ["Simplified online shopping — saved payment and shipping info speeds checkout", "Stalking — location data and personal info enable tracking of an individual's movements"],
+        ["Relevant search results — search history enables more useful suggestions", "Criminal planning — PII can be used to target individuals for fraud, theft, or other crimes"],
+        ["Targeted advertising — businesses can reach genuinely interested customers", "Unintended harmful use — information posted for one purpose used in ways never intended"],
+        ["Faster login and authentication — remembered accounts save time", "Permanent record — once information is placed online it is difficult to delete"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "What can commercial and governmental entities do with collected data?",
+      "definition": "Commercial and governmental curation of information may be exploited if privacy and other protections are ignored. Search engines can use search history for targeted marketing. Technology enables the exploitation of information about individuals."
+    },
+    {
+      "type": "keyterm",
+      "term": "Risks of sharing PII online",
+      "definition": "Information placed online can be used in ways that were not intended and that may have a harmful impact. Once information is placed online it is difficult to delete. PII can be used for identity theft, stalking, or other criminal acts."
+    },
+    {
+      "type": "keyterm",
+      "term": "User Permissions and Privacy",
+      "definition": "Users can control the permissions programs have for collecting user information. Users should review the permission settings of programs to protect their privacy."
+    },
+    {
+      "type": "heading",
+      "text": "Authentication: Protecting Access"
+    },
+    {
+      "type": "keyterm",
+      "term": "Authentication",
+      "definition": "Measures that protect devices and information from unauthorized access. Examples: strong passwords and multifactor authentication. A strong password is easy for the user to remember but difficult for someone else to guess."
+    },
+    {
+      "type": "keyterm",
+      "term": "Multifactor Authentication",
+      "definition": "A method of access control where a user must present evidence from at least two of three categories: knowledge (something they know), possession (something they have), and inherence (something they are). Each step adds a new layer of security that must be broken to gain unauthorized access."
+    },
+    {
+      "type": "paragraph",
+      "text": "A strong password is something that is easy for a user to remember but would be difficult for someone else to guess based on knowledge of that user. This means a strong password avoids obvious personal information — birth dates, names, pet names, favorite sports teams — that someone who knows you could guess. Multifactor authentication adds additional layers on top of a password, making unauthorized access dramatically harder."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Authentication Category", "What It Is", "Examples"],
+      "rows": [
+        ["Knowledge — something you KNOW", "Information only the user should know", "Password, PIN, security question answer, passphrase"],
+        ["Possession — something you HAVE", "A physical device or token the user possesses", "Phone that receives a text code, hardware security key, authenticator app, smart card"],
+        ["Inherence — something you ARE", "A biometric characteristic unique to the user", "Fingerprint scan, facial recognition, iris scan, voice recognition"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Multifactor authentication example:\n-- Step 1 (Knowledge): Enter your password\n--   → Password correct ✓\n-- Step 2 (Possession): Enter the 6-digit code sent to your phone\n--   → Code correct ✓\n-- Access granted ✓\n\n-- An attacker who steals your password STILL cannot access\n-- your account without also having your phone\n-- Each step adds a layer that must be independently broken\n\n-- Single factor (password only):\n-- Attacker steals password → immediate full access ✗\n\n-- Two-factor (password + phone code):\n-- Attacker steals password → still blocked without phone ✓"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Know the three categories of multifactor authentication: knowledge (something you know), possession (something you have), and inherence (something you are). Multifactor means AT LEAST TWO of these categories — not just two steps of the same type. Using a password + a PIN is two knowledge factors — not multifactor. Using a password + a phone code IS multifactor (knowledge + possession)."
+    },
+    {
+      "type": "heading",
+      "text": "Encryption: Protecting Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Encryption",
+      "definition": "The process of encoding data to prevent unauthorized access. Decryption is the process of decoding the data. Two common approaches: symmetric key encryption (one key for both encryption and decryption) and public key encryption (public key to encrypt, private key to decrypt)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Symmetric Key vs Public Key Encryption",
+      "definition": "Symmetric key: uses one key for both encryption and decryption. Both sender and receiver must have the same key.\nPublic key: uses a public key to encrypt and a private key to decrypt. The sender does not need the receiver's private key to encrypt — only the receiver's private key can decrypt the message."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Symmetric Key Encryption", "Public Key Encryption"],
+      "rows": [
+        ["Number of keys", "ONE key — used for both encryption and decryption", "TWO keys — a public key and a private key (a key pair)"],
+        ["Who has the key?", "Both sender and receiver must have the SAME secret key", "Public key is shared openly with anyone. Private key is kept secret by the receiver only."],
+        ["How encryption works", "Sender uses the shared key to encrypt. Receiver uses the same key to decrypt.", "Sender uses receiver's PUBLIC key to encrypt. Only receiver's PRIVATE key can decrypt."],
+        ["Key exchange challenge", "How do sender and receiver securely share the key in the first place?", "No challenge — public key can be shared openly with no security risk"],
+        ["Common use", "Encrypting data at rest (stored files)", "Secure internet communications (HTTPS websites)"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The key insight about public key encryption is that the sender does not need the receiver's private key to send an encrypted message. The sender only needs the receiver's PUBLIC key — which can be shared openly without security risk. Only the receiver's PRIVATE key can decrypt the message. This solves the key exchange problem of symmetric encryption: you never have to securely share a secret key with the other party."
+    },
+    {
+      "type": "keyterm",
+      "term": "Certificate Authority",
+      "definition": "Issues digital certificates that validate the ownership of encryption keys used in secure communications. Based on a trust model."
+    },
+    {
+      "type": "paragraph",
+      "text": "Certificate authorities solve a critical problem with public key encryption: how do you know that a public key actually belongs to who it claims to? A certificate authority is a trusted third party that issues digital certificates confirming that a public key genuinely belongs to the entity claiming to own it. When you visit a secure website (https://), a certificate authority has verified that the website's public key is legitimate."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Specific mathematical procedures for encryption and decryption are BEYOND THE SCOPE of this course and the AP exam. You need to understand: what encryption does (encodes data to prevent unauthorized access), the two approaches (symmetric vs public key), and the key difference (symmetric uses one key for both; public key uses public key to encrypt and private key to decrypt). You do NOT need to know the mathematical algorithms."
+    },
+    {
+      "type": "heading",
+      "text": "Malware and Computer Viruses"
+    },
+    {
+      "type": "keyterm",
+      "term": "Malware vs Computer Virus",
+      "definition": "Malware: any software intended to damage a system or take partial control over it.\nComputer virus: a specific type of malware that copies itself and attaches to legitimate programs. All viruses are malware but not all malware are viruses."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computer Virus",
+      "definition": "A malicious program that can copy itself and gain access to a computer in an unauthorized way. Viruses often attach themselves to legitimate programs and start running independently."
+    },
+    {
+      "type": "keyterm",
+      "term": "Malware",
+      "definition": "Software intended to damage a computing system or to take partial control over its operation. Untrustworthy downloads from freeware or shareware sites can contain malware. Computer virus and malware scanning software can help protect against infection."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type", "What It Is", "Key Characteristic", "Example"],
+      "rows": [
+        ["Malware (broad category)", "Any software intended to damage a system or take partial control over it", "Intent to cause harm — the defining feature", "Ransomware, spyware, adware, trojans, worms, viruses"],
+        ["Computer virus (specific type)", "Malicious program that copies itself and attaches to legitimate programs", "Self-replication and attachment to legitimate programs — spreads itself", "A virus that attaches to a word processor and spreads to every document you open"],
+        ["Ransomware", "Malware that encrypts your files and demands payment to decrypt them", "Holds data hostage for financial gain", "Encrypts all files on your computer — demands Bitcoin payment"],
+        ["Spyware", "Malware that secretly monitors your activity and sends data to attackers", "Silent surveillance — you don't know it's there", "Records your keystrokes, screenshots, and browsing history"],
+        ["Trojan", "Malware disguised as legitimate software", "Disguise — appears to be something useful", "A free game download that secretly installs malware"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "Why are software updates important for security?",
+      "definition": "All real-world systems have errors or design flaws that can be exploited. Regular software updates help fix these errors before attackers can use them."
+    },
+    {
+      "type": "heading",
+      "text": "How Unauthorized Access Is Gained"
+    },
+    {
+      "type": "keyterm",
+      "term": "Phishing",
+      "definition": "A technique that attempts to trick a user into providing personal information. That information can then be used to access sensitive online resources such as bank accounts and emails. Can come through malicious links in emails or web pages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Keylogging",
+      "definition": "The use of a program to record every keystroke made by a computer user in order to gain fraudulent access to passwords and other confidential information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Rogue Access Point",
+      "definition": "A wireless access point that gives unauthorized access to secure networks. Data sent over public networks can be intercepted, analyzed, and modified through a rogue access point."
+    },
+    {
+      "type": "keyterm",
+      "term": "How can emails be used to compromise security?",
+      "definition": "Unsolicited emails, attachments, links, and forms can be used to compromise the security of a computing system. These can come from unknown senders or from known senders whose security has been compromised. A malicious link can be disguised on a web page or in an email."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Attack Type", "How It Works", "How to Protect Against It"],
+      "rows": [
+        ["Phishing", "Attacker sends a convincing fake email or website asking you to enter personal information — credentials go directly to the attacker", "Never click links in unsolicited emails; go directly to websites by typing the URL; verify before entering any personal information"],
+        ["Keylogging", "Malware secretly records every key you press — including passwords, credit card numbers, and messages — and sends the log to the attacker", "Use malware scanning software; keep software updated; avoid downloading untrustworthy software"],
+        ["Rogue access point", "Attacker sets up a fake Wi-Fi hotspot — when you connect, all your data flows through the attacker's device where it can be intercepted, read, and modified", "Avoid using public Wi-Fi for sensitive activities; verify network authenticity; use VPN on public networks"],
+        ["Malicious email attachments", "Attacker sends an email with a malicious file attached — opening it installs malware on your system", "Never open attachments from unknown senders; be cautious even with known senders whose accounts may be compromised"],
+        ["Free/freeware downloads", "Untrustworthy free software downloads contain hidden malware that installs alongside or instead of the advertised program", "Download software only from trusted sources; use malware scanning software on all downloads"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "How to Protect Against Security Threats"
+    },
+    {
+      "type": "keyterm",
+      "term": "How to protect against security threats",
+      "definition": "Use strong passwords and multifactor authentication. Keep software updated regularly. Use virus and malware scanning software. Review app permission settings. Be cautious of unsolicited emails, attachments, links, and free downloads."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Use strong passwords — easy for you to remember, difficult for others to guess based on knowledge of you",
+        "Use multifactor authentication whenever available — adds a layer that must be independently broken",
+        "Keep software updated regularly — all real-world systems have errors that can be exploited; updates fix them",
+        "Use virus and malware scanning software — detects and removes malicious software",
+        "Review permission settings of programs — control what data apps can collect",
+        "Be cautious of unsolicited emails, attachments, and links — even from known senders whose accounts may be compromised",
+        "Avoid untrustworthy free downloads from freeware or shareware sites — these often contain malware",
+        "Be wary of public Wi-Fi — rogue access points can intercept your data"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam tests all three attack types: phishing (tricks user into providing info), keylogging (records keystrokes to steal passwords), and rogue access point (fake Wi-Fi that intercepts data). Also know: malware is the broad category; virus is a specific type of malware that copies itself and attaches to legitimate programs. Software updates fix design flaws before attackers can exploit them."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "PII is information that identifies, links, relates, or describes an individual — examples: SSN, phone number, medical info, biometric data",
+        "Search engines record search history; websites record browsing history; devices collect location data",
+        "Programs can collect where you have been, how you got there, and how long you were there",
+        "Disparate data (geolocation, cookies, browsing history) can be aggregated to create detailed knowledge about an individual",
+        "Combining social media posts with other sources can reveal private information not intended to be public",
+        "PII online can enhance experience (personalization, simplified purchases) AND be used for identity theft, stalking, or criminal acts",
+        "Once information is placed online it is difficult to delete",
+        "Commercial and governmental entities may exploit collected data if privacy protections are ignored",
+        "Users can control app permissions to protect privacy — review permission settings",
+        "Authentication protects devices and information from unauthorized access — examples: strong passwords, multifactor authentication",
+        "Strong password: easy for user to remember, difficult for others to guess based on knowledge of that user",
+        "Multifactor authentication: at least two categories — knowledge (know), possession (have), inherence (are)",
+        "Each MFA step adds a layer that must be independently broken to gain unauthorized access",
+        "Encryption encodes data to prevent unauthorized access; decryption decodes it",
+        "Symmetric key: one key for both encryption and decryption",
+        "Public key: public key encrypts, private key decrypts — sender does not need receiver's private key",
+        "Certificate authorities issue digital certificates validating ownership of encryption keys — based on trust model",
+        "Malware: software intended to damage a system or take partial control",
+        "Computer virus: specific type of malware that copies itself and attaches to legitimate programs",
+        "All viruses are malware but not all malware are viruses",
+        "All real-world systems have errors or design flaws that can be exploited — software updates fix them",
+        "Phishing: tricks user into providing personal information through fake emails or websites",
+        "Keylogging: records keystrokes to steal passwords and confidential information",
+        "Rogue access point: fake Wi-Fi that intercepts, analyzes, and modifies data sent over public networks",
+        "Malicious links can be disguised in emails or on web pages",
+        "Untrustworthy free downloads from freeware or shareware sites can contain malware"
+      ]
+    }
+  ]
 }

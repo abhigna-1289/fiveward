@@ -1,6 +1,496 @@
 {
   "unit": 5,
-  "topic": null,
-  "title": "Unit 5: Impact of Computing",
-  "content": []
+  "topic": "review",
+  "title": "Unit 5 Review: Impact of Computing",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Unit 5 Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unit 5 covers the impact of computing on individuals, society, and the world — both the benefits and the harms. It has six topics: Beneficial and Harmful Effects (5.1), Digital Divide (5.2), Computing Bias (5.3), Crowdsourcing (5.4), Legal and Ethical Concerns (5.5), and Safe Computing (5.6). This unit accounts for 21–26% of the AP exam — the second heaviest unit after Unit 3. The exam tests your ability to analyze real-world scenarios and evaluate effects, responsibilities, and ethical dimensions of computing innovations."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Two Big Ideas in Unit 5",
+      "text": "IOC-1: While computing innovations are typically designed to achieve a specific purpose, they may have unintended consequences — both beneficial and harmful — that affect individuals, groups, and society.\nIOC-2: The use of computing innovations may involve risks to personal safety and identity — through data collection, unauthorized access, and cybersecurity threats."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.1 — Beneficial and Harmful Effects"
+    },
+    {
+      "type": "keyterm",
+      "term": "Can a computing innovation's effects be both beneficial and harmful?",
+      "definition": "Yes. A single effect can be viewed as both beneficial and harmful by different people, or even by the same person. Not every effect of a computing innovation is anticipated in advance."
+    },
+    {
+      "type": "keyterm",
+      "term": "How does computing innovation change how people complete tasks?",
+      "definition": "The way people complete tasks often changes to incorporate new computing innovations. People create computing innovations, and those innovations reshape behavior, workflows, and social patterns — sometimes in unintended ways."
+    },
+    {
+      "type": "keyterm",
+      "term": "Unintended Consequences of Computing Innovations",
+      "definition": "Computing innovations can be used in ways their creators never originally intended. Responsible programmers try to consider unintended uses and their potential effects, but it is not possible to anticipate all ways an innovation can be used."
+    },
+    {
+      "type": "keyterm",
+      "term": "Examples of computing innovations used beyond their intended purpose",
+      "definition": "Targeted advertising helps businesses but can be misused at individual and aggregate levels. Machine learning and data mining have enabled innovation in medicine and science but have also been used to discriminate against groups of individuals."
+    },
+    {
+      "type": "keyterm",
+      "term": "What is the programmer's responsibility regarding unintended effects?",
+      "definition": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects of those new uses. However, it is not possible for a programmer to consider all the ways a computing innovation can be used."
+    },
+    {
+      "type": "keyterm",
+      "term": "How can rapid sharing amplify a computing innovation's impact?",
+      "definition": "Rapid sharing of a program or running a program with a large number of users can result in significant impacts beyond the intended purpose or control of the programmer."
+    },
+    {
+      "type": "keyterm",
+      "term": "How have advances in computing affected other fields?",
+      "definition": "Advances in computing have generated and increased creativity in other fields such as medicine, engineering, communications, and the arts. Computing innovations have often had unintended beneficial effects by leading to advances in other fields."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Effect Type", "Description", "Example"],
+      "rows": [
+        ["Intended + Beneficial", "The effect the creators designed for", "GPS helps drivers navigate unfamiliar routes"],
+        ["Intended + Harmful", "Harmful effects the creators knowingly accepted", "Addictive design features maximize engagement time"],
+        ["Unintended + Beneficial", "Positive effects the creators did not plan for", "Internet enabled rapid sharing of medical research globally — transformed healthcare"],
+        ["Unintended + Harmful", "Negative effects the creators did not anticipate", "GPS routes heavy traffic through quiet residential neighborhoods"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Innovation", "Original Purpose", "Unintended Use", "Harmful or Beneficial?"],
+      "rows": [
+        ["Targeted advertising", "Help businesses reach relevant customers", "Political micro-targeting, price discrimination", "Harmful"],
+        ["Machine learning", "Find patterns in large data sets", "Medical diagnosis — detecting cancer earlier than doctors", "Beneficial"],
+        ["Machine learning", "Find patterns in large data sets", "Discriminating against groups in hiring and lending decisions", "Harmful"],
+        ["Social media", "Connect friends and family online", "Rapid organization of disaster relief", "Beneficial"],
+        ["Social media", "Connect friends and family online", "Spreading misinformation at massive scale", "Harmful"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "The same effect CAN be both beneficial and harmful — by different people. Responsible programmers SHOULD try to consider unintended uses — but it is NOT POSSIBLE to consider ALL uses. Rapid sharing with large numbers of users creates impacts BEYOND the programmer's control. Computing has had unintended BENEFICIAL effects in medicine, engineering, communications, and the arts."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.2 — Digital Divide"
+    },
+    {
+      "type": "keyterm",
+      "term": "Digital Divide",
+      "definition": "The differing access to computing devices and the Internet based on socioeconomic, geographic, or demographic characteristics. Internet access varies between countries as well as within them. The digital divide can affect both groups and individuals."
+    },
+    {
+      "type": "keyterm",
+      "term": "Issues raised by the digital divide",
+      "definition": "The digital divide raises issues of equity, access, and influence both globally and locally. It also raises ethical concerns. The digital divide is affected by the actions of individuals, organizations, and governments."
+    },
+    {
+      "type": "keyterm",
+      "term": "What factors contribute to the digital divide?",
+      "definition": "Socioeconomic status, geographic location, and demographic characteristics all affect access to computing devices and the Internet. These factors vary both between countries and within them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Characteristic", "How It Creates the Digital Divide", "Example"],
+      "rows": [
+        ["Socioeconomic", "Lower income means less ability to afford devices and Internet service", "A family cannot afford a laptop — children complete homework at the library or not at all"],
+        ["Geographic", "Rural and remote areas often lack the physical Internet infrastructure", "A student in a rural area has no broadband access — limited to slow or no connectivity"],
+        ["Demographic", "Age, education level, and disability status affect ability to use technology", "An elderly person who never learned computing is excluded from online healthcare and government services"],
+        ["Between countries", "Developed countries have far more Internet infrastructure than developing ones", "A student in a developed country has reliable broadband; one in a developing country has none"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "The digital divide exists WITHIN wealthy countries too — not just between developed and developing nations. The CED explicitly states Internet access varies within countries as well as between them. Urban vs rural, high-income vs low-income, and demographic gaps all create digital divides inside single countries."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.3 — Computing Bias"
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing Bias",
+      "definition": "Computing innovations can reflect existing human biases through biases written into algorithms or biases in the data used. Biases can be embedded at all levels of software development. Programmers should take action to reduce bias."
+    },
+    {
+      "type": "keyterm",
+      "term": "Where does computing bias come from?",
+      "definition": "Computing bias can come from biases written directly into the algorithms, or from biases present in the data used to train or run the innovation. Biases can be embedded at all levels of software development — not just in the final product."
+    },
+    {
+      "type": "keyterm",
+      "term": "How should programmers address computing bias?",
+      "definition": "Programmers should take action to reduce bias in algorithms used for computing innovations as a way of combating existing human biases. This requires vigilance at all levels of development since biases can be embedded anywhere in the process."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Source of Bias", "How It Enters", "Example"],
+      "rows": [
+        ["Bias in the algorithm", "The rules, weights, or logic of the algorithm encode biased assumptions", "A loan algorithm that weights certain job types less — those jobs more common in minority communities"],
+        ["Bias in the data", "Training data does not represent all groups equally", "Facial recognition trained mostly on light-skinned faces — performs worse on darker-skinned faces"],
+        ["Bias at requirements stage", "Whose needs are considered when designing the system", "Voice recognition designed and tested only by native English speakers — fails for accents"],
+        ["Bias at testing stage", "Who tests the system and what inputs are used", "Hiring tool tested only on resumes from one demographic — bias for others never detected"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "Bias can come from ALGORITHMS or DATA — both sources. Biases can be embedded at ALL LEVELS of development — not just in data. Programmers SHOULD TAKE ACTION to reduce bias — this is an ethical responsibility. Computing bias is NOT always intentional — it can result from unrepresentative data or unconscious design choices."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.4 — Crowdsourcing"
+    },
+    {
+      "type": "keyterm",
+      "term": "How does widespread access to data enable problem solving?",
+      "definition": "Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results. This enables crowdsourcing and citizen science at a large scale."
+    },
+    {
+      "type": "keyterm",
+      "term": "Crowdsourcing",
+      "definition": "The practice of obtaining input or information from a large number of people via the Internet. Offers new models for collaboration such as connecting businesses or social causes with funding. Human capabilities can be enhanced by collaboration via computing."
+    },
+    {
+      "type": "keyterm",
+      "term": "Citizen Science",
+      "definition": "Scientific research conducted in whole or in part by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices. A form of crowdsourcing applied to scientific research."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Crowdsourcing vs Citizen Science",
+      "definition": "Crowdsourcing: obtaining input or information from a large number of people via the Internet — broader than just science, includes funding, ideas, and data.\nCitizen Science: specifically scientific research conducted by distributed non-scientists who contribute data using their own devices. Citizen science is a form of crowdsourcing applied to scientific research."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type", "What the Crowd Contributes", "Example"],
+      "rows": [
+        ["Crowdfunding", "Money — small contributions fund a project or cause", "Thousands of backers each contribute $20–$100 to fund a new product"],
+        ["Crowdsourced data", "Observations from many distributed contributors", "Waze: millions of drivers report traffic conditions, building a real-time map"],
+        ["Crowdsourced knowledge", "Information and expertise from many contributors", "Wikipedia: millions of volunteers write and maintain an encyclopedia"],
+        ["Citizen science", "Scientific data collected by non-scientists using their own devices", "Amateur birdwatchers log sightings worldwide — revealing migration patterns"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Citizen science IS a form of crowdsourcing — applied to scientific research. Not all crowdsourcing is citizen science. Crowdsourcing is broader — it includes funding, data, knowledge, and labor. Science has been AFFECTED by distributed and citizen science — this is a directly testable CED statement."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.5 — Legal and Ethical Concerns"
+    },
+    {
+      "type": "keyterm",
+      "term": "Intellectual Property",
+      "definition": "Material created on a computer is the intellectual property of the creator or an organization. Ease of access and distribution of digitized information raises concerns about ownership, value, and use. Measures should be taken to safeguard intellectual property."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why does digitization raise intellectual property concerns?",
+      "definition": "Ease of access and distribution of digitized information raises concerns regarding ownership, value, and use. Digital content can be copied and shared almost instantly and for free, making it harder to protect the rights of creators."
+    },
+    {
+      "type": "keyterm",
+      "term": "Plagiarism",
+      "definition": "The use of material created by someone else without permission and presented as one's own. Plagiarism may have legal consequences. The use of material created by someone other than you should always be cited."
+    },
+    {
+      "type": "keyterm",
+      "term": "Creative Commons vs Open Source vs Open Access",
+      "definition": "Creative Commons: license allowing others to share, use, and build on copyrighted creative work.\nOpen Source: programs freely available to redistribute and modify.\nOpen Access: research output freely available with no access or use restrictions.\nAll three have enabled broad access to digital information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Creative Commons",
+      "definition": "A public copyright license that enables the free distribution of an otherwise copyrighted work. Used when the content creator wants to give others the right to share, use, and build upon the work they have created."
+    },
+    {
+      "type": "keyterm",
+      "term": "Open Source",
+      "definition": "Programs that are made freely available and may be redistributed and modified."
+    },
+    {
+      "type": "keyterm",
+      "term": "Open Access",
+      "definition": "Online research output that is free of any and all restrictions on access and free of many restrictions on use, such as copyright or license restrictions."
+    },
+    {
+      "type": "keyterm",
+      "term": "Legal and Ethical Concerns in Computing",
+      "definition": "Computing can raise legal and ethical concerns including: software enabling digital media piracy, algorithms containing bias, computing used to harm individuals, and the digital divide. Computing can also play a role in social and political issues."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Framework", "Applies To", "What It Allows"],
+      "rows": [
+        ["Creative Commons", "Creative works: photos, music, writing, art", "Creator specifies permissions — share, modify, use commercially or not, with attribution"],
+        ["Open Source", "Software and code", "View, use, modify, and redistribute the source code — often with conditions"],
+        ["Open Access", "Academic research and publications", "Anyone can read and use research for free — no subscription required"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistakes",
+      "text": "Plagiarism is not just copying word-for-word — using someone's IDEAS without credit is also plagiarism. In programming, using code from others without acknowledgment is plagiarism even if you modify it. Even when using CC, open source, or open access material, you must still CITE the source. Creative Commons does NOT mean 'public domain' — the creator still holds copyright but has licensed certain uses."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.6 — Safe Computing: PII and Data Privacy"
+    },
+    {
+      "type": "keyterm",
+      "term": "Personally Identifiable Information (PII)",
+      "definition": "Information about an individual that identifies, links, relates, or describes them. Examples: Social Security number, phone number, medical information, biometric data. Can be used for identity theft, stalking, or other criminal acts. Once placed online it is difficult to delete."
+    },
+    {
+      "type": "keyterm",
+      "term": "How is PII collected online?",
+      "definition": "Search engines record search history. Websites record browsing history. Devices collect location data. Programs can record where you have been, how you got there, and how long you were there."
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Aggregation",
+      "definition": "Disparate personal data such as geolocation, cookies, and browsing history can be combined to create detailed knowledge about an individual. Combining information posted on social media with other sources can be used to deduce private information."
+    },
+    {
+      "type": "keyterm",
+      "term": "What are the benefits and risks of PII being online?",
+      "definition": "Benefits: enhances online experience, simplifies purchases, enables personalized suggestions.\nRisks: can be used for identity theft, stalking, or criminal acts. Once online it is difficult to delete. Can be used in unintended and harmful ways."
+    },
+    {
+      "type": "keyterm",
+      "term": "Risks of sharing PII online",
+      "definition": "Information placed online can be used in ways that were not intended and that may have a harmful impact. Once information is placed online it is difficult to delete. PII can be used for identity theft, stalking, or other criminal acts."
+    },
+    {
+      "type": "keyterm",
+      "term": "What can commercial and governmental entities do with collected data?",
+      "definition": "Commercial and governmental curation of information may be exploited if privacy and other protections are ignored. Search engines can use search history for targeted marketing. Technology enables the exploitation of information about individuals."
+    },
+    {
+      "type": "keyterm",
+      "term": "User Permissions and Privacy",
+      "definition": "Users can control the permissions programs have for collecting user information. Users should review the permission settings of programs to protect their privacy."
+    },
+    {
+      "type": "paragraph",
+      "text": "Disparate data aggregation is one of the most important privacy concepts. Individual pieces of data may seem harmless in isolation — your location, your browsing interests, your age. But combined, they can create a detailed profile revealing information you never intended to share. Search engines record every query. Websites track every page you visit through cookies. Devices log your physical location. Combined, these reveal intimate details of your life."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.6 — Safe Computing: Authentication and Encryption"
+    },
+    {
+      "type": "keyterm",
+      "term": "Authentication",
+      "definition": "Measures that protect devices and information from unauthorized access. Examples: strong passwords and multifactor authentication. A strong password is easy for the user to remember but difficult for someone else to guess."
+    },
+    {
+      "type": "keyterm",
+      "term": "Multifactor Authentication",
+      "definition": "A method of access control where a user must present evidence from at least two of three categories: knowledge (something they know), possession (something they have), and inherence (something they are). Each step adds a new layer of security that must be broken to gain unauthorized access."
+    },
+    {
+      "type": "keyterm",
+      "term": "Encryption",
+      "definition": "The process of encoding data to prevent unauthorized access. Decryption is the process of decoding the data. Two common approaches: symmetric key encryption (one key for both encryption and decryption) and public key encryption (public key to encrypt, private key to decrypt)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Symmetric Key vs Public Key Encryption",
+      "definition": "Symmetric key: uses one key for both encryption and decryption. Both sender and receiver must have the same key.\nPublic key: uses a public key to encrypt and a private key to decrypt. The sender does not need the receiver's private key to encrypt — only the receiver's private key can decrypt the message."
+    },
+    {
+      "type": "keyterm",
+      "term": "Certificate Authority",
+      "definition": "Issues digital certificates that validate the ownership of encryption keys used in secure communications. Based on a trust model."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["MFA Category", "What It Is", "Examples"],
+      "rows": [
+        ["Knowledge — something you KNOW", "Information only the user should know", "Password, PIN, security question answer"],
+        ["Possession — something you HAVE", "A physical device or token", "Phone receiving a text code, hardware key, authenticator app"],
+        ["Inherence — something you ARE", "A biometric characteristic unique to the user", "Fingerprint, facial recognition, iris scan"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Symmetric Key", "Public Key"],
+      "rows": [
+        ["Number of keys", "ONE key for both encryption and decryption", "TWO keys — public key (encrypt) and private key (decrypt)"],
+        ["Who has the key?", "BOTH sender and receiver have the SAME secret key", "Public key shared openly; private key kept secret by receiver only"],
+        ["Key advantage", "Simple — one key to manage", "No need to securely share a secret key — sender only needs public key"],
+        ["Key challenge", "How to securely share the key initially", "More complex to set up and manage"],
+        ["Common use", "Encrypting stored data", "Secure internet communication (HTTPS)"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "MFA requires at least two DIFFERENT categories — not two steps of the same type. Password + PIN is two knowledge factors (not MFA). Password + phone code IS MFA (knowledge + possession). Public key encryption: sender uses receiver's PUBLIC key to encrypt — only receiver's PRIVATE key can decrypt. Specific math procedures are OUT OF SCOPE."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 5.6 — Safe Computing: Threats and Attacks"
+    },
+    {
+      "type": "keyterm",
+      "term": "Malware vs Computer Virus",
+      "definition": "Malware: any software intended to damage a system or take partial control over it.\nComputer virus: a specific type of malware that copies itself and attaches to legitimate programs. All viruses are malware but not all malware are viruses."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computer Virus",
+      "definition": "A malicious program that can copy itself and gain access to a computer in an unauthorized way. Viruses often attach themselves to legitimate programs and start running independently."
+    },
+    {
+      "type": "keyterm",
+      "term": "Malware",
+      "definition": "Software intended to damage a computing system or to take partial control over its operation. Untrustworthy downloads from freeware or shareware sites can contain malware. Computer virus and malware scanning software can help protect against infection."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why are software updates important for security?",
+      "definition": "All real-world systems have errors or design flaws that can be exploited. Regular software updates help fix these errors before attackers can use them."
+    },
+    {
+      "type": "keyterm",
+      "term": "Phishing",
+      "definition": "A technique that attempts to trick a user into providing personal information. That information can then be used to access sensitive online resources such as bank accounts and emails. Can come through malicious links in emails or web pages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Keylogging",
+      "definition": "The use of a program to record every keystroke made by a computer user in order to gain fraudulent access to passwords and other confidential information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Rogue Access Point",
+      "definition": "A wireless access point that gives unauthorized access to secure networks. Data sent over public networks can be intercepted, analyzed, and modified through a rogue access point."
+    },
+    {
+      "type": "keyterm",
+      "term": "How can emails be used to compromise security?",
+      "definition": "Unsolicited emails, attachments, links, and forms can be used to compromise the security of a computing system. These can come from unknown senders or from known senders whose security has been compromised. A malicious link can be disguised on a web page or in an email."
+    },
+    {
+      "type": "keyterm",
+      "term": "How to protect against security threats",
+      "definition": "Use strong passwords and multifactor authentication. Keep software updated regularly. Use virus and malware scanning software. Review app permission settings. Be cautious of unsolicited emails, attachments, links, and free downloads."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Attack", "How It Works", "Protection"],
+      "rows": [
+        ["Phishing", "Fake email or website tricks you into entering credentials — go directly to attacker", "Never click links in unsolicited emails; type URLs directly; verify before entering any info"],
+        ["Keylogging", "Malware secretly records every keystroke including passwords", "Use malware scanning; keep software updated; avoid untrustworthy downloads"],
+        ["Rogue access point", "Fake Wi-Fi hotspot intercepts all data you send and receive", "Avoid public Wi-Fi for sensitive activities; use VPN; verify network names"],
+        ["Malicious email attachments", "Opening an attachment installs malware on your system", "Never open attachments from unknown senders; be cautious even with known senders"],
+        ["Freeware/shareware malware", "Free software download contains hidden malware", "Download only from trusted sources; scan all downloads with malware software"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistakes",
+      "text": "All viruses are malware — but NOT all malware are viruses. A virus specifically COPIES ITSELF and attaches to legitimate programs. Malware is the broader category. Phishing TRICKS users — it does not hack into systems directly. Rogue access points intercept data sent over PUBLIC networks — encrypted traffic is harder to read even if intercepted. Software updates fix EXISTING vulnerabilities — they protect against known exploits."
+    },
+    {
+      "type": "heading",
+      "text": "Connecting All Six Topics"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Topic", "Core Question", "Key Concept"],
+      "rows": [
+        ["5.1 Beneficial and Harmful Effects", "What are the full range of effects computing innovations can have?", "Same effect can be both beneficial and harmful; rapid sharing amplifies impact beyond programmer's control"],
+        ["5.2 Digital Divide", "Who gets to benefit from computing?", "Unequal access based on socioeconomic, geographic, demographic factors raises equity issues"],
+        ["5.3 Computing Bias", "How do computing innovations reflect human biases?", "Bias enters through algorithms AND data at ALL levels of development; programmers should take action to reduce it"],
+        ["5.4 Crowdsourcing", "How can computing enable people to solve problems at massive scale?", "Crowdsourcing and citizen science harness distributed contributions to accomplish what no individual could"],
+        ["5.5 Legal and Ethical Concerns", "What are our rights and responsibilities around digital content?", "IP belongs to creators; plagiarism has consequences; CC, open source, open access enable legal sharing"],
+        ["5.6 Safe Computing", "How do we protect ourselves and our data in a digital world?", "PII can be aggregated and misused; MFA and encryption protect access; phishing, malware, and rogue APs are key threats"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Unit 5 Complete Summary — Everything You Must Know"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "People create computing innovations — the way people complete tasks often changes to incorporate them",
+        "Not every effect is anticipated in advance — a single effect can be BOTH beneficial AND harmful by different people",
+        "Advances in computing generated creativity in medicine, engineering, communications, and the arts",
+        "Innovations can be used beyond intended purpose — targeted advertising and ML are key examples",
+        "Responsible programmers SHOULD try to consider unintended uses — but cannot consider ALL possible uses",
+        "Rapid sharing with large numbers of users creates impacts beyond the programmer's intended purpose or control",
+        "Digital divide: differing access to computing devices and Internet based on socioeconomic, geographic, or demographic characteristics",
+        "Internet access varies BETWEEN countries AND WITHIN them",
+        "Digital divide affects both groups AND individuals",
+        "Digital divide raises issues of equity, access, and influence globally and locally",
+        "Digital divide is affected by actions of INDIVIDUALS, ORGANIZATIONS, and GOVERNMENTS",
+        "Computing bias: innovations can reflect human biases through biases in ALGORITHMS or in DATA",
+        "Biases can be embedded at ALL LEVELS of software development",
+        "Programmers SHOULD TAKE ACTION to reduce bias — an ethical responsibility",
+        "Widespread access to information facilitates identification of problems, development of solutions, and dissemination of results",
+        "Crowdsourcing: obtaining input from a large number of people via the Internet",
+        "Crowdsourcing offers new models for collaboration — connecting businesses or social causes with funding",
+        "Human capabilities can be enhanced by collaboration via computing",
+        "Citizen science: scientific research by distributed non-scientists contributing data with their own devices",
+        "Science has been affected by distributed and citizen science — citizen science IS a form of crowdsourcing",
+        "Intellectual property: material created on a computer belongs to the creator or organization",
+        "Ease of digitization raises IP concerns about ownership, value, and use",
+        "Plagiarism: using others' material without permission and presenting as own — may have legal consequences",
+        "Material created by someone other than you should ALWAYS be cited",
+        "Creative Commons: license enabling free distribution of copyrighted work",
+        "Open Source: programs freely available to redistribute and modify",
+        "Open Access: research output free of access and use restrictions",
+        "All three have enabled broad access to digital information",
+        "Computing used to harm individuals raises legal and ethical concerns",
+        "Computing can play role in social and political issues — raising legal and ethical concerns",
+        "PII: information that identifies, links, relates, or describes an individual",
+        "Search engines, websites, and devices all collect personal data automatically",
+        "Disparate data (geolocation, cookies, browsing history) can be aggregated to reveal private information",
+        "PII online: benefits (personalization, simplified purchases) AND risks (identity theft, stalking, criminal acts)",
+        "Once placed online, information is difficult to delete",
+        "Users can control permissions apps have — review permission settings",
+        "Authentication protects from unauthorized access — strong passwords and MFA",
+        "MFA: at least two categories — knowledge (know), possession (have), inherence (are)",
+        "Each MFA step adds a layer that must be independently broken",
+        "Encryption: encodes data to prevent unauthorized access; decryption decodes it",
+        "Symmetric key: ONE key for both encryption and decryption",
+        "Public key: PUBLIC key to encrypt, PRIVATE key to decrypt — sender does not need receiver's private key",
+        "Certificate authorities validate ownership of encryption keys — based on trust model",
+        "Malware: software intended to damage a system or take partial control",
+        "Computer virus: specific malware that COPIES ITSELF and attaches to legitimate programs",
+        "All real-world systems have errors that can be exploited — software updates fix them",
+        "Phishing: tricks user into providing personal information",
+        "Keylogging: records keystrokes to steal passwords and confidential information",
+        "Rogue access point: fake Wi-Fi that intercepts, analyzes, and modifies data on public networks",
+        "Unsolicited emails, attachments, and links can compromise security — even from known senders",
+        "Untrustworthy free downloads can contain malware"
+      ]
+    }
+  ]
 }

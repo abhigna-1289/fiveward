@@ -2,5 +2,192 @@
   "unit": 3,
   "topic": "3.12",
   "title": "Calling Procedures",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a Procedure?"
+    },
+    {
+      "type": "paragraph",
+      "text": "As programs grow larger, writing everything as one long sequence of statements becomes unmanageable — hard to read, hard to debug, and full of duplicated code. Procedures solve this problem. A procedure groups related statements under a name, and that named group can be called from anywhere in the program as many times as needed. This is one of the most powerful tools for managing program complexity."
+    },
+    {
+      "type": "keyterm",
+      "term": "Procedure",
+      "definition": "A named group of programming instructions that may have parameters and return values. Also referred to as a method or function depending on the programming language."
+    },
+    {
+      "type": "paragraph",
+      "text": "The key properties of a procedure: it has a NAME (used to call it), it may have PARAMETERS (input variables), and it may have a RETURN VALUE (output). All three are optional — a procedure can have no parameters and return nothing, or it can take many parameters and return a computed value."
+    },
+    {
+      "type": "heading",
+      "text": "Parameters vs Arguments"
+    },
+    {
+      "type": "keyterm",
+      "term": "Parameters vs Arguments",
+      "definition": "Parameters are the input variables of a procedure as defined in its declaration.\nArguments are the actual values passed to the procedure when it is called. Each argument is assigned to its corresponding parameter."
+    },
+    {
+      "type": "paragraph",
+      "text": "Parameters and arguments are related but distinct. Parameters are the placeholder variable names defined in the procedure header — they describe what the procedure expects to receive. Arguments are the actual concrete values you pass when you call the procedure — they are assigned to the parameters in order."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Term", "Where It Appears", "What It Is", "Example"],
+      "rows": [
+        ["Parameter", "In the PROCEDURE declaration (definition)", "A placeholder input variable — describes what the procedure expects", "PROCEDURE add(a, b) — a and b are parameters"],
+        ["Argument", "In the procedure CALL", "The actual value passed — assigned to the corresponding parameter in order", "add(3, 5) — 3 is the argument for parameter a, 5 is the argument for parameter b"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- DECLARATION: defines the procedure and its parameters\nPROCEDURE greet(name)          -- 'name' is a PARAMETER\n{\n   DISPLAY concat(\"Hello, \", name)\n}\n\n-- CALLS: pass arguments to the procedure\ngreet(\"Alice\")   -- \"Alice\" is the ARGUMENT, assigned to parameter 'name'\ngreet(\"Bob\")     -- \"Bob\" is the ARGUMENT, assigned to parameter 'name'\ngreet(\"Carlos\")  -- \"Carlos\" is the ARGUMENT, assigned to parameter 'name'\n\n-- Output:\n-- Hello, Alice\n-- Hello, Bob\n-- Hello, Carlos\n\n-- The same procedure works for ANY name — this is the power of parameters"
+    },
+    {
+      "type": "heading",
+      "text": "What Happens When a Procedure Is Called"
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when a procedure is called?",
+      "definition": "A procedure call interrupts sequential execution and causes the program to execute the statements within the procedure. Once the last statement or a RETURN statement executes, flow of control returns to the point immediately following where the procedure was called."
+    },
+    {
+      "type": "paragraph",
+      "text": "A procedure call fundamentally changes the flow of execution. When the program reaches a procedure call, it PAUSES execution at that point, JUMPS into the procedure body, executes the procedure's statements, and then RETURNS to exactly where it left off — the statement immediately after the call. This interruption and return is precisely how procedures work."
+    },
+    {
+      "type": "codeblock",
+      "code": "PROCEDURE double(n)\n{\n   RETURN(n * 2)\n}\n\n-- Main program:\nDISPLAY \"before call\"\nresult ← double(5)    -- execution PAUSES here, JUMPS into procedure\n                       -- Inside procedure: n=5, computes 5*2=10, RETURNS 10\n                       -- Execution RETURNS here with value 10\n                       -- result is assigned 10\nDISPLAY result        -- continues from here\nDISPLAY \"after call\"\n\n-- Output:\n-- before call\n-- 10\n-- after call"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Step", "Where Execution Is", "What Is Happening"],
+      "rows": [
+        ["1", "Main program", "DISPLAY \"before call\" executes — displays 'before call'"],
+        ["2", "Main program", "result ← double(5) is reached — execution PAUSES here"],
+        ["3", "Inside double(n)", "n is assigned the argument value 5"],
+        ["4", "Inside double(n)", "The body executes: RETURN(n * 2) = RETURN(5 * 2) = RETURN(10)"],
+        ["5", "Main program", "Flow of control RETURNS to the point immediately after the call — result is assigned 10"],
+        ["6", "Main program", "DISPLAY result executes — displays 10"],
+        ["7", "Main program", "DISPLAY \"after call\" executes — displays 'after call'"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The RETURN Statement"
+    },
+    {
+      "type": "keyterm",
+      "term": "RETURN statement",
+      "definition": "Returns the flow of control to the point where the procedure was called and returns the value of an expression. May appear at any point inside the procedure and causes an immediate return."
+    },
+    {
+      "type": "paragraph",
+      "text": "The RETURN statement does two things simultaneously: it exits the procedure immediately and returns a value back to the calling statement. The RETURN statement may appear at any point inside the procedure — not just at the end. When a RETURN is reached, the procedure exits immediately, even if there are more statements below it in the procedure body."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- RETURN can appear anywhere — causes IMMEDIATE exit:\nPROCEDURE classify(n)\n{\n   IF(n < 0)\n   {\n      RETURN(\"negative\")   -- IMMEDIATE return if n is negative\n                            -- statements below are NOT reached\n   }\n   IF(n = 0)\n   {\n      RETURN(\"zero\")       -- IMMEDIATE return if n is zero\n   }\n   RETURN(\"positive\")      -- only reached if n > 0\n}\n\nDISPLAY classify(-5)   -- jumps in, n=-5, -5<0 → RETURN \"negative\" immediately\nDISPLAY classify(0)    -- jumps in, n=0, 0<0? No. n=0? Yes → RETURN \"zero\"\nDISPLAY classify(7)    -- jumps in, n=7, 7<0? No. 7=0? No. → RETURN \"positive\"\n\n-- Output:\n-- negative\n-- zero\n-- positive"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The RETURN statement causes IMMEDIATE exit from the procedure — code after a RETURN in the same branch never executes. If an IF block contains a RETURN, the code after the IF block only executes when the IF condition is false (because if true, the RETURN exits before reaching that code)."
+    },
+    {
+      "type": "heading",
+      "text": "Assigning a Procedure's Return Value"
+    },
+    {
+      "type": "paragraph",
+      "text": "When a procedure returns a value, you can assign that value to a variable in the calling code. The syntax is: result ← procName(arg1, arg2, ...). The procedure call on the right side is evaluated first — it runs the procedure and produces a return value — then that value is assigned to the variable on the left."
+    },
+    {
+      "type": "codeblock",
+      "code": "PROCEDURE square(n)\n{\n   RETURN(n * n)\n}\n\n-- Assign return value to a variable:\nx ← square(4)       -- square(4) runs, returns 16, x is assigned 16\nDISPLAY x           -- displays 16\n\n-- Use return value directly in an expression:\ny ← square(3) + square(4)   -- square(3)=9, square(4)=16, y=9+16=25\nDISPLAY y                   -- displays 25\n\n-- Use return value as argument to another procedure call:\nz ← square(square(2))   -- inner: square(2)=4, outer: square(4)=16\nDISPLAY z               -- displays 16\n\n-- Pass return value directly to DISPLAY:\nDISPLAY square(5)   -- square(5)=25, DISPLAY 25\n                    -- displays 25"
+    },
+    {
+      "type": "heading",
+      "text": "DISPLAY and INPUT"
+    },
+    {
+      "type": "keyterm",
+      "term": "DISPLAY and INPUT procedures",
+      "definition": "DISPLAY(expression): displays the value of expression followed by a space.\nINPUT(): accepts a value from the user and returns the input value."
+    },
+    {
+      "type": "paragraph",
+      "text": "DISPLAY and INPUT are built-in procedures provided on the AP reference sheet. DISPLAY takes an expression, evaluates it, and shows the result followed by a space. INPUT takes no arguments — it waits for the user to type something and returns whatever they typed as a value that can be stored in a variable."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- DISPLAY: shows the value of an expression followed by a space\nDISPLAY 42               -- displays: 42 (followed by a space)\nDISPLAY \"hello\"          -- displays: hello (followed by a space)\nDISPLAY 3 + 4            -- evaluates 3+4=7 first, then displays: 7\nDISPLAY concat(\"Hi \", \"there\")  -- displays: Hi there\n\n-- Multiple DISPLAY statements:\nDISPLAY \"Score: \"\nDISPLAY 95\n-- Displays: Score:  95  (each followed by a space)\n\n-- INPUT: accepts user input and returns the value\nname ← INPUT()           -- waits for user to type, returns what they typed\nDISPLAY concat(\"Hello, \", name)\n-- If user types \"Alice\": displays Hello, Alice\n\nscore ← INPUT()          -- user types 85, score is assigned 85\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Multiple Parameters: Arguments Assigned in Order"
+    },
+    {
+      "type": "paragraph",
+      "text": "A procedure can take zero or more arguments. When a procedure is called with multiple arguments, each argument is assigned to its corresponding parameter IN ORDER — first argument to first parameter, second argument to second parameter, and so on."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Procedure with multiple parameters:\nPROCEDURE add(a, b)\n{\n   RETURN(a + b)\n}\n\n-- Arguments assigned in order:\nadd(3, 5)   -- a=3, b=5 → returns 8\nadd(10, 2)  -- a=10, b=2 → returns 12\nadd(5, 3)   -- a=5, b=3 → returns 8 (ORDER MATTERS for non-commutative operations)\n\n-- Procedure with three parameters:\nPROCEDURE between(x, low, high)\n{\n   RETURN((x ≥ low) AND (x ≤ high))\n}\n\nbetween(5, 1, 10)   -- x=5, low=1, high=10 → (5≥1) AND (5≤10) = true\nbetween(15, 1, 10)  -- x=15, low=1, high=10 → (15≥1) AND (15≤10) = false\nbetween(1, 1, 10)   -- x=1, low=1, high=10 → (1≥1) AND (1≤10) = true"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Arguments are assigned to parameters IN ORDER — the first argument goes to the first parameter, second to second, and so on. For a procedure like subtract(a, b) which returns a - b: subtract(10, 3) gives 7 but subtract(3, 10) gives -7. Order matters whenever the operation is not commutative."
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Complex Procedure Calls"
+    },
+    {
+      "type": "codeblock",
+      "code": "PROCEDURE add(a, b)\n{\n   RETURN(a + b)\n}\n\nPROCEDURE multiply(a, b)\n{\n   RETURN(a * b)\n}\n\n-- Trace each call step by step:\nx ← add(3, 5)               -- a=3, b=5 → returns 8. x=8\ny ← multiply(x, 2)           -- a=8, b=2 → returns 16. y=16\nz ← add(multiply(2,3), 4)    -- inner: multiply(2,3)=6, outer: add(6,4)=10. z=10\nw ← multiply(add(1,2), add(3,4))  -- add(1,2)=3, add(3,4)=7, multiply(3,7)=21. w=21\n\nDISPLAY x   -- 8\nDISPLAY y   -- 16\nDISPLAY z   -- 10\nDISPLAY w   -- 21"
+    },
+    {
+      "type": "paragraph",
+      "text": "When procedure calls are nested — one call appears as an argument to another — always evaluate the innermost call first. The result of the inner call becomes the argument for the outer call. Work from the inside out."
+    },
+    {
+      "type": "heading",
+      "text": "Procedures Without Return Values"
+    },
+    {
+      "type": "paragraph",
+      "text": "Not all procedures return a value. Some procedures just perform an action — like displaying output, modifying a list, or printing a report. These procedures are called for their effect, not for a value they produce. DISPLAY is an example of a built-in procedure that performs an action (showing output) without returning a value."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Procedure with NO return value (called for its effect):\nPROCEDURE printLine(text)\n{\n   DISPLAY text\n   DISPLAY \"----------\"\n}\n\nprintLine(\"Hello\")    -- displays: Hello then ----------\nprintLine(\"Goodbye\")  -- displays: Goodbye then ----------\n-- No return value — cannot do: x ← printLine(\"Hello\")\n\n-- Procedure that modifies a list (effect on external state):\nPROCEDURE addToList(aList, value)\n{\n   APPEND(aList, value)\n}\n\nscores ← [85, 92]\naddToList(scores, 78)\nDISPLAY scores   -- [85, 92, 78]"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A procedure is a named group of programming instructions that may have parameters and return values — also called method or function depending on the language",
+        "Parameters are input variables defined in the procedure DECLARATION; arguments are the actual values passed in the procedure CALL",
+        "Each argument is assigned to its corresponding parameter IN ORDER — first to first, second to second, etc.",
+        "A procedure call interrupts sequential execution — the program executes the procedure's statements then returns to the point immediately following the call",
+        "The RETURN statement exits the procedure immediately and returns the value of an expression — it can appear at any point in the procedure",
+        "Code after a RETURN in the same branch never executes — RETURN causes immediate exit",
+        "To assign a procedure's return value: result ← procName(arg1, arg2, ...)",
+        "For nested procedure calls: evaluate the innermost call first, use its return value as the argument for the outer call",
+        "DISPLAY(expression) shows the value of expression followed by a space",
+        "INPUT() accepts a value from the user and returns it",
+        "Procedures without return values are called for their effect — they perform an action but do not produce a value"
+      ]
+    }
+  ]
 }

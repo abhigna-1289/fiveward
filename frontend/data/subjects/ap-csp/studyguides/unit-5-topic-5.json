@@ -2,5 +2,174 @@
   "unit": 5,
   "topic": "5.5",
   "title": "Legal and Ethical Concerns",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Computing Raises Legal and Ethical Questions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing has made it possible to create, copy, distribute, and modify digital content with extraordinary ease. This power raises important legal and ethical questions: Who owns digital content? When can you use someone else's work? What obligations do you have when you use it? Topic 5.5 addresses these questions through the lens of intellectual property, plagiarism, open licensing, and the broader legal and ethical concerns that computing innovations can create."
+    },
+    {
+      "type": "heading",
+      "text": "Intellectual Property"
+    },
+    {
+      "type": "keyterm",
+      "term": "Intellectual Property",
+      "definition": "Material created on a computer is the intellectual property of the creator or an organization. Ease of access and distribution of digitized information raises concerns about ownership, value, and use. Measures should be taken to safeguard intellectual property."
+    },
+    {
+      "type": "paragraph",
+      "text": "Intellectual property refers to creations of the mind — writing, code, music, artwork, inventions — that belong to their creators. Material created on a computer is the intellectual property of the creator or an organization. This is true whether the content is a novel, a song, a piece of software, a photo, or a research paper."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why does digitization raise intellectual property concerns?",
+      "definition": "Ease of access and distribution of digitized information raises concerns regarding ownership, value, and use. Digital content can be copied and shared almost instantly and for free, making it harder to protect the rights of creators."
+    },
+    {
+      "type": "paragraph",
+      "text": "Before digital technology, copying content required physical effort — a printing press, a recording studio, a photocopier. Each copy cost time and money. Digital technology changed this completely: a song, a book, or a software program can be copied perfectly and infinitely at essentially zero cost and shared with millions of people instantly. This ease of copying and distribution is what creates the intellectual property concerns the CED identifies."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Physical Content", "Digital Content"],
+      "rows": [
+        ["Copying requires physical effort, equipment, and cost", "Copying is instant, perfect, and essentially free"],
+        ["Distribution requires physical logistics — shipping, stores, postage", "Distribution is instant and global — email, websites, file sharing"],
+        ["Unauthorized copying is visible and limited in scale", "Unauthorized copying can happen invisibly and at massive scale"],
+        ["Value is tied to the physical artifact", "Value is in the information itself — separated from any physical form"],
+        ["Protecting rights is relatively straightforward", "Protecting rights requires active technical and legal measures"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Plagiarism"
+    },
+    {
+      "type": "keyterm",
+      "term": "Plagiarism",
+      "definition": "The use of material created by someone else without permission and presented as one's own. Plagiarism may have legal consequences. The use of material created by someone other than you should always be cited."
+    },
+    {
+      "type": "paragraph",
+      "text": "Plagiarism is both an ethical violation and potentially a legal one. The ethical violation is presenting someone else's work as your own — taking credit for ideas and effort that are not yours. The legal concern arises from copyright law — using copyrighted material without permission may violate the creator's legal rights."
+    },
+    {
+      "type": "paragraph",
+      "text": "The rule is simple: the use of material created by someone other than you should always be cited. This applies whether the material is text, code, images, music, or any other creative work. Citation gives credit to the creator and makes clear that the work is not your own."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Situation", "Plagiarism?", "What to Do Instead"],
+      "rows": [
+        ["Using a paragraph from a website without citing it in your essay", "YES — using material without permission, presented as own", "Cite the source — include author, website, and date"],
+        ["Copying code from Stack Overflow into your program without attribution", "YES — using code created by someone else without acknowledgment", "Acknowledge the source in your code documentation"],
+        ["Using an open source library in your program", "No — open source is designed for reuse", "Still acknowledge it: note the library name and its license in your documentation"],
+        ["Quoting a few lines of a song in a paper with citation", "No — citing gives credit to the creator", "Always include citation information"],
+        ["Paraphrasing someone's idea without citing them", "YES — presenting their idea as your own even without exact wording", "Cite the source even when paraphrasing"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Plagiarism is not just copying word-for-word — using someone else's IDEAS without credit is also plagiarism. In programming, using code written by someone else without acknowledgment is plagiarism even if you modify it. The key question is: are you presenting someone else's work as your own? If yes, that is plagiarism regardless of whether you changed some of it."
+    },
+    {
+      "type": "heading",
+      "text": "Legal Ways to Use Others' Work"
+    },
+    {
+      "type": "paragraph",
+      "text": "Not all use of others' work is plagiarism or illegal. The CED identifies three frameworks that allow legal use of others' digital content. All three have enabled broad access to digital information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Creative Commons vs Open Source vs Open Access",
+      "definition": "Creative Commons: license allowing others to share, use, and build on copyrighted creative work.\nOpen Source: programs freely available to redistribute and modify.\nOpen Access: research output freely available with no access or use restrictions.\nAll three have enabled broad access to digital information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Creative Commons",
+      "definition": "A public copyright license that enables the free distribution of an otherwise copyrighted work. Used when the content creator wants to give others the right to share, use, and build upon the work they have created."
+    },
+    {
+      "type": "keyterm",
+      "term": "Open Source",
+      "definition": "Programs that are made freely available and may be redistributed and modified."
+    },
+    {
+      "type": "keyterm",
+      "term": "Open Access",
+      "definition": "Online research output that is free of any and all restrictions on access and free of many restrictions on use, such as copyright or license restrictions."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Framework", "What It Applies To", "What It Allows", "Example"],
+      "rows": [
+        ["Creative Commons", "Creative works: photos, music, writing, art", "Creator specifies what others can do — share, modify, use commercially, or only non-commercially, with or without attribution", "A photographer publishes photos with a CC license allowing anyone to use them with credit"],
+        ["Open Source", "Software and code", "Anyone can view, use, modify, and redistribute the source code — often with certain conditions like keeping it open source", "Linux, Firefox, and Python are open source software — anyone can view and modify the code"],
+        ["Open Access", "Academic research and publications", "Research papers and data available to anyone online for free — no subscription or payment required", "Scientific journals that publish research freely accessible to anyone, not just institutions that pay for subscriptions"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Creative Commons, open source, and open access have enabled broad access to digital information. Before these frameworks, most digital content was fully copyrighted by default — you needed explicit permission from the creator to use almost anything. These frameworks allow creators to proactively grant permissions, enabling a culture of sharing, building, and collaboration that copyright law alone did not allow."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Know all three: Creative Commons = copyrighted creative work that the creator has licensed for sharing/use/building. Open Source = programs freely available to redistribute and modify. Open Access = online research output free of access and use restrictions. All three have enabled broad access to digital information. Even when using content under these frameworks, always cite the source."
+    },
+    {
+      "type": "heading",
+      "text": "Legal and Ethical Concerns from Computing Innovations"
+    },
+    {
+      "type": "keyterm",
+      "term": "Legal and Ethical Concerns in Computing",
+      "definition": "Computing can raise legal and ethical concerns including: software enabling digital media piracy, algorithms containing bias, computing used to harm individuals, and the digital divide. Computing can also play a role in social and political issues."
+    },
+    {
+      "type": "paragraph",
+      "text": "Using computing to harm individuals or groups of people raises legal and ethical concerns. Computing can play a role in social and political issues, which in turn often raises legal and ethical concerns. The digital divide raises ethical concerns around computing. These are not isolated issues — they are connected to broader questions about what computing should and should not be used for and how society should govern its use."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Legal and Ethical Concern", "Legal Dimension", "Ethical Dimension"],
+      "rows": [
+        ["Software that enables digital media piracy", "Violates copyright law — creators have legal right to control distribution of their work", "Harms creators who invested time and resources to create the work — taking without compensation"],
+        ["Algorithms that include bias", "May violate anti-discrimination laws when used in employment, lending, or housing decisions", "Perpetuates systemic inequality and causes unfair harm to individuals based on protected characteristics"],
+        ["Computing used to stalk or harass individuals", "May violate stalking, harassment, and cybercrime laws", "Violates the dignity, safety, and autonomy of targeted individuals"],
+        ["The digital divide", "May implicate civil rights and equal access laws depending on context", "Creates unequal opportunity and disadvantage based on socioeconomic status, geography, and demographics"],
+        ["Computing in social and political issues", "Election interference, data collection by political campaigns may be legally regulated", "Use of computing to manipulate public opinion or political outcomes raises democratic and ethical concerns"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Material created on a computer is the intellectual property of the creator or an organization",
+        "Ease of access and distribution of digitized information raises intellectual property concerns regarding ownership, value, and use",
+        "Measures should be taken to safeguard intellectual property",
+        "Plagiarism is using material created by someone else without permission and presenting it as your own — may have legal consequences",
+        "Material created by someone other than you should ALWAYS be cited",
+        "Creative Commons: a public copyright license enabling free distribution of copyrighted work — creator gives others the right to share, use, and build upon it",
+        "Open Source: programs freely available to redistribute and modify",
+        "Open Access: online research output free of access and use restrictions",
+        "Creative Commons, open source, and open access have enabled broad access to digital information",
+        "Using computing to harm individuals or groups raises legal and ethical concerns",
+        "Computing can play a role in social and political issues — which raises legal and ethical concerns",
+        "The digital divide raises ethical concerns around computing",
+        "Computing innovations can raise legal and ethical concerns — examples include software enabling piracy, biased algorithms, and computing used to harm individuals"
+      ]
+    }
+  ]
 }

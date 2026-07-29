@@ -2,5 +2,206 @@
   "unit": 1,
   "topic": "1.2",
   "title": "Program Function and Purpose",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Purpose of Computing Innovations"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every computing innovation is created for a reason. Understanding that reason helps developers build better programs and helps users understand what a program should and should not do."
+    },
+    {
+      "type": "keyterm",
+      "term": "Purpose of Computing Innovations",
+      "definition": "Computing innovations are created to solve problems or to pursue interests through creative expression. An understanding of the purpose of a computing innovation provides developers with an improved ability to develop that innovation."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Purpose Type", "Description", "Example"],
+      "rows": [
+        ["Solve a problem", "The innovation addresses a real-world challenge or need", "A navigation app that helps drivers avoid traffic"],
+        ["Pursue an interest", "The innovation enables creative expression or personal interests", "A music composition app that lets users create songs"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Programs and Code Segments"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program",
+      "definition": "A collection of program statements that performs a specific task when run by a computer. A program is often referred to as software. A program needs to work for a variety of inputs and situations."
+    },
+    {
+      "type": "keyterm",
+      "term": "Code Segment",
+      "definition": "A collection of program statements that is part of a program. A code segment is a portion of a larger program — it does not perform a complete task on its own."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Behavior",
+      "definition": "How a program functions during execution, often described by how a user interacts with it. A program can be described broadly by what it does, or in detail by both what it does and how its statements accomplish that."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Program", "Code Segment"],
+      "rows": [
+        ["A complete collection of statements that performs a specific task when run", "A collection of statements that is part of a larger program"],
+        ["Performs a complete task independently", "Does not perform a complete task on its own — it is a piece of a larger program"],
+        ["Example: a weather app", "Example: the code inside the app that fetches the temperature for a given city"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A program can be described broadly by what it does, or in more detail by both what the program does AND how the program statements accomplish this. Both descriptions are valid — the level of detail depends on the context and audience."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Broad Description", "Detailed Description"],
+      "rows": [
+        ["Describes WHAT the program does — its inputs and outputs", "Describes WHAT the program does AND HOW its statements accomplish this"],
+        ["Example: 'The app takes a city name as input and displays the current temperature'", "Example: 'The app takes a city name, sends an HTTP request to a weather API, parses the JSON response, and displays the temperature field on screen'"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Program Input"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Input",
+      "definition": "Data sent to a computer for processing by a program. Input can come in a variety of forms — tactile, audio, visual, or text. Input can come from a user or from other programs. Inputs usually affect the output produced."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Tactile input: touch screen taps, button presses, mouse clicks",
+        "Audio input: voice commands, microphone recordings",
+        "Visual input: camera images, webcam video",
+        "Text input: typed text, form submissions",
+        "Input from other programs: data received from APIs, other software, or connected systems"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Input does not have to come directly from a human user. A weather app receiving temperature data from an online service is an example of input coming from another program. Both are valid forms of program input."
+    },
+    {
+      "type": "heading",
+      "text": "Events and Event-Driven Programming"
+    },
+    {
+      "type": "keyterm",
+      "term": "Event",
+      "definition": "An action associated with input data that supplies information to a program. Events can be generated when a key is pressed, a mouse is clicked, a program is started, or any other defined action occurs that affects the flow of execution."
+    },
+    {
+      "type": "keyterm",
+      "term": "Event-Driven Programming",
+      "definition": "A programming style where program statements are executed when triggered by an event rather than through the sequential flow of control. The program waits for events to occur and responds to them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Sequential Programming", "Event-Driven Programming"],
+      "rows": [
+        ["Statements execute in order from top to bottom", "Statements execute when triggered by an event"],
+        ["The program runs through all statements once", "The program waits and responds to events as they occur"],
+        ["Example: a script that calculates and prints a result", "Example: a music app that plays a song when a user taps the play button"]
+      ]
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Key pressed on keyboard → triggers an event",
+        "Mouse clicked on a button → triggers an event",
+        "Program first starts → triggers an event",
+        "Timer reaches zero → triggers an event",
+        "File finishes downloading → triggers an event"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Program Output"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Output",
+      "definition": "Any data sent from a program to a device. Program output can come in a variety of forms — tactile, audio, visual, or text. Output is usually based on a program's input or prior state."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Output Type", "Examples"],
+      "rows": [
+        ["Visual", "Text displayed on screen, images rendered, videos played, charts drawn"],
+        ["Audio", "Sounds played, voice responses, music output"],
+        ["Tactile", "Phone vibration, haptic feedback on a controller"],
+        ["Text", "Text messages sent, files written, data saved"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Program output is usually based on a program's input or its prior state — meaning what it has stored or computed previously. For example, a fitness app might display different output based on the step count you entered (input) or your running total for the week (prior state)."
+    },
+    {
+      "type": "heading",
+      "text": "Inputs Usually Affect Outputs"
+    },
+    {
+      "type": "paragraph",
+      "text": "Inputs usually affect the output produced by a program. This is the fundamental input-process-output model of computing — data goes in, the program does something with it, and results come out."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Program", "Input", "Output"],
+      "rows": [
+        ["Weather app", "City name typed by user", "Current temperature and forecast displayed on screen"],
+        ["Navigation app", "Starting location and destination entered by user", "A route displayed on a map"],
+        ["Music streaming app", "User taps play button (event)", "Song begins playing (audio output)"],
+        ["Calculator", "Two numbers and an operator entered by user", "The calculated result displayed"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes confuse input and output. Remember: INPUT is data going INTO the program for processing. OUTPUT is data coming OUT of the program to a device. The city name a user types is INPUT. The temperature displayed on screen is OUTPUT."
+    },
+    {
+      "type": "heading",
+      "text": "A Program Needs to Work for All Inputs"
+    },
+    {
+      "type": "paragraph",
+      "text": "A program needs to work for a variety of inputs and situations — not just the expected ones. A calculator that only works for positive integers but crashes with decimals or negative numbers is an incomplete program. Good programs handle edge cases, unexpected inputs, and a wide range of situations."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "This is why testing is so important. A program might work perfectly for the inputs the developer thought of, but fail on inputs they did not anticipate. Testing with boundary values and unexpected inputs helps ensure the program works for a variety of situations."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "The purpose of computing innovations is to solve problems or pursue interests through creative expression",
+        "A program is a collection of statements that performs a complete task; a code segment is part of a larger program",
+        "Program behavior is how a program functions during execution — often described by how a user interacts with it",
+        "A program can be described broadly (what it does) or in detail (what it does AND how)",
+        "A program needs to work for a variety of inputs and situations",
+        "Program inputs are data sent to a computer for processing — can be tactile, audio, visual, or text, and can come from users OR other programs",
+        "An event is an action that supplies input data to a program — triggered by key presses, mouse clicks, program start, etc.",
+        "In event-driven programming, statements execute when triggered by events rather than sequentially",
+        "Program outputs are data sent from a program to a device — can be tactile, audio, visual, or text",
+        "Output is usually based on a program's input or prior state",
+        "Inputs usually affect the output produced by a program"
+      ]
+    }
+  ]
 }

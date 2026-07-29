@@ -2,5 +2,116 @@
   "unit": 3,
   "topic": "3.15",
   "title": "Random Values",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Why Randomness?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most programs we have studied so far are deterministic — given the same input, they always produce the same output. But many real-world programs need to incorporate unpredictability: games need random events, simulations need natural variability, security systems need random keys, and surveys need random sampling. The RANDOM function is the tool for introducing randomness into AP CSP programs."
+    },
+    {
+      "type": "heading",
+      "text": "The RANDOM Function"
+    },
+    {
+      "type": "keyterm",
+      "term": "RANDOM(a, b)",
+      "definition": "Generates and returns a random integer from a to b, inclusive. Each result is equally likely to occur. Example: RANDOM(1, 3) could return 1, 2, or 3. Using random number generation means each execution may produce a different result."
+    },
+    {
+      "type": "paragraph",
+      "text": "RANDOM(a, b) is a built-in procedure provided on the AP exam reference sheet. It generates and returns a random INTEGER from a to b, inclusive. Both a and b are possible results. Each possible value is equally likely — RANDOM is not weighted toward any particular value. The range includes both endpoints."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Call", "Possible Results", "Probability of Each", "Real-World Equivalent"],
+      "rows": [
+        ["RANDOM(1, 6)", "1, 2, 3, 4, 5, or 6", "1/6 each ≈ 16.7%", "Rolling a standard six-sided die"],
+        ["RANDOM(1, 2)", "1 or 2", "1/2 each = 50%", "Flipping a fair coin (1=heads, 2=tails)"],
+        ["RANDOM(1, 4)", "1, 2, 3, or 4", "1/4 each = 25%", "Rolling a four-sided die"],
+        ["RANDOM(1, 52)", "Any integer from 1 to 52", "1/52 each ≈ 1.9%", "Drawing a random card from a deck"],
+        ["RANDOM(0, 9)", "0, 1, 2, 3, 4, 5, 6, 7, 8, or 9", "1/10 each = 10%", "Generating a random digit"],
+        ["RANDOM(5, 5)", "Always 5", "1/1 = 100%", "Not random — only one possible value"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "RANDOM generates INTEGERS only — never decimals. RANDOM(1, 6) can return 1, 2, 3, 4, 5, or 6 — never 3.5 or 2.7. The range is INCLUSIVE on both ends — RANDOM(1, 6) CAN return 1 and CAN return 6. Each result is EQUALLY LIKELY — RANDOM is never weighted."
+    },
+    {
+      "type": "heading",
+      "text": "Programs Using RANDOM Produce Different Results Each Run"
+    },
+    {
+      "type": "keyterm",
+      "term": "What does it mean to process data iteratively?",
+      "definition": "Programs are used in an iterative and interactive way — meaning the programmer runs the program, examines the output, refines the approach, and runs it again. This cycle allows users to gradually gain deeper insight and knowledge from the data."
+    },
+    {
+      "type": "paragraph",
+      "text": "Using random number generation in a program means each execution may produce a different result. This is fundamentally different from deterministic programs. Two runs of the same program with the same input can produce different outputs when RANDOM is involved. This property is essential for simulations (which need variability) and games (which need unpredictability)."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- A simple dice-rolling program:\nroll ← RANDOM(1, 6)\nDISPLAY roll\n\n-- Run 1: might display 3\n-- Run 2: might display 6\n-- Run 3: might display 1\n-- Run 4: might display 3 (again — repetition is normal)\n-- Each run is INDEPENDENT — previous results don't affect future ones\n\n-- ------\n\n-- Coin flip simulation:\nflip ← RANDOM(1, 2)\nIF(flip = 1)\n{\n   DISPLAY \"Heads\"\n}\nELSE\n{\n   DISPLAY \"Tails\"\n}\n-- 50% chance of Heads, 50% chance of Tails\n-- Result is different each time the program runs"
+    },
+    {
+      "type": "heading",
+      "text": "Calculating Probabilities with RANDOM"
+    },
+    {
+      "type": "paragraph",
+      "text": "Since each result is equally likely, the probability of any specific outcome from RANDOM(a, b) is 1 divided by the total number of possible values. The total number of possible values is b - a + 1."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Number of possible values = b - a + 1\n-- RANDOM(1, 6): 6-1+1 = 6 values → P(any specific value) = 1/6\n-- RANDOM(1, 4): 4-1+1 = 4 values → P(any specific value) = 1/4\n-- RANDOM(3, 7): 7-3+1 = 5 values → P(any specific value) = 1/5\n-- RANDOM(1, 2): 2-1+1 = 2 values → P(any specific value) = 1/2\n\n-- What is P(RANDOM(1,4) = 1)?\n-- 4 equally likely outcomes → P = 1/4 = 25%\n\n-- What is P(RANDOM(1,4) > 2)?\n-- Values greater than 2: {3, 4} → 2 out of 4 outcomes → P = 2/4 = 50%\n\n-- What is P(RANDOM(1,6) is even)?\n-- Even values: {2, 4, 6} → 3 out of 6 outcomes → P = 3/6 = 50%"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Expression", "Number of Possible Values", "P(any specific value)", "P(result > middle)"],
+      "rows": [
+        ["RANDOM(1, 2)", "2", "1/2 = 50%", "P(result=2) = 50%"],
+        ["RANDOM(1, 4)", "4", "1/4 = 25%", "P(result>2) = 2/4 = 50%"],
+        ["RANDOM(1, 6)", "6", "1/6 ≈ 16.7%", "P(result>3) = 3/6 = 50%"],
+        ["RANDOM(1, 10)", "10", "1/10 = 10%", "P(result>5) = 5/10 = 50%"],
+        ["RANDOM(3, 7)", "5", "1/5 = 20%", "P(result>5) = 2/5 = 40%"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Using RANDOM in Programs"
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Selecting a random element from a list:\naList ← [\"rock\", \"paper\", \"scissors\"]\nindex ← RANDOM(1, LENGTH(aList))\nDISPLAY aList[index]\n-- Could display: rock, paper, or scissors (each with probability 1/3)\n\n-- Simulating a weighted outcome using ranges:\nresult ← RANDOM(1, 10)\nIF(result ≤ 3)\n{\n   DISPLAY \"rare event\"      -- 30% chance (values 1, 2, 3)\n}\nELSE\n{\n   DISPLAY \"common event\"    -- 70% chance (values 4, 5, 6, 7, 8, 9, 10)\n}\n\n-- Generating a random even number from 2 to 10:\nnum ← RANDOM(1, 5) * 2\nDISPLAY num    -- could be 2, 4, 6, 8, or 10 (each equally likely)\n\n-- Rolling two dice and finding the sum:\ndie1 ← RANDOM(1, 6)\ndie2 ← RANDOM(1, 6)\nDISPLAY die1 + die2    -- sum from 2 to 12"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "RANDOM always generates INTEGERS. To select a random element from a list, use RANDOM(1, LENGTH(aList)) to get a valid index — this gives an integer from 1 to the list's length. Never use RANDOM(0, LENGTH(aList)) because index 0 is invalid in AP CSP and would cause an error."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "RANDOM(a, b) generates and returns a random INTEGER from a to b inclusive",
+        "Each possible result is equally likely — RANDOM is never weighted toward any value",
+        "The range is INCLUSIVE on BOTH ends — both a and b are possible results",
+        "RANDOM generates integers only — never decimals",
+        "Number of possible values = b - a + 1; probability of any specific value = 1 / (b - a + 1)",
+        "Using random number generation means each execution of the program may produce a different result",
+        "To select a random element from a list: RANDOM(1, LENGTH(aList)) generates a valid random index",
+        "RANDOM(0, ...) is invalid in AP CSP because list indices start at 1 — use RANDOM(1, LENGTH(aList))"
+      ]
+    }
+  ]
 }

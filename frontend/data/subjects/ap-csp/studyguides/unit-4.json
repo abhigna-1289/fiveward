@@ -1,6 +1,372 @@
 {
   "unit": 4,
-  "topic": null,
-  "title": "Unit 4: Computer Systems and Networks",
-  "content": []
+  "topic": "review",
+  "title": "Unit 4 Review: Computer Systems and Networks",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Unit 4 Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unit 4 covers how computer systems and networks work — primarily the Internet — and how dividing tasks across multiple devices can dramatically speed up computation. It has three topics: The Internet (4.1), Fault Tolerance (4.2), and Parallel and Distributed Computing (4.3). This unit accounts for 11–15% of the AP exam. The exam frequently presents network diagrams requiring fault tolerance analysis and parallel computing scenarios requiring time and speedup calculations."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Two Big Ideas in Unit 4",
+      "text": "CSN-1: Computer systems and networks facilitate the transfer of data — how the Internet works, how data is sent as packets, and how fault tolerance keeps the network running when components fail.\nCSN-2: Parallel and distributed computing leverage multiple computers to more quickly solve complex problems or process large data sets."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.1 — The Internet: Building Blocks"
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing Device",
+      "definition": "A physical artifact that can run a program. Examples: computers, tablets, servers, routers, smart sensors. A computing system is a group of computing devices and programs working together for a common purpose."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computer Network",
+      "definition": "A group of interconnected computing devices capable of sending or receiving data. A computer network is a type of computing system. A path between two devices is a sequence of directly connected devices from sender to receiver."
+    },
+    {
+      "type": "keyterm",
+      "term": "Routing",
+      "definition": "The process of finding a path from sender to receiver. Routing on the Internet is usually dynamic — not specified in advance."
+    },
+    {
+      "type": "keyterm",
+      "term": "Bandwidth",
+      "definition": "The maximum amount of data that can be sent through a computer network in a fixed amount of time. Usually measured in bits per second."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Term", "What It Is", "Key Detail"],
+      "rows": [
+        ["Computing Device", "A physical artifact that can run a program", "Computers, tablets, servers, ROUTERS, and smart sensors are all computing devices"],
+        ["Computing System", "A group of computing devices and programs working together for a common purpose", "A computer network IS a type of computing system"],
+        ["Computer Network", "A group of interconnected computing devices capable of sending or receiving data", "A path between two devices is a sequence of directly connected devices from sender to receiver"],
+        ["Bandwidth", "Maximum amount of data sent in a fixed time", "Measured in BITS per second — not bytes"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Routing on the Internet is dynamic — not specified in advance. Each router decides in real time how to forward data based on current network conditions. This means two packets from the same message might take completely different physical paths through the network. Dynamic routing is what makes the Internet adaptable — if one path is congested or broken, packets are automatically directed elsewhere."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.1 — How the Internet Works"
+    },
+    {
+      "type": "keyterm",
+      "term": "The Internet",
+      "definition": "A computer network consisting of interconnected networks that use standardized, open (nonproprietary) communication protocols. Designed to be scalable. Access depends on the ability to connect a computing device to an Internet-connected device."
+    },
+    {
+      "type": "keyterm",
+      "term": "Protocol",
+      "definition": "An agreed-upon set of rules that specify the behavior of a system. Internet protocols are open, allowing anyone to connect additional devices. Common protocols: IP, TCP, UDP (Internet), HTTP (World Wide Web)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why are open protocols important?",
+      "definition": "Because the protocols used in the Internet are open (nonproprietary), users can easily connect additional computing devices. This is what makes the Internet scalable and accessible to anyone."
+    },
+    {
+      "type": "keyterm",
+      "term": "Scalability",
+      "definition": "The capacity for a system to change in size and scale to meet new demands. The Internet was designed to be scalable — it can grow to accommodate more devices and users."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Internet is a network OF networks — millions of smaller networks (home, school, corporate, mobile carrier) all interconnected using the same open protocols. Open means nonproprietary — no company owns the protocol, anyone can implement it and connect. This is why a device manufactured in any country by any company can connect to the Internet — they all follow the same agreed-upon rules."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Open Protocols (Internet uses)", "Proprietary Protocols (Internet does NOT use)"],
+      "rows": [
+        ["Free for anyone to implement and use", "Owned by a company — requires license or permission"],
+        ["Any device following the rules can connect", "Only approved devices can connect"],
+        ["Enables billions of devices from any manufacturer to connect", "Would limit the Internet to devices approved by the owner"],
+        ["What makes the Internet scalable and globally accessible", "Would create a closed, controlled network"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.1 — Packets"
+    },
+    {
+      "type": "keyterm",
+      "term": "Packet",
+      "definition": "A chunk of data with metadata used for routing between origin and destination and for data reassembly. Packets may arrive in order, out of order, or not at all."
+    },
+    {
+      "type": "keyterm",
+      "term": "How is data sent through the Internet?",
+      "definition": "Information is passed as a data stream. Data streams contain chunks of data encapsulated in packets. Each packet contains a chunk of data and metadata for routing and reassembly. Packets may arrive in order, out of order, or not at all."
+    },
+    {
+      "type": "keyterm",
+      "term": "What does packet metadata contain?",
+      "definition": "Metadata in a packet is used for two purposes: routing the packet from origin to destination across the Internet, and reassembling the data at the destination once all packets arrive."
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens if packets arrive out of order or not at all?",
+      "definition": "Packets may arrive at the destination in order, out of order, or not at all. The metadata in each packet is used to reassemble the original data in the correct order regardless of arrival order."
+    },
+    {
+      "type": "paragraph",
+      "text": "When you send a large file or message, it is not transmitted as one continuous stream. It is broken into packets, each routed independently through the Internet. Because routing is dynamic, different packets from the same message may travel through completely different physical paths. The metadata in each packet — which includes source address, destination address, and sequence information — allows the receiving device to put everything back together in the correct order regardless of arrival sequence."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Packet Component", "Purpose"],
+      "rows": [
+        ["Data payload", "The actual chunk of the original message or file being transmitted"],
+        ["Source address", "Where the packet came from — allows receivers to know where to send replies"],
+        ["Destination address", "Where the packet is going — tells each router how to forward it toward its destination"],
+        ["Sequence information", "Which piece of the original message this packet represents — enables correct reassembly at the destination"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.1 — Internet vs World Wide Web"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Internet Protocols",
+      "definition": "IP (Internet Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol) are common protocols used on the Internet. HTTP is a protocol used specifically by the World Wide Web."
+    },
+    {
+      "type": "keyterm",
+      "term": "World Wide Web",
+      "definition": "A system of linked pages, programs, and files that uses the Internet. HTTP is the protocol used by the World Wide Web. The Web is not the same as the Internet — it is one service that runs on top of the Internet."
+    },
+    {
+      "type": "keyterm",
+      "term": "Internet vs World Wide Web",
+      "definition": "The Internet is the global network of interconnected computers that transmit data.\nThe World Wide Web is a system of linked pages, programs, and files that uses the Internet. HTTP is the protocol used by the Web. The Web uses the Internet but is not the same as the Internet."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["The Internet", "The World Wide Web"],
+      "rows": [
+        ["Global network of interconnected networks", "A system of linked pages, programs, and files"],
+        ["The infrastructure — cables, routers, protocols", "One SERVICE that runs on top of the Internet"],
+        ["Uses many protocols: IP, TCP, UDP, HTTP, and more", "Uses HTTP specifically"],
+        ["Includes email, video calls, file sharing, gaming, web, and more", "Just web pages and web-based applications"],
+        ["The Internet existed before the Web", "Created in 1989 as one application running on the Internet"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistakes",
+      "text": "The Internet and the World Wide Web are NOT the same. The Web USES the Internet but is just one service running on it. HTTP is the protocol for the Web — not the entire Internet (IP, TCP, UDP are Internet protocols). Open protocols (not proprietary) make the Internet scalable — anyone can connect without permission. Bandwidth is measured in BITS per second, not bytes. Routing is DYNAMIC on the Internet — not specified in advance."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.2 — Fault Tolerance"
+    },
+    {
+      "type": "keyterm",
+      "term": "Fault Tolerance",
+      "definition": "The ability of a system to support failures and still continue to function. The Internet is fault-tolerant through redundancy — if a connection fails, data is sent via a different route if possible."
+    },
+    {
+      "type": "keyterm",
+      "term": "Redundancy",
+      "definition": "The inclusion of extra components to mitigate failure. Accomplished in networks by having more than one path between any two devices. Requires additional resources but provides fault tolerance and increases reliability."
+    },
+    {
+      "type": "keyterm",
+      "term": "How does redundancy make the Internet fault-tolerant?",
+      "definition": "If a particular device or connection on the Internet fails, subsequent data will be sent via a different route if one is available. The redundancy of routing options increases reliability and helps the Internet scale to more devices and people."
+    },
+    {
+      "type": "keyterm",
+      "term": "What is the tradeoff of redundancy?",
+      "definition": "Redundancy within a system often requires additional resources (more connections, more routers, more cost) but provides the benefit of fault tolerance. It is a deliberate tradeoff between cost and reliability."
+    },
+    {
+      "type": "keyterm",
+      "term": "What makes a system NOT fault-tolerant?",
+      "definition": "A system is vulnerable to failure when there is only one path between two devices — if that single path fails, data cannot be rerouted. Adding redundant connections removes this single point of failure."
+    },
+    {
+      "type": "keyterm",
+      "term": "How to determine if a network is fault-tolerant",
+      "definition": "A network is fault-tolerant if every device has more than one path to every other device. If removing any single connection still leaves at least one path between all devices, the network is fault-tolerant. A single point of failure means it is NOT fully fault-tolerant."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Internet was specifically engineered to be fault-tolerant because elements of complex systems fail at unexpected times, often in groups. A power outage can knock out an entire data center. A storm can cut multiple cables simultaneously. Fault tolerance through redundancy means that when these failures happen, subsequent data automatically reroutes around them — no human intervention needed."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Network Configuration", "Fault-Tolerant?", "Why"],
+      "rows": [
+        ["Every device connects to every other (full mesh)", "YES — highly fault-tolerant", "Many simultaneous failures needed to disconnect any two devices"],
+        ["Each device has exactly 2 connections (ring)", "Partially", "One break allows rerouting the long way; two breaks in right places can disconnect devices"],
+        ["Devices in a line A—B—C—D", "NO", "Any single break splits network; some devices become completely unreachable"],
+        ["All devices connect only to central hub (star)", "NO", "Hub failure instantly disconnects ALL devices from each other"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Analyzing network fault tolerance:\n-- Network 1 (connection table):\n-- Device | Connected To\n-- A      | B, C\n-- B      | A, D\n-- C      | A, D\n-- D      | B, C\n\n-- Paths from A to D: A→B→D and A→C→D (TWO paths)\n-- If connection B-D fails: A→C→D still works ✓\n-- If connection A-B fails: A→C→D still works ✓\n-- If device B fails:       A→C→D still works ✓\n-- CONCLUSION: Fault-tolerant — always at least 2 paths between any two devices\n\n-- ------\n\n-- Network 2 (linear):\n-- Device | Connected To\n-- A      | B\n-- B      | A, C\n-- C      | B, D\n-- D      | C\n\n-- Only ONE path from A to D: A→B→C→D\n-- If B-C connection fails:\n--   A and B cannot reach C or D\n--   The network splits into two disconnected halves\n-- CONCLUSION: NOT fault-tolerant — every connection is a single point of failure"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam loves network diagram questions. Strategy: (1) List all paths between every pair of devices. (2) Remove one connection or device at a time. (3) After each removal, check if EVERY device can still reach EVERY other device. If YES every time → fully fault-tolerant. If NO after any removal → the removed item is a single point of failure and the network is NOT fully fault-tolerant. Also: fault tolerance says data will be rerouted IF a path exists — it does NOT guarantee no data loss."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 4.3 — Sequential, Parallel, and Distributed Computing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Sequential Computing",
+      "definition": "Operations performed in order one at a time. A sequential solution takes as long as the sum of all of its steps."
+    },
+    {
+      "type": "keyterm",
+      "term": "Parallel Computing",
+      "definition": "The program is broken into multiple smaller operations, some of which run simultaneously. Takes as long as its sequential tasks plus the longest of its parallel tasks. Consists of both a parallel portion and a sequential portion."
+    },
+    {
+      "type": "keyterm",
+      "term": "Distributed Computing",
+      "definition": "Multiple devices are used to run a program. Allows problems to be solved that could not be solved on a single computer due to processing time or storage needs. Allows much larger problems to be solved more quickly."
+    },
+    {
+      "type": "keyterm",
+      "term": "How to calculate parallel computing time",
+      "definition": "Time = sequential tasks + longest parallel task. Example: sequential tasks take 5 seconds, parallel tasks take 3, 4, and 6 seconds simultaneously — total = 5 + 6 = 11 seconds."
+    },
+    {
+      "type": "keyterm",
+      "term": "Speedup of Parallel Computing",
+      "definition": "Speedup = sequential time / parallel time. Example: if a task takes 20 seconds sequentially but 5 seconds in parallel, the speedup is 4."
+    },
+    {
+      "type": "keyterm",
+      "term": "Limitation of Parallel Computing",
+      "definition": "Every parallel solution still has a sequential portion. At some point adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant."
+    },
+    {
+      "type": "keyterm",
+      "term": "When does adding more parallel processes stop helping?",
+      "definition": "When increasing parallel computing in a solution, efficiency is still limited by the sequential portion. At some point, adding more parallel processes will no longer meaningfully increase efficiency because the sequential bottleneck remains constant."
+    },
+    {
+      "type": "keyterm",
+      "term": "Sequential vs Parallel vs Distributed",
+      "definition": "Sequential: one operation at a time, time = sum of all steps.\nParallel: some operations simultaneous, time = sequential time + longest parallel task.\nDistributed: multiple devices, solves problems too large for one computer."
+    },
+    {
+      "type": "keyterm",
+      "term": "Benefits of Parallel and Distributed Computing",
+      "definition": "Parallel computing solutions can scale more effectively than sequential solutions. Distributed computing allows problems to be solved that could not be solved on a single computer due to processing time or storage needs, and allows much larger problems to be solved more quickly."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Sequential", "Parallel", "Distributed"],
+      "rows": [
+        ["How it works", "One operation at a time in order", "Some operations run simultaneously on one system", "Multiple separate devices each run part of the program"],
+        ["Time formula", "Sum of ALL steps", "Sequential tasks + LONGEST parallel task", "Depends on how work is divided across devices"],
+        ["Requires multiple computers?", "No", "No — uses multiple cores of ONE computer", "YES — requires multiple separate physical devices"],
+        ["Solves problems too large for one computer?", "No", "No — still one computer's storage limit", "YES — this is distributed computing's key advantage"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- SEQUENTIAL time:\n-- Task A: 10s, Task B: 20s, Task C: 15s, Task D: 5s\n-- Total = 10+20+15+5 = 50 seconds\n\n-- PARALLEL time (A and C can run simultaneously, B and D must run sequentially):\n-- Sequential portion: B(20s) + D(5s) = 25s\n-- Parallel portion: max(A=10s, C=15s) = 15s (C is longest)\n-- Total = 25 + 15 = 40 seconds\n\n-- SPEEDUP:\n-- Speedup = sequential time / parallel time = 50 / 40 = 1.25\n-- The parallel solution is 1.25 times faster\n\n-- ------\n\n-- Another example:\n-- Setup: 8s (sequential)\n-- Task P: 30s  ┐\n-- Task Q: 45s  ├── run simultaneously\n-- Task R: 20s  ┘\n-- Cleanup: 5s (sequential)\n\n-- Sequential total: 8+30+45+20+5 = 108 seconds\n-- Parallel total: (8+5) + max(30,45,20) = 13 + 45 = 58 seconds\n-- Speedup: 108 / 58 ≈ 1.86\n\n-- Maximum possible speedup (infinite processors for P, Q, R):\n-- Sequential portion (8+5=13s) CANNOT be parallelized\n-- Best case = 108 / 13 ≈ 8.3× (the sequential bottleneck sets this ceiling)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The sequential bottleneck is the most important concept in topic 4.3 beyond the basic calculations. Every parallel computing solution consists of a parallel portion AND a sequential portion. No matter how many processors you add, the sequential portion always takes the same amount of time. This sets a permanent ceiling on how fast the solution can ever be. Adding more processors eventually stops making a meaningful difference because the sequential portion dominates."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Number of Processors for Parallel Tasks", "Parallel Portion Time", "Total Time (sequential=13s)", "Speedup"],
+      "rows": [
+        ["1 (all sequential)", "90s (30+45+20+cleanup done sequentially)", "108s", "1× baseline"],
+        ["3 processors (A,Q,R each get one)", "45s (Q is longest)", "13+45 = 58s", "1.86×"],
+        ["6 processors (split tasks further)", "23s", "13+23 = 36s", "3.0×"],
+        ["100 processors", "~0s", "~13s", "~8.3× (approaching maximum)"],
+        ["Infinite processors", "0s", "13s (minimum ever)", "8.3× (cannot exceed this)"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistakes",
+      "text": "Do NOT add all parallel task times together — parallel tasks run SIMULTANEOUSLY so only the LONGEST one counts. Speedup = sequential / parallel — a speedup of 4 means 4 TIMES FASTER, not 4 seconds faster. The sequential portion sets a permanent ceiling on maximum speedup — adding infinite processors cannot overcome it. Distributed computing requires MULTIPLE SEPARATE DEVICES — parallel computing on multiple cores of one computer is NOT distributed computing."
+    },
+    {
+      "type": "heading",
+      "text": "How Unit 4 Fits Together"
+    },
+    {
+      "type": "paragraph",
+      "text": "The three topics in Unit 4 tell a connected story about scale and resilience in computing. Topic 4.1 explains how the Internet works and how data travels. Topic 4.2 explains how the Internet was designed to keep working even when parts fail. Topic 4.3 explains how dividing work across multiple computers can solve problems that would be impractical for any single machine."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Topic", "Core Question", "Key Answer"],
+      "rows": [
+        ["4.1 The Internet", "How does data travel from any device to any other device worldwide?", "Open protocols, dynamic routing, packets with metadata for routing and reassembly across interconnected networks"],
+        ["4.2 Fault Tolerance", "How does the Internet keep working when cables are cut, routers crash, or power fails?", "Redundancy — more than one path between devices — lets data automatically reroute around failures"],
+        ["4.3 Parallel and Distributed Computing", "How do we solve problems too large or slow for one computer?", "Parallel: run independent tasks simultaneously (time = sequential + longest parallel). Distributed: use multiple devices for problems too big for one machine."]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Unit 4 Complete Summary — Everything You Must Know"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Computing device: physical artifact that can run a program — computers, tablets, servers, routers, and smart sensors",
+        "Computing system: group of computing devices and programs working together for a common purpose",
+        "Computer network: group of interconnected devices capable of sending or receiving data — a TYPE of computing system",
+        "Path between two devices: sequence of directly connected devices from sender to receiver",
+        "Routing: finding a path from sender to receiver — Internet routing is DYNAMIC, not specified in advance",
+        "Bandwidth: maximum amount of data sent in a fixed time — measured in BITS per second",
+        "The Internet: network of interconnected networks using standardized, OPEN (nonproprietary) protocols",
+        "Protocol: agreed-upon set of rules specifying behavior of a system",
+        "Open protocols allow anyone to connect additional devices — makes the Internet scalable and accessible",
+        "Scalability: capacity for a system to change size and scale to meet new demands — Internet designed to be scalable",
+        "Data sent through Internet as packets — chunks of data with metadata for routing and reassembly",
+        "Packet metadata: used for routing to destination AND reassembling data in correct order",
+        "Packets may arrive in order, out of order, or not at all",
+        "Common Internet protocols: IP, TCP, UDP. HTTP used specifically by the World Wide Web.",
+        "World Wide Web: system of linked pages, programs, and files that USES the Internet — NOT the same as the Internet",
+        "Fault tolerance: ability of a system to support failures and still continue to function",
+        "Internet engineered to be fault-tolerant — elements fail at unexpected times, often in groups",
+        "Redundancy: inclusion of extra components to mitigate failure — accomplished by MORE THAN ONE PATH between devices",
+        "If connection fails, subsequent data sent via different route IF one is available",
+        "Network is fault-tolerant if every device has more than one path to every other device",
+        "Single point of failure: any connection/device whose removal disconnects devices — means NOT fully fault-tolerant",
+        "Redundancy requires additional resources but provides the benefit of fault tolerance",
+        "Redundancy of routing options increases reliability and helps Internet scale",
+        "Sequential computing: operations in order one at a time; time = SUM of ALL steps",
+        "Parallel computing: some operations run simultaneously; time = sequential tasks + LONGEST parallel task",
+        "Distributed computing: multiple SEPARATE devices run the program; solves problems too large or slow for one computer",
+        "Speedup = sequential time / parallel time",
+        "Every parallel solution has BOTH a parallel portion AND a sequential portion",
+        "Parallel solutions can scale more effectively than sequential solutions",
+        "At some point adding more parallel processes stops helping — sequential portion becomes the permanent bottleneck",
+        "Sequential portion sets ceiling on maximum speedup regardless of how many processors are added",
+        "Distributed computing allows problems that COULD NOT be solved on one computer to be solved",
+        "Distributed computing allows much larger problems to be solved more quickly than with a single computer"
+      ]
+    }
+  ]
 }

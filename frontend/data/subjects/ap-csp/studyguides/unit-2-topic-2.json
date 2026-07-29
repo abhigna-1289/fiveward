@@ -2,5 +2,176 @@
   "unit": 2,
   "topic": "2.2",
   "title": "Data Compression",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is Data Compression?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every file stored on a computer and every piece of data transmitted over the Internet takes up space measured in bits. Data compression reduces the number of bits used to represent data — making files smaller to store and faster to transmit. The key insight is that fewer bits does not necessarily mean less information."
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Compression",
+      "definition": "The process of reducing the size (number of bits) of transmitted or stored data. Fewer bits does not necessarily mean less information."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Fewer bits does NOT necessarily mean less information. A compressed file can contain all the same information as the original — just stored more efficiently by removing redundancy. This is the core insight behind lossless compression."
+    },
+    {
+      "type": "heading",
+      "text": "What Determines How Much a File Can Be Compressed?"
+    },
+    {
+      "type": "paragraph",
+      "text": "The amount of size reduction from compression depends on two factors: the amount of redundancy in the original data, and the compression algorithm applied. A file with lots of repeated patterns can be compressed much more than a file that is already varied and unpredictable."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["High Redundancy — Compresses Well", "Low Redundancy — Compresses Less"],
+      "rows": [
+        ["A plain text document with repeated words and phrases", "A file that has already been compressed"],
+        ["A solid-color image where most pixels are identical", "A detailed photograph with many different colors and textures"],
+        ["A spreadsheet where many rows repeat the same values", "Random data with no repeating patterns"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Two Types of Compression: Lossless and Lossy"
+    },
+    {
+      "type": "keyterm",
+      "term": "Lossless Compression",
+      "definition": "A compression algorithm that reduces the number of bits while guaranteeing complete reconstruction of the original data. Used when quality and exact reconstruction are most important. Examples: ZIP files, PNG images, text files."
+    },
+    {
+      "type": "keyterm",
+      "term": "Lossy Compression",
+      "definition": "A compression algorithm that significantly reduces the number of bits but only allows reconstruction of an approximation of the original data. Can reduce file size more than lossless. Used when minimizing data size or transmission time is most important. Examples: MP3 audio, JPEG images, streaming video."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Lossless Compression", "Lossy Compression"],
+      "rows": [
+        ["Can reconstruct original exactly?", "Yes — completely and perfectly", "No — only an approximation of the original"],
+        ["How much size reduction?", "Moderate — limited by what can be removed without losing any data", "Much greater — permanently removes some data to achieve higher reduction"],
+        ["Best when...", "Quality or exact reconstruction is maximally important", "Minimizing data size or transmission time is maximally important"],
+        ["What happens when you decompress?", "You get back the exact original file — bit for bit identical", "You get an approximation — the removed data is gone forever"],
+        ["File examples", "ZIP, PNG, FLAC audio, text documents, source code", "MP3, JPEG, MPEG video, streaming formats"],
+        ["Real-world use cases", "Legal documents, medical scans, program source code, financial records", "Music streaming, video calls, social media photos, online video"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Once lossy compression is applied, the original data CANNOT be fully recovered — permanently removed data is gone forever. Students sometimes think 'I can decompress it to get the original back.' This is only true for LOSSLESS compression. With lossy, decompression only gives you an approximation."
+    },
+    {
+      "type": "heading",
+      "text": "When to Choose Lossless Compression"
+    },
+    {
+      "type": "paragraph",
+      "text": "In situations where quality or the ability to reconstruct the original data exactly is maximally important, lossless compression algorithms are typically chosen. Even a single changed bit could make a document unusable, alter the meaning of a legal agreement, or cause a medical image to mislead a diagnosis."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["File Type", "Why Lossless Is Required"],
+      "rows": [
+        ["Legal and financial documents", "Must be stored and retrieved exactly as written — a single changed character could alter the meaning or legal validity"],
+        ["Medical scan images (X-rays, MRIs)", "Doctors use these for diagnosis — any quality loss could lead to a missed or incorrect diagnosis with serious consequences"],
+        ["Program source code", "Even one changed character can introduce a syntax error that prevents the program from compiling or running"],
+        ["Text files and databases", "Exact character-for-character accuracy is critical — any change corrupts the data's meaning"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "When to Choose Lossy Compression"
+    },
+    {
+      "type": "paragraph",
+      "text": "In situations where minimizing data size or transmission time is maximally important and some quality loss is acceptable, lossy compression algorithms are typically chosen. For many media types the quality difference between the original and the compressed version is imperceptible to most users under normal conditions."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["File Type", "Why Lossy Is Appropriate"],
+      "rows": [
+        ["Music streaming", "Users listen through earbuds or phone speakers — subtle audio detail is inaudible. Smaller files mean less buffering and lower bandwidth costs"],
+        ["Video calls", "Slight reduction in video quality is acceptable. Prioritizing small file size prevents lag and dropped frames during live transmission"],
+        ["Social media photos", "Users accept some quality reduction for faster uploads and downloads — most viewers won't notice the compression on a phone screen"],
+        ["Online video streaming", "Massive video files must be compressed heavily to allow smooth playback across different Internet speeds without excessive buffering"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Worked Example: Making the Compression Decision"
+    },
+    {
+      "type": "paragraph",
+      "text": "A professional photographer is hired to shoot a wedding. After the shoot, they need to deliver the photos to the couple and also post previews on their website for the couple to share on social media. They need to decide which compression to use for each purpose."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Purpose", "Compression Choice", "Reasoning"],
+      "rows": [
+        ["Full-resolution files delivered to the couple for printing large wedding portraits", "Lossless (e.g., PNG or uncompressed TIFF)", "Large-format printing requires maximum quality — any quality loss would be visible and unacceptable. Quality and exact reconstruction are maximally important."],
+        ["Preview images posted on the website for sharing on social media", "Lossy (e.g., JPEG)", "Website images are viewed on screens at lower resolution — slight quality loss is imperceptible. Minimizing file size matters for fast loading. Lossy compression can reduce the file size much more than lossless."],
+        ["Backup archive of all original raw files", "Lossless", "These are the master copies. Any quality loss would permanently damage the originals. Exact reconstruction must be guaranteed."]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "When the exam gives you a compression scenario, ask two questions: (1) Does the data need to be exactly reconstructed? If yes → lossless. (2) Is minimizing size more important than quality? If yes → lossy. A doctor viewing an X-ray → lossless. A music streaming service → lossy. A legal contract → lossless. A video call → lossy."
+    },
+    {
+      "type": "heading",
+      "text": "How Lossless Compression Works: The Basic Idea"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lossless compression works by finding and eliminating redundancy in the data — representing repeated patterns more efficiently without discarding any information. A simple example: instead of storing 'AAAAAAAAAA' (10 A's), a lossless algorithm might store '10A' — same information, far fewer characters. When decompressed, the algorithm expands '10A' back to 'AAAAAAAAAA' exactly."
+    },
+    {
+      "type": "heading",
+      "text": "How Lossy Compression Works: The Basic Idea"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lossy compression works by permanently discarding information that is judged to be less important or less perceptible to the user. For audio, it removes frequencies that humans typically cannot hear well. For images, it averages similar adjacent colors together. The result is a file that sounds or looks similar to the original but is not identical — and cannot be made identical again."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Media Type", "What Lossy Compression Removes"],
+      "rows": [
+        ["Audio (MP3)", "Sound frequencies above the range of typical human hearing and quieter sounds masked by louder simultaneous sounds"],
+        ["Images (JPEG)", "Subtle color differences between adjacent pixels — similar colors are averaged together into one color value"],
+        ["Video (MPEG)", "Frames where little movement occurs — stores only what changed between frames rather than every full frame"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Data compression reduces the number of bits of transmitted or stored data",
+        "Fewer bits does NOT necessarily mean less information",
+        "The amount of size reduction depends on the redundancy in the original data and the algorithm applied",
+        "Lossless compression guarantees complete reconstruction of the original data — used when quality matters most",
+        "Lossy compression only allows reconstruction of an approximation — permanently removes some data",
+        "Lossy compression can reduce file sizes more than lossless compression",
+        "When quality or exact reconstruction is maximally important → choose lossless",
+        "When minimizing data size or transmission time is maximally important → choose lossy",
+        "Once lossy compression removes data, it cannot be recovered — decompression only gives an approximation"
+      ]
+    }
+  ]
 }

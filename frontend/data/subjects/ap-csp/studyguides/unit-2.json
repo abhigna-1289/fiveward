@@ -1,6 +1,407 @@
 {
   "unit": 2,
-  "topic": null,
-  "title": "Unit 2: Data",
-  "content": []
+  "topic": "review",
+  "title": "Unit 2 Review: Data",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Unit 2 Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unit 2 is about how computers represent, store, compress, and process data. It covers four topics: Binary Numbers (2.1), Data Compression (2.2), Extracting Information from Data (2.3), and Using Programs with Data (2.4). This unit accounts for 17–22% of the AP exam — one of the heavier units. The central ideas are that everything in a computer is ultimately bits, and that programs can be used to process data to discover information and create new knowledge."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Big Ideas",
+      "text": "DAT-1: The way a computer represents data internally is different from the way the data are interpreted and displayed for the user. Programs are used to translate data into a representation more easily understood by people.\n\nDAT-2: Programs can be used to process data, which allows users to discover information and create new knowledge."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.1 — How Computers Represent Data with Bits"
+    },
+    {
+      "type": "keyterm",
+      "term": "Bit",
+      "definition": "Short for binary digit. The lowest-level component of any value in a computing device. A bit is either 0 or 1. A byte is 8 bits."
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing devices represent data digitally — meaning the lowest-level components of any value are bits. Data values can be stored in variables, lists of items, or standalone constants, and can be passed as input to or output from procedures. Everything a computer does — displaying text, playing music, running a program — ultimately comes down to manipulating sequences of 0s and 1s."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.1 — Abstraction: How Bits Represent Everything"
+    },
+    {
+      "type": "keyterm",
+      "term": "Abstraction",
+      "definition": "The process of reducing complexity by focusing on the main idea. Bits are grouped to represent abstractions including numbers, characters, and color. The same sequence of bits may represent different types of data in different contexts."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bits are grouped to represent abstractions — including numbers, characters, and color. By grouping bits, computers can represent anything from a letter of the alphabet to a pixel in a photo to a financial transaction. The same sequence of bits may represent completely different types of data depending on how the program interprets them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Bit Sequence", "As a Number", "As a Character", "As a Color Component"],
+      "rows": [
+        ["01000001", "65 (decimal)", "Letter 'A' (ASCII)", "65 out of 255 in an RGB value"],
+        ["11111111", "255 (decimal)", "Non-printable character", "Maximum intensity — full red, green, or blue in RGB"],
+        ["00000000", "0 (decimal)", "Null character", "0 — no intensity for that color channel"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The same sequence of bits can mean completely different things depending on context — this is one of the most tested concepts in Unit 2. 01000001 is 65 as a number, 'A' as text, and a color component depending on how the program interprets it. The bits themselves don't carry inherent meaning — the context does."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.1 — Analog vs Digital Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Analog vs Digital Data",
+      "definition": "Analog data changes smoothly and continuously over time. Digital data represents values in discrete bits. Using digital data to approximate analog data is an example of abstraction. Sampling is used to digitally approximate analog data."
+    },
+    {
+      "type": "keyterm",
+      "term": "Sampling",
+      "definition": "Measuring values of an analog signal at regular intervals to approximate it digitally. The samples are measured to determine the exact bits required to store each sample."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Analog Data", "Digital Data"],
+      "rows": [
+        ["Values change smoothly and continuously — infinite possible values between any two points", "Values are represented in discrete bits — finite possible values"],
+        ["Cannot be stored directly in a computer", "Can be stored, transmitted, and processed by computers"],
+        ["Examples: pitch of a voice, volume of music, position of a sprinter, colors of a painting", "Examples: MP3 audio file, digital photo, temperature stored as a number in memory"],
+        ["Perfectly captures every nuance of the real world", "Approximates the real world — some precision is always lost through sampling"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Using digital data to approximate real-world analog data is itself an example of abstraction. The digital version hides the infinite detail of the analog signal and represents only what was captured at the sampling intervals. A higher sampling rate (more samples per second) produces a closer approximation — but it is always an approximation, never a perfect copy."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.1 — The Binary Number System"
+    },
+    {
+      "type": "keyterm",
+      "term": "Binary Number System",
+      "definition": "A base-2 number system using only 0 and 1. Place values are powers of 2 starting at 1 on the right: 1, 2, 4, 8, 16... A digit's value equals the bit multiplied by its place value."
+    },
+    {
+      "type": "keyterm",
+      "term": "Binary to Decimal Conversion",
+      "definition": "Multiply each bit by its place value (power of 2) and add the results. Example: 1101 = (1×8) + (1×4) + (0×2) + (1×1) = 13."
+    },
+    {
+      "type": "paragraph",
+      "text": "The place value of each position is determined by the base (2) raised to the power of the position. Positions are numbered starting at 0 on the rightmost digit, increasing by 1 to the left. So place values from right to left are: 1, 2, 4, 8, 16, 32, 64, 128..."
+    },
+    {
+      "type": "codeblock",
+      "code": "Binary to Decimal — Example 1:\n  1  1  0  1\n  ↓  ↓  ↓  ↓\n  8  4  2  1   ← place values\n  8  4  0  1   ← bit × place value\n  8 + 4 + 0 + 1 = 13\n\nBinary to Decimal — Example 2:\n  1  0  1  1  0\n  ↓  ↓  ↓  ↓  ↓\n  16 8  4  2  1  ← place values\n  16 0  4  2  0  ← bit × place value\n  16 + 0 + 4 + 2 + 0 = 22\n\nDecimal to Binary — Example:\n  13 ÷ 2 = 6  R 1  ← least significant bit\n   6 ÷ 2 = 3  R 0\n   3 ÷ 2 = 1  R 1\n   1 ÷ 2 = 0  R 1  ← most significant bit\n  Read remainders bottom to top: 1101\n  So decimal 13 = binary 1101 ✓"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Decimal", "Binary", "How to Verify"],
+      "rows": [
+        ["1", "1", "1×1 = 1 ✓"],
+        ["2", "10", "1×2 + 0×1 = 2 ✓"],
+        ["5", "101", "1×4 + 0×2 + 1×1 = 5 ✓"],
+        ["10", "1010", "1×8 + 0×4 + 1×2 + 0×1 = 10 ✓"],
+        ["15", "1111", "1×8 + 1×4 + 1×2 + 1×1 = 15 ✓"],
+        ["255", "11111111", "128+64+32+16+8+4+2+1 = 255 ✓ (max 1 byte)"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.1 — Errors from Fixed-Bit Representation"
+    },
+    {
+      "type": "keyterm",
+      "term": "Overflow Error",
+      "definition": "Occurs when a computer attempts to handle a number outside the defined range of values. Caused by the fixed number of bits used to represent integers in many programming languages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Round-off Error",
+      "definition": "Occurs because the fixed number of bits used to represent real numbers limits precision. Some real numbers can only be stored as approximations."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Error Type", "What Causes It", "Type of Number Affected", "Example"],
+      "rows": [
+        ["Overflow error", "A result exceeds the maximum or minimum value storable in the fixed number of bits", "Integers (whole numbers)", "Variable holding 0–255 tries to store 300 → overflow error"],
+        ["Round-off error", "Fixed bits cannot represent all decimal values with exact precision", "Real numbers (decimals)", "Storing 1/3 results in 0.3333333 — an approximation"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "In the AP CSP reference sheet language, integers are limited only by the computer's memory size — not a fixed bit count. This means overflow errors don't occur for integers in AP pseudocode. But real number precision limits still apply. On the real exam, overflow is more likely to be tested in the context of other programming languages."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Overflow error = number is outside the defined RANGE (too big). Round-off error = number cannot be represented with exact PRECISION (decimal approximation). These affect different types of numbers and occur for different reasons. Know the distinction."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.2 — Data Compression"
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Compression",
+      "definition": "Reducing the size (number of bits) of transmitted or stored data. Fewer bits does not necessarily mean less information. The amount of reduction depends on the redundancy in the original data and the algorithm applied."
+    },
+    {
+      "type": "keyterm",
+      "term": "Lossless vs Lossy Compression",
+      "definition": "Lossless: guarantees complete reconstruction of original data. Best when quality matters (text, medical images).\nLossy: reconstructs only an approximation, greater size reduction. Best when minimizing file size matters (music, video, photos)."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Lossless Compression", "Lossy Compression"],
+      "rows": [
+        ["Can reconstruct original exactly?", "Yes — completely and perfectly", "No — only an approximation"],
+        ["Size reduction amount?", "Moderate — limited by removable redundancy", "Much greater — permanently discards some data"],
+        ["Best when...", "Quality or exact reconstruction is maximally important", "Minimizing data size or transmission time is maximally important"],
+        ["After decompression you get...", "The exact original file — bit for bit identical", "An approximation — the discarded data is gone permanently"],
+        ["Examples", "ZIP, PNG, FLAC, text files, source code", "MP3, JPEG, MPEG, streaming video"],
+        ["Use cases", "Legal documents, medical scans, program code", "Music streaming, video calls, social media photos"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scenario", "Best Compression Choice", "Reasoning"],
+      "rows": [
+        ["Patient X-ray image for medical diagnosis", "Lossless", "Quality and exact reconstruction are maximally important — any loss could cause a missed diagnosis"],
+        ["Music files for a streaming service", "Lossy", "Minimizing file size matters most — subtle audio differences are inaudible on typical speakers"],
+        ["Legal contract archived for future reference", "Lossless", "Must be retrievable exactly as written — a single changed character could alter legal meaning"],
+        ["Video for a social media post", "Lossy", "Fast upload and smooth playback matter more than perfect video quality"],
+        ["Source code for a program", "Lossless", "Even one changed bit could introduce a syntax error that breaks the program"],
+        ["Live sports stream", "Lossy", "Transmission speed is critical — slight quality reduction is acceptable for smooth live viewing"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "When the exam gives you a compression scenario, ask: does the data NEED to be exactly reconstructed? If yes → lossless. Is minimizing size more important than quality? If yes → lossy. Remember: lossy compression permanently removes data — once gone, it cannot be recovered."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.3 — Extracting Information from Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Information",
+      "definition": "The collection of facts and patterns extracted from data. Data provide opportunities for identifying trends, making connections, and addressing problems."
+    },
+    {
+      "type": "keyterm",
+      "term": "Correlation vs Causation",
+      "definition": "Correlation: two variables appear related in data. Causation: one variable directly causes the other. A correlation found in data does NOT automatically mean causation — additional research is needed."
+    },
+    {
+      "type": "paragraph",
+      "text": "Digitally processed data may show a correlation between variables — meaning two things appear to change together. But a correlation found in data does not necessarily indicate that a causal relationship exists. This is one of the most important and frequently tested distinctions in AP CSP."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Correlation Found", "Incorrect Conclusion", "Correct Conclusion"],
+      "rows": [
+        ["Students who eat breakfast score higher on tests", "Eating breakfast CAUSES higher test scores", "There is a CORRELATION — additional research is needed to determine if causation exists"],
+        ["Ice cream sales and drowning rates both rise in summer", "Ice cream CAUSES drowning", "There is a CORRELATION — both are likely caused by a third factor (hot weather)"],
+        ["Cities with more libraries have lower crime rates", "Libraries REDUCE crime", "There is a CORRELATION — the relationship needs further research"],
+        ["Users who post more frequently have more followers", "Posting more CAUSES more followers", "There is a CORRELATION — the direction and cause of the relationship is unclear"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "Metadata",
+      "definition": "Data about data. Example: a photo is the data; its metadata includes date taken and file size. Used for finding, organizing, and managing information. Changes to metadata do not change the primary data."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Primary Data", "Its Metadata", "What Metadata Enables"],
+      "rows": [
+        ["A photo", "Date taken, GPS location, camera model, file size, resolution", "Sort photos by date; find photos from a specific location; organize by camera"],
+        ["An email", "Sender, recipient, timestamp, subject, read/unread status", "Search inbox by sender; filter by date; find unread messages"],
+        ["A music file", "Artist, album, track number, duration, genre, year", "Create playlists by genre; sort library by artist; find songs by year"],
+        ["A document", "Author, creation date, last modified, word count, file size", "Find documents by author; sort by last modified; identify recently edited files"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Changes to metadata do NOT change the primary data. Renaming a photo changes the file name (metadata) — the actual image pixels are completely unchanged. This is directly tested: 'A user changes the file name of a photo. Which of the following changes?' Answer: only the metadata changes."
+    },
+    {
+      "type": "keyterm",
+      "term": "Challenges of Processing Data Sets",
+      "definition": "The need to clean data, incomplete data, invalid data, and the need to combine data sources. These challenges exist regardless of size. Large data sets may require parallel systems. Bias is not eliminated by collecting more data."
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Cleaning",
+      "definition": "Making data uniform without changing its meaning. Example: replacing all equivalent abbreviations, spellings, and capitalizations with the same word."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Data Challenge", "What It Means", "Example", "Solution"],
+      "rows": [
+        ["Need to clean data", "Same thing recorded different ways — data is not uniform", "Favorite color survey returns 'blue', 'Blue', 'BLUE', 'blu' — all the same color", "Standardize all equivalent values to one format"],
+        ["Incomplete data", "Records with missing required fields", "Student database has 200 records but 30 are missing grade level", "Exclude incomplete records or estimate missing values"],
+        ["Invalid data", "Impossible or clearly wrong values", "Age field contains '247' or '-5'", "Identify and remove or correct invalid entries"],
+        ["Need to combine sources", "One source doesn't contain all needed data", "Traffic cameras show WHERE congestion is but not WHY", "Merge with transit data, weather data, etc."]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "Bias in Data",
+      "definition": "Problems of bias are often created by the type or source of data being collected. Bias is not eliminated by simply collecting more data — the source and collection method must be examined."
+    },
+    {
+      "type": "keyterm",
+      "term": "Challenges of Large Data Sets",
+      "definition": "Large data sets are difficult to process using a single computer and may require parallel systems. The size of a data set affects the amount of information that can be extracted. Scalability of systems is an important consideration."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Biased Collection Method", "Why More Data Doesn't Help", "Fix"],
+      "rows": [
+        ["Hospital studies general health using only wealthy urban clinic patients", "More data from wealthy urban clinics still doesn't include rural or low-income patients", "Collect from diverse clinics across income levels and geographies"],
+        ["Online poll used to predict election results", "More online poll responses still only reach Internet-using, poll-participating demographics", "Use stratified random sampling across all voter demographics"],
+        ["Facial recognition trained only on light-skinned faces", "More light-skinned face photos don't add data for other skin tones", "Collect training data representing all demographic groups proportionally"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Collecting MORE data from a biased source does NOT eliminate bias. If your data only comes from wealthy urban hospitals, collecting 10x more records from those same hospitals gives you 10x more biased data. The SOURCE must change. This is directly tested on the AP exam."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 2.4 — Using Programs with Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Four Ways to Extract or Modify Data Using a Program",
+      "definition": "1. Transforming — applying an operation to every element\n2. Filtering — keeping only elements that meet a condition\n3. Combining or comparing — such as finding the highest value\n4. Visualizing — representing data through a chart or graph"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Process", "What It Does", "Example"],
+      "rows": [
+        ["Transforming", "Applies an operation to EVERY element in the data set", "Doubling every revenue figure to project doubled sales; converting all temperatures from Celsius to Fahrenheit"],
+        ["Filtering", "Keeps only elements that MEET A CONDITION — removes everything else", "Keeping only students with GPA above 3.5; keeping only sales transactions above $1,000"],
+        ["Combining or comparing", "Combines values or compares them to find summaries or relationships", "Adding all sales to find total revenue; finding the student with the highest GPA; calculating the average temperature"],
+        ["Visualizing", "Represents data through a chart, graph, or other visual", "Bar chart of monthly sales; line graph of temperature over time; heat map of city congestion"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "Tools for Working with Data",
+      "definition": "Search tools efficiently find information. Data filtering systems find patterns. Spreadsheets organize and find trends. Tables, diagrams, and visual tools communicate insights gained from data."
+    },
+    {
+      "type": "keyterm",
+      "term": "How do programs gain insight from data?",
+      "definition": "Programs are used in an iterative and interactive way. Programmers can filter, clean, combine, cluster, classify, and transform data. Patterns can emerge when data are transformed using programs."
+    },
+    {
+      "type": "keyterm",
+      "term": "What does it mean to process data iteratively?",
+      "definition": "Programs are used in an iterative and interactive way — meaning the programmer runs the program, examines the output, refines the approach, and runs it again. This cycle allows users to gradually gain deeper insight and knowledge from the data."
+    },
+    {
+      "type": "paragraph",
+      "text": "Combining data sources, clustering data, and classifying data are all parts of the process of using programs to gain insight and knowledge from data. Insight and knowledge can also be obtained from translating and transforming digitally represented information. Patterns can emerge when data are transformed using programs — patterns that would be impossible to see manually in large data sets."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Process", "What It Does", "Example"],
+      "rows": [
+        ["Combining data sources", "Merging data from multiple sources into one data set", "Combining sales data + customer location data + weather data to understand how weather affects purchases"],
+        ["Clustering data", "Grouping similar data points together", "Grouping customers by purchasing behavior to identify distinct buyer profiles for targeted marketing"],
+        ["Classifying data", "Assigning data points to predefined categories", "Classifying emails as spam or not spam based on content and sender patterns"],
+        ["Translating and transforming", "Converting data into new forms to reveal meaning", "Translating audio to text; converting raw sensor readings to human-readable temperature values"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Connecting the Topics: How Unit 2 Fits Together"
+    },
+    {
+      "type": "paragraph",
+      "text": "The four topics in Unit 2 tell a complete story about data — from how it is stored at the lowest level all the way up to how programs extract knowledge from it."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Stage", "Topic", "Key Question Answered"],
+      "rows": [
+        ["How is data stored?", "2.1 Binary Numbers", "Everything is bits. Bits group to represent numbers, characters, color, and more. The same bits mean different things in different contexts."],
+        ["How is data made smaller?", "2.2 Data Compression", "Lossless removes redundancy without losing data. Lossy removes data to achieve greater reduction. Choice depends on whether exact reconstruction matters."],
+        ["What can data tell us?", "2.3 Extracting Information", "Data reveals trends, correlations, and patterns. Correlation ≠ causation. Data must be cleaned, combined from multiple sources, and checked for bias."],
+        ["How do programs help?", "2.4 Using Programs with Data", "Programs transform, filter, combine, and visualize data iteratively to extract information. Patterns emerge that would be impossible to find manually."]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Unit 2 Complete Summary — Everything You Must Know"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A bit is either 0 or 1 — the lowest-level component of any value. A byte is 8 bits.",
+        "Computing devices represent data digitally — all values are ultimately bits.",
+        "Abstraction reduces complexity — bits are grouped to represent numbers, characters, and color.",
+        "The same sequence of bits may represent different types of data in different contexts.",
+        "Analog data changes smoothly and continuously; digital data represents values in discrete bits.",
+        "Using digital data to approximate analog data is an example of abstraction.",
+        "Sampling measures an analog signal at regular intervals to create a digital approximation.",
+        "Binary (base 2) uses only 0 and 1; place values are powers of 2 starting at 1 on the right.",
+        "To convert binary to decimal: multiply each bit by its place value and sum the results.",
+        "To convert decimal to binary: repeatedly divide by 2 and read remainders from bottom to top.",
+        "Overflow error: a number exceeds the defined range of values for the fixed bits used (integers).",
+        "Round-off error: fixed bits limit precision — some real numbers are stored as approximations.",
+        "Data compression reduces the number of bits of transmitted or stored data.",
+        "Fewer bits does NOT necessarily mean less information.",
+        "The amount of compression depends on redundancy in the data and the algorithm applied.",
+        "Lossless compression: guarantees complete reconstruction — used when quality matters most.",
+        "Lossy compression: only approximation can be reconstructed — used when minimizing size matters most.",
+        "Lossy can achieve greater size reduction than lossless.",
+        "Once lossy compression removes data, it cannot be recovered.",
+        "Information is the collection of facts and patterns extracted from data.",
+        "Data provide opportunities for identifying trends, making connections, and addressing problems.",
+        "Correlation found in data does NOT necessarily indicate causation — additional research needed.",
+        "Often a single source is insufficient — combining data from multiple sources may be necessary.",
+        "Metadata are data about data — used for finding, organizing, and managing information.",
+        "Changes to metadata do NOT change the primary data.",
+        "Data set challenges regardless of size: need to clean, incomplete data, invalid data, need to combine sources.",
+        "Data cleaning makes data uniform without changing meaning.",
+        "Bias is created by the type or source of data — not eliminated by collecting more from the same source.",
+        "Large data sets may require parallel systems to process.",
+        "Scalability is important — computational capacity affects how data can be processed and stored.",
+        "Programs can process data to acquire information.",
+        "Four ways to extract or modify data: transforming, filtering, combining or comparing, visualizing.",
+        "Tools: search tools find information efficiently; filtering systems find patterns; spreadsheets find trends; visual tools communicate insights.",
+        "Programs are used in an iterative and interactive way — run, examine, refine, repeat.",
+        "Combining sources, clustering, and classifying are parts of gaining insight from data.",
+        "Patterns can emerge when data are transformed using programs."
+      ]
+    }
+  ]
 }

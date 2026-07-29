@@ -2,5 +2,232 @@
   "unit": 3,
   "topic": "3.2",
   "title": "Data Abstraction",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Why Lists?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Programs often need to work with collections of related values — a class roster, a set of test scores, a playlist of songs. Without lists, you would need a separate variable for each item. For a class of 30 students, that means 30 separate variables: student1, student2, student3... and processing all of them would require 30 separate statements. Lists solve this problem elegantly by allowing multiple related items to be treated as a single value under one name."
+    },
+    {
+      "type": "heading",
+      "text": "Lists: The Basics"
+    },
+    {
+      "type": "keyterm",
+      "term": "List",
+      "definition": "An ordered sequence of elements. Each element is assigned a unique index starting at 1. Lists are referred to by different names such as array depending on the programming language."
+    },
+    {
+      "type": "keyterm",
+      "term": "Element",
+      "definition": "An individual value in a list that is assigned a unique index."
+    },
+    {
+      "type": "keyterm",
+      "term": "Index",
+      "definition": "A common method for referencing elements in a list or string using natural numbers. In the AP CSP reference sheet, index values start at 1 and go up to the length of the list. Accessing an index less than 1 or greater than the length produces an error."
+    },
+    {
+      "type": "paragraph",
+      "text": "A list is described using bracket notation: [value1, value2, value3, ...] where value1 is the first element at index 1, value2 is the second element at index 2, and so on. In AP CSP, indices ALWAYS start at 1 — not 0 as in many real programming languages. This is one of the most common sources of errors on the exam."
+    },
+    {
+      "type": "codeblock",
+      "code": "scores ← [85, 92, 78, 90, 88]\n\n-- Index:      1    2    3    4    5\n-- Element:   85   92   78   90   88\n\nscores[1]  -- returns 85 (FIRST element)\nscores[2]  -- returns 92\nscores[3]  -- returns 78\nscores[4]  -- returns 90\nscores[5]  -- returns 88 (LAST element)\n\nscores[0]  -- ERROR: index 0 is invalid in AP CSP\nscores[6]  -- ERROR: index 6 exceeds LENGTH(scores) which is 5"
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when you access an invalid list index?",
+      "definition": "If a list index is less than 1 or greater than the length of the list, an error message is produced and the program will terminate."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "In AP CSP, list indices start at 1 — NOT 0. This is different from Python, JavaScript, Java, and most real languages. The first element is always at index 1. Accessing index 0 is invalid and terminates the program. Accessing an index beyond the list's length also terminates the program."
+    },
+    {
+      "type": "heading",
+      "text": "Strings"
+    },
+    {
+      "type": "keyterm",
+      "term": "String",
+      "definition": "An ordered sequence of characters."
+    },
+    {
+      "type": "paragraph",
+      "text": "Like a list, a string is an ordered sequence — but instead of elements with arbitrary values, it is a sequence of characters. Characters include letters, digits, spaces, and symbols. The ordering matters — 'abc' and 'cba' are different strings. Strings are referenced using a variable just like any other value."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["String", "Characters It Contains", "Length"],
+      "rows": [
+        ["\"Hello\"", "H, e, l, l, o", "5 characters"],
+        ["\"AP CSP\"", "A, P, (space), C, S, P", "6 characters"],
+        ["\"123\"", "1, 2, 3 (as text, not a number)", "3 characters"],
+        ["\"\"", "No characters — empty string", "0 characters"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Creating Lists"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP CSP reference sheet provides two ways to create a list: with initial values, or as an empty list that you build up later."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Create a list with initial values:\naList ← [10, 20, 30, 40, 50]\n-- aList[1]=10, aList[2]=20, aList[3]=30, aList[4]=40, aList[5]=50\n\n-- Create an empty list:\nbList ← []\n-- bList has no elements, LENGTH(bList) = 0\n-- Elements can be added later using APPEND\n\n-- Lists can contain different types of elements:\nmixed ← [\"Alice\", 85, true, \"Bob\", 92]\n-- Index 1: \"Alice\" (string)\n-- Index 2: 85 (number)\n-- Index 3: true (Boolean)\n-- Index 4: \"Bob\" (string)\n-- Index 5: 92 (number)"
+    },
+    {
+      "type": "heading",
+      "text": "List Operations: The Reference Sheet"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP CSP reference sheet provides several list operations you must know. Pay close attention to how INSERT and REMOVE shift elements — this is heavily tested."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operation", "What It Does", "Example on [10, 20, 30, 40]", "Result"],
+      "rows": [
+        ["aList[i]", "Accesses (reads) the element at index i", "aList[2]", "Returns 20"],
+        ["aList[i] ← x", "Assigns value x to the element at index i, replacing what was there", "aList[2] ← 99", "[10, 99, 30, 40]"],
+        ["INSERT(aList, i, value)", "Inserts value at index i — shifts all elements at index i and beyond ONE position to the RIGHT, increasing length by 1", "INSERT(aList, 2, 15)", "[10, 15, 20, 30, 40]"],
+        ["APPEND(aList, value)", "Adds value to the END of the list — does not shift anything, just extends the list by 1", "APPEND(aList, 50)", "[10, 20, 30, 40, 50]"],
+        ["REMOVE(aList, i)", "Removes the element at index i — shifts all subsequent elements ONE position to the LEFT, decreasing length by 1", "REMOVE(aList, 2)", "[10, 30, 40]"],
+        ["LENGTH(aList)", "Returns the number of elements currently in the list — this changes after INSERT, APPEND, and REMOVE", "LENGTH(aList)", "4"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "INSERT and REMOVE shift elements. INSERT at index i pushes everything at i and beyond one step RIGHT — new element fills the gap. REMOVE at index i closes the gap by pulling everything after i one step LEFT. After these operations, the indices of shifted elements change — always retrace the full list before reading any index."
+    },
+    {
+      "type": "codeblock",
+      "code": "aList ← [10, 20, 30, 40]\n-- Indices:  1   2   3   4\n\nINSERT(aList, 2, 15)\n-- Inserts 15 at index 2, shifts 20→3, 30→4, 40→5\n-- aList is now [10, 15, 20, 30, 40]\n-- Indices:       1   2   3   4   5\n\nDISPLAY aList[2]   -- displays 15 (not 20 anymore!)\nDISPLAY aList[3]   -- displays 20 (shifted right)\n\nREMOVE(aList, 3)\n-- Removes element at index 3 (which is now 20)\n-- Shifts 30→3, 40→4\n-- aList is now [10, 15, 30, 40]\n-- Indices:       1   2   3   4\n\nAPPEND(aList, 99)\n-- Adds 99 to end\n-- aList is now [10, 15, 30, 40, 99]\n-- Indices:       1   2   3   4   5\n\nDISPLAY LENGTH(aList)  -- displays 5"
+    },
+    {
+      "type": "heading",
+      "text": "How List Assignment Works"
+    },
+    {
+      "type": "keyterm",
+      "term": "How does assigning one list to another work?",
+      "definition": "Assigning one list to another (aList = bList) assigns a copy of the list. If bList contains [20, 40, 60], then aList will also contain [20, 40, 60] after the assignment."
+    },
+    {
+      "type": "paragraph",
+      "text": "Just like with regular variables, assigning one list to another gives the receiving variable a COPY of the list. After the assignment, the two list variables are independent — changes to one do not affect the other."
+    },
+    {
+      "type": "codeblock",
+      "code": "bList ← [20, 40, 60]\naList ← bList       -- aList gets a COPY of bList\n\n-- Both now contain [20, 40, 60] but they are INDEPENDENT copies\n\nbList[1] ← 99       -- changes bList's first element\nDISPLAY aList[1]    -- displays 20, NOT 99\n                    -- aList has its own copy, unchanged\nDISPLAY bList[1]    -- displays 99"
+    },
+    {
+      "type": "heading",
+      "text": "List Traversal with FOR EACH"
+    },
+    {
+      "type": "keyterm",
+      "term": "List Traversal",
+      "definition": "Accessing elements of a list one by one. Can be complete (all elements accessed) or partial (only some elements accessed). FOR EACH item IN aList assigns each element to item sequentially from first to last and executes the block once per element."
+    },
+    {
+      "type": "paragraph",
+      "text": "The FOR EACH loop is the primary tool for traversing lists. It automatically handles moving through the list from the first element to the last — you never need to manually track the index. Each iteration assigns the current element's value to the loop variable and executes the block once."
+    },
+    {
+      "type": "codeblock",
+      "code": "scores ← [85, 92, 78, 90, 88]\nsum ← 0\n\nFOR EACH score IN scores\n{\n   sum ← sum + score\n}\n-- Iteration 1: score=85, sum=0+85=85\n-- Iteration 2: score=92, sum=85+92=177\n-- Iteration 3: score=78, sum=177+78=255\n-- Iteration 4: score=90, sum=255+90=345\n-- Iteration 5: score=88, sum=345+88=433\n-- Loop ends after last element\n\naverage ← sum / LENGTH(scores)   -- 433/5 = 86.6\nDISPLAY average    -- displays 86.6\n\n-- Partial traversal: only processes SOME elements\nFOR EACH score IN scores\n{\n   IF(score > 85)\n   {\n      DISPLAY score   -- only displays 92 and 90\n   }\n}"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Traversal Type", "What It Means", "Example"],
+      "rows": [
+        ["Complete traversal", "Every element in the list is accessed", "FOR EACH loop that processes all elements — like computing the sum"],
+        ["Partial traversal", "Only some elements are accessed — the rest are skipped by a condition", "FOR EACH loop with an IF inside — like finding elements greater than 85"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Data Abstraction"
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Abstraction",
+      "definition": "Provides a separation between the abstract properties of a data type and the concrete details of its representation. Managing complexity by giving a collection of data a name without referencing the specific details of its representation."
+    },
+    {
+      "type": "keyterm",
+      "term": "How does data abstraction manage complexity?",
+      "definition": "Data abstractions give a collection of data a name without referencing specific implementation details. Using lists allows multiple related items to be treated as a single value, making programs easier to develop and maintain. Data abstractions often contain different types of elements."
+    },
+    {
+      "type": "paragraph",
+      "text": "Data abstraction is the broader concept behind lists. When you create a list called 'roster' to hold 30 student names, you are using data abstraction — you give the collection a meaningful name without needing to know or specify anything about how the list is stored internally in the computer's memory. The abstraction manages complexity by hiding those details."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Without Data Abstraction", "With Data Abstraction (List)"],
+      "rows": [
+        ["student1 ← \"Alice\"", "roster ← [\"Alice\", \"Bob\", \"Charlie\", ...]"],
+        ["student2 ← \"Bob\"", "Access any student: roster[i]"],
+        ["student3 ← \"Charlie\"", "Process all students: FOR EACH name IN roster"],
+        ["30 separate variables for 30 students", "One variable manages all 30 students"],
+        ["Adding a new student requires a new variable declaration", "APPEND(roster, \"NewStudent\") — one operation regardless of roster size"],
+        ["A loop to greet all 30 students needs 30 statements", "FOR EACH name IN roster { DISPLAY concat(\"Hello, \", name) } — 3 lines for any class size"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Developing a data abstraction to implement in a program can result in a program that is easier to develop and maintain. When the roster has 5 students or 500, the same FOR EACH code works — the abstraction scales without requiring code changes. This is what it means to manage complexity."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Data abstractions often contain different types of elements. A list representing a student record might contain a name (string), ID number (integer), GPA (decimal), and enrolled status (Boolean) — all as elements of one abstraction. The list gives this mixed collection a single name and hides the implementation details of how each value is stored."
+    },
+    {
+      "type": "heading",
+      "text": "A Real Example: Why Data Abstraction Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine building a grade calculator for a class that currently has 5 students, but might grow to 50. Without data abstraction using a list, adding a 6th student requires rewriting the entire program. With data abstraction, the program already handles any number of students — you just APPEND the new student to the list."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- WITHOUT data abstraction (brittle, hard to maintain):\nscore1 ← 85\nscore2 ← 92\nscore3 ← 78\navg ← (score1 + score2 + score3) / 3\n-- Adding a 4th student requires rewriting the average calculation\n\n-- WITH data abstraction (flexible, easy to maintain):\nscores ← [85, 92, 78]\nsum ← 0\nFOR EACH score IN scores\n{\n   sum ← sum + score\n}\navg ← sum / LENGTH(scores)\n-- Adding a 4th student: APPEND(scores, 90)\n-- The rest of the code works WITHOUT ANY CHANGES\n-- This is the power of data abstraction"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A list is an ordered sequence of elements — each element has a unique index starting at 1 in AP CSP",
+        "An element is an individual value in a list assigned a unique index",
+        "An index is a natural number used to reference elements — in AP CSP indices start at 1, not 0",
+        "Accessing an index less than 1 or greater than the list length produces an error and terminates the program",
+        "A string is an ordered sequence of characters",
+        "Data abstraction provides a separation between the abstract properties of a data type and the concrete details of its representation",
+        "Data abstractions manage complexity by giving a collection of data a name without referencing specific implementation details",
+        "Using lists allows multiple related items to be treated as a single value — making programs easier to develop and maintain",
+        "Data abstractions often contain different types of elements",
+        "List operations: aList[i] accesses; aList[i] ← x assigns; INSERT shifts right; APPEND adds to end; REMOVE shifts left; LENGTH returns count",
+        "Assigning one list to another (aList ← bList) gives aList a COPY — changes to one do not affect the other",
+        "FOR EACH traverses all elements from first to last — complete traversal accesses every element, partial traversal accesses only some"
+      ]
+    }
+  ]
 }

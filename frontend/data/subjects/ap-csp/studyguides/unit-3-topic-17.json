@@ -2,5 +2,165 @@
   "unit": 3,
   "topic": "3.17",
   "title": "Algorithmic Efficiency",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Problems and Instances"
+    },
+    {
+      "type": "paragraph",
+      "text": "Before studying efficiency, it helps to understand two key terms the CED uses precisely. A problem and an instance of a problem are related but distinct concepts — the distinction matters for understanding what efficiency means."
+    },
+    {
+      "type": "keyterm",
+      "term": "Problem vs Instance of a Problem",
+      "definition": "A problem is a general description of a task (e.g. sorting). An instance of a problem includes specific input (e.g. sorting the list [2, 3, 1, 7]). Some problems cannot be solved in a reasonable amount of time — in these cases approximate solutions are sought."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Problem (general)", "Instance of the Problem (specific)"],
+      "rows": [
+        ["Sorting — arrange a list in order", "Sort the list [5, 2, 8, 1, 9] in ascending order"],
+        ["Searching — find a value in a list", "Find the value 42 in the list [10, 42, 7, 99, 3]"],
+        ["Shortest path — find the shortest route between two points", "Find the shortest route from New York City to Los Angeles"],
+        ["Is there a path — determine if two nodes are connected", "Is node A connected to node F in this specific graph?"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Decision Problems vs Optimization Problems"
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Decision Problem vs Optimization Problem",
+      "definition": "Decision problem: has a yes/no answer (e.g. Is there a path from A to B?).\nOptimization problem: goal is to find the best solution among many (e.g. What is the shortest path from A to B?)."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Problem Type", "Answer Type", "Example", "Goal"],
+      "rows": [
+        ["Decision problem", "Yes or No only", "Is there a path from A to B?", "Determine if a solution EXISTS"],
+        ["Decision problem", "Yes or No only", "Is this list already sorted?", "Answer a yes/no question about the data"],
+        ["Decision problem", "Yes or No only", "Can this graph be colored with 3 colors so no adjacent nodes share a color?", "Determine if a specific condition can be met"],
+        ["Optimization problem", "The BEST solution", "What is the SHORTEST path from A to B?", "Find the OPTIMAL solution among all possibilities"],
+        ["Optimization problem", "The BEST solution", "What arrangement of items maximizes profit given weight constraints?", "Find the maximum, minimum, or best configuration"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "What Is Algorithmic Efficiency?"
+    },
+    {
+      "type": "keyterm",
+      "term": "Algorithmic Efficiency",
+      "definition": "An estimation of the amount of computational resources used by an algorithm. Typically expressed as a function of the size of the input. Can be informally measured by counting how many times a statement or group of statements executes."
+    },
+    {
+      "type": "paragraph",
+      "text": "Efficiency is about resources — primarily time (how many steps an algorithm takes) but also memory and other computational resources. Efficiency is typically expressed as a function of the size of the input, not as an absolute number of steps. Why? Because an algorithm that takes 100 steps for 10 elements and 1,000 steps for 100 elements is fundamentally different from one that takes 100 steps for 10 elements and 10,000 steps for 100 elements — even if both take the same number of steps for small inputs."
+    },
+    {
+      "type": "paragraph",
+      "text": "An algorithm's efficiency can be informally measured by determining the number of times a statement or group of statements executes. This is a practical approach: count how many times the key operation runs as the input size grows."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- How to informally measure efficiency:\n-- Count how many times the key statement executes\n\n-- Algorithm A: LINEAR — key statement executes n times\naList ← [1, 2, 3, ... n elements]\nFOR EACH item IN aList\n{\n   DISPLAY item    -- executes ONCE per element = n times total\n}\n-- For n=10: 10 executions\n-- For n=100: 100 executions\n-- For n=1000: 1000 executions\n-- Growth: proportional to n → LINEAR\n\n-- Algorithm B: QUADRATIC — key statement executes n×n times\nFOR EACH item1 IN aList\n{\n   FOR EACH item2 IN aList\n   {\n      DISPLAY item1 + item2    -- executes n×n = n² times total\n   }\n}\n-- For n=10: 100 executions\n-- For n=100: 10,000 executions\n-- For n=1000: 1,000,000 executions\n-- Growth: proportional to n² → QUADRATIC"
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Different correct algorithms for the same problem can have different efficiencies. Two algorithms might both correctly sort a list, but one might take n² steps while another takes n×log(n) steps. For large inputs, this difference is enormous — the less efficient one might take hours while the efficient one takes seconds."
+    },
+    {
+      "type": "heading",
+      "text": "Reasonable vs Unreasonable Running Time"
+    },
+    {
+      "type": "keyterm",
+      "term": "Reasonable vs Unreasonable Running Time",
+      "definition": "Reasonable: polynomial efficiency or slower — constant, linear, square, cube, etc.\nUnreasonable: exponential or factorial efficiency — these algorithms take too long to be practical for large inputs."
+    },
+    {
+      "type": "paragraph",
+      "text": "Algorithms with a polynomial efficiency or slower (constant, linear, square, cube, etc.) are said to run in a reasonable amount of time. Algorithms with exponential or factorial efficiencies are examples of algorithms that run in an unreasonable amount of time. Note: the CED says 'polynomial efficiency or slower' — polynomial IS reasonable. Exponential and factorial are unreasonable."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Efficiency Type", "How Steps Grow", "Category", "n=10", "n=100", "n=1000"],
+      "rows": [
+        ["Constant", "Always the same — does not grow with n", "REASONABLE", "5 steps", "5 steps", "5 steps"],
+        ["Linear", "Grows proportionally with n", "REASONABLE", "10 steps", "100 steps", "1,000 steps"],
+        ["Quadratic (n²)", "Grows as the square of n", "REASONABLE", "100 steps", "10,000 steps", "1,000,000 steps"],
+        ["Cubic (n³)", "Grows as the cube of n", "REASONABLE", "1,000 steps", "1,000,000 steps", "1,000,000,000 steps"],
+        ["Exponential (2ⁿ)", "Doubles with each additional element", "UNREASONABLE", "1,024 steps", "1.27 × 10³⁰ steps", "more than atoms in universe"],
+        ["Factorial (n!)", "n × (n-1) × (n-2) × ... × 1", "UNREASONABLE", "3,628,800 steps", "9.3 × 10¹⁵⁷ steps", "incomprehensibly large"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Why exponential is UNREASONABLE:\n-- For EXPONENTIAL (2ⁿ):\n-- n=10:  2^10 = 1,024 steps\n-- n=20:  2^20 = 1,048,576 steps (over 1 million)\n-- n=30:  2^30 = 1,073,741,824 steps (over 1 billion)\n-- n=100: 2^100 ≈ 10^30 steps (more than atoms in the observable universe)\n-- n=270: more steps than there are atoms in the universe × seconds since Big Bang\n\n-- Even on a computer doing 1 TRILLION steps per second:\n-- n=100 exponential: would take 10^18 seconds = 31 billion years\n\n-- Compare to LINEAR (n steps):\n-- n=10:    10 steps\n-- n=100:   100 steps\n-- n=1000:  1,000 steps\n-- n=1,000,000,000: 1 billion steps ≈ 1 second on a fast computer\n-- Linear is completely manageable. Exponential is not."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Reasonable = POLYNOMIAL — constant, linear, quadratic (n²), cubic (n³), and any other fixed power of n. Unreasonable = EXPONENTIAL (2^n, 3^n) or FACTORIAL (n!). The key word is polynomial — if efficiency can be expressed as n raised to any fixed power, it is reasonable. If it grows as an exponential or factorial of n, it is unreasonable. Formal Big-O notation is OUTSIDE the scope of the course."
+    },
+    {
+      "type": "heading",
+      "text": "When Optimal Solutions Are Impractical: Heuristics"
+    },
+    {
+      "type": "paragraph",
+      "text": "Some problems cannot be solved in a reasonable amount of time because there is no efficient algorithm for solving them. In these cases, approximate solutions are sought. This is where heuristics come in."
+    },
+    {
+      "type": "keyterm",
+      "term": "Heuristic",
+      "definition": "An approach to a problem that produces a solution that is not guaranteed to be optimal but may be used when techniques guaranteed to find an optimal solution are impractical. Used when a problem cannot be solved in reasonable time."
+    },
+    {
+      "type": "paragraph",
+      "text": "Some optimization problems have exponential running time — finding the absolute best solution requires checking every possible combination, and the number of combinations grows exponentially. In these cases, programmers use heuristics: approaches that find a good (but not guaranteed optimal) solution in a reasonable amount of time."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Approach", "Solution Quality", "Time Required", "When Used"],
+      "rows": [
+        ["Exact algorithm", "GUARANTEED optimal — the absolute best possible solution", "May be exponential — completely impractical for large inputs", "Only when the problem is small enough that the exponential time is acceptable"],
+        ["Heuristic", "GOOD solution — not guaranteed to be optimal but often close", "Polynomial — practical for large inputs", "When the exact algorithm would take years and an approximate solution is acceptable"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A classic example is the Traveling Salesman Problem: find the shortest route that visits every city exactly once and returns to the starting city. With 20 cities, checking all possible routes requires examining 20! ≈ 2.4 × 10¹⁸ routes — even at a trillion routes per second this would take millions of years. A heuristic (like always going to the nearest unvisited city) finds a good route in seconds — maybe not the absolute shortest, but close enough to be practical."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Specific heuristic solutions are outside the scope of the AP CSP course and exam. You need to understand WHAT a heuristic is — a solution not guaranteed to be optimal used when exact solutions are impractical — but you do not need to know specific heuristic algorithms."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A problem is a general description of a task; an instance includes specific input",
+        "Decision problem: yes/no answer. Optimization problem: find the best solution.",
+        "Algorithmic efficiency is an estimation of computational resources used — typically expressed as a function of input size",
+        "Efficiency can be informally measured by counting how many times a statement or group of statements executes",
+        "Different correct algorithms for the same problem can have different efficiencies",
+        "Reasonable running time: polynomial efficiency — constant, linear, quadratic (n²), cubic (n³), and other fixed powers of n",
+        "Unreasonable running time: exponential (2^n) or factorial (n!) — completely impractical for large inputs",
+        "Some problems cannot be solved in a reasonable amount of time — in these cases approximate solutions are sought",
+        "A heuristic produces a solution not guaranteed to be optimal but used when exact algorithms are impractical",
+        "Formal analysis of algorithms (Big-O) and specific heuristic solutions are outside the scope of the course and exam"
+      ]
+    }
+  ]
 }

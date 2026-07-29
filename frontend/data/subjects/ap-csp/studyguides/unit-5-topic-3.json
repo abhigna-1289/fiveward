@@ -2,5 +2,156 @@
   "unit": 5,
   "topic": "5.3",
   "title": "Computing Bias",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is Computing Bias?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing innovations are built by people — and people carry biases, conscious and unconscious, into everything they create. When those biases get encoded into algorithms or embedded in the data used to train and run computing innovations, the result is computing bias. Computing bias is not just a technical problem — it is a social and ethical problem because biased computing innovations can cause real harm to real people at massive scale."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing Bias",
+      "definition": "Computing innovations can reflect existing human biases through biases written into algorithms or biases in the data used. Biases can be embedded at all levels of software development. Programmers should take action to reduce bias."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED identifies two distinct sources of computing bias: biases written INTO THE ALGORITHMS themselves, and biases IN THE DATA used by the innovation. Both are important and produce different kinds of problems. An algorithm can be biased even with unbiased data, and biased data can produce biased outputs even from an algorithm designed without bias. In practice, both sources often exist simultaneously."
+    },
+    {
+      "type": "heading",
+      "text": "Where Does Computing Bias Come From?"
+    },
+    {
+      "type": "keyterm",
+      "term": "Where does computing bias come from?",
+      "definition": "Computing bias can come from biases written directly into the algorithms, or from biases present in the data used to train or run the innovation. Biases can be embedded at all levels of software development — not just in the final product."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Source of Bias", "How It Works", "Example"],
+      "rows": [
+        ["Bias in the algorithm", "The rules, weights, or logic of the algorithm itself encode biased assumptions about the world", "A loan approval algorithm gives less weight to income earned from certain types of jobs that are more common in minority communities — not because of the data, but because of how it was programmed"],
+        ["Bias in the data", "The training or input data does not represent all groups equally — the algorithm learns from skewed data and produces skewed results", "A facial recognition system trained mostly on light-skinned faces performs poorly on darker-skinned faces — the bias came from the data, not the algorithm logic"],
+        ["Both simultaneously", "Biased data AND biased algorithm design compound each other", "A hiring algorithm trained on historical data from a company that rarely hired women, plus algorithmic rules that penalize career gaps (common for caregivers), doubly disadvantages women"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Biases Can Be Embedded at ALL Levels"
+    },
+    {
+      "type": "keyterm",
+      "term": "How should programmers address computing bias?",
+      "definition": "Programmers should take action to reduce bias in algorithms used for computing innovations as a way of combating existing human biases. This requires vigilance at all levels of development since biases can be embedded anywhere in the process."
+    },
+    {
+      "type": "paragraph",
+      "text": "Biases can be embedded at all levels of software development — not just at the final testing stage. This is a crucial point: bias is not something that only appears at the end of development that you can find and fix before release. It can enter at every stage of the development process."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Development Stage", "How Bias Can Enter", "Example"],
+      "rows": [
+        ["Requirements gathering", "Who is consulted about what the system should do — and whose needs are ignored", "A voice recognition system designed and tested by a team of native English speakers never considers non-native speakers or regional accents"],
+        ["Data collection", "What data is collected, from whom, and what is excluded", "A medical diagnosis algorithm trained only on data from wealthy urban hospitals — underrepresents rural, low-income, and minority patients"],
+        ["Algorithm design", "What rules, weights, and optimization targets are chosen", "A recidivism prediction algorithm that uses ZIP code as a factor — ZIP code correlates with race due to historical housing discrimination"],
+        ["Testing and evaluation", "Who tests the system and what inputs are used", "A facial recognition system tested only on faces of the developers' demographic — bias in darker-skinned faces is never detected"],
+        ["Deployment", "Where and how the system is deployed and who reviews its decisions", "An automated hiring tool deployed without human review — biased decisions go undetected and unchallenged"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Bias does not just enter computing innovations at one stage — it can enter at EVERY stage of development. This is why reducing bias requires attention throughout the entire development process, not just a final bias check before release."
+    },
+    {
+      "type": "heading",
+      "text": "Real-World Examples of Computing Bias"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing bias is not a theoretical concern — it has caused real harm in high-stakes situations. Understanding concrete examples helps identify bias when you encounter it on the AP exam."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Computing Innovation", "Type of Bias", "Harmful Effect"],
+      "rows": [
+        ["Facial recognition systems", "Data bias — trained mostly on light-skinned faces", "Higher error rates for darker-skinned individuals — wrong identifications in law enforcement use have led to false arrests"],
+        ["Hiring algorithms", "Data bias — trained on historical hiring data reflecting past discrimination", "Perpetuates and automates historical discrimination — penalizes applicants from underrepresented groups"],
+        ["Recidivism prediction tools (used in criminal sentencing)", "Algorithm and data bias — ZIP code, poverty factors correlate with race", "Black defendants rated as higher risk at higher rates — affects sentencing and parole decisions"],
+        ["Natural language processing systems", "Data bias — trained on internet text reflecting societal biases", "Associates certain names or words with negative qualities based on cultural biases in the training data"],
+        ["Medical diagnosis algorithms", "Data bias — trained primarily on data from certain demographic groups", "Less accurate for patients who are underrepresented in training data — can miss diagnoses or suggest wrong treatments"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Why Computing Bias Matters at Scale"
+    },
+    {
+      "type": "paragraph",
+      "text": "Human bias in individual decisions has always existed. What makes computing bias different and especially concerning is scale. A biased human loan officer might make biased decisions for a few hundred applicants per year. A biased algorithm can make biased decisions for millions of applicants instantly. Computing amplifies bias in the same way it amplifies everything else — making the effects far larger and more difficult to challenge or appeal."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Bias in Human Decisions", "Bias in Computing Innovations"],
+      "rows": [
+        ["Affects one person or a small number at a time", "Can affect millions of people simultaneously"],
+        ["Decision-maker can be questioned and held accountable", "Algorithm's reasoning is often opaque — difficult to understand or challenge"],
+        ["Decisions can be reviewed case by case", "Scale makes individual review impractical without specifically designed auditing systems"],
+        ["Bias can be reduced through training and oversight of individual humans", "Bias must be addressed at the design and data level — harder to fix after deployment"],
+        ["Each decision is made fresh with human judgment", "Once biased, the algorithm applies the same bias consistently to every case — no natural variation"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Programmer Responsibility: Taking Action to Reduce Bias"
+    },
+    {
+      "type": "paragraph",
+      "text": "Programmers should take action to reduce bias in algorithms used for computing innovations as a way of combating existing human biases. This is not just a technical responsibility — it is an ethical one. Bias in computing innovations reflects and amplifies human biases in society. Programmers who build these systems have a responsibility to actively work against that amplification."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Audit training data for representation — ensure data includes diverse groups proportionally and identify underrepresented populations",
+        "Test systems on diverse inputs — evaluate performance separately for different demographic groups to identify performance gaps",
+        "Include diverse perspectives in development teams — people from different backgrounds are more likely to identify biases that affect their own communities",
+        "Build in human review for high-stakes decisions — automated systems making decisions about hiring, lending, or criminal justice need human oversight",
+        "Document known limitations — be transparent about what groups the system has been tested on and where its limitations lie",
+        "Monitor systems after deployment — bias can emerge or worsen over time as the world changes while the system stays static"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam tests three specific things about computing bias: (1) Computing innovations can REFLECT existing human biases through biases in algorithms or data. (2) Biases can be embedded at ALL LEVELS of software development — not just in data. (3) Programmers SHOULD TAKE ACTION to reduce bias. When asked what a responsible programmer should do about computing bias, the answer is: take action to reduce it — not just acknowledge it exists."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes think computing bias only comes from 'bad' or intentionally discriminatory programmers. This is wrong — bias can be unintentional, embedded in data that seems neutral, or a consequence of systemic inequalities in the world. A programmer who genuinely tries to be fair can still produce a biased system if they do not actively look for and address bias in their data and algorithms."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Computing innovations can reflect existing human biases through biases written INTO THE ALGORITHMS or biases IN THE DATA used",
+        "Biases can be embedded at ALL LEVELS of software development — requirements, data collection, algorithm design, testing, and deployment",
+        "Computing bias is not always intentional — it can result from unrepresentative data or biased design choices made without awareness",
+        "Programmers SHOULD TAKE ACTION to reduce bias in algorithms as a way of combating existing human biases",
+        "Computing bias can cause real harm at massive scale — especially in high-stakes systems like hiring, lending, and criminal justice",
+        "Reducing bias requires attention throughout the entire development process — not just a final check before release",
+        "Actions to reduce bias include: auditing training data for representation, testing on diverse inputs, including diverse development teams, and building in human review for high-stakes decisions"
+      ]
+    }
+  ]
 }

@@ -2,5 +2,156 @@
   "unit": 3,
   "topic": "3.6",
   "title": "Conditionals",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is Selection?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequential programs execute every statement in order from top to bottom. But real programs need to make decisions — they must do different things based on different conditions. Selection is the second building block of every algorithm. It allows a program to choose which statements to execute and which to skip, based on whether a condition is true or false."
+    },
+    {
+      "type": "keyterm",
+      "term": "Selection",
+      "definition": "Determines which parts of an algorithm are executed based on a condition being true or false. Implemented using IF and IF/ELSE statements."
+    },
+    {
+      "type": "keyterm",
+      "term": "Conditional Statement (IF statement)",
+      "definition": "Affects the sequential flow of control by executing different statements based on the value of a Boolean expression. IF(condition): executes the block only if condition is true. IF/ELSE: executes the first block if true, the second block if false."
+    },
+    {
+      "type": "paragraph",
+      "text": "Conditional statements — also called if-statements — affect the sequential flow of control. Without them, every statement always executes. With them, certain blocks of statements only execute when specific conditions are met. The condition is always a Boolean expression that evaluates to either true or false."
+    },
+    {
+      "type": "heading",
+      "text": "The IF Statement (No ELSE)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The simplest conditional is an IF statement without an ELSE. If the condition evaluates to true, the block of statements executes. If the condition evaluates to false, the block is completely skipped — no action is taken — and the program continues with the next statement after the IF block."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- IF only:\nx ← 8\nIF(x > 5)\n{\n   DISPLAY \"x is big\"\n}\nDISPLAY \"always runs\"\n\n-- (x > 5) = (8 > 5) = true → block executes\n-- Output:\n-- x is big\n-- always runs\n\n-- ------\n\nx ← 3\nIF(x > 5)\n{\n   DISPLAY \"x is big\"   -- SKIPPED entirely\n}\nDISPLAY \"always runs\"\n\n-- (x > 5) = (3 > 5) = false → block is skipped, no action taken\n-- Output:\n-- always runs"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Condition Evaluates To", "What Happens", "What Does NOT Happen"],
+      "rows": [
+        ["true", "The block of statements inside the IF executes", "Nothing — the block runs normally"],
+        ["false", "No action is taken — the entire IF block is skipped", "The block does NOT execute — not even partially"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The IF/ELSE Statement"
+    },
+    {
+      "type": "paragraph",
+      "text": "The IF/ELSE statement handles both cases explicitly. If the condition is true, the first block (the IF block) executes. If the condition is false, the second block (the ELSE block) executes. Exactly one of the two blocks always executes — never both, never neither."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- IF/ELSE:\nscore ← 85\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   DISPLAY \"Not an A\"\n}\n\n-- (score ≥ 90) = (85 ≥ 90) = false\n-- IF block skipped, ELSE block executes\n-- Output: Not an A\n\n-- ------\n\nscore ← 95\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   DISPLAY \"Not an A\"   -- SKIPPED\n}\n\n-- (score ≥ 90) = (95 ≥ 90) = true\n-- IF block executes, ELSE block skipped\n-- Output: A"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Condition Evaluates To", "IF Block", "ELSE Block"],
+      "rows": [
+        ["true", "Executes", "Skipped"],
+        ["false", "Skipped", "Executes"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "In an IF/ELSE, exactly ONE block always executes. If the condition is true → IF block runs, ELSE block is skipped. If the condition is false → ELSE block runs, IF block is skipped. There is no scenario where both run or neither runs."
+    },
+    {
+      "type": "heading",
+      "text": "Multiple Separate IF Statements vs IF/ELSE"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is one of the most heavily tested distinctions in topic 3.6. Multiple separate IF statements are all evaluated independently — each one is checked regardless of whether the previous ones were true or false. An IF/ELSE chain, by contrast, executes only ONE block and skips the rest once a condition is satisfied. These produce different outputs when a value satisfies multiple conditions."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- MULTIPLE SEPARATE IF statements (ALL evaluated independently):\ngrade ← 85\nIF(grade ≥ 90) { DISPLAY \"A\" }\nIF(grade ≥ 80) { DISPLAY \"B\" }\nIF(grade ≥ 70) { DISPLAY \"C\" }\n\n-- Each IF is checked:\n-- (85 ≥ 90) = false → no A\n-- (85 ≥ 80) = true  → displays B\n-- (85 ≥ 70) = true  → displays C\n-- Output: B C  ← TWO outputs!\n\n-- ------\n\n-- IF/ELSE chain (only ONE block executes):\ngrade ← 85\nIF(grade ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   IF(grade ≥ 80)\n   {\n      DISPLAY \"B\"\n   }\n   ELSE\n   {\n      DISPLAY \"C or below\"\n   }\n}\n\n-- (85 ≥ 90) = false → go to ELSE\n-- (85 ≥ 80) = true  → display B, inner ELSE skipped\n-- Output: B  ← ONE output only"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Multiple separate IF statements are ALL evaluated — each one is checked regardless of previous results. An IF/ELSE stops after the first true condition — the ELSE only runs when the IF is false. When a value satisfies multiple conditions, separate IFs produce multiple outputs while IF/ELSE produces only one. This distinction is frequently tested."
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Conditional Code: Step-by-Step Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "When tracing conditional code on the AP exam, follow this strategy: read EVERY IF statement — don't assume only one can execute. Evaluate each condition using the current values of all variables. Track which blocks execute and which are skipped. Remember that the ELSE belongs to the nearest IF above it at the same level."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 5\n\nIF(x > 3)            -- (5 > 3) = true → executes\n{\n   DISPLAY \"A\"\n}\n\nIF(x > 4)            -- (5 > 4) = true → executes\n{\n   DISPLAY \"B\"\n}\nELSE\n{\n   DISPLAY \"C\"        -- SKIPPED because IF was true\n}\n\nIF(x > 10)           -- (5 > 10) = false → skipped\n{\n   DISPLAY \"D\"        -- SKIPPED\n}\n\n-- Output: A B\n-- The first IF has no ELSE, so skipping it means no output from it\n-- The second IF/ELSE: B executes, C skipped\n-- The third IF: false, no ELSE, no output"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["x value", "IF(x>3)", "IF(x>4)/ELSE", "IF(x>10)", "Total Output"],
+      "rows": [
+        ["x = 5", "true → A", "true → B (C skipped)", "false → nothing", "A B"],
+        ["x = 4", "true → A", "false → C (B skipped)", "false → nothing", "A C"],
+        ["x = 3", "false → nothing", "false → C (B skipped)", "false → nothing", "C"],
+        ["x = 15", "true → A", "true → B (C skipped)", "true → D", "A B D"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Conditionals in Natural Language and Pseudocode"
+    },
+    {
+      "type": "paragraph",
+      "text": "Selection can be expressed without using a programming language. Natural language and diagrams can also describe selection. The AP exam may present an algorithm described in natural language and ask you to identify the equivalent pseudocode, or vice versa. Selection always has the same structure: a condition is checked, and different actions follow depending on true or false."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Natural Language", "AP CSP Pseudocode"],
+      "rows": [
+        ["If the temperature is above 90, display 'hot'.", "IF(temp > 90) { DISPLAY \"hot\" }"],
+        ["If the score is 70 or above, display 'pass'. Otherwise display 'fail'.", "IF(score ≥ 70) { DISPLAY \"pass\" } ELSE { DISPLAY \"fail\" }"],
+        ["If the number is even, add it to the sum.", "IF(num MOD 2 = 0) { sum ← sum + num }"],
+        ["If the user is logged in and is an admin, show the settings page.", "IF(isLoggedIn AND isAdmin) { DISPLAY settingsPage }"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "When tracing: evaluate EVERY condition using the current variable values. Track which block executes. The ELSE belongs to the nearest IF above it. Separate IFs are all evaluated. IF/ELSE stops after the first true condition. Always ask: is this a separate IF or part of an IF/ELSE chain?"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Selection determines which parts of an algorithm execute based on a condition being true or false",
+        "Conditional statements affect the sequential flow of control by executing different statements based on a Boolean expression",
+        "IF(condition): executes the block only when condition is true — if false, no action is taken and the block is skipped entirely",
+        "IF/ELSE: executes the first block when true and the ELSE block when false — exactly one block always executes, never both, never neither",
+        "Multiple separate IF statements are ALL evaluated independently — each is checked regardless of previous results",
+        "An IF/ELSE chain executes only ONE block — once a condition is true, the rest are skipped",
+        "Multiple separate IFs can produce multiple outputs for one value; IF/ELSE always produces only one",
+        "The ELSE belongs to the nearest IF above it at the same level",
+        "Selection can be expressed in natural language, diagrams, and pseudocode — the structure is always the same"
+      ]
+    }
+  ]
 }

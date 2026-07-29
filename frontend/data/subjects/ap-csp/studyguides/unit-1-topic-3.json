@@ -2,5 +2,210 @@
   "unit": 1,
   "topic": "1.3",
   "title": "Program Design and Development",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "The Development Process"
+    },
+    {
+      "type": "paragraph",
+      "text": "Creating a program is not just about writing code. It involves a full development process that can be ordered and intentional, or exploratory in nature. There is no single correct process — different teams use different approaches depending on the project and context."
+    },
+    {
+      "type": "keyterm",
+      "term": "Development Process",
+      "definition": "The set of phases used when creating a program. A development process can be ordered and intentional, or exploratory in nature. The following phases are commonly used: investigating and reflecting, designing, prototyping, and testing."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Investigating and reflecting — understanding the problem, the users, and what the program needs to do",
+        "Designing — planning how the program will be structured and what it will look like",
+        "Prototyping — building an early working version of the program",
+        "Testing — checking that the program works correctly for a variety of inputs and situations"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The development process does not have to follow these phases in strict order. It can be iterative (revisiting earlier phases based on feedback) or incremental (completing and verifying one piece before moving to the next)."
+    },
+    {
+      "type": "heading",
+      "text": "Iterative vs Incremental Development"
+    },
+    {
+      "type": "keyterm",
+      "term": "Iterative Development",
+      "definition": "A development process that requires refinement and revision based on feedback, testing, or reflection throughout the process. This may require revisiting earlier phases — for example, going back to the design phase after testing reveals problems."
+    },
+    {
+      "type": "keyterm",
+      "term": "Incremental Development",
+      "definition": "A development process that breaks the problem into smaller pieces and makes sure each piece works before adding it to the whole. Each increment is built, verified, and integrated one at a time."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Iterative Development", "Incremental Development"],
+      "rows": [
+        ["Refines and revises the program based on feedback throughout the process", "Breaks the problem into smaller pieces and verifies each before adding it to the whole"],
+        ["May revisit earlier phases (e.g., going back to design after testing)", "Completes and verifies one piece fully before starting the next"],
+        ["Example: releasing a basic app, getting user feedback, redesigning the interface, re-releasing", "Example: building and testing the login system completely before starting on the user profile page"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "These two are easy to confuse. Iterative = refinement and revision based on feedback throughout (may loop back). Incremental = one verified piece at a time before moving to the next. A team that releases a version, gets feedback, and redesigns is using ITERATIVE development. A team that completes the login module before starting the profile module is using INCREMENTAL development."
+    },
+    {
+      "type": "heading",
+      "text": "Investigation Phase"
+    },
+    {
+      "type": "paragraph",
+      "text": "The design of a program incorporates investigation to determine its requirements. Investigation is useful for understanding and identifying the program constraints, as well as the concerns and interests of the people who will use the program."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Requirements",
+      "definition": "A description of how a program functions, including user interactions it must provide. Requirements are needed to identify appropriate defined inputs for testing."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Specification",
+      "definition": "The formal document that defines the requirements for the program. The design phase then outlines how to accomplish the given specification."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Collecting data through surveys — getting structured input from many potential users",
+        "User testing — observing users interacting with the product",
+        "Interviews — gathering in-depth perspectives from individual users",
+        "Direct observations — watching how users currently perform the task the program will address"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Investigation methods belong to the INVESTIGATION phase, not the design phase. Surveys, interviews, user testing, and direct observation are all investigation methods. Writing code or creating UI diagrams belongs to later phases."
+    },
+    {
+      "type": "heading",
+      "text": "Design Phase"
+    },
+    {
+      "type": "paragraph",
+      "text": "In a development process, the design phase outlines how to accomplish a given program specification. This is where the team plans the structure, layout, and organization of the program before building it."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Brainstorming — generating ideas for how the program will work",
+        "Planning and storyboarding — mapping out the flow and sequence of the program",
+        "Organizing the program into modules and functional components — breaking the program into manageable pieces",
+        "Creation of diagrams that represent the layouts of the user interface — sketching what screens will look like",
+        "Development of a testing strategy for the program — planning how the program will be verified"
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Phase", "What Happens", "Examples of Activities"],
+      "rows": [
+        ["Investigation", "Understanding the problem and user needs", "Surveys, interviews, user testing, direct observations"],
+        ["Design", "Planning how to build the solution", "Brainstorming, storyboarding, UI diagrams, module organization, testing strategy"],
+        ["Prototyping", "Building an early working version", "Writing the first version of the code, creating a working mockup"],
+        ["Testing", "Verifying the program works correctly", "Running test cases, debugging, checking outputs against expected results"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Program Documentation"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Documentation",
+      "definition": "A written description of the function of a code segment, event, procedure, or program and how it was developed. Documentation helps in developing and maintaining correct programs when working individually or in collaborative environments."
+    },
+    {
+      "type": "keyterm",
+      "term": "Comments",
+      "definition": "A form of program documentation written directly into the program to be read by people. Comments do NOT affect how a program runs. Not all programming environments support comments."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Programmers should document a program THROUGHOUT its development — not just at the end",
+        "Documentation helps other programmers understand the code and helps maintain it over time",
+        "Documentation helps the original programmer remember why they made certain decisions",
+        "Not all programming environments support comments — in those cases, other methods of documentation may be required",
+        "Documentation can exist inside the program (comments) or outside the program (external documents, wikis, etc.)"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Comments do NOT affect how a program runs. A student might think that removing or adding comments changes the program's behavior — it does not. Comments exist only for human readers, not for the computer."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "If a programming environment does not support comments, documentation should still be written — just using other methods. The need for documentation does not go away just because the tool does not support comments."
+    },
+    {
+      "type": "heading",
+      "text": "Acknowledging Code from Other Sources"
+    },
+    {
+      "type": "paragraph",
+      "text": "It is important to acknowledge any code segments that were developed collaboratively or by another source. When you use someone else's code in your program, you must credit them in your documentation."
+    },
+    {
+      "type": "keyterm",
+      "term": "Code Acknowledgement",
+      "definition": "Recognition in the program documentation of any code segments written by someone else or developed collaboratively. The acknowledgement should include the origin or original author's name."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Situation", "What to Do"],
+      "rows": [
+        ["You wrote all the code yourself", "No acknowledgement needed beyond your own documentation"],
+        ["You used code developed collaboratively with teammates", "Acknowledge it in the program documentation, noting the collaborative nature"],
+        ["You found and used code from an online source", "Acknowledge it in the program documentation, including the origin and original author's name"],
+        ["You used a code library or framework", "Acknowledge the library/framework in your documentation"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Using someone else's code without acknowledgement is a form of plagiarism. The acknowledgement goes in the PROGRAM DOCUMENTATION and must include the origin or original author's name — not just a vague mention that 'some code was reused.'"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "The development process can be ordered/intentional or exploratory — both are valid",
+        "Common development phases: investigating and reflecting, designing, prototyping, testing",
+        "Iterative development: refinement and revision based on feedback throughout — may revisit earlier phases",
+        "Incremental development: breaks problem into pieces and verifies each before adding to the whole",
+        "Investigation methods: surveys, user testing, interviews, direct observations",
+        "Program requirements describe how the program functions; the specification formally defines the requirements",
+        "The design phase outlines how to accomplish the specification — includes brainstorming, storyboarding, UI diagrams, module organization, and testing strategy",
+        "Program documentation is a written description of what code does and how it was developed",
+        "Comments are documentation written into the program — they do NOT affect how the program runs",
+        "Programmers should document throughout development, not just at the end",
+        "Not all environments support comments — other documentation methods may be required",
+        "Code from other sources must be acknowledged in documentation, including the origin or original author's name"
+      ]
+    }
+  ]
 }

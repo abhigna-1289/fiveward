@@ -2,5 +2,128 @@
   "unit": 3,
   "topic": "3.14",
   "title": "Libraries",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a Software Library?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Procedural abstraction allows programmers to use procedures knowing only what they do, not how. Software libraries take this idea one step further — they are entire collections of pre-written, pre-tested procedures that any programmer can use in their own programs without having to write those procedures from scratch. Libraries are one of the most important practical tools in real-world programming."
+    },
+    {
+      "type": "keyterm",
+      "term": "Software Library",
+      "definition": "A collection of procedures that may be used in creating new programs. Simplifies the task of creating complex programs by providing pre-written, tested code."
+    },
+    {
+      "type": "paragraph",
+      "text": "The use of libraries simplifies the task of creating complex programs. Tasks like sorting, searching, image processing, encryption, and network communication require complex algorithms that would take days or weeks to write and test from scratch. Libraries provide these capabilities as ready-to-use procedures — call the procedure, get the result."
+    },
+    {
+      "type": "heading",
+      "text": "Internal vs External Code Sources"
+    },
+    {
+      "type": "paragraph",
+      "text": "Existing code segments can come from internal or external sources, such as libraries or previously written code. Understanding where code comes from helps you know how to use it, how to acknowledge it, and whether you can trust it."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Source Type", "What It Is", "Examples", "Requirement"],
+      "rows": [
+        ["Internal source", "Code you or your team wrote previously in the same project or a past project", "A procedure you wrote last week that you want to reuse in a new program", "Acknowledge if written by a teammate rather than yourself"],
+        ["External source — library", "A collection of procedures provided by a third party", "A math library, image processing library, or network library", "Read the API documentation; acknowledge the library in your program documentation"],
+        ["External source — previously written code", "Code found online, in a textbook, or provided by another developer", "A code snippet found in a tutorial or open source repository", "Acknowledge the origin and original author's name in documentation"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "What Is an API?"
+    },
+    {
+      "type": "keyterm",
+      "term": "API (Application Program Interface)",
+      "definition": "A specification for how the procedures in a library behave and can be used. Documentation for an API is necessary to understand the behaviors provided and how to use them."
+    },
+    {
+      "type": "paragraph",
+      "text": "An API is the contract between a library and its users. It specifies: what procedures the library provides, what parameters each procedure takes, what each procedure does (its behavior), and what value each returns. The API does NOT reveal how the procedures are implemented internally — that is hidden by procedural abstraction."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Term", "What It Is", "Analogy"],
+      "rows": [
+        ["Software Library", "A collection of pre-written, tested procedures available for use in new programs", "A hardware store full of tools you can buy and use"],
+        ["API", "A specification describing how to use the procedures in the library — what they do, what inputs they take, what they return", "The instruction manual for each tool in the store"],
+        ["API Documentation", "The written reference material explaining every procedure in the library", "The detailed guide that explains exactly how to use each tool correctly and safely"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Why API Documentation Is Necessary"
+    },
+    {
+      "type": "paragraph",
+      "text": "Documentation for an API/library is necessary in understanding the behaviors provided by the API/library and how to use them. Without documentation, you cannot know what procedures are available, what parameters they expect, what they return, or what happens in edge cases. Even if you could guess the procedure names, you would not know the exact behavior — and guessing wrong leads to bugs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["What API Documentation Tells You", "Example"],
+      "rows": [
+        ["What procedures are available", "sortList(aList), searchList(aList, target), reverseList(aList)"],
+        ["What parameters each procedure takes and their expected types", "sortList takes one parameter: a list of comparable values"],
+        ["What each procedure returns", "sortList returns a new sorted list; does not modify the original"],
+        ["What happens in edge cases", "sortList on an empty list returns an empty list; sortList on a list of one element returns that same list"],
+        ["Any constraints or requirements", "searchList requires the list to be sorted; if unsorted, behavior is undefined"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Using a library is procedural abstraction in action. You use the library's procedures knowing only WHAT they do — not HOW they work internally. The API documentation tells you everything you need to know to use the procedures correctly. This is exactly why documentation for an API is necessary — without it, you cannot use the library correctly even if you have access to it."
+    },
+    {
+      "type": "heading",
+      "text": "Libraries Simplify Complex Programs"
+    },
+    {
+      "type": "paragraph",
+      "text": "Without libraries, every programmer would have to solve the same problems over and over. With libraries, a problem solved once can be shared and reused by thousands of developers. This is the practical realization of the benefit of using existing correct algorithms as building blocks."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Task", "Without a Library", "With a Library"],
+      "rows": [
+        ["Sort a list of names", "Write and test a sorting algorithm from scratch — hours of work", "Call sortList(names) — one line, instantly correct"],
+        ["Process an image", "Write pixel manipulation algorithms from scratch — days of work", "Call resize(), crop(), filter() from an image library"],
+        ["Encrypt a password", "Implement cryptographic algorithms from scratch — expert-level complexity", "Call encrypt(password) from a security library"],
+        ["Make a network request", "Write low-level socket connection code", "Call get(url) or post(url, data) from an HTTP library"],
+        ["Generate a random number", "Implement a pseudo-random number generator algorithm", "Call RANDOM(a, b) — built into the AP CSP reference sheet"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam tests four specific things about libraries: (1) A software library contains procedures that may be used in creating new programs. (2) Existing code segments can come from internal or external sources such as libraries. (3) The use of libraries simplifies the task of creating complex programs. (4) An API is a specification for how the procedures in a library behave; documentation is necessary to understand and use them."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A software library is a collection of procedures that may be used in creating new programs",
+        "The use of libraries simplifies the task of creating complex programs",
+        "Existing code segments can come from internal sources (your own previous code) or external sources (libraries, previously written code by others)",
+        "An API (Application Program Interface) is a specification for how the procedures in a library behave and can be used",
+        "Documentation for an API/library is necessary to understand the behaviors provided and how to use them — without it you cannot use the library correctly",
+        "Using a library is procedural abstraction — you use its procedures knowing only what they do, not how they work internally",
+        "Code from external sources must be acknowledged in your program documentation including the origin or author"
+      ]
+    }
+  ]
 }

@@ -2,5 +2,215 @@
   "unit": 5,
   "topic": "5.1",
   "title": "Beneficial and Harmful Effects",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "People Create Computing Innovations"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing innovations are created by people — and like all human creations, they can have effects beyond what was originally planned. Topic 5.1 is about understanding the full range of effects computing innovations can have: intended and unintended, beneficial and harmful, anticipated and surprising. This topic is heavily tested on the AP exam because it requires you to analyze real-world scenarios and evaluate effects from multiple perspectives."
+    },
+    {
+      "type": "keyterm",
+      "term": "Can a computing innovation's effects be both beneficial and harmful?",
+      "definition": "Yes. A single effect can be viewed as both beneficial and harmful by different people, or even by the same person. Not every effect of a computing innovation is anticipated in advance."
+    },
+    {
+      "type": "paragraph",
+      "text": "The key insight is that beneficial and harmful are not always opposites applied to different effects — the SAME effect can be viewed as both beneficial AND harmful depending on who is looking at it and from what perspective. A navigation app routing drivers through a neighborhood is beneficial for drivers and harmful for residents. The same feature, viewed differently."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Computing Innovation", "Beneficial Effect", "Harmful Effect of the SAME Feature"],
+      "rows": [
+        ["GPS navigation app", "Drivers find the fastest route and save time", "App routes heavy traffic through quiet residential streets — harmful for residents"],
+        ["Social media platform", "People connect with friends and family worldwide", "The same connection enables spread of misinformation and cyberbullying"],
+        ["Search engine tracking", "Search history enables relevant, personalized results", "Search history reveals private interests and behaviors — privacy risk"],
+        ["Targeted advertising algorithm", "Businesses can reach relevant customers efficiently", "The same algorithm can discriminate against groups or manipulate vulnerable individuals"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "A single effect can be BOTH beneficial and harmful — by different people or even the same person. This is not about whether the effect is 'good' or 'bad' overall — it is about recognizing that the same feature of a computing innovation can be experienced as helpful by some and harmful by others. The AP exam frequently tests this nuance."
+    },
+    {
+      "type": "heading",
+      "text": "The Way People Complete Tasks Changes"
+    },
+    {
+      "type": "keyterm",
+      "term": "How does computing innovation change how people complete tasks?",
+      "definition": "The way people complete tasks often changes to incorporate new computing innovations. People create computing innovations, and those innovations reshape behavior, workflows, and social patterns — sometimes in unintended ways."
+    },
+    {
+      "type": "paragraph",
+      "text": "When a new computing innovation arrives, people do not just add it as an extra option — they change how they do things. Email changed how people communicate at work. GPS changed how people navigate. Streaming changed how people watch movies. These changes often happen quickly and reshape entire industries and social behaviors. Once the change happens, it can be difficult to reverse."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Computing Innovation", "How It Changed Task Completion", "Unintended Side Effect"],
+      "rows": [
+        ["Email", "Replaced physical memos and letters for workplace communication", "Created expectations of immediate response — blurred work/life boundaries"],
+        ["GPS navigation", "Replaced paper maps and memorizing routes", "People became dependent on GPS and lost the ability to navigate without it"],
+        ["Online shopping", "Replaced trips to physical stores for many purchases", "Reduced foot traffic devastated many small local retailers"],
+        ["Streaming music", "Replaced purchasing albums for listening to music", "Dramatically reduced artist revenue from recorded music sales"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Computing Innovations Used Beyond Their Intended Purpose"
+    },
+    {
+      "type": "keyterm",
+      "term": "Unintended Consequences of Computing Innovations",
+      "definition": "Computing innovations can be used in ways their creators never originally intended. Responsible programmers try to consider unintended uses and their potential effects, but it is not possible to anticipate all ways an innovation can be used."
+    },
+    {
+      "type": "keyterm",
+      "term": "Examples of computing innovations used beyond their intended purpose",
+      "definition": "Targeted advertising helps businesses but can be misused at individual and aggregate levels. Machine learning and data mining have enabled innovation in medicine and science but have also been used to discriminate against groups of individuals."
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing innovations can be used in ways their creators had not originally intended. Sometimes these unintended uses are beneficial — a technology designed for one purpose turns out to solve a completely different problem. Sometimes they are harmful — a technology designed to help ends up being used to hurt. Both possibilities are real and happen regularly."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Innovation", "Original Intended Purpose", "Unintended Beneficial Use", "Unintended Harmful Use"],
+      "rows": [
+        ["Targeted advertising algorithms", "Help businesses show relevant ads to potential customers", "Help small nonprofits reach donors efficiently at low cost", "Price discrimination, manipulation of vulnerable individuals, political micro-targeting"],
+        ["Machine learning and data mining", "Find patterns in large data sets to enable predictions", "Revolutionized medical diagnosis — detecting cancer earlier than human doctors", "Used to discriminate against groups in hiring, lending, and criminal justice"],
+        ["Social media platforms", "Connect friends and family online", "Enabled rapid organization of disaster relief and community support", "Spread misinformation, enable surveillance, contribute to mental health crises"],
+        ["GPS and location tracking", "Help drivers navigate unfamiliar areas", "Enabled emergency services to locate people in distress faster", "Enabled stalking and surveillance — location data reveals sensitive personal information"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Programmer Responsibility"
+    },
+    {
+      "type": "keyterm",
+      "term": "What is the programmer's responsibility regarding unintended effects?",
+      "definition": "Responsible programmers try to consider the unintended ways their computing innovations can be used and the potential beneficial and harmful effects of those new uses. However, it is not possible for a programmer to consider all the ways a computing innovation can be used."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED makes two points that work together. Responsible programmers SHOULD try to consider unintended uses and their effects — this is an ethical obligation. But it is NOT POSSIBLE for a programmer to consider ALL ways an innovation can be used — the space of possible uses is too large and unpredictable. Both things are true simultaneously: programmers should try, and they will inevitably miss some things."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["What Responsible Programmers Should Do", "What Is NOT Possible"],
+      "rows": [
+        ["Consider how the innovation could be misused", "Anticipate every possible way the innovation will be used"],
+        ["Think about potential harmful effects before releasing", "Guarantee that no harmful uses will emerge"],
+        ["Build in safeguards for anticipated misuses", "Prevent all unintended uses through design alone"],
+        ["Monitor and respond to harmful uses after release", "Fully control how a released innovation is used by millions of people"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam distinguishes between what responsible programmers SHOULD do (try to consider unintended uses and effects) and what is NOT POSSIBLE (consider ALL possible uses). Both parts of this are directly testable. A programmer is not held responsible for effects they could not possibly have anticipated — but they ARE responsible for trying to anticipate and mitigate foreseeable harms."
+    },
+    {
+      "type": "heading",
+      "text": "Rapid Sharing Amplifies Impact"
+    },
+    {
+      "type": "keyterm",
+      "term": "How can rapid sharing amplify a computing innovation's impact?",
+      "definition": "Rapid sharing of a program or running a program with a large number of users can result in significant impacts beyond the intended purpose or control of the programmer."
+    },
+    {
+      "type": "paragraph",
+      "text": "Scale changes everything. An app used by 100 people might have manageable effects. The same app used by 100 million people can reshape entire industries, influence elections, and cause societal shifts — effects completely beyond what any programmer could control. The Internet enables rapid sharing at massive scale, which amplifies both the beneficial and harmful effects of computing innovations far beyond what their creators anticipated."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Small Scale", "Massive Scale (Internet-enabled)", "Why Scale Matters"],
+      "rows": [
+        ["A local business review website used by 500 people", "Yelp used by 100 million people — can make or break businesses overnight", "A single review from one user now reaches millions — far beyond what a creator controls"],
+        ["An app designed to connect 100 friends", "Facebook connecting 3 billion people — reshaping politics and society globally", "Network effects mean the app's impact grew exponentially beyond design"],
+        ["A filter that makes selfies look nicer", "A deepfake technology used for widespread misinformation", "The same underlying technology scaled to produce millions of fake videos"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Computing Advances Creativity in Other Fields"
+    },
+    {
+      "type": "keyterm",
+      "term": "How have advances in computing affected other fields?",
+      "definition": "Advances in computing have generated and increased creativity in other fields such as medicine, engineering, communications, and the arts. Computing innovations have often had unintended beneficial effects by leading to advances in other fields."
+    },
+    {
+      "type": "paragraph",
+      "text": "Some of the most important effects of computing innovations are the advances they enable in completely unrelated fields. Computing power has transformed medical research by enabling drug simulations that would take decades to do by hand. It has transformed engineering by enabling complex structural simulations. It has transformed art and music by creating entirely new forms of creative expression."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Field", "How Computing Advances Generated Creativity", "Example"],
+      "rows": [
+        ["Medicine", "Data mining and machine learning found patterns in medical data that humans could not see", "AI that detects cancer in imaging scans more accurately than trained radiologists"],
+        ["Engineering", "Computational simulation replaced expensive physical prototyping", "Car companies simulate thousands of crash scenarios without building a single physical car"],
+        ["Communications", "Internet protocols transformed how humans share information", "Real-time global communication, video calls, instant translation"],
+        ["Arts", "Digital tools created entirely new forms of creative expression", "Digital music production, computer-generated imagery, interactive digital art"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Computing innovations have often had unintended BENEFICIAL effects by leading to advances in other fields. The creators of the Internet did not set out to revolutionize medicine — but the ability to share medical research globally, collaborate across institutions, and analyze massive data sets transformed the field. These unintended beneficial effects are just as real and important as unintended harmful effects."
+    },
+    {
+      "type": "heading",
+      "text": "Analyzing Effects: A Framework"
+    },
+    {
+      "type": "paragraph",
+      "text": "When analyzing a computing innovation on the AP exam, consider all four dimensions: intended vs unintended effects, and beneficial vs harmful effects. Every innovation can have effects in all four categories. The best analysis considers each one separately rather than assuming an innovation is simply 'good' or 'bad.'"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Effect Type", "Description", "Example (Social Media)"],
+      "rows": [
+        ["Intended + Beneficial", "The effect the creators designed for", "People connect with friends and family worldwide"],
+        ["Intended + Harmful", "Harmful effects the creators knew about but accepted", "Addictive design features used to maximize engagement"],
+        ["Unintended + Beneficial", "Positive effects the creators did not plan for", "Rapid grassroots organizing for disaster relief and social movements"],
+        ["Unintended + Harmful", "Negative effects the creators did not anticipate", "Spread of misinformation, harassment, mental health impacts on young users"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes assume that because a computing innovation was created with good intentions, its harmful effects don't count — or that harmful effects make an innovation bad overall. Neither is correct. A single innovation can have profound beneficial AND harmful effects simultaneously. The AP exam expects nuanced analysis — not black-and-white judgments."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "People create computing innovations — and those innovations can have wide-ranging effects beyond what was designed",
+        "The way people complete tasks often changes to incorporate new computing innovations",
+        "Not every effect of a computing innovation is anticipated in advance",
+        "A single effect can be viewed as both beneficial AND harmful by different people, or even the same person",
+        "Advances in computing have generated and increased creativity in fields like medicine, engineering, communications, and the arts",
+        "Computing innovations can be used in ways their creators never originally intended",
+        "Targeted advertising helps businesses but can be misused; machine learning enabled medical advances but has also been used to discriminate",
+        "Some unintended uses have harmful impacts on society, the economy, or culture",
+        "Computing innovations have often had unintended BENEFICIAL effects by leading to advances in other fields",
+        "Responsible programmers TRY to consider unintended uses and potential beneficial and harmful effects",
+        "It is NOT POSSIBLE for a programmer to consider ALL ways a computing innovation can be used",
+        "Rapid sharing or running a program with large numbers of users can result in significant impacts beyond the programmer's intended purpose or control"
+      ]
+    }
+  ]
 }

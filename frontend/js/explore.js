@@ -6,6 +6,12 @@
 
 (function initExplorePage() {
 
+  // --- Course name map ---------------------------------------
+
+  const COURSE_NAMES = {
+    'ap-csp': 'AP Computer Science Principles',
+  };
+
   // --- Enrollment helpers ------------------------------------
 
   function getEnrolled() {
@@ -56,6 +62,7 @@
       <button class="explore-card__unenroll-btn" type="button">Unenroll</button>`;
     row.querySelector('.explore-card__unenroll-btn').addEventListener('click', () => {
       unenroll(id);
+      window.fwShowToast?.(`Unenrolled from ${COURSE_NAMES[id] || id}`);
       renderUnenrolled(row, id);
     });
   }
@@ -64,6 +71,7 @@
     row.innerHTML = `<button class="explore-card__enroll-btn btn btn--primary" type="button">Enroll</button>`;
     row.querySelector('.explore-card__enroll-btn').addEventListener('click', () => {
       enroll(id);
+      window.fwShowToast?.(`Enrolled in ${COURSE_NAMES[id] || id}`);
       renderEnrolled(row, id);
     });
   }

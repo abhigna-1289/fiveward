@@ -2,5 +2,157 @@
   "unit": 3,
   "topic": "3.18",
   "title": "Undecidable Problems",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "The Limits of Computation"
+    },
+    {
+      "type": "paragraph",
+      "text": "Topic 3.17 showed that some problems cannot be solved in a REASONABLE amount of time — the algorithm exists but is too slow for large inputs. Topic 3.18 goes further: some problems cannot be solved CORRECTLY for all inputs by ANY algorithm, no matter how much time you give it. These are called undecidable problems. This is not a limitation of current technology — it is a fundamental, mathematically proven boundary of what computation can do."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Big Idea",
+      "text": "There exist problems that computers cannot solve, and even when a computer can solve a problem, it may not be able to do so in a reasonable amount of time. Topic 3.18 addresses the first part: problems that computers CANNOT solve at all — not slow, not impractical, but mathematically impossible."
+    },
+    {
+      "type": "heading",
+      "text": "Decidable Problems"
+    },
+    {
+      "type": "keyterm",
+      "term": "Decidable Problem",
+      "definition": "A decision problem for which an algorithm can be written to produce a correct output for all inputs. Example: Is the number even?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most problems we encounter in computing are decidable. A decidable problem is one where we can write an algorithm that always produces a correct yes or no answer for every possible input — no matter what input you give it, the algorithm terminates with the right answer."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Decidable Problem", "Algorithm That Always Works", "Why It Is Decidable"],
+      "rows": [
+        ["Is this number even?", "number MOD 2 = 0 → true if even, false if odd", "Always terminates with correct answer for any integer"],
+        ["Is this list sorted in ascending order?", "Check each adjacent pair — if any is out of order, return false; if all pass, return true", "Always terminates with correct answer for any list"],
+        ["Is this value in this list?", "Linear search — check every element, return true if found, false if not", "Always terminates with correct answer for any list and any target value"],
+        ["Is this string a palindrome?", "Compare first and last characters, work inward — return false if any mismatch, true if all match", "Always terminates with correct answer for any string"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Undecidable Problems"
+    },
+    {
+      "type": "keyterm",
+      "term": "Undecidable Problem",
+      "definition": "A problem for which no algorithm can be constructed that is always capable of providing a correct yes-or-no answer. An undecidable problem may have some instances with an algorithmic solution, but no single algorithm can solve all instances."
+    },
+    {
+      "type": "paragraph",
+      "text": "An undecidable problem is NOT just a hard problem. It is NOT just a slow problem. It is a problem for which mathematicians have PROVEN that no algorithm can EVER exist that always gives a correct answer for all possible inputs. This proof is mathematical — it is not a statement about current technology or computing power, and no future computer or technology can change it."
+    },
+    {
+      "type": "heading",
+      "text": "The Halting Problem: The Classic Example"
+    },
+    {
+      "type": "paragraph",
+      "text": "The most famous undecidable problem is the Halting Problem. It asks: given any program and any input to that program, will the program eventually stop running (halt), or will it run forever (enter an infinite loop)? This seems like a question a computer should be able to answer by analyzing the code. Alan Turing proved in 1936 that no algorithm can correctly answer this question for all possible programs and inputs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Question", "Decidable?", "Reason"],
+      "rows": [
+        ["Is this number even?", "Yes — decidable", "number MOD 2 = 0 always gives correct answer for any integer"],
+        ["Is this list sorted?", "Yes — decidable", "Checking adjacent pairs always gives correct answer for any list"],
+        ["Will THIS specific simple program halt?", "Sometimes — for specific easy cases", "We can often tell by inspection for simple programs — but this is solving SPECIFIC instances, not the general problem"],
+        ["Will ANY given program halt for ANY given input?", "No — undecidable", "Turing proved no algorithm can always correctly answer this for all programs and inputs"],
+        ["Does this program produce correct output for all inputs?", "No — undecidable", "Proving correctness of arbitrary programs requires solving the Halting Problem as a subproblem"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "A Critical Nuance: Some Instances May Be Solvable"
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Decidable vs Undecidable Problems",
+      "definition": "Decidable: an algorithm exists that always produces a correct yes/no answer for all inputs.\nUndecidable: no algorithm can always produce a correct yes/no answer for all inputs. Some instances may be solvable but not all."
+    },
+    {
+      "type": "paragraph",
+      "text": "An undecidable problem may have some instances that have an algorithmic solution, but there is no algorithmic solution that could solve ALL instances of the problem. This is one of the most important and commonly misunderstood nuances about undecidability. 'Undecidable' does NOT mean 'no instance can ever be solved.' It means 'no SINGLE GENERAL algorithm can solve ALL instances.'"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Situation", "Solvable?", "What This Shows"],
+      "rows": [
+        ["Does this program halt? (program: DISPLAY 'hello')", "Yes — obviously halts immediately", "This specific INSTANCE is easy — we can tell by inspection"],
+        ["Does this program halt? (program: REPEAT UNTIL(false) { })", "Yes — obviously never halts", "This specific INSTANCE is easy — clearly an infinite loop"],
+        ["Does this program halt? (program: complex algorithm with loops)", "Often unclear — may or may not halt", "This is the hard INSTANCE where analysis breaks down"],
+        ["Does ANY arbitrary program halt for ANY arbitrary input?", "No — undecidable", "No SINGLE algorithm can correctly answer ALL of these instances — the general problem is undecidable"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Undecidable means no single algorithm can handle ALL instances. Some specific instances of an undecidable problem may be trivially solvable — we can easily tell that 'DISPLAY hello' halts. The undecidability means we cannot write ONE algorithm that correctly handles every possible program as input. Some inputs will always defeat any algorithm we could write."
+    },
+    {
+      "type": "heading",
+      "text": "Undecidability vs Unreasonable Running Time"
+    },
+    {
+      "type": "paragraph",
+      "text": "Students frequently confuse undecidable problems with problems that have unreasonable running time. These are fundamentally different concepts and must not be confused on the exam."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type of Limitation", "What It Means", "Algorithm Exists?", "Can More Power Help?", "Example"],
+      "rows": [
+        ["Unreasonable running time", "An algorithm EXISTS that gives correct answers — it just takes too long for large inputs (exponential or factorial growth)", "YES — the algorithm exists but is too slow", "Somewhat — faster hardware handles slightly larger inputs but cannot overcome the fundamental growth rate", "Traveling Salesman Problem — exact solution exists but takes factorial time"],
+        ["Undecidable problem", "NO algorithm can EVER give a correct yes/no answer for ALL inputs — not a matter of speed at all", "NO — proven mathematically that no such algorithm can exist", "No — this is a mathematical impossibility, not a hardware limitation", "Halting Problem — proven by Turing that no algorithm can always correctly determine if any program halts"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students often think undecidable problems will be solved by more powerful computers. This is WRONG. Undecidability is a mathematical property — proven by mathematical logic, not dependent on hardware. A quantum computer, a hypothetical infinitely fast computer, or any future technology cannot solve an undecidable problem for all inputs. It is mathematically impossible, not just currently impractical. This is completely different from unreasonable running time, where faster hardware DOES help (though never enough for large inputs)."
+    },
+    {
+      "type": "heading",
+      "text": "Scope: What Is and Is Not Tested"
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED includes an important exclusion statement: determining whether a given problem is undecidable is outside the scope of this course and the AP exam. You will NOT be asked to prove that a specific problem is undecidable. You WILL be asked to explain what undecidability means, describe the difference between decidable and undecidable problems, and understand the key nuance that some instances of an undecidable problem may have algorithmic solutions."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Three things the AP exam tests about undecidability: (1) A decidable problem has an algorithm that always produces correct yes/no for ALL inputs. (2) An undecidable problem has NO algorithm that can always produce correct yes/no for ALL inputs. (3) Some SPECIFIC INSTANCES of an undecidable problem may be solvable — the issue is that no SINGLE algorithm works for ALL instances. The Halting Problem is the classic example. Determining whether a given problem is undecidable is NOT tested."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A decidable problem is a decision problem for which an algorithm can always produce a correct yes/no answer for ALL inputs",
+        "An undecidable problem is one for which NO algorithm can be constructed that is always capable of providing a correct yes/no answer",
+        "An undecidable problem may have some SPECIFIC INSTANCES with algorithmic solutions — but no SINGLE algorithm can solve ALL instances",
+        "The Halting Problem (will a given program halt for a given input?) is the classic example of an undecidable problem",
+        "Undecidability is a mathematical property — no computer, however powerful, can solve an undecidable problem for all inputs",
+        "Undecidable ≠ unreasonable running time: unreasonable means the algorithm EXISTS but takes too long; undecidable means NO algorithm can exist",
+        "Faster computers, quantum computing, or future technology CANNOT solve undecidable problems — this is mathematical impossibility, not hardware limitation",
+        "Determining whether a given problem is undecidable is outside the scope of the course and AP exam"
+      ]
+    }
+  ]
 }

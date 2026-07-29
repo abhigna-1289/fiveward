@@ -2,5 +2,171 @@
   "unit": 4,
   "topic": "4.2",
   "title": "Fault Tolerance",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Why Fault Tolerance Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Complex systems fail. Hardware breaks, cables get cut, routers crash, and power outages occur — often at unexpected times and sometimes affecting multiple components simultaneously. The Internet was specifically engineered to handle these failures gracefully, continuing to function even when parts of it stop working. This property is called fault tolerance."
+    },
+    {
+      "type": "keyterm",
+      "term": "Fault Tolerance",
+      "definition": "The ability of a system to support failures and still continue to function. The Internet has been engineered to be fault-tolerant. Important because elements of complex systems fail at unexpected times, often in groups."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED specifically notes that elements of complex systems fail at unexpected times, often in groups. This is not an accident — real-world failures tend to cascade. A power outage knocks out not just one router but an entire data center. A cable cut takes down not one connection but hundreds. Fault tolerance is designed with these group failures in mind."
+    },
+    {
+      "type": "heading",
+      "text": "Redundancy: The Key to Fault Tolerance"
+    },
+    {
+      "type": "keyterm",
+      "term": "Redundancy",
+      "definition": "The inclusion of extra components that can be used to mitigate failure of a system if other components fail. One way to accomplish network redundancy is by having more than one path between any two connected devices."
+    },
+    {
+      "type": "paragraph",
+      "text": "Redundancy means building extra capacity into a system specifically so that if some components fail, the remaining components can take over. In a network, the primary form of redundancy is having more than one path between any two connected devices. If one path fails, data can be rerouted through another path."
+    },
+    {
+      "type": "keyterm",
+      "term": "How does redundancy make the Internet fault-tolerant?",
+      "definition": "If a particular device or connection on the Internet fails, subsequent data will be sent via a different route if one is available. The redundancy of routing options increases reliability and helps the Internet scale to more devices and people."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is where dynamic routing (from topic 4.1) and fault tolerance connect. Because routing is dynamic — not predetermined — when a connection fails, routers automatically find alternative paths. No human intervention is needed. The network detects the failure and reroutes around it."
+    },
+    {
+      "type": "heading",
+      "text": "Analyzing Network Diagrams for Fault Tolerance"
+    },
+    {
+      "type": "paragraph",
+      "text": "On the AP exam, you will frequently be shown network diagrams and asked whether the network is fault-tolerant, or asked to identify what happens when a specific connection or device fails. The key question is always: does every device still have at least one path to every other device after the failure?"
+    },
+    {
+      "type": "keyterm",
+      "term": "How do you determine if a network is fault-tolerant?",
+      "definition": "A network is fault-tolerant if every device has more than one path to every other device. If removing any single connection still leaves at least one path between all devices, the network is fault-tolerant. If any single failure can disconnect two devices, it is not fully fault-tolerant."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Network Scenario", "Fault-Tolerant?", "Why"],
+      "rows": [
+        ["Every device connects to every other device directly (full mesh)", "Yes — highly fault-tolerant", "Many connections would need to fail simultaneously to disconnect any two devices"],
+        ["Devices connected in a ring — each has exactly 2 connections", "Yes — partially fault-tolerant", "One connection can fail and data reroutes the long way around the ring"],
+        ["Devices connected in a line: A—B—C—D", "No — not fault-tolerant", "Breaking any single connection splits the network in two — some devices become unreachable"],
+        ["Star topology: all devices connect only to a central hub", "No — not fault-tolerant", "If the central hub fails, ALL devices lose connectivity to each other"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The key indicator of vulnerability is a single point of failure — a device or connection whose removal would disconnect part of the network. Any network that has a single point of failure is NOT fully fault-tolerant."
+    },
+    {
+      "type": "keyterm",
+      "term": "What makes a system NOT fault-tolerant?",
+      "definition": "A system is vulnerable to failure when there is only one path between two devices — if that single path fails, data cannot be rerouted. Adding redundant connections removes this single point of failure."
+    },
+    {
+      "type": "heading",
+      "text": "Working Through Network Diagrams"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP exam frequently presents network diagrams as tables or descriptions of connections. Here is how to analyze them systematically."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Device", "Connected To"],
+      "rows": [
+        ["A", "B, C"],
+        ["B", "A, D"],
+        ["C", "A, D"],
+        ["D", "B, C"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Is this network fault-tolerant? Check: can A reach D if one connection fails? Paths from A to D: A→B→D and A→C→D. If connection B-D fails: A can still reach D via A→C→D. If connection A-B fails: A can still reach D via A→C→D. If device B fails: A can still reach D via A→C→D. This network IS fault-tolerant — there are always at least two paths between any two devices."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Now consider this network:\n-- Device | Connected To\n-- A      | B\n-- B      | A, C\n-- C      | B, D\n-- D      | C\n\n-- Path from A to D: A → B → C → D (only ONE path)\n-- If connection B-C fails:\n--   A cannot reach C or D\n--   D cannot reach A or B\n-- The network SPLITS into two disconnected groups\n-- This network is NOT fault-tolerant\n-- It has multiple single points of failure (A-B, B-C, C-D)"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "To determine fault tolerance from a network diagram: (1) Find all paths between every pair of devices. (2) Remove one connection at a time. (3) After each removal, check if every device can still reach every other device. If YES → the removed connection was not a single point of failure. If NO → the network is NOT fully fault-tolerant. A fully fault-tolerant network has no single points of failure."
+    },
+    {
+      "type": "heading",
+      "text": "The Tradeoff: Redundancy Costs Resources"
+    },
+    {
+      "type": "keyterm",
+      "term": "What is the tradeoff of redundancy?",
+      "definition": "Redundancy within a system often requires additional resources (more connections, more routers, more cost) but provides the benefit of fault tolerance. It is a deliberate tradeoff between cost and reliability."
+    },
+    {
+      "type": "paragraph",
+      "text": "Nothing in engineering comes for free. More connections mean more cables, more routers, more maintenance, and more cost. A fully redundant network where every device connects to every other device would be enormously expensive and complex to build and maintain. Real networks make deliberate tradeoffs — they add enough redundancy to provide acceptable fault tolerance without making the system prohibitively expensive."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["More Redundancy", "Less Redundancy"],
+      "rows": [
+        ["More fault-tolerant — can survive more failures", "Less fault-tolerant — fewer failures can break connectivity"],
+        ["Higher cost — more cables, routers, and maintenance needed", "Lower cost — fewer connections to build and maintain"],
+        ["More complex — harder to manage and troubleshoot", "Simpler — easier to understand and manage"],
+        ["More scalable — easier to add new devices and paths", "Less scalable — single points of failure become harder to avoid as the network grows"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The Internet is engineered to be fault-tolerant through redundancy. This means the Internet has extra connections beyond the minimum needed — more than one path between many pairs of devices. When a connection fails, data is automatically rerouted. But this redundancy came at a cost: the physical infrastructure of the Internet (cables, routers, data centers) is enormously expensive to build and maintain."
+    },
+    {
+      "type": "heading",
+      "text": "Fault Tolerance in Practice: What Actually Happens"
+    },
+    {
+      "type": "paragraph",
+      "text": "When a connection or device on the Internet fails in practice, the following sequence occurs: routers detect that a connection has stopped responding, they update their routing tables to no longer use that connection, subsequent packets are sent via alternative paths if available. All of this happens automatically within seconds — users typically experience only a brief interruption or no interruption at all, depending on how much redundancy exists in that part of the network."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Fault tolerance does NOT guarantee that no data is ever lost. If a packet is in transit when a connection fails, that packet may not arrive. Fault tolerance means SUBSEQUENT data can be rerouted — packets already lost cannot be recovered by the network topology alone. The receiving device may need to request retransmission of missing packets."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Fault tolerance is the ability of a system to support failures and still continue to function",
+        "The Internet has been engineered to be fault-tolerant with abstractions for routing and transmitting data",
+        "Fault tolerance is important because elements of complex systems fail at unexpected times, often in groups",
+        "Redundancy is the inclusion of extra components to mitigate failure if other components fail",
+        "One way to accomplish network redundancy is by having MORE THAN ONE PATH between any two connected devices",
+        "If a particular device or connection fails, subsequent data will be sent via a different route IF one is available",
+        "A network is fault-tolerant if every device has more than one path to every other device",
+        "A single point of failure — a connection or device whose removal disconnects part of the network — means the network is NOT fully fault-tolerant",
+        "Redundancy within a system often requires additional resources but provides the benefit of fault tolerance",
+        "The tradeoff of redundancy: more fault tolerance = more cost and complexity"
+      ]
+    }
+  ]
 }

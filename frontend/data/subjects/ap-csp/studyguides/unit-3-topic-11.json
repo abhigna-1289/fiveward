@@ -2,5 +2,152 @@
   "unit": 3,
   "topic": "3.11",
   "title": "Binary Search",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "A More Efficient Search"
+    },
+    {
+      "type": "paragraph",
+      "text": "Linear search works correctly on any list but checks elements one by one — for a list of 1,000 elements in the worst case it needs 1,000 comparisons. Binary search is a dramatically more efficient algorithm. For that same 1,000-element list, binary search needs at most 10 comparisons. The tradeoff: binary search only works on sorted data."
+    },
+    {
+      "type": "keyterm",
+      "term": "Binary Search",
+      "definition": "An algorithm that starts at the middle of a sorted data set and eliminates half of the remaining data with each step. Repeats until the desired value is found or all elements have been eliminated. Data must be in sorted order to use binary search."
+    },
+    {
+      "type": "heading",
+      "text": "How Binary Search Works — Step by Step"
+    },
+    {
+      "type": "paragraph",
+      "text": "Binary search works by repeatedly halving the search space. At each step: look at the middle element of the current search range. If it equals the target, the search is done. If the target is less than the middle element, eliminate the upper half — the target must be in the lower half. If the target is greater, eliminate the lower half. Repeat on the remaining half until found or no elements remain."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Binary search on sorted list [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]\n-- Indices:                        1  2  3   4   5   6   7   8   9  10\n-- Target: 23\n\nStep 1: Full range — indices 1 to 10\n        Middle element: index 5 or 6 → use index 5 → value 16\n        23 > 16 → target is in upper half → eliminate indices 1-5\n        Remaining: [23, 38, 56, 72, 91] (indices 6-10)\n\nStep 2: Range — indices 6 to 10\n        Middle element: index 8 → value 56\n        23 < 56 → target is in lower half → eliminate indices 8-10\n        Remaining: [23, 38] (indices 6-7)\n\nStep 3: Range — indices 6 to 7\n        Middle element: index 6 → value 23\n        23 = 23 → TARGET FOUND!\n\n-- Found in 3 steps out of 10 elements\n-- Linear search would need up to 6 steps to find 23"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Step", "Search Range", "Middle Element", "Target vs Middle", "Action"],
+      "rows": [
+        ["Step 1", "Indices 1–10 (all elements)", "Index 5: value 16", "23 > 16", "Eliminate lower half — search indices 6–10"],
+        ["Step 2", "Indices 6–10 (5 elements)", "Index 8: value 56", "23 < 56", "Eliminate upper half — search indices 6–7"],
+        ["Step 3", "Indices 6–7 (2 elements)", "Index 6: value 23", "23 = 23", "TARGET FOUND — search complete"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The Critical Requirement: Sorted Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Linear Search vs Binary Search",
+      "definition": "Linear search: checks each element one by one, works on unsorted data, less efficient for large data sets.\nBinary search: eliminates half the data each step, requires sorted data, often more efficient than linear search on sorted data."
+    },
+    {
+      "type": "paragraph",
+      "text": "Data must be in sorted order to use the binary search algorithm. This is a hard requirement — not a recommendation. Binary search relies on the fact that if the target is less than the middle element, it MUST be in the lower half (because the list is sorted). If the list is not sorted, this reasoning breaks down completely and binary search will produce incorrect results."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- WHY SORTED ORDER IS REQUIRED:\n-- Consider unsorted list: [38, 5, 72, 12, 23, 91, 2, 56, 16, 8]\n-- Target: 23\n\nStep 1: Middle element (index 5) = 23\n        By luck, found immediately!\n\n-- BUT if target were 5:\nStep 1: Middle = 23. 5 < 23 → search lower half [38, 5, 72, 12]\nStep 2: Middle = 72. 5 < 72 → search lower half [38, 5]\nStep 3: Middle = 38. 5 < 38 → search lower half... [5]?\n        Actually depends on exact implementation.\n-- The algorithm MIGHT find 5, or might eliminate it.\n-- Binary search on unsorted data gives UNRELIABLE results.\n-- The algorithm assumes sorted order — violate that and results are wrong."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Binary search cannot be used on an unsorted list without first sorting it. This is directly tested on the AP exam — 'which search algorithm can be applied to an unsorted list?' Answer: ONLY linear search. To use binary search on an unsorted list, you must sort it first. After sorting, binary search can be applied."
+    },
+    {
+      "type": "heading",
+      "text": "How Much More Efficient Is Binary Search?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Binary search eliminates half the data with each step. This means for a list of n elements, binary search needs at most log₂(n) steps. Compare this to linear search which may need up to n steps in the worst case. The difference becomes enormous for large data sets."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["List Size (n)", "Linear Search (worst case)", "Binary Search (worst case)", "How Many Times Faster"],
+      "rows": [
+        ["8 elements", "8 steps", "3 steps (log₂8=3)", "About 2.7× faster"],
+        ["16 elements", "16 steps", "4 steps (log₂16=4)", "4× faster"],
+        ["64 elements", "64 steps", "6 steps (log₂64=6)", "About 10× faster"],
+        ["1,024 elements", "1,024 steps", "10 steps (log₂1024=10)", "About 100× faster"],
+        ["1,000,000 elements", "1,000,000 steps", "20 steps (log₂≈1,000,000=20)", "50,000× faster"],
+        ["1,000,000,000 elements", "1,000,000,000 steps", "30 steps", "33,000,000× faster"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Binary search is often more efficient than sequential/linear search when applied to sorted data. The efficiency advantage of binary search grows dramatically as the list gets larger. For small lists the difference is negligible — for very large lists binary search is orders of magnitude faster. This is why sorting data first and then using binary search is often worth it even when accounting for sorting time."
+    },
+    {
+      "type": "heading",
+      "text": "Determining the Number of Iterations"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP exam may ask you to determine the number of iterations binary search needs to find a value or confirm its absence. The maximum number of iterations is log₂(n) rounded up — but you can also trace through the steps manually for small lists."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scenario", "List", "Target", "Steps Needed"],
+      "rows": [
+        ["Found immediately", "[1, 3, 5, 7, 9] — middle is 5", "5", "1 step"],
+        ["Found after 2 steps", "[1, 3, 5, 7, 9] — middle is 5, then search [7,9], middle is 7", "7", "2 steps"],
+        ["Not found", "[1, 3, 5, 7, 9] — target 4 eliminated after eliminating all ranges", "4", "3 steps to confirm absent"],
+        ["8 elements", "Maximum possible", "Any", "At most 3 steps (log₂8=3)"],
+        ["1,024 elements", "Maximum possible", "Any", "At most 10 steps (log₂1024=10)"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "What Happens When the Target Is Not Found"
+    },
+    {
+      "type": "paragraph",
+      "text": "Binary search terminates in two ways: either the target is found (when the middle element equals the target), or all elements have been eliminated (when the search range becomes empty). If the target is not in the list, binary search will keep halving the range until there is nothing left — at that point it confirms the target is absent."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Binary search for target NOT in list:\n-- Sorted list: [10, 20, 30, 40, 50]\n-- Target: 25\n\nStep 1: Range [10,20,30,40,50]. Middle=30. 25<30 → search [10,20]\nStep 2: Range [10,20]. Middle=10 or 20 → say 10. 25>10 → search [20]\nStep 3: Range [20]. Middle=20. 25≠20, 25>20 → search upper half → empty\n\n-- No elements remain → target 25 is NOT in the list\n-- Binary search terminates after eliminating all elements"
+    },
+    {
+      "type": "heading",
+      "text": "Scope Note: Implementations Are Out of Scope"
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED explicitly states: specific implementations of binary search are outside the scope of the course and the AP exam. You need to understand HOW binary search works conceptually — what it does at each step and why it requires sorted data — but you do NOT need to write binary search code from scratch on the exam."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The AP exam tests three things about binary search: (1) It starts at the middle and eliminates half the data each step. (2) It requires sorted data. (3) It is often more efficient than linear search on sorted data. You may also be asked to determine how many iterations are needed for a given list size. You will NOT be asked to write binary search code."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Binary search starts at the MIDDLE of a sorted data set and eliminates half of the remaining data with each step",
+        "Binary search repeats until the desired value is found OR all elements have been eliminated",
+        "Data MUST be in sorted order to use binary search — it cannot be used on unsorted data without sorting first",
+        "Binary search is often more efficient than sequential/linear search when applied to sorted data",
+        "For n elements: binary search needs at most log₂(n) steps; linear search needs up to n steps",
+        "For 1,024 elements: binary search needs at most 10 steps; linear search needs up to 1,024 steps",
+        "Linear search: checks each element one by one, works on ANY list — sorted or unsorted",
+        "Binary search: eliminates half each step, requires sorted data, much faster for large sorted lists",
+        "Specific implementations of binary search are outside the scope of the course and AP exam — understand the concept, not the code"
+      ]
+    }
+  ]
 }

@@ -2,5 +2,158 @@
   "unit": 2,
   "topic": "2.4",
   "title": "Using Programs with Data",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Programs as Tools for Understanding Data"
+    },
+    {
+      "type": "paragraph",
+      "text": "Raw data on its own tells us very little. Programs can be used to process data to acquire information — turning large collections of numbers, text, or records into meaningful insights and knowledge. This is one of the most powerful capabilities of computing: the ability to analyze data at a scale impossible for humans to do manually."
+    },
+    {
+      "type": "paragraph",
+      "text": "Programs can search, filter, transform, combine, compare, and visualize data sets to discover information and create new knowledge. Different tools are appropriate for different tasks — the key is knowing which process to apply to answer a given question."
+    },
+    {
+      "type": "heading",
+      "text": "Four Ways to Extract or Modify Data Using a Program"
+    },
+    {
+      "type": "keyterm",
+      "term": "Four Ways to Extract or Modify Data Using a Program",
+      "definition": "1. Transforming — applying an operation to every element (e.g. doubling every number in a list)\n2. Filtering — keeping only elements that meet a condition (e.g. keeping only positive numbers)\n3. Combining or comparing — such as adding up a list or finding the highest value\n4. Visualizing — representing a data set through a chart, graph, or other visual"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Process", "What It Does", "Example"],
+      "rows": [
+        ["Transforming", "Applies an operation to every element in the data set", "Doubling every value in a list of revenue figures to project doubled sales; converting all temperatures from Celsius to Fahrenheit"],
+        ["Filtering", "Keeps only the elements that meet a specified condition, removing everything else", "Keeping only students with a GPA above 3.5 from a student records database; keeping only transactions above $1,000"],
+        ["Combining or comparing", "Combines multiple values or compares values to find relationships or summaries", "Adding up all sales figures to find total revenue; finding the student with the highest GPA; calculating the average temperature"],
+        ["Visualizing", "Represents the data through a chart, graph, diagram, or other visual format", "Creating a bar chart of monthly sales; a line graph of temperature over time; a map showing where users are located"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Know all four processes and be able to identify which one is being used in a scenario. Filtering = keeping only what meets a condition. Transforming = applying an operation to every element. Combining/comparing = finding a summary or comparing values. Visualizing = making a chart or graph."
+    },
+    {
+      "type": "heading",
+      "text": "Tools for Working with Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Tools for Working with Data",
+      "definition": "Search tools efficiently find information. Data filtering systems find information and recognize patterns. Spreadsheets help organize and find trends. Tables, diagrams, and visual tools communicate insight and knowledge gained from data."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Tool", "What It Does Best", "Example"],
+      "rows": [
+        ["Search tools", "Efficiently finding specific information within large data sets", "Searching a database for all students with last name 'Smith'"],
+        ["Data filtering systems", "Finding information that meets specific criteria and recognizing patterns in data", "Filtering sales records to find all orders from a specific region"],
+        ["Spreadsheets", "Organizing data into rows and columns, calculating totals, finding trends", "Tracking monthly expenses and calculating yearly totals with automatic formulas"],
+        ["Tables, diagrams, visual tools", "Communicating insight and knowledge gained from data to other people", "A pie chart showing market share, a line graph showing growth over time"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Using Programs Iteratively to Gain Insight"
+    },
+    {
+      "type": "keyterm",
+      "term": "How do programs gain insight from data?",
+      "definition": "Programs are used in an iterative and interactive way. Programmers can filter, clean, combine, cluster, classify, and transform data. Patterns can emerge when data are transformed using programs."
+    },
+    {
+      "type": "keyterm",
+      "term": "What does it mean to process data iteratively?",
+      "definition": "Programs are used in an iterative and interactive way — meaning the programmer runs the program, examines the output, refines the approach, and runs it again. This cycle allows users to gradually gain deeper insight and knowledge from the data."
+    },
+    {
+      "type": "paragraph",
+      "text": "The iterative process of working with data looks like this: a programmer writes a program to process a data set, runs it, examines the results, notices something interesting or unexpected, refines the program to investigate further, and runs it again. Each cycle reveals more about the data."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Iteration", "What the Programmer Does", "What They Discover"],
+      "rows": [
+        ["First run", "Calculate average test score across all students", "Average is 74 — lower than expected"],
+        ["Second run", "Filter by grade level and calculate average for each", "9th graders average 68; 12th graders average 82 — a significant gap"],
+        ["Third run", "Filter by both grade level and school district", "The gap is larger in certain districts — possibly related to resources"],
+        ["Fourth run", "Combine with school funding data and compare", "Schools with lower per-student funding show larger grade-level gaps — a pattern emerges"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Patterns can emerge when data are transformed using programs. A single run of a program may not reveal the most interesting insight — the iterative process of refining the analysis is what allows deeper knowledge to be extracted from data."
+    },
+    {
+      "type": "heading",
+      "text": "Combining, Clustering, and Classifying Data"
+    },
+    {
+      "type": "paragraph",
+      "text": "Combining data sources, clustering data, and classifying data are all parts of the process of using programs to gain insight and knowledge from data."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Process", "What It Does", "Example"],
+      "rows": [
+        ["Combining data sources", "Merging data from multiple sources into one data set for analysis", "Combining sales data, customer location data, and weather data to understand how weather affects purchasing"],
+        ["Clustering data", "Grouping data points that are similar to each other into clusters", "Grouping customers by purchasing behavior to identify distinct customer types for targeted marketing"],
+        ["Classifying data", "Assigning data points to predefined categories based on their characteristics", "Classifying emails as spam or not spam based on their content and sender"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Insight and knowledge can also be obtained from translating and transforming digitally represented information. For example, translating text from one language to another, converting audio to text, or transforming raw sensor data into human-readable measurements are all ways programs create new knowledge from existing data."
+    },
+    {
+      "type": "heading",
+      "text": "Putting It Together: A Full Data Analysis Example"
+    },
+    {
+      "type": "paragraph",
+      "text": "A city government wants to reduce traffic congestion. Here is how a programmer might use programs with data to gain insight:"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "COMBINE: Merge traffic camera data, GPS speed data, and public transit ridership data into one data set",
+        "FILTER: Keep only data from peak hours (7–9 AM and 4–7 PM) when congestion is worst",
+        "TRANSFORM: Convert raw vehicle counts into congestion index scores for each intersection",
+        "COMPARE: Find the top 10 most congested intersections during peak hours",
+        "VISUALIZE: Create a heat map of the city showing congestion levels at different times",
+        "ITERATE: Notice that congestion spikes on rainy days → add weather data → discover that bus ridership drops 30% on rainy days, increasing car traffic"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "No single step above would reveal the weather-congestion connection on its own. It is the iterative, multi-step process of combining, filtering, transforming, and analyzing that allows meaningful patterns to emerge from the data."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Programs can process data to acquire information",
+        "Four ways to extract or modify data: transforming (apply to every element), filtering (keep only what meets a condition), combining or comparing (find summaries or relationships), visualizing (create charts/graphs)",
+        "Search tools find information efficiently; filtering systems find patterns; spreadsheets organize and find trends; visual tools communicate insights",
+        "Programs are used in an iterative and interactive way — run, examine, refine, repeat",
+        "Patterns can emerge when data are transformed using programs",
+        "Combining data sources, clustering data, and classifying data are parts of gaining insight from data",
+        "Insight can be obtained from translating and transforming digitally represented information"
+      ]
+    }
+  ]
 }

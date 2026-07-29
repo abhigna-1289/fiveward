@@ -38,35 +38,49 @@
   }
 
   // =========================================================
-  // SIDEBAR NAVIGATION
+  // SIDEBAR NAVIGATION (scroll-based TOC)
   // =========================================================
 
   const navItems = document.querySelectorAll('.settings-nav-item');
   const sections = document.querySelectorAll('.settings-section');
 
-  function showSection(id) {
-    sections.forEach(s => { s.hidden = s.id !== id; });
-    navItems.forEach(btn => {
-      const matches = ('section' + btn.dataset.section.charAt(0).toUpperCase() + btn.dataset.section.slice(1)) === id;
-      btn.classList.toggle('active', matches);
-    });
+  function sectionIdForBtn(btn) {
+    return 'section' + btn.dataset.section.charAt(0).toUpperCase() + btn.dataset.section.slice(1);
+  }
+
+  function setActiveNav(id) {
+    navItems.forEach(btn => btn.classList.toggle('active', sectionIdForBtn(btn) === id));
   }
 
   navItems.forEach(btn => {
     btn.addEventListener('click', () => {
-      const sectionId = 'section' + btn.dataset.section.charAt(0).toUpperCase() + btn.dataset.section.slice(1);
-      showSection(sectionId);
+      const target = document.getElementById(sectionIdForBtn(btn));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveNav(sectionIdForBtn(btn));
       history.replaceState(null, '', '#' + btn.dataset.section);
     });
   });
 
+  // Update active highlight as sections scroll into view
+  const _io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActiveNav(entry.target.id);
+    });
+  }, { rootMargin: '-100px 0px -55% 0px', threshold: 0 });
+  sections.forEach(s => _io.observe(s));
+
+  // Scroll to hashed section on load
   function applyHash() {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
       const target = document.getElementById('section' + hash.charAt(0).toUpperCase() + hash.slice(1));
-      if (target) { showSection(target.id); return; }
+      if (target) {
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+        setActiveNav(target.id);
+        return;
+      }
     }
-    showSection('sectionAccount');
+    setActiveNav('sectionAccount');
   }
   applyHash();
   window.addEventListener('hashchange', applyHash);

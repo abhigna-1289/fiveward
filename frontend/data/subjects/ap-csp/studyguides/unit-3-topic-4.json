@@ -1,6 +1,175 @@
 {
   "unit": 3,
   "topic": "3.4",
-  "title": "Strings",
-  "content": []
+  "title": "String Operations",
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a String?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Strings are one of the most fundamental data types in any program that interacts with people. Names, messages, labels, addresses, usernames — virtually everything a user sees or types is stored and manipulated as a string. Topic 3.4 focuses on two key string operations: concatenation and substrings."
+    },
+    {
+      "type": "keyterm",
+      "term": "String",
+      "definition": "An ordered sequence of characters. String concatenation joins two or more strings end-to-end to make a new string. A substring is part of an existing string."
+    },
+    {
+      "type": "paragraph",
+      "text": "A string is an ORDERED sequence — the order of characters matters. 'abc' and 'cba' contain exactly the same characters but they are completely different strings because the order differs. Every character in a string has a position, and that position is part of the string's identity."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["String", "Characters It Contains", "Length", "Notes"],
+      "rows": [
+        ["\"Hello\"", "H, e, l, l, o", "5", "Two l's — order matters"],
+        ["\"AP CSP\"", "A, P, (space), C, S, P", "6", "The space is a character too"],
+        ["\"123\"", "1, 2, 3 as TEXT characters", "3", "NOT the number 123 — cannot do arithmetic with it"],
+        ["\"\"", "No characters", "0", "Empty string — valid, has length 0"],
+        ["\" \"", "One space character", "1", "A string containing only a space — not empty"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "A string containing digits like \"123\" is NOT the same as the number 123. The string \"123\" is text — characters one, two, and three. You cannot perform arithmetic on it. The number 123 is a numeric value you can add, subtract, and multiply. They look similar but are completely different types."
+    },
+    {
+      "type": "heading",
+      "text": "String Concatenation"
+    },
+    {
+      "type": "keyterm",
+      "term": "String Concatenation",
+      "definition": "Joins together two or more strings end-to-end to make a new string."
+    },
+    {
+      "type": "paragraph",
+      "text": "String concatenation is the operation of joining strings together end-to-end. In AP CSP pseudocode, the concat() procedure is used to concatenate strings. The result is a brand new string containing all the characters of the first string followed immediately by all the characters of the second string. Concatenation does not modify the original strings — it creates a new one."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Basic concatenation:\nfirst ← \"Hello\"\nsecond ← \" World\"\nresult ← concat(first, second)\nDISPLAY result    -- displays \"Hello World\"\n-- Note: the space comes from second beginning with a space\n-- The two strings are joined end-to-end: 'Hello' + ' World'\n\n-- Without the space:\nresult2 ← concat(\"Hello\", \"World\")\nDISPLAY result2   -- displays \"HelloWorld\" (no space!)\n\n-- Concatenating three strings using nested concat:\nresult3 ← concat(concat(\"AP\", \" \"), \"CSP\")\nDISPLAY result3   -- displays \"AP CSP\"\n-- Inner concat: \"AP\" + \" \" = \"AP \"\n-- Outer concat: \"AP \" + \"CSP\" = \"AP CSP\""
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Spaces matter in concatenation. concat(\"Hello\", \"World\") gives \"HelloWorld\" with no space. concat(\"Hello\", \" World\") gives \"Hello World\" because the space is the first character of the second string. Always check carefully where spaces are."
+    },
+    {
+      "type": "heading",
+      "text": "Concatenation Is NOT Arithmetic"
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most commonly tested string concepts on the AP exam is the distinction between string concatenation and numeric addition. When you concatenate strings, the characters are joined end-to-end — the values are NOT added together mathematically."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operation", "Expression", "Result", "Why"],
+      "rows": [
+        ["Arithmetic addition", "100 + 200", "300", "100 and 200 are NUMBERS — they are added mathematically"],
+        ["String concatenation", "concat(\"100\", \"200\")", "\"100200\"", "\"100\" and \"200\" are STRINGS — their characters are joined end-to-end"],
+        ["Concatenation with space", "concat(\"100\", \" 200\")", "\"100 200\"", "A space character is inserted between the two strings"],
+        ["Arithmetic in string context", "concat(\"Score: \", \"95\")", "\"Score: 95\"", "\"95\" is a string — it is joined to \"Score: \", not added"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- THIS IS A CLASSIC EXAM TRAP:\nresult ← concat(\"100\", \"200\")\nDISPLAY result    -- displays \"100200\" NOT 300!\n-- String concatenation JOINS characters end-to-end\n-- It does NOT perform arithmetic\n\n-- Compare:\nnumResult ← 100 + 200\nDISPLAY numResult -- displays 300\n-- 100 and 200 are numbers → arithmetic addition → 300\n\n-- Building a message with a number:\nscore ← 95\nDISPLAY concat(\"Your score is: \", \"95\")\n-- displays: \"Your score is: 95\""
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "concat(\"100\", \"200\") = \"100200\" NOT 300. This is the single most commonly tested string concept. String concatenation always joins characters end-to-end regardless of what those characters look like. Numbers inside quotes are strings, not numbers."
+    },
+    {
+      "type": "heading",
+      "text": "Substrings"
+    },
+    {
+      "type": "keyterm",
+      "term": "Substring",
+      "definition": "A part of an existing string."
+    },
+    {
+      "type": "paragraph",
+      "text": "A substring is any consecutive portion of an existing string. It can be a single character, several characters, or even the entire string itself. The key requirement is that the characters must be consecutive — you cannot skip characters and call it a substring."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Original String", "Substring", "Valid?", "Position"],
+      "rows": [
+        ["\"Computer Science\"", "\"Computer\"", "Yes", "Characters 1–8"],
+        ["\"Computer Science\"", "\"Science\"", "Yes", "Characters 10–16"],
+        ["\"Computer Science\"", "\"puter Sc\"", "Yes", "Characters 4–11 — any consecutive portion"],
+        ["\"Computer Science\"", "\"Computer Science\"", "Yes", "The whole string is a substring of itself"],
+        ["\"Computer Science\"", "\"C\"", "Yes", "A single character is a valid substring"],
+        ["\"Computer Science\"", "\"\"", "Yes", "The empty string is a substring of every string"],
+        ["\"Computer Science\"", "\"Cmptr\"", "No", "Skips characters — not consecutive, NOT a substring"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Three important substring facts: (1) A single character is a valid substring. (2) The entire original string is a valid substring of itself. (3) The empty string is a valid substring of any string. The only requirement for a substring is that its characters appear consecutively in the original."
+    },
+    {
+      "type": "heading",
+      "text": "Practical Uses of String Operations"
+    },
+    {
+      "type": "paragraph",
+      "text": "String operations are used constantly in real programs. Concatenation builds messages, labels, and formatted output. Substring checking determines whether a search term appears in a block of text. Together these operations enable programs to process and display text meaningfully."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Real Task", "Operation", "Example"],
+      "rows": [
+        ["Build a full name from first and last", "Concatenation", "concat(concat(firstName, \" \"), lastName) → \"Alice Smith\""],
+        ["Build a personalized greeting", "Concatenation", "concat(\"Welcome back, \", userName) → \"Welcome back, Alice\""],
+        ["Build a sentence with a score", "Concatenation", "concat(\"You scored \", concat(scoreStr, \" points\")) → \"You scored 95 points\""],
+        ["Check if a word appears in text", "Substring check", "Is \"rain\" a substring of \"The rain in Spain\"? Yes."],
+        ["Extract a file extension", "Substring", "Last 3 characters of \"photo.jpg\" → \"jpg\""],
+        ["Extract part of a date string", "Substring", "First 4 characters of \"2024-07-04\" → \"2024\" (the year)"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Concatenation Expressions"
+    },
+    {
+      "type": "paragraph",
+      "text": "The AP exam frequently asks you to trace the result of concatenation expressions. Always work from the innermost call outward when concatenation calls are nested."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Trace these expressions step by step:\n\nword1 ← \"data\"\nword2 ← \"base\"\nresult ← concat(word1, word2)\nDISPLAY result    -- \"database\"\n\n-- Nested concatenation:\na ← \"AP\"\nb ← \" \"\nc ← \"CSP\"\nresult2 ← concat(a, concat(b, c))\n-- Step 1 (inner): concat(\" \", \"CSP\") = \" CSP\"\n-- Step 2 (outer): concat(\"AP\", \" CSP\") = \"AP CSP\"\nDISPLAY result2   -- \"AP CSP\"\n\n-- Concatenation with assignment result:\ngreeting ← concat(\"Hello, \", \"World\")\ngreeting ← concat(greeting, \"!\")\nDISPLAY greeting  -- \"Hello, World!\"\n-- First: greeting = \"Hello, World\"\n-- Second: greeting = concat(\"Hello, World\", \"!\") = \"Hello, World!\""
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A string is an ordered sequence of characters — order matters, spaces are characters, digits in quotes are text not numbers",
+        "String concatenation joins two or more strings end-to-end to make a new string — it does NOT perform arithmetic",
+        "concat(\"100\", \"200\") = \"100200\" as a string — NOT 300",
+        "Spaces matter in concatenation — always check exactly where spaces are in the strings being joined",
+        "A substring is a part of an existing string — any consecutive portion of the original",
+        "A single character is a valid substring",
+        "The entire original string is a valid substring of itself",
+        "The empty string is a valid substring of every string",
+        "Characters must be consecutive to form a substring — you cannot skip characters",
+        "For nested concat calls, evaluate from the innermost call outward"
+      ]
+    }
+  ]
 }

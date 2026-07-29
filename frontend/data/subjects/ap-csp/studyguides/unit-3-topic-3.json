@@ -2,5 +2,231 @@
   "unit": 3,
   "topic": "3.3",
   "title": "Mathematical Expressions",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is an Algorithm?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Topic 3.3 is where we begin building algorithms. Before diving into arithmetic, it is essential to understand what an algorithm is, how it can be expressed, and what the fundamental building blocks of every algorithm are. These concepts underlie everything in Unit 3."
+    },
+    {
+      "type": "keyterm",
+      "term": "Algorithm",
+      "definition": "A finite set of instructions that accomplishes a specific task. Every algorithm can be constructed using combinations of sequencing, selection, and iteration."
+    },
+    {
+      "type": "paragraph",
+      "text": "The word 'finite' is important — an algorithm must have a definite end. An infinite loop is not an algorithm because it never finishes. Every algorithm has a beginning, a sequence of steps, and an end."
+    },
+    {
+      "type": "keyterm",
+      "term": "Ways to Express an Algorithm",
+      "definition": "Algorithms can be expressed in natural language, diagrams, pseudocode, and visual or textual programming languages. Algorithms executed by programs are implemented using programming languages."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Way to Express", "Description", "Example of 'Find Average'"],
+      "rows": [
+        ["Natural language", "Written in plain human language as steps", "Step 1: Add all numbers. Step 2: Divide the sum by the count. Step 3: Return the result."],
+        ["Diagram / flowchart", "Visual representation of steps and decisions", "Boxes and arrows showing the flow from start to sum to divide to end"],
+        ["Pseudocode", "Structured code-like language not tied to any specific language", "sum ← 0; FOR EACH n IN list { sum ← sum + n }; RETURN sum / LENGTH(list)"],
+        ["Programming language", "Actual code in a real language like Python, Java, or AP CSP pseudocode", "Implemented as executable code on a computer"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The same algorithm can be expressed in many different ways — natural language, a diagram, pseudocode, or code — and it is still the same algorithm. The representation changes but the instructions and the result do not. On the AP exam you may be asked to trace pseudocode, read a diagram, or understand a natural language description — they all describe algorithms."
+    },
+    {
+      "type": "heading",
+      "text": "The Three Building Blocks of Every Algorithm"
+    },
+    {
+      "type": "keyterm",
+      "term": "Three Building Blocks of Every Algorithm",
+      "definition": "Every algorithm can be constructed using combinations of:\n1. Sequencing — executing steps in order\n2. Selection — choosing which steps to execute based on a condition\n3. Iteration — repeating steps"
+    },
+    {
+      "type": "keyterm",
+      "term": "Sequencing",
+      "definition": "The application of each step of an algorithm in the order in which the code statements are given. Sequential statements execute in the order they appear in the code segment."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Building Block", "What It Does", "In Code", "Example"],
+      "rows": [
+        ["Sequencing", "Executes each step in the order given — top to bottom", "Any sequential statements", "x ← 5 then y ← x + 3 then DISPLAY y"],
+        ["Selection", "Chooses which steps execute based on a condition", "IF and IF/ELSE statements", "IF(x > 0) { DISPLAY \"positive\" }"],
+        ["Iteration", "Repeats a block of steps", "REPEAT n TIMES and REPEAT UNTIL loops", "REPEAT 5 TIMES { DISPLAY \"hello\" }"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "This is one of the most fundamental facts in all of computing: every algorithm that has ever been written or ever will be written can be expressed using only these three building blocks. You do not need any other structures. Sequencing, selection, and iteration together are computationally complete."
+    },
+    {
+      "type": "heading",
+      "text": "Code Statements and Clarity"
+    },
+    {
+      "type": "keyterm",
+      "term": "Code Statement",
+      "definition": "A part of program code that expresses an action to be carried out. Clarity and readability are important considerations when expressing an algorithm in a programming language."
+    },
+    {
+      "type": "paragraph",
+      "text": "Clarity and readability are not just stylistic preferences — they are explicitly identified in the CED as important considerations when expressing an algorithm in a programming language. A correct algorithm that no one can read or maintain is less useful than one that is both correct and clear. This is why meaningful variable names, good structure, and comments matter."
+    },
+    {
+      "type": "heading",
+      "text": "Expressions"
+    },
+    {
+      "type": "keyterm",
+      "term": "Expression",
+      "definition": "Can consist of a value, a variable, an operator, or a procedure call that returns a value. Expressions are evaluated to produce a single value following a set order of operations defined by the programming language."
+    },
+    {
+      "type": "paragraph",
+      "text": "An expression is anything that evaluates to a single value. This includes simple values like 5, variables like x, operations like x + 3, or procedure calls like LENGTH(aList). No matter how complex the expression, it always reduces to one single value when evaluated."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Expression Type", "Example", "Evaluates To"],
+      "rows": [
+        ["Literal value", "5", "5"],
+        ["Variable", "x (where x is currently 10)", "10"],
+        ["Arithmetic operation", "x + 3 (where x = 10)", "13"],
+        ["Complex expression", "x * 2 + 1 (where x = 10)", "21"],
+        ["Procedure call", "LENGTH(aList) (where aList has 5 elements)", "5"],
+        ["Nested procedure call", "RANDOM(1, LENGTH(aList))", "A random integer from 1 to the list's length"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Arithmetic Operators"
+    },
+    {
+      "type": "keyterm",
+      "term": "Arithmetic Operators",
+      "definition": "Include addition (+), subtraction (-), multiplication (*), division (/), and modulus (MOD). The MOD operator returns the remainder when a is divided by b. Example: 17 MOD 5 = 2. MOD has the same precedence as * and /."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operator", "Operation", "Example", "Result", "Notes"],
+      "rows": [
+        ["+", "Addition", "8 + 5", "13", "Standard addition"],
+        ["-", "Subtraction", "8 - 5", "3", "Standard subtraction"],
+        ["*", "Multiplication", "8 * 5", "40", "Standard multiplication"],
+        ["/", "Division", "17 / 5", "3.4", "Produces exact decimal — NOT integer division"],
+        ["MOD", "Modulus — returns remainder", "17 MOD 5", "2", "17 = 3×5 + 2, so remainder is 2"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Division in AP CSP produces the EXACT decimal result — not truncated integer division. 17 / 5 = 3.4, not 3. This is different from many real programming languages where integer division truncates. Always compute the full decimal answer."
+    },
+    {
+      "type": "heading",
+      "text": "The MOD Operator in Depth"
+    },
+    {
+      "type": "paragraph",
+      "text": "The MOD operator is one of the most tested operators on the AP exam. a MOD b returns the remainder when a is divided by b. In AP CSP, a must be an integer ≥ 0 and b must be an integer > 0. MOD has the same precedence as * and / — it is evaluated before + and -, and left to right when alongside * or /."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- How MOD works: a MOD b = remainder when a is divided by b\n17 MOD 5 = 2    -- 17 = 3×5 + 2 → remainder is 2\n20 MOD 4 = 0    -- 20 = 5×4 + 0 → no remainder (evenly divisible)\n7  MOD 2 = 1    -- 7 = 3×2 + 1  → remainder is 1\n10 MOD 3 = 1    -- 10 = 3×3 + 1 → remainder is 1\n1  MOD 5 = 1    -- 1 = 0×5 + 1  → remainder is 1 (a < b, so result = a)"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Common Use of MOD", "Expression", "How It Works", "Example"],
+      "rows": [
+        ["Check if a number is even", "number MOD 2 = 0", "Even numbers have no remainder when divided by 2", "8 MOD 2 = 0 → true (8 is even)"],
+        ["Check if a number is odd", "number MOD 2 = 1", "Odd numbers have remainder 1 when divided by 2", "7 MOD 2 = 1 → true (7 is odd)"],
+        ["Check divisibility by n", "number MOD n = 0", "True when number divides evenly into n with no remainder", "15 MOD 3 = 0 → true (divisible by 3)"],
+        ["Get the last digit", "number MOD 10", "The units digit is always the remainder when divided by 10", "347 MOD 10 = 7"],
+        ["Check if a is less than b", "a MOD b = a (when a < b)", "When a is smaller than b, the remainder is just a", "3 MOD 7 = 3"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Order of Operations"
+    },
+    {
+      "type": "paragraph",
+      "text": "The order of operations used in mathematics applies when evaluating expressions in AP CSP. This means parentheses are evaluated first, then multiplication, division, and MOD from left to right, then addition and subtraction from left to right. MOD has the SAME precedence as * and / — this is specifically stated in the CED and frequently tested."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Precedence", "Operators", "Order of Evaluation"],
+      "rows": [
+        ["Highest", "( ) — Parentheses", "Innermost first, then outward"],
+        ["Second", "*, /, MOD", "Left to right when at the same level"],
+        ["Lowest", "+, -", "Left to right when at the same level"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Order of operations examples:\n\nx ← 2 + 3 * 4\n-- Step 1: * before + → 3*4 = 12\n-- Step 2: 2 + 12 = 14\n-- x = 14 (NOT 20)\n\ny ← 10 MOD 3 + 2\n-- Step 1: MOD before + → 10 MOD 3 = 1\n-- Step 2: 1 + 2 = 3\n-- y = 3\n\nz ← 10 MOD 3 * 2\n-- MOD and * have EQUAL precedence → left to right\n-- Step 1: 10 MOD 3 = 1\n-- Step 2: 1 * 2 = 2\n-- z = 2\n\na ← (2 + 3) * 4\n-- Step 1: parentheses first → 2+3 = 5\n-- Step 2: 5 * 4 = 20\n-- a = 20\n\nb ← 8 + 4 / 2 - 1\n-- Step 1: / before + and - → 4/2 = 2\n-- Step 2: left to right → 8+2 = 10\n-- Step 3: 10-1 = 9\n-- b = 9"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "MOD has the SAME precedence as * and / — not lower. When you see MOD alongside * or / in the same expression without parentheses, evaluate left to right. This is directly tested on the exam. Also: always fully evaluate the right side before assigning — sequential statements execute in the order they appear."
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Sequences of Mathematical Expressions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequential statements execute in the order they appear in the code segment. When tracing a sequence of assignment statements with mathematical expressions, evaluate each line in order, updating variable values as you go."
+    },
+    {
+      "type": "codeblock",
+      "code": "a ← 10\nb ← 3\nc ← a + b           -- c = 10+3 = 13\nd ← a * b - c       -- d = (10*3) - 13 = 30-13 = 17\ne ← c MOD b         -- e = 13 MOD 3 = 1 (13 = 4×3 + 1)\nf ← a / b           -- f = 10/3 = 3.333...\nDISPLAY c           -- 13\nDISPLAY d           -- 17\nDISPLAY e           -- 1\nDISPLAY f           -- 3.333..."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Line", "a", "b", "c", "d", "e", "f", "Calculation"],
+      "rows": [
+        ["a ← 10", "10", "—", "—", "—", "—", "—", "Literal 10"],
+        ["b ← 3", "10", "3", "—", "—", "—", "—", "Literal 3"],
+        ["c ← a + b", "10", "3", "13", "—", "—", "—", "10+3=13"],
+        ["d ← a * b - c", "10", "3", "13", "17", "—", "—", "10*3=30, 30-13=17"],
+        ["e ← c MOD b", "10", "3", "13", "17", "1", "—", "13 MOD 3=1 (13=4×3+1)"],
+        ["f ← a / b", "10", "3", "13", "17", "1", "3.33...", "10/3=3.333..."]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "An algorithm is a finite set of instructions that accomplishes a specific task",
+        "Every algorithm can be constructed using combinations of sequencing, selection, and iteration",
+        "Algorithms can be expressed in natural language, diagrams, pseudocode, or programming languages — same algorithm, different representations",
+        "Sequencing: steps execute in the order they appear in the code segment",
+        "A code statement expresses an action to be carried out — clarity and readability are important considerations",
+        "An expression consists of a value, variable, operator, or procedure call — it always evaluates to a single value",
+        "Expressions follow the order of operations defined by the programming language",
+        "Arithmetic operators: + (addition), - (subtraction), * (multiplication), / (division), MOD (modulus/remainder)",
+        "a MOD b returns the remainder when a is divided by b — a ≥ 0, b > 0",
+        "MOD has the SAME precedence as * and / — evaluated left to right alongside those operators",
+        "Order of operations: parentheses first, then *, /, MOD left to right, then +, - left to right",
+        "Division produces the exact decimal result in AP CSP — 17/5 = 3.4, NOT 3",
+        "Common uses of MOD: check even (MOD 2 = 0), check odd (MOD 2 = 1), check divisibility (MOD n = 0), get last digit (MOD 10)"
+      ]
+    }
+  ]
 }

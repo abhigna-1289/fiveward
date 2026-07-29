@@ -2,5 +2,223 @@
   "unit": 2,
   "topic": "2.1",
   "title": "Binary Numbers",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "How Computers Represent Data"
+    },
+    {
+      "type": "paragraph",
+      "text": "Everything a computer stores, processes, and communicates is ultimately represented as bits. Understanding how bits work and how they are grouped to represent meaningful data is fundamental to understanding how computing works at its lowest level."
+    },
+    {
+      "type": "keyterm",
+      "term": "Bit",
+      "definition": "Short for binary digit. The lowest-level component of any value in a computing device. A bit is either 0 or 1."
+    },
+    {
+      "type": "keyterm",
+      "term": "Byte",
+      "definition": "A group of 8 bits."
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing devices represent data digitally — meaning the lowest-level components of any value are bits. Data values can be stored in variables, lists, or standalone constants and can be passed as input to or output from procedures."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Unit", "Size", "Example"],
+      "rows": [
+        ["Bit", "1 binary digit — either 0 or 1", "The digit 1 in the binary number 1011"],
+        ["Byte", "8 bits", "The letter 'A' stored as 01000001"],
+        ["Kilobyte (KB)", "1,024 bytes", "A short text document"],
+        ["Megabyte (MB)", "1,024 KB", "A high-quality photo"],
+        ["Gigabyte (GB)", "1,024 MB", "A feature-length movie"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Abstraction: How Bits Represent Everything"
+    },
+    {
+      "type": "keyterm",
+      "term": "Abstraction",
+      "definition": "The process of reducing complexity by focusing on the main idea. By hiding irrelevant details and bringing together related useful details, abstraction allows one to focus on the idea at hand."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bits are grouped to represent abstractions including numbers, characters, and color. The same sequence of bits may represent different types of data in different contexts. For example, the sequence 01000001 represents the number 65 in one context and the letter 'A' in another — the bits are identical, but the meaning depends entirely on how the program interprets them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Same Bits", "Interpreted as Number", "Interpreted as Character", "Interpreted as Color"],
+      "rows": [
+        ["01000001", "65 (decimal)", "Letter 'A' (ASCII)", "Part of an RGB color value"],
+        ["11111111", "255 (decimal)", "Not a standard printable character", "Maximum value for red, green, or blue in RGB"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The same sequence of bits can represent completely different things depending on context. The bits themselves don't carry meaning — the program that interprets them determines what they represent. This is one of the most commonly tested concepts in Unit 2."
+    },
+    {
+      "type": "heading",
+      "text": "Analog vs Digital Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Analog Data",
+      "definition": "Data with values that change smoothly rather than in discrete intervals over time. Examples: pitch and volume of music, colors of a painting, position of a sprinter during a race."
+    },
+    {
+      "type": "keyterm",
+      "term": "Sampling",
+      "definition": "A technique used to approximate analog data digitally by measuring values of the analog signal at regular intervals called samples. The samples are measured to determine the exact bits required to store each sample."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Analog Data", "Digital Data"],
+      "rows": [
+        ["Changes smoothly and continuously over time — infinite possible values", "Represented in discrete bits — finite possible values"],
+        ["Cannot be stored directly in a computer", "Can be stored, transmitted, and processed by computers"],
+        ["Examples: vinyl record audio, temperature rising gradually, a painter's brushstroke", "Examples: MP3 audio file, temperature stored as a number, a digital photo"],
+        ["Perfectly captures every nuance of the real world", "Approximates the real world — some precision is lost through sampling"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Using digital data to approximate real-world analog data is an example of abstraction. The digital version hides the infinite detail of the analog signal and represents only what was captured at the sampling intervals. This is why digital audio can sound slightly different from a live performance — the digital version is an approximation, not a perfect copy."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Sampling is not perfect. The more frequently you sample an analog signal, the closer the digital approximation is to the original — but it is always an approximation. This is why higher-quality audio files are larger: more samples per second means more bits stored."
+    },
+    {
+      "type": "heading",
+      "text": "The Binary Number System"
+    },
+    {
+      "type": "keyterm",
+      "term": "Binary Number System",
+      "definition": "A base-2 number system that uses only the digits 0 and 1. Place values are powers of 2 starting at 2^0 (=1) on the rightmost position, increasing by one power to the left: 1, 2, 4, 8, 16, 32, 64, 128..."
+    },
+    {
+      "type": "paragraph",
+      "text": "The place value of each position is determined by the base (2) raised to the power of the position. Positions are numbered starting at 0 on the rightmost digit and increasing by 1 for each position to the left. A digit's numeric value equals the bit (0 or 1) multiplied by its place value."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Position (from right)", "Place Value (2^position)", "Example bit", "Value contributed"],
+      "rows": [
+        ["Position 0 (rightmost)", "2^0 = 1", "1", "1 × 1 = 1"],
+        ["Position 1", "2^1 = 2", "0", "0 × 2 = 0"],
+        ["Position 2", "2^2 = 4", "1", "1 × 4 = 4"],
+        ["Position 3", "2^3 = 8", "1", "1 × 8 = 8"],
+        ["Position 4", "2^4 = 16", "0", "0 × 16 = 0"],
+        ["Position 5", "2^5 = 32", "1", "1 × 32 = 32"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Binary to Decimal Conversion"
+    },
+    {
+      "type": "paragraph",
+      "text": "To convert binary to decimal: multiply each bit by its place value and add all the results together."
+    },
+    {
+      "type": "codeblock",
+      "code": "Convert binary 1101 to decimal:\n\nPosition:    3    2    1    0\nBit:         1    1    0    1\nPlace value: 8    4    2    1\nValue:       8    4    0    1\n\nTotal: 8 + 4 + 0 + 1 = 13\n\nSo binary 1101 = decimal 13"
+    },
+    {
+      "type": "codeblock",
+      "code": "Convert binary 10110 to decimal:\n\nPosition:    4    3    2    1    0\nBit:         1    0    1    1    0\nPlace value: 16   8    4    2    1\nValue:       16   0    4    2    0\n\nTotal: 16 + 0 + 4 + 2 + 0 = 22\n\nSo binary 10110 = decimal 22"
+    },
+    {
+      "type": "heading",
+      "text": "Decimal to Binary Conversion"
+    },
+    {
+      "type": "paragraph",
+      "text": "To convert decimal to binary: repeatedly divide by 2 and record the remainders from bottom to top."
+    },
+    {
+      "type": "codeblock",
+      "code": "Convert decimal 13 to binary:\n\n13 ÷ 2 = 6  remainder 1  ← least significant bit\n6  ÷ 2 = 3  remainder 0\n3  ÷ 2 = 1  remainder 1\n1  ÷ 2 = 0  remainder 1  ← most significant bit\n\nRead remainders from bottom to top: 1101\n\nSo decimal 13 = binary 1101"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Decimal", "Binary"],
+      "rows": [
+        ["0", "0"],
+        ["1", "1"],
+        ["2", "10"],
+        ["4", "100"],
+        ["8", "1000"],
+        ["10", "1010"],
+        ["15", "1111"],
+        ["16", "10000"],
+        ["255", "11111111 (8 bits all 1s — maximum value of 1 byte)"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Errors from Fixed-Bit Representation"
+    },
+    {
+      "type": "keyterm",
+      "term": "Overflow Error",
+      "definition": "An error that occurs when a computer attempts to handle a number outside the defined range of values. Caused by the fixed number of bits used to represent integers in many programming languages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Round-off Error",
+      "definition": "An error caused by the fixed number of bits used to represent real numbers, which limits precision. Some real numbers can only be stored as approximations in computer memory."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Error Type", "What Causes It", "Example", "Affects"],
+      "rows": [
+        ["Overflow error", "Fixed number of bits limits the range of values — a result exceeds the maximum", "A variable holding integers 0–255 tries to store 300 — overflow occurs", "Integers"],
+        ["Round-off error", "Fixed number of bits limits precision — not all decimals can be represented exactly", "Storing 1/3 results in 0.3333333 — an approximation, not the exact value", "Real numbers (decimals)"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Overflow error = number is outside the defined RANGE of values (too big or too small for the fixed bits). Round-off error = number cannot be represented with exact PRECISION (decimal approximation). These are two different errors affecting different types of numbers."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Some programming languages (including the AP CSP reference sheet language) provide an abstraction where integers are limited only by the computer's memory size — not a fixed bit count. This means overflow errors don't occur in those languages. But real number precision limits still apply."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A bit is either 0 or 1 — the lowest-level component of any value. A byte is 8 bits.",
+        "Computing devices represent data digitally — all values are ultimately bits.",
+        "Abstraction reduces complexity by hiding details — bits are grouped to represent numbers, characters, and color.",
+        "The same sequence of bits may represent different types of data in different contexts.",
+        "Analog data changes smoothly over time; digital data represents values in discrete bits.",
+        "Using digital data to approximate analog data is itself an example of abstraction.",
+        "Sampling measures an analog signal at regular intervals to create a digital approximation.",
+        "Binary (base 2) uses only 0 and 1; place values are powers of 2 starting at 1 on the right.",
+        "To convert binary to decimal: multiply each bit by its place value and sum the results.",
+        "To convert decimal to binary: repeatedly divide by 2 and read remainders bottom to top.",
+        "Overflow error: a number exceeds the defined range of values for the fixed bits used.",
+        "Round-off error: the fixed number of bits limits precision — some real numbers are approximations."
+      ]
+    }
+  ]
 }

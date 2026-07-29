@@ -1,6 +1,707 @@
 {
   "unit": 3,
-  "topic": null,
-  "title": "Unit 3: Algorithms and Programming",
-  "content": []
+  "topic": "review",
+  "title": "Unit 3 Review: Algorithms and Programming",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Unit 3 Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unit 3 is the largest and most heavily weighted unit in AP CSP — 30–35% of the exam. It covers variables, lists, data abstraction, expressions, Boolean logic, conditionals, loops, algorithm design, searching, procedures, libraries, randomness, simulations, efficiency, and the limits of computation. Every topic is directly testable. This review hits the most important concepts and common exam traps for all 18 topics."
+    },
+    {
+      "type": "heading",
+      "text": "Topics 3.1 and 3.2 — Variables, Lists, and Data Abstraction"
+    },
+    {
+      "type": "keyterm",
+      "term": "Variable",
+      "definition": "An abstraction inside a program that can hold a value. The value stored will always be the most recent value assigned. Variables can hold numbers, Booleans, lists, and strings."
+    },
+    {
+      "type": "keyterm",
+      "term": "Assignment Operator",
+      "definition": "An operator that allows a program to change the value represented by a variable. It evaluates the expression on the right and assigns a copy of the result to the variable on the left. The value stored in a variable will always be the most recent value assigned."
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when a variable is assigned a new value?",
+      "definition": "The value stored in a variable will always be the most recent value assigned. Example: if a = 1, then b = a, then a = 2, displaying b still shows 1 because b was assigned a copy of a's value at that time."
+    },
+    {
+      "type": "paragraph",
+      "text": "The most critical rule: when b ← a executes, b receives a COPY of a's current value. If a changes later, b is completely unaffected. Always evaluate the right side fully before assigning to the left side variable."
+    },
+    {
+      "type": "codeblock",
+      "code": "a ← 5\nb ← a        -- b gets a COPY of a's value (5)\na ← 10       -- a changes, b is unaffected\nDISPLAY b    -- displays 5, NOT 10\nDISPLAY a    -- displays 10\n\n-- Multi-step trace:\nx ← 3\ny ← x + 2   -- y = 5\nx ← y * 2   -- x = 10 (y still 5)\ny ← x - y   -- RIGHT side first: 10-5=5, then y=5\nDISPLAY x   -- 10\nDISPLAY y   -- 5"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Data Types in Programming",
+      "definition": "Numbers, Booleans, lists, and strings. Some values are better suited to representation using one type of datum rather than another."
+    },
+    {
+      "type": "keyterm",
+      "term": "List",
+      "definition": "An ordered sequence of elements. Each element is assigned a unique index starting at 1. Allows multiple related items to be treated as a single value. Also called an array in some languages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Index",
+      "definition": "A common method for referencing elements in a list or string using natural numbers. In AP CSP, indices start at 1. Accessing an index less than 1 or greater than the list length produces an error and terminates the program."
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Abstraction",
+      "definition": "Giving a collection of data a name without referencing the specific details of its representation. Using lists allows multiple related items to be treated as a single value, making programs easier to develop and maintain."
+    },
+    {
+      "type": "keyterm",
+      "term": "String",
+      "definition": "An ordered sequence of characters. String concatenation joins two or more strings end-to-end to make a new string. A substring is part of an existing string."
+    },
+    {
+      "type": "keyterm",
+      "term": "How does assigning one list to another work?",
+      "definition": "Assigning one list to another (aList = bList) assigns a copy of the list. If bList contains [20, 40, 60], then aList will also contain [20, 40, 60] after the assignment."
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when you access an invalid list index?",
+      "definition": "If a list index is less than 1 or greater than the length of the list, an error message is produced and the program will terminate."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operation", "What It Does", "Effect on List"],
+      "rows": [
+        ["aList[i]", "Accesses element at index i", "No change"],
+        ["aList[i] ← x", "Assigns x to element at index i", "Replaces element at i"],
+        ["INSERT(aList, i, value)", "Inserts at index i — shifts elements RIGHT", "Length increases by 1"],
+        ["APPEND(aList, value)", "Adds to END of list", "Length increases by 1"],
+        ["REMOVE(aList, i)", "Removes at index i — shifts elements LEFT", "Length decreases by 1"],
+        ["LENGTH(aList)", "Returns number of elements", "No change"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "aList ← [10, 20, 30, 40]\n\nINSERT(aList, 2, 15)\n-- Shifts 20,30,40 RIGHT → [10, 15, 20, 30, 40]\n-- aList[2] is now 15, aList[3] is now 20\n\nREMOVE(aList, 3)\n-- Removes index 3 (value 20), shifts 30,40 LEFT → [10, 15, 30, 40]\n\nAPPEND(aList, 99)\n-- [10, 15, 30, 40, 99]\n\nDISPLAY LENGTH(aList)  -- 5"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistakes",
+      "text": "List indices start at 1 in AP CSP — NOT 0. aList[0] causes an error. INSERT shifts elements RIGHT — after inserting at index 2, what was at index 2 is now at index 3. REMOVE shifts elements LEFT — after removing index 3, what was at index 4 is now at index 3. Always retrace the full list after INSERT or REMOVE before reading any element."
+    },
+    {
+      "type": "heading",
+      "text": "Topics 3.3 and 3.4 — Algorithms, Expressions, and Strings"
+    },
+    {
+      "type": "keyterm",
+      "term": "Algorithm",
+      "definition": "A finite set of instructions that accomplishes a specific task. Every algorithm can be constructed using combinations of sequencing, selection, and iteration. Can be expressed in natural language, diagrams, pseudocode, or programming languages."
+    },
+    {
+      "type": "keyterm",
+      "term": "Three Building Blocks of Every Algorithm",
+      "definition": "Sequencing: executing steps in order.\nSelection: choosing which steps to execute based on a condition.\nIteration: repeating steps."
+    },
+    {
+      "type": "keyterm",
+      "term": "Sequencing",
+      "definition": "The application of each step of an algorithm in the order in which the code statements are given. Sequential statements execute in the order they appear in the code segment."
+    },
+    {
+      "type": "keyterm",
+      "term": "Arithmetic Operators",
+      "definition": "Addition (+), subtraction (-), multiplication (*), division (/), and MOD. MOD returns the remainder when a is divided by b. Example: 17 MOD 5 = 2. MOD has the same precedence as * and /."
+    },
+    {
+      "type": "keyterm",
+      "term": "String Concatenation",
+      "definition": "Joins together two or more strings end-to-end to make a new string."
+    },
+    {
+      "type": "keyterm",
+      "term": "Substring",
+      "definition": "A part of an existing string."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Order of operations: parentheses, then *, /, MOD left-to-right, then +, -\nx ← 2 + 3 * 4       -- x = 14 (not 20)\ny ← 10 MOD 3 * 2    -- y = 2  (10 MOD 3 = 1, then 1*2 = 2)\nz ← (2 + 3) * 4     -- z = 20 (parentheses first)\n\n-- Division is EXACT:\n17 / 5 = 3.4   -- NOT 3\n\n-- MOD:\n17 MOD 5 = 2   -- 17 = 3×5 + 2\n8 MOD 2 = 0    -- even number check\n7 MOD 2 = 1    -- odd number check\n\n-- String concatenation:\nconcat(\"Hello\", \" World\")   -- \"Hello World\"\nconcat(\"100\", \"200\")        -- \"100200\" NOT 300!\n-- Concatenation joins text end-to-end, NOT arithmetic"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "MOD has the SAME precedence as * and / — not lower. Division produces exact decimals: 17/5 = 3.4 not 3. concat(\"100\",\"200\") = \"100200\" as a string — never 300. Every algorithm can be expressed in natural language, diagrams, pseudocode, or a programming language."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.5 — Boolean Expressions"
+    },
+    {
+      "type": "keyterm",
+      "term": "Boolean Value",
+      "definition": "A value that is either true or false. Produced by relational operators (=, ≠, >, <, ≥, ≤) and logical operators (NOT, AND, OR)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Relational Operators",
+      "definition": "Used to test the relationship between two variables, expressions, or values. A comparison using a relational operator evaluates to a Boolean value. Operators: = (equal), ≠ (not equal), > (greater than), < (less than), ≥ (greater than or equal), ≤ (less than or equal)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Logical Operators",
+      "definition": "NOT, AND, and OR — each evaluates to a Boolean value.\nNOT condition: true if condition is false.\ncondition1 AND condition2: true only if both are true.\ncondition1 OR condition2: true if at least one is true."
+    },
+    {
+      "type": "keyterm",
+      "term": "AND operator truth table",
+      "definition": "true AND true = true\ntrue AND false = false\nfalse AND true = false\nfalse AND false = false\nAND is only true when BOTH conditions are true."
+    },
+    {
+      "type": "keyterm",
+      "term": "OR operator truth table",
+      "definition": "true OR true = true\ntrue OR false = true\nfalse OR true = true\nfalse OR false = false\nOR is only false when BOTH conditions are false."
+    },
+    {
+      "type": "keyterm",
+      "term": "NOT operator truth table",
+      "definition": "NOT true = false\nNOT false = true\nNOT simply flips the Boolean value."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: AND vs OR",
+      "definition": "AND: both conditions must be true for the result to be true. If either is false, result is false.\nOR: at least one condition must be true for the result to be true. Only false when both conditions are false."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["condition1", "condition2", "AND", "OR", "NOT condition1"],
+      "rows": [
+        ["true", "true", "true", "true", "false"],
+        ["true", "false", "false", "true", "false"],
+        ["false", "true", "false", "true", "true"],
+        ["false", "false", "false", "false", "true"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 7\n\n-- Evaluating step by step:\n(x > 5) AND (x < 10)       -- true AND true = true\n(x > 10) OR (x MOD 2 = 1)  -- false OR true = true (7 is odd)\nNOT(x = 7)                 -- NOT true = false\n(x ≥ 7)                    -- true (7 = 7 satisfies ≥)\n\n-- Common patterns:\nx MOD 2 = 0              -- x is even\nx MOD 2 = 1              -- x is odd\nx MOD n = 0              -- x is divisible by n\n(x ≥ a) AND (x ≤ b)      -- x is between a and b inclusive\nNOT(x < 15)              -- equivalent to x ≥ 15\n(x > 15) OR (x = 15)     -- also equivalent to x ≥ 15"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "AND: only TRUE when ALL conditions are true. OR: only FALSE when ALL conditions are false. (x ≥ 5) is TRUE when x=5 — the equal part satisfies the condition at the boundary. Always evaluate each relational comparison to true/false first, then apply the logical operators. Equivalent expressions: x ≥ 15 = (x > 15) OR (x = 15) = NOT(x < 15)."
+    },
+    {
+      "type": "heading",
+      "text": "Topics 3.6 and 3.7 — Conditionals and Nested Conditionals"
+    },
+    {
+      "type": "keyterm",
+      "term": "Selection",
+      "definition": "Determines which parts of an algorithm are executed based on a condition being true or false. Implemented using IF and IF/ELSE statements."
+    },
+    {
+      "type": "keyterm",
+      "term": "Conditional Statement (IF statement)",
+      "definition": "Affects the sequential flow of control by executing different statements based on the value of a Boolean expression. IF(condition): executes the block only if condition is true. IF/ELSE: executes the first block if true, the second block if false."
+    },
+    {
+      "type": "keyterm",
+      "term": "Nested Conditional Statements",
+      "definition": "Conditional statements within conditional statements. Allow programs to check multiple conditions in sequence, where inner conditions are only evaluated if outer conditions are met."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- IF only: block executes when true, completely skipped when false\nIF(x > 5)\n{\n   DISPLAY \"big\"\n}\n\n-- IF/ELSE: exactly ONE block always executes, never both, never neither\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   DISPLAY \"not A\"\n}\n\n-- MULTIPLE SEPARATE IFs: ALL evaluated independently\nIF(x > 5) { DISPLAY \"A\" }    -- checked\nIF(x > 3) { DISPLAY \"B\" }    -- also checked regardless\n-- If x=4: A is skipped, B executes → output: B\n-- If x=7: BOTH execute → output: A B (two outputs!)\n\n-- NESTED: inner only evaluated when outer directs there\nIF(x > 10)\n{\n   IF(x > 20) { DISPLAY \"very large\" }\n   ELSE { DISPLAY \"medium\" }\n}\nELSE\n{\n   DISPLAY \"small\"    -- inner IF never reached from here\n}"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["x value", "Outer (x>10)?", "Inner (x>20)?", "Output"],
+      "rows": [
+        ["x = 25", "true → enter outer IF", "true → inner IF", "very large"],
+        ["x = 15", "true → enter outer IF", "false → inner ELSE", "medium"],
+        ["x = 5", "false → outer ELSE", "NEVER EVALUATED", "small"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Multiple separate IFs are ALL evaluated — a value satisfying 3 conditions produces 3 outputs. An IF/ELSE produces exactly ONE output. In nested conditionals: the inner IF is NEVER evaluated if the outer condition sends execution to the ELSE branch. Always trace OUTSIDE-IN."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.8 — Iteration"
+    },
+    {
+      "type": "keyterm",
+      "term": "Iteration",
+      "definition": "A repeating portion of an algorithm. REPEAT n TIMES executes a block n times. REPEAT UNTIL(condition) repeats until the condition is true — if already true, the block never executes. An infinite loop occurs if the condition never becomes true."
+    },
+    {
+      "type": "keyterm",
+      "term": "REPEAT n TIMES",
+      "definition": "An iteration statement that executes the block of statements exactly n times."
+    },
+    {
+      "type": "keyterm",
+      "term": "REPEAT UNTIL(condition)",
+      "definition": "An iteration statement that repeats the block of statements until the Boolean condition evaluates to true. If the condition is true initially, the loop body is not executed at all. If the condition never becomes true, an infinite loop occurs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Infinite Loop",
+      "definition": "Occurs in REPEAT UNTIL iteration when the ending condition will never evaluate to true, causing the loop to repeat forever."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: REPEAT n TIMES vs REPEAT UNTIL",
+      "definition": "REPEAT n TIMES: repeats a fixed number of times, always executes the block at least once if n > 0.\nREPEAT UNTIL: repeats until a condition becomes true, may not execute at all if the condition is already true."
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when REPEAT UNTIL condition is already true?",
+      "definition": "The loop body is not executed at all, because the condition is checked before the loop begins."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- REPEAT n TIMES: always exactly n iterations\nREPEAT 5 TIMES { DISPLAY \"hello\" }   -- displays hello 5 times\n\n-- REPEAT UNTIL: condition checked BEFORE each iteration\ni ← 1\nREPEAT UNTIL(i > 5)\n{\n   DISPLAY i    -- displays 1 2 3 4 5\n   i ← i + 1\n}\n\n-- Condition already true → ZERO iterations:\nx ← 10\nREPEAT UNTIL(x = 10) { x ← x + 1 }   -- body never runs, x stays 10\nDISPLAY x   -- displays 10\n\n-- Infinite loop — condition never becomes true:\nx ← 0\nREPEAT UNTIL(x = 5)\n{\n   x ← x + 2   -- x goes 0,2,4,6... NEVER equals exactly 5\n}"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "REPEAT n TIMES", "REPEAT UNTIL(condition)"],
+      "rows": [
+        ["Iterations", "Exactly n — always", "Until condition true — could be 0 or many"],
+        ["Can body execute 0 times?", "Only if n = 0", "YES — if condition already true at start"],
+        ["Can cause infinite loop?", "No", "YES — if condition never becomes true"],
+        ["Condition checked?", "No condition — just counts", "BEFORE each iteration"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "REPEAT UNTIL checks BEFORE executing — if condition is already true, the body executes ZERO times. Always check that the loop variable is updated inside the body to eventually make the condition true — forgetting this causes infinite loops. x starts at 0, adds 2 each time, condition x=5 → INFINITE LOOP (skips from 4 to 6)."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.9 — Developing Algorithms"
+    },
+    {
+      "type": "keyterm",
+      "term": "Can different algorithms solve the same problem?",
+      "definition": "Yes. Algorithms can be written in different ways and still accomplish the same task. However, algorithms that appear similar can yield different side effects or results. Different algorithms can also have different efficiencies."
+    },
+    {
+      "type": "keyterm",
+      "term": "How can new algorithms be created?",
+      "definition": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms. Using existing correct algorithms as building blocks reduces development time, reduces testing, and simplifies error identification."
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Existing Algorithms",
+      "definition": "Determining the maximum or minimum value of two or more numbers, computing the sum or average of numbers, identifying if an integer is evenly divisible by another integer, determining a robot's path through a maze."
+    },
+    {
+      "type": "keyterm",
+      "term": "Can algorithms that look similar produce different results?",
+      "definition": "Yes. Algorithms that appear similar can yield different side effects or results. The order and structure of statements matters — even small differences can change the outcome."
+    },
+    {
+      "type": "keyterm",
+      "term": "Can conditional statements and Boolean expressions be equivalent?",
+      "definition": "Yes. Some conditional statements can be written as equivalent Boolean expressions, and some Boolean expressions can be written as equivalent conditional statements."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- CRITICAL: algorithms that look similar can produce DIFFERENT results\n\n-- Algorithm A (WRONG for all-negative lists):\nmax ← 0\nFOR EACH item IN aList { IF(item > max) { max ← item } }\n-- For [-5, -3, -8]: returns 0 ← WRONG (0 is not in the list)\n\n-- Algorithm B (ALWAYS CORRECT):\nmax ← aList[1]    -- initialize to FIRST ELEMENT, not 0\nFOR EACH item IN aList { IF(item > max) { max ← item } }\n-- For [-5, -3, -8]: returns -3 ← correct\n-- For [5, 3, 8]: returns 8 ← also correct\n\n-- Using existing algorithms as building blocks:\n-- Average algorithm = sum algorithm + division step\n-- Benefits: reduces development time, reduces testing,\n--           simplifies identification of errors"
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.10 — Lists"
+    },
+    {
+      "type": "keyterm",
+      "term": "List Operations (AP Reference Sheet)",
+      "definition": "ACCESS: aList[i] — gets element at index i.\nASSIGN: aList[i] = x — sets element at index i to x.\nINSERT(aList, i, value) — inserts value at index i, shifting elements right.\nAPPEND(aList, value) — adds value to end of list.\nREMOVE(aList, i) — removes element at index i, shifting elements left.\nLENGTH(aList) — returns number of elements."
+    },
+    {
+      "type": "keyterm",
+      "term": "List Traversal",
+      "definition": "Accessing elements of a list one by one. Can be complete (all elements accessed) or partial (only some elements accessed). FOR EACH item IN aList assigns each element to item sequentially from first to last and executes the block once per element."
+    },
+    {
+      "type": "keyterm",
+      "term": "FOR EACH loop",
+      "definition": "Traverses a list by assigning each element to a variable sequentially from first to last. The block of statements executes once for each element. Note: parallel traversals (using the same index for two lists simultaneously) are outside the scope of AP CSP."
+    },
+    {
+      "type": "keyterm",
+      "term": "Common List Algorithms",
+      "definition": "Finding the minimum or maximum value in a list, computing the sum or average of a list of numbers. These existing algorithms can be used as building blocks when constructing new algorithms."
+    },
+    {
+      "type": "keyterm",
+      "term": "Linear (Sequential) Search",
+      "definition": "An algorithm that checks each element of a list in order until the desired value is found or all elements have been checked."
+    },
+    {
+      "type": "codeblock",
+      "code": "aList ← [3, 7, 1, 9, 4]\n\n-- Max (init to first element):\nmax ← aList[1]\nFOR EACH item IN aList\n{\n   IF(item > max) { max ← item }\n}\nDISPLAY max    -- 9\n\n-- Sum and average:\nsum ← 0\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\naverage ← sum / LENGTH(aList)   -- 24/5 = 4.8\n\n-- Linear search:\ntarget ← 9\nfound ← false\nFOR EACH item IN aList\n{\n   IF(item = target) { found ← true }\n}\nDISPLAY found   -- true (loop continues to end even after finding)\n\n-- Build filtered list:\nnewList ← []\nFOR EACH item IN aList\n{\n   IF(item > 4) { APPEND(newList, item) }\n}\nDISPLAY newList   -- [7, 9]"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "ALWAYS initialize max/min to aList[1] — the first element — NOT to 0. Initializing to 0 fails for any list containing only negative numbers (returns 0, which is not in the list). Initialize sum to 0. In FOR EACH linear search, the loop continues through ALL elements even after finding the target — found stays true once set."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.11 — Binary Search"
+    },
+    {
+      "type": "keyterm",
+      "term": "Binary Search",
+      "definition": "An algorithm that starts at the middle of a sorted data set and eliminates half of the remaining data with each step. Repeats until the desired value is found or all elements have been eliminated. Data must be in sorted order to use binary search."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Linear Search vs Binary Search",
+      "definition": "Linear search: checks each element one by one, works on unsorted data, less efficient for large data sets.\nBinary search: eliminates half the data each step, requires sorted data, often more efficient than linear search on sorted data."
+    },
+    {
+      "type": "keyterm",
+      "term": "What makes binary search more efficient than linear search?",
+      "definition": "Binary search eliminates half the remaining data with each step, while linear search checks one element at a time. Binary search is often more efficient on sorted data, but requires the data to be sorted first."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Feature", "Linear Search", "Binary Search"],
+      "rows": [
+        ["Requires sorted data?", "No — works on ANY list", "YES — MUST be sorted"],
+        ["How it works", "Checks one element at a time from the start", "Starts at middle, eliminates half each step"],
+        ["Max steps (n elements)", "Up to n steps", "Up to log₂(n) steps"],
+        ["For 1,024 elements", "Up to 1,024 steps", "Up to 10 steps"],
+        ["For 1,000,000 elements", "Up to 1,000,000 steps", "Up to 20 steps"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Binary search REQUIRES sorted data — cannot be used on an unsorted list without sorting first. If asked 'which search works on unsorted data?' the answer is ONLY linear search. Specific implementations of binary search are outside the scope of the exam — understand the concept, not the code."
+    },
+    {
+      "type": "heading",
+      "text": "Topics 3.12 and 3.13 — Calling and Developing Procedures"
+    },
+    {
+      "type": "keyterm",
+      "term": "Procedure",
+      "definition": "A named group of programming instructions that may have parameters and return values. Also called a method or function. A procedure call interrupts sequential execution — flow returns to the calling point after the procedure finishes."
+    },
+    {
+      "type": "keyterm",
+      "term": "Parameters vs Arguments",
+      "definition": "Parameters: input variables defined in the procedure declaration.\nArguments: actual values passed when the procedure is called. Each argument is assigned to its corresponding parameter."
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens when a procedure is called?",
+      "definition": "A procedure call interrupts sequential execution and causes the program to execute the statements within the procedure. Once the last statement or a RETURN statement executes, flow of control returns to the point immediately following where the procedure was called."
+    },
+    {
+      "type": "keyterm",
+      "term": "RETURN statement",
+      "definition": "Returns the flow of control to the point where the procedure was called and returns the value of an expression. May appear at any point inside a procedure and causes an immediate return."
+    },
+    {
+      "type": "keyterm",
+      "term": "DISPLAY and INPUT",
+      "definition": "DISPLAY(expression): displays the value of expression followed by a space.\nINPUT(): accepts a value from the user and returns the input value."
+    },
+    {
+      "type": "keyterm",
+      "term": "Procedural Abstraction",
+      "definition": "Provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it. Enables code reuse, improves readability, and allows internals to be changed without affecting users as long as behavior is preserved."
+    },
+    {
+      "type": "keyterm",
+      "term": "Modularity",
+      "definition": "The subdivision of a computer program into separate subprograms. Using parameters allows procedures to be generalized and reused with different inputs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Benefits of Procedural Abstraction",
+      "definition": "Allows code reuse by extracting shared features instead of duplicating code. Improves readability. Using parameters allows procedures to be generalized and reused with different inputs. Allows programmers to change internals of a procedure without notifying users as long as the behavior is preserved."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why can procedural abstraction be changed without affecting users?",
+      "definition": "Programmers can change the internals of a procedure (make it faster, more efficient, use less storage) without notifying users of the change, as long as what the procedure does is preserved."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Parameters (in declaration) vs Arguments (in call):\nPROCEDURE add(a, b)      -- a, b are PARAMETERS\n{\n   RETURN(a + b)\n}\nresult ← add(3, 5)       -- 3, 5 are ARGUMENTS → a=3, b=5 → returns 8\nDISPLAY result           -- displays 8\n\n-- RETURN causes IMMEDIATE exit from procedure:\nPROCEDURE classify(n)\n{\n   IF(n < 0) { RETURN \"negative\" }   -- immediate return if n<0\n   IF(n = 0) { RETURN \"zero\" }       -- immediate return if n=0\n   RETURN \"positive\"                 -- only reached if n>0\n}\n\n-- Nested calls — evaluate innermost first:\nz ← add(add(1, 2), add(3, 4))  -- add(1,2)=3, add(3,4)=7, add(3,7)=10\nDISPLAY z    -- 10\n\n-- Code reuse without duplication:\nPROCEDURE getLetterGrade(score)\n{\n   IF(score ≥ 90) { RETURN \"A\" }\n   IF(score ≥ 80) { RETURN \"B\" }\n   IF(score ≥ 70) { RETURN \"C\" }\n   RETURN \"F\"\n}\n-- Call for any number of classes — logic in ONE place\n-- If A threshold changes to 93: update ONE line, all calls use new logic"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "Arguments assigned to parameters IN ORDER — first to first, second to second. RETURN causes IMMEDIATE exit — code after a RETURN in the same branch never executes. For nested calls, evaluate the innermost call first. Procedural abstraction benefits: (1) code reuse, (2) improved readability, (3) generalization through parameters, (4) internals can change without affecting users."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.14 — Libraries"
+    },
+    {
+      "type": "keyterm",
+      "term": "Software Library",
+      "definition": "A collection of procedures that may be used in creating new programs. Simplifies creating complex programs. An API specifies how the procedures in a library behave and can be used."
+    },
+    {
+      "type": "keyterm",
+      "term": "API",
+      "definition": "Application Program Interface — a specification for how the procedures in a library behave and can be used. Documentation for an API is necessary to understand the behaviors provided and how to use them."
+    },
+    {
+      "type": "paragraph",
+      "text": "Existing code segments can come from internal sources (your own previous code) or external sources (libraries, other developers). API documentation is necessary to understand what procedures are available, what parameters they take, what they return, and how to use them correctly. Using a library is procedural abstraction in practice — you use its procedures knowing WHAT they do, not HOW."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.15 — Random Values"
+    },
+    {
+      "type": "keyterm",
+      "term": "RANDOM(a, b)",
+      "definition": "Generates and returns a random integer from a to b, inclusive. Each result is equally likely to occur. Example: RANDOM(1, 3) could return 1, 2, or 3. Using random number generation means each execution may produce a different result."
+    },
+    {
+      "type": "codeblock",
+      "code": "RANDOM(1, 6)   -- returns 1, 2, 3, 4, 5, or 6 (each with prob 1/6)\nRANDOM(1, 2)   -- returns 1 or 2 (50% each) — coin flip\nRANDOM(1, 4)   -- P(any specific value) = 1/4 = 25%\n\n-- Number of possible values = b - a + 1\n-- P(any specific value) = 1 / (b - a + 1)\n-- RANDOM(3, 7): 5 values → P(any one) = 1/5 = 20%\n\n-- Random list element (valid index 1 to length):\nindex ← RANDOM(1, LENGTH(aList))\nDISPLAY aList[index]\n\n-- Each run may produce DIFFERENT results — programs with RANDOM are non-deterministic"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "RANDOM generates INTEGERS only — never decimals. Both endpoints (a and b) are possible results. Each result is equally likely. Use RANDOM(1, LENGTH(aList)) for a valid random index — NEVER RANDOM(0,...) because index 0 is invalid in AP CSP."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.16 — Simulations"
+    },
+    {
+      "type": "keyterm",
+      "term": "Simulation",
+      "definition": "An abstraction of a more complex object or phenomenon for a specific purpose. Most useful when real-world events are impractical (too big, small, fast, slow, expensive, or dangerous). Can contain bias from elements included or excluded. Random number generators simulate real-world variability."
+    },
+    {
+      "type": "keyterm",
+      "term": "When are simulations most useful?",
+      "definition": "When real-world events are impractical for experiments — too big, too small, too fast, too slow, too expensive, or too dangerous. Simulations facilitate the formulation and refinement of hypotheses."
+    },
+    {
+      "type": "keyterm",
+      "term": "Limitations of Simulations",
+      "definition": "Developing a simulation involves removing specific details or simplifying functionality. Simulations can contain bias derived from the choices of real-world elements that were included or excluded."
+    },
+    {
+      "type": "keyterm",
+      "term": "How do simulations use random values?",
+      "definition": "Random number generators can be used in simulations to simulate the variability that exists in the real world, making the simulation more realistic."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Why Real Experiment Is Impractical", "Example", "Simulation Instead"],
+      "rows": [
+        ["Too dangerous", "Nuclear explosion testing", "Nuclear physics simulation"],
+        ["Too expensive", "1,000 real car crash tests", "Car crash simulation"],
+        ["Too slow", "Mountain formation over millions of years", "Geological simulation"],
+        ["Too large", "Global climate change", "Climate model simulation"],
+        ["Too small", "Molecular interactions", "Molecular dynamics simulation"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Ideas",
+      "text": "Simulations are ABSTRACTIONS — they simplify reality by removing details. They can contain BIAS from what was included or excluded. A simulation being imperfect does NOT make it useless — all simulations simplify reality and still provide valuable insights. Simulations facilitate formulation and refinement of hypotheses. Random number generators add the variability that exists in the real world."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.17 — Algorithmic Efficiency"
+    },
+    {
+      "type": "keyterm",
+      "term": "Algorithmic Efficiency",
+      "definition": "An estimation of computational resources used by an algorithm, typically expressed as a function of input size. Reasonable: polynomial efficiency or slower (constant, linear, square, cube). Unreasonable: exponential or factorial efficiency."
+    },
+    {
+      "type": "keyterm",
+      "term": "How is algorithmic efficiency informally measured?",
+      "definition": "By determining the number of times a statement or group of statements executes. Different correct algorithms for the same problem can have different efficiencies."
+    },
+    {
+      "type": "keyterm",
+      "term": "Reasonable vs Unreasonable Running Time",
+      "definition": "Reasonable: polynomial efficiency or slower — constant, linear, square, cube, etc.\nUnreasonable: exponential or factorial efficiency — these algorithms take too long to be practical for large inputs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Heuristic",
+      "definition": "An approach to a problem that produces a solution that is not guaranteed to be optimal but may be used when techniques guaranteed to find an optimal solution are impractical. Used when a problem cannot be solved in reasonable time."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Decision Problem vs Optimization Problem",
+      "definition": "Decision problem: has a yes/no answer (e.g. Is there a path from A to B?).\nOptimization problem: goal is to find the best solution among many (e.g. What is the shortest path from A to B?)."
+    },
+    {
+      "type": "keyterm",
+      "term": "Problem vs Instance of a Problem",
+      "definition": "A problem is a general description of a task (e.g. sorting). An instance of a problem includes specific input (e.g. sorting the list [2, 3, 1, 7]). Some problems cannot be solved in a reasonable amount of time — in these cases approximate solutions are sought."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Efficiency Type", "Growth Rate", "Category", "n=10", "n=100"],
+      "rows": [
+        ["Constant", "Always the same regardless of n", "REASONABLE", "5 steps", "5 steps"],
+        ["Linear", "Proportional to n", "REASONABLE", "10 steps", "100 steps"],
+        ["Quadratic (n²)", "Grows as square of n", "REASONABLE", "100 steps", "10,000 steps"],
+        ["Cubic (n³)", "Grows as cube of n", "REASONABLE", "1,000 steps", "1,000,000 steps"],
+        ["Exponential (2ⁿ)", "Doubles per additional element", "UNREASONABLE", "1,024 steps", "10³⁰ steps"],
+        ["Factorial (n!)", "n × (n-1) × ... × 1", "UNREASONABLE", "3,628,800 steps", "astronomically large"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tips",
+      "text": "Reasonable = POLYNOMIAL (constant, linear, n², n³). Unreasonable = EXPONENTIAL or FACTORIAL. A heuristic produces a GOOD but NOT GUARANTEED optimal solution — used when exact algorithms are impractical. Decision problem → yes/no answer. Optimization problem → find the best solution. Formal Big-O notation and specific heuristic algorithms are outside the scope of the exam."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 3.18 — Undecidable Problems"
+    },
+    {
+      "type": "keyterm",
+      "term": "Decidable Problem",
+      "definition": "A decision problem for which an algorithm can be written to produce a correct output for all inputs. Example: Is the number even?"
+    },
+    {
+      "type": "keyterm",
+      "term": "Undecidable Problem",
+      "definition": "A problem for which no algorithm can be constructed that is always capable of providing a correct yes-or-no answer. An undecidable problem may have some instances with an algorithmic solution, but no single algorithm can solve all instances."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Decidable vs Undecidable Problems",
+      "definition": "Decidable: an algorithm exists that always produces a correct yes/no answer for all inputs.\nUndecidable: no algorithm can always produce a correct yes/no answer for all inputs. Some instances may be solvable but not all."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Halting Problem asks: will a given program halt for a given input? Alan Turing proved no algorithm can correctly answer this for ALL possible programs and inputs. This is not a limitation of computing power — it is a mathematical proof that no such algorithm can ever exist. An undecidable problem may have some specific instances with algorithmic solutions — but no SINGLE algorithm works for all instances."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type of Limitation", "Algorithm Exists?", "More Power Helps?", "Example"],
+      "rows": [
+        ["Unreasonable running time", "YES — exists but too slow", "Somewhat — handles slightly larger inputs", "Traveling Salesman exact solution"],
+        ["Undecidable problem", "NO — mathematically impossible", "NO — mathematical proof, not hardware limit", "Halting Problem"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Undecidable ≠ unreasonable running time. Unreasonable = algorithm EXISTS but too slow. Undecidable = NO algorithm can EVER exist for all inputs. Quantum computers, future technology, more processing power — NONE of these can solve an undecidable problem for all inputs. It is a mathematical impossibility, not a hardware limitation. Determining whether a given problem is undecidable is outside the scope of the exam."
+    },
+    {
+      "type": "heading",
+      "text": "How Unit 3 Fits Together"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Topic Group", "Topics", "Core Question Answered"],
+      "rows": [
+        ["Data Storage", "3.1, 3.2", "How do programs store single values and collections? Variables, lists, and data abstraction."],
+        ["Expressions and Strings", "3.3, 3.4", "How do programs compute results and work with text? Arithmetic, MOD, and string operations."],
+        ["Boolean Logic", "3.5", "How do programs test conditions? Relational and logical operators producing true/false values."],
+        ["Control Flow", "3.6, 3.7, 3.8", "How do programs make decisions and repeat? IF/ELSE, nested conditionals, REPEAT loops."],
+        ["Algorithm Design", "3.9, 3.10, 3.11", "How do programs process data collections? Building list algorithms and searching efficiently."],
+        ["Procedures and Abstraction", "3.12, 3.13, 3.14", "How do programs manage complexity? Named procedures, parameters, libraries, and APIs."],
+        ["Randomness and Simulation", "3.15, 3.16", "How do programs model the real world? RANDOM values and simulations as abstractions."],
+        ["Limits of Computation", "3.17, 3.18", "What can and cannot algorithms do? Efficiency categories, heuristics, and undecidability."]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Unit 3 Complete Summary — Everything You Must Know"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Variable: abstraction holding a value — always the most recent value assigned; b ← a gives b a COPY of a's current value at that moment",
+        "Common data types: numbers, Booleans, lists, strings — some values better suited to one type than another",
+        "List indices start at 1 in AP CSP — index 0 or beyond LENGTH produces error and terminates",
+        "INSERT shifts elements RIGHT (length+1); REMOVE shifts elements LEFT (length-1); always retrace list after either",
+        "Assigning one list to another gives a COPY — changes to one do not affect the other",
+        "Data abstraction: give a collection a name without referencing implementation details; lists manage complexity",
+        "String: ordered sequence of characters; concat joins strings end-to-end; substring is a consecutive part",
+        "concat(\"100\",\"200\") = \"100200\" as a string — NOT arithmetic addition",
+        "Algorithm: finite set of instructions using combinations of sequencing, selection, and iteration",
+        "Sequencing: statements execute in the order they appear",
+        "MOD returns remainder: 17 MOD 5 = 2; MOD has SAME precedence as * and /",
+        "Order of operations: parentheses → *, /, MOD left-to-right → +, - left-to-right",
+        "Division is EXACT: 17/5 = 3.4 not 3",
+        "Boolean value is true or false; relational operators: = ≠ > < ≥ ≤ all produce Booleans",
+        "AND: TRUE only when ALL conditions true. OR: FALSE only when ALL conditions false. NOT: flips.",
+        "x ≥ 5 is TRUE when x=5 — boundary satisfies ≥. x > 5 is FALSE when x=5.",
+        "Selection: IF executes when true, skips when false; IF/ELSE executes exactly one block",
+        "Multiple separate IFs all evaluated; IF/ELSE stops at first true; nested conditionals: inner evaluated only when outer allows",
+        "Iteration: REPEAT n TIMES = exactly n; REPEAT UNTIL checks condition BEFORE each iteration",
+        "REPEAT UNTIL condition already true → ZERO iterations; condition never true → infinite loop",
+        "Algorithms can be created from ideas, by combining, or by modifying existing algorithms",
+        "Using existing algorithms as building blocks: reduces development time, reduces testing, simplifies error identification",
+        "Algorithms that look similar can produce DIFFERENT results — initialization matters enormously",
+        "ALWAYS initialize max/min to aList[1] — NEVER to 0 (fails for all-negative lists)",
+        "FOR EACH traverses all elements first to last — complete or partial",
+        "Linear search: one by one, works on any list. Binary search: halves each step, MUST be sorted.",
+        "Binary search for n elements: at most log₂(n) steps vs up to n for linear",
+        "Procedure: named group of instructions with parameters and return values",
+        "Parameters in declaration; arguments in call — assigned in ORDER (first to first)",
+        "Procedure call interrupts sequential execution — flow returns to calling point after procedure finishes",
+        "RETURN exits immediately and returns value — can appear ANYWHERE in the procedure",
+        "Procedural abstraction: use a procedure knowing WHAT it does, not HOW",
+        "Benefits: code reuse, improved readability, generalization through parameters, internals can change without affecting users",
+        "Modularity: subdivide programs into subprograms — parameters allow generalization for different inputs",
+        "Software library: collection of procedures for creating programs; API specifies how to use them",
+        "API documentation is NECESSARY to understand what procedures do and how to use them correctly",
+        "RANDOM(a, b): random INTEGER from a to b inclusive — integers only, each equally likely",
+        "P(specific value from RANDOM(a,b)) = 1/(b-a+1); each run may produce DIFFERENT results",
+        "Use RANDOM(1, LENGTH(aList)) for valid random index — NEVER RANDOM(0,...)",
+        "Simulation: abstraction of a complex phenomenon — uses varying values to reflect changing state",
+        "Most useful when real experiments impractical: too big, small, fast, slow, expensive, dangerous",
+        "Simulations can contain BIAS from choices about what was included or excluded",
+        "Simulations being imperfect does NOT make them useless — they still provide valuable insights",
+        "Random number generators simulate variability that exists in the real world",
+        "Algorithmic efficiency: estimation of computational resources as function of input size",
+        "Reasonable: polynomial (constant, linear, n², n³); Unreasonable: exponential or factorial",
+        "Efficiency measured informally by counting how many times a statement executes",
+        "Some problems have no efficient algorithm — heuristics find good but not guaranteed optimal solutions",
+        "Decision problem: yes/no answer. Optimization problem: find the best solution.",
+        "Decidable: algorithm always gives correct yes/no for ALL inputs",
+        "Undecidable: NO algorithm can always give correct yes/no for ALL inputs — some instances may be solvable",
+        "Undecidability is mathematical impossibility — NOT hardware limitation — no technology can overcome it"
+      ]
+    }
+  ]
 }

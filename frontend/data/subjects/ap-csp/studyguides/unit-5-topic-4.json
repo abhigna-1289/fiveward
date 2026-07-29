@@ -2,5 +2,160 @@
   "unit": 5,
   "topic": "5.4",
   "title": "Crowdsourcing",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "The Power of Many: Collaboration at Scale"
+    },
+    {
+      "type": "paragraph",
+      "text": "Computing and the Internet have made it possible to connect millions of people around the world and harness their collective knowledge, effort, and resources in ways that were never before possible. Topic 5.4 is about how widespread access to information and public data enables people to collaborate at massive scale to solve problems, conduct research, and fund ideas. This is crowdsourcing — and it has fundamentally changed how humans solve problems together."
+    },
+    {
+      "type": "heading",
+      "text": "Widespread Access Enables Problem-Solving at Scale"
+    },
+    {
+      "type": "keyterm",
+      "term": "How does widespread access to data enable problem solving?",
+      "definition": "Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results. This enables crowdsourcing and citizen science at a large scale."
+    },
+    {
+      "type": "paragraph",
+      "text": "Before the Internet, identifying a problem often required expensive surveys or research by professionals. Solving it required coordinating specialists in person. Sharing results required publishing in journals accessible only to other specialists. The Internet changed all three — anyone with a computing device can now participate in finding problems, contributing solutions, and sharing results with the world. This is what enables crowdsourcing and citizen science at a scale that was previously impossible."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Before Widespread Internet Access", "With Widespread Internet Access"],
+      "rows": [
+        ["Identifying problems required expensive professional surveys or research", "Anyone can identify and report problems through online platforms — millions of observations replace a few professional ones"],
+        ["Developing solutions required coordinating specialists in the same location", "People worldwide can collaborate on solutions simultaneously regardless of location"],
+        ["Disseminating results required professional publication accessible to few", "Results can be shared instantly with anyone in the world through websites, data repositories, and social platforms"],
+        ["Funding required convincing banks or wealthy investors", "Crowdfunding connects ideas directly with thousands of small contributors"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Crowdsourcing"
+    },
+    {
+      "type": "keyterm",
+      "term": "Crowdsourcing",
+      "definition": "The practice of obtaining input or information from a large number of people via the Internet. Offers new models for collaboration such as connecting businesses or social causes with funding. Human capabilities can be enhanced by collaboration via computing."
+    },
+    {
+      "type": "paragraph",
+      "text": "Crowdsourcing is the practice of obtaining input or information from a large number of people via the Internet. The 'crowd' does the work — contributing data, money, ideas, or effort — and the organizer aggregates and uses those contributions. The result is that tasks that would be impossibly large for any individual or small team become achievable through the combined effort of many."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type of Crowdsourcing", "What the Crowd Contributes", "Example"],
+      "rows": [
+        ["Crowdfunding", "Money — small contributions from many people fund a project, business, or cause", "Kickstarter: thousands of backers each contribute $20-$100 to fund a new product that no single investor would back"],
+        ["Crowdsourced data", "Observations or data points collected from many distributed contributors", "Waze: millions of drivers report road conditions, accidents, and speed traps — collectively building a real-time traffic map"],
+        ["Crowdsourced knowledge", "Information, expertise, or written content from many contributors", "Wikipedia: millions of volunteer editors collectively write and maintain an encyclopedia larger than any professional team could create"],
+        ["Crowdsourced labor", "Small amounts of work from many people that collectively complete a large task", "Online platforms where thousands of volunteers tag images, transcribe documents, or identify patterns in data"],
+        ["Crowdsourced ideas", "Creative solutions or feedback from a large population", "Online platforms where users vote on and suggest product features or solutions to design challenges"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: Crowdsourcing vs Citizen Science",
+      "definition": "Crowdsourcing: obtaining input or information from a large number of people via the Internet — broader than just science, includes funding, ideas, and data.\nCitizen Science: specifically scientific research conducted by distributed non-scientists who contribute data using their own devices. Citizen science is a form of crowdsourcing applied to scientific research."
+    },
+    {
+      "type": "heading",
+      "text": "Citizen Science"
+    },
+    {
+      "type": "keyterm",
+      "term": "Citizen Science",
+      "definition": "Scientific research conducted in whole or in part by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices. A form of crowdsourcing applied to scientific research."
+    },
+    {
+      "type": "paragraph",
+      "text": "Citizen science is crowdsourcing applied specifically to scientific research. Non-scientists contribute real scientific data using their own computing devices — smartphones, computers, and sensors — enabling research that professional scientists could never conduct alone. Science has been affected by using distributed and citizen science to solve scientific problems. The scale and geographic distribution of citizen scientists allows data collection across time and space that would be impossible for any research team."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Citizen Science Project", "What Citizens Contribute", "Scientific Value"],
+      "rows": [
+        ["Bird population tracking (eBird)", "Amateur birdwatchers log bird sightings using a smartphone app from locations worldwide", "Millions of data points reveal migration patterns, population changes, and habitat shifts across entire continents"],
+        ["Galaxy classification (Galaxy Zoo)", "Volunteers look at telescope images and classify galaxy shapes", "Tasks that would take one astronomer centuries are completed in months — humans outperform computers at shape recognition"],
+        ["Air quality monitoring", "People with low-cost sensors on their homes or phones report local air quality", "Fine-grained air quality maps reveal pollution hot spots that a few government sensors would miss"],
+        ["Medical data contribution", "People use apps to log symptoms, activity, and health data over time", "Large longitudinal health data sets enable research on chronic conditions that clinical trials cannot capture"],
+        ["Earthquake detection (MyShake)", "Smartphones detect vibrations and report to a central server", "A global network of millions of phones can detect earthquakes faster than traditional seismic sensor networks"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Science has been affected by using distributed and citizen science to solve scientific problems. Citizen science is not just 'helping scientists' — it has fundamentally changed what scientific research is possible. Data sets that would be impossible for any professional team to collect are now routinely assembled through citizen science. This represents a genuine transformation in how science is done."
+    },
+    {
+      "type": "heading",
+      "text": "Human Capabilities Enhanced by Collaboration"
+    },
+    {
+      "type": "keyterm",
+      "term": "How widespread access to data enables problem solving",
+      "definition": "Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results — enabling crowdsourcing and citizen science at a large scale."
+    },
+    {
+      "type": "paragraph",
+      "text": "Human capabilities can be enhanced by collaboration via computing. Individual humans have limited time, attention, geographic reach, and expertise. When computing connects many people, their combined capabilities far exceed what any individual or small team could achieve. This is not just about doing existing tasks faster — it enables entirely new kinds of tasks that no previous human collaboration model could accomplish."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Individual Human Capability", "Enhanced Capability Through Crowdsourcing"],
+      "rows": [
+        ["One person can visit a few locations to observe wildlife", "Millions of citizen scientists collectively cover every habitat on Earth simultaneously"],
+        ["One team can review thousands of research papers", "Crowdsourced review platforms enable communities to collectively evaluate millions of papers"],
+        ["One entrepreneur can pitch to a handful of investors", "Crowdfunding platforms connect ideas with millions of potential backers worldwide"],
+        ["One programmer can write and test a program alone", "Open source communities with thousands of contributors produce software used by billions"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "New Models for Collaboration"
+    },
+    {
+      "type": "paragraph",
+      "text": "Crowdsourcing offers new models for collaboration, such as connecting businesses or social causes with funding. Before crowdfunding platforms, a new business needed to convince a bank or a venture capitalist to provide startup capital. A social cause needed to fundraise through events or direct mail. Now, either can reach millions of potential supporters directly and collect small contributions from each — together adding up to substantial funding."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Traditional Collaboration Model", "Crowdsourcing-Enabled Model"],
+      "rows": [
+        ["Startup funding: convince one or a few large investors to provide capital", "Crowdfunding: thousands of small backers each contribute — startup is funded without giving control to any single investor"],
+        ["Scientific research: funded by government grants to professional researchers", "Citizen science: research conducted by millions of volunteers with their own devices — cost near zero"],
+        ["Encyclopedia: written by professional editors at a publisher", "Wikipedia: written and maintained by millions of volunteers — constantly updated, free to access"],
+        ["Product design: company pays professional designers", "Open innovation: public contest invites solutions from millions — best ideas surface regardless of who had them"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Know the distinction between crowdsourcing and citizen science: crowdsourcing is the broader concept (obtaining input from many people via the Internet — includes funding, data, knowledge, labor). Citizen science is specifically scientific research conducted by distributed non-scientists using their own computing devices. Citizen science IS a form of crowdsourcing — but not all crowdsourcing is citizen science."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Widespread access to information and public data facilitates identification of problems, development of solutions, and dissemination of results",
+        "Crowdsourcing is the practice of obtaining input or information from a large number of people via the Internet",
+        "Crowdsourcing offers new models for collaboration such as connecting businesses or social causes with funding",
+        "Human capabilities can be enhanced by collaboration via computing",
+        "Citizen science is scientific research conducted by distributed individuals, many of whom may not be scientists, who contribute relevant data using their own computing devices",
+        "Science has been affected by using distributed and citizen science to solve scientific problems",
+        "Citizen science IS a form of crowdsourcing — applied specifically to scientific research",
+        "Crowdsourcing is broader — it includes funding, data collection, knowledge creation, and labor, not just science"
+      ]
+    }
+  ]
 }

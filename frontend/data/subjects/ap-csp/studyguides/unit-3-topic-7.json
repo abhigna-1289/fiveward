@@ -2,5 +2,144 @@
   "unit": 3,
   "topic": "3.7",
   "title": "Nested Conditionals",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Are Nested Conditionals?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sometimes a single IF/ELSE is not enough to express the full logic of a problem. When a program needs to check a second condition ONLY IF a first condition is true — or only if it is false — nested conditionals are the solution. Nested conditionals place IF statements inside other IF statements, creating a tree of decisions."
+    },
+    {
+      "type": "keyterm",
+      "term": "Nested Conditional Statements",
+      "definition": "Conditional statements within conditional statements. Allow programs to check multiple conditions in sequence, where inner conditions are only evaluated if outer conditions are met."
+    },
+    {
+      "type": "paragraph",
+      "text": "The defining characteristic of nested conditionals is dependency: the inner conditional is only reached and evaluated IF the outer conditional's path leads there. If the outer condition sends execution to the ELSE branch, the inner conditional inside the IF branch is completely skipped — never evaluated at all."
+    },
+    {
+      "type": "heading",
+      "text": "How Nested Conditionals Work"
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 15\n\nIF(x > 10)\n{\n   IF(x > 20)\n   {\n      DISPLAY \"very large\"\n   }\n   ELSE\n   {\n      DISPLAY \"medium\"\n   }\n}\nELSE\n{\n   DISPLAY \"small\"\n}\n\n-- Trace:\n-- Step 1: outer condition (x > 10) = (15 > 10) = true → enter outer IF\n-- Step 2: inner condition (x > 20) = (15 > 20) = false → enter inner ELSE\n-- Output: medium\n\n-- IMPORTANT: if outer had been false, the inner IF/ELSE\n-- would NEVER be evaluated at all"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["x value", "Outer (x>10)?", "Inner (x>20)?", "Output", "Note"],
+      "rows": [
+        ["x = 25", "true → enter outer IF", "true → execute inner IF", "very large", "Both conditions satisfied"],
+        ["x = 15", "true → enter outer IF", "false → execute inner ELSE", "medium", "Outer true, inner false"],
+        ["x = 5", "false → execute outer ELSE", "NOT EVALUATED", "small", "Inner never reached when outer is false"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "The inner conditional is ONLY evaluated when execution reaches it — which only happens when the outer condition directs execution to that branch. If the outer IF is false and execution goes to the outer ELSE, any inner conditionals inside the outer IF block are completely ignored."
+    },
+    {
+      "type": "heading",
+      "text": "A Classic Use: Multi-Level Classification"
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most common uses of nested conditionals is classifying a value into multiple non-overlapping categories. A grading system with letter grades is a perfect example — each grade boundary is only checked if higher boundaries have already been ruled out."
+    },
+    {
+      "type": "codeblock",
+      "code": "score ← 75\n\nIF(score ≥ 90)\n{\n   DISPLAY \"A\"\n}\nELSE\n{\n   IF(score ≥ 80)\n   {\n      DISPLAY \"B\"\n   }\n   ELSE\n   {\n      IF(score ≥ 70)\n      {\n         DISPLAY \"C\"\n      }\n      ELSE\n      {\n         DISPLAY \"F\"\n      }\n   }\n}\n\n-- Trace for score = 75:\n-- (score ≥ 90) = false → outer ELSE\n-- (score ≥ 80) = false → middle ELSE\n-- (score ≥ 70) = true  → displays \"C\"\n-- Output: C"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Score", "≥ 90?", "≥ 80?", "≥ 70?", "Output"],
+      "rows": [
+        ["95", "true → A", "not checked", "not checked", "A"],
+        ["85", "false", "true → B", "not checked", "B"],
+        ["75", "false", "false", "true → C", "C"],
+        ["65", "false", "false", "false → F", "F"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Notice that each inner condition is only evaluated when all outer conditions have been false. For score = 85, we check ≥ 90 (false), then check ≥ 80 (true) and stop. We never check ≥ 70 because execution has already found its branch and exited the nested structure."
+    },
+    {
+      "type": "heading",
+      "text": "Nested Conditionals vs AND Expressions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sometimes a nested conditional can be rewritten as a single IF with an AND expression. Other times, the nested version is necessary because the two cases need different actions. Understanding when to use each is important."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Approach", "Code", "When to Use"],
+      "rows": [
+        ["Nested conditional", "IF(x > 0) { IF(x < 10) { DISPLAY \"in range\" } ELSE { DISPLAY \"too big\" } } ELSE { DISPLAY \"too small\" }", "When each combination of true/false needs a different action — 3 or more distinct outcomes"],
+        ["Single IF with AND", "IF((x > 0) AND (x < 10)) { DISPLAY \"in range\" }", "When you only need one action if both conditions are true — simpler and more readable for 2 outcomes"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- These produce the same output for the 'in range' case\n-- but the nested version can handle MORE cases:\n\n-- Nested version (3 distinct outcomes):\nx ← 5\nIF(x > 0)\n{\n   IF(x < 10)\n   {\n      DISPLAY \"in range\"     -- x is 1-9\n   }\n   ELSE\n   {\n      DISPLAY \"too big\"      -- x is 10 or more\n   }\n}\nELSE\n{\n   DISPLAY \"not positive\"    -- x is 0 or negative\n}\n\n-- AND version (only one outcome actionable):\nIF((x > 0) AND (x < 10))\n{\n   DISPLAY \"in range\"        -- x is 1-9\n}\n-- Does nothing for x <= 0 or x >= 10 unless you add ELSE"
+    },
+    {
+      "type": "heading",
+      "text": "Tracing Complex Nested Conditionals"
+    },
+    {
+      "type": "paragraph",
+      "text": "When tracing nested conditionals on the exam, always work from the OUTSIDE in. Evaluate the outermost condition first. Based on true or false, determine which branch you are in. Then — and only then — evaluate the next condition inside that branch. Continue inward step by step."
+    },
+    {
+      "type": "codeblock",
+      "code": "x ← 3\ny ← 7\n\nIF(x > 5)\n{\n   IF(y > 5)\n   {\n      DISPLAY \"both big\"\n   }\n   ELSE\n   {\n      DISPLAY \"only x is big\"\n   }\n}\nELSE\n{\n   IF(y > 5)\n   {\n      DISPLAY \"only y is big\"\n   }\n   ELSE\n   {\n      DISPLAY \"neither is big\"\n   }\n}\n\n-- Step 1: outer (x > 5) = (3 > 5) = false → outer ELSE\n-- Step 2: in outer ELSE, check (y > 5) = (7 > 5) = true\n-- Step 3: inner IF in ELSE branch executes\n-- Output: only y is big\n-- Note: the IF block inside the outer IF is NEVER evaluated"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["x", "y", "Outer (x>5)?", "Inner (y>5)?", "Output"],
+      "rows": [
+        ["x=8", "y=7", "true → outer IF", "true → inner IF", "both big"],
+        ["x=8", "y=3", "true → outer IF", "false → inner ELSE", "only x is big"],
+        ["x=3", "y=7", "false → outer ELSE", "true → inner IF in ELSE", "only y is big"],
+        ["x=3", "y=3", "false → outer ELSE", "false → inner ELSE in ELSE", "neither is big"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "When tracing nested conditionals: work OUTSIDE-IN. Evaluate the outermost condition first. If it is true, enter the outer IF — now evaluate the inner conditions inside that block. If it is false, enter the outer ELSE — evaluate the inner conditions inside that block. Never evaluate an inner condition in a branch you have not entered."
+    },
+    {
+      "type": "heading",
+      "text": "A Four-Level Nested Example"
+    },
+    {
+      "type": "codeblock",
+      "code": "temp ← 72\nhumidity ← 80\n\nIF(temp ≥ 80)\n{\n   IF(humidity ≥ 70)\n   {\n      DISPLAY \"hot and humid\"\n   }\n   ELSE\n   {\n      DISPLAY \"hot and dry\"\n   }\n}\nELSE\n{\n   IF(temp ≥ 60)\n   {\n      IF(humidity ≥ 70)\n      {\n         DISPLAY \"comfortable but humid\"\n      }\n      ELSE\n      {\n         DISPLAY \"comfortable and dry\"\n      }\n   }\n   ELSE\n   {\n      DISPLAY \"cold\"\n   }\n}\n\n-- Trace for temp=72, humidity=80:\n-- (temp ≥ 80) = (72 ≥ 80) = false → outer ELSE\n-- (temp ≥ 60) = (72 ≥ 60) = true  → middle IF\n-- (humidity ≥ 70) = (80 ≥ 70) = true → innermost IF\n-- Output: comfortable but humid"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Nested conditional statements are conditional statements within conditional statements",
+        "Inner conditions are ONLY evaluated if the outer condition directs execution to that branch",
+        "If the outer IF is false and execution goes to the ELSE, any inner conditionals inside the outer IF block are never evaluated",
+        "Always trace nested conditionals from the OUTSIDE IN — evaluate the outermost condition first",
+        "A common use is multi-level classification where each condition is only checked after higher-priority conditions have been ruled out",
+        "A nested conditional with one action for combined true/true can sometimes be simplified to a single IF with AND — use nested when different combinations need different actions",
+        "The ELSE belongs to the nearest IF above it at the same nesting level — be careful to track which ELSE pairs with which IF"
+      ]
+    }
+  ]
 }

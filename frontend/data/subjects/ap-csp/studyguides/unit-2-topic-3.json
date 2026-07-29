@@ -2,5 +2,236 @@
   "unit": 2,
   "topic": "2.3",
   "title": "Extracting Information from Data",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Data vs Information"
+    },
+    {
+      "type": "paragraph",
+      "text": "Data and information are not the same thing. Data are raw facts — numbers, measurements, records, and observations. Information is what you extract from data by processing and analyzing it. Programs can be used to process data to acquire information — turning raw numbers into meaningful knowledge that can identify trends, support decisions, and address real-world problems."
+    },
+    {
+      "type": "keyterm",
+      "term": "Information",
+      "definition": "The collection of facts and patterns extracted from data. Data provide opportunities for identifying trends, making connections, and addressing problems."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Data (raw)", "Information (extracted from it)"],
+      "rows": [
+        ["A list of 10,000 students' test scores", "The average score is 74; students in urban schools score 12 points higher on average than students in rural schools"],
+        ["GPS timestamps and locations from a phone app", "The user commutes 45 minutes each morning and stops at the same coffee shop every Tuesday at 8:15 AM"],
+        ["Weather sensor readings from 500 cities over 20 years", "Temperatures in coastal cities are rising twice as fast as temperatures in inland cities over the past decade"],
+        ["Social media post timestamps and engagement counts", "User engagement is highest on Tuesday and Thursday evenings between 7–9 PM — posts at those times get 3x more interaction"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Data provide opportunities for identifying trends, making connections, and addressing problems. The same data set can yield many different kinds of information depending on what questions you ask and how you process it. Data on its own is not useful — it needs to be processed to become information."
+    },
+    {
+      "type": "heading",
+      "text": "Correlation vs Causation"
+    },
+    {
+      "type": "keyterm",
+      "term": "Correlation",
+      "definition": "A relationship between two variables shown in data where changes in one variable are associated with changes in another. Correlation does not necessarily indicate causation — additional research is needed to determine the exact nature of the relationship."
+    },
+    {
+      "type": "paragraph",
+      "text": "Digitally processed data may show a correlation between variables — meaning two things appear to change together. But finding a correlation in data does not automatically mean one thing causes the other. This is one of the most important and commonly tested distinctions in AP CSP. Additional research is always needed to understand the exact nature of the relationship."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Correlation Found in Data", "Incorrect Conclusion", "Correct Conclusion", "Actual Explanation"],
+      "rows": [
+        ["Students who eat breakfast score higher on tests", "Eating breakfast causes higher test scores", "There is a correlation between breakfast and test scores — causation requires more research", "Both may result from stable home environments and consistent family routines"],
+        ["Ice cream sales and drowning rates both rise in summer", "Ice cream causes drowning", "There is a correlation — a third factor likely explains both", "Hot weather causes both more swimming AND more ice cream consumption"],
+        ["Cities with more libraries have lower crime rates", "Libraries reduce crime", "There is a correlation between libraries and crime — the cause is unclear", "Both may result from higher investment in public services in wealthier, more educated communities"],
+        ["Shoe size and reading ability are correlated in children", "Larger shoes cause better reading ability", "There is a correlation — additional research is needed", "Both increase with age — older children have bigger feet AND read better"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Correlation ≠ causation is one of the most frequently tested concepts in Unit 2. When data shows two variables are related, the ONLY correct conclusion is 'there is a correlation between X and Y' — never 'X causes Y' without additional evidence. The AP exam will try to trick you into picking the causation answer. Always pick the correlation answer."
+    },
+    {
+      "type": "heading",
+      "text": "When One Data Source Is Not Enough"
+    },
+    {
+      "type": "paragraph",
+      "text": "Often, a single source does not contain all the data needed to draw a conclusion. It may be necessary to combine data from a variety of sources to formulate a conclusion. Relying on a single data source also risks introducing bias into conclusions — the source may only represent a specific subset of what you are trying to study."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Research Question", "Single Source — Insufficient", "Combined Sources — Better"],
+      "rows": [
+        ["Which neighborhoods have the highest childhood asthma rates?", "Hospital records from one clinic in a wealthy area", "Hospital records from all clinics across the city + air quality sensor data + neighborhood income data"],
+        ["What factors affect student academic performance?", "Test scores from one school for one year", "Test scores + attendance records + teacher experience data + family income + access to tutoring resources + multiple years"],
+        ["How does traffic affect air quality in a city?", "Traffic camera counts from major intersections only", "Traffic sensors + air quality sensors + weather data + time of day + data from side streets and highways"],
+        ["Does exercise improve mental health?", "Self-reported exercise data from gym members only", "Exercise data from diverse populations + mental health survey data + control group data + long-term follow-up"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Metadata"
+    },
+    {
+      "type": "keyterm",
+      "term": "Metadata",
+      "definition": "Data about data. Example: a photo is the data; its metadata includes the date taken, file size, and location. Metadata are used for finding, organizing, and managing information. Changes to metadata do not change the primary data."
+    },
+    {
+      "type": "paragraph",
+      "text": "Metadata can increase the effective use of data by providing additional context. It allows data to be structured and organized. Metadata exists alongside the primary data — describing properties of that data. Critically, changing or deleting metadata does not change the primary data itself."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Primary Data", "Metadata That Describes It", "What the Metadata Enables"],
+      "rows": [
+        ["A photo you took on your phone", "Date: July 4, 2024 | Location: 40.71°N, 74.01°W | Camera: iPhone 15 Pro | File size: 4.2 MB | Resolution: 12MP", "Search all photos taken in New York City; organize by date; find photos from a specific trip"],
+        ["An email message", "Sender: teacher@school.edu | To: student@email.com | Timestamp: Sept 5, 2024 9:03 AM | Subject: Homework Due | Read: Yes", "Search your inbox for emails from a specific sender; sort by date; filter unread messages"],
+        ["A music file", "Artist: Beyoncé | Album: Lemonade | Track: 3 | Duration: 3:48 | Genre: R&B | Year: 2016 | File size: 8.7 MB", "Search your music library by artist; create playlists by genre; sort by year"],
+        ["A document you created", "Author: J. Smith | Created: Jan 12, 2024 | Last modified: Feb 3, 2024 | Word count: 1,247 | File size: 52 KB", "Find documents by author; sort by creation date; identify the most recently edited files"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Changes and deletions made to metadata do NOT change the primary data. If you rename a photo file from 'vacation.jpg' to 'beach_trip.jpg', the photo itself is completely unchanged — only the file name (metadata) changed. The actual pixel data inside the image is untouched. If you change an email's subject line, the body of the email is unchanged."
+    },
+    {
+      "type": "heading",
+      "text": "Challenges of Processing Data Sets"
+    },
+    {
+      "type": "keyterm",
+      "term": "Challenges of Processing Data Sets",
+      "definition": "Challenges include: the need to clean data, incomplete data, invalid data, and the need to combine data sources. These challenges exist regardless of the size of the data set."
+    },
+    {
+      "type": "keyterm",
+      "term": "Data Cleaning",
+      "definition": "The process of making data uniform without changing their meaning. Example: replacing all equivalent abbreviations, spellings, and capitalizations with the same word. Needed because data collected from open fields may not be uniform."
+    },
+    {
+      "type": "paragraph",
+      "text": "When users enter data into an open field, the way they choose to abbreviate, spell, or capitalize something may vary from user to user. This non-uniform data must be cleaned before analysis — otherwise the program will treat 'blue', 'Blue', 'BLUE', and 'blu' as four different values when they all mean the same thing."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Data Challenge", "What It Means", "Real Example", "How to Address It"],
+      "rows": [
+        ["Need to clean data", "Data is not uniform — the same thing is recorded in different ways by different users", "Survey about favorite colors collects: 'blue', 'Blue', 'BLUE', 'blu', 'light blue' — all meaning the same color", "Data cleaning: standardize all equivalent values to the same format (e.g., all become 'blue')"],
+        ["Incomplete data", "Some records are missing required fields or values", "Student attendance database has 500 records but 47 are missing the student's grade level", "Decide whether to exclude incomplete records from analysis or estimate missing values"],
+        ["Invalid data", "Some records contain impossible or clearly wrong values", "Age field contains '247' or '-5' — impossible ages that were entered incorrectly", "Identify and remove or correct invalid entries before analysis begins"],
+        ["Need to combine sources", "One source alone doesn't contain all the data needed to answer the question", "Traffic camera data shows where congestion occurs but not why — need transit data and weather data too", "Merge data from multiple sources using a common field like location ID or timestamp"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Bias in Data"
+    },
+    {
+      "type": "keyterm",
+      "term": "Bias in Data",
+      "definition": "Problems of bias are often created by the type or source of data being collected. Bias is not eliminated by simply collecting more data — the source and collection method must be examined."
+    },
+    {
+      "type": "paragraph",
+      "text": "If the data collected does not represent the full population or situation being studied, any conclusions drawn from it will be biased. The critical point is that collecting MORE data from the same biased source does not fix the problem — it just produces more of the same biased data. The source and collection method themselves must change."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Biased Data Collection Scenario", "Why It's Biased", "Why More Data Doesn't Help", "How to Fix It"],
+      "rows": [
+        ["A hospital studies general population health using only patients from wealthy urban clinics", "Wealthy urban patients are systematically healthier than average — they don't represent the general population", "Collecting 10,000 more records from the same wealthy clinics still won't include poor or rural patients", "Collect data from a diverse range of clinics across different income levels and geographic areas"],
+        ["An online poll is used to predict election results", "Only people with Internet access who choose to participate are represented — many voter demographics are excluded", "A larger online poll still only reaches the same online-participating demographic", "Use stratified random sampling methods that reach all voter demographics proportionally"],
+        ["A facial recognition system is trained only on light-skinned faces", "The system learns patterns primarily from one demographic and performs poorly on others", "Adding more light-skinned face photos still doesn't add darker-skinned face data", "Collect and include training data representing all demographic groups in proportion to the population"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students often think that collecting MORE data solves bias. It does not. If you collect 10x more data from the same biased source, you get 10x more biased data. The SOURCE and COLLECTION METHOD must change — not just the quantity. This is directly tested on the AP exam."
+    },
+    {
+      "type": "heading",
+      "text": "Challenges of Large Data Sets"
+    },
+    {
+      "type": "keyterm",
+      "term": "Challenges of Large Data Sets",
+      "definition": "Large data sets are difficult to process using a single computer and may require parallel systems. The size of a data set affects the amount of information that can be extracted. Scalability of systems is an important consideration."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "The ability to process data depends on the capabilities of the users and their tools — a spreadsheet that works fine for 1,000 records may crash with 10 million",
+        "Large data sets are difficult to process using a single computer and may require parallel systems where multiple computers work on different portions simultaneously",
+        "Scalability of systems is an important consideration when working with data sets — the computational capacity of a system affects how data can be processed and stored as the data grows",
+        "The size of a data set affects the amount of information that can be extracted — a sample of 100 people may not reveal the same patterns as a data set of 10 million people",
+        "More data can reveal patterns that smaller samples would miss — but requires systems that can handle the increased scale"
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Data Set Size", "Processing Challenges", "Typical Approach"],
+      "rows": [
+        ["Small (hundreds of records)", "Minimal — a standard spreadsheet handles it easily", "Spreadsheet or simple program on one computer"],
+        ["Medium (thousands to hundreds of thousands)", "A standard computer can handle it but processing may be slow", "Database software or more efficient algorithms on one computer"],
+        ["Large (millions to billions)", "Cannot be processed efficiently on a single computer — takes too long or runs out of memory", "Parallel systems — distribute the data across many computers working simultaneously"],
+        ["Massive (petabytes — social media, genomics)", "No single computer could store or process it", "Distributed computing across thousands of computers in data centers"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Putting It Together: A Complete Data Analysis Example"
+    },
+    {
+      "type": "paragraph",
+      "text": "A public health researcher wants to determine which neighborhoods in a city have the highest rates of childhood asthma and why. Here is how the concepts from 2.3 apply to this real problem:"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "SINGLE SOURCE LIMITATION: Hospital records alone show WHERE asthma cases occur but not WHY — the researcher needs to combine multiple data sources",
+        "COMBINING SOURCES: Hospital asthma records + air quality sensor data + neighborhood income data + proximity to industrial sites are combined into one data set",
+        "DATA CLEANING: Hospital records use inconsistent neighborhood names ('East Side', 'E. Side', 'Eastside') — data cleaning standardizes all to the same name",
+        "INCOMPLETE DATA: 12% of records are missing the patient's zip code — the researcher must decide whether to exclude these or estimate the zip code from other fields",
+        "BIAS CHECK: The hospital only serves patients with insurance — uninsured patients who cannot afford care are underrepresented, which could undercount asthma in poorer neighborhoods",
+        "CORRELATION FOUND: Neighborhoods near industrial sites have 3x higher childhood asthma rates — a correlation is found",
+        "CAUSATION REQUIRES MORE RESEARCH: The data shows correlation between proximity to industrial sites and asthma rates — but additional research is needed to confirm causation and rule out other factors like traffic, building age, or socioeconomic variables"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Information is the collection of facts and patterns extracted from data",
+        "Data provide opportunities for identifying trends, making connections, and addressing problems",
+        "A correlation found in data does NOT necessarily indicate causation — additional research is always needed",
+        "Often a single source does not contain all the data needed — combining sources from a variety of places may be necessary",
+        "Metadata are data about data — used for finding, organizing, and managing information",
+        "Changes to metadata do NOT change the primary data",
+        "Data set challenges exist regardless of size: need to clean data, incomplete data, invalid data, need to combine sources",
+        "Data cleaning makes data uniform without changing its meaning",
+        "Bias is created by the type or source of data collected — NOT eliminated by collecting more data from the same source",
+        "Large data sets may require parallel systems to process",
+        "Scalability of systems is important — computational capacity affects how data can be processed and stored"
+      ]
+    }
+  ]
 }

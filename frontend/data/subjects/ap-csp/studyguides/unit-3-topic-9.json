@@ -2,5 +2,171 @@
   "unit": 3,
   "topic": "3.9",
   "title": "Developing Algorithms",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Algorithms Can Be Written in Different Ways"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is rarely just one way to solve a problem. Two programmers given the same task will often write completely different algorithms — different structure, different logic, different number of steps — and both can be correct. Understanding this is fundamental to thinking like a programmer and to evaluating code on the AP exam."
+    },
+    {
+      "type": "keyterm",
+      "term": "Can different algorithms solve the same problem?",
+      "definition": "Yes. Algorithms can be written in different ways and still accomplish the same task. However, algorithms that appear similar can yield different side effects or results. Different algorithms can also have different efficiencies."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED makes two related but distinct points: different algorithms can accomplish the same task, AND algorithms that APPEAR similar can actually produce different results. Both are important — the first tells you not to assume there is only one correct solution, the second tells you not to assume two similar-looking algorithms do the same thing."
+    },
+    {
+      "type": "heading",
+      "text": "Algorithms That Appear Similar but Yield Different Results"
+    },
+    {
+      "type": "keyterm",
+      "term": "Can algorithms that look similar produce different results?",
+      "definition": "Yes. Algorithms that appear similar can yield different side effects or results. The order and structure of statements matters — even small differences can change the outcome."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is one of the most heavily tested concepts in topic 3.9. Two algorithms can look nearly identical — same structure, similar logic — but produce completely different outputs because of small differences in initialization, conditions, or the order of statements."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Algorithm A: initializes max to 0\nPROCEDURE findMaxA(aList)\n{\n   max ← 0\n   FOR EACH item IN aList\n   {\n      IF(item > max)\n      {\n         max ← item\n      }\n   }\n   RETURN max\n}\n\n-- Algorithm B: initializes max to first element\nPROCEDURE findMaxB(aList)\n{\n   max ← aList[1]\n   FOR EACH item IN aList\n   {\n      IF(item > max)\n      {\n         max ← item\n      }\n   }\n   RETURN max\n}\n\n-- For aList = [5, 3, 8, 2]:\n-- Algorithm A: max starts at 0, finds 8 → returns 8 ✓\n-- Algorithm B: max starts at 5, finds 8 → returns 8 ✓\n-- Both give the same result here!\n\n-- For aList = [-5, -3, -8, -2]:\n-- Algorithm A: max starts at 0. -5>0? No. -3>0? No. -8>0? No. -2>0? No.\n--              returns 0  ← WRONG! 0 is not even in the list!\n-- Algorithm B: max starts at -5. -3>-5? Yes, max=-3. -8>-3? No. -2>-3? Yes, max=-2.\n--              returns -2 ← CORRECT!\n\n-- Same structure, nearly identical code → COMPLETELY DIFFERENT results\n-- for all-negative lists"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["List", "Algorithm A (max←0)", "Algorithm B (max←aList[1])", "Correct?"],
+      "rows": [
+        ["[5, 3, 8, 2]", "Returns 8", "Returns 8", "Both correct"],
+        ["[-5, -3, -8, -2]", "Returns 0 (WRONG — 0 not in list)", "Returns -2 (correct)", "Only B correct"],
+        ["[0, 0, 0]", "Returns 0 (happens to be correct)", "Returns 0", "Both correct by coincidence"],
+        ["[-1, -10, -3]", "Returns 0 (WRONG)", "Returns -1 (correct)", "Only B correct"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Always initialize max and min to the FIRST ELEMENT of the list — aList[1] — not to 0 or any arbitrary value. Initializing max to 0 produces incorrect results for any list containing only negative numbers. This is the most classic example of two similar-looking algorithms producing different results."
+    },
+    {
+      "type": "heading",
+      "text": "How New Algorithms Are Created"
+    },
+    {
+      "type": "keyterm",
+      "term": "How can new algorithms be created?",
+      "definition": "Algorithms can be created from an idea, by combining existing algorithms, or by modifying existing algorithms. Using existing correct algorithms as building blocks reduces development time, reduces testing, and simplifies error identification."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["How an Algorithm Is Created", "Description", "Example"],
+      "rows": [
+        ["From a new idea", "Starting from scratch to solve a problem in a new way", "Inventing an entirely new sorting technique"],
+        ["By combining existing algorithms", "Taking two or more known algorithms and putting them together", "Using a sort algorithm AND a search algorithm together to efficiently find the k-th smallest element"],
+        ["By modifying existing algorithms", "Taking a known algorithm and changing it to solve a related problem", "Modifying a max-finding algorithm to find the second-largest value instead"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Benefits of Using Existing Algorithms as Building Blocks"
+    },
+    {
+      "type": "paragraph",
+      "text": "Knowledge of existing algorithms can help in constructing new ones. Using existing correct algorithms as building blocks for constructing another algorithm has three key benefits that the CED specifically identifies."
+    },
+    {
+      "type": "keyterm",
+      "term": "What are the benefits of using existing algorithms as building blocks?",
+      "definition": "Reduces development time, reduces testing, and simplifies the identification of errors."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Benefit", "What It Means", "Example"],
+      "rows": [
+        ["Reduces development time", "You don't need to solve problems that are already solved — reuse existing correct solutions", "Using a known sum algorithm instead of writing your own saves the time of figuring out the logic from scratch"],
+        ["Reduces testing", "An existing algorithm that is already known to be correct doesn't need to be tested again — you know it works", "If you use the verified sum algorithm as part of an average algorithm, you only need to test the division step, not the summing step"],
+        ["Simplifies error identification", "When something goes wrong, you know the existing building blocks work correctly — so the bug must be in the new code you added", "If the sum subroutine is correct and your average is wrong, the error must be in how you're dividing — not in the summing part"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Common Existing Algorithms You Should Know"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Existing Algorithms",
+      "definition": "Determining the maximum or minimum value of two or more numbers, computing the sum or average of numbers, identifying if an integer is evenly divisible by another integer, determining a robot's path through a maze."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED explicitly lists several existing algorithms that you should know and be able to use as building blocks. These are not just examples — they are the specific algorithms that appear on the AP exam as parts of larger problems."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Finding maximum (init to first element):\nmax ← aList[1]\nFOR EACH item IN aList\n{\n   IF(item > max) { max ← item }\n}\n\n-- Finding minimum (init to first element):\nmin ← aList[1]\nFOR EACH item IN aList\n{\n   IF(item < min) { min ← item }\n}\n\n-- Computing sum:\nsum ← 0\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\n\n-- Computing average (builds on sum):\nsum ← 0\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\naverage ← sum / LENGTH(aList)\n-- Average COMBINES the sum algorithm with a division step\n\n-- Checking divisibility:\nIF(number MOD n = 0)\n{\n   DISPLAY \"evenly divisible by n\"\n}"
+    },
+    {
+      "type": "heading",
+      "text": "Equivalent Boolean Expressions and Conditional Statements"
+    },
+    {
+      "type": "keyterm",
+      "term": "Can conditional statements and Boolean expressions be equivalent?",
+      "definition": "Yes. Some conditional statements can be written as equivalent Boolean expressions, and some Boolean expressions can be written as equivalent conditional statements."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a subtler concept tested in topic 3.9: the same logic can sometimes be expressed as either a conditional statement or a Boolean expression, and they produce identical results. Recognizing this equivalence helps simplify code and understand what two different-looking algorithms actually do."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Conditional Statement Version", "Equivalent Boolean Expression", "Why Equivalent"],
+      "rows": [
+        ["IF(x > 0) { result ← true } ELSE { result ← false }", "result ← (x > 0)", "The IF just sets result to whatever the condition evaluates to — the expression does this directly"],
+        ["IF(x MOD 2 = 0) { isEven ← true } ELSE { isEven ← false }", "isEven ← (x MOD 2 = 0)", "Same logic — the condition itself is the Boolean value being stored"],
+        ["IF(x ≥ 15) { above ← true } ELSE { above ← false }", "above ← (x ≥ 15)", "The condition evaluates to true or false — storing that directly is equivalent"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Different Algorithms for the Same Problem: An Extended Example"
+    },
+    {
+      "type": "paragraph",
+      "text": "Here is an example where two algorithms accomplish exactly the same task using completely different approaches — demonstrating that different algorithms can be developed or used to solve the same problem."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- PROBLEM: Find the sum of all even numbers from 1 to n\n-- where n = 10\n\n-- Algorithm A: Use MOD to check each number\nsum ← 0\ni ← 1\nREPEAT UNTIL(i > 10)\n{\n   IF(i MOD 2 = 0)\n   {\n      sum ← sum + i\n   }\n   i ← i + 1\n}\nDISPLAY sum   -- 2+4+6+8+10 = 30\n\n-- Algorithm B: Only iterate through even numbers directly\nsum ← 0\ni ← 2\nREPEAT UNTIL(i > 10)\n{\n   sum ← sum + i\n   i ← i + 2    -- skip odd numbers entirely\n}\nDISPLAY sum   -- 2+4+6+8+10 = 30\n\n-- Both display 30 — same result, completely different structure\n-- Algorithm B is more efficient (5 iterations vs 10)\n-- Both are correct implementations of the same task"
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Different algorithms for the same problem can have different efficiencies. Algorithm A above checks 10 numbers. Algorithm B only processes 5. Both are correct but Algorithm B requires fewer steps. On the AP exam you may be asked to compare two algorithms and determine if they yield the same result — or identify where they differ."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Algorithms can be written in different ways and still accomplish the same task",
+        "Different algorithms can be developed or used to solve the same problem — there is rarely just one correct solution",
+        "Algorithms that appear similar can yield different side effects or results — small differences in structure matter enormously",
+        "Always initialize max/min to aList[1] (first element), NOT to 0 — initializing to 0 fails for all-negative lists",
+        "Algorithms can be created from a new idea, by combining existing algorithms, or by modifying existing algorithms",
+        "Using existing correct algorithms as building blocks reduces development time, reduces testing, and simplifies error identification",
+        "Common existing algorithms: finding max/min, computing sum or average, checking divisibility, finding a robot's path through a maze",
+        "Some conditional statements can be written as equivalent Boolean expressions and vice versa — the same logic, different representation",
+        "Knowledge of existing algorithms helps in constructing new ones — don't reinvent what is already solved"
+      ]
+    }
+  ]
 }

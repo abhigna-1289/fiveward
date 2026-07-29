@@ -2,5 +2,187 @@
   "unit": 3,
   "topic": "3.13",
   "title": "Developing Procedures",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Procedural Abstraction: The Big Idea"
+    },
+    {
+      "type": "paragraph",
+      "text": "Topic 3.12 taught you how to CALL procedures. Topic 3.13 teaches you how to DEVELOP them — and more importantly, WHY. Procedural abstraction is one of the most powerful ideas in all of computing. It allows programmers to manage enormous complexity by breaking large problems into smaller subproblems, hiding implementation details, and reusing solutions across a program."
+    },
+    {
+      "type": "keyterm",
+      "term": "Procedural Abstraction",
+      "definition": "Provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it. Allows a solution to a large problem to be based on solutions to smaller subproblems."
+    },
+    {
+      "type": "paragraph",
+      "text": "The word 'abstraction' is key. When you use a procedure, you only need to know: what inputs it takes, what it does, and what it returns. You do NOT need to know HOW it accomplishes its task internally. The implementation details are hidden behind the procedure's name — abstracted away. This is exactly the same principle as the abstraction you learned in data (topic 3.2): hide the details, expose only what's needed."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["What You Need to Know to USE a Procedure", "What You Do NOT Need to Know"],
+      "rows": [
+        ["The procedure's name", "How the procedure is implemented internally"],
+        ["What parameters it takes and what types they are", "Which specific algorithm or approach is used inside"],
+        ["What the procedure does — its behavior", "How many steps the internal algorithm takes"],
+        ["What value it returns (if any)", "What variable names are used inside the procedure"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "When you call LENGTH(aList), you know it returns the number of elements in the list. You don't know — or need to know — exactly how the computer counts those elements internally. When you call sortList(aList), you know it returns a sorted list. You don't need to know if it uses bubble sort, merge sort, or quicksort internally. This is procedural abstraction."
+    },
+    {
+      "type": "heading",
+      "text": "Modularity: Breaking Problems into Subproblems"
+    },
+    {
+      "type": "keyterm",
+      "term": "Modularity",
+      "definition": "The subdivision of a computer program into separate subprograms. Helps manage complexity by breaking a large problem into smaller, manageable pieces."
+    },
+    {
+      "type": "paragraph",
+      "text": "Procedural abstraction allows a solution to a large problem to be based on the solutions of smaller subproblems. This is accomplished by creating procedures to solve each of the subproblems. Instead of writing one enormous, tangled program, you break the problem into logical pieces, write a procedure for each piece, and combine them. Each procedure can be developed, tested, and verified independently."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Large Problem", "Subproblem Procedures"],
+      "rows": [
+        ["Build a student grade calculator", "PROCEDURE getLetterGrade(score), PROCEDURE calculateAverage(scores), PROCEDURE printReport(name, grades)"],
+        ["Build a navigation app", "PROCEDURE getCurrentLocation(), PROCEDURE calculateRoute(start, end), PROCEDURE displayMap(route), PROCEDURE getNextTurn(route, position)"],
+        ["Build a music streaming app", "PROCEDURE loadSong(filename), PROCEDURE playSong(song), PROCEDURE pauseSong(), PROCEDURE displayNowPlaying(song), PROCEDURE buildPlaylist(songs)"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Notice that each procedure in the examples above has a clear, single responsibility. getLetterGrade does one thing — convert a score to a letter. calculateAverage does one thing — compute the average. When procedures each do one thing well, the whole program becomes much easier to understand, develop, and maintain."
+    },
+    {
+      "type": "heading",
+      "text": "Benefits of Procedural Abstraction"
+    },
+    {
+      "type": "keyterm",
+      "term": "Benefits of Procedural Abstraction",
+      "definition": "Allows code reuse by extracting shared features instead of duplicating code. Improves readability. Using parameters allows procedures to be generalized and reused with different inputs. Allows programmers to change internals of a procedure without notifying users as long as the behavior is preserved."
+    },
+    {
+      "type": "paragraph",
+      "text": "The CED specifically identifies four key benefits of procedural abstraction. All four are testable — you must be able to explain and recognize each one."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Benefit", "What It Means", "Why It Matters"],
+      "rows": [
+        ["Code reuse", "Extract shared functionality into a procedure instead of duplicating identical code in multiple places", "If the logic needs to change, you update one procedure instead of finding and fixing every duplicate"],
+        ["Improved readability", "Meaningful procedure names make code self-documenting — getLetterGrade(score) is immediately clear", "Code that is easy to read is easier to debug, maintain, and share with other programmers"],
+        ["Generalization through parameters", "A parameterized procedure works for any valid input, not just one hardcoded value", "One getLetterGrade procedure handles any score — you don't need separate procedures for every possible score"],
+        ["Internal change without affecting users", "Programmers can improve the internals of a procedure without notifying users, as long as behavior is preserved", "Switch from bubble sort to quicksort internally — all code that calls sortList still works without any changes"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Code Reuse: The Power of Not Duplicating"
+    },
+    {
+      "type": "paragraph",
+      "text": "A procedural abstraction may extract shared features to generalize functionality instead of duplicating code. This allows for program code reuse, which helps manage complexity. Code duplication is one of the most common sources of bugs — when the same logic exists in 5 places and needs to change, updating all 5 is tedious and error-prone."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- WITHOUT procedural abstraction (code duplicated 5 times):\n-- For class 1:\nIF(score1 ≥ 90) { grade1 ← \"A\" }\nELSE { IF(score1 ≥ 80) { grade1 ← \"B\" } ELSE { grade1 ← \"C\" } }\n\n-- For class 2:\nIF(score2 ≥ 90) { grade2 ← \"A\" }\nELSE { IF(score2 ≥ 80) { grade2 ← \"B\" } ELSE { grade2 ← \"C\" } }\n\n-- ...repeated 3 more times for classes 3, 4, 5...\n-- If the A threshold changes to 93, must update in 5 DIFFERENT places\n-- Easy to miss one → bug!\n\n-- WITH procedural abstraction (logic in one place, reused 5 times):\nPROCEDURE getLetterGrade(score)\n{\n   IF(score ≥ 90) { RETURN \"A\" }\n   IF(score ≥ 80) { RETURN \"B\" }\n   RETURN \"C\"\n}\n\n-- Used for all 5 classes:\ngrade1 ← getLetterGrade(score1)\ngrade2 ← getLetterGrade(score2)\ngrade3 ← getLetterGrade(score3)\ngrade4 ← getLetterGrade(score4)\ngrade5 ← getLetterGrade(score5)\n-- If A threshold changes to 93: update ONE line in the procedure\n-- ALL 5 calls automatically use the updated logic"
+    },
+    {
+      "type": "heading",
+      "text": "Generalization Through Parameters"
+    },
+    {
+      "type": "keyterm",
+      "term": "Why can procedural abstraction be changed without affecting users?",
+      "definition": "Programmers can change the internals of a procedure (make it faster, more efficient, use less storage) without notifying users of the change, as long as what the procedure does is preserved."
+    },
+    {
+      "type": "paragraph",
+      "text": "Using parameters allows procedures to be generalized, enabling the procedures to be reused with a range of input values or arguments. A procedure without parameters can only do one specific thing. A procedure with parameters can do that same thing for ANY valid input — it becomes a general-purpose tool."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Without Parameters (Not General)", "With Parameters (Generalized)"],
+      "rows": [
+        ["PROCEDURE displayHello() { DISPLAY \"Hello\" }", "PROCEDURE displayMessage(msg) { DISPLAY msg }"],
+        ["Only displays \"Hello\" — can't be reused for other messages", "Works for any string: displayMessage(\"Hello\"), displayMessage(\"Goodbye\"), displayMessage(\"Welcome\")"],
+        ["PROCEDURE doubleThree() { RETURN 3 * 2 }", "PROCEDURE double(n) { RETURN n * 2 }"],
+        ["Only doubles the number 3", "Works for any number: double(5)=10, double(100)=200, double(-3)=-6"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Generalized procedure using parameters:\nPROCEDURE isInRange(x, low, high)\n{\n   RETURN((x ≥ low) AND (x ≤ high))\n}\n\n-- Can be reused for any range check:\nisInRange(85, 0, 100)     -- is 85 a valid score? true\nisInRange(150, 0, 100)    -- is 150 a valid score? false\nisInRange(5, 1, 10)       -- is 5 between 1 and 10? true\nisInRange(72, 32, 212)    -- is 72°F between freezing and boiling? true\n\n-- Without parameters you'd need separate procedures for every range:\n-- isValidScore(x), isValidTemp(x), isValidAge(x)... all duplicating the same logic"
+    },
+    {
+      "type": "heading",
+      "text": "Changing Internals Without Affecting Users"
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most elegant benefits of procedural abstraction: using it allows programmers to change the internals of a procedure without needing to notify users of the change, as long as what the procedure does is preserved. Users of the procedure only depend on its behavior — what it does — not on how it does it."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Original implementation (bubble sort — slow for large lists):\nPROCEDURE sortList(aList)\n{\n   -- bubble sort implementation here\n   -- works correctly but is slow for large inputs\n   RETURN sortedList\n}\n\n-- Improved implementation (quicksort — much faster):\nPROCEDURE sortList(aList)\n{\n   -- completely different quicksort implementation\n   -- faster, more efficient, uses less storage\n   -- but still returns the same sorted list\n   RETURN sortedList\n}\n\n-- ALL calls to sortList work exactly the same before and after the change:\nresult ← sortList(myList)    -- this code NEVER changes\nDISPLAY result               -- still shows the sorted list\n\n-- The programmer changed the INTERNALS\n-- Users of sortList don't know or care how it's implemented\n-- They only care that it returns a sorted list -- and it still does"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "When the exam asks about benefits of procedural abstraction, the four key points are: (1) code reuse instead of duplication, (2) improved readability through meaningful names, (3) parameters allow generalization for different inputs, (4) internals can be changed without affecting users as long as behavior is preserved. Know all four."
+    },
+    {
+      "type": "heading",
+      "text": "Writing a Procedure: The Syntax"
+    },
+    {
+      "type": "paragraph",
+      "text": "The exam reference sheet provides two forms of procedure definitions: one without a RETURN statement (for procedures that perform an action) and one with a RETURN statement (for procedures that compute and return a value). The RETURN statement may appear at any point inside the procedure and causes an immediate return."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Procedure WITHOUT return value (performs an action):\nPROCEDURE printGreeting(name)\n{\n   DISPLAY concat(\"Hello, \", name)\n   DISPLAY \"Welcome to fiveward!\"\n}\n\nprintGreeting(\"Alice\")   -- displays: Hello, Alice  Welcome to fiveward!\n\n-- Procedure WITH return value:\nPROCEDURE getLetterGrade(score)\n{\n   IF(score ≥ 90) { RETURN \"A\" }   -- immediate return if score ≥ 90\n   IF(score ≥ 80) { RETURN \"B\" }   -- immediate return if score ≥ 80\n   IF(score ≥ 70) { RETURN \"C\" }   -- immediate return if score ≥ 70\n   RETURN \"F\"                       -- reached only if score < 70\n}\n\ngrade ← getLetterGrade(85)    -- returns \"B\"\nDISPLAY grade                 -- displays B\n\ngrade ← getLetterGrade(92)    -- 92≥90 → returns \"A\" immediately\nDISPLAY grade                 -- displays A\n\ngrade ← getLetterGrade(65)    -- 65≥90? No. 65≥80? No. 65≥70? No. returns \"F\"\nDISPLAY grade                 -- displays F"
+    },
+    {
+      "type": "heading",
+      "text": "Procedural Abstraction Improves Readability"
+    },
+    {
+      "type": "paragraph",
+      "text": "Using procedural abstraction helps improve code readability. A program that is built from well-named procedures reads almost like natural language — the procedure names explain what is happening without requiring the reader to understand every implementation detail."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- WITHOUT procedural abstraction (hard to read — what does this do?):\nx ← INPUT()\ny ← 0\ni ← 1\nREPEAT UNTIL(i > x)\n{\n   IF(i MOD 2 = 0) { y ← y + i }\n   i ← i + 1\n}\nDISPLAY y\n\n-- WITH procedural abstraction (reads like natural language):\nPROCEDURE sumEvens(n)\n{\n   total ← 0\n   i ← 1\n   REPEAT UNTIL(i > n)\n   {\n      IF(i MOD 2 = 0) { total ← total + i }\n      i ← i + 1\n   }\n   RETURN total\n}\n\nlimit ← INPUT()\nresult ← sumEvens(limit)\nDISPLAY result\n\n-- The second version immediately communicates: get a limit from user,\n-- compute the sum of even numbers up to that limit, display the result\n-- The procedure name 'sumEvens' tells the reader exactly what it does"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "Procedural abstraction provides a name for a process and allows a procedure to be used knowing only what it does, not how it does it",
+        "Procedural abstraction allows a large problem to be based on solutions to smaller subproblems — accomplished by creating procedures for each subproblem",
+        "Modularity is the subdivision of a program into separate subprograms — helps manage complexity",
+        "Code reuse: procedural abstraction extracts shared features instead of duplicating code — one procedure called from multiple places",
+        "Improved readability: meaningful procedure names make code self-documenting and easier to understand",
+        "Using parameters allows procedures to be generalized and reused with a range of input values or arguments",
+        "Programmers can change the internals of a procedure without notifying users as long as what the procedure does is preserved",
+        "The RETURN statement may appear at any point inside the procedure and causes an immediate return",
+        "A procedure that takes zero or more arguments may or may not have a RETURN statement — both forms are valid"
+      ]
+    }
+  ]
 }

@@ -2,5 +2,157 @@
   "unit": 3,
   "topic": "3.16",
   "title": "Simulations",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "What Is a Simulation?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Some real-world phenomena are impossible, impractical, or dangerous to study directly. A scientist cannot shrink to the size of a molecule to study chemical reactions. An engineer cannot crash thousands of real cars to test safety designs. A climatologist cannot wait centuries to observe global warming. Simulations solve this problem — they use computing to model complex phenomena in a controlled digital environment."
+    },
+    {
+      "type": "keyterm",
+      "term": "Simulation",
+      "definition": "An abstraction of a more complex object or phenomenon for a specific purpose. Uses varying sets of values to reflect the changing state of a phenomenon. Often mimics real-world events to draw inferences without the constraints of the real world."
+    },
+    {
+      "type": "paragraph",
+      "text": "There are two essential properties of a simulation that the CED identifies separately. First, a simulation is an ABSTRACTION — it simplifies and approximates the real thing rather than perfectly replicating it. Second, a simulation uses VARYING SETS OF VALUES to reflect how the phenomenon changes over time — the values update as the simulation progresses to model the changing state."
+    },
+    {
+      "type": "heading",
+      "text": "Purpose of Simulations: Drawing Inferences"
+    },
+    {
+      "type": "keyterm",
+      "term": "When are simulations most useful?",
+      "definition": "When real-world events are impractical for experiments — too big, too small, too fast, too slow, too expensive, or too dangerous. Simulations facilitate the formulation and refinement of hypotheses."
+    },
+    {
+      "type": "paragraph",
+      "text": "Simulations often mimic real-world events with the purpose of drawing inferences, allowing investigation of a phenomenon without the constraints of the real world. The key word is 'inferences' — a simulation does not give you perfect knowledge of what will happen in the real world, but it allows you to draw conclusions and make predictions based on the model."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Why Real Experiment Is Impractical", "Example Phenomenon", "Simulation Used Instead"],
+      "rows": [
+        ["Too dangerous", "Nuclear explosion testing — real tests are catastrophically dangerous", "Computational nuclear physics simulation"],
+        ["Too expensive", "Testing 1,000 car designs in real crashes — each crash destroys a car", "Car crash physics simulation"],
+        ["Too slow", "Mountain range formation takes millions of years", "Geological time-lapse simulation"],
+        ["Too fast", "Subatomic particle collisions last nanoseconds", "Particle physics simulation"],
+        ["Too large", "Global climate change involves the entire planet's atmosphere", "Climate and weather simulation"],
+        ["Too small", "Molecular interactions between proteins", "Molecular dynamics simulation"],
+        ["Too complex", "Spread of an epidemic through a population of millions", "Disease transmission simulation"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Simulations Facilitate Hypothesis Formulation"
+    },
+    {
+      "type": "paragraph",
+      "text": "Simulations facilitate the formulation and refinement of hypotheses related to the objects or phenomena under consideration. This means simulations are not just used to confirm what we already know — they actively help scientists and engineers come up with new ideas and refine existing ones. A researcher runs a simulation, sees an unexpected result, forms a hypothesis about why, adjusts the simulation, and runs it again. This iterative process accelerates scientific discovery."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Without Simulation", "With Simulation"],
+      "rows": [
+        ["Must wait for real-world data to test a hypothesis", "Can test a hypothesis instantly by running the simulation with new parameters"],
+        ["Each test may cost millions of dollars or years of time", "Tests cost only computing time — often seconds or minutes"],
+        ["Dangerous experiments risk lives or equipment", "All experiments are safe — no physical risk"],
+        ["Limited to conditions that exist or can be created", "Can test extreme or impossible conditions freely"],
+        ["Only one experiment can run at a time in most cases", "Thousands of simulation runs can execute simultaneously on parallel systems"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Simulations Are Abstractions: What Gets Left Out"
+    },
+    {
+      "type": "keyterm",
+      "term": "Limitations of Simulations",
+      "definition": "Developing a simulation involves removing specific details or simplifying functionality. Simulations can contain bias derived from the choices of real-world elements that were included or excluded."
+    },
+    {
+      "type": "paragraph",
+      "text": "The process of developing an abstract simulation involves removing specific details or simplifying functionality. No simulation perfectly replicates reality — it cannot. Every simulation involves choices about what to include and what to leave out. These choices determine both the usefulness and the limitations of the simulation."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Simulation", "What It Includes", "What It Simplifies or Excludes", "Potential Effect on Results"],
+      "rows": [
+        ["Climate simulation using Northern Hemisphere data only", "Northern Hemisphere atmospheric patterns, temperature, precipitation", "Excludes Southern Hemisphere weather patterns and ocean currents", "Predictions may be biased toward Northern Hemisphere conditions — may inaccurately predict global trends"],
+        ["Traffic simulation using average driver speed", "Vehicle positions, speed limits, intersection timing", "Excludes individual variation in driver behavior, road rage, distracted driving", "May not capture realistic traffic jams caused by a single slow or erratic driver"],
+        ["Disease spread simulation ignoring social networks", "Population density, infection probability, recovery rate", "Excludes family clusters, workplace transmission, superspreader events", "May underestimate how fast the disease spreads through highly connected social groups"],
+        ["Hurricane simulation ignoring deep ocean temperatures", "Surface water temperature, wind patterns, atmospheric pressure", "Excludes sub-surface ocean heat content", "May inaccurately predict storm intensity — deep warm water is a key fuel source for hurricanes"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Simulations Can Contain Bias"
+    },
+    {
+      "type": "paragraph",
+      "text": "Simulations can contain bias derived from the choices of real-world elements that were included or excluded. This is directly connected to the data bias concept from Unit 2. The choices about what to model and what to leave out are made by the developers, and those choices can reflect biases — intentional or not. A simulation that only models certain populations, certain conditions, or certain factors will produce results that are biased toward those choices."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students sometimes think that because a simulation uses real data or real physics, it cannot be biased. This is wrong. Bias in simulations comes from the CHOICES about what to include and exclude — not from mathematical errors. A simulation built only with data from wealthy urban hospitals is biased, even if the math is perfect."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "A simulation being imperfect does NOT make it useless. ALL simulations simplify reality — that is the nature of abstraction. A simulation that excludes some details can still provide extremely valuable insights and help scientists formulate and test hypotheses. The key is understanding what was included and excluded so you can interpret results appropriately."
+    },
+    {
+      "type": "heading",
+      "text": "Using Random Values in Simulations"
+    },
+    {
+      "type": "keyterm",
+      "term": "How do simulations use random values?",
+      "definition": "Random number generators can be used in simulations to simulate the variability that exists in the real world, making the simulation more realistic."
+    },
+    {
+      "type": "paragraph",
+      "text": "Real-world phenomena are not perfectly predictable. Weather varies unpredictably. People make different choices at different times. Equipment fails at random moments. Diseases spread with a probability — not a certainty — per contact. Random number generators allow simulations to model this natural variability, making the simulation more realistic than a purely deterministic model would be."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Disease spread simulation using random values:\n-- Each contact between an infected and healthy person has a 30% chance of transmission\n\nINFECTION_PROBABILITY ← 3   -- 30% chance = RANDOM(1,10) ≤ 3\n\nPROCEDURE simulateContact(isInfected)\n{\n   IF(isInfected)\n   {\n      roll ← RANDOM(1, 10)\n      IF(roll ≤ INFECTION_PROBABILITY)\n      {\n         RETURN true    -- transmission occurred\n      }\n   }\n   RETURN false         -- no transmission\n}\n\n-- Without random values:\n-- Every contact would ALWAYS transmit or NEVER transmit\n-- The simulation would not reflect real-world probabilistic spread\n\n-- With random values:\n-- Each contact has a 30% chance of transmission\n-- Reflects the probabilistic nature of real disease transmission\n-- Different runs produce different outcomes — like real epidemics"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Simulation Type", "What Random Values Simulate", "Why Randomness Is Needed"],
+      "rows": [
+        ["Disease spread", "Whether any specific contact results in transmission", "Transmission probability — not every contact spreads disease"],
+        ["Weather forecast", "Natural variation in wind speed, precipitation, temperature", "Weather is inherently probabilistic — small differences have large effects"],
+        ["Traffic simulation", "Individual variation in driver speed and reaction time", "Not all drivers behave identically — variation causes real traffic patterns"],
+        ["Stock market simulation", "Random price fluctuations and unexpected events", "Markets contain genuine randomness and unpredictability"],
+        ["Ecosystem simulation", "Random birth and death events in a population", "Life and death are probabilistic events — not determined by a formula"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A simulation is an abstraction of a more complex object or phenomenon for a specific purpose",
+        "A simulation uses varying sets of values to reflect the changing state of a phenomenon",
+        "Simulations often mimic real-world events to draw inferences without the constraints of the real world",
+        "Simulations are most useful when real experiments are impractical — too big, small, fast, slow, expensive, or dangerous",
+        "Simulations facilitate the formulation and refinement of hypotheses",
+        "Developing a simulation involves removing specific details or simplifying functionality — this is abstraction",
+        "Simulations can contain bias from the choices of what real-world elements were included or excluded",
+        "A simulation being imperfect does not make it useless — all simulations simplify reality and can still provide valuable insights",
+        "Random number generators can be used in simulations to simulate the variability that exists in the real world"
+      ]
+    }
+  ]
 }

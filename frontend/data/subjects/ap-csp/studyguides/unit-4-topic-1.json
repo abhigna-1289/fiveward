@@ -2,5 +2,279 @@
   "unit": 4,
   "topic": "4.1",
   "title": "The Internet",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Computing Devices, Systems, and Networks"
+    },
+    {
+      "type": "paragraph",
+      "text": "Before understanding how the Internet works, you need to understand the building blocks it is made of: computing devices, computing systems, and computer networks. These three concepts form a hierarchy — devices combine into systems, and networks are a type of system."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing Device",
+      "definition": "A physical artifact that can run a program. Examples include computers, tablets, servers, routers, and smart sensors."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing System",
+      "definition": "A group of computing devices and programs working together for a common purpose. A computer network is a type of computing system."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computer Network",
+      "definition": "A group of interconnected computing devices capable of sending or receiving data. A path between two devices is a sequence of directly connected devices that begins at the sender and ends at the receiver."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Term", "What It Is", "Examples"],
+      "rows": [
+        ["Computing Device", "A physical artifact that can run a program", "Computer, tablet, server, router, smart sensor"],
+        ["Computing System", "A group of computing devices and programs working together for a common purpose", "A school's computer lab network, a company's IT infrastructure, the Internet itself"],
+        ["Computer Network", "A group of interconnected computing devices capable of sending or receiving data — a type of computing system", "A home Wi-Fi network, a school LAN, the Internet"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "A computer network IS a type of computing system — not the other way around. A computing system is the broader category. Also: routers and servers are computing devices just like computers and tablets — they are physical artifacts that can run programs."
+    },
+    {
+      "type": "heading",
+      "text": "Paths and Routing"
+    },
+    {
+      "type": "paragraph",
+      "text": "When two devices on a network communicate, data must travel from the sender to the receiver along a path. A path is a sequence of directly connected computing devices that begins at the sender and ends at the receiver. There may be many possible paths between two devices — routing is the process of choosing which one to use."
+    },
+    {
+      "type": "keyterm",
+      "term": "Routing",
+      "definition": "The process of finding a path from sender to receiver on a network. Routing on the Internet is usually dynamic — it is not specified in advance."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dynamic routing means the path is determined at the time data is sent — not planned in advance. Each router along the way decides the next hop based on current network conditions. This means two packets from the same message might take completely different paths through the network and still arrive at the same destination."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Static Routing", "Dynamic Routing (what the Internet uses)"],
+      "rows": [
+        ["Path is fixed and specified in advance", "Path is determined in real time as data travels through the network"],
+        ["If the fixed path breaks, data cannot be delivered", "If one path breaks, routers find an alternative path automatically"],
+        ["Simple but inflexible", "Complex but resilient — adapts to changing network conditions"],
+        ["Not how the Internet works", "How Internet routing actually works"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Bandwidth"
+    },
+    {
+      "type": "keyterm",
+      "term": "Bandwidth",
+      "definition": "The maximum amount of data that can be sent through a computer network in a fixed amount of time. Usually measured in bits per second."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bandwidth is about capacity — it is the maximum amount of data a network connection can carry in a given time period. Higher bandwidth means more data can flow simultaneously. Bandwidth is typically measured in bits per second (bps), kilobits per second (Kbps), megabits per second (Mbps), or gigabits per second (Gbps)."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Bandwidth", "Real-World Equivalent"],
+      "rows": [
+        ["1 Mbps (1 million bits per second)", "Fast enough to browse basic websites and send email"],
+        ["25 Mbps", "Minimum recommended for HD video streaming on one device"],
+        ["100 Mbps", "Comfortable for a household with multiple simultaneous streams"],
+        ["1 Gbps (1 billion bits per second)", "Very high speed — can download large files in seconds"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Bandwidth is the MAXIMUM — not the guaranteed speed. Actual data transfer speeds are often lower than the stated bandwidth due to network congestion, distance, interference, and other factors. Bandwidth is a property of the network connection itself."
+    },
+    {
+      "type": "heading",
+      "text": "The Internet"
+    },
+    {
+      "type": "keyterm",
+      "term": "The Internet",
+      "definition": "A computer network consisting of interconnected networks that use standardized, open (nonproprietary) communication protocols. Designed to be scalable. Access depends on the ability to connect a computing device to an Internet-connected device."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Internet is not a single network — it is a network OF networks. Millions of smaller networks (home networks, school networks, corporate networks, mobile carrier networks) are all interconnected and can communicate with each other because they all use the same standardized, open communication protocols."
+    },
+    {
+      "type": "keyterm",
+      "term": "Protocol",
+      "definition": "An agreed-upon set of rules that specify the behavior of a system. The protocols used in the Internet are open, which allows users to easily connect additional computing devices."
+    },
+    {
+      "type": "keyterm",
+      "term": "Why are open protocols important?",
+      "definition": "Because the protocols used in the Internet are open (nonproprietary), users can easily connect additional computing devices. This is what makes the Internet scalable and accessible to anyone."
+    },
+    {
+      "type": "paragraph",
+      "text": "Open (nonproprietary) protocols mean no single company owns or controls the rules of the Internet. Anyone can build a device or service that follows these rules and connect to the Internet. If protocols were proprietary, you would need permission from the protocol owner to connect — which would severely limit the Internet's growth and accessibility."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Open Protocols (what the Internet uses)", "Proprietary Protocols (what the Internet does NOT use)"],
+      "rows": [
+        ["Free for anyone to implement and use", "Owned by a company — requires license or permission"],
+        ["Any device following the protocol can connect", "Only approved devices can connect"],
+        ["Enables the Internet to scale to billions of devices", "Would limit the Internet to devices approved by the protocol owner"],
+        ["Examples: IP, TCP, UDP, HTTP", "Examples: some private corporate network protocols"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Scalability"
+    },
+    {
+      "type": "keyterm",
+      "term": "Scalability",
+      "definition": "The capacity for a system to change in size and scale to meet new demands. The Internet was designed to be scalable — it can grow to accommodate more devices and users."
+    },
+    {
+      "type": "paragraph",
+      "text": "When the Internet was designed, its creators knew it would need to grow. The combination of open protocols and dynamic routing makes this possible. Because protocols are open, anyone can connect a new device without permission. Because routing is dynamic, the network adapts to new devices automatically. The result is a network that has grown from a few research computers in the 1960s to billions of connected devices today — without being redesigned."
+    },
+    {
+      "type": "heading",
+      "text": "How Data Is Sent: Packets"
+    },
+    {
+      "type": "keyterm",
+      "term": "Packet",
+      "definition": "A chunk of data with metadata used for routing between origin and destination on the Internet, as well as for data reassembly. Packets may arrive at the destination in order, out of order, or not at all."
+    },
+    {
+      "type": "keyterm",
+      "term": "How is data sent through the Internet?",
+      "definition": "Information is passed as a data stream. Data streams contain chunks of data encapsulated in packets. Each packet contains a chunk of data and metadata for routing and reassembly. Packets may arrive in order, out of order, or not at all."
+    },
+    {
+      "type": "keyterm",
+      "term": "What does packet metadata contain?",
+      "definition": "Metadata in a packet is used for two purposes: routing the packet from origin to destination across the Internet, and reassembling the data at the destination once all packets arrive."
+    },
+    {
+      "type": "paragraph",
+      "text": "When you send a large file or message over the Internet, it is not sent as one continuous stream. Instead, the data is broken into small chunks called packets. Each packet is then routed independently through the network. At the destination, the metadata in each packet tells the receiving device how to put all the packets back together in the right order — even if they arrived out of order."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Part of a Packet", "What It Contains", "Purpose"],
+      "rows": [
+        ["Data payload", "A chunk of the original message or file", "Carries the actual content being transmitted"],
+        ["Source address", "Where the packet came from", "Tells receivers where to send a reply"],
+        ["Destination address", "Where the packet is going", "Tells routers how to forward the packet toward its destination"],
+        ["Sequence information", "Which piece of the original message this packet represents", "Allows the receiver to reassemble packets in the correct order"]
+      ]
+    },
+    {
+      "type": "keyterm",
+      "term": "What happens if packets arrive out of order or not at all?",
+      "definition": "Packets may arrive at the destination in order, out of order, or not at all. The metadata in each packet is used to reassemble the original data in the correct order regardless of arrival order."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Because packets may take different paths through the Internet (remember: routing is dynamic), they may arrive at the destination in a completely different order than they were sent. The sequence information in each packet's metadata allows the receiving device to reassemble them correctly. If a packet never arrives, the protocol may request retransmission."
+    },
+    {
+      "type": "heading",
+      "text": "Common Internet Protocols"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common Internet Protocols",
+      "definition": "IP (Internet Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol) are common protocols used on the Internet. HTTP is a protocol used specifically by the World Wide Web."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Protocol", "Full Name", "What It Does", "Used For"],
+      "rows": [
+        ["IP", "Internet Protocol", "Handles addressing and routing of packets across the Internet", "Every data transmission on the Internet"],
+        ["TCP", "Transmission Control Protocol", "Ensures all packets arrive and are reassembled correctly — requests retransmission if packets are lost", "Web browsing, email, file downloads where accuracy matters"],
+        ["UDP", "User Datagram Protocol", "Sends packets without guaranteeing delivery or order — faster but less reliable than TCP", "Video streaming, video calls, online games where speed matters more than perfect accuracy"],
+        ["HTTP", "HyperText Transfer Protocol", "Governs how web pages and resources are requested and delivered", "The World Wide Web specifically"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "You need to know that IP, TCP, and UDP are common Internet protocols and that HTTP is used by the World Wide Web. You do NOT need to know the detailed technical differences between TCP and UDP for the exam — just that they exist and are Internet protocols."
+    },
+    {
+      "type": "heading",
+      "text": "The Internet vs The World Wide Web"
+    },
+    {
+      "type": "keyterm",
+      "term": "World Wide Web",
+      "definition": "A system of linked pages, programs, and files that uses the Internet. HTTP is the protocol used by the World Wide Web. The Web is not the same as the Internet — it is one service that runs on top of the Internet."
+    },
+    {
+      "type": "keyterm",
+      "term": "Compare: The Internet vs The World Wide Web",
+      "definition": "The Internet is the global network of interconnected computers that transmit data.\nThe World Wide Web is a system of linked pages, programs, and files that runs on top of the Internet using HTTP.\nThe Web uses the Internet but is not the same thing as the Internet."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["The Internet", "The World Wide Web"],
+      "rows": [
+        ["The global network of interconnected networks", "A system of linked pages, programs, and files"],
+        ["The infrastructure — cables, routers, protocols", "One service that runs ON TOP OF the Internet"],
+        ["Uses many protocols: IP, TCP, UDP, HTTP, and more", "Uses HTTP specifically"],
+        ["Existed before the Web", "Created in 1989 by Tim Berners-Lee as a service on the Internet"],
+        ["Includes email, video calls, gaming, and the Web", "Just web pages and web applications"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A helpful analogy: the Internet is like the roads and highways of a city. The World Wide Web is like one particular chain of stores you can visit using those roads. There are many other things you can do using the roads (email is like mail delivery, video calls are like phone calls) — the Web is just one of many services that uses the Internet infrastructure."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "The Internet and the World Wide Web are NOT the same thing. The Web USES the Internet, but the Internet is much broader — it includes email, video streaming, online gaming, file transfers, and many other services beyond web pages. HTTP is the protocol for the Web specifically — not the entire Internet."
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A computing device is a physical artifact that can run a program — computers, tablets, servers, routers, and smart sensors are all computing devices",
+        "A computing system is a group of computing devices and programs working together for a common purpose",
+        "A computer network is a group of interconnected computing devices capable of sending or receiving data — a type of computing system",
+        "A path between two devices is a sequence of directly connected devices beginning at the sender and ending at the receiver",
+        "Routing is the process of finding a path from sender to receiver — Internet routing is usually DYNAMIC, not specified in advance",
+        "Bandwidth is the maximum amount of data that can be sent through a network in a fixed amount of time — usually measured in bits per second",
+        "The Internet is a computer network consisting of interconnected networks using standardized, open (nonproprietary) protocols",
+        "A protocol is an agreed-upon set of rules that specify the behavior of a system",
+        "Internet protocols are OPEN — this allows users to easily connect additional computing devices and makes the Internet scalable",
+        "Scalability is the capacity for a system to change in size and scale to meet new demands — the Internet was designed to be scalable",
+        "Information is sent through the Internet as a data stream — data streams contain chunks of data encapsulated in packets",
+        "Each packet contains a chunk of data and metadata for routing and reassembly",
+        "Packets may arrive at the destination in order, out of order, or not at all",
+        "Common Internet protocols: IP, TCP, UDP. HTTP is used specifically by the World Wide Web.",
+        "The World Wide Web is a system of linked pages, programs, and files that USES the Internet — it is NOT the same as the Internet",
+        "HTTP is the protocol used by the World Wide Web"
+      ]
+    }
+  ]
 }

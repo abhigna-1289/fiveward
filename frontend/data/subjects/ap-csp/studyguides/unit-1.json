@@ -1,6 +1,607 @@
 {
   "unit": 1,
-  "topic": null,
-  "title": "Unit 1: Creative Development",
-  "content": []
+  "topic": "review",
+  "title": "Unit 1 Review: Creative Development",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Unit 1 Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unit 1 is about how computing innovations are created — through collaboration, iterative design, careful documentation, and thorough testing. It covers four topics: Collaboration (1.1), Program Function and Purpose (1.2), Program Design and Development (1.3), and Identifying and Correcting Errors (1.4). This unit accounts for 10–13% of the AP exam. The central idea is that incorporating multiple perspectives through collaboration improves computing innovations, and that developers create better programs by using an iterative, user-focused development process."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Big Idea",
+      "text": "Incorporating multiple perspectives through collaboration improves computing innovations as they are developed. Developers create and innovate using an iterative design process that is user-focused, incorporates implementation and feedback cycles, and leaves ample room for experimentation and risk-taking."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.1 — Collaboration: What Is a Computing Innovation?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Before anything else, you need to be able to identify whether something is a computing innovation. The test is simple: does it require a program as an integral part of its function? If yes, it is a computing innovation. If it can function without any program at all, it is not."
+    },
+    {
+      "type": "keyterm",
+      "term": "Computing Innovation",
+      "definition": "Any innovation that includes a program as an integral part of its function. Computing innovations can be physical (require hardware that runs a program), nonphysical computing software (standalone applications), or nonphysical computing concepts (systems or models enabled by computing)."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Type", "What It Is", "Examples"],
+      "rows": [
+        ["Physical", "A tangible device that requires a program to function — without the program, it cannot work", "Self-driving car, smart insulin pump, fitness tracker, smart thermostat, pacemaker with digital controls"],
+        ["Nonphysical Software", "A standalone application or program that exists as software", "Photo editing app, word processor, video game, navigation app, social media platform"],
+        ["Nonphysical Concept", "A system, model, or way of doing things that only exists because of computing", "E-commerce, online banking, ride-sharing services, streaming platforms, cloud storage"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Computing Innovation ✓ — requires a program", "NOT a Computing Innovation ✗ — no program needed"],
+      "rows": [
+        ["Smart insulin pump — monitors blood sugar and doses insulin via a program", "Mechanical clock — operates entirely through gears and springs"],
+        ["Ride-sharing platform — requires software to match drivers and riders", "Printed cookbook — no program required to read and use it"],
+        ["Photo editing app — the program IS the innovation", "Regular bicycle — no program needed to function"],
+        ["E-commerce website — buying and selling enabled by computing systems", "Paper newspaper — no program required to read it"],
+        ["Smart thermostat — learns preferences and controls temperature via a program", "Analog thermometer — measures temperature mechanically with no software"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The exam often tests whether you can classify innovations correctly. A regular car is NOT a computing innovation. A self-driving car IS. A printed book is NOT. An e-reader IS. The key question: does it REQUIRE a program as an integral part of its function?"
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.1 — Why Collaboration Improves Innovations"
+    },
+    {
+      "type": "paragraph",
+      "text": "Effective collaboration produces a computing innovation that reflects the diversity of talents and perspectives of those who designed it. When team members come from different backgrounds and have different experiences, they catch each other's blind spots, identify needs that a single person would miss, and produce a better product overall."
+    },
+    {
+      "type": "paragraph",
+      "text": "Collaboration that includes diverse perspectives helps avoid bias in the development of computing innovations. Here is a concrete example: imagine a team building a voice recognition system consisting entirely of native English speakers from the same region. They test it thoroughly among themselves and it works great — for them. After release, they discover it performs poorly for users with accents, non-native speakers, and people with certain speech patterns. The team's lack of diversity meant they never encountered the system's failure modes for users unlike themselves. A more diverse team would have caught this in development."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Collaboration is NOT the same as group work. Effective collaboration requires equal participation and voice from all members. In group work, some members may dominate while others barely contribute. In true collaboration, every perspective is valued and incorporated — this is what produces innovations that reflect the diversity of the team."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Effective Collaboration", "Just Group Work"],
+      "rows": [
+        ["Equal participation and voice from all members", "Some members dominate, others barely contribute"],
+        ["Disagreements resolved through conflict resolution and negotiation", "Disagreements avoided or suppressed by the loudest member"],
+        ["Final product reflects all members' perspectives", "Final product reflects the strongest personality's preferences"],
+        ["Users from diverse backgrounds are consulted throughout", "Only team members' own experiences are considered"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.1 — Collaboration Models and Tools"
+    },
+    {
+      "type": "keyterm",
+      "term": "Pair Programming",
+      "definition": "A recognized collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss. Roles are typically switched regularly so both programmers experience both perspectives."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Pair Programming Role", "What They Do", "Why It Matters"],
+      "rows": [
+        ["Writer (driver)", "Types the code, focuses on implementing the current task one line at a time", "Handles the immediate coding work and syntax"],
+        ["Observer (navigator)", "Watches the code being written, points out errors, thinks ahead about the bigger picture", "Catches mistakes in real time before they compound — actively contributes to the final product"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents. These tools enable teams to work together regardless of physical location, share code, leave comments, track changes, review each other's contributions, and maintain a shared history of the project's development."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.1 — The Four Interpersonal Skills"
+    },
+    {
+      "type": "paragraph",
+      "text": "Effective collaborative teams practice specific interpersonal skills. These are different from technical programming skills — they govern how team members interact with each other to make the collaboration productive and equitable."
+    },
+    {
+      "type": "keyterm",
+      "term": "Communication",
+      "definition": "Clearly and effectively sharing ideas, progress, concerns, and feedback with all team members so everyone stays informed, aligned, and able to contribute meaningfully."
+    },
+    {
+      "type": "keyterm",
+      "term": "Consensus Building",
+      "definition": "Working toward an agreement that all team members can accept and support, even if it is not everyone's original preference. The goal is genuine alignment, not just majority rule."
+    },
+    {
+      "type": "keyterm",
+      "term": "Conflict Resolution",
+      "definition": "Identifying and addressing disagreements within the team in a productive way that allows the project to move forward without lasting damage to team relationships or the quality of the work."
+    },
+    {
+      "type": "keyterm",
+      "term": "Negotiation",
+      "definition": "Working through differences in opinion, approach, or priorities to reach a compromise that satisfies the core needs of the team and the project without requiring any member to abandon their key concerns."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "You must know exactly four interpersonal skills: communication, consensus building, conflict resolution, and negotiation. These are often confused with collaboration models (pair programming) or investigation methods (surveys, interviews). On the exam, be ready to classify each correctly."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.1 — Gathering User Feedback"
+    },
+    {
+      "type": "paragraph",
+      "text": "Consultation and communication with users are important aspects of the development of computing innovations. Information gathered from potential users can be used to understand the purpose of a program from diverse perspectives and to develop a program that fully incorporates those perspectives. User feedback is not optional — it is essential for building programs that actually meet real-world needs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Investigation Method", "What It Involves", "Best Used When"],
+      "rows": [
+        ["Surveys", "Collecting structured written responses from many users via questionnaires", "Getting broad input from many users efficiently at scale"],
+        ["Interviews", "One-on-one conversations with individual users asking open-ended questions", "Getting in-depth qualitative perspectives and following up on specific answers"],
+        ["User testing", "Watching users interact with the product and observing where they struggle or succeed", "Identifying usability problems that users may not be able to verbalize in a survey"],
+        ["Direct observations", "Watching how users currently perform the task before the program exists", "Understanding the real problem and workflow before designing any solution"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.2 — Program Function and Purpose"
+    },
+    {
+      "type": "paragraph",
+      "text": "The purpose of computing innovations is to solve problems or to pursue interests through creative expression. An understanding of the purpose of a computing innovation provides developers with an improved ability to develop that innovation — knowing WHY a program exists guides every design decision about HOW it is built."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program",
+      "definition": "A collection of program statements that performs a specific task when run by a computer. A program is often referred to as software. A program needs to work for a variety of inputs and situations — not just the ones the developer tested."
+    },
+    {
+      "type": "keyterm",
+      "term": "Code Segment",
+      "definition": "A collection of program statements that is part of a program. A code segment does not perform a complete task independently — it is a piece of a larger program."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Behavior",
+      "definition": "How a program functions during execution. Program behavior is often described by how a user interacts with it — what the user can do, what the program responds with, and the overall experience."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Program", "Code Segment"],
+      "rows": [
+        ["A complete collection of statements that performs a specific task when run", "A collection of statements that is part of a larger program"],
+        ["Can run independently and complete a task on its own", "Cannot perform a complete task alone — it is a piece of the whole"],
+        ["Example: a weather app that takes a city name and displays the forecast", "Example: the specific function inside the app that sends the request to the weather API"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A program can be described at two levels of detail. A broad description covers what the program does — its inputs and outputs. A detailed description covers both what the program does AND how the program statements accomplish this. Both are valid ways to describe a program depending on the audience and context."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Broad Description (what it does)", "Detailed Description (what AND how)"],
+      "rows": [
+        ["Describes inputs and outputs at a high level", "Describes inputs, outputs, AND the steps the program takes to get there"],
+        ["Appropriate for users who just need to know what the program does", "Appropriate for other developers who need to understand and maintain the code"],
+        ["Example: 'The app takes a city name and displays the current weather'", "Example: 'The app takes a city name string, constructs an API URL, sends an HTTP GET request, parses the JSON temperature field, converts Kelvin to Fahrenheit, and displays it on screen'"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.2 — Program Input"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Input",
+      "definition": "Data sent to a computer for processing by a program. Input can come in a variety of forms — tactile, audio, visual, or text. Critically, input can come from a user OR from other programs."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Input Type", "Description", "Examples"],
+      "rows": [
+        ["Tactile", "Physical touch or button interactions", "Screen tap, mouse click, keyboard press, controller button"],
+        ["Audio", "Sound captured by the device", "Voice command to a virtual assistant, microphone recording"],
+        ["Visual", "Images or video captured by a camera", "Photo taken for a filter app, QR code scanned, face for face recognition"],
+        ["Text", "Characters typed or submitted", "Search query typed, form filled out, message composed"],
+        ["From other programs", "Data received from external software or services", "Temperature data from a weather API, location from a GPS service, scores from another app"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.2 — Events and Event-Driven Programming"
+    },
+    {
+      "type": "keyterm",
+      "term": "Event",
+      "definition": "An action that is associated with a trigger and supplies input data to a program. Events can be generated when a key is pressed, a mouse is clicked, a program is started, or any other defined action occurs that affects the flow of execution."
+    },
+    {
+      "type": "keyterm",
+      "term": "Event-Driven Programming",
+      "definition": "A programming style where program statements execute when triggered by an event rather than through the sequential flow of control. The program waits for events to occur and responds to them as they happen."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Sequential Programming", "Event-Driven Programming"],
+      "rows": [
+        ["Statements execute in order from top to bottom, one after another", "Statements execute when triggered by an event — could be any time"],
+        ["The program runs through its statements once and completes", "The program waits indefinitely, responding to events as users trigger them"],
+        ["Predictable, linear execution path", "Execution path depends on what events occur and in what order"],
+        ["Example: a script that reads a file, processes it, and saves results", "Example: a music app that responds to play, pause, skip, and volume buttons"]
+      ]
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Key pressed on keyboard → event triggered → program responds",
+        "Mouse clicked on a button → event triggered → program responds",
+        "Program first starts → event triggered → initialization code runs",
+        "Timer reaches zero → event triggered → countdown complete action runs",
+        "File finishes downloading → event triggered → success notification appears",
+        "User speaks a voice command → event triggered → virtual assistant processes speech"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.2 — Program Output"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Output",
+      "definition": "Any data sent from a program to a device. Program output can come in a variety of forms — tactile, audio, visual, or text. Output is usually based on a program's input or its prior state (what it has previously computed or stored)."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Output Type", "Examples"],
+      "rows": [
+        ["Visual", "Text displayed on screen, images rendered, videos played, charts drawn, maps shown"],
+        ["Audio", "Sounds played, voice responses from assistants, music output, notification sounds"],
+        ["Tactile", "Phone vibration, haptic feedback on a game controller, vibration alert"],
+        ["Text", "Text messages sent, files written, data exported to a spreadsheet, emails sent"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Inputs usually affect the output produced by a program. This input-process-output model is fundamental: data goes in, the program processes it, and results come out. The output is typically based on the current input or the program's prior state — what it has already computed, stored, or received before this moment."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Program", "Input", "Processing", "Output"],
+      "rows": [
+        ["Weather app", "City name typed by user", "Fetches and parses weather data", "Temperature and forecast shown on screen"],
+        ["Navigation app", "Start and end locations entered", "Calculates shortest route", "Map with route displayed"],
+        ["Music streaming app", "User taps play button (event)", "Loads audio file from server", "Song plays through speaker (audio output)"],
+        ["Fitness tracker", "Steps counted by accelerometer", "Adds to running daily total", "Progress bar and step count displayed"],
+        ["Calculator", "Numbers and operator entered", "Performs arithmetic", "Result displayed on screen"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Do not confuse input and output. INPUT is data going INTO the program for processing. OUTPUT is data coming OUT of the program to a device. The city name a user types is INPUT. The temperature displayed is OUTPUT. A button tap is an EVENT that provides INPUT. The updated screen is OUTPUT."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.3 — The Development Process"
+    },
+    {
+      "type": "paragraph",
+      "text": "Creating a program involves a full development process. A development process can be ordered and intentional, or exploratory in nature — there is no single correct approach. The following four phases are commonly used and you must know all of them."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Phase", "What Happens", "Example Activities"],
+      "rows": [
+        ["Investigating and reflecting", "Understanding the problem, the users, constraints, and what the program needs to do", "Surveys, interviews, user testing, direct observations, reviewing existing solutions"],
+        ["Designing", "Planning how to accomplish the specification — what the program will look like and how it will be structured", "Brainstorming, storyboarding, UI layout diagrams, organizing into modules, developing a testing strategy"],
+        ["Prototyping", "Building an early working version of the program", "Writing the first version of the code, creating a functional mockup, building a minimal viable product"],
+        ["Testing", "Verifying that the program works correctly for all required inputs and situations", "Running test cases, debugging, hand tracing, checking outputs against expected results"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.3 — Iterative vs Incremental Development"
+    },
+    {
+      "type": "keyterm",
+      "term": "Iterative Development",
+      "definition": "A development process that requires refinement and revision based on feedback, testing, or reflection throughout the process. This may require revisiting earlier phases — for example, going back to redesign after testing reveals a fundamental problem."
+    },
+    {
+      "type": "keyterm",
+      "term": "Incremental Development",
+      "definition": "A development process that breaks the problem into smaller pieces and makes sure each piece works before adding it to the whole. Each increment is built, verified, and integrated before the next begins."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Iterative Development", "Incremental Development"],
+      "rows": [
+        ["Refines and revises the program based on feedback throughout the process", "Breaks the problem into pieces and verifies each before adding to the whole"],
+        ["May revisit earlier phases — the process is cyclical, not linear", "Sequential piece by piece — one verified increment before the next begins"],
+        ["Driven by feedback, testing, and reflection at each cycle", "Driven by completion and verification of each individual piece"],
+        ["Example: release app → users say interface is confusing → redesign → re-release → repeat", "Example: build and fully test login system → then build and test profile page → then build and test feed"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "Iterative vs incremental is one of the most heavily tested concepts in Unit 1. Iterative = a team that releases, gets feedback, revises, and re-releases repeatedly. Incremental = a team that completes and verifies one piece before starting the next. A team can use BOTH approaches simultaneously."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.3 — Investigation and Design"
+    },
+    {
+      "type": "paragraph",
+      "text": "The design of a program incorporates investigation to determine its requirements. Investigation is useful for understanding and identifying the program constraints, as well as the concerns and interests of the people who will use the program. Investigation happens BEFORE design — you need to understand the problem before you can plan the solution."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Requirements",
+      "definition": "A description of how a program functions and may include a description of user interactions that a program must provide. Requirements define WHAT the program needs to do — not how it will do it."
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Specification",
+      "definition": "The formal document that defines the requirements for the program. The design phase then outlines how to accomplish the given specification."
+    },
+    {
+      "type": "paragraph",
+      "text": "The design phase of a program may include: brainstorming, planning and storyboarding, organizing the program into modules and functional components, creation of diagrams that represent the layouts of the user interface, and development of a testing strategy for the program."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Investigation Phase Activities", "Design Phase Activities"],
+      "rows": [
+        ["Surveys — collecting structured feedback from many users", "Brainstorming — generating ideas for how the program will work"],
+        ["Interviews — gathering in-depth perspectives from individual users", "Storyboarding — mapping out the sequence and flow of the program"],
+        ["User testing — watching users interact with the product", "Creating UI diagrams — sketching what screens and interfaces will look like"],
+        ["Direct observations — watching how users do the task today", "Organizing into modules — breaking the program into manageable components"],
+        ["Identifying constraints and user concerns", "Developing a testing strategy — planning how the program will be verified"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.3 — Documentation and Acknowledging Others"
+    },
+    {
+      "type": "keyterm",
+      "term": "Program Documentation",
+      "definition": "A written description of the function of a code segment, event, procedure, or program and how it was developed. Documentation helps in developing and maintaining correct programs when working individually or in collaborative environments."
+    },
+    {
+      "type": "keyterm",
+      "term": "Comments",
+      "definition": "A form of program documentation written directly into the program to be read by people. Comments do NOT affect how a program runs — they are completely ignored by the computer. Programmers should document throughout development, not just at the end."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Programmers should document a program THROUGHOUT its development — not only at the end when everything is working",
+        "Documentation helps the original programmer remember decisions and helps other programmers understand the code",
+        "Not all programming environments support comments — in those cases, other methods of documentation are required",
+        "It is important to acknowledge any code segments that were developed collaboratively or by another source",
+        "Acknowledgement of code written by someone else goes in the program documentation",
+        "The acknowledgement must include the origin or original author's name — a vague mention is not sufficient"
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Situation", "Required Action"],
+      "rows": [
+        ["You wrote all the code yourself", "Document your own code with comments and descriptions throughout development"],
+        ["You developed code collaboratively with teammates", "Acknowledge it in the program documentation, noting the collaborative development"],
+        ["You used code from an online source or textbook", "Acknowledge it in documentation including the origin and original author's name"],
+        ["Your environment does not support comments", "Use other documentation methods — external files, wikis, README documents, etc."]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Two big ones: (1) Comments do NOT affect how a program runs — do not confuse documentation with program logic. (2) Using someone else's code without acknowledgement is plagiarism even in programming. The acknowledgement must include the origin or author's name and goes in the program documentation."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.4 — The Four Types of Errors"
+    },
+    {
+      "type": "paragraph",
+      "text": "Errors are an inevitable part of programming. Knowing exactly what type of error you are dealing with is the first step toward fixing it. The four types have very distinct characteristics — learn to tell them apart."
+    },
+    {
+      "type": "keyterm",
+      "term": "Logic Error",
+      "definition": "A mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly. The program runs without crashing and produces no error messages — it simply gives wrong results. The algorithm itself is flawed."
+    },
+    {
+      "type": "keyterm",
+      "term": "Syntax Error",
+      "definition": "A mistake in the program where the rules of the programming language are not followed. The program CANNOT run at all until the syntax error is corrected. It is caught before execution begins."
+    },
+    {
+      "type": "keyterm",
+      "term": "Run-time Error",
+      "definition": "A mistake in the program that occurs during the execution of a program. The program starts running successfully but fails and crashes at a specific point during execution. Programming languages define their own run-time errors."
+    },
+    {
+      "type": "keyterm",
+      "term": "Overflow Error",
+      "definition": "An error that occurs when a computer attempts to handle a number that is outside of the defined range of values. For example, storing 300 in a variable that can only hold values 0–255 causes an overflow error."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Error Type", "When It Occurs", "Does the Program Run?", "How You Know", "Example"],
+      "rows": [
+        ["Logic error", "The algorithm is incorrectly designed", "Yes — runs but gives wrong answers", "Output is wrong but no error message", "Program divides sum by 2 instead of 3 to find average of 3 numbers"],
+        ["Syntax error", "Language rules are not followed", "No — cannot run until fixed", "Error message before program starts", "Misspelled variable: rezult instead of result"],
+        ["Run-time error", "During execution of the program", "Starts, then crashes at the error line", "Error message when the specific line executes", "Dividing by zero when denominator variable is 0"],
+        ["Overflow error", "A number exceeds the defined value range", "May run, then give wrong result or crash", "Unexpected wrong value or crash for large numbers", "Revenue counter hits maximum integer value and wraps to negative"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "Example — Logic Error:\nscore1 ← 85\nscore2 ← 90\nscore3 ← 78\ntotal ← score1 + score2 + score3\naverage ← total / 2    ← LOGIC ERROR: should be / 3\nDISPLAY average        ← displays 126.5 instead of the correct 84.33\n\nThe program runs perfectly. No crash. No error message.\nBut the algorithm is wrong — it divides by 2 instead of 3."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "The most common confusion: logic error vs run-time error. A LOGIC ERROR runs without crashing but gives wrong answers. A RUN-TIME ERROR actually crashes the program during execution. If the program finishes running but the output is wrong → logic error. If the program crashes partway through → run-time error."
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.4 — Five Ways to Find and Correct Errors"
+    },
+    {
+      "type": "paragraph",
+      "text": "The following five methods are all effective ways to find and correct errors. You must know all five for the exam and be able to identify which one is being used in a given scenario."
+    },
+    {
+      "type": "keyterm",
+      "term": "Test Cases",
+      "definition": "Defined inputs used to check whether a program produces the expected output. A test case specifies both the input AND the expected output — if the actual output differs from the expected output, an error has been found."
+    },
+    {
+      "type": "keyterm",
+      "term": "Hand Tracing",
+      "definition": "Manually stepping through the code line by line on paper, tracking the value of each variable at each step. This allows a programmer to identify exactly where a variable takes on an unexpected value — ideal for finding logic errors in small code segments."
+    },
+    {
+      "type": "keyterm",
+      "term": "Visualizations",
+      "definition": "Using diagrams, flowcharts, or other visual representations of the program's execution to understand how it behaves and identify where the logic may be incorrect or incomplete."
+    },
+    {
+      "type": "keyterm",
+      "term": "Debugger",
+      "definition": "A tool that allows programmers to pause execution at specific points (breakpoints), inspect the current values of all variables, and step through the code one line at a time. More powerful than adding output statements for complex programs."
+    },
+    {
+      "type": "keyterm",
+      "term": "Adding Extra Output Statements",
+      "definition": "Inserting temporary DISPLAY or print statements at key points in the code to show the values of variables during execution. Helps identify where values become incorrect by narrowing down the location of the error."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Method", "How It Works", "Best For"],
+      "rows": [
+        ["Test cases", "Run program with specific defined inputs and check actual output against expected output", "Finding errors that only appear for certain inputs; systematic verification"],
+        ["Hand tracing", "Manually track variable values through each line of code on paper", "Logic errors in small or medium code segments where the algorithm is suspect"],
+        ["Visualizations", "Create diagrams or flowcharts showing how the program executes", "Understanding complex program structure and identifying logical gaps"],
+        ["Debugger", "Use a tool to pause at breakpoints and inspect variable values", "Larger programs where hand tracing is impractical; finding where values go wrong"],
+        ["Extra output statements", "Insert temporary DISPLAY statements showing variable values at key points", "Quick identification of approximately where values become incorrect"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Topic 1.4 — Testing Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the development process, testing uses defined inputs to ensure that an algorithm or program is producing the expected outcomes. Programmers use the results from testing to revise their algorithms or programs. Testing is not a one-time event at the end of development — it is an ongoing activity throughout the process."
+    },
+    {
+      "type": "bulletlist",
+      "items": [
+        "Defined inputs used to test a program should demonstrate the different expected outcomes that are at or just beyond the extremes (minimum and maximum) of input data",
+        "Testing at the boundaries catches the most common edge case errors — off-by-one mistakes, wrong comparisons, and boundary condition failures",
+        "Program requirements are needed to identify appropriate defined inputs for testing — you cannot write a test case without knowing what the correct output should be",
+        "The results from testing are used to revise algorithms and programs — testing drives improvement"
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Program", "Valid Range", "Good Test Inputs", "Why These"],
+      "rows": [
+        ["Program accepts ages 0–120", "0 to 120 inclusive", "0, 1, 119, 120, and invalid values -1 and 121", "Tests exact minimum, just above minimum, just below maximum, exact maximum, and just outside both ends"],
+        ["Program accepts scores 0–100", "0 to 100 inclusive", "0, 1, 50, 99, 100, and invalid values -1 and 101", "Covers minimum, just above minimum, middle, just below maximum, maximum, and both invalid extremes"],
+        ["Program averages a list of numbers", "Any list length ≥ 1", "List with one element, typical list, very large list, empty list", "Tests edge cases including the empty list which might cause division by zero"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Students only test values in the middle of the valid range. The most important test inputs are AT and just BEYOND the extremes — minimum, maximum, one below minimum, one above maximum. These boundary values are where programs most commonly fail due to off-by-one errors and incorrect comparison operators."
+    },
+    {
+      "type": "heading",
+      "text": "Connecting the Topics: How Unit 1 Fits Together"
+    },
+    {
+      "type": "paragraph",
+      "text": "The four topics in Unit 1 are deeply connected. Collaboration (1.1) shapes what gets built and for whom. Understanding program function and purpose (1.2) defines what inputs and outputs the program needs. The development process (1.3) provides the structure for building it — with investigation, design, prototyping, and testing phases. And identifying and correcting errors (1.4) is what makes the program actually work correctly through systematic testing and debugging."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Stage of Development", "Unit 1 Topic", "Key Activities"],
+      "rows": [
+        ["Who is building it and why?", "1.1 Collaboration", "Diverse team, pair programming, user consultation, interpersonal skills"],
+        ["What does it need to do?", "1.2 Program Function and Purpose", "Define purpose, identify inputs/outputs, understand program behavior"],
+        ["How will it be built?", "1.3 Program Design and Development", "Investigate → Design → Prototype → Test, with iterative or incremental approaches"],
+        ["Does it work correctly?", "1.4 Identifying and Correcting Errors", "Find logic/syntax/run-time/overflow errors using test cases, debuggers, hand tracing, etc."]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Unit 1 Complete Summary — Everything You Must Know"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "A computing innovation must include a program as an integral part of its function — physical, nonphysical software, or nonphysical concept",
+        "Effective collaboration produces innovations that reflect diverse perspectives and helps avoid bias — collaboration requires equal participation from all members",
+        "Pair programming: one writes (driver), one observes and gives real-time feedback (navigator) — BOTH actively contribute",
+        "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents",
+        "Four interpersonal skills: communication, consensus building, conflict resolution, negotiation",
+        "Consultation and communication with users are important — information from diverse users helps develop programs that fully incorporate their perspectives",
+        "Investigation methods: surveys, interviews, user testing, direct observations",
+        "The purpose of computing innovations is to solve problems or pursue interests through creative expression",
+        "Understanding purpose gives developers improved ability to develop the innovation",
+        "Program: complete task independently; Code segment: part of a larger program",
+        "Program behavior: how a program functions during execution — often described by how a user interacts with it",
+        "A program needs to work for a variety of inputs and situations",
+        "Program can be described broadly (what) or in detail (what AND how)",
+        "Input: data going IN for processing — tactile, audio, visual, text, from users OR other programs",
+        "Event: action that triggers execution and supplies input — key press, mouse click, program start, etc.",
+        "Event-driven programming: statements execute when triggered by events, not through sequential flow",
+        "Output: data going OUT to a device — tactile, audio, visual, text — usually based on input or prior state",
+        "Inputs usually affect the output produced by a program",
+        "Four development phases: investigating, designing, prototyping, testing",
+        "Development process can be ordered/intentional or exploratory",
+        "Iterative: refine and revise based on feedback, may revisit earlier phases",
+        "Incremental: one verified piece at a time before adding to the whole",
+        "Investigation useful for identifying constraints and user concerns — survey, interview, user test, observe",
+        "Requirements describe WHAT the program does; specification formally defines requirements; design phase outlines HOW to accomplish the specification",
+        "Design phase includes: brainstorming, storyboarding, UI diagrams, module organization, testing strategy",
+        "Comments are documentation written INTO the program — do NOT affect how the program runs",
+        "Document throughout development; not all environments support comments",
+        "Acknowledge code from others in documentation — include origin or original author's name",
+        "Logic error: runs but gives wrong results; Syntax error: cannot run until fixed; Run-time error: crashes during execution; Overflow error: number outside defined range",
+        "Five error-finding methods: test cases, hand tracing, visualizations, debuggers, extra output statements",
+        "Test inputs should be at or just beyond the extremes of input data",
+        "Program requirements are needed to identify appropriate defined inputs for testing",
+        "Testing results are used to revise algorithms and programs"
+      ]
+    }
+  ]
 }

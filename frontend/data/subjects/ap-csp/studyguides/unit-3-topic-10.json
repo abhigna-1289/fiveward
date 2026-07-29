@@ -2,5 +2,177 @@
   "unit": 3,
   "topic": "3.10",
   "title": "Lists",
-  "content": []
+  "content": [
+    {
+      "type": "heading",
+      "text": "Lists and Algorithms Together"
+    },
+    {
+      "type": "paragraph",
+      "text": "Topic 3.10 brings together two major concepts: the list operations from topic 3.2 and the iteration and algorithm skills from topics 3.8 and 3.9. Here you apply those skills to process collections of data — traversing lists, searching through them, and building algorithms that work with lists of any size. This is one of the most heavily tested topics on the AP exam."
+    },
+    {
+      "type": "heading",
+      "text": "List Operations — The Full Reference Sheet"
+    },
+    {
+      "type": "keyterm",
+      "term": "List Operations (AP Reference Sheet)",
+      "definition": "ACCESS: aList[i] — gets element at index i.\nASSIGN: aList[i] = x — sets element at index i to x.\nINSERT(aList, i, value) — inserts value at index i, shifting elements right.\nAPPEND(aList, value) — adds value to end of list.\nREMOVE(aList, i) — removes element at index i, shifting elements left.\nLENGTH(aList) — returns number of elements."
+    },
+    {
+      "type": "paragraph",
+      "text": "List procedures are implemented in accordance with the syntax rules of the programming language. The operations you need to know are provided on the AP reference sheet — you do not need to memorize implementation details, but you must know exactly what each operation does and how it affects the list's elements and indices."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Operation", "What It Does", "Effect on Length", "Effect on Indices"],
+      "rows": [
+        ["aList[i]", "Accesses and returns the element at index i", "No change", "No change"],
+        ["aList[i] ← x", "Assigns value x to the element at index i, replacing what was there", "No change", "No change"],
+        ["aList[i] ← aList[j]", "Assigns the value of element j to element i", "No change", "No change"],
+        ["INSERT(aList, i, value)", "Inserts value at index i — shifts all elements at i and beyond ONE position RIGHT", "Increases by 1", "Elements at i and beyond shift right by 1"],
+        ["APPEND(aList, value)", "Adds value to the END of the list", "Increases by 1", "No existing indices change"],
+        ["REMOVE(aList, i)", "Removes element at index i — shifts all subsequent elements ONE position LEFT", "Decreases by 1", "Elements after i shift left by 1"],
+        ["LENGTH(aList)", "Returns the current number of elements in the list", "No change", "No change"]
+      ]
+    },
+    {
+      "type": "codeblock",
+      "code": "aList ← [10, 20, 30, 40, 50]\n-- Indices: 1   2   3   4   5\n\n-- ACCESS:\nDISPLAY aList[3]          -- displays 30\n\n-- ASSIGN:\naList[3] ← 99\n-- aList is now [10, 20, 99, 40, 50]\n\n-- INSERT:\nINSERT(aList, 2, 15)\n-- Inserts 15 at index 2, shifts 20,99,40,50 → right\n-- aList is now [10, 15, 20, 99, 40, 50]\n-- Indices:       1   2   3   4   5   6\nDISPLAY aList[2]  -- displays 15 (not 20 anymore)\nDISPLAY aList[3]  -- displays 20 (shifted right)\n\n-- REMOVE:\nREMOVE(aList, 4)\n-- Removes element at index 4 (which is 99), shifts 40,50 → left\n-- aList is now [10, 15, 20, 40, 50]\n-- Indices:       1   2   3   4   5\n\n-- APPEND:\nAPPEND(aList, 60)\n-- aList is now [10, 15, 20, 40, 50, 60]\n\nDISPLAY LENGTH(aList)  -- displays 6"
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "INSERT and REMOVE shift elements — after either operation, the indices of some elements change. Always retrace the FULL resulting list before reading any element by index. INSERT pushes elements at i and beyond RIGHT. REMOVE pulls elements after i LEFT. LENGTH changes after INSERT, APPEND, and REMOVE."
+    },
+    {
+      "type": "heading",
+      "text": "List Traversal"
+    },
+    {
+      "type": "keyterm",
+      "term": "List Traversal",
+      "definition": "Accessing elements of a list one by one. Can be complete (all elements accessed) or partial (only some elements accessed). FOR EACH item IN aList assigns each element to item sequentially from first to last and executes the block once per element."
+    },
+    {
+      "type": "keyterm",
+      "term": "FOR EACH loop",
+      "definition": "Traverses a list by assigning each element to a variable sequentially from first to last. The block of statements executes once for each element. Note: parallel traversals (using the same index for two lists simultaneously) are outside the scope of AP CSP."
+    },
+    {
+      "type": "paragraph",
+      "text": "The FOR EACH loop is the primary traversal tool. The variable after FOR EACH (the loop variable) is assigned each element's value in sequence — first element, then second, and so on to the last. The block executes once per element. Traversal can be complete (visits every element) or partial (only visits elements meeting a condition)."
+    },
+    {
+      "type": "codeblock",
+      "code": "aList ← [5, 12, 3, 8, 15, 7]\n\n-- COMPLETE traversal: visits every element\nFOR EACH item IN aList\n{\n   DISPLAY item\n}\n-- Output: 5 12 3 8 15 7 (all elements, in order)\n\n-- PARTIAL traversal: only visits elements meeting a condition\nFOR EACH item IN aList\n{\n   IF(item > 8)\n   {\n      DISPLAY item\n   }\n}\n-- Visits all 6 elements, but only DISPLAYS 12, 15\n-- Note: it is still a full traversal of the list structure\n-- 'partial' means partial elements are ACTED ON, not that the loop stops early"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Traversal Type", "What It Means", "When to Use"],
+      "rows": [
+        ["Complete traversal", "Every element in the list is accessed and the block executes for each one", "Finding sum, average, max, min — need to consider every element"],
+        ["Partial traversal", "The loop visits all elements but the block only acts on some — a condition inside filters which elements are processed", "Counting elements meeting a condition, building a filtered list, finding specific elements"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Common List Algorithms"
+    },
+    {
+      "type": "keyterm",
+      "term": "Common List Algorithms",
+      "definition": "Finding the minimum or maximum value in a list, computing the sum or average of a list of numbers. These existing algorithms can be used as building blocks when constructing new algorithms."
+    },
+    {
+      "type": "paragraph",
+      "text": "These are the specific list algorithms the CED identifies as important building blocks. You must be able to write them from scratch and recognize them when they appear as part of a larger problem."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- FINDING MAXIMUM (always init to first element, NOT 0):\naList ← [3, 7, 1, 9, 4]\nmax ← aList[1]              -- initialize to first element\nFOR EACH item IN aList\n{\n   IF(item > max)\n   {\n      max ← item            -- update when larger found\n   }\n}\nDISPLAY max    -- displays 9\n\n-- Trace: max starts at 3\n-- item=3: 3>3? No. item=7: 7>3? Yes, max=7\n-- item=1: 1>7? No. item=9: 9>7? Yes, max=9\n-- item=4: 4>9? No. Loop ends. max=9 ✓\n\n-- ------\n\n-- FINDING MINIMUM (init to first element):\nmin ← aList[1]\nFOR EACH item IN aList\n{\n   IF(item < min)\n   {\n      min ← item\n   }\n}\nDISPLAY min    -- displays 1\n\n-- ------\n\n-- COMPUTING SUM:\nsum ← 0           -- initialize to 0 (NOT first element)\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\nDISPLAY sum    -- displays 3+7+1+9+4 = 24\n\n-- ------\n\n-- COMPUTING AVERAGE (builds on sum algorithm):\nsum ← 0\nFOR EACH item IN aList\n{\n   sum ← sum + item\n}\naverage ← sum / LENGTH(aList)\nDISPLAY average   -- displays 24/5 = 4.8"
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "Max and min must be initialized to aList[1] — the first element — NOT to 0. If you initialize max to 0 and the list contains [-5, -3, -8, -2], the algorithm returns 0 (wrong — 0 is not in the list). Sum should be initialized to 0 (correct — you are accumulating from nothing). These initializations are different for a reason."
+    },
+    {
+      "type": "heading",
+      "text": "Building New Algorithms from List Operations"
+    },
+    {
+      "type": "paragraph",
+      "text": "Knowledge of existing list algorithms helps in constructing new ones. The common algorithms above are building blocks — combine them with conditionals and list operations to solve more complex problems."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Build a new list containing only elements > 5:\naList ← [2, 8, 3, 9, 1, 7]\nbigList ← []              -- start with empty list\nFOR EACH item IN aList\n{\n   IF(item > 5)\n   {\n      APPEND(bigList, item)\n   }\n}\nDISPLAY bigList   -- [8, 9, 7]\n\n-- Count elements meeting a condition:\naList ← [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\ncount ← 0\nFOR EACH item IN aList\n{\n   IF(item MOD 2 = 0)\n   {\n      count ← count + 1\n   }\n}\nDISPLAY count    -- 5 (even numbers: 2,4,6,8,10)\n\n-- Find sum of only positive numbers:\naList ← [-3, 5, -1, 8, -2, 4]\nsum ← 0\nFOR EACH item IN aList\n{\n   IF(item > 0)\n   {\n      sum ← sum + item\n   }\n}\nDISPLAY sum    -- 5+8+4 = 17"
+    },
+    {
+      "type": "heading",
+      "text": "Linear (Sequential) Search"
+    },
+    {
+      "type": "keyterm",
+      "term": "Linear (Sequential) Search",
+      "definition": "An algorithm that checks each element of a list in order until the desired value is found or all elements have been checked."
+    },
+    {
+      "type": "paragraph",
+      "text": "Linear search is the simplest search algorithm. It checks each element one by one from the beginning until it either finds the target or exhausts the entire list. It works on ANY list regardless of whether it is sorted or not — this is its main advantage over binary search."
+    },
+    {
+      "type": "codeblock",
+      "code": "-- Linear search: find if target exists in the list\naList ← [5, 2, 8, 1, 9, 3]\ntarget ← 8\nfound ← false\n\nFOR EACH item IN aList\n{\n   IF(item = target)\n   {\n      found ← true\n   }\n}\n\nIF(found)\n{\n   DISPLAY \"Found!\"\n}\nELSE\n{\n   DISPLAY \"Not found.\"\n}\n\n-- Trace:\n-- item=5: 5=8? No. item=2: 2=8? No. item=8: 8=8? Yes → found=true\n-- item=1: No. item=9: No. item=3: No. (loop continues to end)\n-- found=true → Output: Found!\n\n-- Note: the loop continues through ALL elements even after finding the target\n-- found stays true once set — the loop does not stop early"
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Scenario", "What Happens", "Final found value"],
+      "rows": [
+        ["Target IS in the list", "found becomes true when the target is reached — stays true through remaining iterations", "true"],
+        ["Target is NOT in the list", "found is never set to true — the loop completes all elements without finding the target", "false"],
+        ["Target appears multiple times", "found becomes true on the first match and stays true — correct either way", "true"],
+        ["List is empty", "FOR EACH never executes — found remains false", "false"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "In the AP CSP FOR EACH implementation of linear search, the loop completes ALL elements even after finding the target. This is because FOR EACH traverses the entire list — there is no early exit. The found variable captures whether the target was seen at any point during the traversal. The result is correct regardless."
+    },
+    {
+      "type": "heading",
+      "text": "A Complex List Algorithm: Trace Practice"
+    },
+    {
+      "type": "codeblock",
+      "code": "-- What does this algorithm do? Trace it.\naList ← [3, 7, 1, 9, 4, 6]\nnewList ← []\nFOR EACH item IN aList\n{\n   IF(item MOD 2 ≠ 0)\n   {\n      APPEND(newList, item * 2)\n   }\n}\nDISPLAY newList\n\n-- Trace:\n-- item=3: 3 MOD 2 = 1 ≠ 0 → APPEND(newList, 6). newList=[6]\n-- item=7: 7 MOD 2 = 1 ≠ 0 → APPEND(newList, 14). newList=[6,14]\n-- item=1: 1 MOD 2 = 1 ≠ 0 → APPEND(newList, 2). newList=[6,14,2]\n-- item=9: 9 MOD 2 = 1 ≠ 0 → APPEND(newList, 18). newList=[6,14,2,18]\n-- item=4: 4 MOD 2 = 0 → skip\n-- item=6: 6 MOD 2 = 0 → skip\n-- Output: [6, 14, 2, 18]\n\n-- This algorithm: finds all ODD numbers in aList and\n-- creates a new list containing each odd number doubled"
+    },
+    {
+      "type": "heading",
+      "text": "Summary: What to Know for the Exam"
+    },
+    {
+      "type": "numberedlist",
+      "items": [
+        "List operations from reference sheet: ACCESS aList[i], ASSIGN aList[i]←x, INSERT (shifts right, length+1), APPEND (adds to end, length+1), REMOVE (shifts left, length-1), LENGTH",
+        "List procedures are implemented in accordance with the programming language's syntax rules",
+        "FOR EACH traverses a list by assigning each element sequentially from first to last — the block executes once per element",
+        "Complete traversal: all elements accessed. Partial traversal: loop visits all but only acts on some based on a condition",
+        "Parallel traversals (same index for two lists simultaneously) are outside the scope of AP CSP",
+        "To find max/min: initialize to aList[1] (first element), update when larger/smaller element found",
+        "To compute sum: initialize to 0, add each element. Average: divide sum by LENGTH(aList)",
+        "NEVER initialize max/min to 0 — this fails for all-negative lists. Initialize to aList[1].",
+        "Linear search checks each element in order until the desired value is found OR all elements have been checked",
+        "Linear search works on ANY list — sorted or unsorted",
+        "In FOR EACH linear search, the loop continues through all elements even after finding the target — found stays true once set",
+        "Knowledge of existing list algorithms (max, min, sum, average, linear search) helps construct new algorithms"
+      ]
+    }
+  ]
 }

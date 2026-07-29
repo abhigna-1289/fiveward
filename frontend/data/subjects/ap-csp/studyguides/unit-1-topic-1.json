@@ -9,7 +9,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Before understanding collaboration, you need to know what we're collaborating to build. A computing innovation is anything that includes a program as an integral part of its function. Innovations are created to solve problems or pursue interests through creative expression."
+      "text": "A computing innovation is anything that includes a program as an integral part of its function. Innovations are created to solve problems or to pursue interests through creative expression. The key question is: does it require a program to function? If yes, it is a computing innovation."
     },
     {
       "type": "keyterm",
@@ -18,18 +18,27 @@
     },
     {
       "type": "compareTable",
-      "headers": ["Type", "Description", "Example"],
+      "headers": ["Type", "Description", "Examples"],
       "rows": [
-        ["Physical", "A tangible device that runs a program", "Self-driving car, smart insulin pump, fitness tracker"],
-        ["Nonphysical Software", "A standalone application or program", "Photo editing app, word processor, video game"],
-        ["Nonphysical Concept", "A system or model enabled by computing", "E-commerce, social media platforms, online banking"]
+        ["Physical", "A tangible device that requires a program to function", "Self-driving car, smart insulin pump, fitness tracker, smart thermostat"],
+        ["Nonphysical Software", "A standalone application or program", "Photo editing app, word processor, video game, navigation app"],
+        ["Nonphysical Concept", "A system or model that exists because of computing", "E-commerce, social media platforms, online banking, ride-sharing services"]
+      ]
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Computing Innovation ✓", "NOT a Computing Innovation ✗"],
+      "rows": [
+        ["Smart insulin pump (requires a program to monitor and dose insulin)", "A mechanical clock (operates entirely through gears and springs — no program)"],
+        ["Ride-sharing service (requires a program to match drivers and riders)", "A printed cookbook (no program required to use it)"],
+        ["Photo editing app (program is integral to the editing function)", "A bicycle (no program required to function)"]
       ]
     },
     {
       "type": "callout",
       "variant": "tip",
       "label": "Exam Tip",
-      "text": "A printed manual, a mechanical clock, or a physical book are NOT computing innovations because they do not require a program to function. The key test: does it need a program? If yes → computing innovation."
+      "text": "The test is always: does the innovation REQUIRE a program as an integral part of its function? A smart car needs a program — it is a computing innovation. A regular car does not need a program to drive — it is not. Don't confuse 'has electronics' with 'requires a program.'"
     },
     {
       "type": "heading",
@@ -37,7 +46,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Incorporating multiple perspectives through collaboration improves computing innovations as they are developed. A team with diverse backgrounds, skills, and viewpoints will produce a better product than one made by a single person or a homogeneous group."
+      "text": "Incorporating multiple perspectives through collaboration improves computing innovations as they are developed. When people with different backgrounds, experiences, and viewpoints work together, they catch each other's blind spots, identify needs that a single person might miss, and produce a better final product."
     },
     {
       "type": "bulletlist",
@@ -49,90 +58,133 @@
       ]
     },
     {
-      "type": "callout",
-      "variant": "info",
-      "label": "Key Idea",
-      "text": "Bias in computing innovations often happens when the development team is not diverse. If everyone on the team shares the same background, they are likely to miss the needs of users who are different from them. Diverse perspectives = better innovation."
-    },
-    {
       "type": "heading",
-      "text": "How Teams Collaborate"
-    },
-    {
-      "type": "keyterm",
-      "term": "Pair Programming",
-      "definition": "A common collaboration model where one programmer writes code while another observes and provides real-time feedback. Both roles actively contribute — the observer catches errors the writer might miss."
+      "text": "How Diversity Prevents Bias: A Real Example"
     },
     {
       "type": "paragraph",
-      "text": "Online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents. These tools allow teams to work together regardless of location, share code, leave comments, and track changes — all essential for modern software development."
+      "text": "Imagine a team building a voice recognition system that consists entirely of native English speakers from the same region. They test it thoroughly among themselves and it works great — for them. After release, they discover it works poorly for users with accents, non-native speakers, and people with certain speech patterns. The team's lack of diverse perspectives meant they never noticed the system's failure modes for users different from themselves."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "label": "Key Idea",
+      "text": "Bias in computing innovations often happens when the development team is not diverse. If everyone on the team shares the same background, they will likely miss the needs of users who are different from them. This is why diverse perspectives are not just 'nice to have' — they are essential for building fair and effective innovations."
+    },
+    {
+      "type": "heading",
+      "text": "Collaboration vs. Group Work"
+    },
+    {
+      "type": "paragraph",
+      "text": "Effective collaboration is different from simply working in a group. Collaboration requires equal participation and voice from all members. Everyone contributes meaningfully, disagreements are resolved constructively, and the final product reflects the input of the whole team — not just the loudest voice."
     },
     {
       "type": "compareTable",
-      "headers": ["Collaboration Tool/Method", "What It Does"],
+      "headers": ["Effective Collaboration", "Just Group Work"],
       "rows": [
-        ["Online code repositories (e.g., GitHub)", "Allow teams to share, review, and comment on each other's code asynchronously"],
-        ["Pair programming", "One programmer writes, another observes and gives real-time feedback — both actively contribute"],
-        ["User surveys and interviews", "Gather feedback from potential users to understand diverse needs and perspectives"],
-        ["Direct user observation", "Watch how users interact with the product to identify problems they may not verbalize"]
+        ["All members have equal participation and voice", "Some members dominate, others barely contribute"],
+        ["Disagreements are resolved through conflict resolution and negotiation", "Disagreements are avoided or ignored"],
+        ["The final product reflects diverse perspectives", "The final product reflects only the strongest personality's preferences"],
+        ["Users from diverse backgrounds are consulted", "Only team members' own experiences are considered"]
       ]
     },
     {
       "type": "heading",
-      "text": "Interpersonal Skills for Effective Collaboration"
-    },
-    {
-      "type": "paragraph",
-      "text": "Effective collaborative teams practice specific interpersonal skills. These are different from technical skills — they are about how team members interact with each other to make the collaboration work."
+      "text": "How Teams Collaborate: Tools and Models"
     },
     {
       "type": "keyterm",
-      "term": "Communication",
-      "definition": "Clearly and effectively sharing ideas, concerns, and progress with team members."
+      "term": "Pair Programming",
+      "definition": "A collaboration model where one programmer writes code while another observes and provides real-time feedback. The observer actively contributes by catching errors the writer might miss. Roles are typically switched regularly."
     },
     {
-      "type": "keyterm",
-      "term": "Consensus Building",
-      "definition": "Working toward agreement that all team members can accept, even if it is not everyone's first preference."
-    },
-    {
-      "type": "keyterm",
-      "term": "Conflict Resolution",
-      "definition": "Addressing and resolving disagreements within the team in a productive way that allows the project to move forward."
-    },
-    {
-      "type": "keyterm",
-      "term": "Negotiation",
-      "definition": "Working through differences to reach a compromise that satisfies the needs of the team and the project."
-    },
-    {
-      "type": "callout",
-      "variant": "tip",
-      "label": "Exam Tip",
-      "text": "The four interpersonal skills you must know are: communication, consensus building, conflict resolution, and negotiation. These are distinct from collaboration models like pair programming — don't confuse them."
-    },
-    {
-      "type": "heading",
-      "text": "Gathering User Feedback"
-    },
-    {
-      "type": "paragraph",
-      "text": "During the investigation phase of development, teams gather information from potential users to understand what the program needs to do. This feedback shapes the entire direction of the innovation."
-    },
-    {
-      "type": "bulletlist",
-      "items": [
-        "Surveys — collect structured feedback from large numbers of users",
-        "Interviews — gather in-depth perspectives from individual users",
-        "User testing — observe users interacting with the product directly",
-        "Direct observation — watch how users currently perform the task the program will help with"
+      "type": "compareTable",
+      "headers": ["Role", "What They Do", "Why It Matters"],
+      "rows": [
+        ["Writer", "Types the code, focuses on implementing the current task", "Handles the immediate coding work"],
+        ["Observer", "Watches the code being written, points out errors, thinks ahead", "Catches mistakes in real time, considers the bigger picture — both roles actively contribute"]
       ]
     },
     {
       "type": "callout",
       "variant": "warning",
       "label": "Common Mistake",
-      "text": "Students sometimes think that a developer's personal experience using similar programs is enough to understand all user needs. It is not. One person's experience cannot represent the full diversity of a user base. Always involve actual users from diverse backgrounds."
+      "text": "Students sometimes think the observer in pair programming is not really contributing because they are not writing code. Wrong — the observer actively contributes by catching errors and providing real-time feedback. This is a key benefit of pair programming."
+    },
+    {
+      "type": "paragraph",
+      "text": "Beyond pair programming, online tools support collaboration by allowing programmers to share and provide feedback on ideas and documents. These tools allow teams to work together across distances, share code, leave comments, track changes, and review each other's contributions asynchronously."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Collaboration Method", "What It Does"],
+      "rows": [
+        ["Online code repositories", "Allow teams to share, review, and comment on each other's code across locations and time zones"],
+        ["Pair programming", "One programmer writes while another observes and gives real-time feedback — both actively contribute"],
+        ["User surveys", "Collect structured feedback from many potential users at scale"],
+        ["User interviews", "Gather in-depth perspectives from individual users"],
+        ["Direct user observation", "Watch how users actually interact with the product to identify problems they may not verbalize"],
+        ["User testing sessions", "Let real users try the product and observe where they struggle"]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "The Four Interpersonal Skills"
+    },
+    {
+      "type": "paragraph",
+      "text": "Effective collaborative teams practice specific interpersonal skills. These are not technical programming skills — they are about how team members interact with each other to make the collaboration productive."
+    },
+    {
+      "type": "keyterm",
+      "term": "Communication",
+      "definition": "Clearly and effectively sharing ideas, progress, concerns, and feedback with all team members so everyone stays informed and aligned."
+    },
+    {
+      "type": "keyterm",
+      "term": "Consensus Building",
+      "definition": "Working toward an agreement that all team members can accept and support, even if it is not everyone's original preference. The goal is alignment, not just majority rule."
+    },
+    {
+      "type": "keyterm",
+      "term": "Conflict Resolution",
+      "definition": "Identifying and addressing disagreements within the team in a productive way that allows the project to move forward without lasting damage to team relationships."
+    },
+    {
+      "type": "keyterm",
+      "term": "Negotiation",
+      "definition": "Working through differences in opinion or approach to reach a compromise that satisfies the core needs of the team and the project."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "label": "Exam Tip",
+      "text": "You must know exactly four interpersonal skills: communication, consensus building, conflict resolution, and negotiation. These are distinct from collaboration models (like pair programming) and from investigation methods (like surveys). Do not mix these up on the exam."
+    },
+    {
+      "type": "heading",
+      "text": "Gathering User Feedback During Development"
+    },
+    {
+      "type": "paragraph",
+      "text": "Consultation and communication with users are important aspects of the development of computing innovations. Information gathered from potential users can be used to understand the purpose of a program from diverse perspectives and to develop a program that fully incorporates those perspectives."
+    },
+    {
+      "type": "compareTable",
+      "headers": ["Investigation Method", "What It Involves", "Best For"],
+      "rows": [
+        ["Surveys", "Collecting structured responses from many users via questionnaires", "Getting broad input from a large number of users efficiently"],
+        ["Interviews", "One-on-one conversations with individual users", "Getting in-depth perspectives and follow-up questions"],
+        ["User testing", "Watching users interact with the product and observing where they struggle", "Identifying usability problems users may not be able to articulate"],
+        ["Direct observation", "Watching how users currently perform the task the program will address", "Understanding the real problem before designing the solution"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "label": "Common Mistake",
+      "text": "A developer's own experience with similar programs is NOT sufficient to understand all user needs. One person's experience represents only one perspective. Gathering input from diverse actual users — especially those who are different from the developers — is essential to building a program that works for everyone."
     },
     {
       "type": "heading",
@@ -141,13 +193,15 @@
     {
       "type": "numberedlist",
       "items": [
-        "A computing innovation must include a program as an integral part of its function — physical, nonphysical software, or nonphysical concept",
-        "Effective collaboration produces innovations that reflect diverse perspectives and avoids bias",
-        "Pair programming is a recognized collaboration model — one writes, one observes and gives real-time feedback",
+        "A computing innovation must include a program as an integral part of its function — it can be physical, nonphysical software, or a nonphysical concept",
+        "Effective collaboration produces innovations that reflect diverse perspectives and helps avoid bias",
+        "Collaboration requires equal participation and voice from all members — this is different from just working in a group",
+        "Pair programming: one writes, one observes and gives real-time feedback — BOTH actively contribute",
         "Online tools support collaboration by enabling sharing and feedback across distances",
         "The four interpersonal skills: communication, consensus building, conflict resolution, negotiation",
-        "Information gathered from potential users helps develop programs that fully incorporate diverse perspectives",
-        "Consultation and communication with users are important aspects of development"
+        "Consultation and communication with users are important aspects of development",
+        "Information gathered from diverse potential users helps develop a program that fully incorporates those perspectives",
+        "Investigation methods include surveys, interviews, user testing, and direct observation"
       ]
     }
   ]
