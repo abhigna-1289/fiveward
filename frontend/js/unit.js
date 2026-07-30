@@ -8,6 +8,8 @@
   // UNIT DATA
   // =========================================================
 
+  const SUBJECT_NAME = 'AP Computer Science Principles';
+
   const UNITS = {
     1: {
       name: 'Creative Development',
@@ -344,10 +346,11 @@
           try {
             const sgTopic  = unit.topics.find(t => t.id === currentTopicId);
             const sgActLog = JSON.parse(localStorage.getItem('fw_activity_log') || '[]');
-            sgActLog.unshift({ date: new Date().toISOString(), label: `Study Guide: ${sgTopic?.name || 'topic'}`, sub: `Unit ${unitNum} · ${sgTopic?.num || ''}` });
+            sgActLog.unshift({ type: 'Study Guide', topic: sgTopic?.name || 'topic', subject: SUBJECT_NAME, timestamp: Date.now() });
             if (sgActLog.length > 100) sgActLog.splice(100);
             localStorage.setItem('fw_activity_log', JSON.stringify(sgActLog));
-          } catch {}
+            console.log('[fiveward] activity logged (study guide):', sgActLog[0]);
+          } catch (e) { console.error('[fiveward] activity log write failed:', e); }
         }
         _checkAndMarkFullyComplete(currentTopicId);
       }
@@ -821,10 +824,11 @@
       if (_markActivityDone(`fw_fc_done_u${unitNum}`, currentTopicId)) {
         try {
           const fcActLog = JSON.parse(localStorage.getItem('fw_activity_log') || '[]');
-          fcActLog.unshift({ date: new Date().toISOString(), label: `Flashcards: ${t?.name || 'topic'}`, sub: `Unit ${unitNum} · ${t?.num || ''}` });
+          fcActLog.unshift({ type: 'Flashcards', topic: t?.name || 'topic', subject: SUBJECT_NAME, timestamp: Date.now() });
           if (fcActLog.length > 100) fcActLog.splice(100);
           localStorage.setItem('fw_activity_log', JSON.stringify(fcActLog));
-        } catch {}
+          console.log('[fiveward] activity logged (flashcards):', fcActLog[0]);
+        } catch (e) { console.error('[fiveward] activity log write failed:', e); }
       }
       _checkAndMarkFullyComplete(currentTopicId);
 
@@ -1781,13 +1785,10 @@
       localStorage.setItem('fw_pq_results', JSON.stringify(results));
 
       const activity = JSON.parse(localStorage.getItem('fw_activity_log') || '[]');
-      activity.unshift({
-        date:  new Date().toISOString(),
-        label: `Practice: ${topic?.name || 'Unit ' + unitNum}`,
-        sub:   `${pqType.toUpperCase()} · ${correct}/${total} correct · ${pct}%`,
-      });
+      activity.unshift({ type: 'Practice', topic: topic?.name || `Unit ${unitNum}`, subject: SUBJECT_NAME, timestamp: Date.now() });
       if (activity.length > 100) activity.splice(100);
       localStorage.setItem('fw_activity_log', JSON.stringify(activity));
+      console.log('[fiveward] activity logged (practice):', activity[0]);
 
       _logStudyDate();
     } catch {}

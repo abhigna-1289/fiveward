@@ -141,21 +141,6 @@
               </div>
             </div>
 
-            <!-- Password card -->
-            <div class="settings-card">
-              <div class="settings-card-heading">Password</div>
-              <div class="settings-row">
-                <div class="settings-row__label">
-                  <span class="settings-row__name">Password</span>
-                  <span class="settings-row__desc">Update your account password to keep your account secure.</span>
-                </div>
-                <button class="btn btn--outline st-icon-btn" type="button" id="stChangePasswordBtn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                  Change Password
-                </button>
-              </div>
-            </div>
-
             <!-- Connected Accounts card -->
             <div class="settings-card" id="stConnectedAccountsCard" hidden>
               <div class="settings-card-heading">Connected Accounts</div>
@@ -390,38 +375,6 @@
       <div class="st-dialog-btns">
         <button class="btn btn--primary" id="stEditProfileSave" type="button">Save Changes</button>
         <button class="btn btn--outline" id="stEditProfileCancel" type="button">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Change Password Modal -->
-  <div id="stChangePasswordModal" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stChangePwTitle">
-    <div class="st-dialog-box">
-      <h3 class="st-dialog-title" id="stChangePwTitle">Change Password</h3>
-
-      <!-- Shown for email/password accounts -->
-      <div id="stChangePwForm">
-        <div class="st-modal-field">
-          <label class="st-modal-label" for="stNewPasswordInput">New Password</label>
-          <input type="password" class="st-modal-input" id="stNewPasswordInput" placeholder="At least 6 characters" autocomplete="new-password" />
-        </div>
-        <div class="st-modal-field">
-          <label class="st-modal-label" for="stConfirmPasswordInput">Confirm Password</label>
-          <input type="password" class="st-modal-input" id="stConfirmPasswordInput" placeholder="Repeat new password" autocomplete="new-password" />
-        </div>
-        <p class="st-modal-error" id="stChangePwError" hidden></p>
-        <div class="st-dialog-btns">
-          <button class="btn btn--primary" id="stChangePwSave" type="button">Update Password</button>
-          <button class="btn btn--outline" id="stChangePwCancel" type="button">Cancel</button>
-        </div>
-      </div>
-
-      <!-- Shown for Google-only accounts -->
-      <div id="stChangePwGoogleMsg" hidden>
-        <p class="st-dialog-msg">You signed in with Google. Password changes are managed through your Google account.</p>
-        <div class="st-dialog-btns">
-          <button class="btn btn--outline" id="stChangePwClose" type="button">Close</button>
-        </div>
       </div>
     </div>
   </div>

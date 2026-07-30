@@ -95,15 +95,17 @@
     return d.toISOString().slice(0, 10);
   }
 
-  function relDate(isoStr) {
-    const d = new Date(isoStr);
-    if (d.toDateString() === new Date().toDateString()) return 'Today';
-    if (d.toDateString() === new Date(Date.now() - 86400000).toDateString()) return 'Yesterday';
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  }
-
-  function relTime(isoStr) {
-    return new Date(isoStr).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  function formatTimestamp(ts) {
+    const now  = new Date();
+    const then = new Date(ts);
+    const isSameDay = (a, b) => a.toDateString() === b.toDateString();
+    const yesterday = new Date(Date.now() - 86400000);
+    const time = then.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    if (isSameDay(then, now))       return `Today at ${time}`;
+    if (isSameDay(then, yesterday)) return `Yesterday at ${time}`;
+    const diffDays = Math.floor((now - then) / 86400000);
+    if (diffDays < 7) return `${diffDays} days ago`;
+    return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   }
 
   // =========================================================
@@ -273,15 +275,11 @@
     if (!list) return;
     list.innerHTML = '';
 
-    const multiSubject = subjects.length > 1;
-
     for (const subj of subjects) {
-      if (multiSubject) {
-        const heading = document.createElement('div');
-        heading.className = 'pg-subject-group-heading';
-        heading.textContent = subj.name;
-        list.appendChild(heading);
-      }
+      const heading = document.createElement('div');
+      heading.className = 'pg-subject-group-heading';
+      heading.textContent = subj.name;
+      list.appendChild(heading);
 
       for (const [n, unit] of Object.entries(subj.units)) {
         const completed = completedTopicsForUnit(Number(n));
@@ -385,12 +383,11 @@
       <div class="pg-activity-item">
         <span class="pg-activity-dot"></span>
         <div class="pg-activity-body">
-          <span class="pg-activity-label">${escHtml(item.label)}</span>
-          ${item.sub ? `<span class="pg-activity-sub">${escHtml(item.sub)}</span>` : ''}
+          <span class="pg-activity-label">${escHtml(item.type)}: ${escHtml(item.topic)}</span>
+          <span class="pg-activity-sub">${escHtml(item.subject)}</span>
         </div>
         <div class="pg-activity-time">
-          <span class="pg-activity-date">${relDate(item.date)}</span>
-          <span class="pg-activity-clock">${relTime(item.date)}</span>
+          <span class="pg-activity-date">${escHtml(formatTimestamp(item.timestamp))}</span>
         </div>
       </div>`).join('');
   }

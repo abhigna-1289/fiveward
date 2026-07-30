@@ -171,85 +171,6 @@
   });
   _editModal?.addEventListener('keydown', e => { if (e.key === 'Escape') _editModal.hidden = true; });
 
-  // --- Change Password Modal --------------------------------
-
-  const _pwModal    = document.getElementById('stChangePasswordModal');
-  const _newPwIn    = document.getElementById('stNewPasswordInput');
-  const _confPwIn   = document.getElementById('stConfirmPasswordInput');
-  const _pwErrEl    = document.getElementById('stChangePwError');
-
-  document.getElementById('stChangePasswordBtn')?.addEventListener('click', async () => {
-    if (_newPwIn)  _newPwIn.value  = '';
-    if (_confPwIn) _confPwIn.value = '';
-    if (_pwErrEl)  _pwErrEl.hidden = true;
-
-    const _pwForm      = document.getElementById('stChangePwForm');
-    const _pwGoogleMsg = document.getElementById('stChangePwGoogleMsg');
-
-    // Show the modal immediately — default to email form while we fetch identity info
-    if (_pwForm)      _pwForm.hidden      = false;
-    if (_pwGoogleMsg) _pwGoogleMsg.hidden = true;
-    if (_pwModal)     _pwModal.hidden     = false;
-
-    if (window.sb) {
-      const { data: { user } } = await window.sb.auth.getUser();
-      console.log('[fiveward] Change password modal open — identities:', user?.identities);
-      const isGoogleOnly = user?.identities?.length > 0 &&
-        user.identities.every(id => id.provider === 'google');
-      if (isGoogleOnly) {
-        if (_pwForm)      _pwForm.hidden      = true;
-        if (_pwGoogleMsg) _pwGoogleMsg.hidden = false;
-        document.getElementById('stChangePwClose')?.focus();
-      } else {
-        _newPwIn?.focus();
-      }
-    } else {
-      _newPwIn?.focus();
-    }
-  });
-
-  document.getElementById('stChangePwSave')?.addEventListener('click', async () => {
-    const newPw  = _newPwIn?.value  || '';
-    const confPw = _confPwIn?.value || '';
-    if (_pwErrEl) _pwErrEl.hidden = true;
-    if (!newPw) {
-      if (_pwErrEl) { _pwErrEl.textContent = 'Please enter a new password.'; _pwErrEl.hidden = false; }
-      return;
-    }
-    if (newPw.length < 6) {
-      if (_pwErrEl) { _pwErrEl.textContent = 'Password must be at least 6 characters.'; _pwErrEl.hidden = false; }
-      return;
-    }
-    if (newPw !== confPw) {
-      if (_pwErrEl) { _pwErrEl.textContent = 'Passwords do not match.'; _pwErrEl.hidden = false; }
-      return;
-    }
-    if (!window.sb) {
-      if (_pwErrEl) { _pwErrEl.textContent = 'Not connected to authentication service.'; _pwErrEl.hidden = false; }
-      return;
-    }
-    const { data, error } = await window.sb.auth.updateUser({ password: newPw });
-    console.log('[fiveward] updateUser password — data:', data, 'error:', error);
-    if (error) {
-      if (_pwErrEl) { _pwErrEl.textContent = error.message; _pwErrEl.hidden = false; }
-      return;
-    }
-    if (_pwModal) _pwModal.hidden = true;
-    window.fwShowToast?.('Password updated — signing you out so you can log in with your new password');
-    setTimeout(async () => {
-      await window.sb.auth.signOut();
-      window.location.href = 'auth.html';
-    }, 2000);
-  });
-
-  document.getElementById('stChangePwCancel')?.addEventListener('click', () => {
-    if (_pwModal) _pwModal.hidden = true;
-  });
-  document.getElementById('stChangePwClose')?.addEventListener('click', () => {
-    if (_pwModal) _pwModal.hidden = true;
-  });
-  _pwModal?.addEventListener('keydown', e => { if (e.key === 'Escape') _pwModal.hidden = true; });
-
   document.getElementById('stUnlinkGoogleBtn')?.addEventListener('click', () => {
     window.fwShowToast?.('Account unlinking coming soon');
   });
@@ -296,10 +217,33 @@
   // NOTIFICATIONS SECTION
   // =========================================================
 
-  if (localStorage.getItem('fw_notif_browser') === null) {
-    localStorage.setItem('fw_notif_browser', 'true');
-  }
-  wireToggle('stBrowserNotif', 'fw_notif_browser', true);
+  (function wireBrowserNotif() {
+    const el = document.getElementById('stBrowserNotif');
+    if (!el) return;
+    const hasApi = 'Notification' in window;
+    const savedPref = ls('fw_notif_browser', false);
+    // Only show as on if user previously granted AND browser actually granted permission
+    el.checked = savedPref && hasApi && Notification.permission === 'granted';
+    el.addEventListener('change', async () => {
+      if (!el.checked) {
+        lsSet('fw_notif_browser', false);
+        return;
+      }
+      if (!hasApi) {
+        el.checked = false;
+        window.fwShowToast?.('Browser notifications are not supported in this browser');
+        return;
+      }
+      const permission = await Notification.requestPermission();
+      if (permission === 'granted') {
+        lsSet('fw_notif_browser', true);
+      } else {
+        el.checked = false;
+        lsSet('fw_notif_browser', false);
+        window.fwShowToast?.('Notifications blocked — allow them in your browser settings to enable this');
+      }
+    });
+  })();
 
   // =========================================================
   // PRIVACY SECTION
@@ -355,7 +299,7 @@
         const keys = [];
         for (let i = 0; i < localStorage.length; i++) {
           const k = localStorage.key(i);
-          if (k && k.startsWith('fw_') && !k.startsWith('fw_dark') && !k.startsWith('fw_font') && !k.startsWith('fw_notif') && !k.startsWith('fw_privacy') && !k.startsWith('fw_lb')) {
+          if (k && k.startsWith('fw_') && !k.startsWith('fw_dark') && !k.startsWith('fw_font') && k !== 'fw_notif_browser' && !k.startsWith('fw_privacy') && !k.startsWith('fw_lb')) {
             keys.push(k);
           }
         }
