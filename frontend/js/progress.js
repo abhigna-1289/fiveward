@@ -518,11 +518,8 @@
       return;
     }
 
-    // Set page heading: subject name if exactly one enrolled, else generic
     const titleEl = document.getElementById('pgSubjectTitle');
-    if (titleEl) {
-      titleEl.textContent = subjects.length === 1 ? subjects[0].name : 'My Progress';
-    }
+    if (titleEl) titleEl.textContent = 'My Progress';
 
     renderStats(subjects);
     renderUnits(subjects);

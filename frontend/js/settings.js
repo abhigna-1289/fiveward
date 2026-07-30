@@ -7,7 +7,6 @@
 //   fw_lb_username_display → string   ('full' | 'first' | 'anon')
 //   fw_dark_mode           → boolean  (dark theme applied to all pages)
 //   fw_font_size           → string   ('small' | 'medium' | 'large')
-//   fw_notif_browser       → boolean
 //   fw_privacy_data        → boolean
 //   fw_privacy_visibility  → boolean
 // =============================================================
@@ -214,38 +213,6 @@
   });
 
   // =========================================================
-  // NOTIFICATIONS SECTION
-  // =========================================================
-
-  (function wireBrowserNotif() {
-    const el = document.getElementById('stBrowserNotif');
-    if (!el) return;
-    const hasApi = 'Notification' in window;
-    const savedPref = ls('fw_notif_browser', false);
-    // Only show as on if user previously granted AND browser actually granted permission
-    el.checked = savedPref && hasApi && Notification.permission === 'granted';
-    el.addEventListener('change', async () => {
-      if (!el.checked) {
-        lsSet('fw_notif_browser', false);
-        return;
-      }
-      if (!hasApi) {
-        el.checked = false;
-        window.fwShowToast?.('Browser notifications are not supported in this browser');
-        return;
-      }
-      const permission = await Notification.requestPermission();
-      if (permission === 'granted') {
-        lsSet('fw_notif_browser', true);
-      } else {
-        el.checked = false;
-        lsSet('fw_notif_browser', false);
-        window.fwShowToast?.('Notifications blocked — allow them in your browser settings to enable this');
-      }
-    });
-  })();
-
-  // =========================================================
   // PRIVACY SECTION
   // =========================================================
 
@@ -299,7 +266,7 @@
         const keys = [];
         for (let i = 0; i < localStorage.length; i++) {
           const k = localStorage.key(i);
-          if (k && k.startsWith('fw_') && !k.startsWith('fw_dark') && !k.startsWith('fw_font') && k !== 'fw_notif_browser' && !k.startsWith('fw_privacy') && !k.startsWith('fw_lb')) {
+          if (k && k.startsWith('fw_') && !k.startsWith('fw_dark') && !k.startsWith('fw_font') && !k.startsWith('fw_privacy') && !k.startsWith('fw_lb')) {
             keys.push(k);
           }
         }
