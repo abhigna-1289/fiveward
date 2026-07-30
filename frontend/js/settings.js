@@ -178,11 +178,34 @@
   const _confPwIn   = document.getElementById('stConfirmPasswordInput');
   const _pwErrEl    = document.getElementById('stChangePwError');
 
-  document.getElementById('stChangePasswordBtn')?.addEventListener('click', () => {
+  document.getElementById('stChangePasswordBtn')?.addEventListener('click', async () => {
     if (_newPwIn)  _newPwIn.value  = '';
     if (_confPwIn) _confPwIn.value = '';
     if (_pwErrEl)  _pwErrEl.hidden = true;
-    if (_pwModal)  { _pwModal.hidden = false; _newPwIn?.focus(); }
+
+    const _pwForm      = document.getElementById('stChangePwForm');
+    const _pwGoogleMsg = document.getElementById('stChangePwGoogleMsg');
+
+    // Show the modal immediately — default to email form while we fetch identity info
+    if (_pwForm)      _pwForm.hidden      = false;
+    if (_pwGoogleMsg) _pwGoogleMsg.hidden = true;
+    if (_pwModal)     _pwModal.hidden     = false;
+
+    if (window.sb) {
+      const { data: { user } } = await window.sb.auth.getUser();
+      console.log('[fiveward] Change password modal open — identities:', user?.identities);
+      const isGoogleOnly = user?.identities?.length > 0 &&
+        user.identities.every(id => id.provider === 'google');
+      if (isGoogleOnly) {
+        if (_pwForm)      _pwForm.hidden      = true;
+        if (_pwGoogleMsg) _pwGoogleMsg.hidden = false;
+        document.getElementById('stChangePwClose')?.focus();
+      } else {
+        _newPwIn?.focus();
+      }
+    } else {
+      _newPwIn?.focus();
+    }
   });
 
   document.getElementById('stChangePwSave')?.addEventListener('click', async () => {
@@ -205,20 +228,6 @@
       if (_pwErrEl) { _pwErrEl.textContent = 'Not connected to authentication service.'; _pwErrEl.hidden = false; }
       return;
     }
-    // Check current user and their sign-in identities
-    const { data: { user: currentUser } } = await window.sb.auth.getUser();
-    console.log('[fiveward] Change password — current user:', currentUser);
-    console.log('[fiveward] Change password — identities:', currentUser?.identities);
-    // Google-only accounts cannot set a password for email login
-    const isGoogleOnly = currentUser?.identities?.length > 0 &&
-      currentUser.identities.every(id => id.provider === 'google');
-    if (isGoogleOnly) {
-      if (_pwErrEl) {
-        _pwErrEl.textContent = 'Your account uses Google sign-in. Password login is not available for Google accounts.';
-        _pwErrEl.hidden = false;
-      }
-      return;
-    }
     const { data, error } = await window.sb.auth.updateUser({ password: newPw });
     console.log('[fiveward] updateUser password — data:', data, 'error:', error);
     if (error) {
@@ -234,6 +243,9 @@
   });
 
   document.getElementById('stChangePwCancel')?.addEventListener('click', () => {
+    if (_pwModal) _pwModal.hidden = true;
+  });
+  document.getElementById('stChangePwClose')?.addEventListener('click', () => {
     if (_pwModal) _pwModal.hidden = true;
   });
   _pwModal?.addEventListener('keydown', e => { if (e.key === 'Escape') _pwModal.hidden = true; });

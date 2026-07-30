@@ -398,18 +398,30 @@
   <div id="stChangePasswordModal" class="st-dialog-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="stChangePwTitle">
     <div class="st-dialog-box">
       <h3 class="st-dialog-title" id="stChangePwTitle">Change Password</h3>
-      <div class="st-modal-field">
-        <label class="st-modal-label" for="stNewPasswordInput">New Password</label>
-        <input type="password" class="st-modal-input" id="stNewPasswordInput" placeholder="At least 6 characters" autocomplete="new-password" />
+
+      <!-- Shown for email/password accounts -->
+      <div id="stChangePwForm">
+        <div class="st-modal-field">
+          <label class="st-modal-label" for="stNewPasswordInput">New Password</label>
+          <input type="password" class="st-modal-input" id="stNewPasswordInput" placeholder="At least 6 characters" autocomplete="new-password" />
+        </div>
+        <div class="st-modal-field">
+          <label class="st-modal-label" for="stConfirmPasswordInput">Confirm Password</label>
+          <input type="password" class="st-modal-input" id="stConfirmPasswordInput" placeholder="Repeat new password" autocomplete="new-password" />
+        </div>
+        <p class="st-modal-error" id="stChangePwError" hidden></p>
+        <div class="st-dialog-btns">
+          <button class="btn btn--primary" id="stChangePwSave" type="button">Update Password</button>
+          <button class="btn btn--outline" id="stChangePwCancel" type="button">Cancel</button>
+        </div>
       </div>
-      <div class="st-modal-field">
-        <label class="st-modal-label" for="stConfirmPasswordInput">Confirm Password</label>
-        <input type="password" class="st-modal-input" id="stConfirmPasswordInput" placeholder="Repeat new password" autocomplete="new-password" />
-      </div>
-      <p class="st-modal-error" id="stChangePwError" hidden></p>
-      <div class="st-dialog-btns">
-        <button class="btn btn--primary" id="stChangePwSave" type="button">Update Password</button>
-        <button class="btn btn--outline" id="stChangePwCancel" type="button">Cancel</button>
+
+      <!-- Shown for Google-only accounts -->
+      <div id="stChangePwGoogleMsg" hidden>
+        <p class="st-dialog-msg">You signed in with Google. Password changes are managed through your Google account.</p>
+        <div class="st-dialog-btns">
+          <button class="btn btn--outline" id="stChangePwClose" type="button">Close</button>
+        </div>
       </div>
     </div>
   </div>
