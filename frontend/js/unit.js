@@ -268,6 +268,62 @@
   renderTopics();
 
   // =========================================================
+  // STUDY TIME TRACKING
+  // Automatically records time spent on each topic. Pauses when
+  // the tab is hidden. Flushes a session entry to fw_time_log
+  // on topic change or page leave. Sessions < 30s are discarded.
+  // =========================================================
+
+  const _tt = { topicId: null, topicName: '', startMs: null, accumulated: 0 };
+
+  function _ttFlush() {
+    if (_tt.startMs !== null) {
+      _tt.accumulated += (Date.now() - _tt.startMs) / 1000;
+      _tt.startMs = null;
+    }
+    const secs = Math.floor(_tt.accumulated);
+    if (_tt.topicId !== null && secs >= 30) {
+      try {
+        const log = JSON.parse(localStorage.getItem('fw_time_log') || '[]');
+        log.push({ subject: SUBJECT_NAME, topic: _tt.topicName, duration: secs, timestamp: Date.now() });
+        if (log.length > 500) log.splice(0, log.length - 500);
+        localStorage.setItem('fw_time_log', JSON.stringify(log));
+      } catch {}
+    }
+    _tt.topicId     = null;
+    _tt.topicName   = '';
+    _tt.startMs     = null;
+    _tt.accumulated = 0;
+  }
+
+  function _ttStart(topic) {
+    _ttFlush();
+    _tt.topicId     = topic.id;
+    _tt.topicName   = topic.name;
+    _tt.accumulated = 0;
+    if (!document.hidden) _tt.startMs = Date.now();
+  }
+
+  function _ttPause() {
+    if (_tt.startMs !== null) {
+      _tt.accumulated += (Date.now() - _tt.startMs) / 1000;
+      _tt.startMs = null;
+    }
+  }
+
+  function _ttResume() {
+    if (_tt.topicId !== null && _tt.startMs === null && !document.hidden) {
+      _tt.startMs = Date.now();
+    }
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) _ttPause(); else _ttResume();
+  });
+
+  window.addEventListener('pagehide', _ttFlush);
+
+  // =========================================================
   // TOPIC SELECTION & VIEW MODE
   // =========================================================
 
@@ -281,6 +337,7 @@
   function selectTopic(topicId) {
     const topic = unit.topics.find(t => t.id === topicId);
     if (!topic) return;
+    _ttStart(topic);
     currentTopicId = topicId;
     document.querySelectorAll('.unit-topic-item').forEach(item => {
       const active = parseInt(item.dataset.topicId) === topicId;

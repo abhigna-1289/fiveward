@@ -7,6 +7,7 @@
 //   fw_enrolled           → ['ap-csp', ...]        (list of enrolled subject IDs)
 //   fw_progress_u1..5     → [topicId, ...]          (written by unit.js)
 //   fw_study_log          → [{date,seconds}, ...]   (written by timer.js)
+//   fw_time_log           → [{subject,topic,duration,timestamp}] (written by unit.js)
 //   fw_pq_results         → [{date,unitNum,topicNum,topicName,type,pct,...}]
 //   fw_activity_log       → [{date,label,sub}, ...]
 //   fw_streak_dates       → ['YYYY-MM-DD', ...]
@@ -156,8 +157,10 @@
   }
 
   function calcStudyTime() {
-    const log      = ls('fw_study_log', []);
-    const totalSec = log.reduce((s, e) => s + (e.seconds || 0), 0);
+    const timerLog   = ls('fw_study_log', []);  // countdown timer sessions (timer.js)
+    const passiveLog = ls('fw_time_log',  []);  // automatic topic-view sessions (unit.js)
+    const totalSec   = timerLog.reduce((s, e) => s + (e.seconds   || 0), 0)
+                     + passiveLog.reduce((s, e) => s + (e.duration || 0), 0);
     return { h: Math.floor(totalSec / 3600), m: Math.floor((totalSec % 3600) / 60), totalSec };
   }
 
