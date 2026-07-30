@@ -196,16 +196,15 @@
       .filter(t => t.pcts.length >= 2)
       .map(t => ({ ...t, avg: Math.round(t.pcts.reduce((a, b) => a + b, 0) / t.pcts.length) }))
       .filter(t => t.avg < 50)
-      .sort((a, b) => a.avg - b.avg)
-      .slice(0, 5);
+      .sort((a, b) => a.avg - b.avg);
   }
 
-  // Returns the 5 most recent activity entries from localStorage.
+  // Returns all activity entries sorted newest-first.
   // Written by unit.js on PQ completion, flashcard completion, and study guide views.
   function calcActivity() {
     const log = ls('fw_activity_log', []);
     console.log('[fiveward progress] fw_activity_log:', log);
-    return log.slice(0, 5);
+    return [...log].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
   }
 
   function getUserPoints() {
@@ -340,9 +339,12 @@
 
   function renderWeakAreas() {
     const container = document.getElementById('pgWeakList');
+    const footerBtn = document.getElementById('pgWeakFooter');
     if (!container) return;
+
     const allResults = ls('fw_pq_results', []);
-    const items = calcWeakAreas();
+    const items = calcWeakAreas(); // all weak areas, sorted worst-first
+
     if (!items.length) {
       const hasPqData = allResults.length > 0;
       const msg = hasPqData
@@ -352,14 +354,36 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         <p>${msg}</p>
       </div>`;
+      if (footerBtn) footerBtn.hidden = true;
       return;
     }
-    container.innerHTML = items.map(item => `
-      <div class="pg-weak-item">
-        <span class="pg-weak-item__icon">${WARN_SVG}</span>
-        <span class="pg-weak-item__name">${escHtml(item.topicName)}</span>
-        <span class="pg-weak-item__score">${item.avg}%</span>
-      </div>`).join('');
+
+    const PREVIEW = 3;
+    let expanded  = false;
+
+    function drawWeak() {
+      const shown = expanded ? items : items.slice(0, PREVIEW);
+      container.innerHTML = shown.map(item => `
+        <div class="pg-weak-item">
+          <span class="pg-weak-item__icon">${WARN_SVG}</span>
+          <span class="pg-weak-item__name">${escHtml(item.topicName)}</span>
+          <span class="pg-weak-item__score">${item.avg}%</span>
+        </div>`).join('');
+      if (footerBtn && items.length > PREVIEW) {
+        const svgEl = footerBtn.querySelector('svg');
+        footerBtn.textContent = expanded ? 'Show Less' : 'View All Weak Areas';
+        if (svgEl) footerBtn.appendChild(svgEl);
+      }
+    }
+
+    if (footerBtn) {
+      footerBtn.hidden = items.length <= PREVIEW;
+      if (items.length > PREVIEW) {
+        footerBtn.addEventListener('click', () => { expanded = !expanded; drawWeak(); });
+      }
+    }
+
+    drawWeak();
   }
 
   // =========================================================
@@ -370,45 +394,62 @@
 
   function renderActivity() {
     const container = document.getElementById('pgActivityList');
+    const footerBtn = document.getElementById('pgActivityFooter');
     if (!container) return;
-    const items = calcActivity();
+
+    const items = calcActivity(); // all entries, sorted newest-first
+
     if (!items.length) {
       container.innerHTML = `<div class="pg-empty">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         <p>No recent activity yet — start studying!</p>
       </div>`;
+      if (footerBtn) footerBtn.hidden = true;
       return;
     }
-    container.innerHTML = items.map(item => `
-      <div class="pg-activity-item">
-        <span class="pg-activity-dot"></span>
-        <div class="pg-activity-body">
-          <span class="pg-activity-label">${escHtml(item.type)}: ${escHtml(item.topic)}</span>
-          <span class="pg-activity-sub">${escHtml(item.subject)}</span>
-        </div>
-        <div class="pg-activity-time">
-          <span class="pg-activity-date">${escHtml(formatTimestamp(item.timestamp))}</span>
-        </div>
-      </div>`).join('');
+
+    const PREVIEW = 3;
+    let expanded  = false;
+
+    function drawActivity() {
+      const shown = expanded ? items : items.slice(0, PREVIEW);
+      container.innerHTML = shown.map(item => `
+        <div class="pg-activity-item">
+          <span class="pg-activity-dot"></span>
+          <div class="pg-activity-body">
+            <span class="pg-activity-label">${escHtml(item.type)}: ${escHtml(item.topic)}</span>
+            <span class="pg-activity-sub">${escHtml(item.subject)}</span>
+          </div>
+          <div class="pg-activity-time">
+            <span class="pg-activity-date">${escHtml(formatTimestamp(item.timestamp))}</span>
+          </div>
+        </div>`).join('');
+      if (footerBtn && items.length > PREVIEW) {
+        const svgEl = footerBtn.querySelector('svg');
+        footerBtn.textContent = expanded ? 'Show Less' : 'View All Activity';
+        if (svgEl) footerBtn.appendChild(svgEl);
+      }
+    }
+
+    if (footerBtn) {
+      footerBtn.hidden = items.length <= PREVIEW;
+      if (items.length > PREVIEW) {
+        footerBtn.addEventListener('click', () => { expanded = !expanded; drawActivity(); });
+      }
+    }
+
+    drawActivity();
   }
 
   // =========================================================
   // RENDER — LEADERBOARD
   // =========================================================
 
-  const LB_OTHERS = [
-    { name: 'alex_k',  score: 2450 },
-    { name: 'sam_r',   score: 2150 },
-    { name: 'jess_m',  score: 1980 },
-    { name: 'riley_t', score: 1760 },
-    { name: 'drew_l',  score: 1620 },
-  ];
-
   const RANK_CLASSES = ['', 'pg-lb-rank--gold', 'pg-lb-rank--silver', 'pg-lb-rank--bronze'];
 
   const USER_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
 
-  function initLeaderboard() {
+  async function initLeaderboard() {
     const card = document.getElementById('pgLeaderboardCard');
     if (!card) return;
 
@@ -420,10 +461,46 @@
     const footer    = document.getElementById('pgLbFooter');
     if (!container) return;
 
-    const userPoints = getUserPoints();
-    const entries = [{ name: 'You', score: userPoints, isYou: true }, ...LB_OTHERS]
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 6);
+    container.innerHTML = '<div class="pg-lb-loading">Loading...</div>';
+
+    let entries        = [];
+    let currentUserId  = null;
+
+    if (window.sb) {
+      try {
+        const { data: { user } } = await window.sb.auth.getUser();
+        currentUserId = user?.id;
+
+        const { data, error } = await window.sb
+          .from('profiles')
+          .select('id, full_name, points')
+          .order('points', { ascending: false })
+          .limit(10);
+
+        console.log('[fiveward] leaderboard fetch — data:', data, 'error:', error);
+
+        if (!error && data) {
+          entries = data
+            .filter(u => (u.points || 0) > 0)
+            .map(u => ({
+              name:  u.full_name || 'Anonymous',
+              score: u.points   || 0,
+              isYou: u.id === currentUserId,
+            }));
+        }
+      } catch (err) {
+        console.error('[fiveward] leaderboard fetch error:', err);
+      }
+    }
+
+    if (!entries.length) {
+      container.innerHTML = `<div class="pg-empty">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+        <p>No scores yet — start studying to climb the leaderboard!</p>
+      </div>`;
+      if (footer) footer.hidden = true;
+      return;
+    }
 
     container.innerHTML = `<div class="pg-lb-list">
       ${entries.map((u, i) => {
@@ -431,7 +508,7 @@
         const rankCls = RANK_CLASSES[rank] || '';
         const rowCls  = u.isYou ? 'pg-lb-row pg-lb-row--you' : 'pg-lb-row';
         const nameHtml = u.isYou
-          ? `<span class="pg-lb-name">You <span class="pg-lb-you-badge">· your score</span></span>`
+          ? `<span class="pg-lb-name">${escHtml(u.name)} <span class="pg-lb-you-badge">· you</span></span>`
           : `<span class="pg-lb-name">${escHtml(u.name)}</span>`;
         return `<div class="${rowCls}">
           <span class="pg-lb-rank ${rankCls}">${rank}</span>
@@ -442,7 +519,7 @@
       }).join('')}
     </div>`;
 
-    if (footer) footer.style.display = 'flex';
+    if (footer) footer.hidden = false;
   }
 
   // =========================================================

@@ -1476,15 +1476,9 @@
       const rubric = (q.rubric || []).map(r => `<li class="pq-rubric-item">${e(r)}</li>`).join('');
       revealPart = `
         <div class="pq-frq-reveal">
-          <div class="pq-reveal-grid">
-            <div class="pq-reveal-card">
-              <span class="pq-reveal-title">Sample Answer</span>
-              <p class="pq-reveal-text">${e(q.sampleAnswer)}</p>
-            </div>
-            <div class="pq-reveal-card">
-              <span class="pq-reveal-title">Rubric</span>
-              <ul class="pq-rubric-list">${rubric}</ul>
-            </div>
+          <div class="pq-reveal-card">
+            <span class="pq-reveal-title">Rubric</span>
+            <ul class="pq-rubric-list">${rubric}</ul>
           </div>
           ${a.grade !== null
             ? `<div class="pq-self-grade">
