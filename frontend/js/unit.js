@@ -1572,9 +1572,6 @@
     set('pqStatWrong',   wrong);
     set('pqStatTotal',   total);
 
-    const revBtn = document.getElementById('pqReviewWrong');
-    if (revBtn) revBtn.disabled = wrong === 0 && partial === 0;
-
     // Award points: MCQ correct = 2pts, FRQ full = 5pts, FRQ partial = 2pts
     let earnedPts = 0, correctMcq = 0, fullFrq = 0, partialFrq = 0;
     pqDeck.forEach(q => {
@@ -1646,28 +1643,6 @@
   document.getElementById('pqPrev')?.addEventListener('click', () => pqNav(-1));
   document.getElementById('pqNext')?.addEventListener('click', () => pqNav(1));
   document.getElementById('pqRestart')?.addEventListener('click', pqStart);
-  document.getElementById('pqReviewWrong')?.addEventListener('click', () => {
-    const wrongDeck = pqDeck.filter(q => {
-      const a = pqAnswers[q.id];
-      return a.isCorrect === false || a.grade === 'none' || a.grade === 'partial';
-    });
-    if (!wrongDeck.length) return;
-    const prevAnswers = pqAnswers;
-    pqDeck    = wrongDeck;
-    pqIdx     = 0;
-    pqAnswers = {};
-    wrongDeck.forEach(q => {
-      const prev = prevAnswers[q.id];
-      if (q.type === 'frq' && prev?.submitted) {
-        // Preserve submitted FRQ answers so they render read-only with rubric + grade
-        pqAnswers[q.id] = { ...prev };
-      } else {
-        pqAnswers[q.id] = { submitted: false, selected: null, selectedArr: [], userText: '', grade: null, pendingGrade: null, isCorrect: null };
-      }
-    });
-    pqShowView('pqSession');
-    pqRender();
-  });
 
   // --- Inject resume dialog --------------------------------
 

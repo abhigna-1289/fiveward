@@ -369,7 +369,7 @@
           <span class="pg-weak-item__name">${escHtml(item.topicName)}</span>
           <span class="pg-weak-item__score">${item.avg}%</span>
         </div>`).join('');
-      if (footerBtn && items.length > PREVIEW) {
+      if (footerBtn) {
         const svgEl = footerBtn.querySelector('svg');
         footerBtn.textContent = expanded ? 'Show Less' : 'View All Weak Areas';
         if (svgEl) footerBtn.appendChild(svgEl);
@@ -377,10 +377,8 @@
     }
 
     if (footerBtn) {
-      footerBtn.hidden = items.length <= PREVIEW;
-      if (items.length > PREVIEW) {
-        footerBtn.addEventListener('click', () => { expanded = !expanded; drawWeak(); });
-      }
+      footerBtn.hidden = false;
+      footerBtn.addEventListener('click', () => { expanded = !expanded; drawWeak(); });
     }
 
     drawWeak();
@@ -424,7 +422,7 @@
             <span class="pg-activity-date">${escHtml(formatTimestamp(item.timestamp))}</span>
           </div>
         </div>`).join('');
-      if (footerBtn && items.length > PREVIEW) {
+      if (footerBtn) {
         const svgEl = footerBtn.querySelector('svg');
         footerBtn.textContent = expanded ? 'Show Less' : 'View All Activity';
         if (svgEl) footerBtn.appendChild(svgEl);
@@ -432,10 +430,8 @@
     }
 
     if (footerBtn) {
-      footerBtn.hidden = items.length <= PREVIEW;
-      if (items.length > PREVIEW) {
-        footerBtn.addEventListener('click', () => { expanded = !expanded; drawActivity(); });
-      }
+      footerBtn.hidden = false;
+      footerBtn.addEventListener('click', () => { expanded = !expanded; drawActivity(); });
     }
 
     drawActivity();
