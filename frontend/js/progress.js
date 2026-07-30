@@ -179,18 +179,21 @@
     return Math.round(results.reduce((a, r) => a + (r.pct || 0), 0) / results.length);
   }
 
-  // Reads actual practice question history from localStorage and returns
-  // the topics with the lowest average scores — real analysis, not placeholder.
+  // Reads actual practice question history from localStorage.
+  // Only surfaces topics with ≥2 attempts AND avg score < 50% (more than half wrong).
   function calcWeakAreas() {
     const results = ls('fw_pq_results', []);
+    console.log('[fiveward progress] fw_pq_results:', results);
     const byTopic = {};
     results.forEach(r => {
       const key = `${r.unitNum}-${r.topicNum}`;
-      if (!byTopic[key]) byTopic[key] = { topicName: r.topicName || r.topicNum, pcts: [] };
+      if (!byTopic[key]) byTopic[key] = { topicName: r.topicName || r.topicNum, unitNum: r.unitNum, topicNum: r.topicNum, pcts: [] };
       byTopic[key].pcts.push(r.pct || 0);
     });
     return Object.values(byTopic)
+      .filter(t => t.pcts.length >= 2)
       .map(t => ({ ...t, avg: Math.round(t.pcts.reduce((a, b) => a + b, 0) / t.pcts.length) }))
+      .filter(t => t.avg < 50)
       .sort((a, b) => a.avg - b.avg)
       .slice(0, 5);
   }
@@ -198,7 +201,9 @@
   // Returns the 5 most recent activity entries from localStorage.
   // Written by unit.js on PQ completion, flashcard completion, and study guide views.
   function calcActivity() {
-    return ls('fw_activity_log', []).slice(0, 5);
+    const log = ls('fw_activity_log', []);
+    console.log('[fiveward progress] fw_activity_log:', log);
+    return log.slice(0, 5);
   }
 
   function getUserPoints() {
@@ -338,11 +343,16 @@
   function renderWeakAreas() {
     const container = document.getElementById('pgWeakList');
     if (!container) return;
+    const allResults = ls('fw_pq_results', []);
     const items = calcWeakAreas();
     if (!items.length) {
+      const hasPqData = allResults.length > 0;
+      const msg = hasPqData
+        ? 'No weak areas found — great work! Keep practicing to stay sharp.'
+        : 'Complete some practice questions to see your weak areas.';
       container.innerHTML = `<div class="pg-empty">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <p>Complete some practice questions to see your weak areas.</p>
+        <p>${msg}</p>
       </div>`;
       return;
     }
@@ -367,7 +377,7 @@
     if (!items.length) {
       container.innerHTML = `<div class="pg-empty">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <p>Your recent study sessions will appear here once you start practicing.</p>
+        <p>No recent activity yet — start studying!</p>
       </div>`;
       return;
     }
@@ -492,7 +502,18 @@
   // =========================================================
 
   function init() {
+    // Diagnostic: log all fw_ localStorage keys so we can verify enrollment data
+    console.log('[fiveward progress] localStorage keys at init:');
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('fw_')) {
+        try { console.log('  ', k, '=', JSON.parse(localStorage.getItem(k))); }
+        catch { console.log('  ', k, '=', localStorage.getItem(k)); }
+      }
+    }
+
     const subjects = getEnrolledSubjects();
+    console.log('[fiveward progress] enrolled subjects from fw_enrolled:', subjects);
 
     if (!subjects.length) {
       showNotEnrolledState();

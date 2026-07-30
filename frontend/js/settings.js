@@ -7,9 +7,6 @@
 //   fw_lb_username_display → string   ('full' | 'first' | 'anon')
 //   fw_dark_mode           → boolean  (dark theme applied to all pages)
 //   fw_font_size           → string   ('small' | 'medium' | 'large')
-//   fw_notif_email         → boolean
-//   fw_notif_reminder      → boolean
-//   fw_notif_reminder_time → string   ('HH:MM')
 //   fw_notif_browser       → boolean
 //   fw_privacy_data        → boolean
 //   fw_privacy_visibility  → boolean
@@ -208,13 +205,32 @@
       if (_pwErrEl) { _pwErrEl.textContent = 'Not connected to authentication service.'; _pwErrEl.hidden = false; }
       return;
     }
-    const { error } = await window.sb.auth.updateUser({ password: newPw });
+    // Check current user and their sign-in identities
+    const { data: { user: currentUser } } = await window.sb.auth.getUser();
+    console.log('[fiveward] Change password — current user:', currentUser);
+    console.log('[fiveward] Change password — identities:', currentUser?.identities);
+    // Google-only accounts cannot set a password for email login
+    const isGoogleOnly = currentUser?.identities?.length > 0 &&
+      currentUser.identities.every(id => id.provider === 'google');
+    if (isGoogleOnly) {
+      if (_pwErrEl) {
+        _pwErrEl.textContent = 'Your account uses Google sign-in. Password login is not available for Google accounts.';
+        _pwErrEl.hidden = false;
+      }
+      return;
+    }
+    const { data, error } = await window.sb.auth.updateUser({ password: newPw });
+    console.log('[fiveward] updateUser password — data:', data, 'error:', error);
     if (error) {
       if (_pwErrEl) { _pwErrEl.textContent = error.message; _pwErrEl.hidden = false; }
       return;
     }
     if (_pwModal) _pwModal.hidden = true;
-    window.fwShowToast?.('Password updated');
+    window.fwShowToast?.('Password updated — signing you out so you can log in with your new password');
+    setTimeout(async () => {
+      await window.sb.auth.signOut();
+      window.location.href = 'auth.html';
+    }, 2000);
   });
 
   document.getElementById('stChangePwCancel')?.addEventListener('click', () => {
@@ -268,45 +284,10 @@
   // NOTIFICATIONS SECTION
   // =========================================================
 
-  // Email Notifications — preference saved to Supabase user metadata
-  // and mirrored to localStorage as a fast-read cache.
-  (async function wireEmailNotif() {
-    const el = document.getElementById('stEmailNotif');
-    if (!el) return;
-    if (window.sb) {
-      try {
-        const { data: { user } } = await window.sb.auth.getUser();
-        if (user && user.user_metadata?.notif_email !== undefined) {
-          el.checked = user.user_metadata.notif_email;
-          lsSet('fw_notif_email', el.checked);
-        } else {
-          el.checked = ls('fw_notif_email', true);
-        }
-      } catch { el.checked = ls('fw_notif_email', true); }
-    } else {
-      el.checked = ls('fw_notif_email', true);
-    }
-    el.addEventListener('change', async () => {
-      lsSet('fw_notif_email', el.checked);
-      if (window.sb) {
-        try { await window.sb.auth.updateUser({ data: { notif_email: el.checked } }); }
-        catch {}
-      }
-    });
-  })();
-  wireToggle('stStudyReminder','fw_notif_reminder',  false);
   if (localStorage.getItem('fw_notif_browser') === null) {
     localStorage.setItem('fw_notif_browser', 'true');
   }
   wireToggle('stBrowserNotif', 'fw_notif_browser', true);
-
-  const reminderTimeEl = document.getElementById('stReminderTime');
-  if (reminderTimeEl) {
-    reminderTimeEl.value = ls('fw_notif_reminder_time', '18:00') || '18:00';
-    reminderTimeEl.addEventListener('change', () => {
-      lsSet('fw_notif_reminder_time', reminderTimeEl.value);
-    });
-  }
 
   // =========================================================
   // PRIVACY SECTION
